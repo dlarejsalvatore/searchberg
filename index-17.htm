@@ -1,0 +1,875 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://stevegilliland.com/wp-content/themes/steve/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="https://stevegilliland.com/wp-content/themes/steve/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+<link href="https://stevegilliland.com/wp-content/themes/steve/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://stevegilliland.com/wp-content/themes/steve/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link rel="Stylesheet" type="text/css" href="https://stevegilliland.com/wp-content/themes/steve/css/smoothDivScroll.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+  
+    
+    <link rel="stylesheet" href="https://stevegilliland.com/wp-content/themes/steve/css/lightbox.css">
+	<!-- Modernizr -->
+	
+    <script src="https://stevegilliland.com/wp-content/themes/steve/js/lightbox.js"></script>
+	<script src="https://stevegilliland.com/wp-content/themes/steve/js/html5.js"></script>
+	
+    <link rel="stylesheet" href="https://stevegilliland.com/wp-content/themes/steve/css/flexslider.css" type="text/css" media="screen" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+ <script src="https://stevegilliland.com/wp-content/themes/steve/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$("document").ready(function() {	
+	
+			$(".mtoggle").click(function(){
+				$(".mmenu").slideToggle(500);
+			});
+		});
+				 
+</script>
+<script src="https://stevegilliland.com/wp-content/themes/steve/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+	
+	<!-- Latest version of jQuery Mouse Wheel by Brandon Aaron
+		 You will find it here: https://brandonaaron.net/code/mousewheel/demos -->
+	<script src="https://stevegilliland.com/wp-content/themes/steve/js/jquery.mousewheel.min.js" type="text/javascript"></script>
+	<!-- Smooth Div Scroll 1.3 minified -->
+	<script src="https://stevegilliland.com/wp-content/themes/steve/js/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
+	<!-- If you want to look at the uncompressed version you find it at
+		 js/source/jquery.smoothDivScroll-1.3.js -->
+	<!-- Plugin initialization -->
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$("#scrollingText").smoothDivScroll({
+					autoScrollingMode: "always",
+					autoScrollDirection: "endlessLoopRight",
+					autoScrollingInterval: 20,
+					autoScrollInterval: 10, 
+					autoScrollStep: 4 });
+			});
+	</script>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        animationLoop: true,
+		easing: "linear",
+        itemWidth: 100,
+		useCSS: false,
+		randomize: true,
+        itemMargin: 0,
+		maxItems:3,
+	   slideshowSpeed: 1,
+        animationSpeed: 4000,
+        pausePlay: false,
+prevText: "",
+		nextText: "",
+        
+ 
+      });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.flexslider1').flexslider({
+        
+		
+		animation: "slide",
+        animationLoop: true,
+        itemWidth: 120,
+        itemMargin: 0,
+		maxItems:3,
+        pausePlay: false,
+		controlNav: false,
+        prevText: "",
+		nextText: "",
+      });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+       var url = window.location.href;
+// Will only work if string in href matches with location
+$('.menu a[href="'+ url +'"]').addClass('active');
+// Will also work for relative and absolute hrefs
+if($('ul li.active:not(ul li ul li)').length > 1)
+{
+    // code 
+	//alert('piyush');
+	//var length= $('ul li.active:not(ul li ul li)').length;
+//alert(length);	
+$("ul.nav-menu li#menu-item-15").removeClass("active");
+}
+		
+		
+    });
+</script>
+    
+    
+    <script>
+				$(document).ready(function(){
+				$(".client-list").show();
+				$('#5188').addClass("active");
+  				$(".clientmain-list").hide();
+  				 $(".recent-list").click(function(){
+  				var pid =  $(this).attr("id");
+//alert(pid);
+				$(".client-list").hide();
+				$(".clientmain-list").hide();
+				
+				
+				setTimeout(function(){  
+		    $('body,html').animate({				scrollTop: 900 		}, 500);      }, 100);
+				$('#clientmain-'+pid).show();
+				
+				
+				$("a.recent-list").removeClass("active");
+				
+				$('#'+pid).addClass("active");
+				
+			});	
+					});
+</script>
+<script>
+				$(document).ready(function(){
+		
+				$(".testimonials-list").show();
+				$('#5108').addClass("active");
+
+  				$(".testimonialsmain-list").hide();
+				
+
+  				 $(".testimonialrecent-list").click(function(){
+					 
+
+  				var pid1 =  $(this).attr("id");
+
+//alert(pid);
+				
+				$(".testimonials-list").hide();
+				
+				$(".testimonialsmain-list").hide();
+		      setTimeout(function(){  
+		    $('body,html').animate({	
+          scrollTop: 700 		}, 500);      }, 100);
+				$('#testimonialsmain-'+pid1).show();
+$("a.testimonialrecent-list").removeClass("active");
+				
+				$('#'+pid1).addClass("active");
+				
+			});	
+					});
+</script>
+    
+    
+    
+    
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Steve Gilliland - Professional Motivational Keynote Speaker | Inspirational Presenter</title>
+	<meta name="description" content="Bring North America’s most entertaining famous motivational and inspirational speaker to your next event! Celebrity motivational speaker, Steve Gilliland is among the top rated speakers around the world." />
+	<link rel="canonical" href="https://stevegilliland.com/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Steve Gilliland - Professional Motivational Keynote Speaker | Inspirational Presenter" />
+	<meta property="og:description" content="Bring North America’s most entertaining famous motivational and inspirational speaker to your next event! Celebrity motivational speaker, Steve Gilliland is among the top rated speakers around the world." />
+	<meta property="og:url" content="https://stevegilliland.com/" />
+	<meta property="og:site_name" content="Steve Gilliland" />
+	<meta property="article:modified_time" content="2021-09-08T19:06:05+00:00" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://stevegilliland.com/#website","url":"https://stevegilliland.com/","name":"Steve Gilliland","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://stevegilliland.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-GB"},{"@type":"WebPage","@id":"https://stevegilliland.com/#webpage","url":"https://stevegilliland.com/","name":"Steve Gilliland - Professional Motivational Keynote Speaker | Inspirational Presenter","isPartOf":{"@id":"https://stevegilliland.com/#website"},"datePublished":"2020-12-11T07:56:07+00:00","dateModified":"2021-09-08T19:06:05+00:00","description":"Bring North America\u2019s most entertaining famous motivational and inspirational speaker to your next event! Celebrity motivational speaker, Steve Gilliland is among the top rated speakers around the world.","breadcrumb":{"@id":"https://stevegilliland.com/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https://stevegilliland.com/"]}]},{"@type":"BreadcrumbList","@id":"https://stevegilliland.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<meta name="msvalidate.01" content="3C94BA8566B5E48C0E3BF4FB275CA0AA" />
+	<meta name="google-site-verification" content="e46QwgEURJcUL1TL1LiA56uVbZqdFCZ_hrahLoyS5ko" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Steve Gilliland &raquo; Feed" href="https://stevegilliland.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Steve Gilliland &raquo; Comments Feed" href="https://stevegilliland.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Steve Gilliland &raquo; Home Page Comments Feed" href="https://stevegilliland.com/home-page-3/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/stevegilliland.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=43a72dbf4c4095586116d52d61240588"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='cnss_font_awesome_css-css'  href='https://stevegilliland.com/wp-content/plugins/easy-social-icons/css/font-awesome/css/all.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cnss_font_awesome_v4_shims-css'  href='https://stevegilliland.com/wp-content/plugins/easy-social-icons/css/font-awesome/css/v4-shims.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cnss_css-css'  href='https://stevegilliland.com/wp-content/plugins/easy-social-icons/css/cnss.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery.prettyphoto-css'  href='https://stevegilliland.com/wp-content/plugins/wp-video-lightbox/css/prettyPhoto.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='video-lightbox-css'  href='https://stevegilliland.com/wp-content/plugins/wp-video-lightbox/wp-video-lightbox.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://stevegilliland.com/wp-includes/css/dist/block-library/style.min.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='wpda_like_box_gutenberg_css-css'  href='https://stevegilliland.com/wp-content/plugins/like-box/includes/gutenberg/style.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://stevegilliland.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='email-subscribers-css'  href='https://stevegilliland.com/wp-content/plugins/email-subscribers/lite/public/css/email-subscribers-public.css?ver=4.7.6' type='text/css' media='all' />
+<link rel='stylesheet' id='pdfprnt_frontend-css'  href='https://stevegilliland.com/wp-content/plugins/pdf-print/css/frontend.css?ver=2.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-video-popup-css'  href='https://stevegilliland.com/wp-content/plugins/responsive-youtube-vimeo-popup/assets/css/wp-video-popup.css?ver=2.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpcf7-redirect-script-frontend-css'  href='https://stevegilliland.com/wp-content/plugins/wpcf7-redirect/build/css/wpcf7-redirect-frontend.min.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='recent-facebook-posts-css-css'  href='https://stevegilliland.com/wp-content/plugins/recent-facebook-posts/assets/css/default.min.css?ver=2.0.13' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://stevegilliland.com/wp-content/themes/steve/genericons/genericons.css?ver=3.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='https://stevegilliland.com/wp-content/themes/steve/style.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://stevegilliland.com/wp-content/themes/steve/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='cff-css'  href='https://stevegilliland.com/wp-content/plugins/custom-facebook-feed/assets/css/cff-style.css?ver=4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='sb-font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://stevegilliland.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<link rel='stylesheet' id='animated-css'  href='https://stevegilliland.com/wp-content/plugins/like-box/includes/style/effects.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='front_end_like_box-css'  href='https://stevegilliland.com/wp-content/plugins/like-box/includes/style/style.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://stevegilliland.com/wp-includes/css/dashicons.min.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='https://stevegilliland.com/wp-includes/js/thickbox/thickbox.css?ver=43a72dbf4c4095586116d52d61240588' type='text/css' media='all' />
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/easy-social-icons/js/cnss.js?ver=1.0' id='cnss_js-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/wp-video-lightbox/js/jquery.prettyPhoto.min.js?ver=3.1.6' id='jquery.prettyphoto-js'></script>
+<script type='text/javascript' id='video-lightbox-js-extra'>
+/* <![CDATA[ */
+var vlpp_vars = {"prettyPhoto_rel":"wp-video-lightbox","animation_speed":"fast","slideshow":"5000","autoplay_slideshow":"false","opacity":"0.80","show_title":"true","allow_resize":"true","allow_expand":"true","default_width":"640","default_height":"480","counter_separator_label":"\/","theme":"dark_rounded","horizontal_padding":"20","hideflash":"false","wmode":"opaque","autoplay":"true","modal":"false","deeplinking":"false","overlay_gallery":"true","overlay_gallery_max":"30","keyboard_shortcuts":"true","ie6_fallback":"true"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/wp-video-lightbox/js/video-lightbox.js?ver=3.1.6' id='video-lightbox-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-js'></script>
+<script type='text/javascript' id='email-subscribers-js-extra'>
+/* <![CDATA[ */
+var es_data = {"messages":{"es_empty_email_notice":"Please enter email address","es_rate_limit_notice":"You need to wait for sometime before subscribing again","es_single_optin_success_message":"Successfully Subscribed.","es_email_exists_notice":"Email Address already exists!","es_unexpected_error_notice":"Oops.. Unexpected error occurred.","es_invalid_email_notice":"Invalid email address","es_try_later_notice":"Please try after some time"},"es_ajax_url":"https:\/\/stevegilliland.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/email-subscribers/lite/public/js/email-subscribers-public.js?ver=4.7.6' id='email-subscribers-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/like-box/includes/javascript/front_end_js.js?ver=43a72dbf4c4095586116d52d61240588' id='like-box-front-end-js'></script>
+<link rel="https://api.w.org/" href="https://stevegilliland.com/wp-json/" /><link rel="alternate" type="application/json" href="https://stevegilliland.com/wp-json/wp/v2/pages/5538" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://stevegilliland.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://stevegilliland.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://stevegilliland.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://stevegilliland.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstevegilliland.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://stevegilliland.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstevegilliland.com%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show All",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favourites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<style type="text/css">
+		ul.cnss-social-icon li.cn-fa-icon a:hover{opacity: 0.7!important;color:#ffffff!important;}
+		</style>	<script type='text/javascript'>
+				quoteRotator = {
+					i: 1,
+					quotes: ["<span id='quote'>Combining a Powerful & Thought-Provoking Message with Side-Splitting Humor!</span>",
+
+					],
+					numQuotes: 1,
+					fadeDuration: 0,
+					fadeoutDuration: 0,
+					delay: 120,
+					quotesInit: function(){
+						if (this.numQuotes < 1){
+							document.getElementById('quoterotator').innerHTML="No Quotes Found";
+						} else {
+							this.quoteRotate();
+							setInterval('quoteRotator.quoteRotate()', (this.fadeDuration + this.fadeoutDuration + this.delay) * 1000);
+						}
+					},
+					quoteRotate: function(){
+						jQuery('#quoterotator').hide().html(this.quotes[this.i - 1]).fadeIn(this.fadeDuration * 1000).css('filter','').delay(this.delay * 1000).fadeOut(this.fadeoutDuration * 1000);
+						this.i = this.i % (this.numQuotes) + 1;
+					}
+	
+				}
+			</script><script>
+            WP_VIDEO_LIGHTBOX_VERSION="1.9.3";
+            WP_VID_LIGHTBOX_URL="https://stevegilliland.com/wp-content/plugins/wp-video-lightbox";
+                        function wpvl_paramReplace(name, string, value) {
+                // Find the param with regex
+                // Grab the first character in the returned string (should be ? or &)
+                // Replace our href string with our new value, passing on the name and delimeter
+
+                var re = new RegExp("[\?&]" + name + "=([^&#]*)");
+                var matches = re.exec(string);
+                var newString;
+
+                if (matches === null) {
+                    // if there are no params, append the parameter
+                    newString = string + '?' + name + '=' + value;
+                } else {
+                    var delimeter = matches[0].charAt(0);
+                    newString = string.replace(re, delimeter + name + "=" + value);
+                }
+                return newString;
+            }
+            </script><link rel="icon" href="https://stevegilliland.com/wp-content/uploads/2021/05/cropped-SG-Favicon-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://stevegilliland.com/wp-content/uploads/2021/05/cropped-SG-Favicon-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://stevegilliland.com/wp-content/uploads/2021/05/cropped-SG-Favicon-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://stevegilliland.com/wp-content/uploads/2021/05/cropped-SG-Favicon-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			.alignright {
+    float: right;
+}
+.col-md-6 img.video_lightbox_anchor_image {
+    max-width: 98%;
+}		</style>
+		    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Steve Gilliland",
+  "url": "https://stevegilliland.com/",
+  "sameAs": [
+    "https://www.goodreads.com/author/show/1049767.Steve_Gilliland",
+    "https://www.amazon.com/Steve-Gilliland/e/B00IV6IAQG",
+    "https://www.facebook.com/pages/Steve-Gilliland-CSP-CPAE/637296866368499",
+    "https://www.linkedin.com/in/steve-gilliland-970326a3",
+    "https://twitter.com/SteveGSpeaks",
+    "https://plus.google.com/106817514282411278794/posts",
+    "https://www.youtube.com/user/stevegillilandinc/feed"
+  ]
+}
+</script>
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69772846-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-69772846-1');
+</script>
+	
+</head>
+<body data-rsssl=1 class="home page-template page-template-homepagenew page-template-homepagenew-php page page-id-5538 do-etfw group-blog masthead-fixed grid">
+
+
+
+    <header class="navbar-fixed-top hidden-sm hidden-xs">
+
+
+<div class="header-top">
+  <div class="container">
+<div class="row">
+                  <div class="col-md-7 col-sm-7 col-xs-12 header_logo">
+                      <a href="https://stevegilliland.com/"><img src="https://stevegilliland.com/wp-content/uploads/2015/10/new-logo.png" alt="steve-logo" /></a>
+                          
+                  </div>
+<style type="text/css">.app {
+    display: inline-block;
+    max-width: 150px;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    float: right;
+    margin-right:30px
+}
+.app img {
+    width: 140px;
+    display: inline-block;
+}
+.app h3 {
+    font-size: 13px;
+}
+.banner {
+    position: relative;
+    background: url('https://stevegilliland.com/wp-content/uploads/2021/05/bg.png'); !important;
+}
+
+@media only screen and (min-width: 768px ){
+.col-md-8.col-sm-8.col-xs-8.bot-left {
+    margin-left: -30px;
+    margin-top: 0px;
+}
+}
+@media only screen and (max-width: 767px){
+  .bottom-mid.col-xs-3 {
+    margin-top: -180px !important;
+}
+}
+@media only screen and (max-width: 400px){
+.bottom-mid.col-xs-3 {
+    margin-top: -75px!important;
+    width: 100px;
+    margin-right: 10px;
+}
+
+}
+</style>
+
+          <div class="col-md-5 col-sm-5 col-xs-12 header_right">
+              <p class="north">North America’s Premier</p>
+<p class="keynote">Keynote Speaker</p>
+<p>For Speaking Inquiries: <a href="tel:724-540-5019">724-540-5019</a></p>
+              <ul id="" class="cnss-social-icon " style="text-align:;"><li class="cn-fa-facebook" style="display:inline-block;"><a class="" target="_blank" href="https://www.facebook.com/pages/Steve-Gilliland-CSP-CPAE/637296866368499" title="facebook" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746279_Homepage_18.jpg" border="0" width="32" height="32" alt="facebook" title="facebook" style="margin:2px;" /></a></li><li class="cn-fa-linkedin" style="display:inline-block;"><a class="" target="_blank" href="https://www.linkedin.com/in/steve-gilliland-970326a3" title="linkedin" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746366_in.jpg" border="0" width="32" height="32" alt="linkedin" title="linkedin" style="margin:2px;" /></a></li><li class="cn-fa-twitter" style="display:inline-block;"><a class="" target="_blank" href="https://twitter.com/SteveGSpeaks" title="twitter" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746322_tw.jpg" border="0" width="32" height="32" alt="twitter" title="twitter" style="margin:2px;" /></a></li><li class="cn-fa-instagram" style="display:inline-block;"><a class="" target="_blank" href="https://www.instagram.com/stevegspeaks" title="Instagram" style=""><img src="https://stevegilliland.com/wp-content/uploads/2019/04/InstragramIcon-32x32.png" border="0" width="32" height="32" alt="Instagram" title="Instagram" style="margin:2px;" /></a></li><li class="cn-fa-youtube" style="display:inline-block;"><a class="" target="_blank" href="https://www.youtube.com/user/stevegillilandinc/feed" title="youtube" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746446_yt.jpg" border="0" width="32" height="32" alt="youtube" title="youtube" style="margin:2px;" /></a></li><li class="cn-fa-blog" style="display:inline-block;"><a class="" target="_blank" href="https://stevegilliland.com/weekly-blog/" title="Blog" style=""><img src="https://stevegilliland.com/wp-content/uploads/2016/02/blog-icon-box-orange-300-1.png" border="0" width="32" height="32" alt="Blog" title="Blog" style="margin:2px;" /></a></li><li class="cn-fa-pinterest" style="display:inline-block;"><a class="" target="_blank" href="https://www.pinterest.com/stevegillilandc/" title="Pinterest" style=""><img src="https://stevegilliland.com/wp-content/uploads/2017/08/pinterest-logo297.png" border="0" width="32" height="32" alt="Pinterest" title="Pinterest" style="margin:2px;" /></a></li><li class="cn-fa-newsletter" style="display:inline-block;"><a class="" target="_blank" href="https://stevegilliland.com/newsletter" title="Newsletter" style=""><img src="https://stevegilliland.com/wp-content/uploads/2020/02/newsletter-icon.jpg" border="0" width="32" height="32" alt="Newsletter" title="Newsletter" style="margin:2px;" /></a></li></ul>          </div> 
+</div> 
+</div>
+</div>
+        <div class="header-bottom">
+                <div class="menu">
+                    <nav id="mmenu">
+                         <div class="menu-header-top-menu-container"><ul id="menu-header-top-menu" class="nav-menu"><li id="menu-item-5644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5538 current_page_item menu-item-5644 active "><a href="https://stevegilliland.com/" aria-current="page">Home</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="https://stevegilliland.com/hire-steve/">Book Steve</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="https://stevegilliland.com/for-meeting-planners/">for meeting planners</a></li>
+<li id="menu-item-5127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5127"><a href="https://stevegilliland.com/presentations/">Presentations</a></li>
+<li id="menu-item-5123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5123"><a href="https://stevegilliland.com/virtual/">Virtual</a></li>
+<li id="menu-item-5639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5639"><a href="https://stevegilliland.com/motivation-bites/">Motivation Bites</a></li>
+<li id="menu-item-285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-285"><a href="#">Testimonials</a>
+<ul class="sub-menu">
+	<li id="menu-item-942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-942"><a href="https://stevegilliland.com/clients-by-industry/">Clients By Industry</a></li>
+	<li id="menu-item-941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-941"><a href="https://stevegilliland.com/testimonial-letters/">Testimonial Letters</a></li>
+	<li id="menu-item-3617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3617"><a href="https://stevegilliland.com/testimonial-videos/">Testimonial Videos</a></li>
+	<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://stevegilliland.com/speaker-hall-of-fame/">speaker hall of fame</a></li>
+</ul>
+</li>
+<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://stevegilliland.com/biography/">Bio</a></li>
+<li id="menu-item-2000" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2000"><a href="https://stevegilliland.com/weekly-blog/">Blog</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-323"><a target="_blank" rel="noopener" href="https://www.stevegillilandstore.com/">Online Store</a></li>
+</ul></div>                    </nav>
+                </div>
+        </div>
+    </header>
+<header class="hidden-md hidden-lg">
+<div class="header-top">
+<div class="container">
+<div class="row">
+<div class="col-md-7 col-sm-7 col-xs-12 header_logo">
+    <a href="https://stevegilliland.com/"><img src="https://stevegilliland.com/wp-content/uploads/2015/10/new-logo.png" alt="steve-logo" /></a>
+</div>
+<div class="col-md-5 col-sm-5 col-xs-12 header_right">
+    <p class="north">North America’s Premier</p>
+<p class="keynote">Keynote Speaker</p>
+<p>For Speaking Inquiries: <a href="tel:724-540-5019">724-540-5019</a></p>
+</div> 
+</div> 
+</div>
+</div>
+        <div class="header-bottom ">
+                <div class="menu navbar-fixed-top">
+                    <div id="toggle-bar">
+                    <strong><a class="mtoggle" href="#">Menu</a></strong>
+                    <a class="navicon mtoggle" href="javascript:void(0)"></a>
+                    <div class="clr"></div>
+                    </div>
+                    <nav class="mmenu ">
+                         <div class="menu-header-top-menu-container"><ul id="menu-header-top-menu-1" class="nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-5538 current_page_item menu-item-5644 active "><a href="https://stevegilliland.com/" aria-current="page">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10"><a href="https://stevegilliland.com/hire-steve/">Book Steve</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="https://stevegilliland.com/for-meeting-planners/">for meeting planners</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5127"><a href="https://stevegilliland.com/presentations/">Presentations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5123"><a href="https://stevegilliland.com/virtual/">Virtual</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5639"><a href="https://stevegilliland.com/motivation-bites/">Motivation Bites</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-285"><a href="#">Testimonials</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-942"><a href="https://stevegilliland.com/clients-by-industry/">Clients By Industry</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-941"><a href="https://stevegilliland.com/testimonial-letters/">Testimonial Letters</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3617"><a href="https://stevegilliland.com/testimonial-videos/">Testimonial Videos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://stevegilliland.com/speaker-hall-of-fame/">speaker hall of fame</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://stevegilliland.com/biography/">Bio</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2000"><a href="https://stevegilliland.com/weekly-blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-323"><a target="_blank" rel="noopener" href="https://www.stevegillilandstore.com/">Online Store</a></li>
+</ul></div>                    </nav>
+                </div>
+        </div>
+    </header>
+    <!---End of header---->
+
+
+    <div class="banner">
+    	<img class="banner-img" src="https://stevegilliland.com/wp-content/uploads/2021/07/SGHomePhoto0721-1360x585-1.png" alt="home-banner" />
+        <img class="banner-img-moblie" src="https://stevegilliland.com/wp-content/uploads/2021/05/SGHomePhoto0521-1360x585-2.png" alt="home-mobilebanner" />
+<div class="banner-content mob-cap">
+        	<div class="container">
+          
+			<a href="https://stevegilliland.com/video-previews/"><img src="https://stevegilliland.com/wp-content/uploads/2020/12/SteveInAction-VideoThumb-2.png" alt="steve-logo" /></a>
+			</div>
+			</div>
+        <div class="banner-content">
+        	<div class="container">
+            	<div class="row">
+                	<div class="col-md 12 col-sm-12 col-xs-12 top-banner-content">
+                    	<div class="col-md-8 col-sm-8 col-xs-8 bot-left">
+                      <a id="613909e1d3eb1" rel="wp-video-lightbox" href="https://www.youtube.com/watch?v=7swtYXiaYVA&#038;width=640&#038;height=480" title=""><img src="https://stevegilliland.com/wp-content/uploads/2020/12/SteveInAction-VideoThumb-2.png" class="video_lightbox_anchor_image" alt="" /></a>    <script>
+    /* <![CDATA[ */
+    jQuery(document).ready(function($){
+        $(function(){
+            var width = $(window).innerWidth();
+            var setwidth = 640;
+            var ratio = 0.75;
+            var height = 480;
+            var link = 'https://www.youtube.com/watch?v=7swtYXiaYVA&width=640&height=480';
+            if(width < setwidth)
+            {
+                height = Math.floor(width * 0.75);
+                //console.log("device width "+width+", set width "+640+", ratio "+0.75+", new height "+ height);
+                var new_url = wpvl_paramReplace('width', link, width);
+                var new_url = wpvl_paramReplace('height', new_url, height);
+                $("a#613909e1d3eb1").attr('href', new_url);
+                //console.log(new_url);
+            }
+        });
+    });
+    /* ]]> */
+    </script>          	
+                        </div>
+             
+                        <div class="col-md-4 col-sm-4 col-xs-4 quotes banner-quotes">
+                          
+					
+
+                        </div>
+
+                          <div class="bottom-mid col-xs-3" style=" float: right;margin-top: 70px;margin-right: 30px;">
+            <a id="613909e1d3f35" rel="wp-video-lightbox" href="https://www.youtube.com/watch?v=PRGPX6kDDjs&#038;width=640&#038;height=480" title=""><img src="https://stevegilliland.com/wp-content/uploads/2020/12/SGSite-Home-VirtualPromo-Warp1.png" class="video_lightbox_anchor_image" alt="" /></a>    <script>
+    /* <![CDATA[ */
+    jQuery(document).ready(function($){
+        $(function(){
+            var width = $(window).innerWidth();
+            var setwidth = 640;
+            var ratio = 0.75;
+            var height = 480;
+            var link = 'https://www.youtube.com/watch?v=PRGPX6kDDjs&width=640&height=480';
+            if(width < setwidth)
+            {
+                height = Math.floor(width * 0.75);
+                //console.log("device width "+width+", set width "+640+", ratio "+0.75+", new height "+ height);
+                var new_url = wpvl_paramReplace('width', link, width);
+                var new_url = wpvl_paramReplace('height', new_url, height);
+                $("a#613909e1d3f35").attr('href', new_url);
+                //console.log(new_url);
+            }
+        });
+    });
+    /* ]]> */
+    </script>                        </div>
+                        
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---End of Banner-->   <a href="https://stevegilliland.com/steves-schedule/" > <div id="scrollingText">
+                          
+       <p> September 2 • Lincoln, NE </p>
+<p> September 9-11 • Las Vegas, NV </p>
+<p> September 13 • Dublin, OH </p>
+<p> September 16 • Dallas, TX </p>
+<p> September 16 • Dallas, TX (Virtual) </p>
+<p> September 17 • Chapel Hill, NC </p>
+<p> September 21 • LaVista, NE </p>
+<p> September 30 • Tulsa, OK </p>
+<p> October 4 • Wilmington, NC </p>
+<p> October 8 • Wrightsville Beach, NC </p>
+<p> October 18 • San Antonio, TX </p>
+<p> October 19 • Denver, CO </p>
+<p> October 19 • Denver, CO (Virtual) </p>
+<p> October 21 • St. Louis, MO </p>
+<p> October 27 • Memphis, TN </p>
+<p> October 28 • Nashville, TN </p>
+	</div>
+</a>
+    
+    <!---End of scrollingText-->
+    
+    <div class="home-mid">
+    	<div class="container">
+        
+            <div class="row">
+            	<div class="col-md-12 col-sm-12 col-xs-12 home-content">
+           
+              <div class="col-md-4 col-sm-12 col-xs-12 right-slider" style="margin-top: 120px;">
+              	<a href="https://www.youtube.com/user/stevegillilandinc" target="_blank"><img src="https://stevegilliland.com/wp-content/uploads/2019/02/SG-YouTubePromo-Web.jpg"></a>
+							 
+						
+                    </div>
+   
+                	
+                    <div class="col-md-8 col-sm-8 col-xs-12 text-mid">
+<h1 style="letter-spacing: 1px;" class="footer-heading">Looking to throw in a bit of clean humor with an inspiring message? </h1>
+<p>Looking for a professional motivational keynote speaker who can add life to your next event? Hire North America’s funniest motivational speaker, Steve Gilliland, and make your event memorable. Steve is an iconic speaker, brilliant comedian and a member of the <a href="https://stevegilliland.com/speaker-hall-of-fame/">Speaker Hall of Fame</a>. He has impacted countless lives with his words of wisdom and is regarded as one of the all-time best in the speaking industry. Steve can be heard regularly on SiriusXM Radio’s Laugh USA and has been seen on numerous media outlets, including ABC, CBS, Fox and NBC, as a contributing expert on the topics of personal development and positive thinking. His books <a href="https://stevegillilandstore.com/books-ETR.html"><i>Enjoy The Ride</i></a> and <a href="https://stevegillilandstore.com/books-MAD.html"><i>Making a Difference</i></a> have gotten him significant recognition around the globe. If you are looking for a master storyteller, inspirational business speaker and someone who adds life to events merely by his presence, hire motivational speaker Steve Gilliland today!</p>
+<h2>Confidence. Determination. Compassion.</h2>
+<p>None of these attributes can truly be achieved without one key ingredient: inspiration. As a top-rated professional speaker, Steve Gilliland has dedicated his life to inspiring people through laughter and motivational presentations, exuding an influence that is bound to move even the most skeptical audience members.</p>
+                    </div>
+                 
+                </div>
+            </div>
+			
+			<div class="row">
+			
+			<div class="col-md-4 col-sm-4 col-xs-4 right-slider" style="margin-top: -75px;">
+
+   
+<a href="https://stevegillilandstore.com/product-category/books" target="_blank"><img src="https://stevegilliland.com/wp-content/uploads/2021/05/SG-HomePromo-B1G1Books-0521-A.jpg" style="width: 100%;"></a>
+
+                    	                    </div>
+                 
+					
+					<div class="col-sm-8 col-xs-8 text-video">
+<h4>THE SPEAKER</h4>
+<p>A member of the Speaker Hall of Fame, Steve Gilliland is one of the most in-demand and top-rated speakers in the world. Recognized as a master storyteller and brilliant comedian, he can be heard daily on SiriusXM Radio’s Laugh USA. With an appeal that transcends barriers of age, culture and occupation—plus an interactive and entertaining style—Steve shows audiences how to open doors to success in their careers, their relationships and their lives....</p>
+<p><a href="https://stevegilliland.com/biography/" class="read-more">Read More</a></p>
+                    </div>
+			</div>
+        </div>
+	<div class="client-top">
+                        	
+                            <p style="text-align: center;"><div id="metaslider-id-134" style="max-width: 700px;" class="ml-slider-3-22-1 metaslider metaslider-flex metaslider-134 ml-slider">
+    <div id="metaslider_container_134">
+        <div id="metaslider_134" class="flexslider">
+            <ul aria-live="polite" class="slides">
+                <li style="display: block; width: 100%;" class="slide-767 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/acnl-193x83.png" height="300" width="700" alt="" class="slider-134 slide-767" /></li>
+                <li style="display: none; width: 100%;" class="slide-768 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/adp-193x83.png" height="300" width="700" alt="" class="slider-134 slide-768" /></li>
+                <li style="display: none; width: 100%;" class="slide-769 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/agcofamerica-193x83.png" height="300" width="700" alt="" class="slider-134 slide-769" /></li>
+                <li style="display: none; width: 100%;" class="slide-770 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/alcoa-193x83.png" height="300" width="700" alt="" class="slider-134 slide-770" /></li>
+                <li style="display: none; width: 100%;" class="slide-771 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/ameren-193x83.png" height="300" width="700" alt="" class="slider-134 slide-771" /></li>
+                <li style="display: none; width: 100%;" class="slide-772 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/att-193x83.png" height="300" width="700" alt="" class="slider-134 slide-772" /></li>
+                <li style="display: none; width: 100%;" class="slide-773 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/bankofamerica-193x83.png" height="300" width="700" alt="" class="slider-134 slide-773" /></li>
+                <li style="display: none; width: 100%;" class="slide-774 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/boeing-193x83.png" height="300" width="700" alt="" class="slider-134 slide-774" /></li>
+                <li style="display: none; width: 100%;" class="slide-775 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/chartercomm-193x83.png" height="300" width="700" alt="" class="slider-134 slide-775" /></li>
+                <li style="display: none; width: 100%;" class="slide-776 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/cocacola-193x83.png" height="300" width="700" alt="" class="slider-134 slide-776" /></li>
+                <li style="display: none; width: 100%;" class="slide-777 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/cpms-193x83.png" height="300" width="700" alt="" class="slider-134 slide-777" /></li>
+                <li style="display: none; width: 100%;" class="slide-778 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/dey-193x83.png" height="300" width="700" alt="" class="slider-134 slide-778" /></li>
+                <li style="display: none; width: 100%;" class="slide-779 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/dukeenergy-193x83.png" height="300" width="700" alt="" class="slider-134 slide-779" /></li>
+                <li style="display: none; width: 100%;" class="slide-780 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/dupont-193x83.png" height="300" width="700" alt="" class="slider-134 slide-780" /></li>
+                <li style="display: none; width: 100%;" class="slide-781 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/ecolab-193x83.png" height="300" width="700" alt="" class="slider-134 slide-781" /></li>
+                <li style="display: none; width: 100%;" class="slide-782 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/epson-193x83.png" height="300" width="700" alt="" class="slider-134 slide-782" /></li>
+                <li style="display: none; width: 100%;" class="slide-783 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/fdic-193x83.png" height="300" width="700" alt="" class="slider-134 slide-783" /></li>
+                <li style="display: none; width: 100%;" class="slide-784 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/ficp-193x83.png" height="300" width="700" alt="" class="slider-134 slide-784" /></li>
+                <li style="display: none; width: 100%;" class="slide-785 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/gianteagle-193x83.png" height="300" width="700" alt="" class="slider-134 slide-785" /></li>
+                <li style="display: none; width: 100%;" class="slide-786 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/gm-193x83.png" height="300" width="700" alt="" class="slider-134 slide-786" /></li>
+                <li style="display: none; width: 100%;" class="slide-787 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/gsk-193x83.png" height="300" width="700" alt="" class="slider-134 slide-787" /></li>
+                <li style="display: none; width: 100%;" class="slide-788 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/habitatforhumanity-193x83.png" height="300" width="700" alt="" class="slider-134 slide-788" /></li>
+                <li style="display: none; width: 100%;" class="slide-789 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/herrs-193x83.png" height="300" width="700" alt="" class="slider-134 slide-789" /></li>
+                <li style="display: none; width: 100%;" class="slide-790 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/hilton-193x83.png" height="300" width="700" alt="" class="slider-134 slide-790" /></li>
+                <li style="display: none; width: 100%;" class="slide-791 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/iafe-193x83.png" height="300" width="700" alt="" class="slider-134 slide-791" /></li>
+                <li style="display: none; width: 100%;" class="slide-792 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/ibm-193x83.png" height="300" width="700" alt="" class="slider-134 slide-792" /></li>
+                <li style="display: none; width: 100%;" class="slide-793 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/johnsoncontrols-193x83.png" height="300" width="700" alt="" class="slider-134 slide-793" /></li>
+                <li style="display: none; width: 100%;" class="slide-794 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/lowes-193x83.png" height="300" width="700" alt="" class="slider-134 slide-794" /></li>
+                <li style="display: none; width: 100%;" class="slide-795 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/marriott-193x83.png" height="300" width="700" alt="" class="slider-134 slide-795" /></li>
+                <li style="display: none; width: 100%;" class="slide-796 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/merck-193x83.png" height="300" width="700" alt="" class="slider-134 slide-796" /></li>
+                <li style="display: none; width: 100%;" class="slide-797 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/mile1auto-193x83.png" height="300" width="700" alt="" class="slider-134 slide-797" /></li>
+                <li style="display: none; width: 100%;" class="slide-798 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/mpi-193x83.png" height="300" width="700" alt="" class="slider-134 slide-798" /></li>
+                <li style="display: none; width: 100%;" class="slide-799 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/nacusac-193x83.png" height="300" width="700" alt="" class="slider-134 slide-799" /></li>
+                <li style="display: none; width: 100%;" class="slide-800 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/naep-193x83.png" height="300" width="700" alt="" class="slider-134 slide-800" /></li>
+                <li style="display: none; width: 100%;" class="slide-801 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/nasep-193x83.png" height="300" width="700" alt="" class="slider-134 slide-801" /></li>
+                <li style="display: none; width: 100%;" class="slide-802 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/nationwide-193x83.png" height="300" width="700" alt="" class="slider-134 slide-802" /></li>
+                <li style="display: none; width: 100%;" class="slide-2335 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2016/09/MEETNational-193x83.png" height="300" width="700" alt="" class="slider-134 slide-2335" /></li>
+                <li style="display: none; width: 100%;" class="slide-803 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/ndlongtermcare-193x83.png" height="300" width="700" alt="" class="slider-134 slide-803" /></li>
+                <li style="display: none; width: 100%;" class="slide-804 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/nigp-193x83.png" height="300" width="700" alt="" class="slider-134 slide-804" /></li>
+                <li style="display: none; width: 100%;" class="slide-805 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/okdot-193x83.png" height="300" width="700" alt="" class="slider-134 slide-805" /></li>
+                <li style="display: none; width: 100%;" class="slide-806 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/portofsubs-193x83.png" height="300" width="700" alt="" class="slider-134 slide-806" /></li>
+                <li style="display: none; width: 100%;" class="slide-807 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/prairiefarms-193x83.png" height="300" width="700" alt="" class="slider-134 slide-807" /></li>
+                <li style="display: none; width: 100%;" class="slide-808 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/prudential-193x83.png" height="300" width="700" alt="" class="slider-134 slide-808" /></li>
+                <li style="display: none; width: 100%;" class="slide-809 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/qualitychekd-193x83.png" height="300" width="700" alt="" class="slider-134 slide-809" /></li>
+                <li style="display: none; width: 100%;" class="slide-810 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/realtor-193x83.png" height="300" width="700" alt="" class="slider-134 slide-810" /></li>
+                <li style="display: none; width: 100%;" class="slide-811 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/remax-193x83.png" height="300" width="700" alt="" class="slider-134 slide-811" /></li>
+                <li style="display: none; width: 100%;" class="slide-812 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/salvationarmy-193x83.png" height="300" width="700" alt="" class="slider-134 slide-812" /></li>
+                <li style="display: none; width: 100%;" class="slide-813 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/shrm-193x83.png" height="300" width="700" alt="" class="slider-134 slide-813" /></li>
+                <li style="display: none; width: 100%;" class="slide-814 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/sonic-193x83.png" height="300" width="700" alt="" class="slider-134 slide-814" /></li>
+                <li style="display: none; width: 100%;" class="slide-815 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/sprint-193x83.png" height="300" width="700" alt="" class="slider-134 slide-815" /></li>
+                <li style="display: none; width: 100%;" class="slide-816 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/texastech-193x83.png" height="300" width="700" alt="" class="slider-134 slide-816" /></li>
+                <li style="display: none; width: 100%;" class="slide-817 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/unilever-193x83.png" height="300" width="700" alt="" class="slider-134 slide-817" /></li>
+                <li style="display: none; width: 100%;" class="slide-818 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/unitedway-193x83.png" height="300" width="700" alt="" class="slider-134 slide-818" /></li>
+                <li style="display: none; width: 100%;" class="slide-819 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/usarmycorps-193x83.png" height="300" width="700" alt="" class="slider-134 slide-819" /></li>
+                <li style="display: none; width: 100%;" class="slide-820 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/UVAcredit-193x83.png" height="300" width="700" alt="" class="slider-134 slide-820" /></li>
+                <li style="display: none; width: 100%;" class="slide-821 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/verizon-193x83.png" height="300" width="700" alt="" class="slider-134 slide-821" /></li>
+                <li style="display: none; width: 100%;" class="slide-822 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/wachovia-193x83.png" height="300" width="700" alt="" class="slider-134 slide-822" /></li>
+                <li style="display: none; width: 100%;" class="slide-823 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/walgreens-193x83.png" height="300" width="700" alt="" class="slider-134 slide-823" /></li>
+                <li style="display: none; width: 100%;" class="slide-824 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/wellsfargo-193x83.png" height="300" width="700" alt="" class="slider-134 slide-824" /></li>
+                <li style="display: none; width: 100%;" class="slide-825 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/whirlpool-193x83.png" height="300" width="700" alt="" class="slider-134 slide-825" /></li>
+                <li style="display: none; width: 100%;" class="slide-826 ms-image"><img src="https://stevegilliland.com/wp-content/uploads/2015/01/wrangler-193x83.png" height="300" width="700" alt="" class="slider-134 slide-826" /></li>
+            </ul>
+        </div>
+        
+    </div>
+</div><a href="https://stevegilliland.com/motivation-bites/"><img loading="lazy" class="alignnone wp-image-5900 size-medium" src="https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-500x357.jpg" alt="" width="500" height="357" srcset="https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-500x357.jpg 500w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-1024x731.jpg 1024w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-768x549.jpg 768w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-823x588.jpg 823w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-910x650.jpg 910w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-200x143.jpg 200w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome-274x196.jpg 274w, https://stevegilliland.com/wp-content/uploads/2021/05/MotivationBites-LogoTag1-SGHome.jpg 1050w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                        </div>
+<div class="line"></div>
+    </div>
+       <!---End of hOME-MID-->
+
+        <footer>
+             
+<div class="row">
+<div class="container">
+<h1 class="footer-heading">North America’s Most Award-Winning Speaker</h1>
+<div class="col-md-12 col-sm-12 col-xs-12 footer-top">
+
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/themes/steve/images/CPAE-BlackText.png"/></div>
+<p>Member, Speaker Hall of Fame</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<p></p><img src="https://stevegilliland.com/wp-content/uploads/2017/08/SHRMlogoCMYK158.png"/></div>
+<p>SHRM's Top-Rated Speaker</p></div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/themes/steve/images/MDRT-logoR.png"/></div>
+<p>Main Platform Closing Keynote Speaker</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/uploads/2019/09/NAIFA-Logo158-e1568721509256.jpg"/></div>
+<p>Annual Conference Closing Keynote Speaker</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/themes/steve/images/BestSellingAuthorButton.png"/></div>
+<p>Named Author of the Year with 6 Best-Selling Books</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/uploads/2018/10/ToastmastersLogo-Web.jpg"/></div><p>Annual Convention Opening Keynote Speaker</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/uploads/2018/10/NSA-Logo-Web.jpg"/></div><p>Member, Million Dollar Speakers Group</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/themes/steve/images/SiriusXMLogo.png"/></div>
+<p>Showcased Daily on Laugh USA and Jeff & Larry's Comedy Roundup</p>
+</div>
+<div class="footer-top-box"><div class="f-img">
+<img src="https://stevegilliland.com/wp-content/uploads/2015/04/eSpeakerTopTenLogo2.png"/></div>
+<p>Named One of the Top 10 Motivational Speakers by eSpeakers</p>
+</div>
+</div>
+<div class="clr"></div>
+</div>
+
+
+<div class="footer-mid">
+<div class="container">
+<div class="col-md-12 col-sm-12 col-xs-12 paddingtopbottom25">
+  <div class="col-md-1"> </div>
+
+<div class="col-md-3 col-sm-12 col-xs-12">
+<a href="">
+<img  src="" alt="" ></a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12 foosubscribediv">
+<span class="subscribe-title">Subscribe to Steve's blog</span>
+                                                        
+		<div class="emaillist" id="es_form_f0-n1">
+						<form action="/#es_form_f0-n1" method="post" class="es_subscription_form es_shortcode_form" id="es_subscription_form_613909e1f3ad2" data-source="ig-es">
+								<div class="es-field-wrap"><label>Email*<br /><input class="es_required_field es_txt_email ig_es_form_field_email" type="email" name="esfpx_email" value="" placeholder="" required="required" /></label></div><input type="hidden" name="esfpx_lists[]" value="033e9cbf72e7" /><input type="hidden" name="esfpx_form_id" value="0" />				<input type="hidden" name="es" value="subscribe" />
+				<input type="hidden" name="esfpx_es_form_identifier" value="f0-n1" />
+				<input type="hidden" name="esfpx_es_email_page" value="5538"/>
+				<input type="hidden" name="esfpx_es_email_page_url" value="https://stevegilliland.com/"/>
+				<input type="hidden" name="esfpx_status" value="Unconfirmed"/>
+				<input type="hidden" name="esfpx_es-subscribe" id="es-subscribe" value="758e8f005d"/>
+				<label style="position:absolute;top:-99999px;left:-99999px;z-index:-99;"><input type="email" name="esfpx_es_hp_email" class="es_required_field" tabindex="-1" autocomplete="-1" value=""/></label>
+								<input type="submit" name="submit" class="es_subscription_form_submit es_submit_button es_textbox_button" id="es_subscription_form_submit_613909e1f3ad2" value="Subscribe"/>
+
+				
+				<span class="es_spinner_image" id="spinner-image"><img src="https://stevegilliland.com/wp-content/plugins/email-subscribers/lite/public/images/spinner.gif" alt=""/></span>
+
+			</form>
+						<span class="es_subscription_message " id="es_subscription_message_613909e1f3ad2">
+						</span>
+		</div>
+
+		
+</div>
+
+<div class="col-md-3 col-sm-12 col-xs-12 ">
+<a href="">
+<img  src="" alt="" ></a>
+</div>
+  <div class="col-md-1"> </div>
+<div class="clr"></div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="hire"><a href="https://stevegilliland.com/hire-steve"><img src="https://stevegilliland.com/wp-content/uploads/2020/02/FooterBox-BookSteve.jpg"></a></div>
+</div>
+</div>
+</div>
+<div class="clr"></div>
+<div class="col-md-12 col-sm-12 col-xs-12 footer-bottom">
+    <div class="col-md-12 col-sm-12 col-xs-12 social-share">
+<ul id="" class="cnss-social-icon " style="text-align:;"><li class="cn-fa-facebook" style="display:inline-block;"><a class="" target="_blank" href="https://www.facebook.com/pages/Steve-Gilliland-CSP-CPAE/637296866368499" title="facebook" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746279_Homepage_18.jpg" border="0" width="32" height="32" alt="facebook" title="facebook" style="margin:2px;" /></a></li><li class="cn-fa-linkedin" style="display:inline-block;"><a class="" target="_blank" href="https://www.linkedin.com/in/steve-gilliland-970326a3" title="linkedin" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746366_in.jpg" border="0" width="32" height="32" alt="linkedin" title="linkedin" style="margin:2px;" /></a></li><li class="cn-fa-twitter" style="display:inline-block;"><a class="" target="_blank" href="https://twitter.com/SteveGSpeaks" title="twitter" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746322_tw.jpg" border="0" width="32" height="32" alt="twitter" title="twitter" style="margin:2px;" /></a></li><li class="cn-fa-instagram" style="display:inline-block;"><a class="" target="_blank" href="https://www.instagram.com/stevegspeaks" title="Instagram" style=""><img src="https://stevegilliland.com/wp-content/uploads/2019/04/InstragramIcon-32x32.png" border="0" width="32" height="32" alt="Instagram" title="Instagram" style="margin:2px;" /></a></li><li class="cn-fa-youtube" style="display:inline-block;"><a class="" target="_blank" href="https://www.youtube.com/user/stevegillilandinc/feed" title="youtube" style=""><img src="https://stevegilliland.com/wp-content/uploads/1414746446_yt.jpg" border="0" width="32" height="32" alt="youtube" title="youtube" style="margin:2px;" /></a></li><li class="cn-fa-blog" style="display:inline-block;"><a class="" target="_blank" href="https://stevegilliland.com/weekly-blog/" title="Blog" style=""><img src="https://stevegilliland.com/wp-content/uploads/2016/02/blog-icon-box-orange-300-1.png" border="0" width="32" height="32" alt="Blog" title="Blog" style="margin:2px;" /></a></li><li class="cn-fa-pinterest" style="display:inline-block;"><a class="" target="_blank" href="https://www.pinterest.com/stevegillilandc/" title="Pinterest" style=""><img src="https://stevegilliland.com/wp-content/uploads/2017/08/pinterest-logo297.png" border="0" width="32" height="32" alt="Pinterest" title="Pinterest" style="margin:2px;" /></a></li><li class="cn-fa-newsletter" style="display:inline-block;"><a class="" target="_blank" href="https://stevegilliland.com/newsletter" title="Newsletter" style=""><img src="https://stevegilliland.com/wp-content/uploads/2020/02/newsletter-icon.jpg" border="0" width="32" height="32" alt="Newsletter" title="Newsletter" style="margin:2px;" /></a></li></ul></div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p>Steve Gilliland, Inc. | P.O. Box 1600, Mocksville, NC 27028</p>
+<p>Phone <a href="tel:866-445-5452">866-445-5452</a> or <a href="tel:724-540-5019">724-540-5019 | Fax 336-936-9073 | <a href="mailto:info@stevegilliland.com">info@stevegilliland.com</a></p>
+<p style="text-align:center;"><a href="/sitemap/">Sitemap</a></p>
+<h3>Copyright 2021 Steve Gilliland. All Rights Reserved.</h3>
+<h4>Branding &amp; Web Design by Pearhouse Productions</h4>
+    </div></div>
+</div>
+     </footer>
+     
+     <!-- Custom Facebook Feed JS -->
+<script type="text/javascript">var cffajaxurl = "https://stevegilliland.com/wp-admin/admin-ajax.php";
+var cfflinkhashtags = "true";
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.12.1' id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/jquery/ui/sortable.min.js?ver=1.12.1' id='jquery-ui-sortable-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/stevegilliland.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4.2' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/responsive-youtube-vimeo-popup/assets/js/wp-video-popup.js?ver=2.9.1' id='wp-video-popup-js'></script>
+<script type='text/javascript' id='wpcf7-redirect-script-js-extra'>
+/* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/stevegilliland.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/wpcf7-redirect/build/js/wpcf7-redirect-frontend-script.js?ver=1.1' id='wpcf7-redirect-script-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/themes/steve/js/functions.js?ver=20140616' id='twentyfourteen-script-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/custom-facebook-feed/assets/js/cff-scripts.js?ver=4.0' id='cffscripts-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/easy-twitter-feed-widget/js/twitter-widgets.js?ver=1.0' id='do-etfw-twitter-widgets-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LdeJ-EUAAAAALMI8F93Uhos6RqnRNMu94d2a5BS&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LdeJ-EUAAAAALMI8F93Uhos6RqnRNMu94d2a5BS","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.4.2' id='wpcf7-recaptcha-js'></script>
+<script type='text/javascript' id='thickbox-js-extra'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/stevegilliland.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105' id='thickbox-js'></script>
+<script type='text/javascript' src='https://stevegilliland.com/wp-includes/js/wp-embed.min.js?ver=43a72dbf4c4095586116d52d61240588' id='wp-embed-js'></script>
+</body>
+</html>

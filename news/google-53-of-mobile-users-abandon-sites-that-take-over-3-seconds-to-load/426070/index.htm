@@ -1,0 +1,3542 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="81e76d91d068b01f23f714c1-text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:false}};(window.NREUM||(NREUM={})).loader_config={xpid:"XQECWFRACQQJV1VRBQ==",licenseKey:"9c8be68c12",applicationID:"1793432"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(25),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(26),a=t(25);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||c(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(22),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(18),m=t(17),w=t(14),v=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;"string"==typeof o?n=o:"object"==typeof o&&o instanceof v?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n);var s=(""+(o&&o instanceof v&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(17);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],19:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(27);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],20:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[l.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),l=t("loader"),p=t(24),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(s)}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],23:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],24:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(25),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(19),s=t("handle"),c=t(25),f=t("ee"),u=t(23),d=t(20),l=t(16),p=l.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,w="addEventListener",v="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},R=g&&y&&y[w]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(15),t(21),m[w]?(m[w]("DOMContentLoaded",o,!1),h[w]("load",r,!1)):(m[v]("onreadystatechange",i),h[v]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(26),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script><script type="81e76d91d068b01f23f714c1-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"9c8be68c12","applicationID":"1793432","transactionName":"ZVJSZRFXWUVWABJbX1wYdkQNVUNfWA1JQVlGUlNeE08ZUlIACUBRRlhCQll1WFhDBghGYldTWUMGVUNyUgAJQFFGWEI=","queueTime":0,"applicationTime":855,"agent":""}</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        
+        
+
+        
+
+        
+        
+        
+        
+            <title>Google: 53% of mobile users abandon sites that take over 3 seconds to load | Marketing Dive</title>
+        
+
+        
+            <meta name="description" content="Marketing news, voices and jobs for industry professionals.  Optimized for your mobile phone."/>
+        
+
+        
+            <meta name="sailthru.tags"
+                  content="marketing,type-newspost,marketing-mobile"/>
+        
+
+        
+
+        
+            <meta property="fb:pages" content="1856676501228243">
+        
+
+        <link rel="preconnect" href="https://use.typekit.net">
+
+        
+            
+            <script type="81e76d91d068b01f23f714c1-text/javascript">
+                window.dive_location = "NonEU";
+                window.dive_limit_data_processing = false;
+                
+                
+            </script>
+        
+
+        
+
+
+
+<!-- ====== FAVICONS ======= -->
+
+    <!-- regular favicons -->
+    <link rel="shortcut icon" type="image/png" href="/static/images/favicons/favicon.ico?102717100918" />
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/static/images/favicons/favicon-16.png?102717100918" />
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/static/images/favicons/favicon-32.png?102717100918" />
+    <link rel="shortcut icon" type="image/png" sizes="96x96" href="/static/images/favicons/favicon-96.png?102717100918" />
+    <!-- apple touch favicon icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/images/favicons/apple-touch-icon-57.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/static/images/favicons/apple-touch-icon-60.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/favicons/apple-touch-icon-72.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/static/images/favicons/apple-touch-icon-76.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/favicons/apple-touch-icon-114.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/favicons/apple-touch-icon-144.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/static/images/favicons/apple-touch-icon-152.png?102717100918">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/static/images/favicons/apple-touch-icon-180.png?102717100918">
+    <!-- ms tile favicon icons -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicons/ms-tile-144.png?102717100918">
+
+
+        <link rel="alternate" type="application/rss+xml" title="Latest News Feed" href="https://www.marketingdive.com/feeds/news/"/>
+        
+            <link rel="canonical" href="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/"/>
+
+            
+            
+
+        
+        
+    
+    <meta name="title" content="Google: 53% of mobile users abandon sites that take over 3 seconds to load" />
+    <meta name="medium" content="news" />
+    <meta name="date" content="2016-09-12" />
+
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="Marketing Dive">
+    
+        <meta name="twitter:site" content="@marketingdive">
+    
+
+    
+    <meta property="og:title" name="og:title" content="Google: 53% of mobile users abandon sites that take over 3 seconds to load" />
+    <meta property="og:site_name" name="og:site_name" content="Marketing Dive" />
+    <meta property="og:type" name="og:type" content="article" />
+    <meta name="article_date_original" content="Monday, September 12, 2016, 05:49 AM" />
+    <meta property="og:url" name="og:url" content="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" />
+    
+        
+        
+        
+        
+        <meta property="og:image" name="og:image" content="https://www.marketingdive.com/user_media/cache/94/e0/94e07d8906635f1a8c1982179107106c.jpg" />
+        
+    
+    
+        <meta property="og:description" name="og:description" content="The average load time for mobile websites on a 3G connection is 19 seconds.
+" />
+    
+
+    
+    
+    <meta name="sailthru.date" content="2016-09-12T05:49:28" />
+    <meta name="sailthru.expire_date" content="2026-08-31T05:49:28" />
+    
+      <meta name="sailthru.author" content="David Kirkpatrick" />
+    
+    
+        
+            
+                <meta name="sailthru.image.full" content="https://www.marketingdive.com/user_media/cache/72/d6/72d6af43ca96489383e9be71eb004a5b.jpg" /> <!-- 770x364 -->
+            
+        
+        
+            
+                <meta name="sailthru.image.thumb" content="https://www.marketingdive.com/user_media/cache/24/e7/24e7519df8ee4cbcba8ba1d3e8df8b8b.jpg" /> <!-- 106x50 -->
+            
+        
+    
+    
+    
+    
+        <meta name="sailthru.description" content="The average load time for mobile websites on a 3G connection is 19 seconds.
+" />
+    
+
+    
+    
+
+
+        
+
+        
+
+        
+        
+
+        <link rel="stylesheet" href="/static/css/dive_app.css?351416070921">
+
+        
+<script data-cfasync="false" src="//d2wy8f7a9ursnm.cloudfront.net/v7/bugsnag.min.js"></script>
+
+<script data-cfasync="false">
+    var bugsnagUserId = '';
+    var bugsnagUserName = '';
+    window.bugsnagClient = Bugsnag.start({
+        apiKey: 'b78c0f8dcaa1b7ff5fb5bdf5f2a110db',
+        releaseStage: 'production',
+        enabledReleaseStages: [ 'qa', 'production' ],
+        collectUserIp: false,
+    
+        onError: function (event) {
+          event.setUser(bugsnagUserId, '', bugsnagUserName)
+        }
+    });
+</script>
+
+
+        
+            <script type="81e76d91d068b01f23f714c1-text/javascript">
+                // Initialize dataLayer empty array for GTM events
+                dataLayer = [];
+            </script>
+            <!-- Google Tag Manager -->
+            <script type="81e76d91d068b01f23f714c1-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K4ZD3N5');</script>
+            <!-- End Google Tag Manager -->
+        
+
+        
+
+
+
+    <script data-cfasync="false">
+      (function(d) {
+        var config = {
+          kitId: 'kgg2svk',
+          scriptTimeout: 6000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+
+<script src="/static/js/jquery_224.min.js?102717100918" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+
+        
+
+<script type="81e76d91d068b01f23f714c1-text/javascript">
+    
+    // waitForTriggerHandler() is library for queuing up javascript to be stored and then executed when a trigger
+    // function is called. You can push() any number of functions which will be stored unless and until trigger()
+    // is called. Once trigger() is called any future functions that you push() in will be executed immediately.
+    // It is safe to call .trigger() multiple times. Any arguments passed to .trigger() will also be passed along
+    // to the associated function
+
+    function waitForTriggerHandler() {
+        var function_queue = [];
+        var trigger_arguments = [];
+        this._triggered = false;
+
+        this.push = function(fn) {
+            if (this._triggered) {
+                // just run it immediately if handler has already been triggered
+                fn.apply(null, trigger_arguments);
+            }
+            else {
+                // otherwise add to the queue to run later
+                function_queue.push(fn);
+            }
+        };
+
+        this.trigger = function() {
+            // any arguments passed to trigger(foo, bar, baz) will also be passed along to functions in the queue
+
+            // first convert any arguments to an array
+            trigger_arguments = Array.prototype.slice.call(arguments);
+            while (function_queue.length){
+                // for each function in the queue, pop it off and then execute it while passing in any
+                // args that may have been passed to trigger().
+                function_queue.pop().apply(null, trigger_arguments);
+                // The "null" above is for the value of "this".
+                // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply#Parameters
+            }
+            this._triggered = true;
+        }
+
+    }
+    
+    // set up waitToLoadAds handler
+    window.waitToLoadAds = new waitForTriggerHandler();
+    // We set up the triggers for this below, they depend on whether we're loading lytics on the page
+</script>
+
+
+
+    <script type="81e76d91d068b01f23f714c1-text/javascript">
+        // This token is here for test_lytics_snippet.py test: lytics-is-enabled
+        
+        window.googletag = window.googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        // initialize callback (source: https://learn.lytics.com/product-docs/lytics-javascript-tag/receiving-data-from-lytics)
+        !function (l, a) { a.liosetup = a.liosetup || {}, a.liosetup.callback = a.liosetup.callback || [], a.liosetup.addEntityLoadedCallback = function (l, o) { if ("function" == typeof a.liosetup.callback) { var i = []; i.push(a.liosetup.callback), a.liosetup.callback = i } a.lio && a.lio.loaded ? l(a.lio.data) : o ? a.liosetup.callback.unshift(l) : a.liosetup.callback.push(l) } }(document, window);
+
+
+        // custom init + lytics default install tag from https://activate.getlytics.com/connect?aid=2751
+        // see https://learn.lytics.com/understanding/product-docs/lytics-javascript-tag/configuration#configuration-options
+        
+            var lyticsCid = '44fda7674f94228540d8fba6786f9770';
+            console.log('You are using the Lytics Prod account');
+        
+
+        var lytics_init_options = {
+            cid: lyticsCid,
+            url: "//c.lytics.io",
+            min: true,
+            loadid: true
+        };
+        window.jstag=function(){function t(t){return function(){return t.apply(this,arguments),this}}function n(){var n=["ready"].concat(c.call(arguments));return t(function(){n.push(c.call(arguments)),this._q.push(n)})}var i={_q:[],_c:{},ts:(new Date).getTime(),ver:"2.0.0"},c=Array.prototype.slice;return i.init=function(t){return i._c=t,t.synchronous||i.loadtagmgr(t),this},i.loadtagmgr=function(t){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=t.url+"/api/tag/"+t.cid+"/lio.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(n,i)},i.ready=n(),i.send=n("send"),i.mock=n("mock"),i.identify=n("identify"),i.pageView=n("pageView"),i.bind=t(function(t){i._q.push([t,c.call(arguments,1)])}),i.block=t(function(){i._c.blockload=!0}),i.unblock=t(function(){i._c.blockload=!1}),i}(),window.jstag.init(lytics_init_options);
+
+        
+        (function(){
+            var sailthru_cookie, sailthru_user_id;
+            function read_cookie(cookieName) {
+              var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
+              var sMatch = (' '+document.cookie).match(re);
+              if (cookieName && sMatch) return unescape(sMatch[1]);
+              return '';
+            }
+            sailthru_cookie = read_cookie('sailthru_hid');
+            if (sailthru_cookie.length > 56) {
+              sailthru_user_id = sailthru_cookie.slice(32,56);
+              jstag.send({ st_profile_id: sailthru_user_id });
+            }
+        })();
+
+        
+        
+        
+        
+        window.liosetup.addEntityLoadedCallback(waitToLoadAds.trigger);  // trigger ads when lytics loads
+        setTimeout(waitToLoadAds.trigger, 1000);  // also trigger lytics if it's taking too long
+
+        
+        
+        waitToLoadAds.push(function (lytics_data) {
+            // lytics_data won't be defined if lytics failed to load correctly. In that case
+            // we don't need to set any segments.
+            if (lytics_data && lytics_data.segments) {
+                googletag.cmd.push(function() {
+                    googletag.pubads().setTargeting("LyticsSegments", lytics_data.segments);
+                });
+            }
+        });
+
+    </script>
+
+
+
+        
+            
+
+<script type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/mailcheck.min.js?192616240919"></script>
+<script type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/dive_mailcheck.js?192616240919"></script>
+
+        
+
+        
+        <script src="/static/js/app.js?592517170320" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+
+        
+            <script type="81e76d91d068b01f23f714c1-text/javascript">
+                var divecounter_settings = {};
+                
+                    divecounter_settings.showSignupAd = true;
+                
+                
+            </script>
+        
+        <script type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/divecounter.js?214618250321"></script>
+
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+        // Special unbounce signup thing for google traffic. Test with ?test_unbounce in the URL
+        // Note: divecounter must already be loaded. Only enabled on pages that would normally have signup ads
+        // Note: showSignupAd is always off if prestitial is enabled!
+        if ((typeof divecounter !== "undefined") && ($(window).width() > 640)) {
+          var test_unbounce = (window.location.href.indexOf("?test_unbounce")>=0);
+          var force_unbounce = (window.location.href.indexOf("signupbounce=1")>=0) ||
+                                (window.location.href.indexOf("utm_campaign=Linked-HR")>=0) ||
+                                (window.location.href.indexOf("utm_source=outbrain")>=0);
+          if (test_unbounce ||
+            force_unbounce ||
+            (document.referrer.match(/^https?:\/\/(www\.google\.|news\.google\.|t\.co|twitter\.com|www\.facebook\.com)/i) &&
+              divecounter.getOption('showSignupAd') && divecounter.canShow(1,1)) ) {
+            // dyanmically load ouibounce.js only on pages where its needed
+            $.getScript("/static/js/ouibounce.min.js?102717100918", function(){
+                // Once ouibounce.js loads, call the script
+                // We're reusing divecounter's modal instead of OuiBounce's modal code (that's why we pass it 'false')
+                var _ouibounce = ouibounce(false, {
+                  aggressive: test_unbounce, // ignore cookie in test mode
+                  cookieName: '_viewedOuiBounce', // underscored cookies should be ignored by Varnish
+                  callback: function() {
+                    divecounter_open_ad('Unbounce');
+                  }
+                });
+            });
+          } // end should show unbounce
+        } // end divecounter defined
+        </script>
+
+        
+            
+
+
+
+    
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+            // Load analytics.js (universal analytics) first
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            // set all the variables that are per-session or per-visit
+            ga(
+                'create',
+                'UA-19684343-10',
+                'auto',
+                {'name': 'orig'},
+                {'siteSpeedSampleRate': 2}
+            );
+
+            
+            
+                ga('orig.require', 'GTM-MPK4S4R');
+            
+
+            // Set the same variables for aggregate data profile
+            ga(
+                'create',
+                'UA-19684343-45',
+                'auto',
+                {'name': 'agg'},
+                {'siteSpeedSampleRate': 2}
+            );
+
+            //GA.js for tracking outbound links
+            function trackOutboundLink(link, category, action, redirect) {
+                try{
+                    ga('orig.send', 'event', category, action);
+                } catch(err) {}
+
+                try{
+                    ga('agg.send', 'event', category, action);
+                } catch(err) {}
+
+                //Timer to prevent redirect before processing data - not necessary if opening tab in new window
+                if(redirect){
+                    setTimeout(function(){
+                        document.location.href = link.href;
+                        }, 100);
+                }
+            }
+            $(document).ready(function() {
+              $(".outboundlink").click(function() {
+                trackOutboundLink(this, 'outboundlink', this.link, this.target != '_blank');
+              });
+            });
+            
+                
+                    ga("orig.set", {
+                        "dimension3": "David Kirkpatrick",
+                        "dimension4": "Sep 12, 2016",
+                        "dimension5": "Mobile",
+                        "dimension6": "",
+                        "dimension7": "20160912",
+                        "dimension8": "Brief",
+                        
+                        
+                        
+                        "dimension11": "False",
+                        
+                    });
+                
+                
+                    ga("agg.set", {
+                        "dimension3": "David Kirkpatrick",
+                        "dimension7": "Sep 12, 2016",
+                        "dimension5": "Mobile",
+                        "dimension6": "",
+                        "dimension4": "20160912",
+                        "dimension8": "Brief",
+                        
+                        
+                        
+                        "dimension11": "False",
+                        
+                    });
+                
+            
+
+            
+            
+                var diveSendPageviewEvent = true;
+            
+
+            
+            if (diveSendPageviewEvent === true) {
+                ga('orig.send', 'pageview');
+                ga('agg.send', 'pageview');
+                console.log('Queued sending of the pageview event to Google Analytics.');
+            }
+            else {
+                console.log('Sending the Google Analytics pageview event is disabled for this page.');
+            }
+
+
+            // Actually track outbound links
+            // Not sure if this is being used?
+            var trackOutboundRegisterLink = function (url) {
+               ga('agg.send', 'event', 'event_register', url, 'Registered for event', {'hitCallback':
+                 function () {
+                     document.location = url;
+                 }
+               });
+            };
+            // Not sure if this is being used?
+            var trackOutboundWebsiteLink = function (url) {
+               // No need to manually change document.location; website opens in new tab
+               ga('agg.send', 'event', 'event_website', url, 'Visited event site');
+            };
+
+        </script>
+    
+
+    
+    
+        <!-- Start Mixpanel -->
+        <script type="81e76d91d068b01f23f714c1-text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        mixpanel.init("08fd38d945f3577b09226c184d101277");</script>
+        <!-- end Mixpanel -->
+
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+            mixpanel.set_config({track_links_timeout: 500, track_pageview: false});
+            var superprops = {
+                'site_name':'Marketing Dive',
+                'limited_data_processing': window.dive_limit_data_processing
+            };
+            
+              superprops.divesite_is_staff = false;
+            
+
+            
+              // read UID from sailthru cookie
+              function read_cookie(cookieName) {
+                var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
+                var sMatch = (' '+document.cookie).match(re);
+                if (cookieName && sMatch) return unescape(sMatch[1]);
+                return '';
+              }
+              var hid = read_cookie('sailthru_hid');
+              if (hid.length > 56) {
+                superprops.sailthru_hid = hid;
+                superprops.sailthru_user_id = hid.slice(32,56);
+              }
+              var divelink_cookie_id = parseInt(read_cookie('_divelink_cookie'));
+              if ( !isNaN(divelink_cookie_id) ) {
+                superprops.divelink_id = divelink_cookie_id;
+              }
+            
+
+            
+            mixpanel.register(superprops);
+            
+        </script>
+    
+
+
+        
+
+        
+
+        
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+            jQuery.browser = {};
+            (function () {
+                jQuery.browser.msie = false;
+                jQuery.browser.version = 0;
+                if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                    jQuery.browser.msie = true;
+                    jQuery.browser.version = RegExp.$1;
+                }
+            })();
+        </script>
+        <!-- for modal signup form -->
+
+        <script type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/jquery.simplemodal.1.4.4.min.js?102717100918"></script>
+
+        
+
+        <style>
+
+            /* dynamic style overrides based on DB go here*/
+            
+        </style>
+
+        
+    
+
+    <meta name="sailthru.title" content="Google: 53% of mobile users abandon sites that take over 3 seconds to load" />
+    <meta name="sailthru.post_type" content="Brief" />
+    
+    <meta name="lytics:topics" content="Mobile" />
+    
+
+    
+        <meta name="news_keywords"
+              content="Mobile,mobile-marketing"/>
+    
+
+    
+
+    
+    <script type="81e76d91d068b01f23f714c1-text/javascript">
+
+        /** Stolen from http://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery **/
+        $(document).ready(function () {
+            //"Tweet this" pullquote sections
+
+            // This is used in the processing of 'tweet this' pull quotes
+            function escapeHtml(string) {
+                var entityMap = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': '&quot;',
+                    "'": '&#39;',
+                    "/": '&#x2F;'
+                };
+                return String(string).replace(/[&<>"'\/]/g, function (s) {
+                    return entityMap[s];
+                });
+            }
+
+            // Process the twitter pullquote sections:
+            // * create the link
+            // * create the text ('tweet this quote') for the link
+            $(".pquote").each(function (index) {
+                var j_words;
+
+                if ($(this).data('twitter-text') != 'undefined') {
+                    j_words = $(this).children('.tweetwords').first();
+                } else {
+                    j_words = $(this).data('twitter-text');
+                }
+
+                var j_replace = $(this).children('.tweetquote').first();
+
+                var clean_text = escapeHtml(j_words.text());
+                var link_attributes = 'href="https://twitter.com/intent/tweet?text=' + clean_text + '%20https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/' + '" class="popup share_mixpanel_event button twitter" data-sharebutton="tweet_quote" data-shareusing="twitter"';
+                var img = '<img src="/static/img/social_icons/twitter-follow-icon.png?102717100918" alt="Share on Twitter" loading="lazy">';
+
+                var link = '<a ' + link_attributes + '>Tweet this quote' + img + '</a>';
+                j_replace.html(link);
+            });
+        });
+
+
+
+        
+        
+    </script>
+    
+
+    
+
+
+
+
+        
+        
+            
+
+
+
+
+    <script type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/prestitial.js?214618250321"></script>
+
+
+
+    <script async src='https://www.googletagservices.com/tag/js/gpt.js' type="81e76d91d068b01f23f714c1-text/javascript"></script>
+
+
+
+    
+    <script src="/static/js/dist/legacy/signupDataGam.legacy.js?291716070921" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+
+
+
+
+
+<script type="81e76d91d068b01f23f714c1-text/javascript">
+    
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+    
+    eventer(messageEvent, function (e) {
+        var key = e.message ? "message" : "data";
+        var data = e[key];
+        var eventName = data.message || 'ignore';
+
+        if (eventName == 'adContentAvailable') {
+            var $ad_element;
+            
+                $ad_element = $('div').filter('[data-container-ad-unit-id="' + data.adUnit + '-' + window.dfp_visibility + '"]');
+            
+            
+            $ad_element.html(data.content);
+            
+            $ad_element.siblings().hide()
+            
+            var nativeAdEditorialSelector = '.sidebar .hybrid-ad-wrapper .native-ad-editorial';
+            var nativeAdEditorialExists = $(nativeAdEditorialSelector).length > 0;
+            if ( nativeAdEditorialExists ) {
+                $(nativeAdEditorialSelector).closest('.hybrid-ad-wrapper').addClass('native-ad-editorial-sidebar-border');
+            }
+            
+                
+                // Inline homepage ad
+                $('.feed-item-ad .hybrid-ad-wrapper a').each(function (index, element) {
+                    window.updateGamAdUrl(element, 'inline');
+                });
+                // Editorial native ad sidebar
+                // NOTE: must go before inline native ad to ensure correct location added
+                $('.sidebar .native-ad.editorial a').each(function (index, element) {
+                    window.updateGamAdUrl(element, 'sidebar');
+                });
+                // Editorial native ad inline
+                $('.native-ad.editorial a').each(function (index, element) {
+                    window.updateGamAdUrl(element, 'inline');
+                });
+                // Sidebar ad
+                $('.sidebar .hybrid-ad-wrapper a').each(function (index, element) {
+                    window.updateGamAdUrl(element, 'sidebar');
+                });
+            
+        }
+
+        
+    }, false);
+
+    
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(function () {
+        var desktopWidth = 1024;
+        
+        if (window.innerWidth >= desktopWidth) {
+            window.dfp_visibility = 'desktop';
+        }
+        else {
+            window.dfp_visibility = 'mobile';
+        }
+
+        
+
+        var dfpDisplayConfiguration = {
+            "prestitialEnabled": true,
+            "leaderboardEnabled": true,
+            "sidebarAdsEnabled": true,
+            "visibility": window.dfp_visibility
+        };
+
+        if (window.dfp_visibility == 'desktop') {
+            
+            if (typeof prestitialAds == 'object' && prestitialAds.pageIsPrestitialEligible()) {
+                googletag.defineSlot('/21662595662/marketingdive/marketingdiveprestitial', [[500, 300], [640, 480]], 'paychekgoeshere').addService(googletag.pubads());
+            }
+            if (dfpDisplayConfiguration.leaderboardEnabled) {
+                googletag.defineSlot('/21662595662/marketingdive/marketingdiveleaderboard', [[970, 180], [728, 90], [970, 90]], 'dfp-leaderboard-desktop').addService(googletag.pubads());
+            }
+
+            if (dfpDisplayConfiguration.sidebarAdsEnabled) {
+                googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid1', [[300, 250], 'fluid', [160, 600]], 'dfp-hybrid1-desktop').addService(googletag.pubads());
+            }
+
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid2', [[300, 250], 'fluid'], 'dfp-hybrid2-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid3', [[300, 250], 'fluid'], 'dfp-hybrid3-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid4', [[300, 250], 'fluid'], 'dfp-hybrid4-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivethankyouhybrid1', ['fluid'], 'dfp-thankyouhybrid1-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivethankyouhybrid2', ['fluid'], 'dfp-thankyouhybrid2-desktop').addService(googletag.pubads());
+
+        }
+        else {
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid1', [[300, 250], 'fluid'], 'dfp-hybrid1-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid2', [[300, 250], 'fluid'], 'dfp-hybrid2-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid3', [[300, 250], 'fluid'], 'dfp-hybrid3-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivehybrid4', [[300, 250], 'fluid'], 'dfp-hybrid4-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivethankyouhybrid1', ['fluid'], 'dfp-thankyouhybrid1-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/marketingdive/marketingdivethankyouhybrid2', ['fluid'], 'dfp-thankyouhybrid2-mobile').addService(googletag.pubads());
+        }
+
+        
+
+        
+        
+            googletag.pubads().setTargeting("topics", ["Mobile","mobile-marketing"]);
+        
+        
+
+        if ((typeof divecounter !== "undefined") && (divecounter.getData().is_subscriber)) {
+            googletag.pubads().setTargeting("is_subscriber", "yes");
+        }
+
+        
+        
+            googletag.pubads().setTargeting("articleID", "426070");
+            googletag.pubads().setTargeting("slug", "google 53 of mobile users abandon sites that take over 3 seconds to load");
+        
+
+        
+        
+
+        // Make sure we check that we have the things present in localStorage that we want to check before we add targeting on them.
+        // This is what sets targeting on trendline native ad units to make sure we only get ads associated with the
+        // content gate that a user filled out if they visited the page previously.
+        
+        
+        var isTopicPage = window.location.pathname.indexOf('/topic/') !== -1;
+        if(isTopicPage) {
+            googletag.pubads().setTargeting('is_topics_page', 'true');
+        }
+
+        googletag.pubads().setCentering(true);
+        googletag.pubads().collapseEmptyDivs(false); // Whether to collapse the slots even before the ads are fetched.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+        
+    </head>
+
+
+    <body class="
+    flush-top
+    
+    article-page news  topic-
+    mobile-marketing 
+    
+    
+    
+">
+
+    
+        
+
+        
+            <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4ZD3N5" height="0" width="0" style="display:none;visibility:hidden">
+                </iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        
+
+        
+            
+
+
+    
+        <style>
+            /* initial white overlay so google ads doesn't get mad */
+            .prestitial-init {
+                width: 100% !important;
+                height: 100% !important;
+                z-index: 600;
+                top: 0;
+                left: 0;
+                position: fixed;
+                background-color: #ffffff;
+            }
+
+            /* overlay that blocks out the content behind the prestitial */
+            .content-overlay {
+              width: 100% !important;
+              height: 100% !important;
+              z-index: 500;
+              top: 0;
+              left: 0;
+              position: fixed;
+              background-color: #434649;
+            }
+
+            .prestitial .paychek-page-wrapper .paychek-button {
+                color: #fff;
+                cursor: pointer;
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            
+            .prestitial .paychek-page-wrapper .paychek {
+                text-align: center;
+            }
+
+            
+            .prestitial .paychek-page-wrapper .paychek .clickarea {
+                margin: 0 auto;
+            }
+
+            
+            .prestitial .paychek-page-wrapper {
+                margin-top: 1rem;
+            }
+
+            @media screen and (min-width: 64em) {
+                
+                .prestitial .paychek-page-wrapper {
+                    margin-top: 0;
+                    position: relative;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                .prestitial .paychek-page-wrapper .paychek, .prestitial .paychek-page-wrapper .paychek-button {
+                    text-align: left;
+                    height: 480px;
+                }
+
+                .prestitial .paychek-page-wrapper .paychek-button div, .prestitial .paychek #paychekgoeshere {
+                    position: relative;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                .prestitial .paychek-page-wrapper .paychek .clickarea {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (min-width: 72em) {
+                .prestitial .paychek-page-wrapper {
+                    font-size: 34px;
+                }
+            }
+        </style>
+
+        
+        <div id="prestitial-init" style="display: none;" class="prestitial-init"></div>
+        <div id="prestitial-outer" class="prestitial content-overlay" style="display:none;">
+            <section class="site-menu">
+                <div class="site-menu-inner">
+                    <img src="https://d12v9rtnomnebu.cloudfront.net/logo/publications/marketing_white.svg" class="pub-logo">
+                </div>
+            </section>
+            <section class="paychek-page-wrapper row">
+                <div class="paychek-button large-4 large-push-8 columns">
+                    <div>
+                        CONTINUE TO SITE ➞
+                    </div>
+                </div>
+                <div class="paychek large-8 large-pull-4 columns">
+                    
+                    <div id="paychekgoeshere"></div>
+                    <script type="81e76d91d068b01f23f714c1-text/javascript">
+                        
+                        if (typeof prestitialAds !== 'undefined' && prestitialAds.pageIsPrestitialEligible()) {
+
+                          
+                          prestitialAds.setPrestitialPossibleCookie();
+                          var prestitial_ad_is_loaded = false;
+                          var prestitial_ad_is_empty = false;
+
+                          googletag.cmd.push(function () {
+                            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                              
+                              if (event.slot.getAdUnitPath() == '/21662595662/marketingdive/marketingdiveprestitial') {
+                                if (event.isEmpty || prestitialAds.testingNoAd()) {
+                                  prestitial_ad_is_empty = true;
+                                }
+                                else {
+                                  
+                                  prestitialAds.initialize(7);
+                                  prestitial_ad_is_loaded = true;
+                                  $.modal.close();
+                                  $('div#prestitial-init').hide(); // hide the all white overlay
+                                  prestitialAds.setCookie(
+                                    "_prestitialViewed",
+                                    (new Date()).getTime(),
+                                    prestitialAds.daysBetweenPrestitial
+                                  );
+                                }
+                              }
+                            });
+                          });
+
+                          
+                          if (prestitialAds.testingNoAd()) {
+                            
+                          } else {
+                            
+                            
+                            
+                            waitToLoadAds.push(function() {
+                              
+                              googletag.cmd.push(function () {
+                                
+                                googletag.display('paychekgoeshere');
+                              });
+                            });
+                          }
+
+                          
+                          setTimeout(
+                            function () {
+                              if (!prestitial_ad_is_loaded && !prestitialAds.overrideTimeout()) {
+                                
+                                if (!prestitial_ad_is_empty) {
+                                  
+                                  // if the prestitial is already hidden, then don't hide it again.
+                                  if (!prestitialAds.prestitialAdIsClosed()) {
+                                    prestitialAds.closePrestitial();
+                                    prestitialAds.logClosePrestitialAdBy('failed');
+                                  }
+                                }
+                              } else if (!prestitialAds.overrideTimeout()) {
+                                
+                                setTimeout(
+                                  function () {
+                                    // if the prestitial is already hidden, then don't hide it again.
+                                    if (!prestitialAds.prestitialAdIsClosed()) {
+                                      prestitialAds.closePrestitial();
+                                      prestitialAds.logClosePrestitialAdBy('timeout');
+                                    }
+                                  },
+                                  prestitialAds.timeoutSeconds()
+                                );
+                              } else {
+                                
+                              }
+
+                            },
+                            
+                            2900
+                          );
+                        }
+                    </script>
+                </div>
+            </section>
+        </div>
+    
+
+
+        
+
+        
+        
+
+        <!--'Update your browser' message if IE < 11 -->
+        <!--[if lt IE 11]>
+        <div class="site-alert site-alert--loud">
+            <div class="row">
+                <div class="columns">
+                    <div class="site-alert__message site-alert__message--inverse">
+                        Industry Dive is supported on Chrome, Safari, Firefox and Internet Explorer 11+. If you have trouble viewing our site, please upgrade your browser</a>.
+                        <div class="site-alert__close">
+                            <img src="/static/img/close-white.svg?353714160519" alt="close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <![endif]-->
+
+        
+            
+        
+
+        <!-- leaderboard -->
+        
+            
+            
+                
+<div class="hide-small show-large">
+
+    <div data-container-ad-unit-id="/21662595662/marketingdive/marketingdiveleaderboard-desktop"></div>
+    
+    <div id='dfp-leaderboard-desktop' style="min-height: 90px">
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+        waitToLoadAds.push(function() {
+	        googletag.cmd.push(function() {
+	            if (window.dfp_visibility == 'desktop') { googletag.display('dfp-leaderboard-desktop'); }
+	        })
+	    });
+        </script>
+    </div>
+</div>
+
+            
+        
+
+    
+        <div class="page-container">
+            
+            
+            <header role="banner">
+                <nav id="top" class="site-menu">
+                    <div class="site-menu-inner">
+                        <!-- logo -->
+                        <div class="pub-logo-wrapper">
+                            <a href="/" class="analytics t-dash-navigation">
+                                <img class="pub-logo" src="https://d12v9rtnomnebu.cloudfront.net/logo/publications/marketing_white.svg" alt="Marketing Dive" height="28">
+                            </a>
+                        </div>
+                        <!-- desktop menu, not visible on mobile/tablet -->
+                        <div class="menu-content-wrapper">
+                            <ul class="desktop-menu-main">
+                                
+                                  <li>
+                                      <a href="/deep-dive/" class="analytics t-deepdive-navigation">Deep Dive</a>
+                                  </li>
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <li>
+                                        <a href="/library/" class="analytics t-library-navigation">Library</a>
+                                    </li>
+                                
+                                
+                                    <li>
+                                        <a href="/events/" class="analytics t-events-navigation">Events</a>
+                                    </li>
+                                
+                                
+                                <li class="topics top-nav-dropdown-item">
+                                    <a>
+                                        Topics
+                                        <span class="dropdown-toggle-arrow"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- mobile menu toggle icon, not visible on desktop -->
+                            <button class="mobile-menu-toggle">
+                                Menu
+                                <img src="/static/img/menu_icons/menu.svg?102717100918" alt="menu" loading="lazy">
+                            </button>
+                            <!-- newsletter and search, only shown on desktop -->
+                            <ul class="desktop-menu-sub list-no-bullets">
+                                
+                                <li>
+                                    <a href="/signup/?signup_location=header&amp;signup_path=/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" class="analytics t-signup-navigation">
+                                        <img src="/static/img/email_icons/email-icon-white.png?102717100918" width="16" height="11" loading="lazy">
+                                        
+                                            Sign Up
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="javascript:void(0)" class="search-toggle">
+                                        <img src="/static/img/menu_icons/search-glass-white.png?102717100918" width="16" height="16" loading="lazy">
+                                        
+                                            <span class="sub-link">Search</span>
+                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="menu-search js-search-hide">
+                <div class="menu-search-inner-wrapper row"> 
+                    <form action="/search/" method="GET" data-ajax="false">
+                        <label for="search">
+                            <span class="screen-reader-text search">Search</span>
+                        </label>
+                        <input id="search" type="search" name="q" placeholder="search" data-role="none">
+                        <button type="submit" value="" data-role="none">
+                            <img src="/static/img/components/forms/input-search.svg?353714160519" alt="search" height="18" width="18" loading="lazy">
+                        </button>
+                        <span class="close">x</span>
+                    </form>
+                </div>
+            </div>
+            <nav class="topics menu-bar">
+                <ul class="list-no-bullets">
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-brand-strategy" href="/topic/brand-strategy/">Brand Strategy</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-mobile-marketing" href="/topic/mobile-marketing/">Mobile</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-creative" href="/topic/creative/">Creative</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-Social-media-marketing" href="/topic/Social-media-marketing/">Social Media</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-Video-marketing" href="/topic/Video-marketing/">Video</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-agencies" href="/topic/agencies/">Agencies</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-analytics" href="/topic/analytics/">Data/Analytics</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-influencer-marketing" href="/topic/influencer-marketing/">Influencer Marketing</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-marketing-tech" href="/topic/marketing-tech/">Ad Tech</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class=" analytics t-topic-navigation-cmo-corner" href="/topic/cmo-corner/">CMO Corner</a>
+                            </li>
+                        
+                    
+                </ul>
+            </nav>
+            
+            
+
+            
+            <div class="page-wrapper">
+
+                
+                <div class="search-overlay"></div>
+
+                <div class="page-inner-wrapper">
+
+                
+                
+                
+
+                
+
+                    <div class="row">
+                        <div class="medium-10 medium-centered large-12">
+                            <section id="main-content" class="main-content large-8 columns">
+                                
+                                
+
+                                
+                                    
+
+
+
+
+
+                                
+
+                                
+                                    
+                                    
+                                
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+            <link rel="preload" as="image" href="/user_media/cache/94/e0/94e07d8906635f1a8c1982179107106c.jpg">
+        
+    
+
+
+<article class="brief">
+    <div class="first-page-pdf">
+        <!-- logo for print -->
+        <div class="printed-branding">
+            <span class="promoted-branded-copy">An article from</span>
+            <img src="https://d12v9rtnomnebu.cloudfront.net/logo/printer_friendly/marketingdive.jpg" alt="site logo">
+        </div>
+        
+        <div class="article-title-wrapper">
+            
+
+
+
+
+    
+    
+    
+        
+        <span class="post-label post-label--loud">Brief</span>
+    
+
+
+            <h1 class="display-heading-04">
+                Google: 53% of mobile users abandon sites that take over 3 seconds to load
+                
+            </h1>
+            
+        </div>
+        
+
+            
+            <div class="byline">
+                <div class="article-byline">
+                    
+                    
+                        
+                        
+<div class="date date-bottom-border">
+    
+    <div class="published-info">
+        Published Sept. 12, 2016
+    </div>
+</div>
+
+                        <div class="byline-row ">
+                            
+
+
+
+
+
+
+    
+    <div class="author ">
+        
+        
+             
+             
+                 <span class="byline-show-large-inline by-single-author">By</span>
+             
+            
+                <div class="author-row ">
+                    
+                    
+                        
+                        
+                    
+                    
+                    
+                    
+                    <div class="author-name ">
+                        
+                        
+                        
+                            David Kirkpatrick
+                        
+                        
+                        
+                            <span class="author-title">Contributing Editor</span>
+                        
+                        
+                        
+                    </div>
+                </div>
+            
+        
+    </div>
+
+
+                            
+
+
+<div class="social-share">
+    <ul class="rrssb-buttons clearfix">
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/&amp;title=Google%3A%2053%25%20of%20mobile%20users%20abandon%20sites%20that%20take%20over%203%20seconds%20to%20load" class="popup share_mixpanel_event button analytics t-article-byline-social-linkedin" data-sharebutton="rrssb_share" data-shareusing="linkedin">
+                <span class="rrssb-icon">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 15.1969V21H19.5714V15.5851C19.5714 14.2248 19.0742 13.2973 17.8347 13.2973C16.8866 13.2973 16.3235 13.9225 16.0742 14.5353C15.9832 14.7517 15.9608 15.0526 15.9608 15.3556V21H12.5294C12.5294 21 12.5763 11.8285 12.5294 10.8805H15.9608V12.3142C15.9538 12.3259 15.9447 12.3369 15.9377 12.3486H15.9601L15.9608 12.3142C16.416 11.6259 17.229 10.6414 19.0511 10.6414C21.3074 10.6414 23 12.0875 23 15.1969ZM8.94118 6C7.76751 6 7 6.75089 7 7.74498C7 8.72053 7.7465 9.4886 8.90266 9.49409H8.92507C10.1225 9.49409 10.8648 8.71641 10.8648 7.74498C10.8375 6.75089 10.112 6 8.93838 6H8.94118ZM7.20448 21H10.6331V10.8805H7.20378L7.20448 21Z" fill="#76797C"/>
+                    </svg>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" class="popup share_mixpanel_event button analytics t-article-byline-social-facebook" data-sharebutton="rrssb_share" data-shareusing="facebook">
+                <span class="rrssb-icon">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.2 6.5H8.3C7.857 6.5 7 7.3575 7 7.8V19.7C7 20.142 7.8575 21 8.3 21H14.4965V15.494H12.4985V13.504H14.497V11.973C14.497 10.1 15.9145 8.988 17.5855 8.988C18.3855 8.988 18.8075 9.0745 19.008 9.101V10.997H17.59C16.6815 10.997 16.512 11.447 16.512 12.081V13.5045H19.0345L18.7045 15.4935H16.5115V21H20.2C20.642 21 21.5 20.142 21.5 19.7V7.8C21.5 7.3575 20.642 6.5 20.2 6.5Z" fill="#76797C"/>
+                    </svg>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Google%3A%2053%25%20of%20mobile%20users%20abandon%20sites%20that%20take%20over%203%20seconds%20to%20load%20https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/%20via%20@marketingdive" class="popup share_mixpanel_event button analytics t-article-byline-social-twitter" data-sharebutton="rrssb_share" data-shareusing="twitter">
+                <span class="rrssb-icon">
+                    <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2578 10.1038C22.5648 15.9714 18.0738 20.9776 12.2241 21.2863C10.0307 21.4012 7.85581 20.8298 6 19.6509C7.89814 19.7778 9.7759 19.1942 11.2736 18.0156C10.5601 17.9304 9.88516 17.6441 9.32697 17.1901C8.76877 16.736 8.35011 16.1326 8.11942 15.4497C8.68282 15.5414 9.25746 15.504 9.80541 15.3412C8.95867 15.1816 8.19099 14.7384 7.62795 14.084C7.06492 13.4297 6.73988 12.603 6.70601 11.7392C7.18978 11.9335 7.7081 12.0264 8.22901 12.012C7.50378 11.4492 7.00543 10.6426 6.82564 9.7406C6.64584 8.83855 6.79669 7.90169 7.25044 7.10235C8.18342 8.25873 9.34779 9.20585 10.6683 9.88252C11.9889 10.5592 13.4362 10.9504 14.9168 11.0307C14.7762 10.5719 14.7271 10.0897 14.7722 9.61183C14.8174 9.13392 14.956 8.66962 15.18 8.24545C15.404 7.82129 15.7091 7.44555 16.0778 7.13972C16.4466 6.83388 16.8718 6.60393 17.3291 6.46301C18.0223 6.24844 18.7636 6.24668 19.4578 6.45794C20.1521 6.66921 20.7675 7.08385 21.2251 7.64865C22.0586 7.49815 22.8539 7.18256 23.5645 6.72029C23.2935 7.60574 22.6885 8.34991 21.8785 8.7941C22.615 8.71959 23.3329 8.51683 24 8.19494C23.6789 9.02858 23.0569 9.71049 22.2578 10.1052V10.1038Z" fill="#76797C"/>
+                    </svg>
+                </span>
+            </a>
+        </li>
+        <li>
+        <a href="/cdn-cgi/l/email-protection#d9e68aacbbb3bcbaade49eb6b6beb5bcfcea98fcebe9eceafcebecfcebe9b6bffcebe9b4b6bbb0b5bcfcebe9acaabcabaafcebe9b8bbb8b7bdb6b7fcebe9aab0adbcaafcebe9adb1b8adfcebe9adb8b2bcfcebe9b6afbcabfcebe9eafcebe9aabcbab6b7bdaafcebe9adb6fcebe9b5b6b8bdffb8b4a9e29bb6bda0e4b1adada9aafcea98f6f6aeaeaef7b4b8abb2bcadb0b7bebdb0afbcf7bab6b4f6b7bcaeaaf6beb6b6beb5bcf4eceaf4b6bff4b4b6bbb0b5bcf4acaabcabaaf4b8bbb8b7bdb6b7f4aab0adbcaaf4adb1b8adf4adb8b2bcf4b6afbcabf4eaf4aabcbab6b7bdaaf4adb6f4b5b6b8bdf6edebefe9eee9f6" class="share_mixpanel_event button analytics t-article-byline-social-email" data-sharebutton="rrssb_share" data-shareusing="email">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.4 8H8.6C7.72 8 7.008 8.675 7.008 9.5L7 18.5C7 19.325 7.72 20 8.6 20H21.4C22.28 20 23 19.325 23 18.5V9.5C23 8.675 22.28 8 21.4 8ZM21.4 11L15 14.75L8.6 11V9.5L15 13.25L21.4 9.5V11Z" fill="#76797C"/>
+                </svg>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:window.print()" class="share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="print">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.6944 10.8286H9.41667C8.07944 10.8286 7 11.908 7 13.2452V18.0786H10.2222V21.3008H19.8889V18.0786H23.1111V13.2452C23.1111 11.908 22.0317 10.8286 20.6944 10.8286ZM18.2778 19.6897H11.8333V15.6619H18.2778V19.6897ZM20.6944 14.0508C20.2514 14.0508 19.8889 13.6883 19.8889 13.2452C19.8889 12.8022 20.2514 12.4397 20.6944 12.4397C21.1375 12.4397 21.5 12.8022 21.5 13.2452C21.5 13.6883 21.1375 14.0508 20.6944 14.0508ZM19.8889 6.80078H10.2222V10.023H19.8889V6.80078Z" fill="#76797C"/>
+                </svg>
+            </span>
+        </a>
+    </li>
+    </ul>
+</div>
+
+                        </div>
+                    
+                </div>
+            </div>
+
+        
+        
+            
+                
+                
+                    
+                        <figure class="inside_story">
+                            <div class="figure_content article-hero-img">
+                                <img itemprop="image" alt="" src="/user_media/cache/94/e0/94e07d8906635f1a8c1982179107106c.jpg" width="770" height="364">
+                                
+                                    
+                                        <figcaption class="inside_story_caption">
+                                            <div class="source_text">
+                                                <a href="https://pixabay.com/en/iphone-smartphone-mobile-phone-1283665/" target="_blank">Pixabay user Pexels</a>
+                                            </div>
+                                        </figcaption>
+                                    
+                                
+                            </div>
+                        </figure>
+                
+            
+        
+    </div>
+        <div class="row">
+            
+            <div class="article-large-12 columns article-wrapper">
+                <div class="print-wrapper"> 
+                
+
+                    
+
+                    
+                    
+
+                    
+
+                    <div class=" large medium article-body">
+                        
+
+<h3>Dive Brief:</h3>
+<ul>
+<li>New <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/" target="_blank">research by Google</a> has found that 53% of mobile website visitors will leave if a webpage doesn’t load within three seconds. </li>
+<li>The average load time for sites is 19 seconds on a 3G connection and 14 seconds on a 4G connection.</li>
+<li>The report, ​“The Need for Mobile Speed," found that mobile sites that loaded within five seconds performed much better than those that took 19 seconds to load: Sites that loaded within 5 seconds boast 25% higher ad viewability, 70% longer average sessions, and a 35% lower bounce rate.</li>
+</ul>
+
+<div class="hybrid-ad-wrapper show-small hide-large">
+<div class="hybrid-ad-inner-wrapper">
+<div class="show-small hide-large">
+<div data-container-ad-unit-id="/21662595662/marketingdive/marketingdivehybrid1-mobile"></div>
+<div id="dfp-hybrid1-mobile">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="81e76d91d068b01f23f714c1-text/javascript">
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'mobile' ) { googletag.display('dfp-hybrid1-mobile'); }
+                        });
+                    });
+                </script>
+</div>
+</div>
+</div>
+</div>
+<div class="hybrid-ad-wrapper hide-small show-large">
+<div class="hybrid-ad-inner-wrapper">
+<div class="hide-small show-large">
+<div data-container-ad-unit-id="/21662595662/marketingdive/marketingdivehybrid2-desktop"></div>
+<div id="dfp-hybrid2-desktop">
+<script type="81e76d91d068b01f23f714c1-text/javascript">
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid2-desktop'); }
+                        });
+                    });
+                </script>
+</div>
+</div>
+</div>
+</div>
+<h3>Dive Insight:</h3>
+<p>The latest research from Google underscores the importance of having a mobile-friendly website. As consumers continue to spend more time on mobile devices, mobile page load speeds are critical to a good user experience. Over 50% of mobile users abandoning sites that take longer than three seconds to load, but most web pages take a lot longer to load, creating a significant gap between consumers' expectations and most businesses' mobile capabilities. </p>
+<p><span>Part of the problem lies with ads on mobile. Mobile ads take an average of five seconds to load — about double the time it takes for desktop ads, <a href="https://www.marketingdive.com/news/research-mobile-ads-take-twice-as-long-to-load-as-desktop-ads/421852/" target="_blank">according to research</a> by the Media Ratings Council. </span>Research from Adobe also found that <a href="https://www.marketingdive.com/news/study-80-of-marketers-dont-have-mobile-strategy-for-next-12-months/423602/">80% of marketers don’t have a mobile strategy in place</a> for the next year — a serious point of concern considering that mobile devices now make up 57% of all time spent on digital media, <a href="https://www.marketingdive.com/news/comscore-smartphone-apps-make-up-50-of-time-spent-on-digital-devices/425742/" target="_blank">according to comScore</a>.</p>
+<p>"Mobile is critical — Google has finally noted that more than half of searches are conducted on mobile, and this will only go up as computing becomes even more ubiquitous," Noah Jessop, head of data for Liquid PCH, told Marketing Dive earlier this year. "The shift to mobile is only going to increase — and unprepared marketers will be left trying to catch up."</p>
+<p>Google has been attacking the problem of slow-loading mobile sites through its AMP initiative. <a href="https://www.marketingdive.com/news/get-ready-google-accelerated-mobile-pages-launches-this-week/414247/" target="_blank">Officially launched earlier this year</a><span>, the project aims to cut mobile page load times to less than a second. While initially focused on publishers, the effort has expanded to include <a href="https://www.marketingdive.com/news/google-brings-accelerated-mobile-pages-to-e-commerce-with-ebay-partnership/421936/" target="_blank">e-commerce</a> and <a href="https://www.marketingdive.com/news/google-introduces-amp-for-ad-landing-pages/424447/" target="_blank">ad landing pages</a>. </span></p>
+
+                    </div>
+
+                    
+                        
+                    
+
+                    
+                    
+                        <div class="reading-list">
+                            
+
+                            
+                                <h3>Recommended Reading:</h3>
+                            
+                            <ul class="list-no-bullets">
+                                
+                                    <li>
+                                        <span class="label label--soft">
+                                            <img src="https://www.google.com/s2/favicons?domain=http://www.mediapost.com/publications/article/284398/many-visitors-abandon-mobile-sites-if-load-time-to.html" width="16" height="16" loading="lazy">
+                                            
+                                                <span>Media Post</span>
+                                            
+                                        </span>
+                                        <a href="http://www.mediapost.com/publications/article/284398/many-visitors-abandon-mobile-sites-if-load-time-to.html" class="analytics t-article-end-recommended">
+                                        Many Visitors Abandon Mobile Sites If Load Time Tops 3 Seconds<img src="/static/img/offsite_black.png?102717100918" class="off-site-link" alt="offsite link" width="12" height="12"></a>
+                                    </li>
+                                
+                                    <li>
+                                        <span class="label label--soft">
+                                            <img src="https://www.google.com/s2/favicons?domain=http://www.marketingdive.com/news/facebook-will-pre-load-mobile-content-warns-advertisers-to-optimize-their/425655/" width="16" height="16" loading="lazy">
+                                            
+                                                <span>Marketing Dive</span>
+                                            
+                                        </span>
+                                        <a href="https://www.marketingdive.com/news/facebook-will-pre-load-mobile-content-warns-advertisers-to-optimize-their/425655/" class="analytics t-article-end-recommended">
+                                        Facebook will pre-load mobile content, warns advertisers to optimize their sites<img src="/static/img/offsite_black.png?102717100918" class="off-site-link" alt="offsite link" width="12" height="12"></a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    <div class="post-article-wrapper">
+                        
+                        <div class="share-buttons">
+                            <ul class="rrssb-buttons clearfix">
+    <li class="rrssb-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/&amp;title=Google%3A%2053%25%20of%20mobile%20users%20abandon%20sites%20that%20take%20over%203%20seconds%20to%20load" class="popup share_mixpanel_event button analytics t-article-end-social-linkedin" data-sharebutton="rrssb_share" data-shareusing="linkedin">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23 15.1969V21H19.5714V15.5851C19.5714 14.2248 19.0742 13.2973 17.8347 13.2973C16.8866 13.2973 16.3235 13.9225 16.0742 14.5353C15.9832 14.7517 15.9608 15.0526 15.9608 15.3556V21H12.5294C12.5294 21 12.5763 11.8285 12.5294 10.8805H15.9608V12.3142C15.9538 12.3259 15.9447 12.3369 15.9377 12.3486H15.9601L15.9608 12.3142C16.416 11.6259 17.229 10.6414 19.0511 10.6414C21.3074 10.6414 23 12.0875 23 15.1969ZM8.94118 6C7.76751 6 7 6.75089 7 7.74498C7 8.72053 7.7465 9.4886 8.90266 9.49409H8.92507C10.1225 9.49409 10.8648 8.71641 10.8648 7.74498C10.8375 6.75089 10.112 6 8.93838 6H8.94118ZM7.20448 21H10.6331V10.8805H7.20378L7.20448 21Z" fill="#76797C"/>
+                </svg>
+            </span>
+            <span class="rrssb-text">post</span>
+        </a>
+    </li>
+    <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" class="popup share_mixpanel_event button analytics t-article-end-social-facebook" data-sharebutton="rrssb_share" data-shareusing="facebook">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.2 6.5H8.3C7.857 6.5 7 7.3575 7 7.8V19.7C7 20.142 7.8575 21 8.3 21H14.4965V15.494H12.4985V13.504H14.497V11.973C14.497 10.1 15.9145 8.988 17.5855 8.988C18.3855 8.988 18.8075 9.0745 19.008 9.101V10.997H17.59C16.6815 10.997 16.512 11.447 16.512 12.081V13.5045H19.0345L18.7045 15.4935H16.5115V21H20.2C20.642 21 21.5 20.142 21.5 19.7V7.8C21.5 7.3575 20.642 6.5 20.2 6.5Z" fill="#76797C"/>
+                </svg>
+            </span>
+          <span class="rrssb-text">share</span>
+        </a>
+    </li>
+    <li class="rrssb-twitter">
+        <a href="https://twitter.com/intent/tweet?text=Google%3A%2053%25%20of%20mobile%20users%20abandon%20sites%20that%20take%20over%203%20seconds%20to%20load%20https%3A//www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/%20via%20@marketingdive" class="popup share_mixpanel_event button analytics t-article-end-social-twitter" data-sharebutton="rrssb_share" data-shareusing="twitter">
+            <span class="rrssb-icon">
+                <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.2578 10.1038C22.5648 15.9714 18.0738 20.9776 12.2241 21.2863C10.0307 21.4012 7.85581 20.8298 6 19.6509C7.89814 19.7778 9.7759 19.1942 11.2736 18.0156C10.5601 17.9304 9.88516 17.6441 9.32697 17.1901C8.76877 16.736 8.35011 16.1326 8.11942 15.4497C8.68282 15.5414 9.25746 15.504 9.80541 15.3412C8.95867 15.1816 8.19099 14.7384 7.62795 14.084C7.06492 13.4297 6.73988 12.603 6.70601 11.7392C7.18978 11.9335 7.7081 12.0264 8.22901 12.012C7.50378 11.4492 7.00543 10.6426 6.82564 9.7406C6.64584 8.83855 6.79669 7.90169 7.25044 7.10235C8.18342 8.25873 9.34779 9.20585 10.6683 9.88252C11.9889 10.5592 13.4362 10.9504 14.9168 11.0307C14.7762 10.5719 14.7271 10.0897 14.7722 9.61183C14.8174 9.13392 14.956 8.66962 15.18 8.24545C15.404 7.82129 15.7091 7.44555 16.0778 7.13972C16.4466 6.83388 16.8718 6.60393 17.3291 6.46301C18.0223 6.24844 18.7636 6.24668 19.4578 6.45794C20.1521 6.66921 20.7675 7.08385 21.2251 7.64865C22.0586 7.49815 22.8539 7.18256 23.5645 6.72029C23.2935 7.60574 22.6885 8.34991 21.8785 8.7941C22.615 8.71959 23.3329 8.51683 24 8.19494C23.6789 9.02858 23.0569 9.71049 22.2578 10.1052V10.1038Z" fill="#76797C"/>
+                </svg>
+            </span>
+            <span class="rrssb-text">tweet</span>
+        </a>
+    </li>
+    <li class="rrssb-print">
+        <a href="javascript:window.print()" class="share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="print">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.6944 10.8286H9.41667C8.07944 10.8286 7 11.908 7 13.2452V18.0786H10.2222V21.3008H19.8889V18.0786H23.1111V13.2452C23.1111 11.908 22.0317 10.8286 20.6944 10.8286ZM18.2778 19.6897H11.8333V15.6619H18.2778V19.6897ZM20.6944 14.0508C20.2514 14.0508 19.8889 13.6883 19.8889 13.2452C19.8889 12.8022 20.2514 12.4397 20.6944 12.4397C21.1375 12.4397 21.5 12.8022 21.5 13.2452C21.5 13.6883 21.1375 14.0508 20.6944 14.0508ZM19.8889 6.80078H10.2222V10.023H19.8889V6.80078Z" fill="#76797C"/>
+                </svg>
+            </span>
+            <span class="rrssb-text">print</span>
+        </a>
+    </li>
+    <li class="rrssb-email">
+        <a href="/cdn-cgi/l/email-protection#4c731f392e26292f38710b23232b2029697f0d697e7c797f697e79697e7c232a697e7c21232e252029697e7c393f293e3f697e7c2d2e2d22282322697e7c3f2538293f697e7c38242d38697e7c382d2729697e7c233a293e697e7c7f697e7c3f292f2322283f697e7c3823697e7c20232d286a2d213c770e232835712438383c3f697f0d63633b3b3b62212d3e27293825222b28253a29622f23216322293b3f632b23232b202961797f61232a6121232e25202961393f293e3f612d2e2d22282322613f2538293f6138242d3861382d272961233a293e617f613f292f2322283f6138236120232d2863787e7a7c7b7c63" class="share_mixpanel_event button analytics t-article-end-social-email" data-sharebutton="rrssb_share" data-shareusing="email">
+            <span class="rrssb-icon">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.4 8H8.6C7.72 8 7.008 8.675 7.008 9.5L7 18.5C7 19.325 7.72 20 8.6 20H21.4C22.28 20 23 19.325 23 18.5V9.5C23 8.675 22.28 8 21.4 8ZM21.4 11L15 14.75L8.6 11V9.5L15 13.25L21.4 9.5V11Z" fill="#76797C"/>
+</svg>
+            </span>
+            <span class="rrssb-text">email</span>
+        </a>
+    </li>
+</ul>
+
+                        </div>
+
+                        
+                         <div class="post-article-topics">
+    <div>
+        
+            <span>Filed Under:</span>
+            
+                <span><a class="topic analytics t-article-end-topic" href="/topic/mobile-marketing/">Mobile</a></span>
+            
+        
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    
+        
+
+
+    
+    
+    <div class="sidebar-box hide-large editors-pick-footer-mobile">
+        <h3 class="sidebar-box__header">
+            
+                Editors' picks
+            
+        </h3>
+         
+
+
+    
+        
+            
+                
+
+
+
+
+
+<li class="row feed__item">
+    <div class="medium-5 columns">
+        <div class="feed__image-container">
+            <a class="feed__image analytics t-edfooter-edpicks-1" href="/news/amid-back-to-school-uncertainty-marketers-pin-hopes-on-digital-precision-a/603958/">
+                
+                    <img src="/user_media/cache/45/1a/451a932cc03f510fa3a165cfbb1b104d.jpg" alt="story image" width="640" height="302" loading="lazy">
+                
+            </a>
+            <figcaption>
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" alt="Image attribution tooltip" tabindex="0">
+                
+                    <div class="feed__attribution">Spencer Platt via Getty Images</div>
+                
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" tabindex="-1">
+            </figcaption>
+        </div>
+    </div>
+    <div class="medium-7 columns">
+        
+
+
+
+
+    
+    
+    
+            
+            <span class="label label--loud">Deep Dive</span>
+    
+
+
+        <h3 class="feed__title feed__title--display">
+            <a href="/news/amid-back-to-school-uncertainty-marketers-pin-hopes-on-digital-precision-a/603958/" class="analytics t-edfooter-edpicks-1">
+                Amid back-to-school uncertainty, marketers pin hopes on digital precision and renewed demand
+            </a>
+        </h3>
+        
+            <p class="feed__description hide-small show-large">Where people are buying is changing dramatically, extending well beyond the usual suspects such as Amazon to social media platforms that are expanding their commerce capabilities.</p>
+        
+        <div class="secondary-label">
+    
+        By Peter Adams •
+    
+     
+        <span class="secondary-label">Aug. 02, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+            
+        
+    
+        
+            
+                
+
+
+
+
+
+<li class="row feed__item">
+    <div class="medium-5 columns">
+        <div class="feed__image-container">
+            <a class="feed__image analytics t-edfooter-edpicks-2" href="/news/coke-pepsi-campaigns-differ-on-reopening-as-anticipation-grows-for-sunny-s/600690/">
+                
+                    <img src="/user_media/cache/ac/8e/ac8ee9c5a882326c93f992b53e13bb0f.jpg" alt="story image" width="640" height="302" loading="lazy">
+                
+            </a>
+            <figcaption>
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" alt="Image attribution tooltip" tabindex="0">
+                
+                    <div class="feed__attribution">Courtesy of PepsiCo</div>
+                
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" tabindex="-1">
+            </figcaption>
+        </div>
+    </div>
+    <div class="medium-7 columns">
+        
+
+
+
+
+
+        <h3 class="feed__title feed__title--display">
+            <a href="/news/coke-pepsi-campaigns-differ-on-reopening-as-anticipation-grows-for-sunny-s/600690/" class="analytics t-edfooter-edpicks-2">
+                Coke, Pepsi campaigns differ on reopening as anticipation grows for sunny summer
+            </a>
+        </h3>
+        
+            <p class="feed__description hide-small show-large">The iconic beverage brands are tapping into an eagerness to return to normal, but depicting germ-spreading activities might be a step too far.</p>
+        
+        <div class="secondary-label">
+    
+        By Peter Adams •
+    
+     
+        <span class="secondary-label">May 25, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+            
+        
+    
+
+    </div>
+    
+
+
+
+    
+
+    
+
+
+
+
+
+                            </section>
+                            <aside class="sidebar large-4 columns">
+                                
+    
+    
+    
+
+                                    
+                                    
+                                        
+<div class="hybrid-ad-wrapper hide-small show-large">
+    <div class="hybrid-ad-inner-wrapper">
+        
+        <div class="hide-small show-large">
+        
+            <div data-container-ad-unit-id="/21662595662/marketingdive/marketingdivehybrid1-desktop"></div>
+            <div id='dfp-hybrid1-desktop'>
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="81e76d91d068b01f23f714c1-text/javascript">
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid1-desktop'); }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                                    
+
+                                    
+                                        
+
+
+
+
+ 
+    
+    
+        
+            <div class="signup sidebar-box hide-small show-large" data-box-priority="0">
+                <h3 class="sidebar-box__header">Get the Newsletter</h3>
+                <p class="sidebar-box__description">Subscribe to <strong>Marketing Dive</strong> to get the must-read news & insights in your inbox.</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_f9fbe3_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input type="email" name="email" placeholder="Enter your work email" class="email" required id="id_f9fbe3_email" />
+                    </label>
+                
+
+                <input type="hidden" name="signup_box_location" value="sidebar">
+                <input type="hidden" name="signup_initial_url_path" value="/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/">
+
+                
+                    <input type="hidden" name="signup_url" value="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" id="id_f9fbe3_signup_url" />
+                
+                    <input type="hidden" name="js_enabled" value="0" id="id_f9fbe3_js_enabled" />
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-sidebar-checkbox-7" type="checkbox" name="site_newsletters" value="7" class="checkbox" />
+                            <label for="newsletter-sidebar-checkbox-7">
+                                <span class="newsletter-title">Daily Dive</span>
+                                
+                                    <p class="newsletter-description">Topics covered: social media, mobile, advertising, marketing tech, content marketing, and more.</p>
+                                
+                                
+                                    <span class="secondary-label">M-F</span>
+                                
+                            </label>
+                            
+                                <a class="primary-link" href="/user_media/thumbnails/newsletter_lists/MarketingDive_sample20151208.jpg" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-sidebar-checkbox-105" type="checkbox" name="site_newsletters" value="105" class="checkbox" />
+                            <label for="newsletter-sidebar-checkbox-105">
+                                <span class="newsletter-title">Mobile Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Thursday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-sidebar-checkbox-1815" type="checkbox" name="site_newsletters" value="1815" class="checkbox" />
+                            <label for="newsletter-sidebar-checkbox-1815">
+                                <span class="newsletter-title">Agencies Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Monday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input type="checkbox" name="user_consent" id="id_user_consent-sidebar" value="1" class="checkbox"/>
+                        <label for="id_user_consent-sidebar">
+                            <span class="signup-user-consent_box">
+                                <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="/static/img/components/buttons/email.svg?353714160519" alt="email icon" height="16" width="16" loading="lazy"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+            <div class="subscriber-demographics demographics-form" id="demographics-box-sidebar"></div>
+            <script src="/static/js/subscriberDemographicsForm.js?393918120421" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+            <script type="81e76d91d068b01f23f714c1-text/javascript">
+                var siteName = 'Marketing Dive' || null;
+                if (siteName) {
+                    setupFormCallbackAndCreateFormIfSub(siteName, 'sidebar');
+                }
+            </script>
+            
+            <style>
+                .subscriber-demographics-form {
+                    width: 100%;
+                }
+            </style>
+        
+    
+
+
+                                    
+
+                                    
+
+                                    
+                                        
+
+
+
+
+    <div class="sidebar-box" data-box-priority="2">
+        <h3 class="sidebar-box__header">Most Popular</h3>
+        <ol class="sidebar-box-list sidebar-box-list--ordered">
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        <!-- image -->
+                        <a class="analytics t-most-popular-sidebar-item-1 hide-small show-large" href="/news/nerds-packaging-unlocks-candy-themed-dungeons-dragons-adventure/605835/">
+                            
+                            
+                                <img class="sidebar-box-list__image" src="/user_media/cache/09/9e/099ed5e6fc2f2eacb6bccec56746f3b7.jpg" width="270" height="127" alt="story image" loading="lazy">
+                            
+                        </a>
+
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="analytics t-most-popular-sidebar-item-1 sidebar-box-list__item-title" href="/news/nerds-packaging-unlocks-candy-themed-dungeons-dragons-adventure/605835/">Nerds packaging unlocks candy-themed Dungeons &amp; Dragons adventure</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="analytics t-most-popular-sidebar-item-2 sidebar-box-list__item-title" href="/news/gap-plays-on-15-minutes-of-fame-with-fall-campaign-profiling-diverse-tastem/606127/">Gap plays on 15 minutes of fame with fall campaign profiling diverse tastemakers</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="analytics t-most-popular-sidebar-item-3 sidebar-box-list__item-title" href="/news/kantar-tiktok-ad-exposure-nearly-doubles-as-does-platforms-trust-among-m/605918/">Kantar: TikTok ad exposure nearly doubles, as does platform&#39;s trust among marketers</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+
+                        <a class="analytics t-most-popular-sidebar-item-4 sidebar-box-list__item-title" href="/news/how-mars-measures-the-emotional-impact-of-video-ads-using-ai-tech/605882/">How Mars measures the emotional impact of video ads using AI tech</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+
+                        <a class="analytics t-most-popular-sidebar-item-5 sidebar-box-list__item-title" href="/news/snapchat-eyes-marketers-with-social-listening-tool-to-track-trends/605948/">Snapchat eyes marketers with social listening tool to track trends</a> <!--Article Title-->
+                    
+                </li>
+            
+        </ol>
+    </div>
+
+
+
+                                    
+
+                                    
+                                        
+                                            
+
+
+
+
+
+    <div class="sidebar-box hide-small show-large" data-box-priority="4">
+        <h3 class="sidebar-box__header">Library</h3>
+        <ul class="sidebar-box-list">
+            
+                <li class="sidebar-box-list__item flex">
+                    
+                        <div class='sidebar-box-list__icon sidebar-box-list__icon--loud'>
+                    
+                        
+                            <img src="/static/img/lib_icons/trendline.svg?353714160519" height="25" width="25" loading="lazy">
+                        
+                        </div>
+                        <div>
+                            
+                                
+                                    <div class="label label--loud">Trendline</div>
+                                
+                            
+                            <a class="analytics t-library-sidebar-item-1 sidebar-box-list__item-title" target="_blank" href="https://www.marketingdive.com/trendline/agencies/187/?utm_source=MD&amp;utm_medium=Library&amp;utm_campaign=Canva">Why winning brands still look to agencies for help on culture</a>
+                            
+                        </div>
+                </li>
+            
+                <li class="sidebar-box-list__item flex">
+                    
+                        <div class='sidebar-box-list__icon sidebar-box-list__icon--soft'>
+                    
+                        
+                            <img src="/static/img/lib_icons/playbook.svg?102717100918" height="25" width="25" loading="lazy">
+                        
+                        </div>
+                        <div>
+                            
+                                
+                                    <div class="label label--soft">Playbook</div>
+                                
+                            
+                            <a class="analytics t-library-sidebar-item-2 sidebar-box-list__item-title" target="_blank" href="https://resources.industrydive.com/the-future-of-data-collaboration-in-a-privacy-first-industry-driven-world?utm_source=MD&amp;utm_medium=Library&amp;utm_campaign=Habu">The death of the cookie: Where do online marketers go from here?</a>
+                            
+                        </div>
+                </li>
+            
+                <li class="sidebar-box-list__item flex">
+                    
+                        <div class='sidebar-box-list__icon sidebar-box-list__icon--loud'>
+                    
+                        
+                            <img src="/static/img/lib_icons/trendline.svg?353714160519" height="25" width="25" loading="lazy">
+                        
+                        </div>
+                        <div>
+                            
+                                
+                                    <div class="label label--loud">Trendline</div>
+                                
+                            
+                            <a class="analytics t-library-sidebar-item-3 sidebar-box-list__item-title" target="_blank" href="https://www.marketingdive.com/trendline/ecommerce/66/?utm_source=MD&amp;utm_medium=Library&amp;utm_campaign=Remarkety">The world of e-commerce post-pandemic</a>
+                            
+                        </div>
+                </li>
+            
+        </ul>
+        <a class="analytics t-library-sidebar-all sidebar-box__cta" href="/library/">View all</a>
+    </div>
+
+
+
+                                        
+                                    
+
+                                    
+                                        
+
+
+
+
+
+
+
+
+    <div class="sidebar-box js-pressrelease-sidebar-box" data-box-priority="6">
+    <h3 class="sidebar-box__header">Press Releases</h3>
+       <ul class="sidebar-box-list">
+            
+                <li
+                    class="sidebar-box-list__item flex js-pressrelease"
+                    data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210907-slicktext-introduces-workflows-to-automate-personalized-behavior-driven-te/"
+                >
+                    <div class="pressrelease-title-container">
+                        <a class="sidebar-box-list__item-title analytics t-pr-sidebar-item" href="/press-release/20210907-slicktext-introduces-workflows-to-automate-personalized-behavior-driven-te/">SlickText Introduces Workflows To Automate Personalized, Behavior-Driven Texting Experiences</a>
+                        <span class="secondary-label">
+                            Press release from SlickText
+                        </span>
+                    </div>
+                    
+                        <div class="sidebar-box-list__thumbnail-container">
+                            
+                            
+                                <img src="/user_media/cache/56/d8/56d85af03966fd0979e9b9c74424a415.png" width="50" height="50" alt="" loading="lazy">
+                            
+                        </div>
+                    
+                </li>
+            
+                <li
+                    class="sidebar-box-list__item flex js-pressrelease"
+                    data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210908-tint-attention-score-bolsters-visual-content-efficacy/"
+                >
+                    <div class="pressrelease-title-container">
+                        <a class="sidebar-box-list__item-title analytics t-pr-sidebar-item" href="/press-release/20210908-tint-attention-score-bolsters-visual-content-efficacy/">TINT Attention Score Bolsters Visual Content Efficacy</a>
+                        <span class="secondary-label">
+                            Press release from TINT by Filestack
+                        </span>
+                    </div>
+                    
+                        <div class="sidebar-box-list__thumbnail-container">
+                            
+                            
+                                <img src="/user_media/cache/fd/13/fd132e31165b798408ed3601d82f6ead.png" width="50" height="50" alt="" loading="lazy">
+                            
+                        </div>
+                    
+                </li>
+            
+                <li
+                    class="sidebar-box-list__item flex js-pressrelease"
+                    data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210824-side-door-launches-back-to-live-program-offering-subsidies-for-live-and/"
+                >
+                    <div class="pressrelease-title-container">
+                        <a class="sidebar-box-list__item-title analytics t-pr-sidebar-item" href="/press-release/20210824-side-door-launches-back-to-live-program-offering-subsidies-for-live-and/">Side Door Launches ‘Back To Live’ Program, offering subsidies for live and virtual shows hos...</a>
+                        <span class="secondary-label">
+                            Press release from Side Door Access
+                        </span>
+                    </div>
+                    
+                </li>
+            
+                <li
+                    class="sidebar-box-list__item flex js-pressrelease"
+                    data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210819-mobivitys-trusted-redemptiontm-technology-awarded-patent-from-us-patent/"
+                >
+                    <div class="pressrelease-title-container">
+                        <a class="sidebar-box-list__item-title analytics t-pr-sidebar-item" href="/press-release/20210819-mobivitys-trusted-redemptiontm-technology-awarded-patent-from-us-patent/">Mobivity’s Trusted Redemption Technology Awarded Patent from U.S. Patent &amp; Trademark Office</a>
+                        <span class="secondary-label">
+                            Press release from Mobivity
+                        </span>
+                    </div>
+                    
+                        <div class="sidebar-box-list__thumbnail-container">
+                            
+                            
+                                <img src="/user_media/cache/dc/93/dc93d85b86aea1241ce4a279328d6232.png" width="50" height="50" alt="" loading="lazy">
+                            
+                        </div>
+                    
+                </li>
+            
+        </ul>
+        <span class="sidebar-box__cta">
+            <a class="analytics t-pr-sidebar-all" href="/press-release/">View all</a> |
+            <a class="analytics t-pr-sidebar-start" href="/press-release/get-started/">Post a press release</a>
+        </span>
+    </div>
+
+
+                                    
+
+                                    
+                                        
+                                            
+
+
+
+
+
+    
+        
+            
+            <div class="sidebar-box hide-small show-large" data-box-priority="8">
+                <h3 class="sidebar-box__header">What We're Reading</h3>
+
+                
+                
+
+                    <ul class="sidebar-box-list">
+                        
+                        
+                            
+                                <li class="sidebar-box-list__item">
+                                    <img src="https://www.google.com/s2/favicons?domain=https%3A//www.wsj.com/articles/australias-top-court-finds-media-companies-liable-for-other-peoples-facebook-comments-11631096115" height="16" width="16" loading="lazy">
+                                    <span class="label label--soft">The Wall Street Journal</span>
+                                    <a class="analytics t-wwr-sidebar-item sidebar-box-list__item-title" href="https://www.wsj.com/articles/australias-top-court-finds-media-companies-liable-for-other-peoples-facebook-comments-11631096115" target="_blank">
+                                        Australia’s Top Court Finds Media Companies Liable for Other People’s Facebook Comments
+                                        <img src="/static/img/offsite_black.png?102717100918" class="off-site-link" alt="offsite link" height="16" width="16" loading="lazy">
+                                    </a>
+                                    <span class="secondary-label">Sept. 08</span>
+                                </li>
+                            
+                        
+                            
+                                <li class="sidebar-box-list__item">
+                                    <img src="https://www.google.com/s2/favicons?domain=https%3A//www.adweek.com/convergent-tv/fox-sports-starts-super-bowl-57-ad-sales/" height="16" width="16" loading="lazy">
+                                    <span class="label label--soft">Adweek</span>
+                                    <a class="analytics t-wwr-sidebar-item sidebar-box-list__item-title" href="https://www.adweek.com/convergent-tv/fox-sports-starts-super-bowl-57-ad-sales/" target="_blank">
+                                        Fox Sports to Start Super Bowl 57 Ad Sales 18 Months Ahead of Game
+                                        <img src="/static/img/offsite_black.png?102717100918" class="off-site-link" alt="offsite link" height="16" width="16" loading="lazy">
+                                    </a>
+                                    <span class="secondary-label">Sept. 08</span>
+                                </li>
+                            
+                        
+                            
+                                <li class="sidebar-box-list__item">
+                                    <img src="https://www.google.com/s2/favicons?domain=https%3A//www.mediapost.com/publications/article/366588/tinuiti-wants-cmos-to-rethink-advertising-and-ma.html" height="16" width="16" loading="lazy">
+                                    <span class="label label--soft">MediaPost</span>
+                                    <a class="analytics t-wwr-sidebar-item sidebar-box-list__item-title" href="https://www.mediapost.com/publications/article/366588/tinuiti-wants-cmos-to-rethink-advertising-and-ma.html" target="_blank">
+                                        Tinuiti Wants CMOs to &#39;Rethink&#39; Advertising and Marketing, Launches First Ad Campaign
+                                        <img src="/static/img/offsite_black.png?102717100918" class="off-site-link" alt="offsite link" height="16" width="16" loading="lazy">
+                                    </a>
+                                    <span class="secondary-label">Sept. 08</span>
+                                </li>
+                            
+                        
+                    </ul>
+                
+                <a class="analytics t-wwr-sidebar-all sidebar-box__cta" href="/what-we-are-reading">View all</a>
+            </div>
+        
+    
+
+
+                                        
+                                    
+
+                                    
+                                        
+
+
+
+
+
+    <div class="sidebar-box hide-small show-large" data-box-priority="10">
+        <h3 class="sidebar-box__header">Events</h3>
+        <ul class="sidebar-box-list">
+            
+                <li class="sidebar-box-list__item">
+                    <a class="analytics t-events-sidebar-item sidebar-box-list__item-title" href="/events/5-ways-to-improve-customer-engagement-how-to-use-webinar-3pm-et-sep-15-2021-marketing-dive/">5 Ways to Improve Customer Engagement:  How to Use SMS Messaging to Drive List Growth, Retention, and Conversions</a>
+                    
+                    <span class="secondary-label">Webinar 3pm ET</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Sep 15, 2021
+                    </span>
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    <a class="analytics t-events-sidebar-item sidebar-box-list__item-title" href="/events/the-grand-re-opening-how-retailers-can-motivate-t-webinar-2-pm-et-sep-23-2021-marketing-dive/">The Grand Re-Opening: How Retailers Can Motivate the In-Store Shopper</a>
+                    
+                    <span class="secondary-label">Webinar 2 pm ET</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Sep 23, 2021
+                    </span>
+                </li>
+            
+        </ul>
+        <a class="analytics t-events-sidebar-all sidebar-box__cta" href="/events/">View all events</a>
+    </div>
+
+
+                                    
+
+                                    
+                                        
+
+
+
+
+                                    
+
+                                    
+                                        
+
+
+
+    <div class="sidebar-box hide-small show-large" data-box-priority="8">
+        <h3 class="sidebar-box__header">Industry Intel</h3>
+        <ul class="sidebar-box-list">
+            
+                <li class="sidebar-box-list__item">
+                    
+                        
+                            <span class="label label--soft">Whitepaper</span>
+                        
+                        <a class="analytics t-intel-sidebar-item sidebar-box-list__item-title" target="_blank" href="https://dive.pub/3Cte7VY">Dialing Up Your Event Engagement Whitepaper</a>
+                        
+                            <span class="secondary-label">Cvent</span>
+                        
+                   
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    
+                        
+                            <span class="label label--soft">Download</span>
+                        
+                        <a class="analytics t-intel-sidebar-item sidebar-box-list__item-title" target="_blank" href="https://dive.pub/3xdFpMl">The Complete Guide to Writing Much Better Marketing Emails</a>
+                        
+                            <span class="secondary-label">Nutshell</span>
+                        
+                   
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    
+                        
+                            <span class="label label--soft">eBook</span>
+                        
+                        <a class="analytics t-intel-sidebar-item sidebar-box-list__item-title" target="_blank" href="https://dive.pub/3zjNMHY">The Direct Mail Tactics Playbook</a>
+                        
+                            <span class="secondary-label">Lob</span>
+                        
+                   
+                </li>
+            
+        </ul>
+    </div>
+
+
+                                    
+
+                                    
+                                    
+                                        
+<div class="hybrid-ad-wrapper hide-small show-large">
+    <div class="hybrid-ad-inner-wrapper">
+        
+        <div class="hide-small show-large">
+        
+            <div data-container-ad-unit-id="/21662595662/marketingdive/marketingdivehybrid3-desktop"></div>
+            <div id='dfp-hybrid3-desktop'>
+                <script type="81e76d91d068b01f23f714c1-text/javascript">
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid3-desktop'); }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                                    
+                            </aside>
+                        </div>
+                    </div>
+
+                
+
+                </div> <!-- ends page-inner-wrapper -->
+
+                <section class="pre-footer">
+                    
+    
+        
+
+
+
+
+
+
+
+<section class="hide-small hide-medium show-large">
+    <div class="row pressrelease-footer-box js-pressrelease-footer-box">
+        <div class="large-12 columns">
+            <div class="row pressrelease-footer-alignment-hack">
+                <div class="large-12 columns pressrelease-footer-header">
+                    <h2 class="uppercase-heading-02 pressrelease-footer__heading">Press Releases</h2>
+                    <p class="pressrelease-footer__description">Discover announcements from companies in your industry.</p>
+                </div>
+            </div>
+            <div class="row pressrelease-footer__item-list pressrelease-footer-alignment-hack">
+            
+            
+            
+                
+                
+                    
+                    
+                    <div
+                        class="large-3 columns pressrelease-footer-item js-pressrelease"
+                        data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210907-slicktext-introduces-workflows-to-automate-personalized-behavior-driven-te/"
+                    >
+                        <a class="pressrelease-footer-item__heading analytics t-pr-edfooter-item" href="/press-release/20210907-slicktext-introduces-workflows-to-automate-personalized-behavior-driven-te/">
+                            SlickText Introduces Workflows To Automate Personalized, Behavior-Driven Texting Experiences
+                        </a>
+                        <div class="pressrelease-footer-item__description">
+                            
+                                <img class="pressrelease-footer-item__logo" src="/user_media/pressrelease/company_logos/20210907202226057/slick-text-g2-profile-logo.png" alt="SlickText logo" height="50" width="50" loading="lazy">
+                            
+                            
+                                <div class="pressrelease-footer-item__company">
+                                    
+                                    Press Release from <br/> SlickText
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+                    
+                    
+                    <div
+                        class="large-3 columns pressrelease-footer-item js-pressrelease"
+                        data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210908-tint-attention-score-bolsters-visual-content-efficacy/"
+                    >
+                        <a class="pressrelease-footer-item__heading analytics t-pr-edfooter-item" href="/press-release/20210908-tint-attention-score-bolsters-visual-content-efficacy/">
+                            TINT Attention Score Bolsters Visual Content Efficacy
+                        </a>
+                        <div class="pressrelease-footer-item__description">
+                            
+                                <img class="pressrelease-footer-item__logo" src="/user_media/pressrelease/company_logos/20210908164644087/TINT_logo_Vertical_Square.png" alt="TINT by Filestack logo" height="50" width="50" loading="lazy">
+                            
+                            
+                                <div class="pressrelease-footer-item__company">
+                                    
+                                    Press Release from <br/> TINT by Filestack
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+                    
+                    
+                    <div
+                        class="large-3 columns pressrelease-footer-item js-pressrelease"
+                        data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210824-side-door-launches-back-to-live-program-offering-subsidies-for-live-and/"
+                    >
+                        <a class="pressrelease-footer-item__heading analytics t-pr-edfooter-item" href="/press-release/20210824-side-door-launches-back-to-live-program-offering-subsidies-for-live-and/">
+                            Side Door Launches ‘Back To Live’ Program, offering subsidies for live and virtual shows hos...
+                        </a>
+                        <div class="pressrelease-footer-item__description">
+                            
+                            
+                                <div class="pressrelease-footer-item__company">
+                                    
+                                    Press Release from  Side Door Access
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+                    
+                    
+                    <div
+                        class="large-3 columns pressrelease-footer-item js-pressrelease"
+                        data-pressrelease-full-url="https://www.marketingdive.com/press-release/20210819-mobivitys-trusted-redemptiontm-technology-awarded-patent-from-us-patent/"
+                    >
+                        <a class="pressrelease-footer-item__heading analytics t-pr-edfooter-item" href="/press-release/20210819-mobivitys-trusted-redemptiontm-technology-awarded-patent-from-us-patent/">
+                            Mobivity’s Trusted Redemption Technology Awarded Patent from U.S. Patent &amp; Trademark Office
+                        </a>
+                        <div class="pressrelease-footer-item__description">
+                            
+                                <img class="pressrelease-footer-item__logo" src="/user_media/pressrelease/company_logos/20210819174342976/mobivity-social.jpeg" alt="Mobivity logo" height="50" width="50" loading="lazy">
+                            
+                            
+                                <div class="pressrelease-footer-item__company">
+                                    
+                                    Press Release from <br/> Mobivity
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+            
+            </div>
+            <div class="row pressrelease-footer-alignment-hack">
+                <div class="large-12 columns pressrelease-footer__cta-links">
+                    <a class="analytics t-pr-edfooter-all" href="/press-release/">View all</a> |
+                    <a class="analytics t-pr-edfooter-start" href="/press-release/get-started/">Post a press release</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    
+        
+
+
+    <div class="row editors-pick-footer hide-small show-large">
+        
+        
+        <div class="columns medium-8">
+            <div class="row">
+                <div class="columns medium-12">
+                    <div class="editors-pick-footer__title">
+                        
+                            Editors' picks
+                        
+                    </div>
+                    
+
+
+    
+        
+            
+                
+
+
+
+
+
+<li class="row feed__item">
+    <div class="medium-5 columns">
+        <div class="feed__image-container">
+            <a class="feed__image analytics t-edfooter-edpicks-1" href="/news/amid-back-to-school-uncertainty-marketers-pin-hopes-on-digital-precision-a/603958/">
+                
+                    <img src="/user_media/cache/45/1a/451a932cc03f510fa3a165cfbb1b104d.jpg" alt="story image" width="640" height="302" loading="lazy">
+                
+            </a>
+            <figcaption>
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" alt="Image attribution tooltip" tabindex="0">
+                
+                    <div class="feed__attribution">Spencer Platt via Getty Images</div>
+                
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" tabindex="-1">
+            </figcaption>
+        </div>
+    </div>
+    <div class="medium-7 columns">
+        
+
+
+
+
+    
+    
+    
+            
+            <span class="label label--loud">Deep Dive</span>
+    
+
+
+        <h3 class="feed__title feed__title--display">
+            <a href="/news/amid-back-to-school-uncertainty-marketers-pin-hopes-on-digital-precision-a/603958/" class="analytics t-edfooter-edpicks-1">
+                Amid back-to-school uncertainty, marketers pin hopes on digital precision and renewed demand
+            </a>
+        </h3>
+        
+            <p class="feed__description hide-small show-large">Where people are buying is changing dramatically, extending well beyond the usual suspects such as Amazon to social media platforms that are expanding their commerce capabilities.</p>
+        
+        <div class="secondary-label">
+    
+        By Peter Adams •
+    
+     
+        <span class="secondary-label">Aug. 02, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+            
+        
+    
+        
+            
+                
+
+
+
+
+
+<li class="row feed__item">
+    <div class="medium-5 columns">
+        <div class="feed__image-container">
+            <a class="feed__image analytics t-edfooter-edpicks-2" href="/news/coke-pepsi-campaigns-differ-on-reopening-as-anticipation-grows-for-sunny-s/600690/">
+                
+                    <img src="/user_media/cache/ac/8e/ac8ee9c5a882326c93f992b53e13bb0f.jpg" alt="story image" width="640" height="302" loading="lazy">
+                
+            </a>
+            <figcaption>
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" alt="Image attribution tooltip" tabindex="0">
+                
+                    <div class="feed__attribution">Courtesy of PepsiCo</div>
+                
+                <img class="feed__attribution-icon" src="/static/images/info-icon.png?234917240220" width="16" height="16" tabindex="-1">
+            </figcaption>
+        </div>
+    </div>
+    <div class="medium-7 columns">
+        
+
+
+
+
+
+        <h3 class="feed__title feed__title--display">
+            <a href="/news/coke-pepsi-campaigns-differ-on-reopening-as-anticipation-grows-for-sunny-s/600690/" class="analytics t-edfooter-edpicks-2">
+                Coke, Pepsi campaigns differ on reopening as anticipation grows for sunny summer
+            </a>
+        </h3>
+        
+            <p class="feed__description hide-small show-large">The iconic beverage brands are tapping into an eagerness to return to normal, but depicting germ-spreading activities might be a step too far.</p>
+        
+        <div class="secondary-label">
+    
+        By Peter Adams •
+    
+     
+        <span class="secondary-label">May 25, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+            
+        
+    
+
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        
+        <div class="columns medium-4">
+            <div class="row newsposts-by-topic">
+                <div class="columns medium-12">
+                    <div class="editors-pick-footer__title">
+                        Latest in
+                            <span class="editors-pick-footer__topic">
+                                <a href="/topic/mobile-marketing/" class="analytics t-edfooter-topic">
+                                    Mobile
+                                </a>
+                            </span>
+                    </div>
+                    <div class="newsposts-by-topic-section">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        
+                            <li class="row feed__item">
+    <div class="medium-12 columns">
+        <div class="display-heading-01">
+            <a class="analytics t-edfooter-topics-1" href="/news/facebook-deepens-its-gaming-bet-with-new-fantasy-games/605969/">
+                Facebook deepens its gaming bet with new Fantasy Games
+            </a>
+        </div>
+        <div class="secondary-label">
+    
+        By Natalie Koltun •
+    
+     
+        <span class="secondary-label">Sept. 02, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+                        
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        
+                            <li class="row feed__item">
+    <div class="medium-12 columns">
+        <div class="display-heading-01">
+            <a class="analytics t-edfooter-topics-2" href="/news/jersey-mikes-partners-with-fanhub-on-in-app-college-football-trivia-games/605889/">
+                Jersey Mike&#39;s teams with FanHub on in-app college football trivia games
+            </a>
+        </div>
+        <div class="secondary-label">
+    
+        By Asa Hiken •
+    
+     
+        <span class="secondary-label">Sept. 02, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+                        
+                    
+                        
+
+
+
+
+
+                        
+                            <li class="row feed__item">
+    <div class="medium-12 columns">
+        <div class="display-heading-01">
+            <a class="analytics t-edfooter-topics-3" href="/news/snapchat-eyes-marketers-with-social-listening-tool-to-track-trends/605948/">
+                Snapchat eyes marketers with social listening tool to track trends
+            </a>
+        </div>
+        <div class="secondary-label">
+    
+        By Robert Williams •
+    
+     
+        <span class="secondary-label">Sept. 02, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+                        
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        
+                            <li class="row feed__item">
+    <div class="medium-12 columns">
+        <div class="display-heading-01">
+            <a class="analytics t-edfooter-topics-4" href="/news/chipotle-gamifies-loyalty-program-with-extra-perks/605936/">
+                Chipotle gamifies loyalty program with extra perks
+            </a>
+        </div>
+        <div class="secondary-label">
+    
+        By Emma Liem Beckett •
+    
+     
+        <span class="secondary-label">Sept. 01, 2021</span>
+    
+</div>
+
+    </div>
+</li>
+
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>
+
+
+    
+
+    
+    
+    <section class="signup call-out">
+        <div class="row">
+            
+
+
+
+
+ 
+    
+    
+        
+            <div class="large-9 medium-10 medium-centered columns">
+                <h3>Get Marketing Dive in your inbox</h3>
+                <p class="subhead">The free newsletter covering the top industry headlines</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_c426c8_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input type="email" name="email" placeholder="Enter your work email" class="email" required id="id_c426c8_email" />
+                    </label>
+                
+
+                <input type="hidden" name="signup_box_location" value="bottom">
+                <input type="hidden" name="signup_initial_url_path" value="/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/">
+
+                
+                    <input type="hidden" name="signup_url" value="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" id="id_c426c8_signup_url" />
+                
+                    <input type="hidden" name="js_enabled" value="0" id="id_c426c8_js_enabled" />
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-bottom-checkbox-7" type="checkbox" name="site_newsletters" value="7" class="checkbox" />
+                            <label for="newsletter-bottom-checkbox-7">
+                                <span class="newsletter-title">Daily Dive</span>
+                                
+                                    <p class="newsletter-description">Topics covered: social media, mobile, advertising, marketing tech, content marketing, and more.</p>
+                                
+                                
+                                    <span class="secondary-label">M-F</span>
+                                
+                            </label>
+                            
+                                <a class="primary-link" href="/user_media/thumbnails/newsletter_lists/MarketingDive_sample20151208.jpg" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-bottom-checkbox-105" type="checkbox" name="site_newsletters" value="105" class="checkbox" />
+                            <label for="newsletter-bottom-checkbox-105">
+                                <span class="newsletter-title">Mobile Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Thursday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-bottom-checkbox-1815" type="checkbox" name="site_newsletters" value="1815" class="checkbox" />
+                            <label for="newsletter-bottom-checkbox-1815">
+                                <span class="newsletter-title">Agencies Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Monday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input type="checkbox" name="user_consent" id="id_user_consent-bottom" value="1" class="checkbox"/>
+                        <label for="id_user_consent-bottom">
+                            <span class="signup-user-consent_box">
+                                <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="/static/img/components/buttons/email.svg?353714160519" alt="email icon" height="16" width="16" loading="lazy"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+    
+
+
+        </div>
+    </section>
+    
+
+                </section>
+
+                
+                    
+
+
+
+
+<hr class="footer-hr">
+<footer>
+    <div class="custom-article-footer">
+        <div class="row">
+            <div class="medium-6 columns footer-links">
+                
+                <h4 class="uppercase-heading-01">Explore</h4>
+                    <ul class="list-no-bullets footer-links">
+                        
+                            <li>
+                                <a href="/submit-tip/" class="analytics t-tip-sitefooter">Submit A Tip</a>
+                            </li>
+                            <li>
+                                <a href="/editors/" class="analytics t-editors-sitefooter">Editorial Team</a>
+                            </li>
+                        
+                        <li>
+                            <a href="/about/" class="analytics t-about-sitefooter">About</a>
+                        </li>
+                        
+                            <li>
+                                <a href="/signup/?signup_location=footer-list&amp;signup_path=/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" class="analytics t-signup-sitefooter">Newsletter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.industrydive.com/article-reprints/" class="analytics t-reprints-sitefooter">Article Reprints</a>
+                            </li>
+                            
+                                <li>
+                                    <a class="analytics t-pr-sitefooter-all" href="/press-release/" class="analytics t-pr-sitefooter-all">Press Releases</a>
+                                </li>
+                            
+                        
+                        
+                        
+                        
+                            <li>
+                                <a href="/what-we-are-reading/" class="analytics t-wwr-sitefooter">What We're Reading</a>
+                            </li>
+                        
+                        
+                            <li>
+                                <a href="/advertise/" class="analytics t-advertising-sitefooter">Advertising</a>
+                            </li>
+                        
+                        <li>
+                            <a href="/feedback/" class="analytics t-feedback-sitefooter">Contact</a>
+                        </li>
+                        
+                            <li>
+                                <a href="/cpm-calculator-app/" class="analytics t-cpm-sitefooter">CPM Calculator</a>
+                            </li>
+                        
+                    </ul>
+                
+                    
+                        <h4 class="uppercase-heading-01">Related Publications</h4>
+                        <ul class="list-no-bullets footer-links">
+                        
+                            <li><a href="https://www.retaildive.com" class="analytics t-sitefooter-related-retail-dive">Retail Dive</a></li>
+                        
+                            <li><a href="https://www.socialmediatoday.com" class="analytics t-sitefooter-related-social-media-today">Social Media Today</a></li>
+                        
+                        </ul>
+                    
+                
+                <h4 class="uppercase-heading-01">Follow</h4>
+                
+                <a href="https://twitter.com/marketingdive" class="button social analytics t-sitefooter-twitter"><img src="/static/img/social_icons/twitter-follow-icon-black.png?102717100918" alt="Twitter" width="22" height="22" loading="lazy"></a>
+                
+
+                
+                <a href="https://www.facebook.com/MarketingDive/" class="button social analytics t-sitefooter-facebook"><img src="/static/img/social_icons/facebook-follow-icon-black.png?102717100918" alt="Facebook" width="22" height="22" loading="lazy"></a>
+                
+
+                
+                <a href="https://www.linkedin.com/company/marketing-dive-digital-&amp;-online-marketing-news-and-tips" class="button social analytics t-sitefooter-linkedin"><img src="/static/img/social_icons/linkedin-follow-icon-black.png?102717100918" alt="LinkedIn" width="22" height="22" loading="lazy"></a>
+                
+
+                
+
+                
+                <a href="https://www.marketingdive.com/feeds/news/" class="button social analytics t-sitefooter-rss"><img src="/static/img/social_icons/rss-follow-icon-black.png?102717100918" alt="RSS" width="22" height="22" loading="lazy"></a>
+            </div>
+            <!-- Footer feedback form -->
+            <div class="medium-6 columns">
+  <form id="footer-feedback-form" class="form js-form-email-validate" method="POST" action="/feedback/" onsubmit="if (!window.__cfRLUnblockHandlers) return false; javascript:$('#mixpanel_id').val(mixpanel.get_distinct_id());" data-cf-modified-81e76d91d068b01f23f714c1-="">
+    <h4 class="uppercase-heading-01">Feedback</h4>
+
+    <label for="email" class="email-input">Work email: <span class="form__required-tag">*</span></label>
+    <input id="email" type="email" name="email" placeholder="Enter your work email" required/>
+
+    <label for="feedback">Message: <span class="form__required-tag">*</span></label>
+    <textarea id="feedback" name="feedback" placeholder="Send us your feedback here" required></textarea>
+
+    <input type="hidden" name="js_enabled" value="0" id="id_js_enabled" />
+    <button type="submit" class="button button--soft">Submit</button>
+
+    <div style="display:none">
+      <label for="feedback-footer-canary">Please leave this field blank
+        <input id="mixpanel_id" type="text" name="mixpanel_id" value="blank"/>
+      </label>
+    </div>
+  </form>
+</div>
+
+        </div>
+    </div>
+</footer>
+<hr class="footer-hr">
+<div class="baseline-footer-wrapper">
+    <!-- smt user footer --> 
+
+<div class="baseline-footer">
+    &copy; 2021 <a href="http://www.industrydive.com">Industry Dive</a>. All rights reserved. | View our <a href="http://www.industrydive.com/industries/">other publications</a>
+    | <a href="http://www.industrydive.com/privacy-policy/">Privacy policy</a>
+    | <a href="http://www.industrydive.com/terms-of-use/">Terms of use</a>
+    | <a href="http://www.industrydive.com/takedown-policy/">Take down policy</a>.
+</div>
+</div>
+
+                
+
+            </div>
+        </div>
+
+        
+
+        <!-- mobile menu, not visible on desktop, must go AFTER footer -->
+        
+        <nav class="mobile-menu">
+            <div class="mm-top-bar">
+                <button class="mobile-menu-toggle">
+                    <img src="/static/img/menu_icons/close_white.svg?102717100918" width="20" height="20" alt="menu"/>
+                </button>
+                <div class="mm-search">
+                    <form action="/search/" method="GET" data-ajax="false">
+                        <label for="search">
+                            <span class="screen-reader-text">Search</span>
+                            <input id="search" type="search" name="q" placeholder="search" data-role="none">
+                        </label>
+                        <button type="submit" value="" data-role="none">
+                            <img src="/static/img/menu_icons/search.svg?102717100918" width="15" height="15" alt="search">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <ul class="mm-list list-no-bullets">
+                <li>
+                    <a href="/" class=" analytics t-dash-navigation-mobile">
+                        <img src="/static/img/menu_icons/home.svg?102717100918" width="20" height="20" alt="home" loading="lazy">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mm-accordion">
+                    <button>
+                        <img src="/static/img/menu_icons/topics.svg?102717100918" width="20" height="20" alt="topics" loading="lazy">
+                        <span>Topics</span>
+                        <span class="accordion-toggle-arrow">
+                            <img src="/static/img/menu_icons/chevron_down.svg?102717100918" width="16" height="9" alt="down arrow" loading="lazy">
+                        </span>
+                    </button>
+                    <ul class="list-no-bullets">
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-brand-strategy" href="/topic/brand-strategy/">Brand Strategy</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-mobile-marketing" href="/topic/mobile-marketing/">Mobile</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-creative" href="/topic/creative/">Creative</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-Social-media-marketing" href="/topic/Social-media-marketing/">Social Media</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-Video-marketing" href="/topic/Video-marketing/">Video</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-agencies" href="/topic/agencies/">Agencies</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-analytics" href="/topic/analytics/">Data/Analytics</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-influencer-marketing" href="/topic/influencer-marketing/">Influencer Marketing</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-marketing-tech" href="/topic/marketing-tech/">Ad Tech</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class=" analytics t-topic-navigation-mobile-cmo-corner" href="/topic/cmo-corner/">CMO Corner</a>
+                                </li>
+                            
+                        
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="/deep-dive/" class=" analytics t-deepdive-navigation-mobile">
+                         <img src="/static/img/menu_icons/deep_dive.svg?102717100918" width="20" height="20" alt="deep dive" loading="lazy">
+                        <span>Deep Dive</span>
+                    </a>
+                </li>
+                
+                
+                
+                
+                    <li>
+                        <a href="/library/" class=" analytics t-library-navigation-mobile">
+                            <img src="/static/img/menu_icons/library.svg?102717100918" width="20" height="20" alt="library" loading="lazy">
+                            <span>Library</span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a href="/events/" class=" analytics t-events-navigation-mobile">
+                            <img src="/static/img/menu_icons/events.svg?102717100918" width="20" height="20" alt="events" loading="lazy">
+                            <span>Events</span>
+                        </a>
+                    </li>
+                
+                
+                
+            </ul>
+            
+                
+                <section class="signup mm-signup">
+                    <div class="row">
+                        
+
+
+
+
+ 
+    
+    
+        
+            <div class="large-9 medium-10 medium-centered columns">
+                <h3>Get Marketing Dive in your inbox</h3>
+                <p class="subhead">The free newsletter covering the top industry headlines</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_c8a26f_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input type="email" name="email" placeholder="Enter your work email" class="email" required id="id_c8a26f_email" />
+                    </label>
+                
+
+                <input type="hidden" name="signup_box_location" value="integrated_menu">
+                <input type="hidden" name="signup_initial_url_path" value="/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/">
+
+                
+                    <input type="hidden" name="signup_url" value="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/" id="id_c8a26f_signup_url" />
+                
+                    <input type="hidden" name="js_enabled" value="0" id="id_c8a26f_js_enabled" />
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-integrated_menu-checkbox-7" type="checkbox" name="site_newsletters" value="7" class="checkbox" />
+                            <label for="newsletter-integrated_menu-checkbox-7">
+                                <span class="newsletter-title">Daily Dive</span>
+                                
+                                    <p class="newsletter-description">Topics covered: social media, mobile, advertising, marketing tech, content marketing, and more.</p>
+                                
+                                
+                                    <span class="secondary-label">M-F</span>
+                                
+                            </label>
+                            
+                                <a class="primary-link" href="/user_media/thumbnails/newsletter_lists/MarketingDive_sample20151208.jpg" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-integrated_menu-checkbox-105" type="checkbox" name="site_newsletters" value="105" class="checkbox" />
+                            <label for="newsletter-integrated_menu-checkbox-105">
+                                <span class="newsletter-title">Mobile Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Thursday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input id="newsletter-integrated_menu-checkbox-1815" type="checkbox" name="site_newsletters" value="1815" class="checkbox" />
+                            <label for="newsletter-integrated_menu-checkbox-1815">
+                                <span class="newsletter-title">Agencies Weekly</span>
+                                
+                                
+                                    <span class="secondary-label">Every Monday</span>
+                                
+                            </label>
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input type="checkbox" name="user_consent" id="id_user_consent-integrated_menu" value="1" class="checkbox"/>
+                        <label for="id_user_consent-integrated_menu">
+                            <span class="signup-user-consent_box">
+                                <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                            </span>
+                        </label>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="/static/img/components/buttons/email.svg?353714160519" alt="email icon" height="16" width="16" loading="lazy"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+    
+
+
+                    </div>
+                </section>
+            
+        </nav>
+        
+    
+        
+    <script src="/static/js/news.js?373516050421" async type="81e76d91d068b01f23f714c1-text/javascript"></script>
+    
+    <script type="81e76d91d068b01f23f714c1-text/javascript">
+        //Add styling for pdf only if admin button is clicked
+        $(".download-promoted-story-button").click(function(){
+            $("body").addClass("admin-pdf-styling");
+        });
+        $(".rrssb-print").click(function(){
+            if ($("body").hasClass("admin-pdf-styling")){
+                $("body").removeClass("admin-pdf-styling");
+            }
+        });
+
+    </script>
+
+
+        
+
+<script nomodule src="/static/js/dist/legacy/gtmEvents.legacy.js?291716070921" defer type="81e76d91d068b01f23f714c1-text/javascript"></script>
+<script type="81e76d91d068b01f23f714c1-module" src="/static/js/dist/esm/gtmEvents.esm.js?441616070921"></script>
+
+
+        
+
+        
+    <script src="//platform.twitter.com/oct.js" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+    <script type="81e76d91d068b01f23f714c1-text/javascript">
+        if(typeof twttr !== 'undefined' && typeof twttr.conversion !== 'undefined') {
+            twttr.conversion.trackPid('l6guv', { tw_sale_amount: 0, tw_order_quantity: 0 });
+        } else {
+            window.console && console.log && console.log('twttr undefined; Unable to track twitter retargeting');
+        }
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l6guv&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l6guv&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0" />
+    </noscript>
+
+
+
+        
+
+        <script async type="81e76d91d068b01f23f714c1-text/javascript" src="/static/js/shared.js?561617130421"></script>
+
+        <script type="81e76d91d068b01f23f714c1-text/javascript">
+            // Set cookie if we're on mobile app. Expire if we're not. This affects
+            // which template is used to display the site to the user.
+            $(document).ready(function() {
+                // Get integer value of mobileapp param from URL and default to 0 if it doesn't exist
+                var mobileapp = '';
+
+                // Set cookie if mobileapp is 1 or 2 or expire cookie if mobileapp == 0
+                if (mobileapp == '0') {
+                    document.cookie = 'mobileapp=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                } else if (mobileapp == '1' || mobileapp == '2') {
+                    document.cookie = 'mobileapp=' + mobileapp + '; path=/;';
+                }
+
+                // There's no need to immediately load or preload print.css since it's not needed on page
+                // load. Therefore, load it when the document is ready
+                var stylesheet=document.createElement("link");
+                stylesheet.setAttribute("rel", "stylesheet");
+                stylesheet.setAttribute("type", "text/css");
+                stylesheet.setAttribute("media", "print");
+                stylesheet.setAttribute("href", "/static/css/print.css?351416070921");
+                document.getElementsByTagName("head")[0].appendChild(stylesheet);
+            });
+        </script>
+
+        <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+  class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom" id="cookie-consent-box" style="display:none;">
+  <span id="cookieconsent:desc" class="cc-message">
+    We use cookies to optimize your experience on our website and for analytics and advertising purposes. By continuing
+    to use our site, you agree to our cookie policy. <a aria-label="learn more about cookies" role="button" tabindex="0"
+      class="cc-link" href="https://www.industrydive.com/cookie-policy/" rel="noopener noreferrer nofollow"
+      target="_blank">Learn more</a>
+  </span>
+  <div class="cc-compliance">
+    <a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss" onclick="if (!window.__cfRLUnblockHandlers) return false; dismissCookieConsent()" data-cf-modified-81e76d91d068b01f23f714c1-="">Accept</a>
+  </div>
+</div>
+<script data-cfasync="false">
+  function dismissCookieConsent() {
+    var setCookie = function (c_name, value, expiredays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + expiredays);
+      document.cookie = c_name + '=' + escape(value) +
+        ((expiredays === null) ? '' : ';expires=' + exdate.toUTCString()) + '; path=/';
+    };
+    setCookie("cookie_consent", "1", 180);
+    document.getElementById("cookie-consent-box").style.display = "none";
+  }
+
+  // This runs RIGHT NOW and shows the box unless the cookie is already set
+  (function () {
+    var getCookie = function (c_name) {
+      var c_start; var c_end;
+      if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + '=');
+        if (c_start !== -1) {
+          c_start = c_start + c_name.length + 1;
+          c_end = document.cookie.indexOf(';', c_start);
+          if (c_end === -1) c_end = document.cookie.length;
+          return unescape(document.cookie.substring(c_start, c_end));
+        }
+      }
+      return '';
+    };
+
+    if (getCookie("cookie_consent") !== "1") {
+      document.getElementById("cookie-consent-box").style.display = "";
+    }
+  })();
+
+</script>
+
+        
+    
+        
+        <!-- Sailthru Horizon -->
+
+
+<!-- <script type="text/javascript" src="https://ak.sail-horizon.com/horizon/v1.js"></script> -->
+<script src="https://ak.sail-horizon.com/spm/spm.v1.min.js" type="81e76d91d068b01f23f714c1-text/javascript"></script>
+<script type="81e76d91d068b01f23f714c1-text/javascript">
+    $(function() {
+        // Sailthru Personalization Engine Setup
+        var sailthru_setup = {
+            customerId: '12ab35a80530ffa5450add9c09f5de04',
+            domain: 'horizon.marketingdive.com',
+            spider: true
+        };
+        
+        if (window.Sailthru) {
+            Sailthru.init(sailthru_setup);
+        }
+    });
+</script>
+
+    
+
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="81e76d91d068b01f23f714c1-|49" defer=""></script></body>
+</html>

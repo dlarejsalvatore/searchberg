@@ -1,0 +1,1626 @@
+<!doctype html >
+<!--[if IE 8]>    <html class="ie8" lang="en-US"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <title>8 Worst Auto Accidents in US History - Ferguson Action 2021</title><style id="rocket-critical-css">#ez-toc-container li,#ez-toc-container ul{margin:0;padding:0}#ez-toc-container li,#ez-toc-container ul,#ez-toc-container ul li{background:0 0;list-style:none none;line-height:1.6;margin:0;overflow:hidden;z-index:1}#ez-toc-container a{color:#444;box-shadow:none;text-decoration:none;text-shadow:none}#ez-toc-container a:visited{color:#9f9f9f}#ez-toc-container.counter-hierarchy ul{counter-reset:item}#ez-toc-container.counter-decimal ul.ez-toc-list li a::before{content:counters(item,".") ". ";display:inline-block;counter-increment:item;margin-right:.2em}body{visibility:visible!important}.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}.clearfix:after{clear:both}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figcaption,figure,header{display:block}a{background:transparent}h1{font-size:2em;margin:0.67em 0}img{border:0;display:block}figure{margin:0px}input{color:inherit;font:inherit;margin:0}html input[type="button"],input[type="submit"]{-webkit-appearance:button}input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}.td-container-border:after{position:absolute;bottom:0;right:0;display:block;content:'';height:100%;width:1px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;background-color:#e6e6e6;z-index:-1}.td-ss-main-sidebar{-webkit-backface-visibility:hidden;z-index:1}.td-container{width:1021px;margin-right:auto;margin-left:auto;border-bottom:1px solid #e6e6e6;background-color:white;position:relative;clear:both;z-index:1}.td-pb-row{width:100%;*zoom:1;margin-bottom:0;margin-left:0}.td-pb-row:before,.td-pb-row:after{display:table;content:""}.td-pb-row:after{clear:both}.td-pb-row{position:relative}.td-container-border:before{content:'';position:absolute;background-color:#e6e6e6;top:0;width:1px;height:100%;display:block;left:0}@media (max-width:767px){.td-container-border:before{display:none}}.td-main-content{position:relative}.td-main-content:before{content:'';position:absolute;background-color:#e6e6e6;top:0;width:1px;height:100%;display:block;right:-1px}@media (max-width:767px){.td-main-content:before{display:none}}.td-main-sidebar:before{content:'';position:absolute;background-color:#e6e6e6;top:0;width:1px;height:100%;display:block;right:-1px}@media (max-width:767px){.td-main-sidebar:before{display:none}}@media (min-width:768px) and (max-width:1023px){.td-main-sidebar:before{right:0}}.td-pb-row [class*="td-pb-span"]{display:block;min-height:1px;float:left;margin-left:0;border-left:1px solid #e6e6e6}.td-pb-span4{width:340px;position:relative}.td-pb-span8{width:680px}.td-pb-span12{width:1020px}.td-pb-padding-side{padding:0 19px 0 20px}@media (min-width:768px) and (max-width:1023px){.td-pb-padding-side{padding:0 17px}}@media (max-width:767px){.td-pb-padding-side{padding:0 10px}}.td-pb-border-top{border-top:1px solid #e6e6e6}p{margin-top:0}.wpb_button{display:inline-block;font-family:open sans,arial,sans-serif;font-weight:600;line-height:24px;text-shadow:none;margin-bottom:20px!important;margin-left:20px;margin-right:20px;border:none}.td-block-span12{padding-left:20px;padding-right:19px}@media (min-width:768px) and (max-width:1023px){.td-container{width:756px}.td-pb-span4{width:252px}.td-pb-span8{width:504px}.td-pb-span12{width:756px}.td-block-span12{padding-left:17px;padding-right:16px}}@media (max-width:767px){.td-container{width:100%}.td-pb-row{width:100%!important}.td-pb-row .td-pb-span4,.td-pb-row .td-pb-span8,.td-pb-row .td-pb-span12{float:none;width:100%!important;margin-bottom:0!important;padding-bottom:0;border-left:none}.td-block-span12{float:none;width:100%!important;margin-bottom:0!important;padding-bottom:0;padding-left:10px;padding-right:10px!important}.td-container-border:after{display:none}}.td-header-container{width:1021px;margin-right:auto;margin-left:auto;position:relative}@media (min-width:768px) and (max-width:1023px){.td-header-container{width:756px}}@media (max-width:767px){.td-header-container{width:100%}}.td-header-main-menu{background-color:#222;position:relative;z-index:3}@media (max-width:767px){.td-header-main-menu{height:53px}}.td-header-menu-wrap{min-height:44px}@media (max-width:767px){.td-header-menu-wrap{min-height:53px}}.td-header-row{width:100%;*zoom:1}.td-header-row:before,.td-header-row:after{display:table;content:""}.td-header-row:after{clear:both}.td-header-row [class*="td-header-sp"]{display:block;min-height:1px;float:left}#td-header-menu .td-container-border:after{background-color:#e6e6e6}.td-header-border:before{content:"";background-color:#4db2ec;display:block;height:4px}@media (max-width:767px){.td-header-border:before{display:none}}.td-visual-hidden{border:0;width:1px;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute}.td-header-container{clear:both}.td-header-sp-logo{width:272px;position:relative;margin-bottom:8px;margin-top:8px}@media (min-width:768px) and (max-width:1023px){.td-header-sp-logo{width:248px}}@media (max-width:767px){.td-header-sp-logo{margin-bottom:0}}.td-header-sp-logo a{height:114px;display:block}@media (min-width:768px) and (max-width:1023px){.td-header-sp-logo a{height:90px}}.sf-menu,.sf-menu ul,.sf-menu li{margin:0;padding:0;list-style:none}.sf-menu{margin-left:21px;margin-right:38px}@media (min-width:768px) and (max-width:1023px){.sf-menu{margin-left:17px}}@media (max-width:767px){.sf-menu{display:none}}.sf-menu ul{position:absolute;top:-999em}.sf-menu ul li{width:100%}.sf-menu li{float:left;position:relative}.sf-menu .td-menu-item>a{display:block;position:relative}.sf-menu li ul{left:-9px;z-index:99}@media (min-width:768px) and (max-width:1023px){.sf-menu li ul{left:-14px}}.sf-menu>.td-mega-menu .sub-menu{z-index:1001}.sf-menu ul{visibility:hidden}.td-js-loaded .sf-menu ul{visibility:visible}.sf-menu>li>a{padding:0 15px 0 15px;line-height:44px;font-size:14px;color:#ffffff;font-weight:700;font-family:'Open Sans',arial,sans-serif;text-transform:uppercase;-webkit-backface-visibility:hidden}@media (min-width:768px) and (max-width:1023px){.sf-menu>li>a{font-size:11px;padding:0 10px 0 10px}}#td-header-menu{min-height:44px}.td-normal-menu ul{box-shadow:1px 1px 4px rgba(0,0,0,0.15)}.sf-menu ul{font-family:'Open Sans',arial,sans-serif;background:white}.sf-menu ul .td-menu-item>a{padding:7px 32px 8px 24px;font-size:12px;color:#111111;line-height:21px}.sf-menu ul li:first-child>a{margin-top:11px}.sf-menu ul li:last-child>a{margin-bottom:10px}.sf-menu .td-icon-menu-down{position:absolute;top:0;padding-left:9px;font-size:9px}.sf-menu .sub-menu{-webkit-backface-visibility:hidden}.sf-menu a.sf-with-ul{padding-right:31px;min-width:1px}@media (min-width:768px) and (max-width:1023px){.sf-menu a.sf-with-ul{padding-right:28px}}a.sf-with-ul i.td-icon-menu-down:before{content:'\e808'}ul.sf-js-enabled>li>a>i.td-icon-menu-down:before{content:'\e806'!important}@media (max-width:767px){.td-search-wrapper{position:absolute;right:0;top:50%}}.header-search-wrap .header-search{z-index:2}.header-search-wrap #td-header-search-button{display:block;position:relative}@media (max-width:767px){.header-search-wrap #td-header-search-button{display:none}}.header-search-wrap #td-header-search-button-mob{display:none;position:relative}@media (max-width:767px){.header-search-wrap #td-header-search-button-mob{display:block;right:9px}}.header-search-wrap .td-icon-search{display:inline-block;font-size:19px;color:#fff;padding-top:11px;padding-left:14px;height:44px;width:44px}@media (max-width:767px){.header-search-wrap .td-icon-search{font-size:27px;padding-top:8px}}.header-search-wrap .td-drop-down-search{position:absolute;padding:0;top:100%;border-radius:0;border-width:0 1px 1px 1px;border-style:solid;border-color:#e6e6e6;z-index:98;display:none;right:0;width:341px;background:white}@media (max-width:767px){.header-search-wrap .td-drop-down-search{right:-1px}}@media (max-width:400px){.header-search-wrap .td-drop-down-search{width:101%}}.header-search-wrap .td-drop-down-search .btn{position:absolute;border-radius:0 3px 3px 0;height:32px;line-height:17px;padding:7px 15px 8px;text-shadow:none;vertical-align:top;right:0}@media (max-width:767px){.header-search-wrap .td-drop-down-search .btn{line-height:17px}}.header-search-wrap .td-drop-down-search:before{position:absolute;top:-6px;right:24px;display:block;content:'';width:0;height:0;border-style:solid;border-width:0 5.5px 6px 5.5px;border-color:transparent transparent #fff transparent;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}@media (max-width:767px){.header-search-wrap .td-drop-down-search:before{right:23px}}.header-search-wrap .td-drop-down-search #td-header-search{background-color:#ffffff!important;width:95%;height:32px;margin:0;border-right:0;line-height:17px}.header-search-wrap .td-drop-down-search .td-search-form{margin:21px 20px 20px 21px}.td-header-border #td-top-search{margin-top:-20px}@media (max-width:767px){.td-header-border #td-top-search{margin-top:-22px}}#td-top-search{position:absolute;right:8px;top:50%;margin-top:-22px}@media (max-width:767px){#td-top-search{right:0;position:relative}}@media (min-width:1024px) and (max-width:1041px){#td-outer-wrap{overflow:hidden}}#td-top-mobile-toggle{display:none;top:0;left:0;z-index:1}@media (max-width:767px){#td-top-mobile-toggle{display:inline-block;position:relative}}#td-top-mobile-toggle a{display:block;height:53px;width:53px}#td-top-mobile-toggle i{font-size:26px;line-height:55px;padding-left:13px;display:inline-table;vertical-align:middle;color:#fff}.td-menu-background,.td-search-background{position:fixed;top:0;display:block;width:100%;height:113%;z-index:9999;visibility:hidden;overflow:hidden;background-color:#fff}.td-menu-background:before,.td-search-background:before{content:'';position:absolute;display:block;width:104%;height:100%;background:#68bfb2;background:-moz-linear-gradient(45deg,#68bfb2 0%,#717bc3 100%);background:-webkit-gradient(left bottom,right top,color-stop(0%,#68bfb2),color-stop(100%,#717bc3));background:-webkit-linear-gradient(45deg,#68bfb2 0%,#717bc3 100%);background:-o-linear-gradient(45deg,#68bfb2 0%,#717bc3 100%);background:-ms-linear-gradient(45deg,#68bfb2 0%,#717bc3 100%);background:linear-gradient(45deg,#68bfb2 0%,#717bc3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#68bfb2', endColorstr='#717bc3', GradientType=1);z-index:10;right:-4px}.td-menu-background:after,.td-search-background:after{content:'';position:absolute;display:block;width:100%;height:100%;background-repeat:no-repeat;background-size:cover;background-position:center top;z-index:-10}.td-menu-background{transform:translate3d(-100%,0,0);-webkit-transform:translate3d(-100%,0,0)}.td-menu-background:after{transform:translate3d(14%,0,0);-webkit-transform:translate3d(14%,0,0)}.td-search-background{transform:translate3d(100%,0,0);-webkit-transform:translate3d(100%,0,0)}.td-search-background:after{transform:translate3d(-14%,0,0);-webkit-transform:translate3d(-14%,0,0)}.td-js-loaded .td-menu-background,.td-js-loaded .td-search-background{visibility:visible}#td-mobile-nav{position:absolute;width:100%;z-index:9999;transform:translate3d(-99%,0,0);-webkit-transform:translate3d(-99%,0,0);left:-1%;font-family:-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif}#td-mobile-nav .td_display_err{text-align:center;color:#fff;border:none;-webkit-box-shadow:0 0 8px rgba(0,0,0,0.16);box-shadow:0 0 8px rgba(0,0,0,0.16);margin:-9px -30px 24px;font-size:14px;border-radius:0;padding:12px;position:relative;background-color:rgba(255,255,255,0.06);display:none}#td-mobile-nav input:invalid{box-shadow:none!important}#td-mobile-nav{overflow:hidden}#td-mobile-nav .td-menu-socials{padding:0 65px 0 20px;overflow:hidden;height:60px}.td-mobile-close{position:absolute;right:1px;top:0;z-index:1000}.td-mobile-close .td-icon-close-mobile{height:70px;width:70px;line-height:70px;font-size:21px;color:#fff;top:4px;position:relative;text-align:center;display:inline-block}.td-mobile-content{padding:20px 20px 0}.td-mobile-container{padding-bottom:20px;position:relative}.td-mobile-container i{line-height:1;text-align:center;display:inline-block}.td-mobile-content ul{list-style:none;margin:0;padding:0}.td-mobile-content li{float:none;margin-left:0;-webkit-touch-callout:none}.td-mobile-content li a{display:block;line-height:21px;font-size:20px;color:#fff;margin-left:0;padding:12px 30px 12px 12px;font-weight:bold;letter-spacing:0.01em}@media (max-width:320px){.td-mobile-content li a{font-size:20px}}.td-mobile-content .td_mobile_submenu>a .td-icon-menu-right{display:inline-block}.td-mobile-content .td-icon-menu-right{display:none;position:absolute;top:11px;right:-4px;z-index:1000;font-size:14px;padding:6px 12px;float:right;color:#fff;line-height:1;text-align:center;-webkit-transform-origin:50% 48% 0px;-moz-transform-origin:50% 48% 0px;-o-transform-origin:50% 48% 0px;transform-origin:50% 48% 0px;transform:rotate(-90deg);-webkit-transform:rotate(-90deg)}.td-mobile-content .td-icon-menu-right:before{content:'\e83d'}.td-mobile-content .sub-menu{max-height:0;overflow:hidden;opacity:0}.td-mobile-content .sub-menu a{padding:9px 26px 9px 36px!important;line-height:19px;font-size:15px;font-weight:normal}.td-mobile-content .menu-item-has-children a{width:100%;z-index:1}.td-mobile-content .td-link-element-after{position:relative}.td-mobile-container{opacity:1}#td-mobile-nav .td-login-animation{opacity:0;visibility:hidden!important;position:absolute;top:0;width:100%}#td-mobile-nav .td-login-animation .td-login-inputs{height:76px}#td-mobile-nav label{position:absolute;top:26px;left:10px;font-size:17px;color:#fff;opacity:0.6}.td-login-inputs{position:relative}.td-search-wrap-mob{padding:0;position:absolute;width:100%;height:auto;top:0;text-align:center;z-index:9999;visibility:hidden;color:#fff;font-family:-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif}.td-search-wrap-mob .td-drop-down-search{opacity:0;visibility:hidden;-webkit-backface-visibility:hidden;position:relative}.td-search-wrap-mob #td-header-search-mob{color:#fff;font-weight:bold;font-size:26px;height:40px;line-height:36px;border:0;background:transparent;outline:0;margin:8px 0;padding:0;text-align:center}.td-search-wrap-mob .td-search-input{margin:0 5%;position:relative}.td-search-wrap-mob .td-search-input span{opacity:0.8;font-size:12px}.td-search-wrap-mob .td-search-input:before,.td-search-wrap-mob .td-search-input:after{content:'';position:absolute;display:block;width:100%;height:1px;background-color:#fff;bottom:0;left:0;opacity:0.2}.td-search-wrap-mob .td-search-input:after{opacity:0.8;transform:scaleX(0);-webkit-transform:scaleX(0)}.td-search-wrap-mob .td-search-form{margin-bottom:30px}.td-search-wrap-mob i{line-height:1;text-align:center;display:inline-block}.td-search-close{text-align:right;z-index:1000}.td-search-close .td-icon-close-mobile{height:70px;width:70px;line-height:70px;font-size:21px;color:#fff;position:relative;top:4px;right:0;display:inline-block;text-align:center}#td-mobile-nav label{position:absolute;top:26px;left:10px;font-size:17px;color:#fff;opacity:0.6}.td-login-inputs{position:relative}body,p{font-family:Verdana,Geneva,sans-serif;font-size:13px;line-height:21px;color:#222222;overflow-wrap:break-word;word-wrap:break-word}p{margin-bottom:21px}a{color:#4db2ec;text-decoration:none!important}ul{padding:0;list-style-position:inside}ul li{line-height:24px}.td-post-content{font-size:14px;line-height:24px}.td-post-content p{font-size:14px;line-height:24px;margin-bottom:24px}.td-post-content ul{list-style-position:inside;margin-bottom:24px}.td-post-content ul li{margin:0 0 0 21px}h1,h3{font-family:'Open Sans',arial,sans-serif;color:#222222;font-weight:400;margin:6px 0px 6px 0px}h1{font-size:32px;line-height:40px;margin-top:33px;margin-bottom:23px;letter-spacing:-0.02em}h3{font-size:22px;line-height:30px;margin-top:27px;margin-bottom:17px}.td-post-content img{margin-bottom:21px}.td-post-content figure img{margin-bottom:0}.wp-caption-text{font-family:Verdana,Geneva,sans-serif;text-align:right;margin:4px 0px 17px 0px;font-size:11px;font-style:italic;font-weight:normal;line-height:17px;color:#444444;z-index:1}.post{font-family:Verdana,Geneva,sans-serif;font-size:12px;line-height:21px;color:#444}input[type=submit]{font-family:'Open Sans',arial,sans-serif;font-size:11px;font-weight:600;line-height:16px;background-color:#222;border-radius:3px;color:#ffffff;border:none;padding:7px 12px}input[type=text]{font-family:Verdana,Geneva,sans-serif;font-size:12px;line-height:21px;color:#444444;border:1px solid #e6e6e6;width:100%;max-width:100%;height:34px;padding:3px 9px 3px 9px}input[type=password]{width:100%;position:relative;top:0;display:inline-table;vertical-align:middle;font-size:12px;line-height:21px;color:#444;border:1px solid #ccc;max-width:100%;height:34px;padding:3px 9px;margin-bottom:10px}@media (max-width:767px){input[type=password]{font-size:16px}}.td-excerpt{margin-bottom:15px;color:#444;font-size:12px;line-height:18px}.td-module-title{font-family:'Open Sans',arial,sans-serif}.td-module-title a{color:#111111}.td-module-comments{position:relative;top:-3px;background-color:#848484;float:right;font-family:'Open Sans',arial,sans-serif;font-size:11px;text-align:center;border-radius:2px;border-bottom-right-radius:0}.td-module-comments a{color:#ffffff;padding:2px 4px 3px;display:inline-block;min-width:22px;height:20px;line-height:16px}.td-module-comments a:after{position:absolute;bottom:-5px;right:0;content:'';width:0;height:0;border-style:solid;border-width:5px 5px 0 0;border-color:#5b5b5b transparent transparent transparent}.td_module_wrap{position:relative;z-index:0}.td-module-thumb{position:relative;margin-bottom:12px}.td-module-thumb .entry-thumb{display:block;width:auto}@media (max-width:767px){.td-module-thumb .entry-thumb{width:100%}}.td-module-image{position:relative}.td_block_wrap{position:relative;clear:both}.td-post-category{font-family:'Open Sans',arial,sans-serif;padding:2px 5px 3px;background-color:#222;border-radius:3px;font-size:10px;font-weight:600;font-style:normal;color:#fff;margin-right:5px;position:relative;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;vertical-align:middle;line-height:1}@media (min-width:768px) and (max-width:1023px){.td-post-category{display:none}}*{-webkit-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box}img{max-width:100%;width:auto\9;height:auto}.td-ss-main-content{position:relative}.td-page-meta{display:none}.td-post-header{padding-top:20px}@media (min-width:768px) and (max-width:1023px){.td-post-header{padding-top:17px}}@media (max-width:767px){.td-post-header{padding-top:15px}}.entry-crumbs{font-family:'Open Sans',arial,sans-serif;font-size:10px;line-height:15px;color:#c3c3c3;position:relative;top:-5px}.entry-crumbs a{color:#c3c3c3}.entry-crumbs .td-bread-sep{font-size:8px;margin:0 5px 0 5px}.td-category{margin:0;padding:0;list-style:none;font-family:'Open Sans',arial,sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;line-height:15px}.td-category li{display:inline-block;line-height:15px;margin:0 5px 3px 0}.td-category a{color:#fff;background-color:#4db2ec;padding:1px 7px;border-radius:3px;white-space:nowrap}.post p{line-height:1.72}@media (max-width:767px){.post p{padding-left:0!important;padding-right:0!important}}.post header h1{font-family:'Open Sans',arial,sans-serif;font-weight:400;font-size:32px;line-height:40px;color:#222;margin:6px 0 7px 0;word-wrap:break-word}@media (max-width:767px){.post header h1{font-size:28px;line-height:36px}}.meta-info{font-family:'Open Sans',arial,sans-serif;font-size:11px;color:#444;line-height:16px;margin-bottom:15px}@media (min-width:768px) and (max-width:1023px){.meta-info{margin-bottom:12px}}@media (max-width:767px){.meta-info{margin-bottom:10px}}.td-post-author-name{display:inline-block;margin-right:3px}.td-post-author-name a{color:#222;font-weight:700}.td-post-author-name div{display:inline}.td-post-date{display:inline-block;margin-right:3px}.td-post-comments{display:inline-block;margin-left:9px}.td-post-comments a{color:#444}.td-post-comments i{margin:0 8px;font-size:9px}.td-post-content{padding-top:20px;border-top:1px solid #e6e6e6}@media (min-width:768px) and (max-width:1023px){.td-post-content{padding-top:17px}}@media (max-width:767px){.td-post-content{padding-top:10px}}@font-face{font-family:'newsmag';src:url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.eot?14);src:url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.eot?14#iefix) format('embedded-opentype'),url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.woff?14) format('woff'),url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.ttf?14) format('truetype'),url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.svg?14#newsmag) format('svg');font-weight:normal;font-style:normal;font-display:swap}@media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-display:swap;font-family:'newsmag';src:url(https://fergusonaction.com/wp-content/themes/Newsmag/images/icons/newsmag.svg?#newsmag) format('svg')}}[class^="td-icon-"]:before,[class*=" td-icon-"]:before{font-family:"newsmag";font-style:normal;font-weight:normal;speak:none;display:inline-block;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.td-icon-comments:before{content:'\e80c'}.td-icon-menu-down:before{content:'\e806'}.td-icon-menu-left:before{content:'\e807'}.td-icon-menu-right:before{content:'\e808'}.td-icon-menu-up:before{content:'\e809'}.td-icon-right:before{content:'\e803'}.td-icon-search:before{content:'\e80a'}.td-icon-mobile:before{content:'\e80d'}.td-icon-read-down:before{content:'\e83d'}.td-icon-close-mobile:before{content:'\e900'}.td-icon-modal-back:before{content:"\e901"}.td-icon-menu-down{position:relative;top:0;font-size:8px;padding-left:3px}.clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0}.clearfix:after{clear:both}.wpb_button{margin-bottom:0}.td-main-sidebar{z-index:1}body .td-header-row .td-header-sp-rec{min-height:0}.td-main-menu-logo{display:none;float:left;height:44px}@media (max-width:767px){.td-main-menu-logo{display:block;float:none;height:auto!important}}.td-main-menu-logo a{line-height:44px}.td-main-menu-logo img{max-height:44px;margin:0 21px;position:relative;vertical-align:middle;display:inline-block;padding-top:3px;padding-bottom:3px}@media (min-width:768px) and (max-width:1023px){.td-main-menu-logo img{margin:0 17px}}@media (max-width:767px){.td-main-menu-logo img{margin:auto;bottom:0;top:0;left:0;right:0;position:absolute;max-height:45px!important}}@media (max-width:767px){.td-header-sp-logo{display:none!important}}.td-header-sp-logo img{bottom:0;max-height:90px;left:0;margin:auto;position:absolute;right:0;top:0}@media (min-width:768px) and (max-width:1023px){.td-header-sp-logo img{max-height:70px}}.td-header-sp-rec{float:right;margin-bottom:8px;margin-top:8px;width:728px;position:relative}@media (min-width:768px) and (max-width:1023px){.td-header-sp-rec{width:508px}}@media (max-width:767px){.td-header-sp-rec{margin-bottom:0;margin-top:0;width:100%;float:none;min-height:0!important}}@media (min-width:1024px) and (max-height:768px){.td-header-sp-rec{margin-right:7px}}.td-header-sp-rec .td-header-ad-wrap{height:114px;display:block}@media (min-width:768px) and (max-width:1023px){.td-header-sp-rec .td-header-ad-wrap{height:90px}}@media (max-width:767px){.td-header-sp-rec .td-header-ad-wrap{height:auto;margin-left:auto;margin-right:auto;display:table}}.white-menu .td-mega-menu .td-mega-grid{border-top-width:1px;border-style:solid;border-color:#e6e6e6}.white-menu #td-header-menu .td-normal-menu .sub-menu{box-shadow:0 0 1px rgba(0,0,0,0.15)}.white-menu #td-header-menu .sf-menu>.td-normal-menu>.sub-menu>li:first-child{border-top:1px solid #e6e6e6}.white-menu .sf-menu{margin-left:5px}@media (max-width:767px){.white-menu .td-header-main-menu{border-bottom:1px solid #e6e6e6;border-top:1px solid #e6e6e6;background-color:#fcfcfc}}@media (max-width:767px){.white-menu .td-header-main-menu{height:55px}}.white-menu .header-search-wrap .td-drop-down-search{box-shadow:none;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6}.white-menu .header-search-wrap .td-drop-down-search:before{border-color:transparent transparent #e6e6e6}.td-header-style-7 .td-header-sp-logo{margin-bottom:0;margin-top:0;width:100%}.td-header-style-7 .td-header-sp-logo a{height:auto}.td-header-style-7 .td-header-sp-logo img{position:relative;max-height:none}.td-header-style-7 .td-header-sp-rec{margin-top:0;margin-bottom:0;width:100%}.td-header-style-7 .td-header-sp-rec .td-header-ad-wrap{height:auto;width:100%}.white-menu .td-header-main-menu{border-bottom:1px solid #e6e6e6}@media (max-height:768px){.td-header-top-menu{padding:0 16px}}@media (max-width:767px){.td-header-top-menu{display:none}}.td-mega-menu{position:static!important}.td-mega-menu .td-mega-grid{border-width:0 0 1px 0;border-style:solid;border-color:#e6e6e6}.td-mega-menu .td-mega-grid:before{content:"";width:1px;height:100%;background-color:#e6e6e6;position:absolute;left:0;top:0}.td-mega-menu .td-next-prev-wrap{clear:none}.td-mega-menu .td_block_mega_menu{padding-top:20px}.td-mega-menu .td-mega-row{height:218px}@media (min-width:768px) and (max-width:1023px){.td-mega-menu .td-mega-row{height:170px}}.td-mega-menu .td_block_wrap{border-left:0!important;border-right:0!important}.td-mega-menu ul{position:absolute!important;width:1021px!important;height:auto!important;top:100%;left:0!important;display:none}@media (min-width:768px) and (max-width:1023px){.td-mega-menu ul{width:756px!important}}.td-mega-menu ul .td-pb-border-top{border-top:none;border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6}.td-mega-menu ul .td-next-prev-wrap{display:inline-block;float:right;position:relative;top:-5px;margin:20px 20px 0 0}.td-mega-menu ul .td-next-prev-wrap a{margin-bottom:14px}.td-header-border .sf-menu li.td-mega-menu ul{top:auto}.td_mod_mega_menu .td-module-thumb{margin-bottom:6px;position:relative}.td_mod_mega_menu .entry-title{font-size:13px;line-height:19px;font-weight:600;margin:0}@media (min-width:768px) and (max-width:1023px){.td_mod_mega_menu .entry-title{font-size:11px;line-height:16px}}@media (min-width:1024px){.td_mod_mega_menu .entry-thumb{min-height:135px}}@media (min-width:768px) and (max-width:1023px){.td_mod_mega_menu .entry-thumb{min-height:95px}}.td_mega_menu_sub_cats{display:inline-block;float:left;clear:both}.td_mega_menu_sub_cats .block-mega-child-cats{margin:11px 0 18px 20px}.td_mega_menu_sub_cats a{border-radius:3px;display:inline-table;font-size:11px;font-weight:bold;color:#111;text-transform:uppercase;line-height:16px;padding:2px 15px;position:relative;vertical-align:middle}@media (min-width:768px) and (max-width:1023px){.td_mega_menu_sub_cats a{font-size:10px;font-weight:600;line-height:14px;padding:2px 9px 2px 9px;height:19px}}.td_block_mega_menu .td_mega_menu_sub_cats .cur-sub-cat{background-color:#4db2ec;color:#fff}.header-search-wrap .header-search{z-index:2}.header-search-wrap #td-header-search-button{display:block;position:relative}@media (max-width:767px){.header-search-wrap #td-header-search-button{display:none}}.header-search-wrap #td-header-search-button-mob{display:none;position:relative}@media (max-width:767px){.header-search-wrap #td-header-search-button-mob{display:block;right:9px}}.header-search-wrap .td-drop-down-search{position:absolute;padding:0;top:100%;border-radius:0;border-width:0 1px 1px 1px;border-style:solid;border-color:#e6e6e6;z-index:98;display:none;right:0;width:341px;background:white}@media (max-width:767px){.header-search-wrap .td-drop-down-search{right:-1px}}@media (max-width:400px){.header-search-wrap .td-drop-down-search{width:101%}}.header-search-wrap .td-drop-down-search .btn{position:absolute;border-radius:0 3px 3px 0;height:32px;line-height:17px;padding:7px 15px 8px;text-shadow:none;vertical-align:top;right:0}@media (max-width:767px){.header-search-wrap .td-drop-down-search .btn{line-height:17px}}.header-search-wrap .td-drop-down-search:before{position:absolute;top:-6px;right:24px;display:block;content:'';width:0;height:0;border-style:solid;border-width:0 5.5px 6px 5.5px;border-color:transparent transparent #fff transparent;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}@media (max-width:767px){.header-search-wrap .td-drop-down-search:before{right:23px}}.header-search-wrap .td-drop-down-search #td-header-search{background-color:#ffffff!important;width:95%;height:32px;margin:0;border-right:0;line-height:17px}.header-search-wrap .td-drop-down-search .td-search-form{margin:21px 20px 20px 21px}.td-header-border #td-top-search{margin-top:-20px}@media (max-width:767px){.td-header-border #td-top-search{margin-top:-22px}}#td-mobile-nav .td-register-section{position:absolute;top:0;color:#fff;width:100%;z-index:-1}#td-mobile-nav .td-register-section a{color:#fff}#td-mobile-nav .td-register-section .td-icon-read-down{font-size:23px;transform:rotate(90deg);-webkit-transform:rotate(90deg);line-height:74px;width:74px;text-align:center;display:inline-block}#td-mobile-nav .td-register-section .td-login-input{color:#fff;font-weight:normal;font-size:17px;height:40px;line-height:40px;border:0;background:transparent;outline:0;margin:18px 0;position:relative;border-bottom:1px solid rgba(255,255,255,0.2);border-radius:0;box-shadow:none}#td-mobile-nav .td-register-section .td-login-form-wrap{padding:0 30px}#td-mobile-nav .td-register-section .td-login-button{display:block;text-align:center;width:100%;text-transform:uppercase;line-height:50px;color:#000;border:none;-webkit-box-shadow:0 0 8px rgba(0,0,0,0.16);box-shadow:0 0 8px rgba(0,0,0,0.16);margin:17px 0 15px;font-size:17px;background-color:#fff;opacity:0.9;border-radius:40px;text-shadow:none}#td-mobile-nav .td-register-section .td-login-info-text{text-align:center;margin-bottom:20px}#td-mobile-nav .td-login-title{position:absolute;top:0;padding:0 50px;text-align:center;line-height:74px;text-transform:uppercase;width:100%;font-size:17px;height:74px;overflow:hidden;z-index:-1}#td-mobile-nav .td-login-panel-title{text-align:center;font-size:16px;padding:30px 10px}#td-mobile-nav .td-login-panel-title span{display:inline-block;font-size:28px;font-weight:bold;width:100%;margin-bottom:10px}.td-search-wrap-mob{padding:0;position:absolute;width:100%;height:auto;top:0;text-align:center;z-index:9999;visibility:hidden;color:#fff;font-family:-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif}.td-search-wrap-mob .td-drop-down-search{opacity:0;visibility:hidden;-webkit-backface-visibility:hidden;position:relative}.td-search-wrap-mob #td-header-search-mob{color:#fff;font-weight:bold;font-size:26px;height:40px;line-height:36px;border:0;background:transparent;outline:0;margin:8px 0;padding:0;text-align:center}.td-search-wrap-mob .td-search-input{margin:0 5%;position:relative}.td-search-wrap-mob .td-search-input span{opacity:0.8;font-size:12px}.td-search-wrap-mob .td-search-input:before,.td-search-wrap-mob .td-search-input:after{content:'';position:absolute;display:block;width:100%;height:1px;background-color:#fff;bottom:0;left:0;opacity:0.2}.td-search-wrap-mob .td-search-input:after{opacity:0.8;transform:scaleX(0);-webkit-transform:scaleX(0)}.td-search-wrap-mob .td-search-form{margin-bottom:30px}.td-search-wrap-mob i{line-height:1;text-align:center;display:inline-block}.td-search-close{text-align:right;z-index:1000}.td-search-close .td-icon-close-mobile{height:70px;width:70px;line-height:70px;font-size:21px;color:#fff;position:relative;top:4px;right:0;display:inline-block;text-align:center}.td-post-template-2 .post h1{font-size:48px;line-height:58px;margin-top:6px;margin-bottom:5px}@media (min-width:768px) and (max-width:1023px){.td-post-template-2 .post h1{font-size:40px;line-height:48px}}@media (max-width:767px){.td-post-template-2 .post h1{font-size:28px;line-height:36px}}.td-post-template-2 .meta-info{margin-bottom:14px}.td_module_4 .entry-title{font-size:19px;font-weight:600;line-height:24px;margin:0 0 9px 0}@media (min-width:768px) and (max-width:1023px){.td_module_4 .entry-title{font-size:15px!important;line-height:19px!important;margin-bottom:8px}}@media (max-width:767px){.td_module_4 .entry-title{font-size:19px!important;line-height:24px!important}}@media (max-width:1023px){.td_module_4 .td-module-thumb{margin-bottom:8px}}.td_module_4 .meta-info{margin-bottom:14px;line-height:11px}@media (max-width:1023px){.td_module_4 .meta-info{margin-bottom:10px}}.td_module_4 .td-post-author-name{margin-bottom:3px}.td_module_6 .entry-title{font-size:13px;font-weight:600;line-height:18px;margin:0 0 7px 0}@media (min-width:768px) and (max-width:1023px){.td_module_6 .entry-title{margin-bottom:5px;font-size:12px!important;line-height:15px!important}}@media (max-width:767px){.td_module_6 .entry-title{font-size:14px!important;line-height:19px!important}}.td_module_6 .meta-info{margin-bottom:0;line-height:11px}.wpb_button{display:inline-block;font-family:'Open Sans',arial,sans-serif;font-weight:600;line-height:24px;text-shadow:none;margin-bottom:20px!important;margin-left:20px;margin-right:20px;border:none}.td_module_4{margin-bottom:37px}.td_module_4 .td-module-comments{top:-4px}@media (min-width:768px) and (max-width:1023px){.td_module_4 .td-module-thumb{margin-bottom:9px}}@media (min-width:1024px){.td_module_4 .entry-thumb{min-height:194px}}@media (min-width:768px) and (max-width:1023px){.td_module_4 .entry-thumb{min-height:141px}}.td_module_6{*zoom:1}.td_module_6:before,.td_module_6:after{display:table;content:"";line-height:0}.td_module_6:after{clear:both}.td_module_6 .td-module-thumb{position:absolute}@media (min-width:768px) and (max-width:1023px){.td_module_6 .td-module-thumb{width:80px}}.td_module_6 .item-details{margin-left:115px;margin-bottom:20px;min-height:76px}@media (min-width:768px) and (max-width:1023px){.td_module_6 .item-details{margin-left:92px;margin-bottom:10px}}@media (max-width:767px){.td_module_6 .item-details{margin-left:114px}}.td_module_6 .entry-thumb{width:100px;height:auto}@media (min-width:1024px){.td_module_6 .entry-thumb{min-height:75px}}@media (min-width:768px) and (max-width:1023px){.td_module_6 .entry-thumb{min-height:60px}}.td_block_inner{-webkit-animation-duration:0.5s;animation-duration:0.5s}.td-next-prev-wrap{margin:0 0 0 20px;line-height:21px;clear:both}@media (min-width:768px) and (max-width:1023px){.td-next-prev-wrap{margin:0 0 0 17px}}@media (max-width:767px){.td-next-prev-wrap{margin:0 0 0 10px}}.td-next-prev-wrap a{display:inline-block;margin-bottom:19px}@media (min-width:768px) and (max-width:1023px){.td-next-prev-wrap a{margin-bottom:16px}}@media (max-width:767px){.td-next-prev-wrap a{margin-bottom:19px}}.td-next-prev-wrap .td-ajax-prev-page{margin-right:4px}.td-next-prev-wrap i{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=94)";-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border:1px solid #e6e6e6;font-size:9px;color:#444;line-height:1;padding:3px 6px}.ajax-page-disabled{opacity:0.5}.td_block_2{position:relative;padding-top:20px}@media (min-width:768px) and (max-width:1023px){.td_block_2{padding-top:17px}}@media (max-width:767px){.td_block_2{padding-top:17px}}.td_block_2 .td_block_inner{clear:right}.td_block_2 .td_module_4{margin-bottom:21px!important}.td-mega-row{width:100%;*zoom:1}.td-mega-row:before,.td-mega-row:after{display:table;content:""}.td-mega-row:after{clear:both}.td-mega-row [class*="td-mega-sp"]{display:block;min-height:1px;float:left}.td-mega-span{width:200px;padding-left:20px}@media (min-width:768px) and (max-width:1023px){.td-mega-span{width:147px}}.td-scroll-up{-webkit-transform:translateZ(0);position:fixed;bottom:4px;right:5px;display:none;border-radius:3px;width:38px;height:38px}.td-scroll-up .td-icon-menu-up{position:relative;color:#ffffff;font-size:20px;display:block;text-align:center;width:38px;top:7px}.mfp-hide{display:none!important}#login_pass-mob,#login_pass{display:none!important}.white-popup-block{position:relative;margin:0 auto;max-width:500px;min-height:500px;font-family:'Open Sans',arial,sans-serif;text-align:center;color:#fff;vertical-align:top;-webkit-box-shadow:0px 0px 20px 0px rgba(0,0,0,0.2);box-shadow:0px 0px 20px 0px rgba(0,0,0,0.2);padding:0 0 24px;overflow:hidden}.white-popup-block:after{content:'';width:100%;height:100%;position:absolute;top:0;left:0;display:block;background:rgba(0,0,0,0.8);background:-webkit-gradient(left bottom,right top,color-stop(0%,rgba(0,0,0,0.8)),color-stop(100%,rgba(0,0,0,0.8)));background:-webkit-linear-gradient(45deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 100%);background:linear-gradient(45deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);z-index:-2}.white-popup-block:before{content:'';width:100%;height:100%;position:absolute;top:0;left:0;display:block;background-size:cover;background-position:top;background-repeat:no-repeat;z-index:-3}.td-md-is-chrome .td-next-prev-wrap i{padding:4px 6px 3px}.td-md-is-chrome .td_block_mega_menu .td-next-prev-wrap i{padding:3px 6px 2px}.td-newsmag-voice .td-post-category{padding:0;background-color:transparent;font-size:16px;font-weight:400;font-style:normal;color:#222;margin-right:0}.td-newsmag-voice .td_module_6 .td-post-category{font-size:10px;color:#888}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C300%2C500%7COpen%20Sans%3A400%2C600%2C700%2C300%2C500%7CRoboto%20Condensed%3A400%2C500%2C700%2C300&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C300%2C500%7COpen%20Sans%3A400%2C600%2C700%2C300%2C500%7CRoboto%20Condensed%3A400%2C500%2C700%2C300&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C300%2C500%7COpen%20Sans%3A400%2C600%2C700%2C300%2C500%7CRoboto%20Condensed%3A400%2C500%2C700%2C300&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" /></noscript><link rel="preload" href="https://fergusonaction.com/wp-content/cache/min/1/573153b0065de151f8a466ad5c0be50f.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://fergusonaction.com/xmlrpc.php" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="icon" type="image/png" href="https://fergusonaction.com/wp-content/uploads/2020/04/Ferguson-fav.png">
+	<!-- This site is optimized with the Yoast SEO plugin v17.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="In this article we will see eight examples of how errors in judgment or bad driving conditions have caused worst car accidents in U.S. history" />
+	<link rel="canonical" href="https://fergusonaction.com/worst-auto-accidents-in-us-history/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="8 Worst Auto Accidents in US History - Ferguson Action 2021" />
+	<meta property="og:description" content="In this article we will see eight examples of how errors in judgment or bad driving conditions have caused worst car accidents in U.S. history" />
+	<meta property="og:url" content="https://fergusonaction.com/worst-auto-accidents-in-us-history/" />
+	<meta property="og:site_name" content="Ferguson Action 2021" />
+	<meta property="article:published_time" content="2020-06-30T13:19:50+00:00" />
+	<meta property="article:modified_time" content="2021-02-01T09:35:24+00:00" />
+	<meta property="og:image" content="https://fergusonaction.com/wp-content/uploads/2020/06/car-crash.jpg" />
+	<meta property="og:image:width" content="1430" />
+	<meta property="og:image:height" content="953" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Mivian Batolov" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://fergusonaction.com/#website","url":"https://fergusonaction.com/","name":"Ferguson Action 2021","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://fergusonaction.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://fergusonaction.com/worst-auto-accidents-in-us-history/#primaryimage","inLanguage":"en-US","url":"https://fergusonaction.com/wp-content/uploads/2020/06/car-crash.jpg","contentUrl":"https://fergusonaction.com/wp-content/uploads/2020/06/car-crash.jpg","width":1430,"height":953},{"@type":"WebPage","@id":"https://fergusonaction.com/worst-auto-accidents-in-us-history/#webpage","url":"https://fergusonaction.com/worst-auto-accidents-in-us-history/","name":"8 Worst Auto Accidents in US History - Ferguson Action 2021","isPartOf":{"@id":"https://fergusonaction.com/#website"},"primaryImageOfPage":{"@id":"https://fergusonaction.com/worst-auto-accidents-in-us-history/#primaryimage"},"datePublished":"2020-06-30T13:19:50+00:00","dateModified":"2021-02-01T09:35:24+00:00","author":{"@id":"https://fergusonaction.com/#/schema/person/9e41dfdaa2f1f80a98f773822d1776d8"},"description":"In this article we will see eight examples of how errors in judgment or bad driving conditions have caused worst car accidents in U.S. history","breadcrumb":{"@id":"https://fergusonaction.com/worst-auto-accidents-in-us-history/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://fergusonaction.com/worst-auto-accidents-in-us-history/"]}]},{"@type":"BreadcrumbList","@id":"https://fergusonaction.com/worst-auto-accidents-in-us-history/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fergusonaction.com/"},{"@type":"ListItem","position":2,"name":"8 Worst Auto Accidents in US History"}]},{"@type":"Person","@id":"https://fergusonaction.com/#/schema/person/9e41dfdaa2f1f80a98f773822d1776d8","name":"Mivian Batolov","image":{"@type":"ImageObject","@id":"https://fergusonaction.com/#personlogo","inLanguage":"en-US","url":"https://fergusonaction.com/wp-content/uploads/2020/07/acdc-150x150.jpg","contentUrl":"https://fergusonaction.com/wp-content/uploads/2020/07/acdc-150x150.jpg","caption":"Mivian Batolov"},"url":"https://fergusonaction.com/author/mivian-batolov/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Ferguson Action 2021 &raquo; Feed" href="https://fergusonaction.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ferguson Action 2021 &raquo; Comments Feed" href="https://fergusonaction.com/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+
+
+<style id='td-theme-inline-css' type='text/css'>
+    
+        @media (max-width: 767px) {
+            .td-header-desktop-wrap {
+                display: none;
+            }
+        }
+        @media (min-width: 767px) {
+            .td-header-mobile-wrap {
+                display: none;
+            }
+        }
+    
+	
+</style>
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://fergusonaction.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/cache/min/1/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1629982822' id='stop-user-enumeration-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/cache/min/1/wp-content/plugins/wp-captcha/assets/js/c4wp-public.js?ver=1629982824' id='c4wp-public-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.8' id='ppress-flatpickr-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.8' id='ppress-select2-js' defer></script>
+<link rel="https://api.w.org/" href="https://fergusonaction.com/wp-json/" /><link rel="alternate" type="application/json" href="https://fergusonaction.com/wp-json/wp/v2/posts/3673" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fergusonaction.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fergusonaction.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://fergusonaction.com/?p=3673' />
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    			<script type="rocketlazyloadscript">
+				window.tdwGlobal = {"adminUrl":"https:\/\/fergusonaction.com\/wp-admin\/","wpRestNonce":"cd0fa67b15","wpRestUrl":"https:\/\/fergusonaction.com\/wp-json\/","permalinkStructure":"\/%postname%\/"};
+			</script>
+			
+<!-- JS generated by theme -->
+
+<script type="rocketlazyloadscript">
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+	        if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+	        if ( navigator.userAgent.indexOf("Edge") > -1 ) {
+                htmlTag.className += ' ieEdge';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":251},{"limitBottom":1023,"sidebarWidth":339}];
+var tdc_is_installed="yes";
+var td_ajax_url="https:\/\/fergusonaction.com\/wp-admin\/admin-ajax.php?td_theme_name=Newsmag&v=5.1";
+var td_get_template_directory_uri="https:\/\/fergusonaction.com\/wp-content\/plugins\/td-composer\/legacy\/common";
+var tds_snap_menu="";
+var tds_logo_on_sticky="";
+var tds_header_style="7";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#1e73be";
+var tds_smart_sidebar="enabled";
+var tdThemeName="Newsmag";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdBlockNonce="073a7a6efb";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+
+body {
+	background-color:#f4f4f4;
+}
+.td-header-border:before,
+    .td-trending-now-title,
+    .td_block_mega_menu .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-post-category:hover,
+    .td-header-style-2 .td-header-sp-logo,
+    .td-next-prev-wrap a:hover i,
+    .page-nav .current,
+    .widget_calendar tfoot a:hover,
+    .td-footer-container .widget_search .wpb_button:hover,
+    .td-scroll-up-visible,
+    .dropcap,
+    .td-category a,
+    input[type="submit"]:hover,
+    .td-post-small-box a:hover,
+    .td-404-sub-sub-title a:hover,
+    .td-rating-bar-wrap div,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_smart_list_3 .td-sml3-top-controls i:hover,
+    .td_smart_list_3 .td-sml3-bottom-controls i:hover,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .td-read-more a:hover,
+    .td-login-wrap .btn,
+    .td_display_err,
+    .td-header-style-6 .td-top-menu-full,
+    #bbpress-forums button:hover,
+    #bbpress-forums .bbp-pagination .current,
+    .bbp_widget_login .button:hover,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    .td-post-text-content .more-link-wrap:hover a,
+    #buddypress div.item-list-tabs ul li > a span,
+    #buddypress div.item-list-tabs ul li > a:hover span,
+    #buddypress input[type=submit]:hover,
+    #buddypress a.button:hover span,
+    #buddypress div.item-list-tabs ul li.selected a span,
+    #buddypress div.item-list-tabs ul li.current a span,
+    #buddypress input[type=submit]:focus,
+    .td-grid-style-3 .td-big-grid-post .td-module-thumb a:last-child:before,
+    .td-grid-style-4 .td-big-grid-post .td-module-thumb a:last-child:before,
+    .td-grid-style-5 .td-big-grid-post .td-module-thumb:after,
+    .td_category_template_2 .td-category-siblings .td-category a:hover,
+    .td-weather-week:before,
+    .td-weather-information:before,
+     .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_square_btn, 
+    .td_outlined_btn:hover {
+        background-color: #1e73be;
+    }
+
+    @media (max-width: 767px) {
+        .td-category a.td-current-sub-category {
+            background-color: #1e73be;
+        }
+    }
+
+    .woocommerce .onsale,
+    .woocommerce .woocommerce a.button:hover,
+    .woocommerce-page .woocommerce .button:hover,
+    .single-product .product .summary .cart .button:hover,
+    .woocommerce .woocommerce .product a.button:hover,
+    .woocommerce .product a.button:hover,
+    .woocommerce .product #respond input#submit:hover,
+    .woocommerce .checkout input#place_order:hover,
+    .woocommerce .woocommerce.widget .button:hover,
+    .woocommerce .woocommerce-message .button:hover,
+    .woocommerce .woocommerce-error .button:hover,
+    .woocommerce .woocommerce-info .button:hover,
+    .woocommerce.widget .ui-slider .ui-slider-handle,
+    .vc_btn-black:hover,
+	.wpb_btn-black:hover,
+	.item-list-tabs .feed:hover a,
+	.td-smart-list-button:hover {
+    	background-color: #1e73be;
+    }
+
+    .td-header-sp-top-menu .top-header-menu > .current-menu-item > a,
+    .td-header-sp-top-menu .top-header-menu > .current-menu-ancestor > a,
+    .td-header-sp-top-menu .top-header-menu > .current-category-ancestor > a,
+    .td-header-sp-top-menu .top-header-menu > li > a:hover,
+    .td-header-sp-top-menu .top-header-menu > .sfHover > a,
+    .top-header-menu ul .current-menu-item > a,
+    .top-header-menu ul .current-menu-ancestor > a,
+    .top-header-menu ul .current-category-ancestor > a,
+    .top-header-menu ul li > a:hover,
+    .top-header-menu ul .sfHover > a,
+    .sf-menu ul .td-menu-item > a:hover,
+    .sf-menu ul .sfHover > a,
+    .sf-menu ul .current-menu-ancestor > a,
+    .sf-menu ul .current-category-ancestor > a,
+    .sf-menu ul .current-menu-item > a,
+    .td_module_wrap:hover .entry-title a,
+    .td_mod_mega_menu:hover .entry-title a,
+    .footer-email-wrap a,
+    .widget a:hover,
+    .td-footer-container .widget_calendar #today,
+    .td-category-pulldown-filter a.td-pulldown-category-filter-link:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-next-prev-content a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .td_mod_related_posts:hover .entry-title a,
+    .td-search-query,
+    .header-search-wrap .td-drop-down-search .result-msg a:hover,
+    .td_top_authors .td-active .td-authors-name a,
+    .post blockquote p,
+    .td-post-content blockquote p,
+    .page blockquote p,
+    .comment-list cite a:hover,
+    .comment-list cite:hover,
+    .comment-list .comment-reply-link:hover,
+    a,
+    .white-menu #td-header-menu .sf-menu > li > a:hover,
+    .white-menu #td-header-menu .sf-menu > .current-menu-ancestor > a,
+    .white-menu #td-header-menu .sf-menu > .current-menu-item > a,
+    .td_quote_on_blocks,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums #subscription-toggle a:hover,
+    #bbpress-forums #favorite-toggle a:hover,
+    .woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .td-subcategory-header .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .td-subcategory-header .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-pulldown-filter-display-option:hover,
+    .td-pulldown-filter-display-option .td-pulldown-filter-link:hover,
+    .td_normal_slide .td-wrapper-pulldown-filter .td-pulldown-filter-list a:hover,
+    #buddypress ul.item-list li div.item-title a:hover,
+    .td_block_13 .td-pulldown-filter-list a:hover,
+    .td_smart_list_8 .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td_smart_list_8 .td-smart-list-dropdown-wrap .td-smart-list-button:hover i,
+    .td-sub-footer-container a:hover,
+    .td-instagram-user a,
+     .td_outlined_btn {
+        color: #1e73be;
+    }
+
+    .td-mega-menu .wpb_content_element li a:hover,
+    .td_login_tab_focus {
+        color: #1e73be !important;
+    }
+
+    .td-next-prev-wrap a:hover i,
+    .page-nav .current,
+    .widget_tag_cloud a:hover,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    .td-login-panel-title,
+    #bbpress-forums .bbp-pagination .current,
+    .td_category_template_2 .td-category-siblings .td-category a:hover,
+    .page-template-page-pagebuilder-latest .td-instagram-user,
+     .td_outlined_btn {
+        border-color: #1e73be;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after,
+    .item-list-tabs .feed:hover {
+        border-color: #1e73be !important;
+    }
+
+
+    
+    .td-header-main-menu {
+        background-color: #ffffff;
+    }
+
+    
+    .sf-menu > li > a,
+    .header-search-wrap .td-icon-search,
+    #td-top-mobile-toggle i {
+        color: #666666;
+    }
+
+    
+    .td-header-border:before {
+        background-color: #f4f4f4;
+    }
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: rgba(0,0,0,0.7);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.7)), color-stop(100%, rgba(0,0,0,0.8)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%);
+        background: -o-linear-gradient(top, rgba(0,0,0,0.7) 0%, @mobileu_gradient_two_mob 100%);
+        background: -ms-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,0.7)', endColorstr='rgba(0,0,0,0.8)', GradientType=0 );
+    }
+
+    
+    .td-menu-background:after,
+    .td-search-background:after {
+        background-image: url('https://fergusonaction.com/wp-content/uploads/2019/07/5.jpg');
+    }
+
+    
+    .sf-menu > .td-menu-item > a {
+        font-family:Montserrat;
+	font-size:13px;
+	line-height:50px;
+	font-weight:normal;
+	
+    }
+    
+    .td_mod_mega_menu .item-details a {
+        font-family:Montserrat;
+	font-weight:normal;
+	
+    }
+    
+	.td_module_wrap .entry-title,
+	.td-theme-slider .td-module-title,
+	.page .td-post-template-6 .td-post-header h1 {
+		font-family:Montserrat;
+	
+	}
+
+	
+    .td_module_3 .td-module-title {
+    	font-size:16px;
+	line-height:20px;
+	font-weight:normal;
+	
+    }
+    
+    .td_module_6 .td-module-title {
+    	font-size:15px;
+	line-height:18px;
+	font-weight:normal;
+	
+    }
+    
+    .td_module_14 .td-module-title {
+    	font-size:36px;
+	line-height:35px;
+	font-weight:300;
+	
+    }
+    
+    .td-module-meta-info .td-post-author-name a,
+    .td_module_wrap .td-post-author-name a {
+        font-size:14px;
+	line-height:16px;
+	font-weight:normal;
+	
+    }
+    
+    .td-big-grid-meta .td-post-category,
+    .td_module_wrap .td-post-category,
+    .td-module-image .td-post-category {
+        font-family:Montserrat;
+	text-transform:uppercase;
+	
+    }
+    
+    .td-big-grid-post .entry-title {
+        font-family:Montserrat;
+	
+    }
+    
+    .td_block_big_grid .td-big-thumb .entry-title,
+    .td_block_big_grid_2 .td-big-thumb .entry-title,
+    .td_block_big_grid_3 .td-big-thumb .entry-title,
+    .td_block_big_grid_4 .td-big-thumb .entry-title,
+    .td_block_big_grid_5 .td-big-thumb .entry-title,
+    .td_block_big_grid_6 .td-big-thumb .entry-title,
+    .td_block_big_grid_7 .td-big-thumb .entry-title {
+        font-size:19px;
+	line-height:24px;
+	font-weight:500;
+	
+    }
+    
+    .td_block_big_grid .td-medium-thumb .entry-title,
+    .td_block_big_grid_2 .td-medium-thumb .entry-title,
+    .td_block_big_grid_3 .td-medium-thumb .entry-title,
+    .td_block_big_grid_4 .td-medium-thumb .entry-title,
+    .td_block_big_grid_5 .td-medium-thumb .entry-title,
+    .td_block_big_grid_6 .td-medium-thumb .entry-title,
+    .td_block_big_grid_7 .td-medium-thumb .entry-title {
+        font-weight:500;
+	
+    }
+    
+    .td_block_big_grid .td-small-thumb .entry-title,
+    .td_block_big_grid_2 .td-small-thumb .entry-title,
+    .td_block_big_grid_3 .td-small-thumb .entry-title,
+    .td_block_big_grid_4 .td-small-thumb .entry-title,
+    .td_block_big_grid_5 .td-small-thumb .entry-title,
+    .td_block_big_grid_6 .td-small-thumb .entry-title,
+    .td_block_big_grid_7 .td-small-thumb .entry-title {
+        font-size:16px;
+	font-weight:500;
+	
+    }
+    
+    .td_block_big_grid .td-tiny-thumb .entry-title,
+    .td_block_big_grid_2 .td-tiny-thumb .entry-title,
+    .td_block_big_grid_3 .td-tiny-thumb .entry-title,
+    .td_block_big_grid_4 .td-tiny-thumb .entry-title,
+    .td_block_big_grid_5 .td-tiny-thumb .entry-title,
+    .td_block_big_grid_6 .td-tiny-thumb .entry-title,
+    .td_block_big_grid_7 .td-tiny-thumb .entry-title {
+        font-weight:500;
+	
+    }
+
+
+
+
+
+
+
+
+	
+	.post header .entry-title {
+		font-family:Montserrat;
+	
+	}
+
+	
+    .td-post-template-5 header .entry-title {
+        font-size:40px;
+	line-height:46px;
+	font-weight:normal;
+	
+    }
+    
+    .post blockquote p,
+    .page blockquote p,
+    .td-post-text-content blockquote p {
+        font-family:Montserrat;
+	font-size:24px;
+	line-height:28px;
+	
+    }
+    
+    .td_block_related_posts .entry-title {
+        font-family:Montserrat;
+	font-weight:500;
+	
+    }
+    
+	@media (min-width: 768px) {
+        .td-main-menu-logo img,
+        .sf-menu > .td-menu-item > a > img {
+            max-height: 50px;
+        }
+        #td-header-menu,
+        .td-header-menu-wrap {
+            min-height: 50px;
+        }
+        .td-main-menu-logo a {
+            line-height: 50px;
+        }
+	}
+	.td-main-menu-logo {
+	    height: 50px;
+	}
+
+
+	
+    .td-footer-container::before {
+        background-size: cover;
+    }
+
+    
+    .td-footer-container::before {
+        background-position: center top;
+    }
+
+    
+    .td-footer-container::before {
+        opacity: 0.05;
+    }
+
+
+
+/* Style generated by theme for demo: voice */
+
+.td-newsmag-voice .td-subcategory-header a.td-current-sub-category,
+	.td-newsmag-voice .td-subcategory-header .td-category a:hover,
+	.td-newsmag-voice .td_block_5 .block-title span:after,
+	.td-newsmag-voice .td-voice-sidebar .block-title span:after {
+      background-color: #1e73be;
+    }
+</style>
+
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "WebSite",
+                    "@id": "https://fergusonaction.com/",
+                    "name": "Home"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://fergusonaction.com/category/automotive/",
+                    "name": "Automotive"
+                }
+            }
+            ,{
+                "@type": "ListItem",
+                "position": 3,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://fergusonaction.com/worst-auto-accidents-in-us-history/",
+                    "name": "8 Worst Auto Accidents in US History"                                
+                }
+            }    
+        ]
+    }
+</script>
+	<style id="tdw-css-placeholder"></style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body class="post-template-default single single-post postid-3673 single-format-standard worst-auto-accidents-in-us-history global-block-template-1 td-newsmag-voice single_template_2 white-menu td-boxed-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+    
+        <div class="td-scroll-up  td-hide-scroll-up-on-mob"  style="display:none;"><i class="td-icon-menu-up"></i></div>
+
+    
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="#" aria-label="Close"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-td-demo-header-menu-container"><ul id="menu-td-demo-header-menu" class="td-mobile-main-menu"><li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-first menu-item-175"><a href="https://fergusonaction.com/">Home</a></li>
+<li id="menu-item-333" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-333"><a href="https://fergusonaction.com/category/business/">Business<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-0" class="menu-item-0"><a href="https://fergusonaction.com/category/business/finance/">Finance</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/business/law/">Law</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/business/marketing/">Marketing</a></li>
+</ul>
+</li>
+<li id="menu-item-335" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-335"><a href="https://fergusonaction.com/category/health/">Health<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/health/fitness/">Fitness</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/health/hair-care/">Hair Care</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/health/skin-care/">Skin Care</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/health/weight-loss/">Weight Loss</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/health/yoga/">Yoga</a></li>
+</ul>
+</li>
+<li id="menu-item-338" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-338"><a href="https://fergusonaction.com/category/technology/">Technology<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/technology/apps/">Apps</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/technology/design-and-development/">Design and Development</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/technology/gadgets/">Gadgets</a></li>
+	<li class="menu-item-0"><a href="https://fergusonaction.com/category/technology/software/">Software</a></li>
+</ul>
+</li>
+<li id="menu-item-337" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-337"><a href="https://fergusonaction.com/category/reviews/">Reviews</a></li>
+<li id="menu-item-339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-339"><a href="#">More<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-340" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-340"><a href="https://fergusonaction.com/category/education/">Education</a></li>
+	<li id="menu-item-341" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-341"><a href="https://fergusonaction.com/category/entertainment/">Entertainment</a></li>
+	<li id="menu-item-342" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-342"><a href="https://fergusonaction.com/category/family-and-parenting/">Family and Parenting</a></li>
+	<li id="menu-item-343" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-343"><a href="https://fergusonaction.com/category/food/">Food</a></li>
+	<li id="menu-item-344" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-344"><a href="https://fergusonaction.com/category/games/">Games</a></li>
+	<li id="menu-item-345" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-345"><a href="https://fergusonaction.com/category/pet/">Pet</a></li>
+	<li id="menu-item-346" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-346"><a href="https://fergusonaction.com/category/sports/">Sports</a></li>
+	<li id="menu-item-347" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-347"><a href="https://fergusonaction.com/category/travel/">Travel</a></li>
+</ul>
+</li>
+<li id="menu-item-604" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-604"><a href="https://fergusonaction.com/contact-us/">Contact Us</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search">
+		<form method="get" class="td-search-form" action="https://fergusonaction.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off" />
+			</div>
+		</form>
+		<div id="td-aj-search-mob"></div>
+	</div>
+</div>
+
+    <div id="td-outer-wrap">
+    
+        <div class="td-outer-container">
+        
+            <!--
+Header style 7
+-->
+
+<div class="td-header-wrap td-header-container td-header-style-7">
+    <div class="td-header-row td-header-top-menu">
+        <!-- LOGIN MODAL -->
+
+                <div  id="login-form" class="white-popup-block mfp-hide mfp-with-anim">
+                    <div class="td-login-wrap">
+                        <a href="#" aria-label="Back" class="td-back-button"><i class="td-icon-modal-back"></i></a>
+                        <div id="td-login-div" class="td-login-form-div td-display-block">
+                            <div class="td-login-panel-title">Sign in</div>
+                            <div class="td-login-panel-descr">Welcome! Log into your account</div>
+                            <div class="td_display_err"></div>
+                            <form action="#" method="post">
+                            <div class="td-login-inputs"><input class="td-login-input" autocomplete="username" type="text" name="login_email" id="login_email" value="" required><label for="login_email">your username</label></div>
+	                        <div class="td-login-inputs"><input class="td-login-input" autocomplete="current-password" type="password" name="login_pass" id="login_pass" value="" required><label for="login_pass">your password</label></div>
+                            <input type="button" name="login_button" id="login_button" class="wpb_button btn td-login-button" value="Login">
+                            </form>
+                            <div class="td-login-info-text"><a href="#" id="forgot-pass-link">Forgot your password? Get help</a></div>
+                            
+                            
+                        </div>
+
+                        
+
+                         <div id="td-forgot-pass-div" class="td-login-form-div td-display-none">
+                            <div class="td-login-panel-title">Password recovery</div>
+                            <div class="td-login-panel-descr">Recover your password</div>
+                            <div class="td_display_err"></div>
+                            <div class="td-login-inputs"><input class="td-login-input" type="text" name="forgot_email" id="forgot_email" value="" required><label for="forgot_email">your email</label></div>
+                            <input type="button" name="forgot_button" id="forgot_button" class="wpb_button btn td-login-button" value="Send My Password">
+                            <div class="td-login-info-text">A password will be e-mailed to you.</div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+
+    <div class="td-header-row td-header-header">
+        <div class="td-header-sp-logo">
+            		<a class="td-main-logo" href="https://fergusonaction.com/">
+			<img width="700" height="98" src="https://fergusonaction.com/wp-content/uploads/2020/04/Ferguson-Logo.png" alt=""/>
+			<span class="td-visual-hidden">Ferguson Action 2021</span>
+		</a>
+		        </div>
+    </div>
+
+    <div class="td-header-menu-wrap">
+        <div class="td-header-row td-header-border td-header-main-menu">
+            <div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#" aria-label="mobile-toggle"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-header">
+                <a class="td-main-logo" href="https://fergusonaction.com/">
+            <img src="https://fergusonaction.com/wp-content/uploads/2020/04/Ferguson-Logo.png" alt="" width="700" height="98"/>
+        </a>
+        </div>
+    <div class="menu-td-demo-header-menu-container"><ul id="menu-td-demo-header-menu-1" class="sf-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-first td-menu-item td-normal-menu menu-item-175"><a href="https://fergusonaction.com/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-333"><a href="https://fergusonaction.com/category/business/">Business</a>
+<ul class="sub-menu">
+	<li class="menu-item-0"><div class="td-container-border"><div class="td-mega-grid"><script type="rocketlazyloadscript">var block_tdi_1 = new tdBlock();
+block_tdi_1.id = "tdi_1";
+block_tdi_1.atts = '{"limit":"5","td_column_number":3,"ajax_pagination":"next_prev","category_id":"26","show_child_cat":5,"td_ajax_filter_type":"td_category_ids_filter","td_ajax_preloading":"","block_type":"td_block_mega_menu","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","class":"tdi_1","tdc_css_class":"tdi_1","tdc_css_class_style":"tdi_1_rand_style"}';
+block_tdi_1.td_column_number = "3";
+block_tdi_1.block_type = "td_block_mega_menu";
+block_tdi_1.post_count = "5";
+block_tdi_1.found_posts = "77";
+block_tdi_1.header_color = "";
+block_tdi_1.ajax_pagination_infinite_stop = "";
+block_tdi_1.max_num_pages = "16";
+tdBlocksArray.push(block_tdi_1);
+</script><div class="td_block_wrap td_block_mega_menu tdi_1 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_1" ><div id=tdi_1 class="td_block_inner"><div class="td-mega-row"><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/adapting-business-to-run-online/" rel="bookmark" class="td-image-wrap " title="Increase Your Sales By Adapting Your Small Business To Run Online" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Increase Your Sales By Adapting Your Small Business To Run Online" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/adapting-business-to-run-online/" rel="bookmark" title="Increase Your Sales By Adapting Your Small Business To Run Online">Increase Your Sales By Adapting Your Small Business To Run Online</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/promote-or-sell-your-artwork/" rel="bookmark" class="td-image-wrap " title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/promote-or-sell-your-artwork/" rel="bookmark" title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists">How to Promote or Sell Your Artwork &#8211; Some Tips for Artists</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/business-development-manager/" rel="bookmark" class="td-image-wrap " title="What Does a Business Development Manager do?" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-180x135.jpeg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-180x135.jpeg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-80x60.jpeg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-100x75.jpeg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-238x178.jpeg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="What Does a Business Development Manager do?" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/business-development-manager/" rel="bookmark" title="What Does a Business Development Manager do?">What Does a Business Development Manager do?</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/customer-and-the-role-of-crm/" rel="bookmark" class="td-image-wrap " title="Transforming a Business From Product to Customer and The Role of CRM" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/07/CRM-180x135.jpeg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/07/CRM-180x135.jpeg 180w, https://fergusonaction.com/wp-content/uploads/2021/07/CRM-80x60.jpeg 80w, https://fergusonaction.com/wp-content/uploads/2021/07/CRM-100x75.jpeg 100w, https://fergusonaction.com/wp-content/uploads/2021/07/CRM-238x178.jpeg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Transforming a Business From Product to Customer and The Role of CRM" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/customer-and-the-role-of-crm/" rel="bookmark" title="Transforming a Business From Product to Customer and The Role of CRM">Transforming a Business From Product to Customer and The Role of CRM</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/navigating-industry-career-vs-starting-business/" rel="bookmark" class="td-image-wrap " title="Navigating Industry | Career vs. Starting a Business &#8211; 2021 Guide" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/06/Career-vs.-Starting-a-Business-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/06/Career-vs.-Starting-a-Business-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/06/Career-vs.-Starting-a-Business-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/06/Career-vs.-Starting-a-Business-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/06/Career-vs.-Starting-a-Business-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Navigating Industry | Career vs. Starting a Business &#8211; 2021 Guide" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/navigating-industry-career-vs-starting-business/" rel="bookmark" title="Navigating Industry | Career vs. Starting a Business &#8211; 2021 Guide">Navigating Industry | Career vs. Starting a Business &#8211; 2021 Guide</a></div>            </div>
+        </div>
+        </div></div></div><div class="td_mega_menu_sub_cats"><div class="block-mega-child-cats"><a class="cur-sub-cat mega-menu-sub-cat-tdi_1" id="tdi_2" data-td_block_id="tdi_1" data-td_filter_value="" href="https://fergusonaction.com/category/business/">All</a><a class="mega-menu-sub-cat-tdi_1"  id="tdi_3" data-td_block_id="tdi_1" data-td_filter_value="27" href="https://fergusonaction.com/category/business/finance/">Finance</a><a class="mega-menu-sub-cat-tdi_1"  id="tdi_4" data-td_block_id="tdi_1" data-td_filter_value="163" href="https://fergusonaction.com/category/business/law/">Law</a><a class="mega-menu-sub-cat-tdi_1"  id="tdi_5" data-td_block_id="tdi_1" data-td_filter_value="28" href="https://fergusonaction.com/category/business/marketing/">Marketing</a></div></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_1" data-td_block_id="tdi_1"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_1" data-td_block_id="tdi_1"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div><div class="clearfix"></div></div> <!-- ./block1 --></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-335"><a href="https://fergusonaction.com/category/health/">Health</a>
+<ul class="sub-menu">
+	<li class="menu-item-0"><div class="td-container-border"><div class="td-mega-grid"><script type="rocketlazyloadscript">var block_tdi_6 = new tdBlock();
+block_tdi_6.id = "tdi_6";
+block_tdi_6.atts = '{"limit":"5","td_column_number":3,"ajax_pagination":"next_prev","category_id":"18","show_child_cat":5,"td_ajax_filter_type":"td_category_ids_filter","td_ajax_preloading":"","block_type":"td_block_mega_menu","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","class":"tdi_6","tdc_css_class":"tdi_6","tdc_css_class_style":"tdi_6_rand_style"}';
+block_tdi_6.td_column_number = "3";
+block_tdi_6.block_type = "td_block_mega_menu";
+block_tdi_6.post_count = "5";
+block_tdi_6.found_posts = "157";
+block_tdi_6.header_color = "";
+block_tdi_6.ajax_pagination_infinite_stop = "";
+block_tdi_6.max_num_pages = "32";
+tdBlocksArray.push(block_tdi_6);
+</script><div class="td_block_wrap td_block_mega_menu tdi_6 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_6" ><div id=tdi_6 class="td_block_inner"><div class="td-mega-row"><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/natural-health-products-benefits/" rel="bookmark" class="td-image-wrap " title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being " ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being " /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/natural-health-products-benefits/" rel="bookmark" title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being ">3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being </a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/mental-health-and-immigrants/" rel="bookmark" class="td-image-wrap " title="Mental Health and Immigrants" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Mental Health and Immigrants" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/mental-health-and-immigrants/" rel="bookmark" title="Mental Health and Immigrants">Mental Health and Immigrants</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/skin-and-self-care-tips/" rel="bookmark" class="td-image-wrap " title="Best Skin Care and Self-Care Tips in 2021" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/self-care-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/self-care-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/self-care-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/self-care-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/self-care-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Best Skin Care and Self-Care Tips in 2021" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/skin-and-self-care-tips/" rel="bookmark" title="Best Skin Care and Self-Care Tips in 2021">Best Skin Care and Self-Care Tips in 2021</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/foot-pain-causes/" rel="bookmark" class="td-image-wrap " title="Foot Pain Causes, At-Home Remedies, and Treatments" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/foot-pain-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/foot-pain-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/foot-pain-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/foot-pain-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/foot-pain-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Foot Pain Causes, At-Home Remedies, and Treatments" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/foot-pain-causes/" rel="bookmark" title="Foot Pain Causes, At-Home Remedies, and Treatments">Foot Pain Causes, At-Home Remedies, and Treatments</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/why-is-exercise-important-for-mental-health/" rel="bookmark" class="td-image-wrap " title="Why is Exercise Important For Mental Health?" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/07/doing-exercise-1-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/07/doing-exercise-1-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/07/doing-exercise-1-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/07/doing-exercise-1-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/07/doing-exercise-1-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Why is Exercise Important For Mental Health?" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/why-is-exercise-important-for-mental-health/" rel="bookmark" title="Why is Exercise Important For Mental Health?">Why is Exercise Important For Mental Health?</a></div>            </div>
+        </div>
+        </div></div></div><div class="td_mega_menu_sub_cats"><div class="block-mega-child-cats"><a class="cur-sub-cat mega-menu-sub-cat-tdi_6" id="tdi_7" data-td_block_id="tdi_6" data-td_filter_value="" href="https://fergusonaction.com/category/health/">All</a><a class="mega-menu-sub-cat-tdi_6"  id="tdi_8" data-td_block_id="tdi_6" data-td_filter_value="19" href="https://fergusonaction.com/category/health/fitness/">Fitness</a><a class="mega-menu-sub-cat-tdi_6"  id="tdi_9" data-td_block_id="tdi_6" data-td_filter_value="1868" href="https://fergusonaction.com/category/health/hair-care/">Hair Care</a><a class="mega-menu-sub-cat-tdi_6"  id="tdi_10" data-td_block_id="tdi_6" data-td_filter_value="20" href="https://fergusonaction.com/category/health/skin-care/">Skin Care</a><a class="mega-menu-sub-cat-tdi_6"  id="tdi_11" data-td_block_id="tdi_6" data-td_filter_value="24" href="https://fergusonaction.com/category/health/weight-loss/">Weight Loss</a><a class="mega-menu-sub-cat-tdi_6"  id="tdi_12" data-td_block_id="tdi_6" data-td_filter_value="165" href="https://fergusonaction.com/category/health/yoga/">Yoga</a></div></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_6" data-td_block_id="tdi_6"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_6" data-td_block_id="tdi_6"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div><div class="clearfix"></div></div> <!-- ./block1 --></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-338"><a href="https://fergusonaction.com/category/technology/">Technology</a>
+<ul class="sub-menu">
+	<li class="menu-item-0"><div class="td-container-border"><div class="td-mega-grid"><script type="rocketlazyloadscript">var block_tdi_13 = new tdBlock();
+block_tdi_13.id = "tdi_13";
+block_tdi_13.atts = '{"limit":"5","td_column_number":3,"ajax_pagination":"next_prev","category_id":"42","show_child_cat":5,"td_ajax_filter_type":"td_category_ids_filter","td_ajax_preloading":"","block_type":"td_block_mega_menu","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","class":"tdi_13","tdc_css_class":"tdi_13","tdc_css_class_style":"tdi_13_rand_style"}';
+block_tdi_13.td_column_number = "3";
+block_tdi_13.block_type = "td_block_mega_menu";
+block_tdi_13.post_count = "5";
+block_tdi_13.found_posts = "69";
+block_tdi_13.header_color = "";
+block_tdi_13.ajax_pagination_infinite_stop = "";
+block_tdi_13.max_num_pages = "14";
+tdBlocksArray.push(block_tdi_13);
+</script><div class="td_block_wrap td_block_mega_menu tdi_13 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_13" ><div id=tdi_13 class="td_block_inner"><div class="td-mega-row"><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/auto-redirect-ads/" rel="bookmark" class="td-image-wrap " title="Auto-Redirect Ads, the Internet’s Hidden Boogeyman" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/07/home-office-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/07/home-office-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/07/home-office-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/07/home-office-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/07/home-office-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Auto-Redirect Ads, the Internet’s Hidden Boogeyman" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/auto-redirect-ads/" rel="bookmark" title="Auto-Redirect Ads, the Internet’s Hidden Boogeyman">Auto-Redirect Ads, the Internet’s Hidden Boogeyman</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/technical-debts-in-software/" rel="bookmark" class="td-image-wrap " title="Do You Have Technical Debts in Your Software?" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/06/Technical-Debts-180x135.png"  srcset="https://fergusonaction.com/wp-content/uploads/2021/06/Technical-Debts-180x135.png 180w, https://fergusonaction.com/wp-content/uploads/2021/06/Technical-Debts-80x60.png 80w, https://fergusonaction.com/wp-content/uploads/2021/06/Technical-Debts-100x75.png 100w, https://fergusonaction.com/wp-content/uploads/2021/06/Technical-Debts-238x178.png 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="Do You Have Technical Debts in Your Software?" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/technical-debts-in-software/" rel="bookmark" title="Do You Have Technical Debts in Your Software?">Do You Have Technical Debts in Your Software?</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/things-i-hate-about-fiverr/" rel="bookmark" class="td-image-wrap " title="5 Things I Absolutely Hate About Fiverr" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/05/Fiverr-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/05/Fiverr-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/05/Fiverr-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/05/Fiverr-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/05/Fiverr-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="5 Things I Absolutely Hate About Fiverr" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/things-i-hate-about-fiverr/" rel="bookmark" title="5 Things I Absolutely Hate About Fiverr">5 Things I Absolutely Hate About Fiverr</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/best-location-to-place-smoke-detectors-in-your-house/" rel="bookmark" class="td-image-wrap " title="The Best Location To Place Smoke Detectors In Your House" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/04/smoke-detector-180x135.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/04/smoke-detector-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/04/smoke-detector-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/04/smoke-detector-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/04/smoke-detector-238x178.jpg 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="The Best Location To Place Smoke Detectors In Your House" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/best-location-to-place-smoke-detectors-in-your-house/" rel="bookmark" title="The Best Location To Place Smoke Detectors In Your House">The Best Location To Place Smoke Detectors In Your House</a></div>            </div>
+        </div>
+        </div><div class="td-mega-span">
+        <div class="td_module_mega_menu td-animation-stack td_mod_mega_menu">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/choosing-robot-for-small-business/" rel="bookmark" class="td-image-wrap " title="What to Consider When Choosing a Robot for Your Small Business" ><img width="180" height="135" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/03/robot-180x135.png"  srcset="https://fergusonaction.com/wp-content/uploads/2021/03/robot-180x135.png 180w, https://fergusonaction.com/wp-content/uploads/2021/03/robot-80x60.png 80w, https://fergusonaction.com/wp-content/uploads/2021/03/robot-100x75.png 100w, https://fergusonaction.com/wp-content/uploads/2021/03/robot-238x178.png 238w" sizes="(max-width: 180px) 100vw, 180px"  alt="" title="What to Consider When Choosing a Robot for Your Small Business" /></a></div>                                            </div>
+
+            <div class="item-details">
+                <div class="entry-title td-module-title"><a href="https://fergusonaction.com/choosing-robot-for-small-business/" rel="bookmark" title="What to Consider When Choosing a Robot for Your Small Business">What to Consider When Choosing a Robot for Your Small Business</a></div>            </div>
+        </div>
+        </div></div></div><div class="td_mega_menu_sub_cats"><div class="block-mega-child-cats"><a class="cur-sub-cat mega-menu-sub-cat-tdi_13" id="tdi_14" data-td_block_id="tdi_13" data-td_filter_value="" href="https://fergusonaction.com/category/technology/">All</a><a class="mega-menu-sub-cat-tdi_13"  id="tdi_15" data-td_block_id="tdi_13" data-td_filter_value="119" href="https://fergusonaction.com/category/technology/apps/">Apps</a><a class="mega-menu-sub-cat-tdi_13"  id="tdi_16" data-td_block_id="tdi_13" data-td_filter_value="43" href="https://fergusonaction.com/category/technology/design-and-development/">Design and Development</a><a class="mega-menu-sub-cat-tdi_13"  id="tdi_17" data-td_block_id="tdi_13" data-td_filter_value="45" href="https://fergusonaction.com/category/technology/gadgets/">Gadgets</a><a class="mega-menu-sub-cat-tdi_13"  id="tdi_18" data-td_block_id="tdi_13" data-td_filter_value="44" href="https://fergusonaction.com/category/technology/software/">Software</a></div></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_13" data-td_block_id="tdi_13"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_13" data-td_block_id="tdi_13"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div><div class="clearfix"></div></div> <!-- ./block1 --></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-337"><a href="https://fergusonaction.com/category/reviews/">Reviews</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-339"><a href="#">More</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-340"><a href="https://fergusonaction.com/category/education/">Education</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-341"><a href="https://fergusonaction.com/category/entertainment/">Entertainment</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-342"><a href="https://fergusonaction.com/category/family-and-parenting/">Family and Parenting</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-343"><a href="https://fergusonaction.com/category/food/">Food</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-344"><a href="https://fergusonaction.com/category/games/">Games</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-345"><a href="https://fergusonaction.com/category/pet/">Pet</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-346"><a href="https://fergusonaction.com/category/sports/">Sports</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-347"><a href="https://fergusonaction.com/category/travel/">Travel</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-604"><a href="https://fergusonaction.com/contact-us/">Contact Us</a></li>
+</ul></div></div>
+
+<div class="td-search-wrapper">
+    <div id="td-top-search">
+        <!-- Search -->
+        <div class="header-search-wrap">
+            <div class="dropdown header-search">
+                <a id="td-header-search-button" href="#" role="button" aria-label="search icon" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+                <a id="td-header-search-button-mob" href="#" role="button" aria-label="search icon" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-search-wrap">
+	<div class="dropdown header-search">
+		<div class="td-drop-down-search">
+			<form method="get" class="td-search-form" action="https://fergusonaction.com/">
+				<div role="search" class="td-head-form-search-wrap">
+					<input class="needsclick" id="td-header-search" type="text" value="" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search" />
+				</div>
+			</form>
+			<div id="td-aj-search"></div>
+		</div>
+	</div>
+</div>        </div>
+    </div>
+
+    <div class="td-header-container">
+        <div class="td-header-row">
+            <div class="td-header-sp-rec">
+                
+<div class="td-header-ad-wrap  td-ad">
+    
+
+</div>            </div>
+        </div>
+    </div>
+</div><div class="td-container td-post-template-2">
+    <div class="td-container-border">
+        <article id="post-3673" class="post-3673 post type-post status-publish format-standard has-post-thumbnail hentry category-automotive tag-bad-driving tag-bad-driving-conditions tag-biggest-car-crashes-in-u-s tag-car-accidents tag-car-crash tag-driving" itemscope itemtype="https://schema.org/Article">
+            <div class="td-pb-row">
+                <div class="td-pb-span12">
+                    <div class="td-post-header td-pb-padding-side">
+                        <div class="entry-crumbs"><span><a title="" class="entry-crumb" href="https://fergusonaction.com/">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span><a title="View all posts in Automotive" class="entry-crumb" href="https://fergusonaction.com/category/automotive/">Automotive</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">8 Worst Auto Accidents in US History</span></div>
+                        <ul class="td-category"><li class="entry-category"><a  href="https://fergusonaction.com/category/automotive/">Automotive</a></li></ul>
+                        <header>
+                            <h1 class="entry-title">8 Worst Auto Accidents in US History</h1>
+
+                            
+
+                            <div class="meta-info">
+
+                                <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://fergusonaction.com/author/mivian-batolov/">Mivian Batolov</a><div class="td-author-line"> - </div> </div>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2020-06-30T15:19:50+02:00" >June 30, 2020</time></span>                                <span class="td-post-date td-post-modified-date"><time class="entry-date updated td-module-date" >Modified date: February 1, 2021</time></span>                                                                <div class="td-post-comments"><a href="https://fergusonaction.com/worst-auto-accidents-in-us-history/#respond"><i class="td-icon-comments"></i>0</a></div>                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div> <!-- /.td-pb-row -->
+
+            <div class="td-pb-row">
+                                            <div class="td-pb-span8 td-main-content" role="main">
+                                <div class="td-ss-main-content">
+                                    
+        
+
+        <div class="td-post-content td-pb-padding-side">
+            <div class="td-post-featured-image"><img width="640" height="427" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-640x427.jpg" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-640x427.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-300x200.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-1024x682.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-768x512.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-630x420.jpg 630w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash-681x454.jpg 681w, https://fergusonaction.com/wp-content/uploads/2020/06/car-crash.jpg 1430w" sizes="(max-width: 640px) 100vw, 640px" alt="" title="car crash"/></div>
+            <p>With 5 million car crashes in 2018 in the United States, this is not a benign issue anymore. Automotive accidents cost Americans $40.4 billion every year and are also responsible for 33,560 deaths nationwide. As the leading cause of death for people aged 5–29, the main reason for car and truck accidents is reckless driving by speeding, driving under the influence, or failing to follow traffic rules.</p>
+<p>These figures don’t take into account injuries and their effects on victims, especially when there are long term disabilities. Grief, loss of income, and trauma are also part of the cost of traffic accidents. An accident lawyer is usually best equipped to analyze these effects, as many reckless driving accidents are followed with personal injury claims against the party at fault.</p>
+<p>Here are eight examples of how errors in judgment or bad driving conditions have caused massive car pileups and crashes.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_17 counter-hierarchy counter-decimal ez-toc-white">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">Page Contents</p>
+<span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" style="display: none;"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1"><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-1" href="#1_LA_CA_Interstate_710_-_November_3rd_2002" title="1.  LA, CA Interstate 710 — November 3rd, 2002">1.  LA, CA Interstate 710 — November 3rd, 2002</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-2" href="#2_Carrollton_KY_I-71_-_May_14th_1988" title="2. Carrollton, KY I-71 — May 14th, 1988">2. Carrollton, KY I-71 — May 14th, 1988</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#3_Denver_CO_Interstate_25_-_March_1st_2014" title="3.  Denver, CO Interstate 25 — March 1st, 2014">3.  Denver, CO Interstate 25 — March 1st, 2014</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-4" href="#4_Galesburg_MI_Interstate_94_-_January_9th_2015" title="4. Galesburg, MI Interstate 94 — January 9th, 2015">4. Galesburg, MI Interstate 94 — January 9th, 2015</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-5" href="#5_Kansas_City_KS_Interstate_70_-_February_14th_2010" title="5. Kansas City, KS Interstate 70 — February 14th, 2010">5. Kansas City, KS Interstate 70 — February 14th, 2010</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-6" href="#6_Roanoke_VI_Interstate_81_-_July_4th_1998" title="6. Roanoke, VI Interstate 81 — July 4th, 1998">6. Roanoke, VI Interstate 81 — July 4th, 1998</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-7" href="#7_Sumner_County_TN_State_Route_386_-_December_1st_2011" title="7. Sumner County, TN State Route 386 — December 1st, 2011">7. Sumner County, TN State Route 386 — December 1st, 2011</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-8" href="#8_Stephenson_VA_Interstate_81_-_June_26th_2011" title="8. Stephenson, VA Interstate 81 — June 26th, 2011">8. Stephenson, VA Interstate 81 — June 26th, 2011</a></li></ul></nav></div>
+<h3><span class="ez-toc-section" id="1_LA_CA_Interstate_710_-_November_3rd_2002"></span>1.  LA, CA Interstate 710 — November 3<sup>rd</sup>, 2002<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3674" aria-describedby="caption-attachment-3674" style="width: 1024px" class="wp-caption aligncenter"><img loading="lazy" class="size-full wp-image-3674" src="https://fergusonaction.com/wp-content/uploads/2020/06/crash1.jpg" alt="" width="1024" height="669" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/crash1.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/crash1-300x196.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/crash1-768x502.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/crash1-643x420.jpg 643w, https://fergusonaction.com/wp-content/uploads/2020/06/crash1-640x418.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/crash1-681x445.jpg 681w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption id="caption-attachment-3674" class="wp-caption-text">Source: scpr.org</figcaption></figure>
+<p>Due to excessive fog and poor visibility, the fast-moving California freeway <a href="https://edition.cnn.com/2002/US/West/11/03/car.wreck/">saw a massive pileup</a> consisting of 216 vehicles. Seventy vehicles were damaged beyond repair, and 45 bike riders were injured in the accident.</p>
+<p>A truck suffered damage caused by an oil leak, which caused skidding for other cars as they drove by, leading to a chain of harmful events that escalated into a car pileup. Thankfully, there were no fatalities of this crash.</p>
+<h3><span class="ez-toc-section" id="2_Carrollton_KY_I-71_-_May_14th_1988"></span>2. Carrollton, KY I-71 — May 14<sup>th</sup>, 1988<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3675" aria-describedby="caption-attachment-3675" style="width: 640px" class="wp-caption aligncenter"><img loading="lazy" class="size-large wp-image-3675" src="https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-1024x579.jpg" alt="" width="640" height="362" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-1024x579.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-300x170.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-768x434.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-1536x868.jpg 1536w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-2048x1157.jpg 2048w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-743x420.jpg 743w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-640x362.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/xxx-kentucky-bus-disaster_aps_122-16_9-681x385.jpg 681w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3675" class="wp-caption-text">Source: usatoday.com</figcaption></figure>
+<p>This was one of the most heartbreaking accidents in Kentucky. A bus was transporting approximately60 people back home from a church trip to an amusement park nearby on the I-71 when drunk driver Larry Wayne collided head-on with the vehicle causing the door of the bus to stop functioning and also damaging the gas tank.</p>
+<p>It took only a few minutes for the bus to catch fire, and with one door not functioning, many passengers were stuck inside the bus. Twenty-seven people died in the crash, and 34 were severely injured.</p>
+<h3><span class="ez-toc-section" id="3_Denver_CO_Interstate_25_-_March_1st_2014"></span>3.  Denver, CO Interstate 25 — March 1<sup>st</sup>, 2014<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3676" aria-describedby="caption-attachment-3676" style="width: 745px" class="wp-caption aligncenter"><img loading="lazy" class="size-full wp-image-3676" src="https://fergusonaction.com/wp-content/uploads/2020/06/accident.jpg" alt="" width="745" height="419" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/accident.jpg 745w, https://fergusonaction.com/wp-content/uploads/2020/06/accident-300x169.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/accident-640x360.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/accident-681x383.jpg 681w" sizes="(max-width: 745px) 100vw, 745px" /><figcaption id="caption-attachment-3676" class="wp-caption-text">Source: westword.com</figcaption></figure>
+<p><a href="https://www.denverpost.com/2014/03/01/i-25-pileup-104-vehicles-involved-1-killed-30-hospitalized-after-snowy-disaster/">One hundred four cars were involved</a> in this accident as people speeding on the snowy highway were unable to maintaincontrol of their vehicles. There was one death and 30 injuries, but the damages to the vehicles were immense.</p>
+<p>The extreme cold meant that survivors were stranded underless than ideal circumstances, and the timing of the crash meant that the Interstate was completely jammed for five hours after the accident.</p>
+<h3><span class="ez-toc-section" id="4_Galesburg_MI_Interstate_94_-_January_9th_2015"></span>4. Galesburg, MI Interstate 94 — January 9<sup>th</sup>, 2015<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3677" aria-describedby="caption-attachment-3677" style="width: 640px" class="wp-caption aligncenter"><img loading="lazy" class="size-large wp-image-3677" src="https://fergusonaction.com/wp-content/uploads/2020/06/crash3-1024x538.jpg" alt="" width="640" height="336" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/crash3-1024x538.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-300x158.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-768x403.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-1536x806.jpg 1536w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-2048x1075.jpg 2048w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-800x420.jpg 800w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-640x336.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/crash3-681x358.jpg 681w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3677" class="wp-caption-text">Source: freep.com</figcaption></figure>
+<p>This <a href="https://www.freep.com/story/news/local/michigan/2015/01/09/i-94-pileup-kalamazoo-county/21500281/">accident became infamous</a> due to the carnage that resulted in a strange turn of events. The initial pileup began at ten and involved multiple vehicles, including a Tractor-Trailer that was carrying fireworks. As the pileups grew, the damage worsened and the fireworks began to explode.</p>
+<p>A semi-truck nearby was also carrying acid substances that leaked and caused more damagesat the scene of the wreck. It took 12 hours to clear the scene. One death occurred, and 23 people were wounded at the scene.</p>
+<h3><span class="ez-toc-section" id="5_Kansas_City_KS_Interstate_70_-_February_14th_2010"></span>5. Kansas City, KS Interstate 70 — February 14<sup>th</sup>, 2010<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3678" aria-describedby="caption-attachment-3678" style="width: 640px" class="wp-caption aligncenter"><img loading="lazy" class="size-large wp-image-3678" src="https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-1024x576.jpg" alt="" width="640" height="360" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-1024x576.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-300x169.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-768x432.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-747x420.jpg 747w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-640x360.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F-681x383.jpg 681w, https://fergusonaction.com/wp-content/uploads/2020/06/I70-ME-20170711-KAM-0115F.jpg 1140w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3678" class="wp-caption-text">Source: kansascity.com</figcaption></figure>
+<p>A 140 vehicle pileup occurred <a href="https://www.cbsnews.com/news/weather-causes-massive-crashes-in-midwest/">after a deadly snowstorm</a> in the city area, which caused highways all over to shut down. The weather also caused other smaller pileups. No people died, but there were 13 injuries in this singular accident, and the damage to the cars, trucks, and buses was immense.</p>
+<h3><span class="ez-toc-section" id="6_Roanoke_VI_Interstate_81_-_July_4th_1998"></span>6. Roanoke, VI Interstate 81 — July 4<sup>th</sup>, 1998<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3679" aria-describedby="caption-attachment-3679" style="width: 640px" class="wp-caption aligncenter"><img loading="lazy" class="size-full wp-image-3679" src="https://fergusonaction.com/wp-content/uploads/2020/06/crash4.jpg" alt="" width="640" height="360" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/crash4.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/crash4-300x169.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3679" class="wp-caption-text">Source: wsls.com</figcaption></figure>
+<p>This accident was one of the deadliest in Virginia’s history and also had an incredibly eerie follow-up. A car with Kevin Chittum and his fiancé Whitney Rogers crashed into a tractor-trailer after hydroplaning from a bump in the road. An ongoing storm was causing poor visibility at the time. Chittum and Rogers were accompanied by Chittum&#8217;s sister and niece and two of her friends.</p>
+<p>All people in both vehicles died. The couple had left their three-year-old daughter behind, who was later identified as one of the babies that had been switched at birth earlier that year. The couple&#8217;s biological daughter was in the custody of another family that lived about 75 miles away from their home. Reaching out for legal help after a car accident is so important in helping you receive the compensation you deserve. No matter the situation, the experienced attorneys at <a href="https://www.seriouslawyers.com/alabama-car-accidents-facts/">Serious Injury Law Group</a> will be there to support you.</p>
+<h3><span class="ez-toc-section" id="7_Sumner_County_TN_State_Route_386_-_December_1st_2011"></span>7. Sumner County, TN State Route 386 — December 1<sup>st</sup>, 2011<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3680" aria-describedby="caption-attachment-3680" style="width: 640px" class="wp-caption aligncenter"><img loading="lazy" class="size-full wp-image-3680" src="https://fergusonaction.com/wp-content/uploads/2020/06/chain-reaction-crash.jpg" alt="" width="640" height="360" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/chain-reaction-crash.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/chain-reaction-crash-300x169.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3680" class="wp-caption-text">Source: edition.cnn.com</figcaption></figure>
+<p>The <a href="https://edition.cnn.com/2011/12/01/us/tennessee-crashes/index.html">most massive car pileup in Tennessee history</a> involved 176 vehicles, with around 17 injured and one dead. Black ice was identified as the leading cause of the crash, along with extremely thick fog.</p>
+<p>Black ice is a phenomenon that occurs when the snow melts and then refreezes on the roads, causing it to change color and become invisible. This causes skidding because of its smoothness and invisibility.</p>
+<h3><span class="ez-toc-section" id="8_Stephenson_VA_Interstate_81_-_June_26th_2011"></span>8. Stephenson, VA Interstate 81 — June 26th, 2011<span class="ez-toc-section-end"></span></h3>
+<figure id="attachment_3681" aria-describedby="caption-attachment-3681" style="width: 640px" class="wp-caption alignnone"><img loading="lazy" class="size-large wp-image-3681" src="https://fergusonaction.com/wp-content/uploads/2020/06/crash5-1024x576.jpg" alt="" width="640" height="360" srcset="https://fergusonaction.com/wp-content/uploads/2020/06/crash5-1024x576.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-300x169.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-768x432.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-1536x864.jpg 1536w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-747x420.jpg 747w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-640x360.jpg 640w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5-681x383.jpg 681w, https://fergusonaction.com/wp-content/uploads/2020/06/crash5.jpg 1920w" sizes="(max-width: 640px) 100vw, 640px" /><figcaption id="caption-attachment-3681" class="wp-caption-text">Source: 11alive.com</figcaption></figure>
+<p>This horrible car accident occurred due to a 20-year-old drunk driver that rear-ended an SUV with a family of four inside. The Roe family was on their way to a Sunday lunch at Mr. Roe&#8217;s mother&#8217;s house when this happened. The fuel tank of the SUV exploded, and all four members of the family died.</p>
+<p>While many of these horrible accidents were caused by weather, a lack of care when driving in harsh conditions can be seen as a common factor. Moreover, drunk driving can be a clear case of manslaughter or reckless endangerment. In cases like these, a personal injury attorney with experience in car and truck accidents should be contacted, and a claim for compensation must be made.</p>
+<p>To learn more about this, <a href="https://lisagdouglas.com/car-accident-lawyer-little-rock/">click here</a>.</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div class="54221b4abfe097ba157de696cba1301b" data-index="100" style="">
+
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div>        </div>
+
+
+        <footer>
+                        
+            <div class="td-post-source-tags td-pb-padding-side">
+                                <ul class="td-tags td-post-small-box clearfix"><li><span>TAGS</span></li><li><a href="https://fergusonaction.com/tag/bad-driving/">bad driving</a></li><li><a href="https://fergusonaction.com/tag/bad-driving-conditions/">bad driving conditions</a></li><li><a href="https://fergusonaction.com/tag/biggest-car-crashes-in-u-s/">biggest car crashes in U.S.</a></li><li><a href="https://fergusonaction.com/tag/car-accidents/">car accidents</a></li><li><a href="https://fergusonaction.com/tag/car-crash/">car crash</a></li><li><a href="https://fergusonaction.com/tag/driving/">driving</a></li></ul>            </div>
+
+            <div class="td-post-sharing-bottom td-pb-padding-side"></div>            <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://fergusonaction.com/cities-to-invest-real-estate/">Top US Cities to Invest in Real Estate in 2020</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://fergusonaction.com/junk-car-without-title/">How to Junk a Car Without a Title in 2020</a></div></div></div>            <div class="author-box-wrap"><a href="https://fergusonaction.com/author/mivian-batolov/" aria-label="author-photo"><img data-del="avatar" alt='' src='https://fergusonaction.com/wp-content/uploads/2020/07/acdc-150x150.jpg' class='avatar pp-user-avatar avatar-96 photo ' height='96' width='96'/></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://fergusonaction.com/author/mivian-batolov/">Mivian Batolov</a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>	        <span class="td-page-meta" itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Mivian Batolov"></span><meta itemprop="datePublished" content="2020-06-30T15:19:50+02:00"><meta itemprop="dateModified" content="2021-02-01T11:35:24+02:00"><meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://fergusonaction.com/worst-auto-accidents-in-us-history/"/><span class="td-page-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://fergusonaction.com/wp-content/uploads/2020/04/Ferguson-Logo.png"></span><meta itemprop="name" content="Ferguson Action 2021"></span><meta itemprop="headline " content="8 Worst Auto Accidents in US History"><span class="td-page-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://fergusonaction.com/wp-content/uploads/2020/06/car-crash.jpg"><meta itemprop="width" content="1430"><meta itemprop="height" content="953"></span>        </footer>
+
+    <script type="rocketlazyloadscript">var block_tdi_21 = new tdBlock();
+block_tdi_21.id = "tdi_21";
+block_tdi_21.atts = '{"limit":6,"ajax_pagination":"next_prev","live_filter":"cur_post_same_categories","td_ajax_filter_type":"td_custom_related","class":"tdi_21","td_column_number":3,"block_type":"td_block_related_posts","live_filter_cur_post_id":3673,"live_filter_cur_post_author":"4","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_ajax_preloading":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","tdc_css_class":"tdi_21","tdc_css_class_style":"tdi_21_rand_style"}';
+block_tdi_21.td_column_number = "3";
+block_tdi_21.block_type = "td_block_related_posts";
+block_tdi_21.post_count = "6";
+block_tdi_21.found_posts = "14";
+block_tdi_21.header_color = "";
+block_tdi_21.ajax_pagination_infinite_stop = "";
+block_tdi_21.max_num_pages = "3";
+tdBlocksArray.push(block_tdi_21);
+</script><div class="td_block_wrap td_block_related_posts tdi_21 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_21" ><h4 class="td-related-title"><a id="tdi_22" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="tdi_21" href="#">RELATED ARTICLES</a><a id="tdi_23" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="tdi_21" href="#">MORE FROM AUTHOR</a></h4><div id=tdi_21 class="td_block_inner">
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/buying-an-e-scooter/" rel="bookmark" class="td-image-wrap " title="7 Things To Have in Mind When Buying An E-Scooter &#8211; 2020 Guide" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/12/escooter-2-238x178.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2020/12/escooter-2-238x178.jpg 238w, https://fergusonaction.com/wp-content/uploads/2020/12/escooter-2-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2020/12/escooter-2-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2020/12/escooter-2-180x135.jpg 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="7 Things To Have in Mind When Buying An E-Scooter &#8211; 2020 Guide" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/buying-an-e-scooter/" rel="bookmark" title="7 Things To Have in Mind When Buying An E-Scooter &#8211; 2020 Guide">7 Things To Have in Mind When Buying An E-Scooter &#8211; 2020 Guide</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/clean-interior-of-car/" rel="bookmark" class="td-image-wrap " title="How Often Should You Clean The Interior Of Your Car &#8211; 2020 Guide" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/11/CR-Cars-Inlinehero-cleaning-car-for-covid-19-0320-238x178.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2020/11/CR-Cars-Inlinehero-cleaning-car-for-covid-19-0320-238x178.jpg 238w, https://fergusonaction.com/wp-content/uploads/2020/11/CR-Cars-Inlinehero-cleaning-car-for-covid-19-0320-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2020/11/CR-Cars-Inlinehero-cleaning-car-for-covid-19-0320-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2020/11/CR-Cars-Inlinehero-cleaning-car-for-covid-19-0320-180x135.jpg 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="How Often Should You Clean The Interior Of Your Car &#8211; 2020 Guide" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/clean-interior-of-car/" rel="bookmark" title="How Often Should You Clean The Interior Of Your Car &#8211; 2020 Guide">How Often Should You Clean The Interior Of Your Car &#8211; 2020 Guide</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/take-care-of-your-electric-car/" rel="bookmark" class="td-image-wrap " title="How to Take Care of Your Electric Car &#8211; The Best Guide of 2020" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/08/Electric-Car.jpg-238x178.png"  srcset="https://fergusonaction.com/wp-content/uploads/2020/08/Electric-Car.jpg-238x178.png 238w, https://fergusonaction.com/wp-content/uploads/2020/08/Electric-Car.jpg-80x60.png 80w, https://fergusonaction.com/wp-content/uploads/2020/08/Electric-Car.jpg-100x75.png 100w, https://fergusonaction.com/wp-content/uploads/2020/08/Electric-Car.jpg-180x135.png 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="How to Take Care of Your Electric Car &#8211; The Best Guide of 2020" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/take-care-of-your-electric-car/" rel="bookmark" title="How to Take Care of Your Electric Car &#8211; The Best Guide of 2020">How to Take Care of Your Electric Car &#8211; The Best Guide of 2020</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid-->
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/childs-safety-while-driving/" rel="bookmark" class="td-image-wrap " title="5 Ways to Improve Child&#8217;s Safety While Driving" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/07/familyincar_roadtrip-238x178.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2020/07/familyincar_roadtrip-238x178.jpg 238w, https://fergusonaction.com/wp-content/uploads/2020/07/familyincar_roadtrip-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2020/07/familyincar_roadtrip-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2020/07/familyincar_roadtrip-180x135.jpg 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="5 Ways to Improve Child&#8217;s Safety While Driving" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/childs-safety-while-driving/" rel="bookmark" title="5 Ways to Improve Child&#8217;s Safety While Driving">5 Ways to Improve Child&#8217;s Safety While Driving</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/junk-car-without-title/" rel="bookmark" class="td-image-wrap " title="How to Junk a Car Without a Title in 2020" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-238x178.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-238x178.jpg 238w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-300x226.jpg 300w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-1024x772.jpg 1024w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-768x579.jpg 768w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-557x420.jpg 557w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2020/07/Junk-Car-Removal-180x135.jpg 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="How to Junk a Car Without a Title in 2020" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/junk-car-without-title/" rel="bookmark" title="How to Junk a Car Without a Title in 2020">How to Junk a Car Without a Title in 2020</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/coronavirus-impact-on-car-buying-and-car-prices/" rel="bookmark" class="td-image-wrap " title="How Will Coronavirus Impact Car Buying and Car Prices in 2020" ><img width="238" height="178" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2020/06/These-Car-Buying-Tips-238x178.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2020/06/These-Car-Buying-Tips-238x178.jpg 238w, https://fergusonaction.com/wp-content/uploads/2020/06/These-Car-Buying-Tips-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2020/06/These-Car-Buying-Tips-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2020/06/These-Car-Buying-Tips-180x135.jpg 180w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="How Will Coronavirus Impact Car Buying and Car Prices in 2020" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/coronavirus-impact-on-car-buying-and-car-prices/" rel="bookmark" title="How Will Coronavirus Impact Car Buying and Car Prices in 2020">How Will Coronavirus Impact Car Buying and Car Prices in 2020</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_21" data-td_block_id="tdi_21"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_21" data-td_block_id="tdi_21"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block -->
+    <div class="comments" id="comments">
+            </div> <!-- /.content -->
+                                    </div>
+                            </div>
+                            <div class="td-pb-span4 td-main-sidebar td-pb-border-top" role="complementary">
+                                <div class="td-ss-main-sidebar">
+                                    <div class="td_block_wrap td_block_2 td_block_widget tdi_24 td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_24" >
+<style>
+/* custom css */
+.tdi_24 .td-post-vid-time{
+					display: block;
+				}
+</style><script type="rocketlazyloadscript">var block_tdi_24 = new tdBlock();
+block_tdi_24.id = "tdi_24";
+block_tdi_24.atts = '{"custom_title":"","custom_url":"","block_template_id":"","header_color":"#","header_text_color":"#","border_top":"","color_preset":"","m4_tl":"","m4_el":"","m6_tl":"","limit":"10","offset":"","el_class":"","post_ids":"","category_id":"","category_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","sort":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","td_ajax_preloading":"","ajax_pagination":"","ajax_pagination_infinite_stop":"","class":"td_block_widget tdi_24","block_type":"td_block_2","separator":"","title_tag":"","m4_title_tag":"","m6_title_tag":"","show_modified_date":"","video_popup":"","video_rec":"","video_rec_title":"","show_vid_t":"block","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_family":"","f_header_font_size":"","f_header_font_line_height":"","f_header_font_style":"","f_header_font_weight":"","f_header_font_transform":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","m4f_title_font_header":"","m4f_title_font_title":"Article title","m4f_title_font_settings":"","m4f_title_font_family":"","m4f_title_font_size":"","m4f_title_font_line_height":"","m4f_title_font_style":"","m4f_title_font_weight":"","m4f_title_font_transform":"","m4f_title_font_spacing":"","m4f_title_":"","m4f_cat_font_title":"Article category tag","m4f_cat_font_settings":"","m4f_cat_font_family":"","m4f_cat_font_size":"","m4f_cat_font_line_height":"","m4f_cat_font_style":"","m4f_cat_font_weight":"","m4f_cat_font_transform":"","m4f_cat_font_spacing":"","m4f_cat_":"","m4f_meta_font_title":"Article meta info","m4f_meta_font_settings":"","m4f_meta_font_family":"","m4f_meta_font_size":"","m4f_meta_font_line_height":"","m4f_meta_font_style":"","m4f_meta_font_weight":"","m4f_meta_font_transform":"","m4f_meta_font_spacing":"","m4f_meta_":"","m4f_ex_font_title":"Article excerpt","m4f_ex_font_settings":"","m4f_ex_font_family":"","m4f_ex_font_size":"","m4f_ex_font_line_height":"","m4f_ex_font_style":"","m4f_ex_font_weight":"","m4f_ex_font_transform":"","m4f_ex_font_spacing":"","m4f_ex_":"","m6f_title_font_header":"","m6f_title_font_title":"Article title","m6f_title_font_settings":"","m6f_title_font_family":"","m6f_title_font_size":"","m6f_title_font_line_height":"","m6f_title_font_style":"","m6f_title_font_weight":"","m6f_title_font_transform":"","m6f_title_font_spacing":"","m6f_title_":"","m6f_cat_font_title":"Article category tag","m6f_cat_font_settings":"","m6f_cat_font_family":"","m6f_cat_font_size":"","m6f_cat_font_line_height":"","m6f_cat_font_style":"","m6f_cat_font_weight":"","m6f_cat_font_transform":"","m6f_cat_font_spacing":"","m6f_cat_":"","m6f_meta_font_title":"Article meta info","m6f_meta_font_settings":"","m6f_meta_font_family":"","m6f_meta_font_size":"","m6f_meta_font_line_height":"","m6f_meta_font_style":"","m6f_meta_font_weight":"","m6f_meta_font_transform":"","m6f_meta_font_spacing":"","m6f_meta_":"","css":"","tdc_css":"","td_column_number":1,"tdc_css_class":"tdi_24","tdc_css_class_style":"tdi_24_rand_style"}';
+block_tdi_24.td_column_number = "1";
+block_tdi_24.block_type = "td_block_2";
+block_tdi_24.post_count = "10";
+block_tdi_24.found_posts = "656";
+block_tdi_24.header_color = "#";
+block_tdi_24.ajax_pagination_infinite_stop = "";
+block_tdi_24.max_num_pages = "66";
+tdBlocksArray.push(block_tdi_24);
+</script><div id=tdi_24 class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_4 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://fergusonaction.com/natural-health-products-benefits/" rel="bookmark" class="td-image-wrap " title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being " ><img width="300" height="194" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-300x194.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-300x194.jpg 300w, https://fergusonaction.com/wp-content/uploads/2021/09/natural-creme-341x220.jpg 341w" sizes="(max-width: 300px) 100vw, 300px"  alt="" title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being " /></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/natural-health-products-benefits/" rel="bookmark" title="3 Benefits of Switching to Natural Health Products for Your Heneral Well-Being ">3 Benefits of Switching to Natural Health Products for Your Heneral...</a></h3>
+            <div class="meta-info">
+                <span class="td-post-author-name"><a href="https://fergusonaction.com/author/mivian-batolov/">Mivian Batolov</a></span>                                <span class="td-module-comments"><a href="https://fergusonaction.com/natural-health-products-benefits/#respond">0</a></span>            </div>
+
+            <div class="td-excerpt">
+                A significant number of people prefer using natural medications, i.e. the plant-based medications, instead of those based on chemical ingredients. One of the most...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/adapting-business-to-run-online/" rel="bookmark" class="td-image-wrap " title="Increase Your Sales By Adapting Your Small Business To Run Online" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/09/e-commerce-business-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="Increase Your Sales By Adapting Your Small Business To Run Online" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/adapting-business-to-run-online/" rel="bookmark" title="Increase Your Sales By Adapting Your Small Business To Run Online">Increase Your Sales By Adapting Your Small Business To Run Online</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/business/" class="td-post-category">Business</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/promote-or-sell-your-artwork/" rel="bookmark" class="td-image-wrap " title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/promoting-artwork-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/promote-or-sell-your-artwork/" rel="bookmark" title="How to Promote or Sell Your Artwork &#8211; Some Tips for Artists">How to Promote or Sell Your Artwork &#8211; Some Tips for...</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/business/marketing/" class="td-post-category">Marketing</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/who-did-rick-scott-run-against-for-governor/" rel="bookmark" class="td-image-wrap " title="Who Did Rick Scott Run Against For Governor?" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Rick-Scott-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Rick-Scott-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Rick-Scott-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Rick-Scott-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Rick-Scott-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="Who Did Rick Scott Run Against For Governor?" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/who-did-rick-scott-run-against-for-governor/" rel="bookmark" title="Who Did Rick Scott Run Against For Governor?">Who Did Rick Scott Run Against For Governor?</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/career/" class="td-post-category">Career</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/make-best-of-nfl-fantasy/" rel="bookmark" class="td-image-wrap " title="How To Make The Best Of NFL Fantasy This Year" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/NFL-Fantasy-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/NFL-Fantasy-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/NFL-Fantasy-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/NFL-Fantasy-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/NFL-Fantasy-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="How To Make The Best Of NFL Fantasy This Year" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/make-best-of-nfl-fantasy/" rel="bookmark" title="How To Make The Best Of NFL Fantasy This Year">How To Make The Best Of NFL Fantasy This Year</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/sports/" class="td-post-category">Sports</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/business-development-manager/" rel="bookmark" class="td-image-wrap " title="What Does a Business Development Manager do?" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-100x75.jpeg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-100x75.jpeg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-80x60.jpeg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-180x135.jpeg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Business-development-manager-238x178.jpeg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="What Does a Business Development Manager do?" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/business-development-manager/" rel="bookmark" title="What Does a Business Development Manager do?">What Does a Business Development Manager do?</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/business/" class="td-post-category">Business</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/mental-health-and-immigrants/" rel="bookmark" class="td-image-wrap " title="Mental Health and Immigrants" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Immigrants-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="Mental Health and Immigrants" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/mental-health-and-immigrants/" rel="bookmark" title="Mental Health and Immigrants">Mental Health and Immigrants</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/health/" class="td-post-category">Health</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/how-covid-benefited-adult-toy-industry/" rel="bookmark" class="td-image-wrap " title="How The COVID-19 Pandemic Has Benefited the Adult Toy Industry" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/COVID-19-pandemic-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/COVID-19-pandemic-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/COVID-19-pandemic-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/COVID-19-pandemic-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/COVID-19-pandemic-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="How The COVID-19 Pandemic Has Benefited the Adult Toy Industry" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/how-covid-benefited-adult-toy-industry/" rel="bookmark" title="How The COVID-19 Pandemic Has Benefited the Adult Toy Industry">How The COVID-19 Pandemic Has Benefited the Adult Toy Industry</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/industry/" class="td-post-category">Industry</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/diablo-2-newer-audience/" rel="bookmark" class="td-image-wrap " title="Diablo 2: Resurrected Reforges A Classic For A Newer Audience" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/Diablo-2-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/Diablo-2-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/Diablo-2-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/Diablo-2-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/Diablo-2-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="Diablo 2: Resurrected Reforges A Classic For A Newer Audience" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/diablo-2-newer-audience/" rel="bookmark" title="Diablo 2: Resurrected Reforges A Classic For A Newer Audience">Diablo 2: Resurrected Reforges A Classic For A Newer Audience</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/games/" class="td-post-category">Games</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack ">
+            
+            <div class="td-module-thumb"><a href="https://fergusonaction.com/upcoming-movies-watch-trailers/" rel="bookmark" class="td-image-wrap " title="Upcoming Movies 2021 (Watch Trailers)" ><img width="100" height="75" class="entry-thumb" src="https://fergusonaction.com/wp-content/uploads/2021/08/watching-movie-100x75.jpg"  srcset="https://fergusonaction.com/wp-content/uploads/2021/08/watching-movie-100x75.jpg 100w, https://fergusonaction.com/wp-content/uploads/2021/08/watching-movie-80x60.jpg 80w, https://fergusonaction.com/wp-content/uploads/2021/08/watching-movie-180x135.jpg 180w, https://fergusonaction.com/wp-content/uploads/2021/08/watching-movie-238x178.jpg 238w" sizes="(max-width: 100px) 100vw, 100px"  alt="" title="Upcoming Movies 2021 (Watch Trailers)" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://fergusonaction.com/upcoming-movies-watch-trailers/" rel="bookmark" title="Upcoming Movies 2021 (Watch Trailers)">Upcoming Movies 2021 (Watch Trailers)</a></h3>            <div class="meta-info">
+                <a href="https://fergusonaction.com/category/movies/" class="td-post-category">Movies</a>                                                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block --><aside class="td_block_template_1 widget widget_categories"><h4 class="block-title"><span>Categories</span></h4>
+			<ul>
+					<li class="cat-item cat-item-119"><a href="https://fergusonaction.com/category/technology/apps/">Apps</a>
+</li>
+	<li class="cat-item cat-item-78"><a href="https://fergusonaction.com/category/automotive/">Automotive</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="https://fergusonaction.com/category/family-and-parenting/baby-care/">Baby Care</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://fergusonaction.com/category/fashion/beauty/">Beauty</a>
+</li>
+	<li class="cat-item cat-item-26"><a href="https://fergusonaction.com/category/business/">Business</a>
+</li>
+	<li class="cat-item cat-item-1720"><a href="https://fergusonaction.com/category/car/">Car</a>
+</li>
+	<li class="cat-item cat-item-1762"><a href="https://fergusonaction.com/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-1412"><a href="https://fergusonaction.com/category/cbd/">CBD</a>
+</li>
+	<li class="cat-item cat-item-2110"><a href="https://fergusonaction.com/category/cryptocurrency/">Cryptocurrency</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="https://fergusonaction.com/category/technology/design-and-development/">Design and Development</a>
+</li>
+	<li class="cat-item cat-item-2118"><a href="https://fergusonaction.com/category/divorcing/">Divorcing</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://fergusonaction.com/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="https://fergusonaction.com/category/entertainment/">Entertainment</a>
+</li>
+	<li class="cat-item cat-item-162"><a href="https://fergusonaction.com/category/environment/">Environment</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="https://fergusonaction.com/category/family-and-parenting/">Family and Parenting</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="https://fergusonaction.com/category/fashion/">Fashion</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://fergusonaction.com/category/featured/">Featured</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="https://fergusonaction.com/category/business/finance/">Finance</a>
+</li>
+	<li class="cat-item cat-item-1526"><a href="https://fergusonaction.com/category/finance-2/">Finance</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="https://fergusonaction.com/category/health/fitness/">Fitness</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="https://fergusonaction.com/category/food/">Food</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="https://fergusonaction.com/category/technology/gadgets/">Gadgets</a>
+</li>
+	<li class="cat-item cat-item-1437"><a href="https://fergusonaction.com/category/gambling/">Gambling</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="https://fergusonaction.com/category/games/">Games</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="https://fergusonaction.com/category/home/gardening/">Gardening</a>
+</li>
+	<li class="cat-item cat-item-1868"><a href="https://fergusonaction.com/category/health/hair-care/">Hair Care</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://fergusonaction.com/category/health/">Health</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="https://fergusonaction.com/category/home/">Home</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="https://fergusonaction.com/category/home/home-improvement/">Home Improvement</a>
+</li>
+	<li class="cat-item cat-item-1503"><a href="https://fergusonaction.com/category/how-to/">How to</a>
+</li>
+	<li class="cat-item cat-item-1967"><a href="https://fergusonaction.com/category/industry/">Industry</a>
+</li>
+	<li class="cat-item cat-item-1737"><a href="https://fergusonaction.com/category/internet/">Internet</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://fergusonaction.com/category/fashion/jewelry/">Jewelry</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="https://fergusonaction.com/category/home/kitchen/">Kitchen</a>
+</li>
+	<li class="cat-item cat-item-163"><a href="https://fergusonaction.com/category/business/law/">Law</a>
+</li>
+	<li class="cat-item cat-item-1731"><a href="https://fergusonaction.com/category/law-2/">Law</a>
+</li>
+	<li class="cat-item cat-item-1824"><a href="https://fergusonaction.com/category/love-sex/">Love &amp; Sex</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="https://fergusonaction.com/category/fashion/makeup/">Makeup</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="https://fergusonaction.com/category/business/marketing/">Marketing</a>
+</li>
+	<li class="cat-item cat-item-1617"><a href="https://fergusonaction.com/category/marketing-2/">Marketing</a>
+</li>
+	<li class="cat-item cat-item-2168"><a href="https://fergusonaction.com/category/movies/">Movies</a>
+</li>
+	<li class="cat-item cat-item-166"><a href="https://fergusonaction.com/category/net-worth/">Net Worth</a>
+</li>
+	<li class="cat-item cat-item-1665"><a href="https://fergusonaction.com/category/parenting/">Parenting</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="https://fergusonaction.com/category/pet/">Pet</a>
+</li>
+	<li class="cat-item cat-item-164"><a href="https://fergusonaction.com/category/travel/photography/">Photography</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="https://fergusonaction.com/category/home/real-estate/">Real Estate</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="https://fergusonaction.com/category/reviews/">Reviews</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="https://fergusonaction.com/category/fashion/shopping/">Shopping</a>
+</li>
+	<li class="cat-item cat-item-1664"><a href="https://fergusonaction.com/category/shopping-2/">Shopping</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="https://fergusonaction.com/category/health/skin-care/">Skin Care</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="https://fergusonaction.com/category/technology/software/">Software</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="https://fergusonaction.com/category/sports/">Sports</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="https://fergusonaction.com/category/technology/">Technology</a>
+</li>
+	<li class="cat-item cat-item-1586"><a href="https://fergusonaction.com/category/tips/">Tips</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="https://fergusonaction.com/category/travel/">Travel</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="https://fergusonaction.com/category/health/weight-loss/">Weight Loss</a>
+</li>
+	<li class="cat-item cat-item-165"><a href="https://fergusonaction.com/category/health/yoga/">Yoga</a>
+</li>
+			</ul>
+
+			</aside>                                </div>
+                            </div>
+                                    </div> <!-- /.td-pb-row -->
+        </article> <!-- /.post -->
+    </div>
+</div> <!-- /.td-container -->
+
+    <!-- Instagram -->
+    
+
+    <!-- Footer -->
+    <div class="td-footer-container td-container">
+
+	<div class="td-pb-row">
+		<div class="td-pb-span12">
+					</div>
+	</div>
+
+	<div class="td-pb-row">
+		<div class="td-pb-span12 td-footer-full">
+			<div class="td-footer-info td-pb-padding-side"><div class="footer-logo-wrap"><a href="https://fergusonaction.com/"><img width="700" height="98" src="https://fergusonaction.com/wp-content/uploads/2020/04/Ferguson-Logo.png" alt="" title="" /></a></div><div class="footer-text-wrap"><div class="footer-email-wrap">Contact us: <a href="/cdn-cgi/l/email-protection#6a01180b1c031e1009004a310b1e374a0d070b030644090507">kravitzcj [at] gmail.com</a></div></div><div class="footer-social-wrap td-social-style2"></div></div>		</div>
+		<div class="td-pb-span12">
+					</div>
+	</div>
+</div>
+
+    <!-- Sub Footer -->
+        <div class="td-sub-footer-container td-container td-container-border ">
+        <div class="td-pb-row">
+            <div class="td-pb-span8 td-sub-footer-menu">
+                <div class="td-pb-padding-side">
+                                    </div>
+            </div>
+
+            <div class="td-pb-span4 td-sub-footer-copy">
+                <div class="td-pb-padding-side">
+                    &copy; FergusonAction.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. Amazon, the Amazon logo, AmazonSupply, and the AmazonSupply logo are trademarks of Amazon.com, Inc. or its affiliates.                </div>
+            </div>
+        </div>
+    </div>
+    </div><!--close td-outer-container-->
+</div><!--close td-outer-wrap-->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jQueryScriptOutputted = false;function initJQuery() {if (typeof(jQuery) == "undefined") {if (!jQueryScriptOutputted) {jQueryScriptOutputted = true;document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://code.jquery.com/jquery-1.8.2.min.js\"></scr" + "ipt>");}setTimeout("initJQuery()", 50);}}initJQuery();</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {jQuery(document).ready(function() {
+jQuery(".54221b4abfe097ba157de696cba1301b").click(function() {
+jQuery.post(
+"https://fergusonaction.com/wp-admin/admin-ajax.php", {
+"action": "quick_adsense_onpost_ad_click",
+"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+"quick_adsense_nonce": "c21c6b8e30",
+}, function(response) { }
+);
+});
+});
+});</script>
+
+    <!--
+
+        Theme: Newsmag by tagDiv.com 2021
+        Version: 5.1 (rara)
+        Deploy mode: deploy
+        
+        uid: 6138ed15afb76
+    -->
+
+    <script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/fergusonaction.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"470efedaa1","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.1.17' id='ppress-frontend-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/fergusonaction.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/td-composer/legacy/Newsmag/js/tagdiv_theme.min.js?ver=5.1' id='td-site-min-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-includes/js/comment-reply.min.js?ver=5.8' id='comment-reply-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?ver=2.2.0' id='jquery-smooth-scroll-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1' id='js-cookie-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2' id='jquery-sticky-kit-js' defer></script>
+<script type='text/javascript' id='ez-toc-js-js-extra'>
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"1","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://fergusonaction.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.17-1617178683' id='ez-toc-js-js' defer></script>
+
+<!-- JS generated by theme -->
+
+<script type="rocketlazyloadscript">
+    
+</script>
+
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://fergusonaction.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A400%2C300%2C500%7COpen%20Sans%3A400%2C600%2C700%2C300%2C500%7CRoboto%20Condensed%3A400%2C500%2C700%2C300&#038;display=swap" /><link rel="stylesheet" href="https://fergusonaction.com/wp-content/cache/min/1/573153b0065de151f8a466ad5c0be50f.css" media="all" data-minify="1" /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1631120661 -->

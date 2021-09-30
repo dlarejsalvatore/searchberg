@@ -1,0 +1,1971 @@
+<!doctype html >
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <title>A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer - 2021 Guide - JusticesNows</title><style id="rocket-critical-css">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figcaption,figure,header{display:block}a{background-color:transparent}img{border:0}figure{margin:0}input{color:inherit;font:inherit;margin:0}input[type="submit"]{-webkit-appearance:button}input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}img{max-width:100%;width:auto\9;height:auto}.td-page-meta{display:none}.td-container{width:1068px;margin-right:auto;margin-left:auto}.td-container:before,.td-container:after{display:table;content:'';line-height:0}.td-container:after{clear:both}@media (min-width:1019px) and (max-width:1140px){.td-container{width:980px}}@media (min-width:768px) and (max-width:1018px){.td-container{width:740px}}@media (max-width:767px){.td-container{width:100%;padding-left:20px;padding-right:20px}}.td-header-wrap{position:relative;z-index:2000}.td-header-row{*zoom:1;font-family:'Open Sans','Open Sans Regular',sans-serif}.td-header-row:before,.td-header-row:after{display:table;content:''}.td-header-row:after{clear:both}.td-header-gradient:before{content:"";background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMGAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==');width:100%;height:12px;position:absolute;left:0;bottom:-12px;z-index:1}@media (max-width:767px){#td-header-search-button{display:none}}#td-header-search-button-mob{display:none}@media (max-width:767px){#td-header-search-button-mob{display:block}}@media (min-width:768px){.td-drop-down-search .td-search-form{margin:20px}}.td-header-wrap .td-drop-down-search{position:absolute;top:100%;right:0;visibility:hidden;opacity:0;transform:translate3d(0,20px,0);-webkit-transform:translate3d(0,20px,0);background-color:#fff;-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.2);box-shadow:0 2px 6px rgba(0,0,0,0.2);border-top:0;width:342px}.td-header-wrap .td-drop-down-search .btn{position:absolute;height:32px;min-width:67px;line-height:17px;padding:7px 15px 8px;text-shadow:none;vertical-align:top;right:20px;margin:0!important}.td-header-wrap .td-drop-down-search:before{position:absolute;top:-9px;right:19px;display:block;content:'';width:0;height:0;border-style:solid;border-width:0 5.5px 6px 5.5px;border-color:transparent transparent #4db2ec transparent}.td-header-wrap .td-drop-down-search:after{position:absolute;top:-3px;display:block;content:'';right:0;left:0;margin:0 auto;width:100%;height:3px;background-color:#4db2ec}.td-header-wrap #td-header-search{width:235px;height:32px;margin:0;border-right:0;line-height:17px;border-color:#eaeaea!important}@media (max-width:767px){.td-header-wrap #td-header-search{width:91%;font-size:16px}}.td-banner-wrap-full{position:relative}.td-header-menu-wrap-full{z-index:9998;position:relative}@media (max-width:767px){.td-header-wrap .td-header-menu-wrap-full,.td-header-wrap .td-header-menu-wrap,.td-header-wrap .td-header-main-menu{background-color:#222!important;height:54px!important}.header-search-wrap .td-icon-search{color:#fff!important}}.td-header-wrap .td-header-menu-wrap-full{background-color:#fff}.td-header-main-menu{position:relative;z-index:999;padding-right:48px}@media (max-width:767px){.td-header-main-menu{padding-right:64px;padding-left:2px}}.sf-menu,.sf-menu li{margin:0;list-style:none}@media (max-width:767px){.sf-menu{display:none}}.sf-menu li{float:left;position:relative}.sf-menu .td-menu-item>a{display:block;position:relative}.sf-menu>li>a{padding:0 14px;line-height:48px;font-size:14px;color:#000;font-weight:700;text-transform:uppercase;-webkit-backface-visibility:hidden}@media (min-width:768px) and (max-width:1018px){.sf-menu>li>a{padding:0 9px;font-size:11px}}.sf-menu>li>a:after{background-color:transparent;content:'';width:0;height:3px;position:absolute;bottom:0;left:0;right:0;margin:0 auto;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}#td-header-menu{display:inline-block;vertical-align:top}.header-search-wrap{position:absolute;top:0;right:0;z-index:999}.header-search-wrap .td-icon-search{display:inline-block;font-size:19px;width:48px;line-height:48px;text-align:center}@media (min-width:768px) and (max-width:1018px){.header-search-wrap .td-icon-search{font-size:15px}}@media (max-width:767px){.header-search-wrap .td-icon-search{height:54px;width:54px;line-height:54px;font-size:22px;margin-right:2px}}#td-outer-wrap{overflow:hidden}@media (max-width:767px){#td-outer-wrap{margin:auto;width:100%;-webkit-transform-origin:50% 200px 0;transform-origin:50% 200px 0}}#td-top-mobile-toggle{display:none}@media (max-width:767px){#td-top-mobile-toggle{display:inline-block;position:relative}}#td-top-mobile-toggle a{display:inline-block}#td-top-mobile-toggle i{font-size:27px;width:64px;line-height:54px;height:54px;display:inline-block;padding-top:1px;color:#fff}.td-menu-background{background-repeat:no-repeat;background-size:cover;background-position:center top;position:fixed;top:0;display:block;width:100%;height:113%;z-index:9999;visibility:hidden;transform:translate3d(-100%,0,0);-webkit-transform:translate3d(-100%,0,0)}.td-menu-background:before{content:'';width:100%;height:100%;position:absolute;top:0;left:0;opacity:0.98;background:#313b45;background:-webkit-gradient(left top,left bottom,color-stop(0%,#313b45),color-stop(100%,#3393b8));background:linear-gradient(to bottom,#313b45 0%,#3393b8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#313b45', endColorstr='#3393b8', GradientType=0)}#td-mobile-nav{padding:0;position:fixed;width:100%;height:calc(100% + 1px);top:0;z-index:9999;visibility:hidden;transform:translate3d(-99%,0,0);-webkit-transform:translate3d(-99%,0,0);left:-1%;font-family:-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif}.td-js-loaded .td-menu-background,.td-js-loaded #td-mobile-nav{visibility:visible}#td-mobile-nav{height:1px;overflow:hidden}#td-mobile-nav .td-menu-socials{padding:0 65px 0 20px;overflow:hidden;height:60px}#td-mobile-nav .td-social-icon-wrap{margin:20px 5px 0 0;display:inline-block}#td-mobile-nav .td-social-icon-wrap i{border:none;background-color:transparent;font-size:14px;width:40px;height:40px;line-height:38px;color:#fff;vertical-align:middle}#td-mobile-nav .td-social-icon-wrap .td-icon-instagram{font-size:16px}.td-mobile-close{position:absolute;right:1px;top:0;z-index:1000}.td-mobile-close .td-icon-close-mobile{height:70px;width:70px;line-height:70px;font-size:21px;color:#fff;top:4px;position:relative}.td-mobile-content{padding:20px 20px 0}.td-mobile-container{padding-bottom:20px;position:relative}.td-mobile-content ul{list-style:none;margin:0;padding:0}.td-mobile-content li{float:none;margin-left:0;-webkit-touch-callout:none}.td-mobile-content li a{display:block;line-height:21px;font-size:21px;color:#fff;margin-left:0;padding:12px 30px 12px 12px;font-weight:bold}.td-mobile-container{opacity:1}.td-search-wrap-mob{padding:0;position:absolute;width:100%;height:auto;top:0;text-align:center;z-index:9999;visibility:hidden;color:#fff;font-family:-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif}.td-search-wrap-mob .td-drop-down-search{opacity:0;visibility:hidden;-webkit-backface-visibility:hidden;position:relative}.td-search-wrap-mob #td-header-search-mob{color:#fff;font-weight:bold;font-size:26px;height:40px;line-height:36px;border:0;background:transparent;outline:0;margin:8px 0;padding:0;text-align:center}.td-search-wrap-mob .td-search-input{margin:0 5%;position:relative}.td-search-wrap-mob .td-search-input span{opacity:0.8;font-size:12px}.td-search-wrap-mob .td-search-input:before,.td-search-wrap-mob .td-search-input:after{content:'';position:absolute;display:block;width:100%;height:1px;background-color:#fff;bottom:0;left:0;opacity:0.2}.td-search-wrap-mob .td-search-input:after{opacity:0.8;transform:scaleX(0);-webkit-transform:scaleX(0)}.td-search-wrap-mob .td-search-form{margin-bottom:30px}.td-search-background{background-repeat:no-repeat;background-size:cover;background-position:center top;position:fixed;top:0;display:block;width:100%;height:113%;z-index:9999;transform:translate3d(100%,0,0);-webkit-transform:translate3d(100%,0,0);visibility:hidden}.td-search-background:before{content:'';width:100%;height:100%;position:absolute;top:0;left:0;opacity:0.98;background:#313b45;background:-webkit-gradient(left top,left bottom,color-stop(0%,#313b45),color-stop(100%,#3393b8));background:linear-gradient(to bottom,#313b45 0%,#3393b8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#313b45', endColorstr='#3393b8', GradientType=0)}.td-search-close{text-align:right;z-index:1000}.td-search-close .td-icon-close-mobile{height:70px;width:70px;line-height:70px;font-size:21px;color:#fff;position:relative;top:4px;right:0}body{font-family:Verdana,BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:14px;line-height:21px}a{color:#4db2ec;text-decoration:none}ul{padding:0}ul li{line-height:24px;margin-left:21px}h1{font-family:'Roboto',sans-serif;color:#111111;font-weight:400;margin:6px 0}h1{font-size:32px;line-height:40px;margin-top:33px;margin-bottom:23px}input[type=submit]{font-family:'Roboto',sans-serif;font-size:13px;background-color:#222222;border-radius:0;color:#fff;border:none;padding:8px 15px;font-weight:500}input[type=text]{font-size:12px;line-height:21px;color:#444;border:1px solid #e1e1e1;width:100%;max-width:100%;height:34px;padding:3px 9px}@media (max-width:767px){input[type=text]{font-size:16px}}.wp-caption-text{font-family:Verdana,BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;text-align:left;margin:6px 0 26px 0;font-size:11px;font-style:italic;font-weight:normal;line-height:17px;color:#444}.entry-title{word-wrap:break-word}.td-crumb-container{min-height:35px;margin-bottom:9px;padding-top:21px}@media (min-width:768px) and (max-width:1018px){.td-crumb-container{padding-top:16px}}@media (max-width:767px){.td-crumb-container{padding-top:11px}}@media (max-width:767px){.single-post .td-bred-no-url-last{display:none}}.entry-crumbs{font-family:'Open Sans','Open Sans Regular',sans-serif;font-size:12px;color:#c3c3c3;line-height:18px;padding-top:1px;padding-bottom:2px}.entry-crumbs a{color:#c3c3c3}.entry-crumbs .td-bread-sep{font-size:8px;margin:0 5px}.td-category{list-style:none;font-family:'Open Sans','Open Sans Regular',sans-serif;font-size:10px;margin-top:0;margin-bottom:10px;line-height:1}.td-category li{display:inline-block;margin:0 5px 5px 0;line-height:1}.td-category a{color:#fff;background-color:#222222;padding:3px 6px 4px 6px;white-space:nowrap;display:inline-block}@media (max-width:767px){.single .td-category{margin-bottom:0}}.post{background-color:#fff}.post header .entry-title{margin-top:0;margin-bottom:7px;word-wrap:break-word;font-size:41px;line-height:50px}@media (max-width:1018px){.post header .entry-title{font-size:32px;line-height:36px}}@media (max-width:767px){.post header .entry-title{margin-top:3px;margin-bottom:9px}}.td-next-prev-separator{display:none}.td-post-featured-image{position:relative}.td-post-featured-image img{display:block;margin-bottom:26px;width:100%}.td-post-featured-image .wp-caption-text{margin-bottom:26px;z-index:1}#cancel-comment-reply-link{font-size:12px;font-weight:400;color:#111111;margin-left:10px}.comment-form .td-warning-comment,.comment-form .td-warning-author,.comment-form .td-warning-email,.comment-form .td-warning-email-error{display:none}@font-face{font-family:'newspaper';src:url(https://justicesnows.com/wp-content/themes/Newspaper/images/icons/newspaper.eot?19);src:url(https://justicesnows.com/wp-content/themes/Newspaper/images/icons/newspaper.eot?19#iefix) format('embedded-opentype'),url(https://justicesnows.com/wp-content/themes/Newspaper/images/icons/newspaper.woff?19) format('woff'),url(https://justicesnows.com/wp-content/themes/Newspaper/images/icons/newspaper.ttf?19) format('truetype'),url(https://justicesnows.com/wp-content/themes/Newspaper/images/icons/newspaper.svg?19#newspaper) format('svg');font-weight:normal;font-style:normal;font-display:swap}[class^="td-icon-"]:before,[class*=" td-icon-"]:before{font-family:'newspaper';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;text-align:center;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}[class*="td-icon-"]{line-height:1;text-align:center;display:inline-block}.td-icon-right:before{content:'\e803'}.td-icon-search:before{content:'\e80a'}.td-icon-facebook:before{content:'\e818'}.td-icon-instagram:before{content:'\e81d'}.td-icon-twitter:before{content:'\e831'}.td-icon-youtube:before{content:'\e836'}.td-icon-mobile:before{content:'\e83e'}.td-icon-close-mobile:before{content:'\e900'}.td-image-gradient:before{bottom:0;content:"";display:block;height:50%;width:100%;position:absolute;z-index:1;background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(0,0,0,0.8)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#b3000000', GradientType=0)}@media (max-width:1018px){.td-image-gradient:before{height:100%}}.td-container-wrap{background-color:#fff;margin-left:auto;margin-right:auto}.wpb_button{display:inline-block;font-family:'Open Sans','Open Sans Regular',sans-serif;font-weight:600;line-height:24px;text-shadow:none;border:none;border-radius:0;margin-bottom:21px}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,figcaption,figure,header{display:block}a{background-color:transparent}h1{font-size:2em;margin:0.67em 0}img{border:0}figure{margin:0}input{color:inherit;font:inherit;margin:0}input[type="submit"]{-webkit-appearance:button}input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}.td-header-background-image .td-container-wrap{background-color:transparent}.td-header-bg{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.td-header-bg:before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-size:cover;background-position:center bottom}.td-header-sp-logo img{margin:auto;position:absolute;top:0;bottom:0;left:0;right:0}.td-main-menu-logo{display:none;float:left;margin-right:10px;height:48px}@media (max-width:767px){.td-main-menu-logo{display:block;margin-right:0;height:0}}.td-main-menu-logo a{line-height:48px}.td-main-menu-logo img{padding:3px 0;position:relative;vertical-align:middle;max-height:48px;width:auto}@media (max-width:767px){.td-main-menu-logo img{margin:auto;bottom:0;top:0;left:0;right:0;position:absolute;padding:0}}@media (max-width:1140px){.td-main-menu-logo img{max-width:180px}}.td-visual-hidden{border:0;width:1px;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute}.td-header-style-10 .td-logo-wrap-full{min-height:130px;line-height:130px}@media (max-width:767px){.td-header-style-10 .td-logo-wrap-full{line-height:90px;min-height:90px}}.td-header-style-10 .td-logo-wrap-full a{position:relative;z-index:1;line-height:130px;display:inline-block;vertical-align:middle;width:100%}@media (max-width:767px){.td-header-style-10 .td-logo-wrap-full a{line-height:90px}}@media (max-width:767px){.td-header-style-10 .td-main-menu-logo .td-main-logo{display:none}}.td-header-style-10 .td-header-sp-logo{text-align:center}.td-header-style-10 .td-header-sp-logo img{z-index:1;display:block;position:relative}.td-header-style-10 .header-search-wrap .td-icon-search{color:#000}@media (max-width:767px){.td-header-style-10 .header-search-wrap .td-icon-search{color:#fff}}.td-header-style-10 .td-header-menu-wrap-full{position:relative}.td-header-style-10 .td-header-main-menu{padding-left:48px}@media (max-width:767px){.td-header-style-10 .td-header-main-menu{padding-left:2px}}.td-header-style-10 #td-header-menu{display:table;margin:0 auto}@media (max-width:767px){.td-header-style-10 #td-header-menu{display:block}}.td-social-icon-wrap>a{display:inline-block}.td-social-icon-wrap .td-icon-font{font-size:12px;width:30px;height:24px;line-height:24px}.td-social-icon-wrap .td-icon-instagram{font-size:15px}@media (max-width:767px){.td-social-icon-wrap{margin:0 3px}}@media (max-width:1018px){.td-post-template-4 .td-post-header header .entry-title{font-size:32px;line-height:36px}}.td-post-template-4 .td-crumb-container{margin-top:0;margin-bottom:0;padding-top:0;min-height:0}.td-post-template-4 .td-crumb-container .entry-crumbs{margin-bottom:0;padding-top:15px}@media (max-width:1018px){.td-post-template-4 .td-crumb-container .entry-crumbs{margin-bottom:-24px;padding-top:10px}}@media (max-width:767px){.td-post-template-4 .td-crumb-container .entry-crumbs{padding-bottom:30px}}.td-post-template-4 .td-post-header-holder{position:relative;min-height:240px;margin-bottom:48px;padding-top:13px}@media (min-width:768px) and (max-width:1018px){.td-post-template-4 .td-post-header-holder{margin-bottom:30px;padding-top:30px}}@media (max-width:767px){.td-post-template-4 .td-post-header-holder{padding-top:0;margin-bottom:0;background-color:transparent;min-height:0}}.td-post-template-4 .td-post-header-holder .wp-caption-text{display:none}.td-post-template-4 .td-post-featured-image{background-color:#444}@media (max-width:767px){.td-post-template-4 .td-post-featured-image{margin-bottom:13px}}@media (max-width:767px){.td-post-template-4 .td-post-featured-image .entry-thumb{margin-bottom:0}}.td-post-template-4 .td-post-title{width:720px;position:absolute;bottom:0;padding:21px 21px 0 0;background-color:#fff;z-index:1}@media (min-width:1019px) and (max-width:1140px){.td-post-template-4 .td-post-title{width:664px}}@media (min-width:768px) and (max-width:1018px){.td-post-template-4 .td-post-title{width:498px}}@media (max-width:767px){.td-post-template-4 .td-post-title{width:100%;padding:0;position:relative}}.td-post-template-4 .td-post-title h1.entry-title{margin-bottom:14px}@media (max-width:1018px){.td-post-template-4 .td-post-title h1.entry-title{margin-bottom:9px}}.td-post-template-4 .td-post-title .td-category{margin-bottom:7px}@media (max-width:767px){.td-post-template-4 .td-post-title .td-category{margin-bottom:0}}.td-post-template-4 .td-image-gradient:before{height:57%}@media (max-width:767px){.td-post-template-4 .td-image-gradient:before{display:none}}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%20Slab%3A400%7COpen%20Sans%3A400%2C600%2C700%7CRoboto%3A400%2C500%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%20Slab%3A400%7COpen%20Sans%3A400%2C600%2C700%7CRoboto%3A400%2C500%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto%20Slab%3A400%7COpen%20Sans%3A400%2C600%2C700%7CRoboto%3A400%2C500%2C700&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" /></noscript><link rel="preload" href="https://justicesnows.com/wp-content/cache/min/1/20a50bfed46d92fbd48c9e7f9fdbab80.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://justicesnows.com/xmlrpc.php" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="icon" type="image/png" href="https://justicesnows.com/wp-content/uploads/2020/03/Justice-fav.png">
+	<!-- This site is optimized with the Yoast SEO plugin v17.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Today, we will take a look at nursing home neglect and in which case you need to hire a lawyer. So, if you are ready, let&#039;s begin." />
+	<link rel="canonical" href="https://justicesnows.com/nursing-home-neglect/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer - 2021 Guide - JusticesNows" />
+	<meta property="og:description" content="Today, we will take a look at nursing home neglect and in which case you need to hire a lawyer. So, if you are ready, let&#039;s begin." />
+	<meta property="og:url" content="https://justicesnows.com/nursing-home-neglect/" />
+	<meta property="og:site_name" content="JusticesNows" />
+	<meta property="article:published_time" content="2021-02-20T12:05:18+00:00" />
+	<meta property="article:modified_time" content="2021-06-17T07:26:40+00:00" />
+	<meta property="og:image" content="https://justicesnows.com/wp-content/uploads/2020/06/law.jpg" />
+	<meta property="og:image:width" content="1350" />
+	<meta property="og:image:height" content="900" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Malinda Cruz" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://justicesnows.com/#website","url":"https://justicesnows.com/","name":"JusticesNows","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://justicesnows.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://justicesnows.com/nursing-home-neglect/#primaryimage","inLanguage":"en-US","url":"https://justicesnows.com/wp-content/uploads/2020/06/law.jpg","contentUrl":"https://justicesnows.com/wp-content/uploads/2020/06/law.jpg","width":1350,"height":900,"caption":"Img source: unsplash.com"},{"@type":"WebPage","@id":"https://justicesnows.com/nursing-home-neglect/#webpage","url":"https://justicesnows.com/nursing-home-neglect/","name":"A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer - 2021 Guide - JusticesNows","isPartOf":{"@id":"https://justicesnows.com/#website"},"primaryImageOfPage":{"@id":"https://justicesnows.com/nursing-home-neglect/#primaryimage"},"datePublished":"2021-02-20T12:05:18+00:00","dateModified":"2021-06-17T07:26:40+00:00","author":{"@id":"https://justicesnows.com/#/schema/person/e02a4bac7de63ffbe4e37d09420a6067"},"description":"Today, we will take a look at nursing home neglect and in which case you need to hire a lawyer. So, if you are ready, let's begin.","breadcrumb":{"@id":"https://justicesnows.com/nursing-home-neglect/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://justicesnows.com/nursing-home-neglect/"]}]},{"@type":"BreadcrumbList","@id":"https://justicesnows.com/nursing-home-neglect/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://justicesnows.com/"},{"@type":"ListItem","position":2,"name":"A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer &#8211; 2021 Guide"}]},{"@type":"Person","@id":"https://justicesnows.com/#/schema/person/e02a4bac7de63ffbe4e37d09420a6067","name":"Malinda Cruz","image":{"@type":"ImageObject","@id":"https://justicesnows.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/cdd358ba1301a265c75ed1c6680835e9?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/cdd358ba1301a265c75ed1c6680835e9?s=96&d=mm&r=g","caption":"Malinda Cruz"},"url":"https://justicesnows.com/author/malinda-cruz/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="JusticesNows &raquo; Feed" href="https://justicesnows.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="JusticesNows &raquo; Comments Feed" href="https://justicesnows.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="JusticesNows &raquo; A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer &#8211; 2021 Guide Comments Feed" href="https://justicesnows.com/nursing-home-neglect/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+
+<style id='td-theme-inline-css' type='text/css'>
+    
+        @media (max-width: 767px) {
+            .td-header-desktop-wrap {
+                display: none;
+            }
+        }
+        @media (min-width: 767px) {
+            .td-header-mobile-wrap {
+                display: none;
+            }
+        }
+    
+	
+</style>
+
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://justicesnows.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/cache/min/1/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1630332469' id='stop-user-enumeration-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/cache/min/1/wp-content/plugins/wp-captcha/assets/js/c4wp-public.js?ver=1630332469' id='c4wp-public-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.8' id='ppress-flatpickr-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.8' id='ppress-select2-js' defer></script>
+<link rel="https://api.w.org/" href="https://justicesnows.com/wp-json/" /><link rel="alternate" type="application/json" href="https://justicesnows.com/wp-json/wp/v2/posts/365" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://justicesnows.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://justicesnows.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://justicesnows.com/?p=365' />
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <script type="rocketlazyloadscript">
+        window.tdb_globals = {"wpRestNonce":"072fdc2820","wpRestUrl":"https:\/\/justicesnows.com\/wp-json\/","permalinkStructure":"\/%postname%\/","isAjax":false,"isAdminBarShowing":false,"autoloadScrollPercent":50,"postAutoloadStatus":"off","origPostEditUrl":null};
+    </script>
+    			<script type="rocketlazyloadscript">
+				window.tdwGlobal = {"adminUrl":"https:\/\/justicesnows.com\/wp-admin\/","wpRestNonce":"072fdc2820","wpRestUrl":"https:\/\/justicesnows.com\/wp-json\/","permalinkStructure":"\/%postname%\/"};
+			</script>
+			    <script type="rocketlazyloadscript">
+        window.tdaGlobal = {"adminUrl":"https:\/\/justicesnows.com\/wp-admin\/","wpRestNonce":"072fdc2820","wpRestUrl":"https:\/\/justicesnows.com\/wp-json\/","permalinkStructure":"\/%postname%\/","postId":365};
+    </script>
+    
+<!-- JS generated by theme -->
+
+<script type="rocketlazyloadscript">
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+	        if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+	        if ( navigator.userAgent.indexOf("Edge") > -1 ) {
+                htmlTag.className += ' ieEdge';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":228},{"limitBottom":1018,"sidebarWidth":300},{"limitBottom":1140,"sidebarWidth":324}];
+var td_animation_stack_effect="type0";
+var tds_animation_stack=true;
+var td_animation_stack_specific_selectors=".entry-thumb, img, .td-lazy-img";
+var td_animation_stack_general_selectors=".td-animation-stack img, .td-animation-stack .entry-thumb, .post img, .td-animation-stack .td-lazy-img";
+var tdc_is_installed="yes";
+var td_ajax_url="https:\/\/justicesnows.com\/wp-admin\/admin-ajax.php?td_theme_name=Newspaper&v=11.2";
+var td_get_template_directory_uri="https:\/\/justicesnows.com\/wp-content\/plugins\/td-composer\/legacy\/common";
+var tds_snap_menu="";
+var tds_logo_on_sticky="";
+var tds_header_style="10";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#2b85d9";
+var tds_smart_sidebar="enabled";
+var tdThemeName="Newspaper";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdBlockNonce="7be8a2e1c2";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .header-search-wrap .td-drop-down-search:after,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    input[type=submit]:hover,
+    .td-read-more a,
+    .td-post-category:hover,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-post-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+    .td-404-sub-sub-title a:hover,
+    .td-search-form-widget .wpb_button:hover,
+    .td-rating-bar-wrap div,
+    .dropcap,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .wpb_default,
+    .wpb_default:hover,
+    .td-left-smart-list:hover,
+    .td-right-smart-list:hover,
+    #bbpress-forums button:hover,
+    .bbp_widget_login .button:hover,
+    .td-footer-wrapper .td-post-category,
+    .td-footer-wrapper .widget_product_search input[type="submit"]:hover,
+    .single-product .product .summary .cart .button:hover,
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+    .td-theme-slider:hover .slide-meta-cat a,
+    a.vc_btn-black:hover,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .td-scroll-up,
+    .td-smart-list-button:hover,
+    .td-weather-information:before,
+    .td-weather-week:before,
+    .td_block_exchange .td-exchange-header:before,
+    .td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+    .td_block_template_9 .td-block-title:after,
+    .td_block_template_15 .td-block-title:before,
+    div.wpforms-container .wpforms-form div.wpforms-submit-container button[type=submit],
+    .td-close-video-fixed {
+        background-color: #2b85d9;
+    }
+
+    .td_block_template_4 .td-related-title .td-cur-simple-item:before {
+        border-color: #2b85d9 transparent transparent transparent !important;
+    }
+    
+    
+    .td_block_template_4 .td-related-title .td-cur-simple-item,
+    .td_block_template_3 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title:after {
+        background-color: #2b85d9;
+    }
+
+    a,
+    cite a:hover,
+    .td-page-content blockquote p,
+    .td-post-content blockquote p,
+    .mce-content-body blockquote p,
+    .comment-content blockquote p,
+    .wpb_text_column blockquote p,
+    .td_block_text_with_title blockquote p,
+    .td_module_wrap:hover .entry-title a,
+    .td-subcat-filter .td-subcat-list a:hover,
+    .td-subcat-filter .td-subcat-dropdown a:hover,
+    .td_quote_on_blocks,
+    .dropcap2,
+    .dropcap3,
+    .td_top_authors .td-active .td-authors-name a,
+    .td_top_authors .td_mod_wrap:hover .td-authors-name a,
+    .td-post-next-prev-content a:hover,
+    .author-box-wrap .td-author-social a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .comment-reply-link:hover,
+    .logged-in-as a:hover,
+    #cancel-comment-reply-link:hover,
+    .td-search-query,
+    .widget a:hover,
+    .td_wp_recentcomments a:hover,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .widget_calendar tfoot a:hover,
+    #bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .td-subfooter-menu li a:hover,
+    a.vc_btn-black:hover,
+    .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td-instagram-user a,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td_block_template_2 .td-related-title .td-cur-simple-item,
+    .td_block_template_5 .td-related-title .td-cur-simple-item,
+    .td_block_template_6 .td-related-title .td-cur-simple-item,
+    .td_block_template_7 .td-related-title .td-cur-simple-item,
+    .td_block_template_8 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title .td-cur-simple-item,
+    .td_block_template_10 .td-related-title .td-cur-simple-item,
+    .td_block_template_11 .td-related-title .td-cur-simple-item,
+    .td_block_template_12 .td-related-title .td-cur-simple-item,
+    .td_block_template_13 .td-related-title .td-cur-simple-item,
+    .td_block_template_14 .td-related-title .td-cur-simple-item,
+    .td_block_template_15 .td-related-title .td-cur-simple-item,
+    .td_block_template_16 .td-related-title .td-cur-simple-item,
+    .td_block_template_17 .td-related-title .td-cur-simple-item,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .td_outlined_btn,
+    .td_block_categories_tags .td-ct-item:hover {
+        color: #2b85d9;
+    }
+
+    a.vc_btn-black.vc_btn_square_outlined:hover,
+    a.vc_btn-black.vc_btn_outlined:hover {
+        color: #2b85d9 !important;
+    }
+
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    a.vc_btn-black:hover,
+    .td_block_template_5 .td-block-title > *,
+    .td_outlined_btn {
+        border-color: #2b85d9;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after {
+        border-color: #2b85d9 !important;
+    }
+
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #2b85d9 transparent;
+    }
+
+    .block-title > span,
+    .block-title > a,
+    .block-title > label,
+    .widgettitle,
+    .widgettitle:after,
+    body .td-trending-now-title,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .wpb_tabs li.ui-tabs-active a,
+    .wpb_tabs li:hover a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+    .td_block_template_1 .td-related-title .td-cur-simple-item,
+    .td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more, 
+    .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_round_btn, 
+    .td_outlined_btn:hover {
+    	background-color: #2b85d9;
+    }
+    .block-title,
+    .td_block_template_1 .td-related-title,
+    .wpb_tabs .wpb_tabs_nav,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container {
+        border-color: #2b85d9;
+    }
+    .td_block_wrap .td-subcat-item a.td-cur-simple-item {
+	    color: #2b85d9;
+	}
+
+
+    
+    .td-grid-style-4 .entry-title
+    {
+        background-color: rgba(43, 133, 217, 0.7);
+    }
+
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: rgba(36,34,51,0.9);
+        background: -moz-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(36,34,51,0.9)), color-stop(100%, rgba(69,120,249,0.9)));
+        background: -webkit-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -o-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -ms-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: linear-gradient(to bottom, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(36,34,51,0.9)', endColorstr='rgba(69,120,249,0.9)', GradientType=0 );
+    }
+
+    
+    ul.sf-menu > .menu-item > a {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+	#td-mobile-nav,
+	#td-mobile-nav .wpb_button,
+	.td-search-wrap-mob {
+		font-family:"Roboto Slab";
+	
+	}
+
+
+	
+    .td-page-title,
+    .td-category-title-holder .td-page-title {
+    	font-family:"Roboto Slab";
+	
+    }
+    
+    .white-popup-block:after {
+        background: rgba(36,34,51,0.9);
+        background: -moz-linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(36,34,51,0.9)), color-stop(100%, rgba(69,120,249,0.9)));
+        background: -webkit-linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+    }.td-header-style-12 .td-header-menu-wrap-full,
+    .td-header-style-12 .td-affix,
+    .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td_category_template_3 .td-current-sub-category,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+     .td_block_big_grid_9.td-grid-style-1 .td-post-category,
+    .td_block_big_grid_9.td-grid-style-5 .td-post-category,
+    .td-grid-style-6.td-hover-1 .td-module-thumb:after,
+     .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #2b85d9;
+    }
+    
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-mega-span h3 a:hover,
+    .td_mod_mega_menu:hover .entry-title a,
+    .header-search-wrap .result-msg a:hover,
+    .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a,
+    .td-header-top-menu .td-icon-search:hover,
+    .td-header-wrap .result-msg a:hover,
+    .top-header-menu li a:hover,
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .td-social-icon-wrap > a:hover,
+    .td-header-sp-top-widget .td-social-icon-wrap a:hover,
+    .td_mod_related_posts:hover h3 > a,
+    .td-post-template-11 .td-related-title .td-related-left:hover,
+    .td-post-template-11 .td-related-title .td-related-right:hover,
+    .td-post-template-11 .td-related-title .td-cur-simple-item,
+    .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+    .td-category-header .td-pulldown-category-filter-link:hover,
+    .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .footer-text-wrap .footer-email-wrap a,
+    .footer-social-wrap a:hover,
+    .td_module_17 .td-read-more a:hover,
+    .td_module_18 .td-read-more a:hover,
+    .td_module_19 .td-post-author-name a:hover,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover {
+        color: #2b85d9;
+    }
+    
+    .td-mega-menu-page .wpb_content_element ul li a:hover,
+    .td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+    .td-theme-wrap .header-search-wrap .result-msg a:hover {
+        color: #2b85d9 !important;
+    }
+    
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #2b85d9;
+    }
+    
+    
+
+
+    
+    .td-header-wrap .td-header-top-menu-full,
+    .td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-1.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-2.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-3.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu {
+        background-color: #000000;
+    }
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: transparent;
+    }
+    .td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+        background-color: #000000;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full {
+        border-bottom: none;
+    }
+
+
+    
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .td_block_mega_menu .td-next-prev-wrap a:hover,
+    .td-mega-span .td-post-category:hover,
+     .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #2b85d9;
+    }
+    .td_block_mega_menu .td-next-prev-wrap a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #2b85d9;
+    }
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #2b85d9 transparent;
+    }
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td_mod_mega_menu:hover .entry-title a,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a {
+        color: #2b85d9;
+    }
+    
+
+    
+    ul.sf-menu > .td-menu-item > a,
+    .td-theme-wrap .td-header-menu-social {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+    .td-header-bg:before {
+        background-image: url('https://justicesnows.com/wp-content/uploads/2020/04/beautiful-scales-of-justice-wallpaper-2048x1152-4k-1024x576.jpg');
+    }
+
+    
+    .td-header-bg:before {
+        background-size: 100% auto;
+    }
+
+    
+    .td-header-bg:before {
+        background-position: center center;
+    }
+
+    
+    .td-header-bg:before {
+        opacity: 0.3;
+    }
+
+
+
+
+    
+    .td-footer-wrapper::before {
+        background-image: url('https://justicesnows.com/wp-content/uploads/2020/04/beautiful-scales-of-justice-wallpaper-2048x1152-4k-1024x576.jpg');
+    }
+
+    
+    .td-footer-wrapper::before {
+        background-size: 100% auto;
+    }
+
+    
+    .td-footer-wrapper::before {
+        opacity: 0.1;
+    }
+    
+    
+    
+    
+    
+    .block-title > span,
+    .block-title > a,
+    .widgettitle,
+    body .td-trending-now-title,
+    .wpb_tabs li a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a,
+    .td-theme-wrap .td-related-title a,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-theme-wrap .td-block-title {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+    .td_mod_mega_menu .item-details a {
+        font-size:15px;
+	
+    }
+    
+    .td_mega_menu_sub_cats .block-mega-child-cats a {
+        font-family:"Roboto Slab";
+	font-size:15px;
+	
+    }
+    
+	.td_module_wrap .td-module-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+	.td_block_trending_now .entry-title,
+	.td-theme-slider .td-module-title,
+    .td-big-grid-post .entry-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+	.post .td-post-header .entry-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+    .widget_archive a,
+    .widget_calendar,
+    .widget_categories a,
+    .widget_nav_menu a,
+    .widget_meta a,
+    .widget_pages a,
+    .widget_recent_comments a,
+    .widget_recent_entries a,
+    .widget_text .textwidget,
+    .widget_tag_cloud a,
+    .widget_search input,
+    .woocommerce .product-categories a,
+    .widget_display_forums a,
+    .widget_display_replies a,
+    .widget_display_topics a,
+    .widget_display_views a,
+    .widget_display_stats {
+    	font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .header-search-wrap .td-drop-down-search:after,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    input[type=submit]:hover,
+    .td-read-more a,
+    .td-post-category:hover,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-post-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+    .td-404-sub-sub-title a:hover,
+    .td-search-form-widget .wpb_button:hover,
+    .td-rating-bar-wrap div,
+    .dropcap,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .wpb_default,
+    .wpb_default:hover,
+    .td-left-smart-list:hover,
+    .td-right-smart-list:hover,
+    #bbpress-forums button:hover,
+    .bbp_widget_login .button:hover,
+    .td-footer-wrapper .td-post-category,
+    .td-footer-wrapper .widget_product_search input[type="submit"]:hover,
+    .single-product .product .summary .cart .button:hover,
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+    .td-theme-slider:hover .slide-meta-cat a,
+    a.vc_btn-black:hover,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .td-scroll-up,
+    .td-smart-list-button:hover,
+    .td-weather-information:before,
+    .td-weather-week:before,
+    .td_block_exchange .td-exchange-header:before,
+    .td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+    .td_block_template_9 .td-block-title:after,
+    .td_block_template_15 .td-block-title:before,
+    div.wpforms-container .wpforms-form div.wpforms-submit-container button[type=submit],
+    .td-close-video-fixed {
+        background-color: #2b85d9;
+    }
+
+    .td_block_template_4 .td-related-title .td-cur-simple-item:before {
+        border-color: #2b85d9 transparent transparent transparent !important;
+    }
+    
+    
+    .td_block_template_4 .td-related-title .td-cur-simple-item,
+    .td_block_template_3 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title:after {
+        background-color: #2b85d9;
+    }
+
+    a,
+    cite a:hover,
+    .td-page-content blockquote p,
+    .td-post-content blockquote p,
+    .mce-content-body blockquote p,
+    .comment-content blockquote p,
+    .wpb_text_column blockquote p,
+    .td_block_text_with_title blockquote p,
+    .td_module_wrap:hover .entry-title a,
+    .td-subcat-filter .td-subcat-list a:hover,
+    .td-subcat-filter .td-subcat-dropdown a:hover,
+    .td_quote_on_blocks,
+    .dropcap2,
+    .dropcap3,
+    .td_top_authors .td-active .td-authors-name a,
+    .td_top_authors .td_mod_wrap:hover .td-authors-name a,
+    .td-post-next-prev-content a:hover,
+    .author-box-wrap .td-author-social a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .comment-reply-link:hover,
+    .logged-in-as a:hover,
+    #cancel-comment-reply-link:hover,
+    .td-search-query,
+    .widget a:hover,
+    .td_wp_recentcomments a:hover,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .widget_calendar tfoot a:hover,
+    #bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .td-subfooter-menu li a:hover,
+    a.vc_btn-black:hover,
+    .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td-instagram-user a,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td_block_template_2 .td-related-title .td-cur-simple-item,
+    .td_block_template_5 .td-related-title .td-cur-simple-item,
+    .td_block_template_6 .td-related-title .td-cur-simple-item,
+    .td_block_template_7 .td-related-title .td-cur-simple-item,
+    .td_block_template_8 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title .td-cur-simple-item,
+    .td_block_template_10 .td-related-title .td-cur-simple-item,
+    .td_block_template_11 .td-related-title .td-cur-simple-item,
+    .td_block_template_12 .td-related-title .td-cur-simple-item,
+    .td_block_template_13 .td-related-title .td-cur-simple-item,
+    .td_block_template_14 .td-related-title .td-cur-simple-item,
+    .td_block_template_15 .td-related-title .td-cur-simple-item,
+    .td_block_template_16 .td-related-title .td-cur-simple-item,
+    .td_block_template_17 .td-related-title .td-cur-simple-item,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .td_outlined_btn,
+    .td_block_categories_tags .td-ct-item:hover {
+        color: #2b85d9;
+    }
+
+    a.vc_btn-black.vc_btn_square_outlined:hover,
+    a.vc_btn-black.vc_btn_outlined:hover {
+        color: #2b85d9 !important;
+    }
+
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    a.vc_btn-black:hover,
+    .td_block_template_5 .td-block-title > *,
+    .td_outlined_btn {
+        border-color: #2b85d9;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after {
+        border-color: #2b85d9 !important;
+    }
+
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #2b85d9 transparent;
+    }
+
+    .block-title > span,
+    .block-title > a,
+    .block-title > label,
+    .widgettitle,
+    .widgettitle:after,
+    body .td-trending-now-title,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .wpb_tabs li.ui-tabs-active a,
+    .wpb_tabs li:hover a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+    .td_block_template_1 .td-related-title .td-cur-simple-item,
+    .td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more, 
+    .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_round_btn, 
+    .td_outlined_btn:hover {
+    	background-color: #2b85d9;
+    }
+    .block-title,
+    .td_block_template_1 .td-related-title,
+    .wpb_tabs .wpb_tabs_nav,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container {
+        border-color: #2b85d9;
+    }
+    .td_block_wrap .td-subcat-item a.td-cur-simple-item {
+	    color: #2b85d9;
+	}
+
+
+    
+    .td-grid-style-4 .entry-title
+    {
+        background-color: rgba(43, 133, 217, 0.7);
+    }
+
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: rgba(36,34,51,0.9);
+        background: -moz-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(36,34,51,0.9)), color-stop(100%, rgba(69,120,249,0.9)));
+        background: -webkit-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -o-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -ms-linear-gradient(top, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: linear-gradient(to bottom, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(36,34,51,0.9)', endColorstr='rgba(69,120,249,0.9)', GradientType=0 );
+    }
+
+    
+    ul.sf-menu > .menu-item > a {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+	#td-mobile-nav,
+	#td-mobile-nav .wpb_button,
+	.td-search-wrap-mob {
+		font-family:"Roboto Slab";
+	
+	}
+
+
+	
+    .td-page-title,
+    .td-category-title-holder .td-page-title {
+    	font-family:"Roboto Slab";
+	
+    }
+    
+    .white-popup-block:after {
+        background: rgba(36,34,51,0.9);
+        background: -moz-linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(36,34,51,0.9)), color-stop(100%, rgba(69,120,249,0.9)));
+        background: -webkit-linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+        background: linear-gradient(45deg, rgba(36,34,51,0.9) 0%, rgba(69,120,249,0.9) 100%);
+    }.td-header-style-12 .td-header-menu-wrap-full,
+    .td-header-style-12 .td-affix,
+    .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td_category_template_3 .td-current-sub-category,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+     .td_block_big_grid_9.td-grid-style-1 .td-post-category,
+    .td_block_big_grid_9.td-grid-style-5 .td-post-category,
+    .td-grid-style-6.td-hover-1 .td-module-thumb:after,
+     .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #2b85d9;
+    }
+    
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-mega-span h3 a:hover,
+    .td_mod_mega_menu:hover .entry-title a,
+    .header-search-wrap .result-msg a:hover,
+    .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a,
+    .td-header-top-menu .td-icon-search:hover,
+    .td-header-wrap .result-msg a:hover,
+    .top-header-menu li a:hover,
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .td-social-icon-wrap > a:hover,
+    .td-header-sp-top-widget .td-social-icon-wrap a:hover,
+    .td_mod_related_posts:hover h3 > a,
+    .td-post-template-11 .td-related-title .td-related-left:hover,
+    .td-post-template-11 .td-related-title .td-related-right:hover,
+    .td-post-template-11 .td-related-title .td-cur-simple-item,
+    .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+    .td-category-header .td-pulldown-category-filter-link:hover,
+    .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .footer-text-wrap .footer-email-wrap a,
+    .footer-social-wrap a:hover,
+    .td_module_17 .td-read-more a:hover,
+    .td_module_18 .td-read-more a:hover,
+    .td_module_19 .td-post-author-name a:hover,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover {
+        color: #2b85d9;
+    }
+    
+    .td-mega-menu-page .wpb_content_element ul li a:hover,
+    .td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+    .td-theme-wrap .header-search-wrap .result-msg a:hover {
+        color: #2b85d9 !important;
+    }
+    
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #2b85d9;
+    }
+    
+    
+
+
+    
+    .td-header-wrap .td-header-top-menu-full,
+    .td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-1.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-2.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-3.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu {
+        background-color: #000000;
+    }
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: transparent;
+    }
+    .td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+        background-color: #000000;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full {
+        border-bottom: none;
+    }
+
+
+    
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .td_block_mega_menu .td-next-prev-wrap a:hover,
+    .td-mega-span .td-post-category:hover,
+     .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .tdm-header .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #2b85d9;
+    }
+    .td_block_mega_menu .td-next-prev-wrap a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #2b85d9;
+    }
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #2b85d9 transparent;
+    }
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td_mod_mega_menu:hover .entry-title a,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a {
+        color: #2b85d9;
+    }
+    
+
+    
+    ul.sf-menu > .td-menu-item > a,
+    .td-theme-wrap .td-header-menu-social {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+    .td-header-bg:before {
+        background-image: url('https://justicesnows.com/wp-content/uploads/2020/04/beautiful-scales-of-justice-wallpaper-2048x1152-4k-1024x576.jpg');
+    }
+
+    
+    .td-header-bg:before {
+        background-size: 100% auto;
+    }
+
+    
+    .td-header-bg:before {
+        background-position: center center;
+    }
+
+    
+    .td-header-bg:before {
+        opacity: 0.3;
+    }
+
+
+
+
+    
+    .td-footer-wrapper::before {
+        background-image: url('https://justicesnows.com/wp-content/uploads/2020/04/beautiful-scales-of-justice-wallpaper-2048x1152-4k-1024x576.jpg');
+    }
+
+    
+    .td-footer-wrapper::before {
+        background-size: 100% auto;
+    }
+
+    
+    .td-footer-wrapper::before {
+        opacity: 0.1;
+    }
+    
+    
+    
+    
+    
+    .block-title > span,
+    .block-title > a,
+    .widgettitle,
+    body .td-trending-now-title,
+    .wpb_tabs li a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a,
+    .td-theme-wrap .td-related-title a,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-theme-wrap .td-block-title {
+        font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+    
+    .td_mod_mega_menu .item-details a {
+        font-size:15px;
+	
+    }
+    
+    .td_mega_menu_sub_cats .block-mega-child-cats a {
+        font-family:"Roboto Slab";
+	font-size:15px;
+	
+    }
+    
+	.td_module_wrap .td-module-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+	.td_block_trending_now .entry-title,
+	.td-theme-slider .td-module-title,
+    .td-big-grid-post .entry-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+	.post .td-post-header .entry-title {
+		font-family:"Roboto Slab";
+	
+	}
+    
+    .widget_archive a,
+    .widget_calendar,
+    .widget_categories a,
+    .widget_nav_menu a,
+    .widget_meta a,
+    .widget_pages a,
+    .widget_recent_comments a,
+    .widget_recent_entries a,
+    .widget_text .textwidget,
+    .widget_tag_cloud a,
+    .widget_search input,
+    .woocommerce .product-categories a,
+    .widget_display_forums a,
+    .widget_display_replies a,
+    .widget_display_topics a,
+    .widget_display_views a,
+    .widget_display_stats {
+    	font-family:"Roboto Slab";
+	font-size:16px;
+	
+    }
+
+
+
+/* Style generated by theme for demo: politics */
+
+.td-politics .td-header-style-11 .sf-menu > li > a:hover,
+	    .td-politics .td-header-style-11 .sf-menu > .sfHover > a,
+	    .td-politics .td-header-style-11 .sf-menu > .current-menu-item > a,
+	    .td-politics .td-header-style-11 .sf-menu > .current-menu-ancestor > a,
+	    .td-politics .td-header-style-11 .sf-menu > .current-category-ancestor > a {
+	        background-color: #2b85d9;
+	    }
+</style>
+
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "WebSite",
+                    "@id": "https://justicesnows.com/",
+                    "name": "Home"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://justicesnows.com/category/lawyer/",
+                    "name": "Lawyer"
+                }
+            }
+            ,{
+                "@type": "ListItem",
+                "position": 3,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://justicesnows.com/nursing-home-neglect/",
+                    "name": "A Closer Look at Nursing Home Neglect: Do You Need to Hire..."                                
+                }
+            }    
+        ]
+    }
+</script>
+
+<!-- Button style compiled by theme -->
+
+<style>
+    .tdm_block_column_content:hover .tdm-col-content-title-url .tdm-title,
+                .tds-button2 .tdm-btn-text,
+                .tds-button2 i,
+                .tds-button5:hover .tdm-btn-text,
+                .tds-button5:hover i,
+                .tds-button6 .tdm-btn-text,
+                .tds-button6 i,
+                .tdm_block_list .tdm-list-item i,
+                .tdm_block_pricing .tdm-pricing-feature i,
+                body .tdm-social-item i {
+                    color: #2b85d9;
+                }
+                .tds-button1,
+                .tds-button6:after,
+                .tds-title2 .tdm-title-line:after,
+                .tds-title3 .tdm-title-line:after,
+                .tdm_block_pricing.tdm-pricing-featured:before,
+                .tdm_block_pricing.tds_pricing2_block.tdm-pricing-featured .tdm-pricing-header,
+                .tds-progress-bar1 .tdm-progress-bar:after,
+                .tds-progress-bar2 .tdm-progress-bar:after,
+                .tds-social3 .tdm-social-item {
+                    background-color: #2b85d9;
+                }
+                .tds-button2:before,
+                .tds-button6:before,
+                .tds-progress-bar3 .tdm-progress-bar:after {
+                  border-color: #2b85d9;
+                }
+                .tdm-btn-style1 {
+					background-color: #2b85d9;
+				}
+				.tdm-btn-style2:before {
+				    border-color: #2b85d9;
+				}
+				.tdm-btn-style2 {
+				    color: #2b85d9;
+				}
+				.tdm-btn-style3 {
+				    -webkit-box-shadow: 0 2px 16px #2b85d9;
+                    -moz-box-shadow: 0 2px 16px #2b85d9;
+                    box-shadow: 0 2px 16px #2b85d9;
+				}
+				.tdm-btn-style3:hover {
+				    -webkit-box-shadow: 0 4px 26px #2b85d9;
+                    -moz-box-shadow: 0 4px 26px #2b85d9;
+                    box-shadow: 0 4px 26px #2b85d9;
+				}
+</style>
+
+	<style id="tdw-css-placeholder"></style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body class="post-template-default single single-post postid-365 single-format-standard td-standard-pack nursing-home-neglect global-block-template-1 td-politics single_template_4 td-animation-stack-type0 td-full-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+            <div class="td-scroll-up  td-hide-scroll-up-on-mob" style="display:none;"><i class="td-icon-menu-up"></i></div>
+    
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Instagram">
+                <i class="td-icon-font td-icon-instagram"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span>            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="#" aria-label="Close"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-vrh-container"><ul id="menu-vrh" class="td-mobile-main-menu"><li id="menu-item-75" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-first menu-item-75"><a href="https://justicesnows.com/">Home</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-73"><a href="https://justicesnows.com/category/lawyer/">Lawyer</a></li>
+<li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-74"><a href="https://justicesnows.com/category/advocacy/">Advocacy</a></li>
+<li id="menu-item-245" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-245"><a href="https://justicesnows.com/category/divorce/">Divorce</a></li>
+<li id="menu-item-246" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-246"><a href="https://justicesnows.com/category/how-to/">How to</a></li>
+<li id="menu-item-247" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-247"><a href="https://justicesnows.com/category/immigration/">immigration</a></li>
+<li id="menu-item-248" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-248"><a href="https://justicesnows.com/category/injury/">Injury</a></li>
+<li id="menu-item-249" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-249"><a href="https://justicesnows.com/category/law/">Law</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search">
+		<form method="get" class="td-search-form" action="https://justicesnows.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off" />
+			</div>
+		</form>
+		<div id="td-aj-search-mob" class="td-ajax-search-flex"></div>
+	</div>
+</div>
+
+    <div id="td-outer-wrap" class="td-theme-wrap">
+    
+        
+            <div class="tdc-header-wrap ">
+
+            <!--
+Header style 10
+-->
+
+<div class="td-header-wrap td-header-style-10 td-header-background-image">
+            <div class="td-header-bg td-container-wrap "></div>
+    
+    
+    <div class="td-banner-wrap-full td-logo-wrap-full  td-container-wrap ">
+        <div class="td-header-sp-logo">
+            			<a class="td-main-logo" href="https://justicesnows.com/">
+				<img width="782" height="100" src="https://justicesnows.com/wp-content/uploads/2020/03/Justice-Logo.png" alt=""/>
+				<span class="td-visual-hidden">JusticesNows</span>
+			</a>
+		        </div>
+    </div>
+
+	<div class="td-header-menu-wrap-full td-container-wrap ">
+        
+        <div class="td-header-menu-wrap td-header-gradient ">
+			<div class="td-container td-header-row td-header-main-menu">
+				<div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-header">
+                <a class="td-main-logo" href="https://justicesnows.com/">
+            <img src="https://justicesnows.com/wp-content/uploads/2020/03/Justice-Logo.png" alt="" width="782" height="100"/>
+        </a>
+        </div>
+    <div class="menu-vrh-container"><ul id="menu-vrh-1" class="sf-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-first td-menu-item td-normal-menu menu-item-75"><a href="https://justicesnows.com/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent td-menu-item td-normal-menu menu-item-73"><a href="https://justicesnows.com/category/lawyer/">Lawyer</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-74"><a href="https://justicesnows.com/category/advocacy/">Advocacy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-245"><a href="https://justicesnows.com/category/divorce/">Divorce</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-246"><a href="https://justicesnows.com/category/how-to/">How to</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-247"><a href="https://justicesnows.com/category/immigration/">immigration</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-248"><a href="https://justicesnows.com/category/injury/">Injury</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-249"><a href="https://justicesnows.com/category/law/">Law</a></li>
+</ul></div></div>
+
+
+    <div class="header-search-wrap">
+        <div class="td-search-btns-wrap">
+            <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            <a id="td-header-search-button-mob" href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+        </div>
+
+        <div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+            <form method="get" class="td-search-form" action="https://justicesnows.com/">
+                <div role="search" class="td-head-form-search-wrap">
+                    <input id="td-header-search" type="text" value="" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search" />
+                </div>
+            </form>
+            <div id="td-aj-search"></div>
+        </div>
+    </div>
+			</div>
+		</div>
+	</div>
+
+    
+</div>
+            </div>
+
+            
+<article id="post-365" class="td-post-template-4 post-365 post type-post status-publish format-standard has-post-thumbnail category-lawyer tag-law tag-lawyer tag-neglect tag-nursing-home tag-tips td-container-wrap" itemscope itemtype="https://schema.org/Article">
+    <div class="td-post-header td-container">
+        <div class="td-crumb-container"><div class="entry-crumbs"><span><a title="" class="entry-crumb" href="https://justicesnows.com/">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span><a title="View all posts in Lawyer" class="entry-crumb" href="https://justicesnows.com/category/lawyer/">Lawyer</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">A Closer Look at Nursing Home Neglect: Do You Need to Hire...</span></div></div>
+        <div class="td-post-header-holder td-image-gradient">
+            <div class="td-post-featured-image"><figure><img width="1068" height="712" class="entry-thumb" src="https://justicesnows.com/wp-content/uploads/2020/06/law-1068x712.jpg" srcset="https://justicesnows.com/wp-content/uploads/2020/06/law-1068x712.jpg 1068w, https://justicesnows.com/wp-content/uploads/2020/06/law-300x200.jpg 300w, https://justicesnows.com/wp-content/uploads/2020/06/law-1024x683.jpg 1024w, https://justicesnows.com/wp-content/uploads/2020/06/law-768x512.jpg 768w, https://justicesnows.com/wp-content/uploads/2020/06/law-696x464.jpg 696w, https://justicesnows.com/wp-content/uploads/2020/06/law-630x420.jpg 630w, https://justicesnows.com/wp-content/uploads/2020/06/law.jpg 1350w" sizes="(max-width: 1068px) 100vw, 1068px" alt="" title="law"/><figcaption class="wp-caption-text">Img source: unsplash.com</figcaption></figure></div>
+            <header class="td-post-title">
+                <ul class="td-category"><li class="entry-category"><a  href="https://justicesnows.com/category/lawyer/">Lawyer</a></li></ul>                <h1 class="entry-title">A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer &#8211; 2021 Guide</h1>
+
+                
+
+                <div class="td-module-meta-info">
+                    <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://justicesnows.com/author/malinda-cruz/">Malinda Cruz</a><div class="td-author-line"> - </div> </div>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-02-20T13:05:18+01:00" >February 20, 2021</time></span>                                                        </div>
+
+            </header>
+        </div>
+    </div>
+
+    <div class="td-container">
+        <div class="td-pb-row">
+                                    <div class="td-pb-span8 td-main-content" role="main">
+                            <div class="td-ss-main-content">
+                                
+    
+    <div class="td-post-content tagdiv-type">
+        <p><a href="https://www.investopedia.com/articles/investing/082015/things-nursing-homes-are-not-allowed-do.asp">Nursing home law</a> is a tricky area because of the complications that arise from the vulnerability of senior citizens. Whether you&#8217;re concerned about your parents&#8217; wellbeing in their home or seeking to hold an irresponsible nursing home accountable for the way they&#8217;ve treated your loved one, you should consult with a lawyer for review.</p>
+<p>Florida personal injury lawyer <a href="https://www.vilesandbeckman.com/fort-myers-nursing-home-abuse-lawyer/">Marcus Viles</a> explains that trying to evaluate if a case of neglect or abuse has happened in the first place is something you should assess and talk to an attorney. The main things you should determine are the type of neglect and whether the nursing home’s actions or inactions caused your loved one to be injured.</p>
+<h2>The Dark Side of Nursing Homes</h2>
+<figure id="attachment_366" aria-describedby="caption-attachment-366" style="width: 1350px" class="wp-caption alignnone"><img loading="lazy" class="size-full wp-image-366" src="https://justicesnows.com/wp-content/uploads/2020/06/law-1.jpg" alt="" width="1350" height="900" srcset="https://justicesnows.com/wp-content/uploads/2020/06/law-1.jpg 1350w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-300x200.jpg 300w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-1024x683.jpg 1024w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-768x512.jpg 768w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-696x464.jpg 696w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-1068x712.jpg 1068w, https://justicesnows.com/wp-content/uploads/2020/06/law-1-630x420.jpg 630w" sizes="(max-width: 1350px) 100vw, 1350px" /><figcaption id="caption-attachment-366" class="wp-caption-text">Img source: unsplash.com</figcaption></figure>
+<p>While nursing homes are meant to be safe havens for the elderly so that they can live comfortably without overexerting themselves, these places can be detrimental to their health. The National Center of Biotechnology Information’s (NCBI) <a href="https://www.ncbi.nlm.nih.gov/books/NBK98786/">study on neglect and abuse</a> reported complaints by nursing home residents and their relatives regarding instances of violence, bullying, lack of care during duties, and malicious actions by staff members.</p>
+<p>Elder abuse in nursing homes is often a result of the power dynamic between a healthy young adult and an older person who needs round-the-clock care. The severe underreporting of this issue signifies the extreme voicelessness of the victims, who may feel that they have no power in this system. This provides malicious people the opportunity to get away with abusive behavior and prevents common mistakes or oversights from being addressed.</p>
+<p>While 43% of nursing homes in the United States were found to provide subpar care to their residents, only one complaint was filed in 85% percent of homes. This shows that there is a great need to take action.. This is very concerning because our elderly are being overlooked by society.</p>
+<h2>What Constitutes Neglect</h2>
+<figure id="attachment_367" aria-describedby="caption-attachment-367" style="width: 1350px" class="wp-caption alignnone"><img loading="lazy" class="size-full wp-image-367" src="https://justicesnows.com/wp-content/uploads/2020/06/law-2.jpg" alt="" width="1350" height="900" srcset="https://justicesnows.com/wp-content/uploads/2020/06/law-2.jpg 1350w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-300x200.jpg 300w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-1024x683.jpg 1024w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-768x512.jpg 768w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-696x464.jpg 696w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-1068x712.jpg 1068w, https://justicesnows.com/wp-content/uploads/2020/06/law-2-630x420.jpg 630w" sizes="(max-width: 1350px) 100vw, 1350px" /><figcaption id="caption-attachment-367" class="wp-caption-text">Img source: unsplash.com</figcaption></figure>
+<p>Neglect in nursing homes can be very subtle and can look like any number of situations. Neglect is a subcategory of abuse that can be defined as actions, whether intentional or not, that lead to harm and injury to other people. In many cases, the injury caused by neglect can often be invisible, such as emotional trauma, harm to dignity, or stress.</p>
+<p>Nursing home neglect seems to occur most commonly when workers are overworked, stressed, and underpaid. When health care workers are so understaffed and unable to provide proper care, residents are likely to suffer from bad hygiene, limited exercise, unsanitary living quarters, and physical injuries and mental health trauma.</p>
+<p>Neglect can quickly escalate into abuse, where workers may be hitting, humiliating, and verbally abusing residents. These injuries that result from neglect are typically attributed to accidents or accidental injury by the administration, especially when the resident is unable to speak for themselves. This is one way that nursing home neglect often goes unnoticed.</p>
+<h2>Types of Neglect</h2>
+<figure id="attachment_353" aria-describedby="caption-attachment-353" style="width: 1024px" class="wp-caption alignnone"><img loading="lazy" class="size-full wp-image-353" src="https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1.jpg" alt="" width="1024" height="683" srcset="https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1.jpg 1024w, https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1-300x200.jpg 300w, https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1-768x512.jpg 768w, https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1-696x464.jpg 696w, https://justicesnows.com/wp-content/uploads/2020/06/images2299-5c948ed514d9f-1024x683-1-630x420.jpg 630w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption id="caption-attachment-353" class="wp-caption-text">Img ource: youngpeopletoday.net</figcaption></figure>
+<p>Neglect can be categorized into four main categories: medical, social/emotional, hygiene, and basic needs. Nursing homes differ from assisted living facilities in that they provide long-term medical care for the resident.</p>
+<p>Therefore, medical neglect is one of the most egregious forms of neglect. Not administering medicine as per the doctor’s orders, failing to conduct regular physical examinations, or failing to provide medical care are all part of medical neglect. This form of neglect can result in injury and is medical malpractice.</p>
+<p>Social and emotional neglect is difficult to prove, but consistent social isolation or verbal abuse of the resident constitutes abuse and neglect as well. Nursing home residents should not be kept isolated or treated rudely</p>
+<p>Neglect of hygiene is also considered neglect. Older people or disabled individuals with long-term medical issues often need assistance with oral care, showering, and keeping clean. Failure to provide such assistance is also negligence.</p>
+<p>When a nursing home takes on the responsibility of care, there is an agreement that the resident&#8217;s basic needs will be taken care of. Receiving adequate amounts of food, proper shelter, access to a bathroom, and sufficient water or other forms of hydration is essential. Lack of maintenance, staff, and adequate resources can all lead to this kind of neglect.</p>
+<h2>Neglect Law: Civil vs. Criminal</h2>
+<figure id="attachment_307" aria-describedby="caption-attachment-307" style="width: 2121px" class="wp-caption alignnone"><img loading="lazy" class="size-full wp-image-307" src="https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer.jpg" alt="" width="2121" height="1414" srcset="https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer.jpg 2121w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-300x200.jpg 300w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-1024x683.jpg 1024w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-768x512.jpg 768w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-1536x1024.jpg 1536w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-2048x1365.jpg 2048w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-696x464.jpg 696w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-1068x712.jpg 1068w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-1920x1280.jpg 1920w, https://justicesnows.com/wp-content/uploads/2020/06/do-i-need-a-personal-injury-lawyer-630x420.jpg 630w" sizes="(max-width: 2121px) 100vw, 2121px" /><figcaption id="caption-attachment-307" class="wp-caption-text">Img source: astr.tv</figcaption></figure>
+<p>Legislation regarding neglect is a combination of civil and criminal law. Depending on the circumstances of a case, your lawyer may alter the approach that they take. One important thing to watch out for is that in places such as Little Rock, Arkansas nursing homes are not required by law to have malpractice insurance, which means that you may not be able to receive any compensation in the event of a lawsuit.</p>
+<p>However, the 1987 Nursing Home Reform Act provides a means through which you may be able to ensure civil penalties are assessed against the nursing home, especially if the facility relies on Medicare/Medicaid payments.</p>
+<p>In the case of severe and repeated neglect, <a href="https://www.hg.org/nursing-home-abuse.html">a case for abuse</a> can also be made, where the nursing home or specified members of staff may be found guilty of malicious harmful behavior. For example, repeated severe falls due to carelessness on behalf of a worker can be a case you should consult a personal injury lawyer focusing on medical cases.</p>
+<p>Any experienced injury attorney will tell you that any dubious activity should be brought to the attention of a licensed and experienced medical malpractice attorney. An accident lawyer, like the ones available on <a href="https://lisagdouglas.com/car-accident-lawyer-little-rock/">lisadouglas.com</a> can evaluate your claim to determine if you have a case.</p>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div>    </div>
+
+
+    <footer>
+                
+        <div class="td-post-source-tags">
+                        <ul class="td-tags td-post-small-box clearfix"><li><span>TAGS</span></li><li><a href="https://justicesnows.com/tag/law/">Law</a></li><li><a href="https://justicesnows.com/tag/lawyer/">Lawyer</a></li><li><a href="https://justicesnows.com/tag/neglect/">Neglect</a></li><li><a href="https://justicesnows.com/tag/nursing-home/">Nursing Home</a></li><li><a href="https://justicesnows.com/tag/tips/">Tips</a></li></ul>        </div>
+
+                <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://justicesnows.com/6-best-divorce-lawyers-in-indiana/">6 Best Divorce Lawyers in Indiana 2021</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://justicesnows.com/the-best-immigration-lawyers-in-chicago/">The Best Immigration Lawyers In Chicago 2021</a></div></div></div>        <div class="author-box-wrap"><a href="https://justicesnows.com/author/malinda-cruz/" aria-label="author-photo"><img alt='' src='https://secure.gravatar.com/avatar/cdd358ba1301a265c75ed1c6680835e9?s=96&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cdd358ba1301a265c75ed1c6680835e9?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy'/></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://justicesnows.com/author/malinda-cruz/">Malinda Cruz</a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>	    <span class="td-page-meta" itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Malinda Cruz"></span><meta itemprop="datePublished" content="2021-02-20T13:05:18+01:00"><meta itemprop="dateModified" content="2021-06-17T08:26:40+01:00"><meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://justicesnows.com/nursing-home-neglect/"/><span class="td-page-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://justicesnows.com/wp-content/uploads/2020/03/Justice-Logo.png"></span><meta itemprop="name" content="JusticesNows"></span><meta itemprop="headline " content="A Closer Look at Nursing Home Neglect: Do You Need to Hire a Lawyer - 2021 Guide"><span class="td-page-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://justicesnows.com/wp-content/uploads/2020/06/law.jpg"><meta itemprop="width" content="1350"><meta itemprop="height" content="900"></span>    </footer>
+
+    <div class="td_block_wrap td_block_related_posts tdi_2 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_2" ><script type="rocketlazyloadscript">var block_tdi_2 = new tdBlock();
+block_tdi_2.id = "tdi_2";
+block_tdi_2.atts = '{"limit":3,"ajax_pagination":"next_prev","live_filter":"cur_post_same_tags","td_ajax_filter_type":"td_custom_related","class":"tdi_2","td_column_number":3,"block_type":"td_block_related_posts","live_filter_cur_post_id":365,"live_filter_cur_post_author":"2","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_ajax_preloading":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","tdc_css_class":"tdi_2","tdc_css_class_style":"tdi_2_rand_style"}';
+block_tdi_2.td_column_number = "3";
+block_tdi_2.block_type = "td_block_related_posts";
+block_tdi_2.post_count = "3";
+block_tdi_2.found_posts = "74";
+block_tdi_2.header_color = "";
+block_tdi_2.ajax_pagination_infinite_stop = "";
+block_tdi_2.max_num_pages = "25";
+tdBlocksArray.push(block_tdi_2);
+</script><h4 class="td-related-title td-block-title"><a id="tdi_3" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="tdi_2" href="#">RELATED ARTICLES</a><a id="tdi_4" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="tdi_2" href="#">MORE FROM AUTHOR</a></h4><div id=tdi_2 class="td_block_inner">
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://justicesnows.com/find-immigration-lawyer/" rel="bookmark" class="td-image-wrap " title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAACWAQMAAACCSQSPAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABpJREFUWMPtwQENAAAAwiD7p7bHBwwAAAAg7RD+AAGXD7BoAAAAAElFTkSuQmCC" alt="" title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/09/Immigration-Law-218x150.jpeg"  width="218" height="150" /></a></div>                <a href="https://justicesnows.com/category/lawyer/" class="td-post-category">Lawyer</a>            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/find-immigration-lawyer/" rel="bookmark" title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide">6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://justicesnows.com/know-about-bad-drugs-lawsuits/" rel="bookmark" class="td-image-wrap " title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAACWAQMAAACCSQSPAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABpJREFUWMPtwQENAAAAwiD7p7bHBwwAAAAg7RD+AAGXD7BoAAAAAElFTkSuQmCC" alt="" title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/09/Bad-Drugs-Lawsuits-218x150.jpg"  width="218" height="150" /></a></div>                <a href="https://justicesnows.com/category/injury/" class="td-post-category">Injury</a>            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/know-about-bad-drugs-lawsuits/" rel="bookmark" title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide">3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://justicesnows.com/inventor-should-consider-when-filing-provisional-patent/" rel="bookmark" class="td-image-wrap " title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAACWAQMAAACCSQSPAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABpJREFUWMPtwQENAAAAwiD7p7bHBwwAAAAg7RD+AAGXD7BoAAAAAElFTkSuQmCC" alt="" title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/inovation-218x150.jpg"  width="218" height="150" /></a></div>                <a href="https://justicesnows.com/category/business/" class="td-post-category">Business</a>            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/inventor-should-consider-when-filing-provisional-patent/" rel="bookmark" title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide">6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block -->
+    <div class="comments" id="comments">
+        	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">LEAVE A REPLY <small><a rel="nofollow" id="cancel-comment-reply-link" href="/nursing-home-neglect/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://justicesnows.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><div class="clearfix"></div>
+				<div class="comment-form-input-wrap td-form-comment">
+					<textarea autocomplete="new-password"  placeholder="Comment:" id="ba09391483"  name="ba09391483"   cols="45" rows="8" aria-required="true"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script type="rocketlazyloadscript" data-noptimize data-rocket-type="text/javascript">document.getElementById("comment").setAttribute( "id", "a6a8b49751a4af35058c7592a5e557f8" );document.getElementById("ba09391483").setAttribute( "id", "comment" );</script>
+					<div class="td-warning-comment">Please enter your comment!</div>
+				</div>
+		        <div class="comment-form-input-wrap td-form-author">
+			            <input class="" id="author" name="author" placeholder="Name:*" type="text" value="" size="30"  aria-required='true' />
+			            <div class="td-warning-author">Please enter your name here</div>
+			         </div>
+<div class="comment-form-input-wrap td-form-email">
+			            <input class="" id="email" name="email" placeholder="Email:*" type="text" value="" size="30"  aria-required='true' />
+			            <div class="td-warning-email-error">You have entered an incorrect email address!</div>
+			            <div class="td-warning-email">Please enter your email address here</div>
+			         </div>
+<div class="comment-form-input-wrap td-form-url">
+			            <input class="" id="url" name="url" placeholder="Website:" type="text" value="" size="30" />
+                     </div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="c4wp-display-captcha-form"><label for="Solve Captcha*">Solve Captcha*</label>8&nbsp;&nbsp;&#43;&nbsp;&nbsp;1&nbsp;&nbsp;=&nbsp;&nbsp;<input id="c4wp_user_input_captcha" name="c4wp_user_input_captcha" class="c4wp_user_input_captcha" type="text" style="width: 45px;" autocomplete="off" /><input type="hidden" name="c4wp_random_input_captcha" value="0AA=" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='365' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	    </div> <!-- /.content -->
+                                </div>
+                        </div>
+                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
+                            <div class="td-ss-main-sidebar">
+                                <div class="td_block_wrap td_block_1 td_block_widget tdi_5 td-pb-border-top td_block_template_1 td-column-1"  data-td-block-uid="tdi_5" ><script type="rocketlazyloadscript">var block_tdi_5 = new tdBlock();
+block_tdi_5.id = "tdi_5";
+block_tdi_5.atts = '{"custom_title":"","custom_url":"","block_template_id":"","header_color":"#","header_text_color":"#","accent_text_color":"#","m4_tl":"","m4_el":"","m6_tl":"","limit":"10","offset":"","el_class":"","post_ids":"","category_id":"","category_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","sort":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","td_ajax_preloading":"","ajax_pagination":"","ajax_pagination_infinite_stop":"","class":"td_block_widget tdi_5","block_type":"td_block_1","separator":"","show_modified_date":"","time_ago":"","time_ago_add_txt":"ago","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_family":"","f_header_font_size":"","f_header_font_line_height":"","f_header_font_style":"","f_header_font_weight":"","f_header_font_transform":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","m4f_title_font_header":"","m4f_title_font_title":"Article title","m4f_title_font_settings":"","m4f_title_font_family":"","m4f_title_font_size":"","m4f_title_font_line_height":"","m4f_title_font_style":"","m4f_title_font_weight":"","m4f_title_font_transform":"","m4f_title_font_spacing":"","m4f_title_":"","m4f_cat_font_title":"Article category tag","m4f_cat_font_settings":"","m4f_cat_font_family":"","m4f_cat_font_size":"","m4f_cat_font_line_height":"","m4f_cat_font_style":"","m4f_cat_font_weight":"","m4f_cat_font_transform":"","m4f_cat_font_spacing":"","m4f_cat_":"","m4f_meta_font_title":"Article meta info","m4f_meta_font_settings":"","m4f_meta_font_family":"","m4f_meta_font_size":"","m4f_meta_font_line_height":"","m4f_meta_font_style":"","m4f_meta_font_weight":"","m4f_meta_font_transform":"","m4f_meta_font_spacing":"","m4f_meta_":"","m4f_ex_font_title":"Article excerpt","m4f_ex_font_settings":"","m4f_ex_font_family":"","m4f_ex_font_size":"","m4f_ex_font_line_height":"","m4f_ex_font_style":"","m4f_ex_font_weight":"","m4f_ex_font_transform":"","m4f_ex_font_spacing":"","m4f_ex_":"","m6f_title_font_header":"","m6f_title_font_title":"Article title","m6f_title_font_settings":"","m6f_title_font_family":"","m6f_title_font_size":"","m6f_title_font_line_height":"","m6f_title_font_style":"","m6f_title_font_weight":"","m6f_title_font_transform":"","m6f_title_font_spacing":"","m6f_title_":"","m6f_cat_font_title":"Article category tag","m6f_cat_font_settings":"","m6f_cat_font_family":"","m6f_cat_font_size":"","m6f_cat_font_line_height":"","m6f_cat_font_style":"","m6f_cat_font_weight":"","m6f_cat_font_transform":"","m6f_cat_font_spacing":"","m6f_cat_":"","m6f_meta_font_title":"Article meta info","m6f_meta_font_settings":"","m6f_meta_font_family":"","m6f_meta_font_size":"","m6f_meta_font_line_height":"","m6f_meta_font_style":"","m6f_meta_font_weight":"","m6f_meta_font_transform":"","m6f_meta_font_spacing":"","m6f_meta_":"","css":"","tdc_css":"","td_column_number":1,"color_preset":"","border_top":"","tdc_css_class":"tdi_5","tdc_css_class_style":"tdi_5_rand_style"}';
+block_tdi_5.td_column_number = "1";
+block_tdi_5.block_type = "td_block_1";
+block_tdi_5.post_count = "10";
+block_tdi_5.found_posts = "170";
+block_tdi_5.header_color = "#";
+block_tdi_5.ajax_pagination_infinite_stop = "";
+block_tdi_5.max_num_pages = "17";
+tdBlocksArray.push(block_tdi_5);
+</script><div class="td-block-title-wrap"></div><div id=tdi_5 class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_4 td_module_wrap td-animation-stack">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://justicesnows.com/find-immigration-lawyer/" rel="bookmark" class="td-image-wrap " title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUQAAADrAQMAAAArGX0KAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAACBJREFUaN7twTEBAAAAwiD7pzbEXmAAAAAAAAAAAACQHSaOAAGSp1GBAAAAAElFTkSuQmCC" alt="" title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/09/Immigration-Law-324x235.jpeg"  width="324" height="235" /></a></div>                <a href="https://justicesnows.com/category/lawyer/" class="td-post-category">Lawyer</a>            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/find-immigration-lawyer/" rel="bookmark" title="6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide">6 Tips to Find the Right Immigration Lawyer for You &#8211;...</a></h3>
+            <div class="td-module-meta-info">
+                <span class="td-post-author-name"><a href="https://justicesnows.com/author/sabina-pemberton/">Sabina Pemberton</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-09-07T11:54:15+01:00" >September 7, 2021</time></span>                <span class="td-module-comments"><a href="https://justicesnows.com/find-immigration-lawyer/#respond">0</a></span>            </div>
+
+            <div class="td-excerpt">
+                Have you ever thought about immigration laws and lawyers? Considering the fact that in the US, there are more than 40 million immigrants at...            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/know-about-bad-drugs-lawsuits/" rel="bookmark" class="td-image-wrap " title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/09/Bad-Drugs-Lawsuits-100x70.jpg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/know-about-bad-drugs-lawsuits/" rel="bookmark" title="3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide">3 Important Things You Should (But Don’t) Know About Bad Drugs...</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/injury/" class="td-post-category">Injury</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-09-07T10:45:28+01:00" >September 7, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/inventor-should-consider-when-filing-provisional-patent/" rel="bookmark" class="td-image-wrap " title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/inovation-100x70.jpg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/inventor-should-consider-when-filing-provisional-patent/" rel="bookmark" title="6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide">6 Things Every Inventor Should Consider When Filing for a Provisional...</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/business/" class="td-post-category">Business</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-31T15:07:54+01:00" >August 31, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/injury-lawyers-important-in-recovery-process/" rel="bookmark" class="td-image-wrap " title="Injury Lawyers: Important Professionals In The Recovery Process &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="Injury Lawyers: Important Professionals In The Recovery Process &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/Injury-Lawyers-100x70.png"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/injury-lawyers-important-in-recovery-process/" rel="bookmark" title="Injury Lawyers: Important Professionals In The Recovery Process &#8211; 2021 Guide">Injury Lawyers: Important Professionals In The Recovery Process &#8211; 2021 Guide</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/accidents/" class="td-post-category">Accidents</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-30T14:27:06+01:00" >August 30, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/hire-attorney-after-truck-accident/" rel="bookmark" class="td-image-wrap " title="Why Hire an Attorney After a Truck Accident?" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="Why Hire an Attorney After a Truck Accident?" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/trucks-100x70.jpg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/hire-attorney-after-truck-accident/" rel="bookmark" title="Why Hire an Attorney After a Truck Accident?">Why Hire an Attorney After a Truck Accident?</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/car-accident/" class="td-post-category">Car Accident</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-29T10:48:16+01:00" >August 29, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/can-car-accident-lawyer-do-for-you/" rel="bookmark" class="td-image-wrap " title="What Can A Car Accident Lawyer Do For You?" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="What Can A Car Accident Lawyer Do For You?" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/car-accident-100x70.jpeg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/can-car-accident-lawyer-do-for-you/" rel="bookmark" title="What Can A Car Accident Lawyer Do For You?">What Can A Car Accident Lawyer Do For You?</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/tips/" class="td-post-category">Tips</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-27T12:52:21+01:00" >August 27, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/what-to-do-after-auto-accident/" rel="bookmark" class="td-image-wrap " title="What To Do After an Auto Accident?" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="What To Do After an Auto Accident?" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/car-accident-100x70.jpg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/what-to-do-after-auto-accident/" rel="bookmark" title="What To Do After an Auto Accident?">What To Do After an Auto Accident?</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/car-accident/" class="td-post-category">Car Accident</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-20T12:55:55+01:00" >August 20, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/benefits-of-car-accident-attorney/" rel="bookmark" class="td-image-wrap " title="The 6 Benefits of Getting a Car Accident Attorney &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="The 6 Benefits of Getting a Car Accident Attorney &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/Car-Accident-Attorney-100x70.jpg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/benefits-of-car-accident-attorney/" rel="bookmark" title="The 6 Benefits of Getting a Car Accident Attorney &#8211; 2021 Guide">The 6 Benefits of Getting a Car Accident Attorney &#8211; 2021...</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/car-accident/" class="td-post-category">Car Accident</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-20T10:37:19+01:00" >August 20, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/understanding-californias-lemon-law-process/" rel="bookmark" class="td-image-wrap " title="6 Tips for Understanding California&#8217;s Lemon Law Process &#8211; 2021 Guide" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="6 Tips for Understanding California&#8217;s Lemon Law Process &#8211; 2021 Guide" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/Californias-Lemon-Law-100x70.jpeg"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/understanding-californias-lemon-law-process/" rel="bookmark" title="6 Tips for Understanding California&#8217;s Lemon Law Process &#8211; 2021 Guide">6 Tips for Understanding California&#8217;s Lemon Law Process &#8211; 2021 Guide</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/car-accident/" class="td-post-category">Car Accident</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-17T14:24:01+01:00" >August 17, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_6 td_module_wrap td-animation-stack">
+
+        <div class="td-module-thumb"><a href="https://justicesnows.com/reverse-image-search-method/" rel="bookmark" class="td-image-wrap " title="Reverse Image Search Method To Locate Images On The Internet" ><img class="entry-thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGAQMAAAAASKMqAAAAA1BMVEWurq51dlI4AAAAAXRSTlMmkutdmwAAABBJREFUKM9jGAWjYBQMKwAAA9QAAQWBn6cAAAAASUVORK5CYII=" alt="" title="Reverse Image Search Method To Locate Images On The Internet" data-type="image_tag" data-img-url="https://justicesnows.com/wp-content/uploads/2021/08/Reverse-Image-Search-Method-to-locate-images-on-the-Interne-100x70.png"  width="100" height="70" /></a></div>
+        <div class="item-details">
+            <h3 class="entry-title td-module-title"><a href="https://justicesnows.com/reverse-image-search-method/" rel="bookmark" title="Reverse Image Search Method To Locate Images On The Internet">Reverse Image Search Method To Locate Images On The Internet</a></h3>            <div class="td-module-meta-info">
+                <a href="https://justicesnows.com/category/tips/" class="td-post-category">Tips</a>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2021-08-09T11:35:42+01:00" >August 9, 2021</time></span>                            </div>
+        </div>
+
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block -->                            </div>
+                        </div>
+                            </div> <!-- /.td-pb-row -->
+    </div> <!-- /.td-container -->
+</article> <!-- /.post -->
+
+<!-- Instagram -->
+
+	
+	
+            <div class="tdc-footer-wrap ">
+
+                <!-- Footer -->
+				<div class="td-footer-wrapper td-footer-container td-container-wrap td-footer-template-3 ">
+    <div class="td-container">
+
+	    <div class="td-pb-row">
+		    <div class="td-pb-span12">
+                		    </div>
+	    </div>
+
+        <div class="td-pb-row">
+
+            <div class="td-pb-span4">
+                <div class="td-footer-info"><div class="footer-logo-wrap"><a href="https://justicesnows.com/"><img src="https://justicesnows.com/wp-content/uploads/2020/03/Justice-Logo.png" alt="" title=""  width="782" height="100"/></a></div><div class="footer-text-wrap"><div class="footer-email-wrap">Contact us: <a href="/cdn-cgi/l/email-protection#3d4e5453544e5c4b4856665c4960524d4d494f5853594e135e5250">sinisavuk[at]opptrends.com</a></div></div><div class="footer-social-wrap td-social-style-2"></div></div>            </div>
+
+            <div class="td-pb-span4">
+                <aside class="td_block_template_1 widget widget_search"><form method="get" class="td-search-form-widget" action="https://justicesnows.com/">
+    <div role="search">
+        <input class="td-widget-search-input" type="text" value="" name="s" id="s" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="searchsubmit" value="Search" />
+    </div>
+</form></aside><aside class="td_block_template_1 widget widget_block">
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:100%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:100%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-columns">
+<div class="wp-block-column"></div>
+</div>
+</div></div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</aside>            </div>
+
+            <div class="td-pb-span4">
+                
+		<aside class="td_block_template_1 widget widget_recent_entries">
+		<h4 class="block-title"><span>Recent Posts</span></h4>
+		<ul>
+											<li>
+					<a href="https://justicesnows.com/find-immigration-lawyer/">6 Tips to Find the Right Immigration Lawyer for You &#8211; 2021 Guide</a>
+									</li>
+											<li>
+					<a href="https://justicesnows.com/know-about-bad-drugs-lawsuits/">3 Important Things You Should (But Don’t) Know About Bad Drugs Lawsuits &#8211; 2021 Guide</a>
+									</li>
+											<li>
+					<a href="https://justicesnows.com/inventor-should-consider-when-filing-provisional-patent/">6 Things Every Inventor Should Consider When Filing for a Provisional Patent &#8211; 2021 Guide</a>
+									</li>
+											<li>
+					<a href="https://justicesnows.com/injury-lawyers-important-in-recovery-process/">Injury Lawyers: Important Professionals In The Recovery Process &#8211; 2021 Guide</a>
+									</li>
+											<li>
+					<a href="https://justicesnows.com/hire-attorney-after-truck-accident/">Why Hire an Attorney After a Truck Accident?</a>
+									</li>
+					</ul>
+
+		</aside>            </div>
+        </div>
+    </div>
+</div>
+                <!-- Sub Footer -->
+				            </div><!--close td-footer-wrap-->
+			
+</div><!--close td-outer-wrap-->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-160965805-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160965805-1');
+</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jQueryScriptOutputted = false;function initJQuery() {if (typeof(jQuery) == "undefined") {if (!jQueryScriptOutputted) {jQueryScriptOutputted = true;document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://code.jquery.com/jquery-1.8.2.min.js\"></scr" + "ipt>");}setTimeout("initJQuery()", 50);}}initJQuery();</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {jQuery(document).ready(function() {
+jQuery(".eca9d17db6bd6b446137c159e6969b3b").click(function() {
+jQuery.post(
+"https://justicesnows.com/wp-admin/admin-ajax.php", {
+"action": "quick_adsense_onpost_ad_click",
+"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+"quick_adsense_nonce": "6103ee1174",
+}, function(response) { }
+);
+});
+});
+});</script>
+
+    <!--
+
+        Theme: Newspaper by tagDiv.com 2021
+        Version: 11.2 (rara)
+        Deploy mode: deploy
+        
+        uid: 61388d0754035
+    -->
+
+    <script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/justicesnows.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"49d2bec2f8","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.1.17' id='ppress-frontend-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/justicesnows.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/td-cloud-library/assets/js/js_posts_autoload.min.js?ver=c19aec6a20dc470dea3def4ce71e04d5' id='tdb_js_posts_autoload-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/td-composer/legacy/Newspaper/js/tagdiv_theme.min.js?ver=11.2' id='td-site-min-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-includes/js/comment-reply.min.js?ver=5.8' id='comment-reply-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://justicesnows.com/wp-content/plugins/td-cloud-library/assets/js/js_files_for_front.min.js?ver=c19aec6a20dc470dea3def4ce71e04d5' id='tdb_js_files_for_front-js' defer></script>
+
+<!-- JS generated by theme -->
+
+<script type="rocketlazyloadscript">
+    
+</script>
+
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://justicesnows.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%20Slab%3A400%7COpen%20Sans%3A400%2C600%2C700%7CRoboto%3A400%2C500%2C700&#038;display=swap" /><link rel="stylesheet" href="https://justicesnows.com/wp-content/cache/min/1/20a50bfed46d92fbd48c9e7f9fdbab80.css" media="all" data-minify="1" /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1631096071 -->

@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en-US">
+
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, IE=11, IE=10"> 
+	<link rel="pingback" href="https://www.leaddyno.com/xmlrpc.php"/>
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">            function apbct_attach_event_handler__backend(elem, event, callback){                if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                else                                              elem.attachEvent(event, callback);            }            apbct_attach_event_handler__backend(window, 'load', function(){                ctSetCookie('ct_checkjs', 'e51d5659dbc47b5b9dd34767f0cc8fed47796b7534bb1f8888e875023d5bc88f' );            });</script>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.0 (Yoast SEO v17.0) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>LeadDyno - Easy Affiliate Tracking Software</title><style id="rocket-critical-css">@font-face{font-display:swap;font-family:'stack-interface';src:url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.eot?33839631);src:url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.eot?33839631#iefix) format('embedded-opentype') , url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.woff2?33839631) format('woff2') , url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.woff?33839631) format('woff') , url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.ttf?33839631) format('truetype') , url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/stack-interface.svg?33839631#stack-interface) format('svg');font-weight:normal;font-style:normal}@font-face{font-display:swap;font-family:'iconsmind';src:url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/iconsmind.eot?#iefix-rdmvgc) format('embedded-opentype');src:url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/iconsmind.woff) format('woff') , url(https://u6q8v4i8.rocketcdn.me/wp-content/themes/stack/style/fonts/iconsmind.ttf) format('truetype');font-weight:normal;font-style:normal}.aligncenter{clear:both}.wpcf7 form .wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em;border:2px solid #00a0d2}.wpcf7 form.init .wpcf7-response-output{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}nav,section{display:block}a{background-color:transparent}h1{font-size:2em;margin:.67em 0}img{border:0}input{color:inherit;font:inherit;margin:0}input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}img{vertical-align:middle}h1,h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h3{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h3{font-size:24px}p{margin:0 0 10px}.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4}@media (min-width:768px){.lead{font-size:21px}}.text-left{text-align:left}.text-right{text-align:right}ul{margin-top:0;margin-bottom:10px}ul ul{margin-bottom:0}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.row{margin-left:-15px;margin-right:-15px}.col-md-1,.col-sm-2,.col-md-3,.col-xs-4,.col-sm-4,.col-sm-5,.col-md-5,.col-md-6,.col-sm-7,.col-xs-8,.col-sm-8,.col-sm-10,.col-md-11,.col-sm-12{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-xs-4,.col-xs-8{float:left}.col-xs-8{width:66.66666667%}.col-xs-4{width:33.33333333%}@media (min-width:768px){.col-sm-2,.col-sm-4,.col-sm-5,.col-sm-7,.col-sm-8,.col-sm-10,.col-sm-12{float:left}.col-sm-12{width:100%}.col-sm-10{width:83.33333333%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-2{width:16.66666667%}.col-sm-offset-2{margin-left:16.66666667%}}@media (min-width:992px){.col-md-1,.col-md-3,.col-md-5,.col-md-6,.col-md-11{float:left}.col-md-11{width:91.66666667%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-3{width:25%}.col-md-1{width:8.33333333%}.col-md-offset-3{margin-left:25%}}input[type="search"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}input[type="search"]{-webkit-appearance:none}.btn{display:inline-block;margin-bottom:0;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;background-image:none;border:1px solid transparent;white-space:nowrap;padding:6px 12px;font-size:14px;line-height:1.42857143;border-radius:4px}.container:before,.container:after,.row:before,.row:after{content:" ";display:table}.container:after,.row:after{clear:both}@-ms-viewport{width:device-width}.visible-xs{display:none!important}@media (max-width:767px){.visible-xs{display:block!important}.hidden-xs{display:none!important}}[class^="stack-"]:before,[class*=" stack-"]:before{font-family:"stack-interface";font-style:normal;font-weight:normal;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.stack-up-open-big:before{content:'\e803'}.stack-search:before{content:'\e805'}.stack-menu:before{content:'\e80e'}body:after{display:none}*,h1,h3,p,ul,a{margin:0;padding:0}html{font-size:87.5%}@media all and (max-width:768px){html{font-size:81.25%}}body{font-size:1em;line-height:1.85714286em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:Roboto,'Helvetica','Arial',sans-serif;color:#666;font-weight:400}h1,h3{font-family:Roboto,'Helvetica','Arial',sans-serif;color:#252525;font-weight:300;font-variant-ligatures:common-ligatures;margin-top:0;margin-bottom:0}h1{font-size:3.14285714em;line-height:1.31818182em}h3{font-size:1.78571429em;line-height:1.5em}.lead{font-size:1.35714286em;line-height:1.68421053em}@media all and (max-width:767px){h1{font-size:2.35714286em;line-height:1.36363636em}h3{font-size:1.35714286em;line-height:1.85714286em}.lead{font-size:1.35714286em;line-height:1.68421053em}}p,ul{margin-bottom:1.85714286em}ul{list-style:none;line-height:1.85714286em}.type--uppercase{text-transform:uppercase}body{overflow-x:hidden}.pos-top{top:0}.pos-right{right:0}@media all and (max-width:767px){.text-left-xs{text-align:left}}img{max-width:100%;margin-bottom:1.85714286em}.background-image-holder{position:absolute;height:100%;top:0;left:0;background-size:cover!important;background-position:50% 50%!important;z-index:0;opacity:0;background:#252525}.background-image-holder:not([class*='col-']){width:100%}.image--light .background-image-holder{background:none}.background-image-holder img{display:none}[data-overlay]{position:relative}[data-overlay]:before{position:absolute;content:'';background:#252525;width:100%;height:100%;top:0;left:0;z-index:1}[data-overlay] *:not(.container):not(.background-image-holder):not(.youtube-background):not(video){z-index:2!important}[data-overlay].image--light:before{background:#fff}[data-overlay="9"]:before{opacity:.9}.imagebg{position:relative}.imagebg .container{z-index:2}.imagebg .container:not(.pos-absolute){position:relative}.btn{font-family:Roboto,'Helvetica','Arial',sans-serif;border-radius:6px;padding-top:.46428571em;padding-bottom:.46428571em;padding-right:2.78571429em;padding-left:2.78571429em;border:1px solid #252525;border-width:1px;font-size:inherit;line-height:1.85714286em}.btn .btn__text{color:#252525;border-color:#252525;font-weight:700;font-size:.85714286em}@media all and (min-width:768px){.btn+.btn{margin-left:1.85714286em}}.btn:last-child{margin-right:0}.btn--sm{padding-top:.30952381em;padding-bottom:.30952381em;padding-right:1.85714286em;padding-left:1.85714286em}.btn--primary,.btn--primary:visited{background:#4a90e2;border-color:#4a90e2}.btn--primary .btn__text,.btn--primary:visited .btn__text{color:#fff}.icon--sm{font-size:2.35714286em}ul:last-child{margin:0}.menu-horizontal>li:not(:hover)>a{opacity:.5}.menu-horizontal>li>a{color:#252525}.menu-vertical{width:100%}.menu-vertical li{width:100%}.menu-vertical li a{font-weight:normal}@media all and (min-width:990px){.menu-horizontal{display:inline-block}.menu-horizontal>li{display:inline-block}.menu-horizontal>li:not(:last-child){margin-right:1.85714286em}.menu-vertical{display:inline-block}.menu-vertical li{white-space:nowrap}.menu-vertical .dropdown__container{top:0}.menu-vertical .dropdown__container .dropdown__content:not([class*='bg-']){background:#fff}.menu-vertical .dropdown__container .dropdown__content{transform:translateX(75%)}}.dropdown{position:relative}.dropdown .dropdown__container{opacity:0;position:absolute;z-index:999}.dropdown .dropdown__container .dropdown__container:before{height:0}.dropdown .dropdown__content{padding:1.85714286em}.dropdown .dropdown__content:not([class*='bg-']){background:#fff}.dropdown .dropdown__content:not([class='bg--dark']) .menu-vertical a{color:#666}@media all and (min-width:991px){.dropdown .dropdown__container:before{height:.92857143em;width:100%;content:'';display:block}}@media all and (max-width:767px){.dropdown .dropdown__container{min-width:100%;position:relative;display:none}.dropdown .dropdown__content{padding:1.85714286em;left:0!important}}form{max-width:100%}form:before,form:after{content:".";display:block;height:0;overflow:hidden}form:after{clear:both}input[type]{-webkit-appearance:none;background:#fcfcfc;padding:.46428571em;border-radius:6px;border:1px solid #ececec}input[type]::-webkit-input-placeholder{color:#b3b3b3;font-size:1.14285714em}input[type]:-moz-placeholder{color:#b3b3b3;font-size:1.14285714em}input[type]::-moz-placeholder{color:#b3b3b3;font-size:1.14285714em}input[type]:-ms-input-placeholder{color:#b3b3b3;font-size:1.14285714em}.boxed{position:relative;overflow:hidden;padding:1.85714286em;margin-bottom:30px}.boxed.boxed--border{border:1px solid #ececec}@media all and (max-width:767px){.boxed{padding:1.23809524em;margin-bottom:15px}.boxed:last-child{margin-bottom:15px}}.notification{max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,.12) , 0 1px 2px rgba(0,0,0,.24);position:fixed;z-index:99;padding:0;margin:1em;opacity:0}a[data-notification-link]{text-decoration:none}body{background:#fff}a{color:#4a90e2}.bg--dark:not(.nav-bar):not(.bar) p{color:#fff}.bg--secondary{background:#fafafa}.bg--white{background:#fff}.switchable{position:relative}.switchable div[class*="col-"]:first-child{float:left;right:auto}.switchable div[class*='col-']:first-child:not([class*='pull']):not([class*='push']){left:0}.switchable div[class*="col-"]:last-child{float:right;left:auto}.switchable div[class*='col-']:last-child:not([class*='pull']):not([class*='push']){right:0}.switchable.switchable--switch div[class*="col-"]:first-child{float:right;right:0;left:auto}.switchable.switchable--switch div[class*='col-']:first-child:not([class*='pull']):not([class*='push']){left:auto}.switchable.switchable--switch div[class*="col-"]:last-child{float:left;left:0;right:auto}.switchable .switchable__text{margin-top:3.71428571em}.bar{padding:1.85714286em 0}.bar .logo{margin:0;position:relative;top:4px}.bar .menu-horizontal{position:relative;top:6px}.bar.bar--sm{padding:.92857143em 0}.bar:not(.bg--dark):not(.bar--transparent) .logo-light{display:none}@media all and (min-width:991px){.bar__module:not(:only-child){display:inline-block}.bar__module:not(:last-child){margin-right:.92857143em}}@media all and (max-width:767px){.bar__module{margin-bottom:.92857143em}.bar__module+.bar__module{margin-top:1.85714286em}.bar__module .btn{display:block}.bar__module .btn+.btn{margin-left:0!important}.bar__module .btn:not(:last-child){margin-bottom:.92857143em}.bar+nav.bar{padding-top:0}.text-left-xs{text-align:left}}@media all and (max-width:991px){.text-left-sm{text-align:left}}section{padding-top:7.42857143em;padding-bottom:7.42857143em}section.space--xs{padding-top:3.71428571em;padding-bottom:3.71428571em}@media all and (max-width:767px){section{padding:5.57142857em 0}}.container .container{max-width:100%}.back-to-top{position:fixed;width:3.71428571em;height:3.71428571em;background:#fff;border-radius:50%;text-align:center;right:1.85714286em;bottom:3.71428571em;padding-top:12px;box-shadow:0 1px 3px rgba(0,0,0,.12) , 0 1px 2px rgba(0,0,0,.24);box-shadow:0 0 25px 0 rgba(0,0,0,.04);z-index:99;border:1px solid #ececec}.back-to-top i{color:#252525}.back-to-top:not(.active){opacity:0;transform:translate3d(0,20px,0);-webkit-transform:translate3d(0,20px,0)}@keyframes kenBurns{0%{transform:scale(1)}100%{transform:scale(1.1)}}@-webkit-keyframes kenBurns{0%{transform:scale(1)}100%{transform:scale(1.1)}}@media all and (max-width:1024px){html{font-size:80%}}h1{letter-spacing:-.01em}h1:not(:last-child){margin-bottom:.59090909090909em}h3{margin-bottom:1.04em}[class*='bg-']:not(.bg--white):not(.bg--secondary) p{opacity:.9}.lead{font-weight:400;color:gray}.lead:not(:last-child){margin-bottom:1.36842105263158em}.lead+.btn:last-child{margin-top:.92857143em}p:last-child{margin-bottom:0}a{color:#4a90e2;font-weight:700}.btn{position:relative}.btn:not([class*='primary']){border-color:#d3d3d3}.btn.type--uppercase{letter-spacing:.5px}.btn.type--uppercase .btn__text{letter-spacing:.5px;margin-right:-.5px}.btn.btn--sm+.btn--sm{margin-left:.92857143em}@media all and (max-width:767px){.btn:not(:last-child){margin-bottom:1.85714286em}}.imagebg h1{position:relative}.section--ken-burns{overflow:hidden}.section--ken-burns>.background-image-holder{animation:kenBurns 15s ease alternate infinite;-webkit-animation:kenBurns 15s ease alternate infinite}.menu-horizontal>li,.menu-vertical>li{font-family:Roboto,'Roboto','Helvetica',sans-serif}.bar .logo{max-height:34px;max-width:none}.menu-horizontal>li>a{font-weight:500}.hamburger-toggle i{color:#252525}@media all and (min-width:990px){.menu-horizontal li:not(:last-child){margin-right:1.23809524em}.bar__module:not(:only-child) .menu-horizontal{top:0}}@media all and (min-width:768px) and (max-width:1023px){.bar-1 .menu-horizontal>li{display:inline-block}.bar-1 .menu-horizontal>li:not(:first-child){margin-left:.92857143em}.bar-1 .bar__module{margin-bottom:1.85714286em}.bar-1 .row div[class*="col-"]:last-child .bar__module:last-child{margin-bottom:0}}.bar-1 .menu-horizontal>li>.dropdown__trigger,.bar-1 .menu-horizontal>li>a{font-size:.857142857142857em;line-height:2.166666666666667em;text-transform:uppercase;font-weight:600;letter-spacing:.5px}@media all and (min-width:1024px){.bar-1 .bar__module+.bar__module{margin-left:1.85714286em}}.dropdown>.dropdown__trigger:after{font-family:"stack-interface";display:inline-block;font-size:8px;position:relative;bottom:2px}.dropdown .dropdown__content{border-radius:6px;box-shadow:0 0 25px 0 rgba(0,0,0,.08);-webkit-box-shadow:0 0 25px 0 rgba(0,0,0,.08);padding:1.23809524em 1.85714286em}.menu-horizontal>.dropdown>.dropdown__trigger:after{content:'\e80a';margin-left:4px}.menu-vertical>.dropdown>.dropdown__trigger{display:inline-block;width:100%}@media all and (max-width:767px){.dropdown .dropdown__content:not([class*='bg-']){border:none;box-shadow:none}.dropdown__container{left:0!important}}.menu-vertical li:not(:hover):not(.dropdown--active){opacity:.75}.menu-vertical li:not(:last-child){margin-bottom:.30952381em}.menu-vertical li.dropdown{position:relative}.menu-vertical li.dropdown:after{content:'\e80c';font-family:'stack-interface';right:0;top:0;position:absolute;display:inline-block;transform:translate3d(-10px,0,0);-webkit-transform:translate3d(-10px,0,0)}@media all and (min-width:991px){.dropdown .dropdown__container:before{height:18px}}.boxed{border-radius:6px}.boxed:before{border-radius:6px}.boxed:not([class*='bg-']){background:#fff}@media all and (min-width:768px){.row div[class*='col-']:nth-child(1):nth-last-child(3) .feature,.row div[class*='col-']:nth-child(2):nth-last-child(2) .feature,.row div[class*='col-']:nth-child(3):last-child .feature{margin-bottom:0}}.feature-1{min-height:11.14285714em}.feature-1 p{margin:0}@media all and (max-width:767px){.feature p{min-height:auto;margin-left:auto;margin-right:auto}.feature.boxed{margin-bottom:15px}}.switchable .switchable__text{margin-top:1.85714286em}@media all and (max-width:990px){.switchable .switchable__text{margin-top:0}}@media all and (max-width:767px){.switchable .switchable__text{margin-top:1.85714286em}.switchable .row>div[class*="col-"]{float:none!important}.switchable .row>div[class*='col-']:last-child:not(:only-child){margin-top:1.85714286em}}.notification{margin:1.85714286em;box-shadow:none}.search-box{width:100%;margin:0;padding:1.85714286em;box-shadow:0 1px 3px rgba(0,0,0,.12) , 0 1px 2px rgba(0,0,0,.24);box-shadow:0 0 25px 0 rgba(0,0,0,.04)}.bg--dark input{color:#666}form{position:relative}input{height:2.78571429em}input[type]+input[type]{margin-top:.92857143em}input:not([class*='col-']){width:100%}input[type]{padding-left:.92857143em}body,html{overflow-x:hidden}img{height:auto}p:empty{display:none!important}.logo-holder{position:relative;z-index:3}@media all and (max-width:1023px) and (min-width:768px){.bar.original--bg .logo.logo-light{display:none}p:last-child{margin-bottom:1.85714286em}}@media all and (max-width:767px){p:last-child{margin-bottom:1.85714286em}}.btn{text-decoration:none}[data-overlay]:before{display:block}@media all and (max-width:768px){.col-sm-12{width:100%}}.aligncenter{margin-bottom:25px}.aligncenter{display:block;margin-right:auto;margin-left:auto;text-align:center}.aligncenter{text-align:center}.btn--primary{color:#fff;font-weight:700}div.wpcf7 p{margin-bottom:0}div.wpcf7-response-output{clear:both}.btn--primary{color:#fff;font-weight:700}.widget *{word-break:break-word}.main-container{overflow:hidden}body:not(.variant-active) nav#menu1{z-index:998}nav img{margin-bottom:-1px}@media all and (min-width:768px) and (max-width:992px){[data-skip-responsive-menu="yes"] .bar.bar--sm.visible-xs{display:block!important}[data-skip-responsive-menu="yes"] .bar.bar--sm.hidden-xs,[data-skip-responsive-menu="yes"] .bar .col-md-1.col-sm-2.hidden-xs{display:none!important}[data-skip-responsive-menu="yes"] .bar-1 .menu-horizontal>li{display:block;margin-left:0!important}[data-skip-responsive-menu="yes"] .bar__module .btn{display:block;width:100%;margin:0 0 5px!important}[data-skip-responsive-menu="yes"] .dropdown .dropdown__container{min-width:100%;position:relative;display:none}[data-skip-responsive-menu="yes"] .dropdown .dropdown__content:not([class*='bg-']){border:none;box-shadow:none;width:100%;padding:1.23809524em 0}[data-skip-responsive-menu="yes"] .dropdown .dropdown__content .col-sm-4{width:100%}}.stack-header-buttons a:not(.btn){color:#252525;opacity:.5}@media all and (min-width:768px){.stack-header-buttons a+a{margin-left:.92857143em}}[class^="icon-"]{font-family:'iconsmind';speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A200%2C300%2C400%2C400i%2C500%2C600%2C700%7CMerriweather%3A300%2C300i%7CMaterial%20Icons&#038;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A200%2C300%2C400%2C400i%2C500%2C600%2C700%7CMerriweather%3A300%2C300i%7CMaterial%20Icons&#038;display=swap" media="print" onload="this.media='all'"/><noscript><link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto%3A200%2C300%2C400%2C400i%2C500%2C600%2C700%7CMerriweather%3A300%2C300i%7CMaterial%20Icons&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'"/></noscript><link rel="preload" href="https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/787f9072a0d8df0bd61339cafae1faad.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1"/>
+	<meta name="description" content="Grow and manage your affiliate, influencer or referral program. Sync with Shopify, Stripe and 25+ integrations. Try our affiliate software free for 30 days."/>
+	<link rel="canonical" href="https://54.221.147.77/"/>
+	<meta property="og:locale" content="en_US"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Homepage"/>
+	<meta property="og:description" content="Grow and manage your affiliate, influencer or referral program. Sync with Shopify, Stripe and 25+ integrations. Try our affiliate software free for 30 days."/>
+	<meta property="og:url" content="https://54.221.147.77/"/>
+	<meta property="og:site_name" content="LeadDyno - Easy Affiliate Tracking Software"/>
+	<meta property="article:publisher" content="https://www.facebook.com/leaddyno"/>
+	<meta property="article:modified_time" content="2021-08-19T17:57:00+00:00"/>
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://54.221.147.77/#organization","name":"LeadDyno","url":"https://54.221.147.77/","sameAs":["https://www.facebook.com/leaddyno","https://www.linkedin.com/company/leaddyno","https://www.youtube.com/c/LeadDyno","https://twitter.com/leaddyno"],"logo":{"@type":"ImageObject","@id":"https://54.221.147.77/#logo","inLanguage":"en-US","url":"https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png","contentUrl":"https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png","width":465,"height":78,"caption":"LeadDyno"},"image":{"@id":"https://54.221.147.77/#logo"}},{"@type":"WebSite","@id":"https://54.221.147.77/#website","url":"https://54.221.147.77/","name":"LeadDyno - Easy Affiliate Tracking Software","description":"Easy affiliate marketing tracking software","publisher":{"@id":"https://54.221.147.77/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://54.221.147.77/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://54.221.147.77/#webpage","url":"https://54.221.147.77/","name":"LeadDyno - Easy Affiliate Tracking Software","isPartOf":{"@id":"https://54.221.147.77/#website"},"about":{"@id":"https://54.221.147.77/#organization"},"datePublished":"2020-05-05T18:24:39+00:00","dateModified":"2021-08-19T17:57:00+00:00","description":"Grow and manage your affiliate, influencer or referral program. Sync with Shopify, Stripe and 25+ integrations. Try our affiliate software free for 30 days.","breadcrumb":{"@id":"https://54.221.147.77/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://54.221.147.77/"]}]},{"@type":"BreadcrumbList","@id":"https://54.221.147.77/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<meta name="msvalidate.01" content="C869A1B0B63699142EE43568B0D178B1"/>
+	<meta name="google-site-verification" content="7_OUQ8sDzU70818wxMCJ1ujBqXLvLt1vyhxSXdPXMr4"/>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+<link rel='dns-prefetch' href='//u6q8v4i8.rocketcdn.me'/>
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect'/>
+<link href='https://u6q8v4i8.rocketcdn.me' rel='preconnect'/>
+<link rel="alternate" type="application/rss+xml" title="LeadDyno - Easy Affiliate Tracking Software &raquo; Feed" href="https://www.leaddyno.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="LeadDyno - Easy Affiliate Tracking Software &raquo; Comments Feed" href="https://www.leaddyno.com/comments/feed/"/>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+	
+
+
+
+
+
+
+
+<style id='ebor-style-inline-css' type='text/css'>.btn--primary .btn__text,.btn--primary:visited .btn__text{color:#fff}input[type].btn--primary,.pos-fixed.bar--transparent.bg--primary,.ebor-cart-count,.woocommerce #respond input#submit.alt.disabled,.woocommerce #respond input#submit.alt.disabled:hover,.woocommerce #respond input#submit.alt:disabled,.woocommerce #respond input#submit.alt:disabled:hover,.woocommerce #respond input#submit.alt:disabled[disabled],.woocommerce #respond input#submit.alt:disabled[disabled]:hover,.woocommerce a.button.alt.disabled,.woocommerce a.button.alt.disabled:hover,.woocommerce a.button.alt:disabled,.woocommerce a.button.alt:disabled:hover,.woocommerce a.button.alt:disabled[disabled],.woocommerce a.button.alt:disabled[disabled]:hover,.woocommerce button.button.alt.disabled,.woocommerce button.button.alt.disabled:hover,.woocommerce button.button.alt:disabled,.woocommerce button.button.alt:disabled:hover,.woocommerce button.button.alt:disabled[disabled],.woocommerce button.button.alt:disabled[disabled]:hover,.woocommerce input.button.alt.disabled,.woocommerce input.button.alt.disabled:hover,.woocommerce input.button.alt:disabled,.woocommerce input.button.alt:disabled:hover,.woocommerce input.button.alt:disabled[disabled],.woocommerce input.button.alt:disabled[disabled]:hover{background:#4a90e2}.pos-fixed.bar--transparent.bg--secondary{background:#fafafa}.pos-fixed.bar--transparent.bg--dark{background:#252525}.pos-fixed.bar--transparent.bg--primary-1{background:#31639c}.bg--white h1,.bg--white h2,.bg--white h3,.bg--white h4,.bg--white h5,.bg--white h6,.bg--white i,.mobile-header .cart-link{color:#252525}@media all and (max-width:767px){.bar.bg--dark.bar--mobile-sticky[data-scroll-class*="fixed"].pos-fixed,.bar.bg--dark.bar--mobile-sticky[data-scroll-class*="fixed"]+.bar.pos-fixed{background:#252525}.bar.bg--secondary.bar--mobile-sticky[data-scroll-class*="fixed"].pos-fixed,.bar.bg--secondary.bar--mobile-sticky[data-scroll-class*="fixed"]+.bar.pos-fixed{background:#fafafa}}.thumbnails-slider .thumbnail-trigger.active img{border:1px solid #4a90e2}.menu-horizontal>li>a,.menu-horizontal>li>span,.menu-horizontal>li>.modal-instance>.modal-trigger{font-size:1.3em}.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button{background:#4a90e2;color:#fff;transition:.1s linear}.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover{color:#fff;opacity:.9;background:#4a90e2;transform:translate3d(0,-2px,0);-webkit-transform:translate3d(0,-2px,0)}.menu-horizontal > li:not(:hover) > a, .menu-horizontal > li:not(:hover) > span,
+				.menu-horizontal > li:not(:hover) > .modal-instance > .modal-trigger {opacity:.8}.menu-vertical li:not(:hover):not(.dropdown--active) {opacity:.75}.menu-vertical li:not(:hover):not(.dropdown--active) {opacity:.8}</style>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' id='ct_public_functions-js-extra'>//<![CDATA[
+var ctPublicFunctions={"_ajax_nonce":"6b6b6aead4","_rest_nonce":"9289f1f646","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.leaddyno.com\/wp-json\/","_apbct_ajax_url":"https:\/\/www.leaddyno.com\/wp-content\/plugins\/cleantalk-spam-protect\/lib\/Cleantalk\/ApbctWP\/Ajax.php","data__set_cookies":"1","data__set_cookies__alt_sessions_type":"0"};
+//]]></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/plugins/cleantalk-spam-protect/js/apbct-public--functions.min.js?ver=5.160.3' id='ct_public_functions-js' defer></script>
+<script type='text/javascript' id='ct_public-js-extra'>//<![CDATA[
+var ctPublic={"pixel__setting":"0","pixel__enabled":"","pixel__url":null,"data__email_check_before_post":"1"};
+//]]></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/plugins/cleantalk-spam-protect/js/apbct-public.min.js?ver=5.160.3' id='ct_public-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/plugins/cleantalk-spam-protect/js/cleantalk-modal.min.js?ver=5.160.3' id='cleantalk-modal-js' defer></script>
+<script type='text/javascript' id='ct_nocache-js-extra'>//<![CDATA[
+var ctNocache={"ajaxurl":"\/wp-admin\/admin-ajax.php","info_flag":"","set_cookies_flag":"1","blog_home":"https:\/\/www.leaddyno.com\/"};
+//]]></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/plugins/cleantalk-spam-protect/js/cleantalk_nocache.min.js?ver=5.160.3' id='ct_nocache-js' defer></script>
+<script type='text/javascript' id='frontend-checklist-js-extra'>//<![CDATA[
+var frontendChecklist={"ajaxurl":"https:\/\/www.leaddyno.com\/wp-admin\/admin-ajax.php"};
+//]]></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/plugins/frontend-checklist/frontend-checklist.js?ver=1631123844' id='frontend-checklist-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.leaddyno.com/wp-json/"/><link rel="alternate" type="application/json" href="https://www.leaddyno.com/wp-json/wp/v2/pages/9644"/><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.leaddyno.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://u6q8v4i8.rocketcdn.me/wp-includes/wlwmanifest.xml"/> 
+<meta name="generator" content="WordPress 5.8"/>
+<link rel='shortlink' href='https://www.leaddyno.com/'/>
+<link rel="alternate" type="application/json+oembed" href="https://www.leaddyno.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.leaddyno.com%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://www.leaddyno.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.leaddyno.com%2F&#038;format=xml"/>
+<!-- HFCM by 99 Robots - Snippet # 1: Help Scout Beacon -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.Beacon('init', '16c50410-bf74-4cd6-b905-e5555f4350a3')</script>
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 2: Facebook Verification -->
+<meta name="facebook-domain-verification" content="wz7n97m4142wt7eiqy4l3wi7zni910"/>
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 3: Google Search Console -->
+<meta name="google-site-verification" content="8S1T-09zcCxi_Hlsc1faoGYeoc6Gyhvacy2lKHxzjRM"/>
+<!-- /end HFCM by 99 Robots -->
+<!-- Linkedin Insight Base Code --!><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>_linkedin_partner_id = '2796356';window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>(function(){var s = document.getElementsByTagName('script')[0];var b = document.createElement('script');b.type = 'text/javascript';b.async = true;b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';s.parentNode.insertBefore(b, s);})();</script><noscript><img height='1' width='1' style='display:none;' alt='' src='https://dc.ads.linkedin.com/collect/?pid=2796356&fmt=gif' /></noscript><!-- End Linkedin Insight Base Code --!>
+
+<!-- Facebook Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+<!-- End Facebook Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('init', '535583219886377', {}, {
+    "agent": "wordpress-5.8-3.0.6"
+});
+</script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('track', 'PageView', []);
+</script>
+<!-- Facebook Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx" src="https://www.facebook.com/tr?id=535583219886377&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<link rel="icon" href="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/cropped-leaddyno-2020-favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" href="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/cropped-leaddyno-2020-favicon-192x192.png" sizes="192x192"/>
+<link rel="apple-touch-icon" href="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/cropped-leaddyno-2020-favicon-180x180.png"/>
+<meta name="msapplication-TileImage" content="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/cropped-leaddyno-2020-favicon-270x270.png"/>
+		<style type="text/css" id="wp-custom-css">.box-shadow-wide{box-shadow:none!important}@media (min-width: 991px)
+.logo-dark { display:none !important;
+	
+}</style>
+		
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T72LD3J');</script>
+<!-- End Google Tag Manager -->
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player,[data-lazy-src]{display:none!important}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body class="home page-template-default page page-id-9644 stack--rounded normal-layout dropdowns--hover active-tabs active-accordions parallax-enable-mobile variant-content variant-v1-6-0" data-smooth-scroll-offset="0" data-smooth-scroll-offset-mobile="0" data-skip-responsive-menu="yes"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T72LD3J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<a href="#" id="start" title="Start"></a>
+
+<div class="notification pos-top pos-right search-box bg--white border--bottom" data-animation="from-top" data-notification-link="search-box">
+	<form method="get" action="https://www.leaddyno.com/">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<input type="search" name="s" placeholder="Type search query and hit enter"/>
+			</div>
+		</div><!--end of row-->
+	</form>
+</div><!--end of notification-->
+<div class="nav-container">
+	
+	<div class="bar bar--sm visible-xs original--bg bar--mobile-sticky" data-scroll-class="200px:pos-fixed">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8 col-sm-10">
+					
+<a href="https://www.leaddyno.com/" class="logo-holder">
+		<img class="logo logo-dark" alt="LeadDyno" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png"/><noscript><img class="logo logo-dark" alt="LeadDyno" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png"/></noscript>
+	<img class="logo logo-light" alt="LeadDyno" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png"/><noscript><img class="logo logo-light" alt="LeadDyno" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png"/></noscript>
+</a>				</div>
+				<div class="col-xs-4 col-sm-2 text-right mobile-header">
+										<a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+						<i class="icon--sm stack-interface stack-menu"></i>
+					</a>
+				</div>
+			</div><!--end of row-->
+		</div><!--end of container-->
+	</div><!--end bar-->
+	
+	<nav id="menu1" class="bar bar--sm bar-1 hidden-xs hiddem-sm original--bg" data-scroll-class="200px:pos-fixed">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1 col-sm-2 hidden-xs">
+					<div class="bar__module">
+						
+<a href="https://www.leaddyno.com/" class="logo-holder">
+		<img class="logo logo-dark" alt="LeadDyno" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png"/><noscript><img class="logo logo-dark" alt="LeadDyno" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-black.png"/></noscript>
+	<img class="logo logo-light" alt="LeadDyno" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png"/><noscript><img class="logo logo-light" alt="LeadDyno" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png"/></noscript>
+</a>	
+					</div><!--end module-->
+				</div>
+				<div class="col-md-11 col-sm-12 text-right text-left-xs text-left-sm">
+					<div class="bar__module">
+	<ul id="menu-stack-nav" class="menu-horizontal text-left"><li id="menu-item-9217" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-item current_page_item menu-item-9217 active"><a href="/">Home</a></li>
+<li id="menu-item-9391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9391 dropdown dropdown--hover"><a href="https://www.leaddyno.com/how-it-works/" class="dropdown__trigger"><span>Product Tour</span></a><div class="dropdown__container"><div class="container"><div class="row"><div class="dropdown__content col-md-3 col-sm-4"><ul class="menu-vertical">	<li id="menu-item-8862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8862"><a href="https://www.leaddyno.com/how-it-works/">How it Works</a></li>
+	<li id="menu-item-9216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9216 dropdown dropdown--hover"><a href="https://www.leaddyno.com/features/" class="dropdown__trigger"><span>Features</span></a><div class="dropdown__container"><div class="container"><div class="row"><div class="dropdown__content col-md-3 col-sm-4"><ul class="menu-vertical">		<li id="menu-item-11899" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11899"><a href="https://www.leaddyno.com/affiliate-management/">Affiliate Management</a></li>
+		<li id="menu-item-11900" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11900"><a href="https://www.leaddyno.com/affiliate-website/">Affiliate Website</a></li>
+		<li id="menu-item-11902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11902"><a href="https://www.leaddyno.com/commissions-and-payouts/">Commissions &#038; Payouts</a></li>
+		<li id="menu-item-11901" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11901"><a href="https://www.leaddyno.com/marketing-tracking/">Tracking Campaigns</a></li>
+		<li id="menu-item-13494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13494"><a href="https://www.leaddyno.com/affiliate-recruitment/">Affiliate Recruitment</a></li>
+		<li id="menu-item-11898" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11898"><a href="https://www.leaddyno.com/lead-management/">Lead Management</a></li>
+</ul></div></div></div></div></li>
+	<li id="menu-item-12359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12359"><a href="https://www.leaddyno.com/demo/">Demo</a></li>
+	<li id="menu-item-7337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7337"><a href="https://www.leaddyno.com/integrations/">Integrations</a></li>
+</ul></div></div></div></div></li>
+<li id="menu-item-7271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7271"><a href="https://www.leaddyno.com/pricing/">Pricing</a></li>
+<li id="menu-item-8640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8640 dropdown dropdown--hover"><a href="/guides/" class="dropdown__trigger"><span>Resources</span></a><div class="dropdown__container"><div class="container"><div class="row"><div class="dropdown__content col-md-3 col-sm-4"><ul class="menu-vertical">	<li id="menu-item-13167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13167"><a href="https://www.leaddyno.com/case-studies/">Case Studies</a></li>
+	<li id="menu-item-13168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13168"><a href="https://www.leaddyno.com/testimonials/">Testimonials &#038; Reviews</a></li>
+	<li id="menu-item-8661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8661"><a href="https://www.leaddyno.com/guides/">Affiliate Marketing Guides</a></li>
+	<li id="menu-item-9392" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9392"><a href="https://help.leaddyno.com/">Technical Docs</a></li>
+	<li id="menu-item-9660" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-9660"><a href="https://www.leaddyno.com/blog/">Blog</a></li>
+</ul></div></div></div></div></li>
+<li id="menu-item-7276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7276"><a href="https://www.leaddyno.com/contact/">Contact</a></li>
+</ul></div>	
+					
+<div class="bar__module stack-header-buttons">
+	
+			<a href="#" data-notification-link="search-box">
+			<i class="stack-search"></i>
+		</a>
+		
+							
+			<a class="btn btn--sm btn--primary type--uppercase" href="https://app.leaddyno.com/signup" target="">
+			<span class="btn__text">Try free for 30 days</span>
+		</a>
+		
+			<a class="btn btn--sm type--uppercase" href="https://app.leaddyno.com/" target="">
+			<span class="btn__text">Login</span>
+		</a>
+		
+</div><!--end module-->				</div>
+			</div><!--end of row-->
+		</div><!--end of container-->
+	</nav><!--end bar-->
+
+</div>
+<div class="main-container">
+
+
+    <section class="switchable imagebg image--light switchable--switch section--ken-burns space--xs" data-overlay="9">
+        <div class="background-image-holder"> <img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-pagespeed-url-hash="3013666362" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/white-background-2-copy.jpg"><noscript><img alt="" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/white-background-2-copy.jpg" data-pagespeed-url-hash="3013666362" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></noscript> </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7"> <img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-pagespeed-url-hash="3005113131" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/ipad-dashboard-5-6.webp"><noscript><img alt="" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/ipad-dashboard-5-6.webp" data-pagespeed-url-hash="3005113131" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></noscript> </div>
+                <div class="col-sm-5 col-md-5">
+                    <div class="switchable__text">
+                        <h1>Everything to launch &amp; grow your affiliate program.</h1>
+                        <p class="lead"><span>Increase the revenue of your e-Commerce store or SaaS business. Quickly and easily set up our all in one affiliate tracking solution.</span></p><a class="btn btn--primary" href="https://app.leaddyno.com/signup"><span class="btn__text">TRY FREE FOR 30 DAYS</span></a></div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="bg--secondary space--xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="feature feature-1 boxed boxed--border">
+                        <h3><img class="size-full wp-image-12267 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" alt="Easy Setup" width="100" height="100" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/easy-setup.png"><noscript><img class="size-full wp-image-12267 aligncenter" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/easy-setup.png" alt="Easy Setup" width="100" height="100"></noscript></h3>
+                        <h3 style="text-align: center;">Easy Setup</h3>
+                        <p style="text-align: center;"><span>Get your affiliate program started in a few minutes. No developers required.</span></p>
+                    </div>
+                    <!--end feature-->
+                </div>
+                <div class="col-sm-4">
+                    <div class="feature feature-1 boxed boxed--border">
+                        <h3><img class="aligncenter size-full wp-image-12266" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" alt="Track Performance" width="100" height="100" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/track-performance.png"><noscript><img class="aligncenter size-full wp-image-12266" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/track-performance.png" alt="Track Performance" width="100" height="100"></noscript></h3>
+                        <h3 style="text-align: center;">Track Performance</h3>
+                        <p style="text-align: center;"><span>Monitor the performance of all your marketing efforts from one dashboard.</span></p>
+                    </div>
+                    <!--end feature-->
+                </div>
+                <div class="col-sm-4">
+                    <div class="feature feature-1 boxed boxed--border">
+                        <h3><img class="aligncenter size-full wp-image-12265" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" alt="Increase Sales" width="100" height="100" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/increase-sales.png"><noscript><img class="aligncenter size-full wp-image-12265" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/02/increase-sales.png" alt="Increase Sales" width="100" height="100"></noscript></h3>
+                        <h3 style="text-align: center;">Increase Sales</h3>
+                        <p style="text-align: center;"><span>More referrals means more sales. Automate &amp; grow your affiliate program.</span></p>
+                    </div>
+                    <!--end feature-->
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="switchable feature-large  space--sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="video-cover border--round box-shadow-wide">
+                        <div class="background-image-holder"></div>
+                        <div class="video-play-icon"></div><iframe loading="lazy" allowfullscreen="allowfullscreen" src="about:blank" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://www.youtube.com/embed/HHKtffpSWWo"></iframe><noscript><iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/HHKtffpSWWo"></iframe></noscript></div>
+                    <!--end video cover-->
+                </div>
+                <div class="col-sm-6 col-md-5">
+                    <div class="switchable__text">
+                        <h2>Grow your business by getting exposure to new audiences</h2>
+                        <p class="lead">Starting rewarding people for promoting your business. LeadDyno tracks all of your clicks, leads, and sales.</p><a class="btn" href="https://www.leaddyno.com/how-it-works/"><span class="btn__text">How it works</span></a></div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="switchable feature-large  space--sm bg--secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-5">
+                    <div class="switchable__text">
+                        <h2>Time saving affiliate management tools</h2>
+                        <p class="lead">Our affiliate software works for for all sizes of businesses. Simple tools for those getting started and more advanced options for enterprise businesses wanting to run a more complicated incentive or payment structure.</p>
+                        <p>Get your program setup in minutes. We will help you along the way.</p><a class="btn" href="https://www.leaddyno.com/features/"><span class="btn__text">View all features</span></a></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="boxed boxed--lg boxed--border">
+                        <!--end feature-->
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Thunder"></i>
+                            <div class="feature__body">
+                                <h4>Engage</h4>
+                                <p>Our suite of affiliate tools allow you to keep affiliates engaged and motivated to help sell your product or service.</p>
+                            </div>
+                        </div>
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Gear-2"></i>
+                            <div class="feature__body">
+                                <h4>Automate</h4>
+                                <p>Setup emails to automate your marketing. Our affiliate software allows you to send emails to your affiliates as well as your customers.</p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Bar-Chart"></i>
+                            <div class="feature__body">
+                                <h4>Analyze</h4>
+                                <p>All of your clicks, leads, and sales are available in your LeadDyno dashboard. View your most successful campaigns.</p>
+                            </div>
+                        </div>
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Money"></i>
+                            <div class="feature__body">
+                                <h4>Reward</h4>
+                                <p>Paying your affiliates is easy with LeadDyno affiliate software. Bulk pay affiliates with Paypal Mass Pay.</p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <a id="integrations" class="in-page-link"></a>
+    <section class="switchable  space--xs bg--secondary switchable--switch">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7"> <img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/11/Group-1b1.gif"><noscript><img alt="" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/11/Group-1b1.gif"></noscript> </div>
+                <div class="col-sm-5 col-md-5">
+                    <div class="switchable__text">
+                        <h2>We connect to the best tools to help you manage your affiliate program.</h2>
+                        <p class="lead">We build the best affiliate tracking software and integrate with top e-commerce platforms, payment processors, CRM's, and email platforms. Many of our integrations can be installed with one click. Not technical? Not to worry, our support staff will help you launch your affiliate program.</p><a class="btn" href="https://www.leaddyno.com/integrations/"><span class="btn__text">View our integrations</span></a>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="text-center imagebg space--xs" data-overlay="7">
+        <div class="background-image-holder"> <img alt="" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/10/leaddyno-blue-background-v3.2.png" data-pagespeed-url-hash="3149301448" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"> </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-md-8">
+                    <h2>What our clients say about us</h2>
+                    <p class="lead">Read reviews about LeadDyno from our clients across dozens of integrations. View more<span>&nbsp;</span><a href="https://www.leaddyno.com/testimonials/">reviews &amp; testimonials</a>.</p>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="imagebg space--xxs" data-overlay="7">
+        <div class="background-image-holder"> <img alt="" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/10/leaddyno-blue-background-v3.2.png" data-pagespeed-url-hash="3149301448" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"> </div>
+        <div class="container"><div class="row">
+	
+<div class="col-sm-6 col-md-4 testimonial-avatar">
+	<div class="testimonial testimonial-2">
+		<div class="testimonial__body boxed boxed--border bg--secondary">
+			<p><span>Excellent program. Nice and simple with a wide range of capabilities. Their customer service is killer, too.</span></p>
+<p><img class="alignnone size-full wp-image-13992 aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20130%2027'%3E%3C/svg%3E" alt="" width="130" height="27" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/5-stars.png"/><noscript><img class="alignnone size-full wp-image-13992 aligncenter" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/5-stars.png" alt="" width="130" height="27"/></noscript></p>
+<p><em>8/20/2021</em></p>
+		</div>
+		<div class="testimonial__image">
+			<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" data-lazy-srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify.png 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify-60x60.png 60w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify.png"/><noscript><img width="100" height="100" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify.png 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/08/shopify-60x60.png 60w" sizes="(max-width: 100px) 100vw, 100px"/></noscript><h5>Akai Life</h5><span></span>		</div>
+	</div>
+</div>
+<div class="col-sm-6 col-md-4 testimonial-avatar">
+	<div class="testimonial testimonial-2">
+		<div class="testimonial__body boxed boxed--border bg--secondary">
+			<p><span>Our referral program has grown quickly using LeadDyno. They are responsive with support questions and all the functionality is available easily through the app!</span></p>
+<p><img class="aligncenter size-full wp-image-12457" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20130%2027'%3E%3C/svg%3E" alt="5 stars" width="130" height="27" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/5-stars.png"/><noscript><img class="aligncenter size-full wp-image-12457" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/5-stars.png" alt="5 stars" width="130" height="27"/></noscript></p>
+<p><em>8/15/2021</em></p>
+		</div>
+		<div class="testimonial__image">
+			<picture class="attachment-thumbnail size-thumbnail wp-post-image">
+<source type="image/webp" data-lazy-srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png.webp 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify-60x60.png.webp 60w" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20100%20100&#039;%3E%3C/svg%3E" data-lazy-sizes="(max-width: 100px) 100vw, 100px"/>
+<img width="100" height="100" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20100%20100&#039;%3E%3C/svg%3E" alt="Shopify Reviews" data-lazy-srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify-60x60.png 60w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png"/>
+</picture>
+<noscript><picture class="attachment-thumbnail size-thumbnail wp-post-image">
+<source type="image/webp" srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png.webp 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify-60x60.png.webp 60w" sizes="(max-width: 100px) 100vw, 100px"/>
+<img width="100" height="100" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png" alt="Shopify Reviews" srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify.png 100w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/05/reviews-shopify-60x60.png 60w" sizes="(max-width: 100px) 100vw, 100px"/>
+</picture>
+</noscript><h5>VetCS</h5><span></span>		</div>
+	</div>
+</div>
+<div class="col-sm-6 col-md-4 testimonial-avatar">
+	<div class="testimonial testimonial-2">
+		<div class="testimonial__body boxed boxed--border bg--secondary">
+			<p>Awesome app. <span>The app is packed with features and easy to use + the support team is top notch. Thank you!</span></p>
+<p><img class="aligncenter size-full wp-image-12457" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20130%2027'%3E%3C/svg%3E" alt="5 stars" width="130" height="27" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/5-stars.png"/><noscript><img class="aligncenter size-full wp-image-12457" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/05/5-stars.png" alt="5 stars" width="130" height="27"/></noscript></p>
+<p><em>8/4/2001</em></p>
+		</div>
+		<div class="testimonial__image">
+			<img width="73" height="73" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2073%2073'%3E%3C/svg%3E" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Bigcommerce Review" data-lazy-srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review.png 73w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review-60x60.png 60w" data-lazy-sizes="(max-width: 73px) 100vw, 73px" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review.png"/><noscript><img width="73" height="73" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Bigcommerce Review" srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review.png 73w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2021/03/bigcommerce-review-60x60.png 60w" sizes="(max-width: 73px) 100vw, 73px"/></noscript><h5>Bigcommerce User</h5><span></span>		</div>
+	</div>
+</div></div><!--end of row--></div>
+        <!--end of container-->
+    </section>
+    <section class="switchable feature-large  space--xxs bg--secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-5">
+                    <div class="switchable__text">
+                        <h2>Why LeadDyno Affiliate Software?</h2>
+                        <p class="lead">LeadDyno is an industry leader <span> </span>in affiliate tracking technology and affiliate program management. Since 2014 we have tracked over <strong>70M+ referrals</strong> and our <span>clients generated <strong>$200M+ in affiliate sales </strong>in 2020.</span></p>
+                        <p class="lead"><span>Read </span><a href="https://www.leaddyno.com/testimonials/">testimonials and reviews</a> about our service as well as <a href="https://www.leaddyno.com/case-studies">success stories</a> about how various businesses increased revenue with an affiliate program.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="boxed boxed--lg boxed--border">
+                        <!--end feature-->
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Archery-2"></i>
+                            <div class="feature__body">
+                                <h5>Trusted Technology</h5>
+                                <p>We do not use 3rd party cookies, nor 3rd party domains for javascript files, so tracking using LeadDyno will not be interrupted by adblockers. Learn more <a href="https://www.leaddyno.com/about/"><span class="btn__text">about us</span></a></p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                        <div class="feature feature-2"> <i class="icon color--primary icon-Headset"></i>
+                            <div class="feature__body">
+                                <h5>Elite Support</h5>
+                                <p>Our customer support staff is here to help answer any questions you have on how to start and grow your affiliate program. <a href="https://www.leaddyno.com/contact/">We are available</a> by Live Chat, email and online appointments. Our team also does <a href="https://www.leaddyno.com/demo/">weekly demos and workshops</a>.</p>
+                            </div>
+                        </div>
+                        <!--end feature-->
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7">
+                    <div class="cta">
+                        
+                            <h2>Grow your business today</h2>
+                            <p>It's easy to setup and our staff is available to answer any questions.</p>
+                        
+                        <a class="btn btn--primary type--uppercase inner-link" href="https://app.leaddyno.com/signup" target="" title="" rel=""> <span class="btn__text">Signup for 30-day free trial</span> </a>
+                         
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    
+<footer class="space--sm footer-2 bg--dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3 col-xs-12"><div id="text-8" class="widget widget_text sidebar__element">			<div class="textwidget"><p><img class="wp-image-11297 alignleft" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2034'%3E%3C/svg%3E" alt="LeadDyno Logo" width="200" height="34" data-lazy-srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png 465w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white-300x50.png 300w" data-lazy-sizes="(max-width: 200px) 100vw, 200px" data-lazy-src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png"/><noscript><img class="wp-image-11297 alignleft" src="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png" alt="LeadDyno Logo" width="200" height="34" srcset="https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white.png 465w, https://u6q8v4i8.rocketcdn.me/wp-content/uploads/2020/09/leaddyno-2020-logo-white-300x50.png 300w" sizes="(max-width: 200px) 100vw, 200px"/></noscript></p>
+<p>&nbsp;</p>
+<p><strong><em><br/>
+Trusted to track 70M referrals since 2014.</em></strong></p>
+<p>&nbsp;</p>
+<p>LeadDyno affiliate tracking software and marketing automation.</p>
+<p><strong><em> </em></strong></p>
+</div>
+		</div></div><div class="col-sm-6 col-md-3 col-xs-12"><div id="text-17" class="widget widget_text sidebar__element"><h6 class="type--uppercase">Industries</h6>			<div class="textwidget"><ul>
+<li><a href="https://www.leaddyno.com/affiliate-software-ecommerce/">Affiliate software for e-Commerce</a></li>
+<li><a href="https://www.leaddyno.com/affiliate-software-saas/">SaaS Affiliate Tracking</a></li>
+</ul>
+<p>&nbsp;</p>
+</div>
+		</div>
+		<div id="recent-posts-2" class="widget widget_recent_entries sidebar__element">
+		<h6 class="type--uppercase">From the Blog</h6>
+		<ul>
+											<li>
+					<a href="https://www.leaddyno.com/top-10-mistakes-to-avoid-when-setting-up-an-affiliate-program-on-shopify/">Top 10 Mistakes to Avoid When Setting Up an Affiliate Program on Shopify</a>
+									</li>
+											<li>
+					<a href="https://www.leaddyno.com/8-tips-to-increase-affiliate-conversions-by-optimizing-your-website/">8 Tips to Increase Affiliate Conversions by Optimizing your Website</a>
+									</li>
+											<li>
+					<a href="https://www.leaddyno.com/essential-guide-to-micro-influencers/">The Essential Guide to Micro-Influencers and How They Can Help Grow Your Business</a>
+									</li>
+					</ul>
+
+		</div></div><div class="col-sm-6 col-md-3 col-xs-12"><div id="text-14" class="widget widget_text sidebar__element"><h6 class="type--uppercase">Subscribe</h6>			<div class="textwidget"><div role="form" class="wpcf7" id="wpcf7-f1047-p9644-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f1047-p9644-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="1047"/>
+<input type="hidden" name="_wpcf7_version" value="5.4.2"/>
+<input type="hidden" name="_wpcf7_locale" value="en_US"/>
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1047-p9644-o1"/>
+<input type="hidden" name="_wpcf7_container_post" value="9644"/>
+<input type="hidden" name="_wpcf7_posted_data_hash" value=""/>
+</div>
+<div class="row text-center">
+<div class="col-sm-7">
+            <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address"/></span>
+        </div>
+<div class="col-sm-5">
+            <button type="submit" value="Subscribe" class="wpcf7-form-control wpcf7-submit btn btn--primary type--uppercase"/>
+        </div>
+</div>
+<p><!--end of row--></p>
+<input type="hidden" id="ct_checkjs_cf7_df6d2338b2b8fce1ec2f6dda0a630eb0" name="ct_checkjs_cf7" value="0"/><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>
+</div>
+		</div></div><div class="col-sm-6 col-md-3 col-xs-12"><div id="text-4" class="widget widget_text sidebar__element"><h6 class="type--uppercase">LeadDyno</h6>			<div class="textwidget"><ul>
+<li><a href="/about/">About Us</a></li>
+<li><a href="/saas-affiliate-program/">Our Affiliate Program</a></li>
+<li><a href="https://status.leaddyno.com/" target="_blank" rel="noopener">Status</a></li>
+</ul>
+<p>&nbsp;</p>
+</div>
+		</div><div id="text-13" class="widget widget_text sidebar__element"><h6 class="type--uppercase">Legal</h6>			<div class="textwidget"><ul>
+<li><a href="/terms-of-service/">Terms of Service</a></li>
+<li><a href="/privacy-policy/">Privacy Policy</a></li>
+</ul>
+</div>
+		</div></div><div class="clear"></div>		</div><!--end of row-->
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="footer-stack-copyright">
+	© LeadDyno 2014-2021</div>	
+			</div>
+			<div class="col-sm-6 text-right text-left-xs">
+				
+<ul class="social-list list-inline list--hover stack-footer-social">
+	<li>
+					      <a href="https://www.facebook.com/leaddyno" title="LeadDyno - Easy Affiliate Tracking Software Facebook Page" target="_blank">
+						      <i class="socicon icon--xs socicon-facebook"></i>
+					      </a>
+					  </li><li>
+					      <a href="https://twitter.com/LeadDyno" title="LeadDyno - Easy Affiliate Tracking Software Twitter Page" target="_blank">
+						      <i class="socicon icon--xs socicon-twitter"></i>
+					      </a>
+					  </li><li>
+					      <a href="https://www.youtube.com/c/LeadDyno" title="LeadDyno - Easy Affiliate Tracking Software Youtube Page" target="_blank">
+						      <i class="socicon icon--xs socicon-youtube"></i>
+					      </a>
+					  </li><li>
+					      <a href="https://www.linkedin.com/company/leaddyno" title="LeadDyno - Easy Affiliate Tracking Software Linkedin Page" target="_blank">
+						      <i class="socicon icon--xs socicon-linkedin"></i>
+					      </a>
+					  </li></ul>			</div>
+		</div><!--end of row-->
+	</div><!--end of container-->
+</footer>
+</div><!-- /main-container -->
+
+<a class="back-to-top inner-link" title="Back to top" href="#start" data-scroll-class="100vh:active">
+	<i class="stack-interface stack-up-open-big"></i>
+</a><script type="rocketlazyloadscript" data-rocket-type="text/javascript">				
+				window.addEventListener('DOMContentLoaded', function () {
+					setTimeout(function(){
+						if( document.querySelectorAll('[name^=ct_checkjs]').length > 0 ) {
+			                apbct_public_sendAJAX(
+			                    { action: 'apbct_js_keys__get' },
+			                    { callback: apbct_js_keys__set_input_value, apbct_ajax: 1 }
+			                );
+			            }
+					},0)					    
+				});				
+			</script>    <!-- Facebook Pixel Event Code -->
+    <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Facebook Pixel Event Code -->
+    <div id='fb-pxl-ajax-code'></div><script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>//<![CDATA[
+var wpcf7={"api":{"root":"https:\/\/www.leaddyno.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+//]]></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1631123844' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/parallax.js?ver=1631123844' id='ebor-parallax-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/isotope.js?ver=1631123844' id='ebor-isotope-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/final-countdown.js?ver=1631123844' id='final-countdown-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/flickity.js?ver=1631123844' id='flickity-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/granim.js?ver=1631123844' id='granim-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/smooth-scroll.js?ver=1631123844' id='smooth-scroll-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/spectragram.js?ver=1631123844' id='spectragram-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/twitter-post-fetcher.js?ver=1631123844' id='twitter-post-fetcher-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/ytplayer.js?ver=1631123844' id='ytplayer-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/easy-pie-chart.js?ver=1631123844' id='easy-pie-chart-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/steps.js?ver=1631123844' id='steps-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/lightbox.js?ver=1631123844' id='lightbox-js' defer></script>
+<script type='text/javascript' id='ebor-scripts-wp-js-extra'>//<![CDATA[
+var stack_data={"access_token":"replaceWithYourOwn","client_id":"replaceWithYourOwn","typed_speed":"100","map_marker":"https:\/\/www.leaddyno.com\/wp-content\/themes\/stack\/style\/img\/mapmarker.png","map_marker_title":"Leaddyno","lightbox_text":"Image %1 of %2"};
+//]]></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/scripts_wp.js?ver=1631123844' id='ebor-scripts-wp-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/wp-content/themes/stack/style/js/scripts.js?ver=1631123844' id='ebor-scripts-js' defer></script>
+<script type='text/javascript' src='https://u6q8v4i8.rocketcdn.me/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js' defer></script>
+
+<!-- LeadDyno JS - generated by LeadDyno Wordpress Plugin. -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://static.leaddyno.com/js" defer></script>
+<script type="rocketlazyloadscript">
+LeadDyno.key = "9d7969b29fee56ee8ab1d747c1b41a2cd7a5e1ce";
+LeadDyno.channel = "wordpress";
+LeadDyno.domain = 'leaddyno.com';
+LeadDyno.recordVisit();
+LeadDyno.autoWatch();
+</script>
+
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://u6q8v4i8.rocketcdn.me/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A200%2C300%2C400%2C400i%2C500%2C600%2C700%7CMerriweather%3A300%2C300i%7CMaterial%20Icons&#038;display=swap"/><link rel="stylesheet" href="https://u6q8v4i8.rocketcdn.me/wp-content/cache/min/1/787f9072a0d8df0bd61339cafae1faad.css" media="all" data-minify="1"/></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1631124150 -->

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Mobile SEO &#8211; Search Berg</title>
+	<atom:link href="https://www.searchberg.com/blog/category/mobile-seo/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.searchberg.com/blog</link>
+	<description></description>
+	<lastBuildDate>Mon, 20 Aug 2018 08:17:00 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+	<item>
+		<title>Mobile SEO Checklist for Website Owners That Understand SEO</title>
+		<link>https://www.searchberg.com/blog/mobile-seo-checklist-for-website-owners-that-understand-seo/</link>
+					<comments>https://www.searchberg.com/blog/mobile-seo-checklist-for-website-owners-that-understand-seo/#respond</comments>
+		
+		<dc:creator><![CDATA[Aaron Tylor]]></dc:creator>
+		<pubDate>Mon, 20 Aug 2018 08:17:00 +0000</pubDate>
+				<category><![CDATA[Mobile SEO]]></category>
+		<guid isPermaLink="false">https://www.searchberg.com/blog/?p=1001</guid>
+
+					<description><![CDATA[<p>Okay, so mobile-first indexing is finally (and officially) here—but on a larger scale. Phew Google! You really ran it late this time around. And we’re grateful you are informing us about particular migrations through the Search Console. Which brings us to you (no, not you Google; you there, reading this post) and your website. Is [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/mobile-seo-checklist-for-website-owners-that-understand-seo/">Mobile SEO Checklist for Website Owners That Understand SEO</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Okay, so mobile-first indexing is finally (<a href="https://webmasters.googleblog.com/2018/03/rolling-out-mobile-first-indexing.html">and officially</a>) here—but on a larger scale.</p>
+<p>Phew Google! You really <a href="https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html">ran it late</a> this time around.</p>
+<p>And we’re grateful you are informing us about particular migrations through the Search Console.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1003" src="https://www.searchberg.com/blog/wp-content/uploads/2018/10/1.png" alt="" width="522" height="246" /></p>
+<p>Which brings us to you (<em>no, not you Google; you there, reading this post</em>) and your website.</p>
+<p>Is your website ready for mobile-first indexing?</p>
+<h2><strong>What is mobile first indexing, and why bother?</strong></h2>
+<p>Traditionally, Google used the desktop version of your website for indexing; your mobile website (<em>www.m.domain.com</em>) was more or less treated as an “alternative” version of it.</p>
+<p>In some cases, Google would not even make the effort to crawl and index your mobile website as it considered the practice redundant. And who could fault it, for desktop searches ruled at that time and the volume of mobile search queries was low.</p>
+<p>Then, it all changed!</p>
+<p>Mobile devices became more popular and <a href="https://adwords.googleblog.com/2015/05/building-for-next-moment.html">outgrew</a> desktop search queries. Internet users were no longer being directed to desktop websites; instead, mobile websites became their new homes. At least, for a majority of them.</p>
+<p>This forced Google into a rethink. Since the desktop version of a website can be very different to when it’s pulled on a mobile device, the search experience of internet users was getting compromised.</p>
+<p>Google had to come up with a solution.</p>
+<p>And it did by introducing mobile-first indexing.</p>
+<p>This update treats the mobile version of a website as its primary version.</p>
+<p>Crawling, indexing, extracting snippets are all primarily done using the mobile version of websites.</p>
+<p>Even the rankings for web pages depend on what Google finds while indexing the mobile website.</p>
+<p>That’s not to say the desktop version of a website has lost its importance.</p>
+<p>Remember: it’s <em>mobile-first</em> indexing and not <em>mobile-only</em> indexing.</p>
+<p>For websites that deliver mobile-optimized experience to users by employing responsive design strategy, this update will have minimal to no impact on their indexing results.</p>
+<p>However, if your website uses dynamic serving or a separate mobile URLto deliver mobile-optimized experiences, the pending changes can adversely impact its ranking and consequently your business.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1004" src="https://www.searchberg.com/blog/wp-content/uploads/2018/10/2.png" alt="" width="604" height="517" /></p>
+<p>What should you do in that case?</p>
+<p>We’ll recommend reviewing the mobile SEO details of your website, and get the issues fixed immediately before the update affects you.</p>
+<p>What type of SEO details, you ask?</p>
+<h2><strong>Mobile SEO checklist for mobile-first indexing update</strong></h2>
+<p>Start with a <strong>review of on-page SEO</strong> details.</p>
+<ul>
+<li>Are the meta titles and descriptions optimized for mobile search?</li>
+<li>Do your webpages have strong headlines?</li>
+<li>Do mobile and desktop versions of your website have the same content?</li>
+</ul>
+<p>Next, <a href="https://search.google.com/test/rich-results"><strong>ensure</strong></a><strong> the data on your mobile website is properly structured </strong>and follows the same markup that’s present on the desktop version of your website. Any deviations or absence of structure altogether can cause your website to lose visibility on SERPs and suffer in terms of click-through rate.</p>
+<p>Does your website have alternate versions of content for different languages and countries?</p>
+<p>If yes, and you use hreflang tags for content differentiation, then you’ll definitely want to <strong>check if your mobile website has hreflang references updated</strong>.</p>
+<p>Google strongly <a href="https://developers.google.com/search/mobile-sites/mobile-first-indexing">advises</a> doing so. Also, make sure the <strong>content on your mobile website is <em>paginated</em></strong>.</p>
+<p>What is pagination?</p>
+<p>Pagination is basically the practice of dividing long-form content into discrete pages.</p>
+<p>The desktop version of your website is likely to have the content already paginated. However, pagination may not exist for your mobile website. This can lead to un-indexing of the non-paginated content.</p>
+<p>While we’re at the subject of indexing, <strong>it’s also worth reviewing the internal link structure of your mobile website. </strong></p>
+<p>Quite often, mobile websites show fewer links on a webpage to optimize their users’ online experience. Since internal links help Google crawl your website more deeply, fewer links could affect the indexing and crawling process for your website.</p>
+<p>How to ensure a uniform internal link structure between the desktop and mobile versions of your website?</p>
+<p>We recommend using a crawling tool(such as Sitebulb or DeepCrawl) to perform the check.</p>
+<p>Also, <strong>evaluate where those links are placed</strong> on your website and reposition them (where needed) to make them more visible and clickable.</p>
+<p>Lastly, you would want to <strong>review some details of your site’s technical configuration</strong> that can impact its ranking. These include:</p>
+<ul>
+<li>Optimizing the redirects</li>
+<li>Checking and increasing the speed of your mobile website</li>
+</ul>
+<p>Mobile-first indexing changes are a matter of when, not if. Sooner or later, Google will target your website for migration. It’s better to act now and save yourself from unnecessary inconvenience.</p>
+<p>Need help with optimizing your website for mobile-first indexing?</p>
+<p>Search Berg is at your service!</p>
+<p>We’re one of the leading <a href="https://www.searchberg.com/website-seo.html">SEO service</a> providers in the United States. Our expert and experienced SEOs can optimize your website for all Google updates, making it more effective at helping you achieve your business goals.</p>
+<p><a href="https://www.searchberg.com/contact-us.html">Get in touch</a> with us today!</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/mobile-seo-checklist-for-website-owners-that-understand-seo/">Mobile SEO Checklist for Website Owners That Understand SEO</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/mobile-seo-checklist-for-website-owners-that-understand-seo/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

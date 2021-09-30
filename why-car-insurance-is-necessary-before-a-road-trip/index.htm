@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/12/Auto.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/12/Renters.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/12/Home.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/12/Commercial.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/12/homebanner2-1.jpg" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" as="image"><link rel="preload" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" as="image"><link rel="stylesheet" media="print" onload="this.onload=null;this.media='all';" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CExo%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen%20Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CExo%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7COpen%20Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CExo%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2Citalic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic&amp;display=swap" /><link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://westernmassautoinsurance.com/xmlrpc.php">
+
+<title>Why Car Insurance is Necessary Before a Road Trip - Western Mass</title><noscript></noscript>
+<meta name="description" content="Road trips are exciting, especially when you have family or friends accompanying you. You&#039;ll want to take precautionary measures." />
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="canonical" href="https://westernmassautoinsurance.com/why-car-insurance-is-necessary-before-a-road-trip/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Why Car Insurance is Necessary Before a Road Trip - Western Mass" />
+<meta property="og:description" content="Road trips are exciting, especially when you have family or friends accompanying you. You&#039;ll want to take precautionary measures." />
+<meta property="og:url" content="https://westernmassautoinsurance.com/why-car-insurance-is-necessary-before-a-road-trip/" />
+<meta property="og:site_name" content="Western Mass" />
+<meta property="article:publisher" content="https://www.facebook.com/westernmassautoinsurance/" />
+<meta property="article:tag" content="auto insurance" />
+<meta property="article:tag" content="best price" />
+<meta property="article:tag" content="bodily injury" />
+<meta property="article:tag" content="Car insurance" />
+<meta property="article:tag" content="car insurance policies" />
+<meta property="article:tag" content="cheap car insurance" />
+<meta property="article:section" content="blog" />
+<meta property="og:image" content="https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b11.png" />
+<meta property="og:image:secure_url" content="https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b11.png" />
+<meta property="og:image:width" content="666" />
+<meta property="og:image:height" content="1000" />
+<meta property="og:image:alt" content="Why Car Insurance is Necessary Before a Road Trip" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why Car Insurance is Necessary Before a Road Trip - Western Mass" />
+<meta name="twitter:description" content="Road trips are exciting, especially when you have family or friends accompanying you. You&#039;ll want to take precautionary measures." />
+<meta name="twitter:site" content="@westernmassauto" />
+<meta name="twitter:creator" content="@westernmassauto" />
+<meta name="twitter:image" content="https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b11.png" />
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link href='https://homeowners.plymouthrock.com' rel='preconnect' />
+<link href='https://tars-file-upload.s3.amazonaws.com' rel='preconnect' />
+<link href='https://tars-data.s3.amazonaws.com' rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Western Mass &raquo; Feed" href="https://westernmassautoinsurance.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Western Mass &raquo; Comments Feed" href="https://westernmassautoinsurance.com/comments/feed/" />
+
+<script type="rocketlazyloadscript" src="//www.googletagmanager.com/gtag/js?id=UA-118264680-1" data-rocket-type="text/javascript" data-cfasync="false" async></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-cfasync="false">
+				var mi_version = '7.18.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStr = 'ga-disable-UA-118264680-1';
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					return document.cookie.indexOf( disableStr + '=true' ) > - 1;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					window[disableStr] = true;
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+					window[disableStr] = true;
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+				if ( mi_track_user ) {
+					function __gtagTracker() {dataLayer.push( arguments );}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+						                    });
+					__gtagTracker( 'config', 'UA-118264680-1', {
+						forceSSL:true,link_attribution:true,					} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+										if ( args.hasOwnProperty(arg) && gaMap.hasOwnProperty(arg) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+
+<link rel='stylesheet' id='wp-block-library-css' href='https://westernmassautoinsurance.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://westernmassautoinsurance.com/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='stm-stm-css' href='https://westernmassautoinsurance.com/wp-content/uploads/stm_fonts/stm/stm.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://westernmassautoinsurance.com/wp-content/plugins/revslider/public/assets/css/rs6.css' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='ssbywpos-public-css-css' href='https://westernmassautoinsurance.com/wp-content/plugins/smooth-scroll-by-wpos/assets/css/ssbywpos-style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-font-css' href='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/toolbar/fonts/css/a11y-toolbar.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-a11y-css' href='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/toolbar/css/a11y.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-fontsize.css-css' href='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/toolbar/css/a11y-fontsize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpa-style-css' href='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/css/wpa-style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpcf7-redirect-script-frontend-css' href='https://westernmassautoinsurance.com/wp-content/plugins/wpcf7-redirect/build/css/wpcf7-redirect-frontend.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ivory-search-styles-css' href='https://westernmassautoinsurance.com/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='stm-gdpr-styles-css' href='https://westernmassautoinsurance.com/wp-content/plugins/stm-gdpr-compliance/assets/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='vc_font_awesome_5_shims-css' href='https://westernmassautoinsurance.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/v4-shims.min.css' type='text/css' media='all' />
+<style id='vc_font_awesome_5_shims-inline-css' type='text/css'>
+body #wrapper .fa.fa-facebook{font-family:'Font Awesome 5 Brands' !important;}
+</style>
+<link rel='stylesheet' id='vc_font_awesome_5-css' href='https://westernmassautoinsurance.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/all.min.css' type='text/css' media='all' />
+<style id='vc_font_awesome_5-inline-css' type='text/css'>
+body #wrapper .fa.fa-map-marker{font-family:'FontAwesome' !important;} body .fa.fa-map-marker:before{content:"\f041"}
+</style>
+<link rel='stylesheet' id='font-awesome-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='consulting-style-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='consulting-layout-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/layouts/layout_12/main.css' type='text/css' media='all' />
+<style id='consulting-layout-inline-css' type='text/css'>
+.page_title{ }.mtc, .mtc_h:hover{
+					color: #002e5b!important
+				}.stc, .stc_h:hover{
+					color: #6c98e1!important
+				}.ttc, .ttc_h:hover{
+					color: #fde428!important
+				}.mbc, .mbc_h:hover, .stm-search .stm_widget_search button{
+					background-color: #002e5b!important
+				}.sbc, .sbc_h:hover{
+					background-color: #6c98e1!important
+				}.tbc, .tbc_h:hover{
+					background-color: #fde428!important
+				}.mbdc, .mbdc_h:hover{
+					border-color: #002e5b!important
+				}.sbdc, .sbdc_h:hover{
+					border-color: #6c98e1!important
+				}.tbdc, .tbdc_h:hover{
+					border-color: #fde428!important
+				}.top_nav .top_nav_wrapper > ul > li > a { padding: 21px 8px !important; } header .asd a { font-size: 21px !important; } div#mainbanner { padding-bottom: 100px; } #mainbanner .bannerbutton a { padding: 20px 60px 20px 20px; } #mainbanner .bannerbutton { width: unset; background: unset !important; position: absolute; top: 60px; right: 4vw; } #mainbanner .bannerbutton a:hover { background: #516173 !important; } #mainbanner .bannerbutton i:before { color: #fff; font-size: 30px; } #mainbanner .vc_cta3-content { display: none; } .stm_list-duty li a:hover { color: #e99e2d !important; text-decoration: none; } .vc_custom_1605399899102 .vc_icon_element { display: none !important; } @media screen and (min-width: 1024px) { .mobileonly { display: none !important; } #desktoponly { display: block!important; } } @media screen and (max-width: 1024px) { .hbuttons { display: inline-block; width: 45%; text-align: center; border: 1px solid #fff; margin: 10px 2%; border-radius: 3px; font-size: 21px; text-transform: uppercase; background: #fff; } .hbuttons a { color: #3c908a !important; font-weight: bold; font-family: Open Sans; padding: 6px; width: 100%; display: block; font-size: 15px; } .cmetrixtwo .hbuttons a { padding: 0px; } .cmetrix { padding: 4%; } body.boxed_layout #wrapper { margin-top: unset !important; } .old-setup { display: none; } .mobileonly { display: block !important; } #desktoponly { display: none !important; } .home .vc_row.wpb_row.vc_row-fluid.vc_custom_1601387303137 { display: none; } .home .vc_row.wpb_row.vc_row-fluid.vc_custom_1601387925784 span.vc_sep_holder.vc_sep_holder_l { display: none; } .top_nav_mobile .main_menu_nav a { text-transform: initial !important; } .vc_custom_1601387925784 img { display: none; } .cmetrixtwo .hbuttons:nth-child(1) a:before { content: "one"; font-size: 12px; } .cmetrixtwo { display: flex; } .cmetrixtwo .hbuttons:nth-child(1) a:before { content: "\f095" !important; font-size: 23px; font-family: FontAwesome !important; } .cmetrixtwo .hbuttons:nth-child(2) a:before { content: "\f0e0"; font-size: 23px; font-family: 'FontAwesome'; } .cmetrixtwo .hbuttons:nth-child(3) a:before { content: "\f27a"; font-size: 23px; font-family: 'FontAwesome'; } .cmetrixtwo .hbuttons:nth-child(4) a:before { content: "\f041"; font-size: 23px; font-family: 'FontAwesome'; } .cmetrixtwo {display:none;} .cmetrixtwo .hbuttons a:before { display: none !important; } .home .vc_general.vc_cta3.vc_cta3-style-flat .vc_cta3-content-header h4 { text-align: center; } .home .vc_general.vc_cta3.vc_cta3-style-flat .vc_cta3-content-header h4:after { margin: 10px auto 0; } div#mainbanner { display: none; } }
+</style>
+<link rel='stylesheet' id='select2-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/select2.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='header_builder-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/header_builder.css' type='text/css' media='all' />
+<link rel='stylesheet' id='stm-skin-custom-generated-css' href='https://westernmassautoinsurance.com/wp-content/uploads/stm_uploads/skin-custom.css' type='text/css' media='all' />
+<link rel='stylesheet' id='consulting-theme-options-css' href='https://westernmassautoinsurance.com/wp-content/uploads/stm_uploads/theme_options.css' type='text/css' media='all' />
+<link rel='stylesheet' id='consulting-global-styles-css' href='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/css/layouts/global_styles/main.css' type='text/css' media='all' />
+<style id='consulting-global-styles-inline-css' type='text/css'>
+
+    
+        .elementor-widget-video .eicon-play {
+            border-color: #e49b2e;
+            background-color: #e49b2e;
+        }
+
+        .elementor-widget-wp-widget-nav_menu ul li,
+        .elementor-widget-wp-widget-nav_menu ul li a {
+            color: #3c908a;
+        }
+
+        .elementor-widget-wp-widget-nav_menu ul li.current-cat:hover>a,
+        .elementor-widget-wp-widget-nav_menu ul li.current-cat>a,
+        .elementor-widget-wp-widget-nav_menu ul li.current-menu-item:hover>a,
+        .elementor-widget-wp-widget-nav_menu ul li.current-menu-item>a,
+        .elementor-widget-wp-widget-nav_menu ul li.current_page_item:hover>a,
+        .elementor-widget-wp-widget-nav_menu ul li.current_page_item>a,
+        .elementor-widget-wp-widget-nav_menu ul li:hover>a {
+            border-left-color: #6c98e1;
+        }
+
+        div.elementor-widget-button a.elementor-button,
+        div.elementor-widget-button .elementor-button {
+            background-color: #3c908a;
+        }
+
+        div.elementor-widget-button a.elementor-button:hover,
+        div.elementor-widget-button .elementor-button:hover {
+            background-color: #e49b2e;
+            color: #3c908a;
+        }
+
+        .elementor-default .elementor-text-editor ul:not(.elementor-editor-element-settings) li:before,
+        .elementor-default .elementor-widget-text-editor ul:not(.elementor-editor-element-settings) li:before {
+            color: #6c98e1;
+        }
+
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-content-wrapper .elementor-tab-mobile-title,
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-wrapper .elementor-tab-title {
+            background-color: #e49b2e;
+        }
+
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-content-wrapper .elementor-tab-mobile-title,
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-wrapper .elementor-tab-title a {
+            color: #3c908a;
+        }
+
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-content-wrapper .elementor-tab-mobile-title.elementor-active,
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-wrapper .elementor-tab-title.elementor-active {
+            background-color: #3c908a;
+        }
+
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-content-wrapper .elementor-tab-mobile-title.elementor-active,
+        .consulting_elementor_wrapper .elementor-tabs .elementor-tabs-wrapper .elementor-tab-title.elementor-active a {
+            color: #e49b2e;
+        }
+
+        .radial-progress .circle .mask .fill {
+            background-color: #e49b2e;
+        }
+
+    
+
+    
+</style>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://westernmassautoinsurance.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type='text/javascript' id='monsterinsights-frontend-script-js-extra'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/westernmassautoinsurance.com","hash_tracking":"false","ua":"UA-118264680-1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js' id='monsterinsights-frontend-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js' id='tp-tools-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js' id='revmin-js'></script>
+<link rel="https://api.w.org/" href="https://westernmassautoinsurance.com/wp-json/" /><link rel="alternate" type="application/json" href="https://westernmassautoinsurance.com/wp-json/wp/v2/posts/4714" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://westernmassautoinsurance.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://westernmassautoinsurance.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://westernmassautoinsurance.com/?p=4714' />
+<link rel="alternate" type="application/json+oembed" href="https://westernmassautoinsurance.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwesternmassautoinsurance.com%2Fwhy-car-insurance-is-necessary-before-a-road-trip%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://westernmassautoinsurance.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwesternmassautoinsurance.com%2Fwhy-car-insurance-is-necessary-before-a-road-trip%2F&#038;format=xml" />
+<link rel='stylesheet' id='7877-css' href='//westernmassautoinsurance.com/wp-content/uploads/custom-css-js/7877.css?v=2013' type="text/css" media='all' />
+
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5VJVSKS');</script>
+
+<script type="application/ld+json"> {
+		"@context": "https://schema.org",
+		"@graph": [{
+			"@type": "Organization",
+			"@id": "https://westernmassautoinsurance.com/#organization",
+"name": "Western Mass Auto Insurance Inc. Best Insurance Quote",
+ 		"legalName" : "Western Mass Auto Insurance Inc.",
+ 		"url": "https://westernmassautoinsurance.com/",
+ 		"description": "Our agency is dedicated to providing the Western Mass area with affordable auto and home insurance. We have Two Very Convenient Locations in Western Mass, they are located in Indian Orchard and the Forest Park area of Springfield.",
+      "disambiguatingDescription": "Our Indian Orchard staff and Forest Park staff consist of experienced insurance professionals who have been selling and servicing auto insurance in the area for a combined 50+ years. We know Western Mass and we know how to get you affordable pricing, low down payments and the best coverage for your needs.",
+ 		"mainEntityOfPage": "https://en.wikipedia.org/wiki/Insurance",
+ 		"foundingDate": "1980",
+ 		"foundingLocation": [
+ 			{
+ 				"@type": "Place",
+  				"geo": {
+    			"@type": "GeoCoordinates",
+    			"latitude": "42.15605618418987",
+    			"longitude": "-72.48744123069292"
+  			},
+  				"name": "Western Mass Auto Insurance Inc."
+ 			}],
+ 		"actionableFeedbackPolicy": "https://westernmassautoinsurance.com/",
+ 		"areaServed": ["Springfield, West Springfield, Chicopee, Holyoke, Westfield, East Longmeadow, Agawam, Longmeadow, East Longmeadow, Wilbraham, Palmer, Ludlow"],
+ 		"award": [
+ 			"2021 Best In Springfield auto insurance",
+			"2021 Best In Springfield insurance company",
+			"2021 Best In Springfield affordable car insurance",
+			"2021 Best In Springfield affordable insurance quotes",
+			"2021 Best In Springfield homeowner insurance",
+			"2021 Best In Springfield insurance quote",
+			"2021 Best In Springfield renters insurance",
+			"2021 Best In Springfield car insurance",
+			"2021 Best In Springfield cheap car insurance",
+			"2021 Best In Springfield car insurance quotes",
+			"2021 Best In Springfield home insurance",
+			"2021 Best In Springfield car for insurance rates",
+			"2021 Best In Springfield car insurance companies",
+			"2021 Best In Springfield auto insurance massachusetts quotes",
+			"2021 Best In Springfield auto insurance online",
+			"2021 Best In Springfield online auto insurance quotes",
+			"2021 Best In Springfield cheap car insurance near me",
+			"2021 Best In Springfield full coverage insurance",
+			"2021 Best In Springfield commercial auto insurance",
+			"2021 Best In Springfield renters insurance cost",
+			"2021 Best In Springfield car insurance companies",
+			"2021 Best In Springfield free car insurance quotes",
+			"2021 Best In Springfield renters insurance coverage",
+			"2021 Best In Springfield car insurance rates",
+			"2021 Best In Springfield free car insurance quotes",
+			"2021 Best In Springfield auto insurance mass",
+			"2021 Best In Springfield auto insurance companies in ma",
+			"2021 Best In Springfield auto insurance springfield ma",
+			"2021 Best In Springfield car insurance free online quote",
+			"2021 Best In Springfield car insurance cheapest rates",
+			"2021 Best In Springfield auto insurance massachusetts quotes ",
+			"2021 Best In Springfield western ma insurance",
+			"2021 Best In Springfield auto quotes",
+			"2021 Best In Springfield car and home insurance quote"],
+ 		"brand": [
+ 			"insured", 
+ 			"deductibles", 
+ 			"home insurance",
+ 			"commercial insurance"],
+ 		"knowsAbout": [
+ 			"a quote for car insurance",
+"affordable car insurances",
+"affordable insurance quotes",
+"auto insurance best",
+"auto insurance cheapest",
+"auto insurance companies",
+"auto insurance companies in ma",
+"auto insurance free quote",
+"auto insurance get a quote",
+"auto insurance in ma",
+"auto insurance massachusetts quotes",
+"auto insurance quote",
+"auto insurance rate",
+"auto insurance springfield ma",
+"auto quote online",
+"best and cheapest auto insurance",
+"best auto insurance online",
+"best auto insurance quote",
+"best auto quotes",
+"best car for insurance rates",
+"best car insurance online",
+"best cheapest car insurance",
+"best insurance quotes",
+"best online auto insurance quotes",
+"best online car insurance companies",
+"car and home insurance companies",
+"car and home insurance quote",
+"car and home insurance quotes online",
+"car auto insurance companies",
+"car insurance car insurance",
+"car insurance cheapest online",
+"car insurance cheapest quote",
+"car insurance cheapest rates",
+"car insurance companies cheapest",
+"car insurance companies massachusetts",
+"car insurance companies quotes"],
+ 		
+ 		"sameAs": [ 
+ 		"https://en.wikipedia.org/wiki/Insurance",
+"https://en.wikipedia.org/wiki/Vehicle_insurance",
+"https://en.wikipedia.org/wiki/Insurance_policy",
+"https://en.wikipedia.org/wiki/General_insurance",
+"https://en.wikipedia.org/wiki/Insurance_in_the_United_States",
+"https://en.wikipedia.org/wiki/Home_insurance"
+ 	]
+ 	}, {
+ 			"@type": "InsuranceAgency",
+	"@id": "https://westernmassautoinsurance.com/#webpage",
+	"additionalType": ["LocalBusiness"],
+	"name": "Western Mass Auto Insurance Inc. Best Auto Insurance",
+       "image": "https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png",
+       "priceRange": "$",
+       "address": "383 Belmont Ave, Springfield, MA 01108, 512 Main St, Springfield, MA 01151",
+       "telephone": " (413) 781-3800, (413) 543-3800",
+	"description": "At Western Mass Auto Insurance Inc. Our agency is dedicated to providing the Western Mass area with affordable auto and home insurance. We have Two Very Convenient Locations in Western Mass, they are located in Indian Orchard and the Forest Park area of Springfield.",
+      "disambiguatingDescription": "Our Indian Orchard staff and Forest Park staff consist of experienced insurance professionals who have been selling and servicing auto insurance in the area for a combined 50+ years. We know Western Mass and we know how to get you affordable pricing, low down payments and the best coverage for your needs.",
+	"mainEntityOfPage": "https://westernmassautoinsurance.com/",
+	"sameAs": [
+		"https://www.facebook.com/westernmassautoinsurance/",
+		"https://www.crunchbase.com/organization/western-mass-auto-insurance",
+		"https://www.linkedin.com/in/kenrosswmai",
+		"https://www.bbb.org/us/ma/indian-orchard/profile/auto-insurance/western-mass-auto-insurance-inc-0261-321880",
+		"https://m.yelp.com/biz/western-mass-auto-insurance-indian-orchard-3",
+		"https://reviews.birdeye.com/western-mass-auto-insurance-148722522142801",
+		"https://www.mapquest.com/us/massachusetts/western-mass-auto-insurance-357398765",
+		"https://www.zoominfo.com/c/western-mass-auto-insurance-inc/405081215",
+		"https://keepthevalleyrolling.com/directory/western-mass-auto-insurance-inc/",
+		"https://www.progressive.com/agent/local-agent/massachusetts/indian-orchard/western-mass-auto-insurance/",
+		"https://maps123.net/en/US/western-mass-auto-insurance-inc-p464888",
+		"http://www.wherezit.com/listing_show.php?lid=2224701",
+		"https://foursquare.com/v/western-mass-auto-insurance/5cf693e98a6f17002cb68d9c/photos",
+		"https://www.localmint.com/us/western-mass-auto-insurance-springfield-hours-1216899",
+		"https://www.instagram.com/westernmassautoinsurance/",
+		"https://www.tuugo.us/Companies/western-mass-auto-insurance/0310006734190#!",
+		"https://agencies.mapfreinsurance.com/westernmassautoinsuranceinc-383belmontave",
+		"https://www.cylex.us.com/company/western-mass-auto-insurance-24976772.html",
+		"https://apps.apple.com/us/app/western-mass-auto-insurance/id1492126492",
+		"https://www.expatriates.com/cls/45638016.html",
+		"https://www.angi.com/companylist/us/ma/indian-orchard/western-mass-auto-insurance-reviews-8404019.htm",
+		"https://play.google.com/store/apps/details?id=com.ni.WesternMassAutoInsurance&hl=ko",
+		"https://www.yellowpages.com/indian-orchard-ma/mip/western-mass-auto-insurance-502801739",
+		"https://local.yahoo.com/info-202087553-ross-ken-western-mass-auto-insurance-springfield",
+		"https://www.b2byellowpages.com/company-information/098607341-western-mass-auto-insurance-inc.html",
+		"https://www.manta.com/c/mx5tdxj/western-mass-auto-insurance",
+		"https://www.finditguide.com/united-states/springfield/business/western-mass-auto-insurance",
+		"http://yellowikis.wikia.com/wiki/Main_Page",
+		"https://www.americaninsurance.com/car-insurance-springfieldma",
+		"https://www.pinterest.com/pin/770819292473406960/",
+		"https://sotellus.com/reviews/western-mass-auto-insurance/2/",
+		"https://www.alignable.com/indian-orchard-ma/western-mass-auto-insurance",
+		"https://western-mass-auto-insurance.business.site/?utm_source=gmb&utm_medium=referral",
+		"https://www.youtube.com/channel/UC9SddmRHQgQMBKpwBx8-Ahg",
+		"https://massachusetts.usacreditsunions.net/",
+		"https://yellow.place/es/western-mass-auto-insurance-1-springfield-ma-usa",
+		"https://springfield-ma.opendi.us/7613225.html",
+		"https://www.statelocalgov.net/best-cheap-car-insurance-companies-springfield-ma.html",
+		"http://www.city-data.com/profiles/91096"
+        ]
+	}, {
+			"@type": "WebSite",
+			    "@id": "https://westernmassautoinsurance.com/#website",
+			    "url": "https://westernmassautoinsurance.com/",
+			    "name": "Western Mass Auto Insurance Inc.",
+			    "alternateName": "Western Mass Auto Insurance Inc. Best Insurance Quotes in MA",
+			    "description": "At Western Mass Auto Insurance Inc., Our agency is dedicated to providing the Western Mass area with affordable auto and home insurance. We have Two Very Convenient Locations in Western Mass, they are located in Indian Orchard and the Forest Park area of Springfield.",
+      "disambiguatingDescription": "Our Indian Orchard staff and Forest Park staff consist of experienced insurance professionals who have been selling and servicing auto insurance in the area for a combined 50+ years. We know Western Mass and we know how to get you affordable pricing, low down payments and the best coverage for your needs.",
+			    "identifier": "https://en.wikipedia.org/wiki/Vehicle_insurance",
+			    "image": "https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png",
+			    "mainEntityOfPage": "https://en.wikipedia.org/wiki/Insurance_policy",
+			    "publisher": {
+                	"@type": "Organization",
+                    "@id": "https://westernmassautoinsurance.com/#organization"
+			    },
+			"inLanguage": "en-US"
+		}, 
+ {
+			"@type": ["WebPage"],
+			"@id": "https://westernmassautoinsurance.com/#webpage",
+			"headline":"auto insurance, insurance company, homeowner insurance, renters insurance",
+			"url": "https://westernmassautoinsurance.com/",
+			"lastReviewed": "2021/07/14",
+			"relatedLink": [
+				"https://www.wikidata.org/wiki/Q43183",
+"https://www.wikidata.org/wiki/Q2143354",
+"https://www.wikidata.org/wiki/Q1068361",
+"https://dbpedia.org/page/Vehicle_insurance",
+"https://dbpedia.org/page/Insurance"
+			],
+			"significantLink": "https://www.investopedia.com/terms/n/nainsurancec.asp",
+			
+			"mainEntityOfPage": "https://content.naic.org/",
+			"sameAs": [
+				"https://www.apci.org/"],
+			"about":[
+				{"@type": "thing", "name": "auto", "sameAs": ["http://en.wikipedia.org/wiki/Car",
+"https://www.google.com/search?q=auto&kgmid=/m/0k4j"]},
+{"@type": "thing", "name": "insurers", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=insurers&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "home insurance", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=home+insurance&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "auto insurance", "sameAs": ["http://en.wikipedia.org/wiki/Vehicle_insurance",
+"https://www.google.com/search?q=auto+insurance&kgmid=/m/02qvly"]},
+{"@type": "thing", "name": "geico", "sameAs": ["http://en.wikipedia.org/wiki/GEICO",
+"https://www.google.com/search?q=geico&kgmid=/m/02r95v"]},
+{"@type": "thing", "name": "premium", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=premium&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "state farm", "sameAs": ["http://en.wikipedia.org/wiki/State_Farm",
+"https://www.google.com/search?q=state+farm&kgmid=/m/03dnbx"]},
+{"@type": "thing", "name": "condo", "sameAs": ["http://en.wikipedia.org/wiki/Condominium",
+"https://www.google.com/search?q=condo&kgmid=/m/020ys5"]},
+{"@type": "thing", "name": "homeowners", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=homeowners&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "springfield", "sameAs": ["http://en.wikipedia.org/wiki/Springfield,_Massachusetts",
+"https://www.google.com/search?q=springfield&kgmid=/m/0mzvm"]},
+{"@type": "thing", "name": "homeowners", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=homeowners&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "insurance", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=insurance&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "massachusetts", "sameAs": ["http://en.wikipedia.org/wiki/Massachusetts",
+"https://www.google.com/search?q=massachusetts&kgmid=/m/05k7sb"]},
+{"@type": "thing", "name": "company", "sameAs": ["http://en.wikipedia.org/wiki/Company",
+"https://www.google.com/search?q=company&kgmid=/m/03bxgrp"]},
+{"@type": "thing", "name": "auto insurance", "sameAs": ["http://en.wikipedia.org/wiki/Vehicle_insurance",
+"https://www.google.com/search?q=auto+insurance&kgmid=/m/02qvly"]},
+{"@type": "thing", "name": "motorcycle", "sameAs": ["http://en.wikipedia.org/wiki/Motorcycle",
+"https://www.google.com/search?q=motorcycle&kgmid=/m/04_sv"]},
+{"@type": "thing", "name": "customer service", "sameAs": ["http://en.wikipedia.org/wiki/Customer_service",
+"https://www.google.com/search?q=customer+service&kgmid=/m/03w5xm"]},
+{"@type": "thing", "name": "commercial truck", "sameAs": ["http://en.wikipedia.org/wiki/Truck_classification",
+"https://www.google.com/search?q=commercial+truck&kgmid=/m/03c8t0t"]},
+{"@type": "thing", "name": "vehicle", "sameAs": ["http://en.wikipedia.org/wiki/Vehicle",
+"https://www.google.com/search?q=vehicle&kgmid=/m/0dd0xv"]}],
+"mentions":
+[{"@type": "thing", "name": "insured", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=insured&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "deductibles", "sameAs": ["http://en.wikipedia.org/wiki/Deductible",
+"https://www.google.com/search?q=deductibles&kgmid=/m/02z8cg"]},
+{"@type": "thing", "name": "homeowners", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=homeowners&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "insurance company", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=insurance+company&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "underwritten", "sameAs": ["http://en.wikipedia.org/wiki/Underwriting",
+"https://www.google.com/search?q=underwritten&kgmid=/m/03qr2t"]},
+{"@type": "thing", "name": "home insurance", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=home+insurance&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "types of insurance", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=types+of+insurance&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "condo insurance", "sameAs": ["http://en.wikipedia.org/wiki/Home_insurance",
+"https://www.google.com/search?q=condo+insurance&kgmid=/m/0313mp"]},
+{"@type": "thing", "name": "insurance", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=insurance&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "policy-holder", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=policy-holder&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "renters insurance", "sameAs": ["http://en.wikipedia.org/wiki/Renters'_insurance",
+"https://www.google.com/search?q=renters+insurance&kgmid=/m/0kvf8mt"]},
+{"@type": "thing", "name": "car insurance", "sameAs": ["http://en.wikipedia.org/wiki/Vehicle_insurance",
+"https://www.google.com/search?q=car+insurance&kgmid=/m/02qvly"]},
+{"@type": "thing", "name": "personal property", "sameAs": ["http://en.wikipedia.org/wiki/Personal_property",
+"https://www.google.com/search?q=personal+property&kgmid=/m/065h7"]},
+{"@type": "thing", "name": "landlord", "sameAs": ["http://en.wikipedia.org/wiki/Landlord",
+"https://www.google.com/search?q=landlord&kgmid=/m/02mx_6"]},
+{"@type": "thing", "name": "premiums", "sameAs": ["http://en.wikipedia.org/wiki/Insurance",
+"https://www.google.com/search?q=premiums&kgmid=/m/03xks"]},
+{"@type": "thing", "name": "renters", "sameAs": ["http://en.wikipedia.org/wiki/Renting",
+"https://www.google.com/search?q=renters&kgmid=/m/01y857"]}]
+		}, {
+			"@type": "BreadcrumbList",
+			"@id": "https://westernmassautoinsurance.com/#breadcrumb",
+				 "numberOfItems": "4",
+				 "description": "At Western Mass Auto Insurance, our aim is to make the local car insurance buying process as smooth and easy as possible for our customers. From our no obligation, free quotes, to our low down payments, to having full registry services – that’s right – we are a one-stop shop for all of your car insurance needs! Get your car insurance and license plates within 15 minutes at either of our two convenient locations! That’s right – no more standing in lines at the Registry!",
+				 "disambiguatingDescription": "We an insure anyone with any situation. Great driving record, bad driving reord, new driver or old driver – we an insure you. And we will get you your best price and lowest down payment available.
+Plus, we know how expensive your first few years of car insurance will be! We have a special New Driver’s Program and have helped hundreds of new Massachusetts drivers get great coverage for an unbeatable price! We can even help with hard to insure cases, such as OUI, missed payments, non payment cancels and those with points on their driving record. Accidents are no problem – we an get you insurance. Our agents are discount specialists that will closely assess your needs and requirements before providing you with your best price. We will perfectly fit your coverage needs and budget. If you’re currently in the market for an affordable auto insurance policy in MA, get in touch with us today.
+",
+				 "mainEntityOfPage": "https://westernmassautoinsurance.com/",
+				  "itemListElement":
+				 [
+				  {
+				   "@type": "ListItem",
+				   "position": 1,
+				   "item":
+				   {
+				    "@id": "https://westernmassautoinsurance.com/auto-insurance-offerings/",
+				    "name": "Auto Insurance"
+				    }
+				  },
+				  {
+				   "@type": "ListItem",
+				  "position": 2,
+				  "item":
+				   {
+				     "@id": "https://westernmassautoinsurance.com/homeowners-insurance/",
+				     "name": "Homeowners Insurance"
+				   }
+				  },
+				  {
+				   "@type": "ListItem",
+				  "position": 3,
+				  "item":
+				   {
+				     "@id": "https://westernmassautoinsurance.com/commercial-vehicle-insurance-massachusetts/",
+				     "name": "Commercial Vehicle Insurance Massachusetts"
+				   }
+				  },
+				  {
+				   "@type": "ListItem",
+				  "position": 4,
+				  "item":
+				   {
+				     "@id": "https://westernmassautoinsurance.com/apartment-renters-insurance/",
+				     "name": "APARTMENT/RENTERS INSURANCE"
+				}
+			}]
+		}, {
+			"@type": "Article",
+       "@id": "https://westernmassautoinsurance.com/#article",
+       "headline": "Massachusetts Auto Insurance, Renters Insurance, Commercial Insurance, Homeowners Insurance",
+       "dateCreated": "2021-09-20",
+       "datePublished": "2020-07-15T12:30:23+00:00",
+       "dateModified": "2020-07-15T12:36:40+00:00",
+       "mainEntityOfPage": "https://westernmassautoinsurance.com/",
+       "commentCount": 0,
+       "alternativeHeadline": "Springfield Car, Renters', Commercial, & Homeowners'Insurance",
+       "author": "Brock Misner", 
+       "award": "Best Insurance Company in Springfield MA",
+       "editor": "The Republican", 
+       "genre": "Insurance Agency",  
+       "wordcount": "800",
+       "publisher": {
+              "@type": "Organization",
+              "@id": "https://westernmassautoinsurance.com/#organization",
+              "name": "Western Mass Auto Insurance Inc. Best Insurance Quote",
+              "logo": {
+                  "@type": "ImageObject",
+                  "@id": "https://westernmassautoinsurance.com//#logo",
+                  "inLanguage": "en-US",
+                  "url": "https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png",
+                  "width": 120,
+                  "height": 120,
+                  "caption": "auto insurance mass"}
+        },
+      "image": {
+        "@type": "ImageObject",
+                "@id": "https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png#primaryimage",
+                "inLanguage": "en-US",
+                "url": "https://secure.gravatar.com/avatar/1d83533e299c379140f9fcc2cb0015cb?s=96&d=mm&r=g",
+                "caption": "home and auto insurance"
+      },
+      "keywords": "auto insurance, home insurance, insurance company, renters insurance, insurance quote, car insurance, car insurance companies, house insurance, motorcycle insurance quotes, car insurance online, best car insurance, homeowner insurance quotes",
+      "potentialAction": {
+            "@type": "CommentAction",
+            "name": "Comment",
+            "target": ["https://westernmassautoinsurance.com/car-insurance-blog/#respond"]
+          },
+       "url": "https://westernmassautoinsurance.com",
+       "description": "At Western Mass Auto Insurance Inc., We are committed to providing customer service which exceeds customer expectations and is superior to that available from competitors – while offering low cost, low down payment Auto, Home and Apartment insurance to all of Western Mass. We know people have busy schedules and budgets can be tight so we have focused our efforts on saving you both time and money! You can get your insurance and license plates all at the same time in just 15 minutes by visiting one of our two convenient locations. We specialize in, Getting You Your License Plates and Insurance in Just 15 Minutes! New and Experienced Drivers – Great Rates, Low Down Payments! Canceled Policies – We Get You Back On the Road! Price Shoppers – We Get You the Best Price We Can! Affordable Business Vehicle Insurance - Quick Quotes! Bundle Home, Apartment and Condo - Big Discounts!",
+       "articleBody": "Get YourFree Quote Now!
+Save Money on Your Auto and Home Insurance Policies Now! Free Quotes!
+Auto
+Home
+Renters
+Commercial
+We Have License Plates!
+Just a 15 Minute Wait! No More Waiting at the Registry!
+Welcome To
+Western Mass Auto Insurance!
+Our agency is dedicated to providing the Western Mass area with affordable auto and home insurance. We have Two Very Convenient Locations in Western Mass, they are located in Indian Orchard and the Forest Park area of Springfield.
+Our Indian Orchard staff and Forest Park staff consist of experienced insurance professionals who have been selling and servicing auto insurance in the area for a combined 50+ years. We know Western Mass and we know how to get you affordable pricing, low down payments and the best coverage for your needs.
+Save Money On Home Insurance!
+Bundle Your Auto and Home together! We have the best Home Insurance rates in Western Mass!
+Insurance Made Easy!
+Everyone is Welcome Here!
+At Western Mass Auto Insurance we are a very established full service insurance agency offering affordable Auto, Home and Commercial Vehicle insurance throughout the Western Mass area.
+First Time Driver Info Click Here
+Usage Based Insurance!
+Use Our MotionSmart App!
+Savings: up to 10% discount on initial enrollment and up to 20% discount at renewal! – Convenience: No plug-in device required, just install the app on your phone and you are good-to-go! Actually pay for how you drive! Save money today!
+Auto Insurance
+Save hundreds of dollars on your Auto Insurance! We work with the top insurance companies to get you your best coverage and lowest down payment available!
+License Plates
+a
+We offer Full Registry Services at both of our convenient location! One Stop Shopping! Car Insurance and License Plates in just 15 minutes! All from the safety of your car!
+Home and Apartment
+Bundle your Auto Insurance with your Home Insurance or Apartment Insurance for extra savings! Let us insure your home. We use only the top quality companies!
+Business Vehicles
+If you have a business and you have Commercial Vehicles, call us today.  We can help you save time and money on your insurance with the coverage’s you need!
+Our Mobile App
+On our Mobile App you can pay your bill, file a claim, view your policy, get roadside service or simply call your agent. All of this right from your mobile phone.
+Instant Home Quote
+Free Home Quote in 1 Minute! Plymouth Rock is one of the top Home, Condo and Apartment Insurance companies in the state.  Start your free quote now!
+All Massachusetts Residents!
+Do You Already have Insurance? We Can Save You Money Right over the Phone!
+We Are Your Local Agent
+Better Than Those Online Companies!
+Insurance and Plates in Just 15 Minutes!
+Curbside RMV Service
+No Waiting Hours (Or Days) at the Registry!
+No Call Centers/High Pressure Sales!
+No Waiting on Hold for 40 minutes or More!
+Local Knowledge, Two Convenient Locations!
+Friendly and Quick Customer Service
+Se Habla Espanol
+Check Out Our Reviews!
+Western Mass
+With thousands of satisfied customers Western Mass Auto Insurance has quickly become the go to for car insurance in all of Western Mass. Contact us today at one of our two locations and experience our great customer service for yourself! Talk soon!
+Indian Orchard
+512 Main St. Indian Orchard, MA. 01151
+(413) 543-3800
+514MainSt@gmail.com
+Forest Park
+383 Belmont Ave. Springfield, MA. 01108
+(413) 781-3800
+383Belmont@gmail.com",
+       "citation": [
+        "https://en.wikipedia.org/wiki/American_Insurance_Association",
+        "https://en.wikipedia.org/wiki/National_Association_of_Insurance_Commissioners"],
+       "disambiguatingDescription": "best home insurance companies"
+		}, {
+			"@type": ["Person"],
+			"address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Springfield",
+        "addressRegion": "Massachusetts",
+        "postalCode": "01151",
+        "streetAddress": "469 Main Street"
+      },
+      "colleague": [
+        "https://www.mass.gov/orgs/division-of-insurance",
+        "https://www.sec.state.ma.us/cis/ciscig/d/d12d17.htm"
+      ],
+      "email": "514MainSt@gmail.com, 383Belmont@gmail.com",
+      "image": "auto-insurance-ma.jpg",
+      "jobTitle": "Insurance Agent",
+      "name": "Ken Ross",
+      "description": "We are staffed by friendly, knowledgeable and experienced representatives ready to assist you in both English and Spanish. Both of our locations are very experienced in dealing with any and all situations concerning car, home and apartment insurance.",
+      "disambiguatingDescription": "We have over 50+ combined years of experience in selling and servicing insurance in the Springfield, Western Mass area. Give us a call today and start saving money!",
+      "alumniOf": "Division of Insurance (DOI) is to monitor the solvency of its licensees, 1000 Washington Street , Suite 810, Boston, MA 02118",
+      "birthPlace": "Springfield, MA",
+      "birthDate": "1988-11-11",
+      "height": "74 inches",
+      "gender": "Male",
+      "memberOf": "Massachusetts commissioner of insurance",
+      "nationality": "American",
+      "award": "Best insurance agent in 2020",
+      "callSign": "INSURANCE-MA",
+      "knowsAbout": [
+            "insurance mass",
+"insurance massachusetts",
+"insurance on the car",
+"insurance online quote",
+"insurance quote",
+"insurance quote massachusetts",
+"western ma insurance",
+"best homeowners insurance companies",
+"cheap car insurance for new drivers",
+"cheapest insurance for new drivers",
+"renters insurance coverage",
+"best car insurance for new drivers",
+"mass insurance",
+"renters insurance for apartments",
+"renters insurance cost",
+"new driver insurance cost",
+"insurance estimates",
+"car renters insurance"],
+      "telephone": "+14135433800, +14137813802",
+      "url": "https://www.google.com/maps/place/Western+Mass+Auto+Insurance+Inc./@42.1558653,-72.4873554,15z/data=!4m5!3m4!1s0x0:0x1b81e4c296accf4d!8m2!3d42.1558929!4d-72.4873472",
+	    "sameAs" : [ 
+      "https://en.wikipedia.org/wiki/Comprehensive_Cover",
+"https://en.wikipedia.org/wiki/Vehicle_insurance_in_the_United_States",
+"https://en.wikipedia.org/wiki/Renters%27_insurance",
+"https://en.wikipedia.org/wiki/Landlords%27_insurance",
+"https://en.wikipedia.org/wiki/Vehicle_insurance",
+"https://en.wikipedia.org/wiki/Commercial_vehicle"]
+		 }]}</script> <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		var stm_wpcfto_ajaxurl = 'https://westernmassautoinsurance.com/wp-admin/admin-ajax.php';
+	</script>
+<style>
+		.vue_is_disabled {
+			display: none;
+		}
+	</style>
+<script type="rocketlazyloadscript">
+		var stm_wpcfto_nonces = {"wpcfto_save_settings":"310229d700","get_image_url":"2701dc615e","wpcfto_upload_file":"f6551efa9c","wpcfto_search_posts":"26026804ec"};
+	</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var ajaxurl = 'https://westernmassautoinsurance.com/wp-admin/admin-ajax.php';
+            var stm_ajax_load_events = '801bbf758b';
+            var stm_ajax_load_portfolio = '6b58c7a9e9';
+            var stm_ajax_add_event_member_sc = '69243bc760';
+            var stm_custom_register = 'd411e25441';
+            var stm_get_prices = 'b3761b6d9f';
+            var stm_get_history = 'b073aeabd2';
+            var consulting_install_plugin = 'efc0501760';
+            var stm_ajax_add_review = '5c7df4a451';
+        </script>
+<style>
+            #wp-admin-bar-consulting_settings img {
+                max-width: 25px;
+                vertical-align: top;
+                position: relative;
+                top: 3px;
+            }
+        </style>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+<meta name="generator" content="Powered by Slider Revolution 6.4.6 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" sizes="32x32" />
+<link rel="icon" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" />
+<meta name="msapplication-TileImage" content="https://westernmassautoinsurance.com/wp-content/uploads/2020/10/cropped-WMAI_fe6362f6cdb3daaf4d6445e6315e99a4-1.png" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<style type="text/css" id="wp-custom-css">
+			.menu-button { 
+background-color:#e99e2d;
+border:1px;
+border-radius:3px;
+-webkit-box-shadow:1px 1px 0px 0px #2f2f2f;
+-moz-box-shadow:1px 1px 0px 0px #2f2f2f;
+box-shadow:1px 1px 0px 0px #2f2f2f;
+}
+.menu-button a,  .menu-button a:hover, .menu-button a:active { 
+color:#fff !important;
+}
+@media screen and (max-width:1024px) {
+.buttonblock a {
+    background: #fff;
+    margin: 10px;
+    width: 42%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    color: #3D928B;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.mobile_header .icon_text.clearfix {
+    display: none !important;
+}
+.home .vc_custom_1617722681515 {
+    display: none;
+}
+ .mobile_header.icon_texts {
+    text-align: center;
+}
+.buttonblock {
+    text-align: center;
+}
+.mobile_header .icon_texts {
+    padding: 20px !important;
+}
+h2.consulting-custom-title {
+    font-size: 28px !important;
+    font-weight: normal;
+}
+.home .vc_general.vc_cta3.vc_cta3-style-flat .vc_cta3-content-header h4 {
+    font-weight: normal;
+}
+}
+/*body styles*/
+.white-txt{color:#fff;}
+.white-txt p{color:#fff;}
+.white-txt a{color:#fff;text-decoration:underline;}
+.white-txt strong{color:#fff;}
+.orange-btn .vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline{background:#e99e2d;}
+.white-txt h1:after, .white-txt h2:after, .white-txt h3:after, .white-txt h4:after, .white-txt h5:after, .white-txt h6:after{background:#fff;}
+.teal-btn .vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline{background:#3c908a;color:#fff!important;}
+.teal-btn .vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-style-outline:hover{background:#506172!important;}		</style>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="post-template-default single single-post postid-4714 single-format-standard consulting site_layout_12  header_style_1 mobile_grid_landscape vc_sidebar_page wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VJVSKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script type="rocketlazyloadscript">
+   function loadWidget() {
+         var targetUrl = 'https://homeowners.plymouthrock.com/consumer/campaign/widget/get/basicbanner?agencyCode=0001N42&agencyPhoneNum=4135433800&utm_campaign=IA_CV_widget&utm_content=BasicBanner';
+         let xhr = new XMLHttpRequest();
+         xhr.open('GET', targetUrl);
+         xhr.onreadystatechange = function()
+            {
+               if (this.readyState === 4) {
+                   document.getElementById('widgetContent').innerHTML = this.responseText;
+                }
+             }
+         xhr.send();  }
+  loadWidget();
+  </script><div id="wrapper">
+<div id="fullpage" class="content_wrapper">
+<header id="header">
+<div class="header_top clearfix">
+<div class="container">
+<div class="header_socials">
+<a target="_blank" href="https://www.facebook.com/westernmassautoinsurance"><i class="fa fa-facebook"></i></a>
+<a target="_blank" href="https://www.instagram.com/westernmassautoinsurance/"><i class="fa fa-linkedin"></i></a>
+</div>
+<div class="logo">
+<a href="https://westernmassautoinsurance.com/" style="margin: 0px 0px 0px 0px"><img width="450" height="81" src="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png" style="width: 307px; height: px; margin-top: Arraypx;" alt="Western Mass" /></a>
+</div>
+<div class="icon_text clearfix">
+<div class="icon"><i class="fa fa-map-marker" style="color:; font-size:px;"></i></div>
+<div class="text">
+383 Belmont Ave.,<br /> Springfield, MA<br>
+<div class="asd"> <i class="fa stm-phone"></i> <a href="tel:4137813800"> (413) 781-3800 </a></div> </div>
+</div>
+<div class="icon_text clearfix">
+<div class="icon"><i class="stm-marker" style="color:; font-size:px;"></i></div>
+<div class="text stm_st_address_1">
+512 Main St.,<br />Indian Orchard, MA <br>
+<div class="asd"> <i class="fa stm-phone"></i> <a href="tel:4135433800"> (413) 543-3800 </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="top_nav">
+<div class="container">
+<div class="top_nav_wrapper clearfix">
+<ul id="menu-new" class="main_menu_nav"><li id="menu-item-7133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7133"><a href="https://westernmassautoinsurance.com/">Home</a></li>
+<li id="menu-item-7134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7134"><a href="/about-western-mass-auto-insurance/">About us</a></li>
+<li id="menu-item-7196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7196"><a href="/western-auto-insurance/">Insurance</a></li>
+<li id="menu-item-7135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7135"><a href="/directions-and-hours/">Directions/Hours</a>
+<ul class="sub-menu">
+<li id="menu-item-7256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7256"><a href="/indian-orchard-office/">Indian Orchard Office</a></li>
+<li id="menu-item-7262" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7262"><a href="https://westernmassautoinsurance.com/springfield-massachusetts-office/">Springfield Office</a></li>
+</ul>
+</li>
+<li id="menu-item-7136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7136"><a href="/client-center/">Client Center</a>
+<ul class="sub-menu">
+<li id="menu-item-9105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9105"><a href="https://customerservice.agentinsure.com/EzlynxCustomerService/western/Account/LogIn">View My Policy</a></li>
+<li id="menu-item-9104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9104"><a href="https://westernmassautoinsurance.com/pay-your-bill-2/">Pay My Bill</a></li>
+<li id="menu-item-9106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9106"><a href="https://westernmassautoinsurance.com/file-a-claim/">File a Claim</a></li>
+<li id="menu-item-9107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9107"><a href="https://westernmassautoinsurance.com/insurance-company-information/">Create Company Account</a></li>
+</ul>
+</li>
+<li id="menu-item-7137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7137"><a href="/reviews/">Our Reviews</a></li>
+<li id="menu-item-7138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7138"><a href="#">Service Areas</a>
+<ul class="sub-menu">
+<li id="menu-item-7441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7441"><a href="https://westernmassautoinsurance.com/ludlow-massachusetts-auto-insurance/">Ludlow Massachusetts</a></li>
+<li id="menu-item-7440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7440"><a href="https://westernmassautoinsurance.com/northampton-massachusetts/">Northampton Massachusetts</a></li>
+<li id="menu-item-7439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7439"><a href="https://westernmassautoinsurance.com/palmer-massachusetts/">Palmer Massachusetts</a></li>
+<li id="menu-item-7438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7438"><a href="https://westernmassautoinsurance.com/south-hadley-massachusetts/">South Hadley Massachusetts</a></li>
+<li id="menu-item-7437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7437"><a href="https://westernmassautoinsurance.com/springfield-massachusetts/">Springfield Massachusetts</a></li>
+<li id="menu-item-7436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7436"><a href="https://westernmassautoinsurance.com/westfield-massachusetts/">Westfield Massachusetts</a></li>
+<li id="menu-item-7435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7435"><a href="https://westernmassautoinsurance.com/west-springfield-massachusetts/">West Springfield Massachusetts</a></li>
+<li id="menu-item-7434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7434"><a href="https://westernmassautoinsurance.com/wilbraham-massachusetts/">Wilbraham Massachusetts</a></li>
+<li id="menu-item-7433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7433"><a href="https://westernmassautoinsurance.com/agawam-auto-insurance/">Agawam Massachusetts</a></li>
+<li id="menu-item-7432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7432"><a href="https://westernmassautoinsurance.com/chicopee-auto-insurance/">Chicopee Massachusetts</a></li>
+<li id="menu-item-7431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7431"><a href="https://westernmassautoinsurance.com/east-longmeadow-auto-insurance/">East Longmeadow Massachusetts</a></li>
+<li id="menu-item-7430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7430"><a href="https://westernmassautoinsurance.com/indian-orchard-auto-insurance/">Indian Orchard Massachusetts</a></li>
+<li id="menu-item-8228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8228"><a href="https://westernmassautoinsurance.com/holyoke-auto-insurance/">Holyoke Massachusetts</a></li>
+<li id="menu-item-7445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7445"><a href="https://westernmassautoinsurance.com/longmeadow/">Longmeadow Massachusetts</a></li>
+</ul>
+</li>
+<li id="menu-item-7139" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7139"><a href="https://westernmassautoinsurance.com/blog/">Blog</a></li>
+<li id="menu-item-8980" class="menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-8980"><a href="https://westernmassautoinsurance.com/auto-insurance-quote-request/">Free Quote</a></li>
+</ul> <div class="icon_text clearfix">
+<div class="icon"><i class="stm-envelope" style="color:; font-size:px;"></i></div>
+<div class="text">
+<strong><a href="sms://+4133442112">413-344-2112 </a></strong>
+<span style="color:white;">Text us</span> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="mobile_header">
+<div class="logo_wrapper clearfix">
+<div class="logo">
+<a href="https://westernmassautoinsurance.com/" style="margin: 0px 0px 0px 0px"><img width="450" height="81" src="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/WMAI.png" style="width: 307px; height: px;" alt="Western Mass" /></a>
+</div>
+<div id="menu_toggle">
+<button></button>
+</div>
+</div>
+<div class="header_info">
+<div class="top_nav_mobile">
+<ul id="menu-new-1" class="main_menu_nav"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7133"><a href="https://westernmassautoinsurance.com/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7134"><a href="/about-western-mass-auto-insurance/">About us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7196"><a href="/western-auto-insurance/">Insurance</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7135"><a href="/directions-and-hours/">Directions/Hours</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7256"><a href="/indian-orchard-office/">Indian Orchard Office</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7262"><a href="https://westernmassautoinsurance.com/springfield-massachusetts-office/">Springfield Office</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7136"><a href="/client-center/">Client Center</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9105"><a href="https://customerservice.agentinsure.com/EzlynxCustomerService/western/Account/LogIn">View My Policy</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9104"><a href="https://westernmassautoinsurance.com/pay-your-bill-2/">Pay My Bill</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9106"><a href="https://westernmassautoinsurance.com/file-a-claim/">File a Claim</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9107"><a href="https://westernmassautoinsurance.com/insurance-company-information/">Create Company Account</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7137"><a href="/reviews/">Our Reviews</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7138"><a href="#">Service Areas</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7441"><a href="https://westernmassautoinsurance.com/ludlow-massachusetts-auto-insurance/">Ludlow Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7440"><a href="https://westernmassautoinsurance.com/northampton-massachusetts/">Northampton Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7439"><a href="https://westernmassautoinsurance.com/palmer-massachusetts/">Palmer Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7438"><a href="https://westernmassautoinsurance.com/south-hadley-massachusetts/">South Hadley Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7437"><a href="https://westernmassautoinsurance.com/springfield-massachusetts/">Springfield Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7436"><a href="https://westernmassautoinsurance.com/westfield-massachusetts/">Westfield Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7435"><a href="https://westernmassautoinsurance.com/west-springfield-massachusetts/">West Springfield Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7434"><a href="https://westernmassautoinsurance.com/wilbraham-massachusetts/">Wilbraham Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7433"><a href="https://westernmassautoinsurance.com/agawam-auto-insurance/">Agawam Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7432"><a href="https://westernmassautoinsurance.com/chicopee-auto-insurance/">Chicopee Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7431"><a href="https://westernmassautoinsurance.com/east-longmeadow-auto-insurance/">East Longmeadow Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7430"><a href="https://westernmassautoinsurance.com/indian-orchard-auto-insurance/">Indian Orchard Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8228"><a href="https://westernmassautoinsurance.com/holyoke-auto-insurance/">Holyoke Massachusetts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7445"><a href="https://westernmassautoinsurance.com/longmeadow/">Longmeadow Massachusetts</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7139"><a href="https://westernmassautoinsurance.com/blog/">Blog</a></li>
+<li class="menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-8980"><a href="https://westernmassautoinsurance.com/auto-insurance-quote-request/">Free Quote</a></li>
+</ul> </div>
+<div class="icon_texts">
+<div class="buttonblock">
+<a href="tel:4135433800">Call</a>
+<a href="/cdn-cgi/l/email-protection#83b6b2b7cee2eaedd0f7c3e4eee2eaefade0ecee">Email</a>
+<a href="sms://+4133442112">Text</a>
+<a href="https://westernmassautoinsurance.com/directions-and-hours">Locations</a>
+</div>
+<div class="icon_text clearfix">
+<div class="icon"><i class="stm-envelope" style="color:; font-size:px;"></i></div>
+<div class="text">
+<strong><a href="sms://+4133442112">413-344-2112 </a></strong>
+<span style="color:white;">Text us</span> </div>
+</div>
+ <div class="icon_text clearfix">
+<div class="icon"><i class="fa fa-map-marker" style="color:; font-size:px;"></i></div>
+<div class="text">
+383 Belmont Ave.,<br /> Springfield, MA<br>
+<div class="asd"> <i class="fa stm-phone"></i> <a href="tel:4137813800"> (413) 781-3800 </a></div> </div>
+</div>
+<div class="icon_text clearfix">
+<div class="icon"><i class="stm-marker" style="color:; font-size:px;"></i></div>
+<div class="text">
+512 Main St.,<br />Indian Orchard, MA <br>
+<div class="asd"> <i class="fa stm-phone"></i> <a href="tel:4135433800"> (413) 543-3800 </a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div id="main">
+<div class="page_title">
+<div class="container">
+<div class="breadcrumbs">
+
+<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to Western Mass." href="https://westernmassautoinsurance.com" class="home">Home</a></span><span><i class="fa fa-angle-right"></i></span><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to news." href="https://westernmassautoinsurance.com/blog/" class="post-root post post-post"><span property="name">news</span></a><meta property="position" content="2"></span><span><i class="fa fa-angle-right"></i></span><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the blog category archives." href="https://westernmassautoinsurance.com/category/blog/" class="taxonomy category"><span property="name">blog</span></a><meta property="position" content="3"></span><span><i class="fa fa-angle-right"></i></span><span property="itemListElement" typeof="ListItem"><span property="name">Why Car Insurance is Necessary Before a Road Trip</span><meta property="position" content="4"></span> </div>
+<h1 class="h2">Why Car Insurance is Necessary Before a Road Trip</h1>
+</div>
+</div>
+<div class="container">
+<div class="content-area">
+<article id="post-4714" class="post-4714 post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-auto-insurance tag-best-price tag-bodily-injury tag-car-insurance tag-car-insurance-policies tag-cheap-car-insurance">
+<div class="entry-content consulting_elementor_wrapper">
+<div class="row"><div class="col-lg-9 col-md-9 col-sm-12 col-xs-12"><div class="col_in __padd-right"> <div class="without_vc">
+<div class="post_details_wr">
+<div class="stm_post_info">
+<div class="stm_post_details clearfix">
+<ul class="clearfix">
+<li class="post_date">
+<i class="fa fa fa-clock-o"></i>
+December 9, 2019 </li>
+<li class="post_by">Posted by: <span>admin</span>
+</li>
+<li class="post_cat">Category: <span>blog</span>
+</li>
+</ul>
+<div class="comments_num">
+<a href="https://westernmassautoinsurance.com/why-car-insurance-is-necessary-before-a-road-trip/#respond"><i class="fa fa-comment-o"></i>No Comments </a>
+</div>
+</div>
+<div class="post_thumbnail">
+<img width="666" height="550" src="https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b11-666x550.png" class="attachment-consulting-image-1110x550-croped size-consulting-image-1110x550-croped wp-post-image" alt="Why Car Insurance is Necessary Before a Road Trip" /> </div>
+</div> </div>
+<div class="wpb_text_column">
+<p>Road trips are exciting, especially when you have family or friends accompanying you. It&#8217;s a chance to spend some quality time with the people you love as you blast and groove to everyone’s favorite songs and take in the breathtaking scenery.</p>
+<p><span id="more-4714"></span></p>
+<p>Preparing for a road trip, on the other hand, isn’t as much fun. You have to look into a number of considerations such as personal safety, vehicle’s condition, accommodation, driving hazards and the least fun of all preparing for the worst scenarios, i.e., an accident.</p>
+<p>As an insurance provider, we want you to take precautionary measures that will minimize the safety risks during your travel; as well as steps that won’t affect you financially, in case of car damage or a crash.</p>
+<p>So, let’s start.</p>
+<h2><strong><b>Take your car to a mechanic</b></strong></h2>
+<p>Unless you’ve recently gotten your car tuned-up, it’s important to take it to the pros and make sure everything is working in perfect condition. Not only is this important for your safety and to keep the car from breaking down in the middle of the night, but it’ll also play a crucial role in determining your insurance coverage.</p>
+<p>Your policy might not qualify you for damages sustained on the road if your vehicle was already in poor shape.</p>
+<p>The mechanic can check for underlying brake problems, tire safety hazards and fluid leakage that may not be apparent to you.</p>
+<h2><strong><b>Fill up the gas tank</b></strong></h2>
+<p>You can’t start a road trip on an empty or half-full tank. Fill up the gas the night before, so that in case you’re stuck in traffic, you won’t run out of gas. Additionally, a full tank is crucial to keeping the debris out of the tanks and prevents the sand and other elements from forming sediments.</p>
+<p>If you’re taking the trip in winters, a full tank will also keep the condensation low, minimizing the risk of frozen fuel lines and blockages.</p>
+<h2><strong><b>Review your insurance policy</b></strong></h2>
+<p>If it’s been a while since you took a look at your auto insurance policy, it’s time to talk to your insurance provider. If you don’t have auto insurance, make sure that you buy a policy before the trip that covers multiple states and learn about state-to-state liability insurance.</p>
+<p><img class="aligncenter wp-image-4716 size-full" src="https://westernmassautoinsurance.com//home/customer/www/westernmassautoinsurance.com/public_html/wp-content/uploads/2019/12/b12.png" alt="Review your insurance policy" width="1012" height="658" srcset="https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b12.png 1012w, https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b12-300x195.png 300w, https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b12-768x499.png 768w, https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b12-900x585.png 900w, https://westernmassautoinsurance.com/wp-content/uploads/2019/12/b12-600x390.png 600w" sizes="(max-width: 1012px) 100vw, 1012px" /></p>
+<p>Safe driving won’t always guarantee you zero accidents. Any number of unforeseeable circumstances can lead to collisions and crashes–even when you’ve taken all precautions. Having <a href="https://westernmassautoinsurance.com/"><u>car </u><u>insurance</u></a> coverage in such a scenario can be a much-needed relief since you don’t have to worry about paying for repairs and losses out of your own pocket.</p>
+<p>At Western Mass Auto Insurance, we offer clients <a href="https://westernmassautoinsurance.com/"><u>cheap car insurance Indian Orchard</u></a> and Springfield, Massachusetts. <a href="https://westernmassautoinsurance.com/indian-orchard-office/"><u>Get in touch with us for more information</u></a>!</p>
+<p>You can also reach us at (413) 543-3800.</p>
+</div>
+<br />
+<br />
+<div class="post_bottom media">
+<div class="tags media-body"><a href="https://westernmassautoinsurance.com/tag/auto-insurance/" rel="tag">auto insurance</a> <a href="https://westernmassautoinsurance.com/tag/best-price/" rel="tag">best price</a> <a href="https://westernmassautoinsurance.com/tag/bodily-injury/" rel="tag">bodily injury</a> <a href="https://westernmassautoinsurance.com/tag/car-insurance/" rel="tag">Car insurance</a> <a href="https://westernmassautoinsurance.com/tag/car-insurance-policies/" rel="tag">car insurance policies</a> <a href="https://westernmassautoinsurance.com/tag/cheap-car-insurance/" rel="tag">cheap car insurance</a></div> </div> </div>
+</div></div> <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"> <style type="text/css" scoped>
+                                .vc_custom_1452662185213{margin-bottom: 40px !important;}                            </style>
+<div class="sidebar-area stm_sidebar">
+<div class="vc_row wpb_row vc_row-fluid vc_custom_1452662185213"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_wp_search wpb_content_element"><aside class="widget widget_search"><form method="get" class="search-form" action="https://westernmassautoinsurance.com/">
+<input type="search" class="form-control" placeholder="Search..." value="" name="s" />
+<button type="submit"><i class="fa fa-search"></i></button>
+</form></aside></div><div class="vc_wp_categories wpb_content_element"><aside class="widget widget_categories"><h5 class="widget_title">categories</h5>
+<ul>
+<li class="cat-item cat-item-104"><a href="https://westernmassautoinsurance.com/category/auto-insurance/">Auto Insurance</a>
+</li>
+<li class="cat-item cat-item-105"><a href="https://westernmassautoinsurance.com/category/blog/">blog</a>
+</li>
+<li class="cat-item cat-item-108"><a href="https://westernmassautoinsurance.com/category/commercial-insurance/">Commercial Vehicle Insurance</a>
+</li>
+<li class="cat-item cat-item-119"><a href="https://westernmassautoinsurance.com/category/driver-info/">Driver Info</a>
+</li>
+<li class="cat-item cat-item-200"><a href="https://westernmassautoinsurance.com/category/home-insurance/">Home Insurance</a>
+</li>
+<li class="cat-item cat-item-109"><a href="https://westernmassautoinsurance.com/category/buy-a-car/">How to Buy a Car</a>
+</li>
+<li class="cat-item cat-item-120"><a href="https://westernmassautoinsurance.com/category/claims/">Insurance Claims</a>
+</li>
+<li class="cat-item cat-item-121"><a href="https://westernmassautoinsurance.com/category/insurance-coverage/">Insurance Coverages</a>
+</li>
+<li class="cat-item cat-item-201"><a href="https://westernmassautoinsurance.com/category/life-insurance/">Life Insurance</a>
+</li>
+<li class="cat-item cat-item-111"><a href="https://westernmassautoinsurance.com/category/miscellaneous/">Miscellaneous</a>
+</li>
+<li class="cat-item cat-item-112"><a href="https://westernmassautoinsurance.com/category/motorcycle-insurance/">Motorcycle Insurance</a>
+</li>
+<li class="cat-item cat-item-130"><a href="https://westernmassautoinsurance.com/category/payment-options/">Payment Options</a>
+</li>
+<li class="cat-item cat-item-175"><a href="https://westernmassautoinsurance.com/category/points-drivers/">Points Drivers</a>
+</li>
+<li class="cat-item cat-item-113"><a href="https://westernmassautoinsurance.com/category/rmv-info/">RMV Info</a>
+</li>
+<li class="cat-item cat-item-114"><a href="https://westernmassautoinsurance.com/category/teen-drivers/">Teen Drivers</a>
+</li>
+<li class="cat-item cat-item-1"><a href="https://westernmassautoinsurance.com/category/uncategorized/">Uncategorized</a>
+</li>
+</ul>
+</aside></div></div></div></div></div>
+</div>
+</div></div> </div>
+</article> 
+</div>
+</div> 
+</div> 
+</div> 
+<footer id="footer" class="footer style_2">
+<div class="widgets_row">
+<div class="container">
+<div class="footer_widgets">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="footer_logo">
+<a href="https://westernmassautoinsurance.com/">
+<img width="450" height="81" src="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/logo1.png" alt="Western Mass" />
+</a>
+</div>
+<div class="footer_text">
+<p>With thousands of satisfied customers Western Mass Auto Insurance has quickly become the "go to" for car insurance in all of Western Mass. Contact us today at one of our two locations and experience our great customer service for yourself! Talk soon!</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<section id="text-2" class="widget widget_text"><h4 class="widget_title no_stripe">Quick Links</h4> <div class="textwidget"><ul id="menu-footer-menu" class="menu submenus-show">
+<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://westernmassautoinsurance.com/car-insurance-and-rmv-links/">Car Insurance &amp; RMV Links</a></li>
+<li><a href="https://westernmassautoinsurance.com/tips-for-buying-used-cars/">Car Buying Tips</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-315"><a href="/covid-19-rmv-and-company-updates/">COVID 19 Updates</a></li>
+<li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-161"><a href="https://westernmassautoinsurance.com/car-insurance-blog/">Insurance Articles</a></li>
+<li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="/privacy-statement/">Privacy Statement</a></li>
+<li id="menu-item-5696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5696"><a href="/ada-compliance/">ADA Compliance</a></li>
+<li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/sitemap/">Sitemap</a></li>
+</ul>
+</div>
+</section> </div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+ <section id="contacts-2" class="widget widget_contacts"><h4 class="widget_title no_stripe">Indian Orchard</h4><ul class="stm_list-duty heading-font"><li class="widget_contacts_address"><div class="icon"><i class="stm-location-2"></i></div><div class="text">512 Main St. Indian Orchard, MA. 01151</div></li><li class="widget_contacts_phone"><div class="icon"><i class="stm-iphone"></i></div><div class="text"> <a href="tel:4135433800"> (413) 543-3800 </a></div></li><li class="widget_contacts_hours"><div class="icon"><i class="stm-stm14_fax"></i></div><div class="text">413-543-3802</div></li><li class="widget_contacts_email"><div class="icon"><i class="stm-email"></i></div><div class="text"><a href="/cdn-cgi/l/email-protection#7441454039151d1a2700341319151d185a171b19"><span class="__cf_email__" data-cfemail="1520242158747c7b4661557278747c793b767a78">[email&#160;protected]</span></a><br /></div></li></ul></section> </div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<section id="contacts-3" class="widget widget_contacts"><h4 class="widget_title no_stripe">Forest Park</h4><ul class="stm_list-duty heading-font"><li class="widget_contacts_address"><div class="icon"><i class="stm-location-2"></i></div><div class="text">383 Belmont Ave. Springfield, MA. 01108</div></li><li class="widget_contacts_phone"><div class="icon"><i class="stm-iphone"></i></div><div class="text"><a href="tel:4137813800"> (413) 781-3800 </a></div></li><li class="widget_contacts_hours"><div class="icon"><i class="stm-stm14_fax"></i></div><div class="text">413-781-3802</div></li><li class="widget_contacts_email"><div class="icon"><i class="stm-email"></i></div><div class="text"><a href="/cdn-cgi/l/email-protection#37040f0475525b5a58594377505a565e5b1954585a"><span class="__cf_email__" data-cfemail="46757e7504232a2b29283206212b272f2a6825292b">[email&#160;protected]</span></a><br /></div></li></ul></section> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="copyright_row">
+<div class="container">
+<div class="copyright_row_wr">
+<div class="copyright">
+Copyright © 2020 Western Mass Auto Insurance . All rights reserved. 512 Main St. Indian Orchard, Ma. 01151 <noscript><img width="25" height="25" src="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/wheelchair.png" alt="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/wheelchair.png" class="transparent"></noscript><img width="25" height="25" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2025%2025%22%3E%3C/svg%3E' data-src="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/wheelchair.png" alt="https://westernmassautoinsurance.com/wp-content/uploads/2019/09/wheelchair.png" class="lazyload transparent"> </div>
+</div>
+</div>
+</div>
+</footer>
+</div> 
+<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/html" id="wpb-modifications"></script><noscript><style>.lazyload{display:none;}</style></noscript><script type="rocketlazyloadscript" data-noptimize="1">window.lazySizesConfig=window.lazySizesConfig||{};window.lazySizesConfig.loadMode=1;</script><script type="rocketlazyloadscript" async data-noptimize="1" src='https://westernmassautoinsurance.com/wp-content/plugins/autoptimize/classes/external/js/lazysizes.min.js?ao_version=2.9.2'></script><link rel='stylesheet' id='js_composer_front-css' href='https://westernmassautoinsurance.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/westernmassautoinsurance.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
+<script type='text/javascript' id='ssbywpos-public-js-js-extra'>
+/* <![CDATA[ */
+var ssbywpos = {"is_mobile":"0","is_rtl":"0","enable_mousewheelsmooth_scroll":"","ssbywpos_scroll_amount":"300","ssbywpos_scroll_speed":"800","enable_gototop_scroll":"1","ssbywpos_gototop_speed":"700"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/smooth-scroll-by-wpos/assets/js/wp-ssbywpos-public.js' id='ssbywpos-public-js-js'></script>
+<script type='text/javascript' id='wpa-toolbar-js-extra'>
+/* <![CDATA[ */
+var wpa = {"location":"body","is_rtl":" ltr","is_right":" right","responsive":"a11y-non-responsive ","contrast":"Toggle High Contrast","grayscale":"Toggle Grayscale","fontsize":"Toggle Font size","enable_grayscale":"false","enable_fontsize":"true","enable_contrast":"true"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/js/wpa-toolbar.js' id='wpa-toolbar-js'></script>
+<script type='text/javascript' id='ui-a11y-js-extra'>
+/* <![CDATA[ */
+var wpa11y = {"path":"https:\/\/westernmassautoinsurance.com\/wp-content\/plugins\/wp-accessibility\/toolbar\/css\/a11y-contrast.css"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/toolbar/js/a11y.js' id='ui-a11y-js'></script>
+<script type='text/javascript' id='longdesc.button-js-extra'>
+/* <![CDATA[ */
+var wparest = {"url":"https:\/\/westernmassautoinsurance.com\/wp-json\/wp\/v2\/media","text":"<span>Long Description<\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/js/longdesc.button.js' id='longdesc.button-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/js/current-menu-item.js' id='current.menu-js'></script>
+<script type='text/javascript' id='wpcf7-redirect-script-js-extra'>
+/* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/westernmassautoinsurance.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wpcf7-redirect/build/js/wpcf7-redirect-frontend-script.js' id='wpcf7-redirect-script-js'></script>
+<script type='text/javascript' id='stm-gdpr-scripts-js-extra'>
+/* <![CDATA[ */
+var stm_gdpr_vars = {"AjaxUrl":"https:\/\/westernmassautoinsurance.com\/wp-admin\/admin-ajax.php","error_prefix":"","success":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/stm-gdpr-compliance/assets/js/scripts.js' id='stm-gdpr-scripts-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/westernmassautoinsurance.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/js/bootstrap.min.js' id='bootstrap-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/js/select2.min.js' id='select2-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/themes/consulting/assets/js/custom.js' id='consulting-custom-js'></script>
+<script type='text/javascript' id='wp-accessibility-js-extra'>
+/* <![CDATA[ */
+var wpa = {"skiplinks":{"enabled":false,"output":""},"target":"1","tabindex":"1","underline":{"enabled":false,"target":"a"},"dir":"ltr","lang":"en-US"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/wp-accessibility/js/wp-accessibility.js' id='wp-accessibility-js'></script>
+<script type='text/javascript' id='ivory-search-scripts-js-extra'>
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js' id='ivory-search-scripts-js'></script>
+<script type='text/javascript' src='https://westernmassautoinsurance.com/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://westernmassautoinsurance.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js' id='wpb_composer_front_js-js'></script>
+<script type="rocketlazyloadscript">(function(){var js,fs,d=document,id="tars-widget-script",b="https://tars-file-upload.s3.amazonaws.com/bulb/";if(!d.getElementById(id)){js=d.createElement("script");js.id=id;js.type="text/javascript";js.src=b+"js/widget.js";fs=d.getElementsByTagName("script")[0];fs.parentNode.insertBefore(js,fs)}})();window.tarsSettings = {"convid":"VkwCBY"};</script><script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://westernmassautoinsurance.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script></body>
+</html>

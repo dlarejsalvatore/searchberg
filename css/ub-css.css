@@ -1,0 +1,6 @@
+#gmb-rq-head {
+  background: url(../img/gmb/gmb-head-bg.png) no-repeat center left;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}

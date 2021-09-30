@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"098c923eed",applicationID:"116210009"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="/facstaff/ergonomics/laboratory/pipettes" />
+<link rel="shortlink" href="/node/638" />
+<link rel="shortcut icon" href="https://uhs.berkeley.edu/profiles/openberkeley/themes/openberkeley_theme_brand/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="twitter:dnt" content="on">
+  <title>Ergonomic Pipettes | University Health Services</title>
+  <link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_TnnMw6Mh72mEvaDujXjSbFOpptbdTbtXwXrVO5d8QpM.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_8XutOtFtUXVmvHNa0lL2436KhnCuczjOTmEcG7L7j7o.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_8ZRrPTc6Kg_Wqb64elHGkXkHyNnnbAOuYQV-Dwb3xaM.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_tZa7lDmimb_rttjpHiaBfhQpG-Gd6vxpmoErct4zP_A.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_OFWfWwE9w6r-mHMqfD2-FQq9YY7Ooz_5cHDGm3San-I.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_O_blS3YV0Qw4vaDm8e2_4XTmzKNr7YUs9Pd4QL_8PiU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_81EreKB4Ffrx5o-vUNZjj3ZYWD1OdbxZpAw5iIonfBQ.css" media="print" />
+<link type="text/css" rel="stylesheet" href="https://uhs.berkeley.edu/sites/default/files/css/css_7a4eMJPMtJAdI_494tGuSKyxQKLfPfj5gajuj6CT4xI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" media="all" />
+<link type="text/css" rel="stylesheet" href="//use.typekit.net/aeg3kye.css" media="all" />
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"openberkeley_theme_brand","theme_token":"ZTa1eBulx7G8ZgRXoFoSQ9dlKBM5mEoujoOaydBZmUw","js":{"public:\/\/js\/openberkeley-widgets-0b70c59b7d4820630153970fdcd7da38.js":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"profiles\/openberkeley\/themes\/openberkeley_theme_base\/assets\/js\/bootstrap-accessibility.js":1,"profiles\/openberkeley\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/drupal-settings-loader.js":1,"profiles\/openberkeley\/libraries\/bootstrap\/js\/bootstrap.min.js":1,"profiles\/openberkeley\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"profiles\/openberkeley\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"profiles\/openberkeley\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"profiles\/openberkeley\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_images\/panopoly-images.js":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_faq\/openberkeley_faq.js":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_portfolio\/openberkeley_portfolio.js":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_theme\/openberkeley_theme.js":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_twitter\/js\/openberkeley-twitter.js":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_wysiwyg_override\/js\/openberkeley-wysiwyg-override.js":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"profiles\/openberkeley\/modules\/contrib\/caption_filter\/js\/caption-filter.js":1,"profiles\/openberkeley\/libraries\/maphilight\/jquery.maphilight.min.js":1,"profiles\/openberkeley\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"profiles\/openberkeley\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"public:\/\/js\/google-analytics-9b012d85ae02e8a7b0faa80cc70ac577.js":1,"profiles\/openberkeley\/modules\/contrib\/extlink\/js\/extlink.js":1,"profiles\/openberkeley\/modules\/contrib\/hide_submit\/js\/hide_submit.js":1,"profiles\/openberkeley\/themes\/radix\/assets\/js\/radix.script.js":1,"profiles\/openberkeley\/themes\/openberkeley_theme_base\/assets\/js\/openberkeley_theme_base.script.js":1,"profiles\/openberkeley\/themes\/openberkeley_theme_base\/assets\/js\/drupal-announce.js":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/js\/openberkeley_theme_brand.script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"profiles\/openberkeley\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/openberkeley\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/openberkeley\/modules\/contrib\/mvpcreator_theme\/css\/mvpcreator-theme.css":1,"modules\/node\/node.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_brand_widgets\/css\/openberkeley-widgets-hero.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_brand_widgets\/css\/openberkeley-widgets-image.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_brand_widgets\/css\/openberkeley-widgets-modal.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_brand_widgets\/css\/openberkeley-widgets-promo.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_brand_widgets\/css\/openberkeley-widgets-thumbnail-list.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_faq\/openberkeley_faq.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_news\/openberkeley_news.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_people\/openberkeley_people.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_portfolio\/openberkeley_portfolio.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_svc_catalog\/openberkeley_svc_catalog.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_theme\/openberkeley-theme.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_search\/openberkeley_top_results\/openberkeley_top_results.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_wysiwyg_override\/css\/openberkeley-wysiwyg-override-list-properties.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_wysiwyg\/panopoly-wysiwyg.css":1,"profiles\/openberkeley\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/openberkeley\/modules\/contrib\/extlink\/css\/extlink.css":1,"profiles\/openberkeley\/modules\/contrib\/views\/css\/views.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_widgets\/openberkeley_widgets.css":1,"profiles\/openberkeley\/modules\/contrib\/caption_filter\/caption-filter.css":1,"profiles\/openberkeley\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/openberkeley\/modules\/contrib\/panels\/css\/panels.css":1,"profiles\/openberkeley\/modules\/contrib\/hide_submit\/css\/hide_submit.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/bootstrap-custom.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_base\/assets\/css\/bootstrap-accessibility.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_base\/assets\/css\/openberkeley_theme_base.style.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/openberkeley_theme_brand.style.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_event.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_event_reg.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_news.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_portfolio.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_privatepages.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_pubs.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_people.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_search.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/brand_openberkeley_faq.css":1,"profiles\/openberkeley\/themes\/openberkeley_theme_brand\/assets\/css\/print.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_theme\/openberkeley-theme-collapsible.css":1,"profiles\/openberkeley\/modules\/openberkeley\/openberkeley_wysiwyg_override\/css\/openberkeley-wysiwyg-override.css":1,"profiles\/openberkeley\/modules\/panopoly\/panopoly_images\/panopoly-images.css":1,"\/\/fonts.googleapis.com\/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800":1,"\/\/use.typekit.net\/aeg3kye.css":1}},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"automatic"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"hide_submit":{"search-form":{"hide_submit_status":true,"hide_submit_method":"disable","hide_submit_css":"hide-submit-disable","hide_submit_abtext":"","hide_submit_atext":"","hide_submit_hide_css":"hide-submit-processing","hide_submit_hide_text":"Processing...","hide_submit_indicator_style":"expand-right","hide_submit_spinner_color":"#000","hide_submit_spinner_lines":12,"hide_submit_hide_fx":0,"hide_submit_reset_time":5000},"search-form--2":{"hide_submit_status":true,"hide_submit_method":"disable","hide_submit_css":"hide-submit-disable","hide_submit_abtext":"","hide_submit_atext":"","hide_submit_hide_css":"hide-submit-processing","hide_submit_hide_text":"Processing...","hide_submit_indicator_style":"expand-right","hide_submit_spinner_color":"#000","hide_submit_spinner_lines":12,"hide_submit_hide_fx":0,"hide_submit_reset_time":5000}},"urlIsAjaxTrusted":{"\/search\/node":true},"extlink":{"extTarget":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extIconPlacement":"append","extSubdomains":0,"extExclude":"(uhs\\.berkeley\\.edu)","extInclude":"","extCssExclude":"map","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)","extUseFontAwesome":false},"openberkeley_theme_base":{"disable_linearizable_tables":false,"file_link_icons":0}}</script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_MGEdWexiZe-ivUOu3QtLhF0P58piEeUIoTXFMrydrrg.js"></script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_CplP3uaSe7aRXQ9aiBD3b56wkeieD2nerD94Kv9mV3k.js"></script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_QRKXWYixVstKn0bB4hSLF-ndEYsynjc1zam3fHOdjI4.js"></script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_PDgnhx8c3WbpQIRnDaZgsvxZBDhxumGNOPPBsCKmuww.js"></script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_E2aSyr_QPxwdnj3pCbt9jFHmSmHv5K-QFo-ZOSul9to.js"></script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-638 node-type-openberkeley-landing-page openberkeley-landing-page region-content panel-layout-radix_webb_hero panel-region-contentheader panel-region-header panel-region-hero panel-region-sidebar no-slogan has-legacy-footer site-name-normal site-name-legacy site-slogan-legacy site-name-option-one" >
+  <div id="skip-link" role="navigation" aria-label="Skip links">
+    <a href="#main" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+      <header id="header" class="header">
+  <div class="container">
+    <div class="navbar navbar-default">
+      <div class="home-branding">
+        <a href="https://www.berkeley.edu" class="home-link">UC Berkeley</a>
+              </div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-header">
+        <div class="navbar-brand">
+                      
+          <div id="site-name-and-slogan">
+                         
+                              <h1 id="site-name">
+                                      <a href="/" rel="home" title="Home">
+                      University Health Services                    </a>
+                                  </h1>
+                           
+          </div>
+        </div>
+      </div> <!-- /.navbar-header -->
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <nav class="collapse navbar-collapse" id="navbar-collapse" aria-label="Site navigation">
+                  <form class="search-form clearfix navbar-form navbar-right" data-form-id="search-form--2" role="search" aria-label="Sitewide search" action="/search/node" method="post" id="search-form--2" accept-charset="UTF-8"><div><div class="container-inline form-inline form-wrapper" id="edit-basic--2"><div class="form-item form-type-textfield form-item-keys form-group">
+  <label class="element-invisible" for="edit-keys--2">Search Terms </label>
+ <input placeholder="Search this site" class="form-control form-control form-text" type="text" id="edit-keys--2" name="keys" value="" size="20" maxlength="255" />
+</div>
+<button type="submit" id="edit-submit--2" name="op" value="Submit Search" class="form-submit btn btn-default btn-primary"><span class="fa fa-search"></span> <span class="button-text">Submit Search</span></button></div><input type="hidden" name="form_build_id" value="form-RiTQrwvYQNe6kHkkoD_SxWuopiwPg-HfniJORHeFjzc" />
+<input type="hidden" name="form_id" value="search_form" />
+</div></form>                <div id="primary-nav">
+                      <ul id="main-menu" class="menu nav navbar-nav">
+              <li class="first leaf menu-link-home"><a href="/home">Home</a></li>
+<li class="expanded menu-fields-menu-link dropdown menu-link-coronavirus-"><a href="/coronavirus-covid-19-information" class="expanded menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Coronavirus <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/covid-testing.jpg?itok=KXG645zk&amp;timestamp=1586993621" width="308" height="205" alt="student getting tested for Covid-19 at the Tang Center" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>UHS is working with campus, local, and state officials on our campus' Coronavirus response. Learn about the COVID-19 tests we offer, get vaccine updates, find mental health support, and more.</p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded menu-fields-menu-link menu-link-overview"><a href="/coronavirus-covid-19-information" class="expanded menu-fields-menu-link" aria-label="Overview of Coronavirus">Overview</a></li>
+<li class="first collapsed menu-link-testing-for-covid-19"><a href="/coronavirus/testing-covid-19">Testing for COVID-19</a></li>
+<li class="leaf menu-link-contact-tracing-and-close-exposures"><a href="/coronavirus/contact-tracing-and-close-exposures" title="Contact Tracing and Close Exposure Information">Contact Tracing and Close Exposures</a></li>
+<li class="collapsed menu-link-vaccines-for-covid-19"><a href="/coronavirus/vaccines-covid-19">Vaccines for COVID-19</a></li>
+<li class="collapsed menu-link-health-information"><a href="/coronavirus/health-information">Health Information</a></li>
+<li class="collapsed menu-link-mental-health-resources"><a href="/coronavirus/student-mental-health">Mental Health Resources</a></li>
+<li class="last collapsed menu-link-faculty--staff-resources"><a href="/coronavirus/faculty-staff-resources">Faculty &amp; Staff Resources</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="expanded menu-fields-menu-link dropdown menu-link-medical-"><a href="/medical" title="" class="expanded menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Medical <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/medical-primarycare2.jpg?itok=qvUQpzMZ&amp;timestamp=1571262723" width="308" height="205" alt="doctor checking student&#039;s mouth with light and tongue presser" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Students can use the medical services at the Tang Center just as they would their regular doctor's office and urgent care center. Our facility is fully accredited, staffed by licensed and/or board-certified physicians, nurse practitioners, physician assistants, a nutritionist, and nurses.</p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded menu-fields-menu-link menu-link-overview"><a href="/medical" title="" class="expanded menu-fields-menu-link" aria-label="Overview of Medical">Overview</a></li>
+<li class="first leaf menu-link-advice-nurse"><a href="/medical/advice-nurse">Advice Nurse</a></li>
+<li class="collapsed menu-link-primary-care"><a href="/medical/primary-care">Primary Care</a></li>
+<li class="collapsed menu-link-urgent-care"><a href="/medical/urgent-care-tang-center-campus">Urgent Care</a></li>
+<li class="collapsed menu-link-pharmacy"><a href="/medical/pharmacy">Pharmacy</a></li>
+<li class="collapsed menu-link-laboratory"><a href="/medical/laboratory">Laboratory</a></li>
+<li class="collapsed menu-link-radiology"><a href="/medical/radiology">Radiology</a></li>
+<li class="leaf menu-link-international-travel-clinic"><a href="/medical/international-travel-clinic">International Travel Clinic</a></li>
+<li class="collapsed menu-link-physical-therapy"><a href="/physical-therapy">Physical Therapy</a></li>
+<li class="collapsed menu-link-specialty-clinic"><a href="/medical/specialty-clinic">Specialty Clinic</a></li>
+<li class="leaf menu-link-social-services"><a href="/socialservices" title="">Social Services</a></li>
+<li class="collapsed menu-link-immunizations"><a href="/medical/immunizations">Immunizations</a></li>
+<li class="collapsed menu-link-health-records"><a href="/medical/health-records">Health Records</a></li>
+<li class="last leaf menu-link-optometry"><a href="/medical/optometry">Optometry</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="expanded menu-fields-menu-link dropdown menu-link-insurance-ship-"><a href="/ship" class="expanded menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Insurance (SHIP) <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/ship_308x205.png?itok=9cq3yYIB&amp;timestamp=1492802757" width="308" height="205" alt="" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>All registered students at the University of California are required to meet the university’s health insurance mandate. Registered UC Berkeley undergraduate and graduate students are automatically enrolled in the Berkeley Student Health Insurance Plan (SHIP) as a way to meet this mandate.</p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded menu-fields-menu-link menu-link-overview"><a href="/ship" class="expanded menu-fields-menu-link" aria-label="Overview of Insurance (SHIP)">Overview</a></li>
+<li class="first leaf menu-link-ship-fees--enrollment"><a href="/insurance/ship-fees-enrollment">SHIP Fees + Enrollment</a></li>
+<li class="collapsed menu-link-ship-benefits"><a href="/insurance-ship/ship-benefits">SHIP Benefits</a></li>
+<li class="collapsed menu-link-how-to-use-ship"><a href="/insurance-ship/how-use-ship">How to use SHIP</a></li>
+<li class="leaf menu-link-ship-faqs"><a href="/insurance-ship/ship-faqs">SHIP FAQs</a></li>
+<li class="collapsed menu-link-waiving-ship"><a href="/insurance-ship/waiving-ship">Waiving SHIP</a></li>
+<li class="collapsed menu-link-insurance-for-dependents"><a href="/insurance-ship/insurance-dependents">Insurance for Dependents</a></li>
+<li class="collapsed menu-link-insurance-after-graduation"><a href="/insurance-ship/insurance-after-graduation">Insurance After Graduation</a></li>
+<li class="leaf menu-link-ship-for-non-registered-students"><a href="/insurance-ship/ship-non-registered-students">SHIP for Non-Registered Students</a></li>
+<li class="leaf menu-link-international-summer-session-students"><a href="/insurance/international-summer-session-students">International Summer Session Students</a></li>
+<li class="leaf menu-link-visiting-scholars--postdocs"><a href="/insurance/information-visiting-scholars-postdocs">Visiting Scholars + Postdocs</a></li>
+<li class="leaf menu-link-ship-resources-for-providers"><a href="/insurance-ship/ship-resources-referral-and-precertification-requests">SHIP Resources for Providers</a></li>
+<li class="last leaf menu-link-meet-the-ship-staff"><a href="/insurance-ship/meet-ship-staff">Meet the SHIP Staff</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="expanded menu-fields-menu-link dropdown menu-link-mental-health-"><a href="/mental-health" class="expanded menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Mental Health <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/caps-session.jpg?itok=E05XJHqV&amp;timestamp=1579200455" width="308" height="205" alt="female student talking during counseling session" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>UHS offers counseling and mental health services to all UC Berkeley students (regardless of insurance plan).<br />Our highly skilled and culturally competent team are here to serve you with a wide range of programs in Counseling and Psychological Services (CAPS) and Social Services.</p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded menu-fields-menu-link menu-link-overview"><a href="/mental-health" class="expanded menu-fields-menu-link" aria-label="Overview of Mental Health">Overview</a></li>
+<li class="first collapsed menu-link-counseling-and-psychological-services-caps"><a href="/caps">Counseling and Psychological Services (CAPS)</a></li>
+<li class="last collapsed menu-link-social-services"><a href="/socialservices">Social Services</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="expanded menu-fields-menu-link dropdown menu-link-health-promotion-"><a href="/hp" class="expanded menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Health Promotion <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/hp_healthworkers.png?itok=gADtHY1D&amp;timestamp=1451339345" width="308" height="205" alt="" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><span>Promoting the health and well-being of Berkeley students through a wide range of educational and outreach activities.</span></p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded menu-fields-menu-link menu-link-overview"><a href="/hp" class="expanded menu-fields-menu-link" aria-label="Overview of Health Promotion">Overview</a></li>
+<li class="first collapsed menu-link-about-health-promotion"><a href="/abouthp">About Health Promotion</a></li>
+<li class="leaf menu-link-services"><a href="/hpservices">Services</a></li>
+<li class="leaf menu-link-health-campaigns"><a href="/campaigns">Health Campaigns</a></li>
+<li class="leaf menu-link-take-a-class-with-us"><a href="/hpclasses">Take a Class with Us</a></li>
+<li class="leaf menu-link-get-involved"><a href="/health-promotion/get-involved">Get Involved</a></li>
+<li class="last leaf menu-link-contact-health-promotion"><a href="/hpcontact">Contact Health Promotion</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="expanded active-trail menu-fields-menu-link dropdown active menu-link-faculty-amp-staff-"><a href="/bewellatwork" title="" class="active-trail expanded active-trail menu-fields-menu-link dropdown-toggle" data-toggle="dropdown" data-target="#">Faculty &amp; Staff <span class="fa fa-caret-down"></span></a><ul class="dropdown-menu"><li class="collapsed active-trail">  <li class="openberkeley-megamenu-wrapper">
+    <div class="entity entity-menu-fields menu-fields-main-menu openberkeley-megamenu clearfix">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 hidden-xs hidden-sm openberkeley-megamenu-content-column">
+            <div class="field field-name-field-featured-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img class="openberkeley-megamenu" src="https://uhs.berkeley.edu/sites/default/files/styles/openberkeley_megamenu/public/bwaw-group.jpg?itok=E_NKrS8q&amp;timestamp=1582653914" width="308" height="205" alt="Be Well at Work Group Photo" /></div></div></div>            <div class="field field-name-field-openberkeley-megamenu-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><span>Be Well at Work Faculty/Staff Health Programs</span><span> improve employee health and well-being, leading to a more engaged and productive workforce.</span></p></div></div></div>          </div>
+          <div class="col-md-5 openberkeley-megamenu-links-column">
+            <ul class="menu nav"><li class="expanded active-trail menu-fields-menu-link active menu-link-overview"><a href="/bewellatwork" title="" class="active-trail expanded active-trail menu-fields-menu-link" aria-label="Overview of Faculty &amp;amp; Staff">Overview</a></li>
+<li class="first collapsed menu-link-disability-management"><a href="/bewellatwork/disability-management">Disability Management</a></li>
+<li class="collapsed menu-link-elder-care"><a href="/bewellatwork/eldercare" title="">Elder Care</a></li>
+<li class="collapsed menu-link-employee-assistance"><a href="/bewellatwork/employee-assistance">Employee Assistance</a></li>
+<li class="collapsed menu-link-ergonomics"><a href="/bewellatwork/ergonomics">Ergonomics</a></li>
+<li class="collapsed menu-link-occupational-health"><a href="/bewellatwork/occhealth">Occupational Health</a></li>
+<li class="collapsed menu-link-wellness"><a href="/wellness">Wellness</a></li>
+<li class="collapsed menu-link-work-life"><a href="/bewellatwork/worklife">Work/Life</a></li>
+<li class="last leaf menu-link-fall-2021-transition-for-faculty--staff"><a href="/faculty-staff/be-well-work-facultystaff-fall-resources">Fall 2021 Transition for Faculty &amp; Staff</a></li>
+</ul>          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</li></ul></li>
+<li class="last leaf menu-link-get-care-at-uhs"><a href="/get-care-uhs">Get Care at UHS!</a></li>
+            </ul>
+                  </div>
+        <div id="secondary-nav">
+          <div class="container">
+                          <h2 class="visible-xs visible-sm">Secondary navigation</h2>
+              <ul id="secondary-menu" class="menu nav navbar-nav navbar-right">
+                <li class="first leaf menu-link-students"><a href="/students" title="">Students</a></li>
+<li class="last leaf menu-link-faculty-staff"><a href="/bewellatwork" title="">Faculty/Staff</a></li>
+
+                                  <li class="leaf menu-link-uc-berkeley">
+                    <a id="quick-links-toggle" class="dropdown-toggle" data-target="#" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                      Quick Links                      <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="quick-links-toggle">
+                      <li id="quick-links">
+                          <div class="region region-quick-links">
+    <div class="block block-menu block--">
+
+        <h2 class="block__title">Quick Links</h2>
+    
+  <div class="block__content">
+    <ul class="menu nav"><li class="first leaf menu-link-hours-"><a href="/hours" title="">Hours </a></li>
+<li class="leaf menu-link-after-hours"><a href="/after-hours" title="">After Hours</a></li>
+<li class="leaf menu-link-schedule-an-appointment"><a href="/medical/appointments" title="">Schedule an Appointment</a></li>
+<li class="leaf menu-link-emergency-crisis"><a href="/emergency" title="">Emergency/Crisis</a></li>
+<li class="leaf menu-link-advice-nurse-"><a href="https://uhs.berkeley.edu/medical/advice-nurse" title="If you have a medical question, need home-care advice or are unsure about which services are best for you, speak with the Advice Nurse from 8am-4:30pm, Monday-Friday by calling (510) 643-7197 or send a secure message. " rel="noreferrer">Advice Nurse </a></li>
+<li class="leaf menu-link-etang-patient-portal"><a href="https://etang.berkeley.edu" title="" rel="noreferrer">eTang Patient Portal</a></li>
+<li class="leaf menu-link-health-topics"><a href="/health-topics" title="">Health Topics</a></li>
+<li class="leaf menu-link-patient-handouts"><a href="/medical/patient-handouts" title="">Patient Handouts</a></li>
+<li class="leaf menu-link-sample-fees"><a href="/medical/sample-fees" title="">Sample Fees</a></li>
+<li class="leaf menu-link-meet-the-staff"><a href="/medical/meet-medical-staff" title="">Meet the Staff</a></li>
+<li class="last leaf menu-link-health-records"><a href="/medical/health-records" title="">Health Records</a></li>
+</ul>  </div>
+</div>
+  </div>
+                      </li>
+                    </ul>
+                  </li>
+                              </ul>
+                      </div>
+        </div>
+      </nav><!-- /.navbar-collapse -->
+    </div><!-- /.navbar -->
+  </div> <!-- /.container -->
+</header>
+
+<div id="main-wrapper" class="main-wrapper ">
+  <div id="pre-content" class="container" role="navigation" aria-label="Breadcrumbs">
+    <div class="row">
+      <div class="col-md-12">
+              </div>
+    </div>
+  </div> <!-- /#pre-content -->
+  <div id="main" role="main" tabIndex="-1">
+    <div id="title-pre-content" class="container">
+      <div class="row">
+        <div class="col-md-12">
+                  <div id="page-header">
+                                        </div>
+        </div>
+      </div>
+    </div> <!-- /#title-pre-content -->
+        <div id="main-content" class="clearfix">
+          <div id="content" class="">
+        <div class="main">
+          <div id="main-inner">
+              <div class="region region-content">
+    
+<div class="panel-display webb clearfix radix-webb-hero mvpcreator-theme-full-width" >
+
+    <div class="mvpcreator-theme-container-full-width">
+      <div class="row">
+      <div class="col-sm-12 radix-layouts-hero panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-fieldable-panels-pane pane-uuid-df8e7d99-1168-4901-b8d5-fc545b9178dc pane-bundle-openberkeley-widgets-band clearfix"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="openberkeley-widgets-band fieldable-panels-pane openberkeley-widgets-color-scheme-web-soybean">
+    <div class="openberkeley-widgets-label">
+    <div class="openberkeley-widgets-label-inner container">
+      <h2>Faculty/Staff Ergonomics</h2>
+    </div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  <div class="container">
+      <div class="row">
+      <div class="col-sm-12 radix-layouts-header panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-fieldable-panels-pane pane-uuid-6f12ecb4-4e58-4816-a9d3-894cdbca5536 pane-bundle-text clearfix"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="fieldable-panels-pane">
+    <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><a href="https://uhs.berkeley.edu/bewellatwork"><img alt="Be Well at Work home" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/bewellatwork.png?itok=hkAzEC8O&amp;timestamp=1457136764"></a><a href="https://uhs.berkeley.edu/bewellatwork/disability-management"><img alt="disability management services" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/dms.png?itok=yX7rg-ZR&amp;timestamp=1454543339"></a><a href="https://uhs.berkeley.edu/bewellatwork/employee-assistance"><img alt="employee assistance" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/care.png?itok=ajoJ3Cab&amp;timestamp=1455652408"></a><a href="https://uhs.berkeley.edu/bewellatwork/eldercare"><img alt="elder care" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/eldercare.png?itok=rJVLhWtl&amp;timestamp=1454543382"></a><a href="https://uhs.berkeley.edu/bewellatwork/ergonomics"><img alt="ergonomics" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/fsmenu-ergo-highlighted.png?itok=mqs2_tbT&amp;timestamp=1455655594"></a><a href="https://uhs.berkeley.edu/bewellatwork/occhealth"><img alt="occupational health" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/occhealth.png?itok=AA2jfjs5&amp;timestamp=1454543466"></a><a href="https://uhs.berkeley.edu/wellness"><img alt="wellness" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/wellness.png?itok=hRA0Hyul&amp;timestamp=1454543532"></a><a href="https://uhs.berkeley.edu/bewellatwork/worklife"><img alt="work life" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/worklife.png?itok=aERHxXzJ&amp;timestamp=1454543563"></a></p></div></div></div></div>
+  </div>
+
+  
+  </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 radix-layouts-sidebar panel-panel">
+        <div class="panel-panel-inner">
+          <nav class="panel-pane pane-menu-tree pane-main-menu"   aria-label="Local navigation">
+  
+      
+  
+  <div class="pane-content">
+    <div class="menu-block-wrapper menu-block-ctools-main-menu-1 menu-name-main-menu parent-mlid-1571 menu-level-1">
+  <ul class="menu nav nav-pills nav-stacked"><li class="first leaf menu-mlid-3837 menu-link-about-ergonomics"><a href="/facstaff/ergonomics/about-ergonomics">About Ergonomics</a></li>
+<li class="collapsed menu-mlid-3831 menu-link-computer-ergonomics"><a href="/facstaff/ergonomics/computer-ergonomics">Computer Ergonomics</a></li>
+<li class="leaf menu-mlid-3832 menu-link-matching-funds"><a href="/facstaff/ergonomics/matching-funds">Matching Funds</a></li>
+<li class="leaf menu-mlid-3834 menu-link-pre-approved-product-list"><a href="/facstaff/ergonomics/pre-approved-product-list">Pre-Approved Product List</a></li>
+<li class="leaf menu-mlid-5611 menu-link-department-computer-workstation-evaluators"><a href="/facstaff/ergonomics/evaluators" title="">Department Computer Workstation Evaluators</a></li>
+<li class="leaf menu-mlid-3835 menu-link-preventing-back-injuries"><a href="/facstaff/ergonomics/back-injuries">Preventing Back Injuries</a></li>
+<li class="expanded active-trail menu-mlid-36374 menu-fields-menu-link active menu-link-laboratory-ergonomics"><a href="/facstaff/ergonomics/laboratory" class="active-trail expanded active-trail menu-mlid-36374 menu-fields-menu-link">Laboratory Ergonomics<span class="caret"></span></a><ul class="menu nav nav-pills nav-stacked"><li class="first last leaf active-trail active menu-mlid-38693 active active menu-link-ergonomic-pipettes"><a href="/facstaff/ergonomics/laboratory/pipettes" class="active-trail active" aria-current="page">Ergonomic Pipettes</a></li>
+</ul></li>
+<li class="leaf menu-mlid-3833 menu-link-classes--workshops"><a href="/facstaff/ergonomics/classes-workshops">Classes &amp; Workshops</a></li>
+<li class="leaf menu-mlid-3836 menu-link-design-guidelines"><a href="/facstaff/ergonomics/design-guidelines">Design Guidelines</a></li>
+<li class="last collapsed menu-mlid-3890 menu-link-managers-and-supervisors"><a href="/facstaff/ergonomics/managers-and-supervisors">Managers and Supervisors</a></li>
+</ul></div>
+  </div>
+
+  
+  </nav>
+        </div>
+      </div>
+      <div class="col-sm-8 panel-panel">
+        <div class="row">
+          <div class="col-sm-12 radix-layouts-contentheader panel-panel">
+            <div class="panel-panel-inner">
+              <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-987cddd1-6912-495e-879c-b1b806d39e17 pane-bundle-text clearfix"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="fieldable-panels-pane">
+    <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><h3>Ergonomic Pipettes</h3></div></div></div></div>
+  </div>
+
+  
+  </div>
+<div class="panel-pane pane-fieldable-panels-pane pane-vuuid-b00ebefe-82b7-4740-a64f-46008d25f010 pane-bundle-text clearfix"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="fieldable-panels-pane">
+    <div class="field field-name-field-basic-text-text field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><h4><strong>Ergonomic pipettes differ from traditional manual pipettes in that the design offers a way to reduce the force required to perform the pipetting task.</strong></h4>
+<p>For example,</p>
+<ul>
+<li>a lightweight pipette makes it easier to hold;</li>
+<li>a finger hook lets you rest your hand and use a lighter grip;</li>
+<li>a magnetic latch holds the plunger down reducing the need to exert continued thumb pressure;</li>
+<li>a multi-channel reduces repetition and</li>
+<li>an electronic pipette eliminates most of the pipetting forces altogether.</li>
+</ul>
+<p>In addition to these features, there are new designs which drastically reduce dispensing and ejection tip forces.</p>
+<p><span>There are a variety of </span>ergonomic pipettes<span> available. Sales representatives for the different manufacturers can provide samples for you to try. This can help you decide if an ergonomic pipette is applicable to your needs. Contact your Principal Investigator to find out what your laboratory’s policy is for purchasing and using different pipettes. Keep in mind that purchasing a different pipette will usually require purchasing different tips.</span></p>
+<hr>
+<p></p>
+<h4><span>Ergonomic Pipettes</span></h4>
+<table>
+<tbody>
+<tr>
+<td width="31%"><strong>Ergonomic Solution</strong></td>
+<td width="46%"><strong>Features</strong></td>
+<td><strong>Procurement</strong></td>
+</tr>
+<tr>
+<td width="31%">
+<p><img alt="Rainin Pipet Lite LTS (Manual) Single Channel " src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/armsupportsandpadding_clip_image002.jpg?itok=CUzF5omJ&amp;timestamp=1488504573"> <br>Rainin Pipet Lite LTS (Manual)<br>Single Channel</p>
+</td>
+<td width="46%">
+<p>Pipet Lite reduces ejection forces by 70%<br>Magnetic assist helps locate and hold zero position for improved results<br>LTS® LiteTouch Tip Ejection for ultra light tip ejection Reduces your risk of RSIs. Uses LTS® tips only</p>
+</td>
+<td>
+<p>BearBuy (SciQuest)</p>
+<p><a href="https://blu.berkeley.edu/psp/blupd90/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="noreferrer">Login to Blu</a></p>
+<p>Click “Finance” Tab<br>Click “Fisher UCOP”<br>Search: pipet, rainin lite lts</p>
+</td>
+</tr>
+<tr>
+<td width="31%">
+<p><img alt="Thermo Finnpipette Novus Single Channel (Electronic)" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/armsupportsandpadding_clip_image004.jpg?itok=c9yHooOE&amp;timestamp=1488504617"> <br>Thermo Finnpipette Novus<br>Single Channel<br>(Electronic)</p>
+</td>
+<td width="46%">
+<p>Lightweight electronic pipette.<br>Bright and clear graphical backlit display.<br>Adjust the finger rest, with over 60° of movement, to fit your hand exactly. <br>Ten different pipetting functions and nine pipetting speeds to choose from.<br>Lightweight, long life battery can be fully recharged in only one hour.</p>
+</td>
+<td>
+<p>BearBuy (SciQuest)</p>
+<p><a href="https://blu.berkeley.edu/psp/blupd90/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="noreferrer">Login to Blu</a></p>
+<p>Click “Finance” Tab<br>Click “Fisher UCOP”<br>Search: pipet, thermo finnpipette novus</p>
+</td>
+</tr>
+<tr>
+<td width="31%">
+<p><img alt="Eppendorf Research Pipette Single and Multi-channel (Manual)" src="https://uhs.berkeley.edu/sites/default/files/styles/panopoly_image_original/public/armsupportsandpadding_clip_image006.jpg?itok=HbsAWEmL&amp;timestamp=1488504647"><br>Eppendorf Research Pipette<br>Single and Multi-channel<br>(Manual)</p>
+</td>
+<td width="46%">
+<p>Separate tip ejection (2 button operation)<br>Reduced operating forces<br>Four figure volume display is magnified for improved visibility<br>Autoclavable lower section<br>Single handed operation</p>
+</td>
+<td>
+<p>BearBuy (SciQuest)</p>
+<p><a href="https://blu.berkeley.edu/psp/blupd90/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="noreferrer">Login to Blu</a></p>
+<p>Click “Finance” Tab<br>Click “VWR UCOP”<br>Search: pipet, eppendorf research</p>
+</td>
+</tr>
+<tr>
+<td width="31%">
+<p><img alt="Biohit mLINE (Single and Multi-channel)" src="https://uhs.berkeley.edu/sites/default/files/styles/width_100/public/armsupportsandpadding_clip_image008.jpg?itok=LZSUfvYu&amp;timestamp=1488504676"><br>Biohit mLINE<br>(Single and Multi-channel)</p>
+</td>
+<td width="46%">
+<p><em>Biohit mLINE is light weight and has a short length Plunger depression and tip ejection forces are low</em><br>Volume locking button <br>Patented Optiload tip loading mechanism for perfect tip sealing and effortless tip ejection<br>Clear and easy-to-read display with big numbers and small increments<br>Volume range colour-coding for easy pipette selection and 5 colour-coding caps</p>
+</td>
+<td>
+<p>BearBuy (SciQuest)</p>
+<p><a href="https://blu.berkeley.edu/psp/blupd90/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="noreferrer">Login to Blu</a></p>
+<p>Click “Finance” Tab<br>Click “VWR UCOP”<br>Search: pipet, biohit mLine</p>
+</td>
+</tr>
+<tr>
+<td width="31%">
+<p><img alt="VistaLab Ovation Manual and Electronic Single and Multiple Channel Pipettes" src="https://uhs.berkeley.edu/sites/default/files/styles/width_100/public/armsupportsandpadding_clip_image010.jpg?itok=oCWKOTvh&amp;timestamp=1488504704"><br>VistaLab Ovation<br>Manual and Electronic Single and Multiple Channel Pipettes</p>
+<p> </p>
+</td>
+<td width="46%">
+<p>Unique design of Vistalab Ovation relaxes the shoulder and upper arm and minimizes forearm and wrist rotations<br>Works best with low profile containers<br>Low-force, form-fitting plunger manually controls aspiration and dispensing speeds with minimal effort<br>Light tip ejection force<br>Adjustable finger hook <br>Disposable battery</p>
+</td>
+<td>
+<p>BearBuy (SciQuest)</p>
+<p><a href="https://blu.berkeley.edu/psp/blupd90/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST" rel="noreferrer">Login to Blu</a></p>
+<p>Click “Finance” Tab<br>Click “VWR UCOP”<br>Search: pipet, ovation</p>
+</td>
+</tr>
+</tbody>
+</table></div></div></div></div>
+  </div>
+
+  
+  </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 radix-layouts-contentcolumn1 panel-panel">
+            <div class="panel-panel-inner">
+                          </div>
+          </div>
+          <div class="col-sm-6 radix-layouts-contentcolumn2 panel-panel">
+            <div class="panel-panel-inner">
+                          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.webb -->
+  </div>
+          </div>
+        </div> <!-- /.main -->
+      </div> <!-- /#content -->
+                </div> <!-- /#main-content -->
+  </div> <!-- role main -->
+</div> <!-- /#main-wrapper -->
+
+<footer id="footer" class="footer">
+    <div id="footer-main">
+    <div class="container">
+              <div id="footer-legacy-group" class="row footer-legacy">
+          <div class="col-md-3">
+              <div class="region region-footer-first">
+    <div class="block block-block block--about">
+
+        <h2 class="block__title">About</h2>
+    
+  <div class="block__content">
+    <ul class="openberkeley-list-unbullet">
+<li><a href="https://uhs.berkeley.edu/about">About Us</a></li>
+<li><a href="https://uhs.berkeley.edu/contact-us">Contact UHS</a></li>
+<li><a href="https://uhs.berkeley.edu/directions">Directions</a></li>
+<li><a href="https://uhs.berkeley.edu/give">Give to Tang</a></li>
+<li><a href="https://uhs.berkeley.edu/hours">Hours</a></li>
+<li><a href="https://uhs.berkeley.edu/join-our-team">Join Our Team</a></li>
+<li><a href="https://uhs.berkeley.edu/meet-the-staff">Meet the UHS Staff</a></li>
+<li><a href="https://uhs.berkeley.edu/privacy-practices">Privacy Practices</a></li>
+<li><a href="https://www.youtube.com/watch?v=l9nCLjksLnA" rel="noreferrer">Tang 101 Video</a></li>
+</ul>  </div>
+</div>
+  </div>
+          </div>
+          <div class="col-md-3">
+              <div class="region region-footer-second">
+    <div class="block block-block block--contact-us">
+
+        <h2 class="block__title">Contact Us</h2>
+    
+  <div class="block__content">
+    <ul class="openberkeley-list-unbullet">
+<li>2222 Bancroft Way<br> University of California<br>
+<p>Berkeley, CA 94720-4300</p>
+</li>
+<li>Phone: (510) 642-2000</li>
+<li>
+<p><a href="mailto:telltang@berkeley.edu" rel="noreferrer">Email: telltang@berkeley.edu</a></p>
+</li>
+<li>
+<p><a href="https://etang.berkeley.edu" rel="noreferrer">eTang secure messaging</a></p>
+</li>
+<li><a href="https://uhs.berkeley.edu/hours">Hours of Operation</a></li>
+</ul>  </div>
+</div>
+  </div>
+          </div>
+          <div class="col-md-3">
+              <div class="region region-footer-third">
+    <div class="block block-block block--especially-for">
+
+        <h2 class="block__title">Especially for</h2>
+    
+  <div class="block__content">
+    <ul class="openberkeley-list-unbullet">
+<li><a href="https://uhs.berkeley.edu/students">Students</a></li>
+<li><a href="https://uhs.berkeley.edu/bewellatwork">Faculty/Staff</a></li>
+<li><a href="https://uhs.berkeley.edu/apiconnect">API Students</a></li>
+<li><a href="https://uhs.berkeley.edu/blackhealthmatters">Black Students</a></li>
+<li><a href="https://uhs.berkeley.edu/international">International Students</a></li>
+<li><a href="https://uhs.berkeley.edu/pride">LGBTQ Students</a></li>
+<li><a href="https://uhs.berkeley.edu/muslimstudents">Muslim Students</a></li>
+<li><a href="https://uhs.berkeley.edu/parents-community">Parents and Community</a></li>
+<li><a href="https://uhs.berkeley.edu/south-asian-southwest-asian-and-north-african-sswana-students">SSWANA Students</a></li>
+<li><a href="https://uhs.berkeley.edu/students-disabilities">Students with Disabilities</a></li>
+<li><a href="https://uhs.berkeley.edu/insurance/information-visiting-scholars-postdocs">Visiting Scholars and Postdocs</a></li>
+<li><a href="https://uhs.berkeley.edu/medical/primary-care/womens-health" rel="noreferrer">Women's* health</a></li>
+<li><a href="https://uhs.berkeley.edu/undocumented-students" rel="noreferrer">Undocumented Students</a></li>
+</ul>  </div>
+</div>
+  </div>
+          </div>
+          <div class="col-md-3">
+              <div class="region region-footer-fourth">
+    <div class="block block-block block--university-of-california-berkeley">
+
+        <h2 class="block__title">University of California, Berkeley</h2>
+    
+  <div class="block__content">
+    <ul class="openberkeley-list-unbullet">
+<li><a href="http://www.berkeley.edu" rel="noreferrer">Berkeley Main Page</a></li>
+<li><a href="http://www.berkeley.edu/admin/org.shtml" rel="noreferrer">Campus Administration</a></li>
+<li><a href="http://news.berkeley.edu/" rel="noreferrer">Berkeley News</a></li>
+<li><a href="http://campaign.berkeley.edu" rel="noreferrer">The Campaign for Berkeley</a></li>
+<li><a href="http://www.berkeley.edu/visit/" rel="noreferrer">Visiting Berkeley</a></li>
+<li><a href="http://events.berkeley.edu" rel="noreferrer">Campus Events</a></li>
+</ul>  </div>
+</div>
+  </div>
+          </div>
+        </div>
+
+                  <div id="footer-legacy-single" class="row footer-legacy">
+            <div class="col-md-12">
+                <div class="region region-footer">
+    <div class="block block-menu block-- pull-left">
+
+      
+  <div class="block__content">
+    <ul class="nav nav-pills"><li class="first last leaf menu-link-home"><a href="/home">Home</a></li>
+</ul>  </div>
+</div>
+  </div>
+
+                              <div id="social-links">
+                  <div class="item-list"><h3>Follow us:</h3><ul><li class="first"><a href="https://www.facebook.com/bewellcal" title="Facebook" rel="noreferrer"><span class="fa fa-facebook"><span class="element-invisible">Facebook</span></span></a></li>
+<li><a href="https://twitter.com/tangcentercal" title="Twitter" rel="noreferrer"><span class="fa fa-twitter"><span class="element-invisible">Twitter</span></span></a></li>
+<li><a href="https://www.youtube.com/c/UniversityHealthServicesTangCenterBerkeley/featured" title="YouTube" rel="noreferrer"><span class="fa fa-youtube-play"><span class="element-invisible">YouTube</span></span></a></li>
+<li class="last"><a href="https://www.instagram.com/bewellcal" title="Instagram" rel="noreferrer"><span class="fa fa-instagram"><span class="element-invisible">Instagram</span></span></a></li>
+</ul></div>                </div>
+                          </div>
+          </div>
+                  </div>
+  </div>
+  <div id="footer-bottom">
+    <div class="container">
+      <div class="row">
+          <div class="region region-footer-bottom">
+    <div class="block block-panels-mini block--">
+
+      
+  <div class="block__content">
+    
+<div class="panel-display boxton clearfix radix-boxton" id="mini-panel-openberkeley_chat_swellbox">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 radix-layouts-content panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-openberkeley-simple-embed pane-swellbox-chat openberkeley-theme-subtle-header-style"  >
+  
+      
+  
+  <div class="pane-content">
+    <!--[start] Chatbot Plugin-->
+<div class="sb-bot" bot-key="UCBUHS" data-inline="false"></div>
+<!--[end] Chatbot Plugin-->  </div>
+
+  
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.boxton -->
+  </div>
+</div>
+  </div>
+      </div>
+      <div class="row">
+                  <div class="col-md-4">
+                          <a href="http://www.berkeley.edu" rel="external" id="footer-logo">
+                <img src="/profiles/openberkeley/themes/openberkeley_theme_brand/assets/images/logo-ucberkeley-white.png" alt="University of California Berkeley" />
+              </a>
+                      </div>
+          <div class="col-md-8">
+                          <p><small id="openberkeley"><a href="https://open.berkeley.edu">Powered by Open Berkeley</a></small></p>
+              <p><small id="accessibility-info"><a href="https://dac.berkeley.edu/web-accessibility">Accessibility<span class="element-invisible"> Statement</span></a></small></p>
+              <p><small id="nondiscrimination"><a href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">Nondiscrimination<span class="element-invisible"> Policy Statement</span></a></small></p>
+              <p><small id="privacy-statement"><a href="https://open.berkeley.edu/privacy-statement">Privacy<span class="element-invisible"> Statement</span></a></small></p>
+                                      <p><small class="copyright">Copyright © 2021 UC Regents; all rights reserved
+</small></p>
+                        <p><small class="back-to-top"><a href="#skip-link">Back to Top</a></small></p>
+          </div>
+              </div>
+    </div>
+  </div>
+</footer>
+  <script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_PATgqMDvTLL4lRhuJhCpxWM8Be-6nZUSuTX_Rj3hKLE.js"></script>
+<script type="text/javascript" src="https://uhs.berkeley.edu/sites/default/files/js/js_BnghMoTsYzbvFh28pOWIxbOrnW6_ee6cy7I8x8Fm82A.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"098c923eed","applicationID":"116210009","transactionName":"b1wDNUJRD0sAAEZQXVYWNBNZH05RDwdXQRxIURE=","queueTime":0,"applicationTime":19,"atts":"QxsAQwpLHEU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,2945 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Foursquare - Independent Location Data Platform</title>
+
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-WLFDSR8"></script>
+
+    <link rel="preconnect" href="https://images.ctfassets.net">
+    <link rel="dns-prefetch" href="https://images.ctfassets.net">
+    <link rel="preconnect" href="https://cdn.cookielaw.org">
+    <link rel="dns-prefetch" href="https://cdn.cookielaw.org">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <link rel="dns-prefetch" href="https://www.facebook.com">
+    <link rel="preconnect" href="https://script.hotjar.com">
+    <link rel="dns-prefetch" href="https://script.hotjar.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="preconnect" href="https://app-ab42.marketo.com">
+    <link rel="dns-prefetch" href="https://app-ab42.marketo.com">
+    <link rel="preconnect" href="https://munchkin.marketo.com">
+    <link rel="dns-prefetch" href="https://munchkin.marketo.com">
+
+    <!-- metadata -->
+    <meta name="description" content="Foursquare is the most trusted, independent location data platform for understanding how people move through the real world.">
+    <meta name="keywords" content="location data platform, location API">
+    
+    
+    
+
+    <!-- social -->
+    <meta property="og:title" content="Foursquare">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://foursquare.com/">
+    <meta property="og:site_name" content="Foursquare">
+    <meta property="og:description" content="Foursquare is the most trusted, independent location data platform for understanding how people move through the real world.">
+    <meta property="og:image" content="https://images.ctfassets.net/exg8oyvb0wfw/6YGSNm9Fz3m8jSkV5c3fIz/7274cc9f7b03f83df6da513c454773f2/FSQ_social_share_image.gif?q=75">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Foursquare">
+    <meta name="twitter:site" content="@foursquare">
+    
+
+    <link rel="alternate" type="application/atom+xml" href="https://foursquare.com/feed.xml" />
+
+    <!-- OneTrust Cookies Consent Notice start for foursquare.com -->
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="e15ad9c7-fa45-4538-987f-492b260b2805" ></script>
+    <script type="text/javascript">
+    function OptanonWrapper() {
+        var ot_cookie_setting_open, ot_cookie_setting_close, index;
+        ot_cookie_setting_open = document.getElementsByClassName('ot-floating-button__open');
+        for (index = 0; index < ot_cookie_setting_open.length; ++index) {
+        ot_cookie_setting_open[index].setAttribute('aria-label','ot-floating-button-open');}
+
+        ot_cookie_setting_close = document.getElementsByClassName('ot-floating-button__close');
+        for (index = 0; index < ot_cookie_setting_close.length; ++index) {
+        ot_cookie_setting_close[index].setAttribute('aria-label','ot-floating-button-close');}
+    }
+    
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for foursquare.com -->
+
+    
+
+
+    <!-- fonts -->
+    <link rel="preload" href="/static/fonts/authentic/AUTHENTICSans-60.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/authentic/AUTHENTICSans-90.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/sometype/SometypeMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/static/fonts/sometype/SometypeMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/static/css/screen.css?ts=2021-09-08T20:08:32.851Z">
+    
+    <style type="text/css">
+        .js main {
+            opacity: 0;
+        }
+    </style>
+
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://foursquare.com/static/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://foursquare.com/static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://foursquare.com/static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://foursquare.com/static/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://foursquare.com/static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff"><script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('579-FAI-132');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PH9DPZ8');</script>
+<!-- End Google Tag Manager -->
+<!-- javascript -->
+    <script>var b = document.documentElement; b.className = b.className.replace(/\bno-js\b/,'js'); b.setAttribute('data-useragent', navigator.userAgent); b.setAttribute("data-platform", navigator.platform );</script><script src="/static/bundle/global.js?ts=2021-09-08T20:08:44.287Z" defer></script>
+    </head>
+
+
+    <body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH9DPZ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<svg style="display:none;" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <symbol id="nav-arrow" viewBox="0 0 16 10">
+        <path fill="#33F" d="M16 0L8 10 0 0h16z"/>
+    </symbol>
+    <symbol id="default-arrow" fill="none" viewBox="0 0 17 14">
+        <path fill="currentColor" fill-rule="evenodd" d="M15.155 6.524L9.221.675 9.898 0 17 7l-7.102 7-.677-.675 5.934-5.85H0v-.95h15.155z" clip-rule="evenodd"/>
+    </symbol>
+    <symbol id="icon-arrow-animate" viewBox="0 0 32 16">
+        <polygon fill="currentColor" points="24.35 0.65 23.65 1.35 29.29 7 2 7 2 8 29.29 8 23.65 13.65 24.35 14.35 31.21 7.5 24.35 0.65"/>
+    </symbol>
+    <symbol id="icon-location-indicator" viewBox="0 0 11 16">
+        <path fill="currentColor" fill-rule="evenodd" d="M5.347 0a5.444 5.444 0 013.616 1.411 5.783 5.783 0 011.725 3.918v.014c.001.745-.149 1.482-.44 2.167-1.22 3.056-3.708 6.703-4.566 7.934a.412.412 0 01-.676-.001c-.66-.954-3.561-5.184-4.648-8.17A5.407 5.407 0 010 5.333a5.703 5.703 0 011.557-3.758A5.458 5.458 0 015.34 0l.004.412L5.347 0zm-.002.823c-1.2.013-2.349.49-3.204 1.332A4.88 4.88 0 00.823 5.349c.002.558.105 1.112.305 1.633l.003.007c.914 2.516 3.21 6.016 4.215 7.494 1.045-1.53 3.09-4.651 4.14-7.283a4.701 4.701 0 00.38-1.849 4.96 4.96 0 00-1.474-3.347A4.621 4.621 0 005.345.824z" clip-rule="evenodd"/>
+        <path fill="currentColor" fill-rule="evenodd" d="M5.345 3.289a2.054 2.054 0 100 4.108 2.054 2.054 0 000-4.108zM2.467 5.343a2.877 2.877 0 115.755 0 2.877 2.877 0 01-5.755 0z" clip-rule="evenodd"/>
+    </symbol>
+</svg>
+
+<a href="#main" class="skipnav" role="button" tabindex="0">skip to content</a><header role="banner" class="js-nav"><div class="banner js-banner">
+        <div class="container container--banner">
+            <div class="banner__text"><div class="banner__text-factual">
+                        <p>Welcome! Factual has merged with Foursquare!</p>
+
+                    </div><div class="banner__text-placed">
+                        <p>Welcome! Foursquare has merged with Placed!</p>
+
+                    </div><div class="banner__text-general">
+                        <p><strong>Looking for Foursquare City Guide?</strong> <a href="https://foursquare.com/city-guide" title="City-guide link">Right this way</a>.</p>
+
+                    </div><button class="banner__close js-banner-close"><svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 23 22"><title>close</title>
+                <path fill="currentColor" fill-rule="evenodd" d="M2.172.215a.792.792 0 00-1.084 0l-.863.825A.718.718 0 000 1.56c0 .194.08.38.225.518L9.553 11 .225 19.923A.718.718 0 000 20.44c0 .195.08.381.225.519l.863.825c.299.287.784.287 1.084 0l9.328-8.922 9.328 8.922c.3.287.785.287 1.084 0l.863-.825A.718.718 0 0023 20.44a.718.718 0 00-.225-.518L13.447 11l9.328-8.923A.718.718 0 0023 1.56a.717.717 0 00-.225-.519l-.863-.825a.791.791 0 00-1.084 0L11.5 9.137 2.172.215z" clip-rule="evenodd"/></svg></button>
+            </div>
+        </div>
+    </div><div class="banner__content">
+        <div class="banner__content-branding">
+            <a href="https://foursquare.com/" class="branding"><h1 class="branding__wordmark">
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    <span loading="eager" class="branding__icon logo__icon" style="--logo-desktop-max: 258px;  --logo-mobile-max: 200px;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 259 31">
+  <path fill="currentColor" d="M0 .677h19.438v3.19H3.227V12.8h14.409v3.19H3.226V28.9H0V.677zM21.283 14.899C21.283 6.53 26.761 0 35.17 0c8.368 0 13.773 6.567 13.773 14.899 0 8.482-5.704 14.709-13.773 14.709-8.11 0-13.887-6.227-13.887-14.71zm24.203-.037c0-6.603-4.016-11.632-10.32-11.632S24.81 8.26 24.81 14.862c0 6.794 4.392 11.56 10.356 11.56 5.931-.005 10.32-4.73 10.32-11.56zM53.063 18.503V.677h3.263v17.9c0 5.291 2.74 7.805 7.62 7.805 4.728 0 7.805-2.364 7.805-7.769V.677h3.263V18.54c0 7.393-4.542 11.07-11.069 11.07-6.453 0-10.883-3.64-10.883-11.107zM80.416.677h11.71c5.627 0 9.044 3.604 9.044 8.106 0 3.154-1.652 5.74-4.842 7.056 3.603 2.102 2.364 6.904 5.554 13.061h-3.676c-1.875-2.814-1.615-12.158-6.417-12.158h-8.142V28.9H80.42V.677h-.004zm11.632 12.871c3.413 0 5.818-1.988 5.818-4.915 0-2.777-2.178-4.765-5.818-4.765h-8.405v9.68h8.405zM104.764 20.826l3.154-.712c.563 3.902 3.263 6.23 7.656 6.23 3.939 0 7.056-1.838 7.056-4.842 0-2.137-1.575-3.94-7.729-5.777-6.979-1.988-9.307-4.543-9.307-8.296C105.586 2.591 109.489 0 115.157 0c6.341 0 9.158 3.227 10.134 7.656l-3.154.712c-.789-3.64-3.263-5.178-7.093-5.178-3.603 0-6.154 1.352-6.154 3.94 0 2.1 1.652 3.716 7.356 5.514 6.794 2.101 9.721 4.393 9.721 8.745 0 5.405-4.543 8.219-10.32 8.219-6.044 0-10.17-3.15-10.883-8.782zM128.896 14.899C128.896 6.53 134.373 0 142.782 0c8.369 0 13.773 6.567 13.773 14.899 0 4.166-1.388 7.769-3.716 10.397a96.329 96.329 0 013.303 3.453L153.815 31a151.824 151.824 0 00-3.454-3.567c-2.138 1.389-4.692 2.178-7.579 2.178-8.109-.003-13.886-6.23-13.886-14.712zm19.024 10.133a83.143 83.143 0 00-3.303-3.04l2.251-2.288a96.516 96.516 0 013.526 3.227c1.688-2.024 2.701-4.802 2.701-8.069 0-6.603-4.016-11.632-10.32-11.632s-10.357 5.029-10.357 11.632c0 6.794 4.389 11.56 10.357 11.56 1.918-.005 3.647-.49 5.145-1.39zM160.838 18.503V.677h3.264v17.9c0 5.291 2.741 7.805 7.619 7.805 4.729 0 7.806-2.364 7.806-7.769V.677h3.263V18.54c0 7.393-4.542 11.07-11.069 11.07-6.454 0-10.883-3.64-10.883-11.107zM195.382.677h3.826l10.96 28.22h-3.453l-3.191-8.22h-12.498l-3.153 8.22h-3.527L195.382.677zm6.871 16.85L197.334 4.58l-5.029 12.948h9.948zM213.193.677h11.709c5.628 0 9.044 3.604 9.044 8.106 0 3.154-1.651 5.74-4.842 7.056 3.604 2.102 2.365 6.904 5.555 13.061h-3.676c-1.875-2.814-1.615-12.158-6.417-12.158h-8.142V28.9h-3.227V.677h-.004zm11.632 12.871c3.413 0 5.818-1.988 5.818-4.915 0-2.777-2.178-4.765-5.818-4.765h-8.405v9.68h8.405zM238.865.677h19.664v3.19h-16.437V12.8h15.199v3.19h-15.199v9.684h16.774V28.9h-20.001V.677z"/>
+</svg></span>
+
+
+
+
+                    <span class="is-visually-hidden">Foursquare</span>
+                </h1>
+            </a></div>
+
+
+        <input type="checkbox" id="menu-toggle" class="checkbox-toggle js-checkbox-toggle" tabindex="0" data-html-toggle="menu-active">
+        <label for="menu-toggle" class="js-menu menu site-nav__btn burger">
+            <svg class="menu__icon--hamburger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 22">
+  <path fill="currentColor" d="M0 0h24v2H0zM0 10h24v2H0zM0 20h24v2H0z"/>
+</svg>
+
+<svg class="menu__icon--close"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 23 22">
+  <path fill="currentColor" fill-rule="evenodd" d="M2.172.215a.792.792 0 00-1.084 0l-.863.825A.718.718 0 000 1.56c0 .194.08.38.225.518L9.553 11 .225 19.923A.718.718 0 000 20.44c0 .195.08.381.225.519l.863.825c.299.287.784.287 1.084 0l9.328-8.922 9.328 8.922c.3.287.785.287 1.084 0l.863-.825A.718.718 0 0023 20.44a.718.718 0 00-.225-.518L13.447 11l9.328-8.923A.718.718 0 0023 1.56a.717.717 0 00-.225-.519l-.863-.825a.791.791 0 00-1.084 0L11.5 9.137 2.172.215z" clip-rule="evenodd"/>
+</svg>
+
+            <span class="is-visually-hidden">Toggle Main Navigation</span>
+        </label>
+        <nav class="site-nav js-site-nav" role="navigation">
+            <ul class="site-nav__list js-site-nav-list">
+                    <li class="site-nav__list-item">
+                        
+                        
+                        <button type="button" aria-expanded="false" class="site-nav__button site-nav__button--nohover ">
+                            <span class="site-nav__button-icon">
+                                <svg>
+                                    <use xlink:href="#nav-arrow" />
+                                </svg>
+                            </span>
+                            Products &amp; Solutions
+                        </button>
+                            <div class="subnav" hidden>
+                                    <aside class="subnav__left">
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[apps]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            
+<div>
+    
+    
+        
+    
+        <a href="https://foursquare.com/city-guide" class="flex-combo flex-combo-v-align--center flex-combo--link " >
+                <div class="flex-combo__icon flex-combo__icon--s ">
+                        <img src="//images.ctfassets.net/exg8oyvb0wfw/3RmYhlyLrQLwCTjYmfcuWQ/a85f9dad207fc1b0ed9f3c73525e7183/apps-foursquare.svg" alt="Icon image of Foursquare City Guide">
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--s">Foursquare City Guide</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                        </li>
+                                                    <li>
+                                                            
+<div>
+    
+    
+        
+    
+        <a href="https://apps.apple.com/us/app/marsbot-for-airpods/id1481091266?ref=producthunt" class="flex-combo flex-combo-v-align--center flex-combo--link " >
+                <div class="flex-combo__icon flex-combo__icon--s ">
+                        <img src="//images.ctfassets.net/exg8oyvb0wfw/70jQX0qJUgSd6gy5kCRf6M/b44fec10caa26f49c6b42a358ed8393f/marsbot-for-airpods-icon-01.png" alt="the icon for the app &quot;Marsbot for Airpods&quot;">
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--s">Marsbot for Airpods</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                        </li>
+                                                    <li>
+                                                            
+<div>
+    
+    
+        
+    
+        <a href="https://getpanelapp.com/" class="flex-combo flex-combo-v-align--center flex-combo--link " >
+                <div class="flex-combo__icon flex-combo__icon--s ">
+                        <img src="//images.ctfassets.net/exg8oyvb0wfw/5leF9ghuYMFKnpxWL4dJk0/891a83a99739425ad1bbda7f32ef159c/apps-placed-panel.svg" alt="Icon of Placed Panel">
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--s">Panel App</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                        </li>
+                                                    <li>
+                                                            
+<div>
+    
+    
+        
+    
+        <a href="https://www.swarmapp.com/" class="flex-combo flex-combo-v-align--center flex-combo--link " >
+                <div class="flex-combo__icon flex-combo__icon--s ">
+                        <img src="//images.ctfassets.net/exg8oyvb0wfw/NzFNzgKLMIhIfzgzQcTkF/f287ceee630c6060303667b728595c6c/apps-swarm.svg" alt="Icon of Swarm App">
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--s">Swarm</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[labs]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            <a class="link   " href="/labs" aria-label="Learn more about our Labs team ">
+    <svg class="icon-divider" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 7" role="presentation">
+        <path stroke="currentColor" d="M1 6.5L6.5 1M7 6.5L12.5 1M13 6.5L18.5 1"/>
+    </svg>
+    <span class="link__text">The Innovation Team</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                    </aside>
+                                <div class="subnav__main">
+                                    
+                                        <div>
+                                                <p class="subnav__subtitle">[products &amp; solutions]</p>
+                                            
+                                                
+                                                <div class="subnav__main-grid subnav__main-grid--2-col"><ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/attribution" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m  flex-combo__icon--currentColor">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g><g stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M19.5 43.478h-18v26.987h18V43.478zM45 25.478H27v44.987h18V25.478zM70.5 34.478h-18v35.987h18V34.478z" stroke-linecap="round"/><path d="M36.738 13.957a6.228 6.228 0 100-12.456 6.228 6.228 0 000 12.456zM63.228 22.706a6.228 6.228 0 100-12.456 6.228 6.228 0 000 12.456zM9.228 31.706a6.228 6.228 0 100-12.456 6.228 6.228 0 000 12.456z" stroke-linecap="square"/><path d="M42.966 9.727l14.887 4.775M14.367 21.958l16.738-10.646"/></g></g><defs><clipPath id="clip0"><path fill="currentColor" d="M0 0h72v72H0z"/></clipPath><clipPath id="clip1">&lt;path fill=currentColor&quot; transform=“translate(-1)” d=“M0 0h75v71.964H0z”/&gt;</clipPath></defs></svg><br>
+</svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Attribution</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Measure incremental impact of ad exposure to store visits</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/audience" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m  flex-combo__icon--currentColor">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-linecap="square" stroke-linejoin="round"><path d="M52.44 54.158a17.019 17.019 0 00-6.343-8.54 16.97 16.97 0 00-10.165-3.096c-3.597 0-7.104 1.12-10.037 3.205a17.373 17.373 0 00-6.335 8.431M36.27 35.57c4.994-.188 8.89-4.395 8.703-9.397-.187-5.002-4.387-8.906-9.38-8.718-4.994.187-8.89 4.394-8.704 9.396.188 5.003 4.387 8.906 9.381 8.718zm32.914 18.588a10.787 10.787 0 00-4.02-5.412 10.756 10.756 0 00-6.444-1.963 10.92 10.92 0 00-4.64 1.027" stroke-width="3"/><path d="M58.907 42.392a5.74 5.74 0 005.517-5.952 5.737 5.737 0 00-5.942-5.526 5.74 5.74 0 00-5.517 5.951 5.737 5.737 0 005.941 5.527z" stroke-width="2.999"/><path d="M2.816 54.158a10.788 10.788 0 014.02-5.412 10.756 10.756 0 016.444-1.963 10.918 10.918 0 014.64 1.027m1.092-10.96a5.742 5.742 0 00-5.517-5.956 5.74 5.74 0 00-5.947 5.526 5.742 5.742 0 005.517 5.957 5.74 5.74 0 005.947-5.527z" stroke-width="3"/></g></svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Audience</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Reach customers based on their real-world behavior</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/pilgrim-sdk" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m  flex-combo__icon--currentColor">
+                    <span>
+                        <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="currentColor" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M63.732 19.5H9.428v41.066h54.304V19.5z" stroke-width="2.856"/>
+    <path d="M50.234 10.5h-27v9h27v-9zM52.273 42.086A10.906 10.906 0 0037.657 28.57l7.324 7.33-1.119 4.64-4.645 1.119-7.324-7.324A10.9 10.9 0 0045.408 48.95l11.615 11.616h6.709v-7.021L52.273 42.086z" stroke-width="3"/>
+  </g>
+</svg>
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Pilgrim SDK</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Build powerful location-aware app experiences</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/places" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m ">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"><path d="M58.441 9.5H13.5v53.926h44.941V9.5z"/><path d="M31.476 45.455h-8.988v17.973h8.988V45.455zM22.488 18.49v4.549M22.488 32.24v4.549M31.475 18.49v4.549M31.475 32.24v4.549M40.465 18.49v4.549M40.465 32.24v4.549M49.451 18.49v4.549M49.451 32.24v4.549"/></g></svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Places</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Access global POI data and rich contextual attributes</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    <ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/proximity" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m  flex-combo__icon--currentColor">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M38.914 24.362a14.552 14.552 0 11-14.552 14.552M38.914 15.021a23.893 23.893 0 11-23.893 23.893" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/><path d="M29.914 17.131v12.783h-12.7" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/><path d="M29.914 29.914L9.061 9.061" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M38.914 44.291a5.377 5.377 0 100-10.754 5.377 5.377 0 000 10.754z" fill="currentColor"/></g></svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Proximity</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Target customers using real-time location</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/products/visits" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m ">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M6.061 52.937l20.062-20.062L39.498 46.25l26.75-26.75v13.375M51.484 19.5h14.764"/></g><defs><clipPath id="clip0"><path fill="currentColor" transform="translate(5 18)" d="M0 0h62.748v35.998H0z"/></clipPath></defs></svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Visits</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Make better business decisions based on consumers’ real world behavior.</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/solutions" class="flex-combo flex-combo-v-align--top flex-combo--link subnav__main-link" >
+                <div class="flex-combo__icon flex-combo__icon--m ">
+                    <span>
+                        <p><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M39.726 44.101c7.819 0 14.157-6.338 14.157-14.157s-6.338-14.157-14.157-14.157-14.157 6.338-14.157 14.157 6.338 14.157 14.157 14.157z" stroke-linecap="square"/><path d="M46.257 42.97l5.031-4.157 17.957 21.733a3.262 3.262 0 01-.437 4.593v0a3.262 3.262 0 01-4.594-.436L46.257 42.97z" stroke-linecap="square"/><path d="M39.726 44.101c7.819 0 14.157-6.338 14.157-14.157s-6.338-14.157-14.157-14.157-14.157 6.338-14.157 14.157 6.338 14.157 14.157 14.157z" stroke-linecap="square"/><path d="M1.5 56.999V38.361M9.67 56.999V22.694M17.841 56.999V29.944M27.591 13.786V4M27.591 56.999V46.413"/></g><defs><clipPath id="clip0"><path fill="currentColor" transform="translate(0 4)" d="M0 0h71.492v63.387H0z"/></clipPath></defs></svg></p>
+
+                    </span>
+                    </div>
+            
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Solutions</p>
+                    
+                        <div class="flex-combo__description flex-combo__description--xs"><p>Location data solutions for complex problems</p>
+</div>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    </div>
+                                            
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                
+                    <li class="site-nav__list-item">
+                        
+                        
+                        <button type="button" aria-expanded="false" class="site-nav__button site-nav__button--nohover ">
+                            <span class="site-nav__button-icon">
+                                <svg>
+                                    <use xlink:href="#nav-arrow" />
+                                </svg>
+                            </span>
+                            Developer
+                        </button>
+                            <div class="subnav" hidden>
+                                    <aside class="subnav__left">
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[Developer Blog]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            <article class="thumbnail ">
+        <figure class="thumbnail__img thumbnail__img--16-9  thumbnail__img--cover  ">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 770px) 33vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/49IectGYpg8u67uX43NetL/eecb52259c274a12054e0a3c13fe4d3a/nathan-dumlao-y440_q4e-0E-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="closeup of person using phone on top of a notebook">
+        </picture>
+        </figure>
+    
+        
+        <a class="link   " href="/article/iOS-14-Foursquare-mobile-engineering-take-1" aria-label="iOS 14: Foursquare mobile engineering">
+    <svg class="icon-divider" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 7" role="presentation">
+        <path stroke="currentColor" d="M1 6.5L6.5 1M7 6.5L12.5 1M13 6.5L18.5 1"/>
+    </svg>
+    <span class="link__text">iOS 14: Foursquare mobile engineering</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+
+    
+</article>
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                    </aside>
+                                <div class="subnav__main">
+                                    
+                                        <div>
+                                                <p class="subnav__subtitle">[Developers]</p>
+                                            
+                                                
+                                                <div class="subnav__main-grid "><ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/docs" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Docs</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/developer-blog" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Developer Blog</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="https://status.foursquare.com/" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">API Status</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="https://foursquare.com/developers/support" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Developer Support</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    </div>
+                                            
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                
+                    <li class="site-nav__list-item">
+                        
+                        
+                        <button type="button" aria-expanded="false" class="site-nav__button site-nav__button--nohover ">
+                            <span class="site-nav__button-icon">
+                                <svg>
+                                    <use xlink:href="#nav-arrow" />
+                                </svg>
+                            </span>
+                            Resources
+                        </button>
+                            <div class="subnav" hidden>
+                                    <aside class="subnav__left">
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[insights]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            <article class="thumbnail ">
+        <figure class="thumbnail__img thumbnail__img--16-9  thumbnail__img--cover  thumbnail__img--black ">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 770px) 33vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/1bDBa0EEJed0XRWVRszOl9/5378ce8d653a303d3d6c86db67029927/pexels-gary-barnes-6231696__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="Two women eating, one feeding the other">
+        </picture>
+        </figure>
+    
+        
+        <a class="link button button--cta  " href="/article/q2-2021-seasonal-strategy-guide-dining-retail" aria-label="Read our Q2 2021 Seasonal Strategy Guide">
+    <svg class="icon-divider" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 7" role="presentation">
+        <path stroke="currentColor" d="M1 6.5L6.5 1M7 6.5L12.5 1M13 6.5L18.5 1"/>
+    </svg>
+    <span class="link__text">Q2 2021 Seasonal Strategy Guide: Spotlight on Dining and Retail</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+
+    
+</article>
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                    </aside>
+                                <div class="subnav__main">
+                                    
+                                        <div>
+                                                <p class="subnav__subtitle">[resources]</p>
+                                            
+                                                
+                                                <div class="subnav__main-grid "><ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/blog" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Blog</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/reports" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Reports &amp; Guides</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/glossary" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Location Glossary</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="https://foursquare.com/edit" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Superuser Tools</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    </div>
+                                            
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                
+                    <li class="site-nav__list-item">
+                        
+                        
+                        <button type="button" aria-expanded="false" class="site-nav__button site-nav__button--nohover ">
+                            <span class="site-nav__button-icon">
+                                <svg>
+                                    <use xlink:href="#nav-arrow" />
+                                </svg>
+                            </span>
+                            Partners
+                        </button>
+                            <div class="subnav" hidden>
+                                    <aside class="subnav__left">
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[company news]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            <article class="thumbnail ">
+        <figure class="thumbnail__img thumbnail__img--16-9  thumbnail__img--cover  ">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 770px) 33vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/3POypSw65Zh5ZdDsKf77Cl/8fdfb5ab82a0bcd242a484e0efbedc22/Blog_thumbnail_snowflake.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="Snowflake logo">
+        </picture>
+        </figure>
+    
+        
+        <a class="link button button--cta  " href="/article/foursquare-partners-with-snowflake-expands-into-snowflake-data-marketplace" aria-label="Read about how Foursquare partners with Snowflake, expands into Snowflake Data Marketplace with Foursquare Places and Visits data">
+    <svg class="icon-divider" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 7" role="presentation">
+        <path stroke="currentColor" d="M1 6.5L6.5 1M7 6.5L12.5 1M13 6.5L18.5 1"/>
+    </svg>
+    <span class="link__text">Foursquare partners with Snowflake, expands into Snowflake Data Marketplace with Foursquare Places and Visits data</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+
+    
+</article>
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                    </aside>
+                                <div class="subnav__main">
+                                    
+                                        <div>
+                                                <p class="subnav__subtitle">[partners]</p>
+                                            
+                                                
+                                                <div class="subnav__main-grid "><ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/partners" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Our Partners</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/partners/solutions" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Partner Solutions</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/case-studies" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Case Studies</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    </div>
+                                            
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                
+                    <li class="site-nav__list-item">
+                        
+                        
+                        <button type="button" aria-expanded="false" class="site-nav__button site-nav__button--nohover ">
+                            <span class="site-nav__button-icon">
+                                <svg>
+                                    <use xlink:href="#nav-arrow" />
+                                </svg>
+                            </span>
+                            Company
+                        </button>
+                            <div class="subnav" hidden>
+                                    <aside class="subnav__left">
+                                        
+                                            <article class="subnav__block">
+                                                
+                                                    <p class="subnav__subtitle">[company news]</p>
+                                                <ul class="subnav__left-list"><li>
+                                                            <article class="thumbnail ">
+        <figure class="thumbnail__img thumbnail__img--16-9  thumbnail__img--cover  ">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 770px) 33vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/5lWBSwPwzar0nP4VBN1Jdo/920679b0419ab21c3a408a966fa8d593/Blog_thumbnail.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        
+        <a class="link button button--cta  " href="/article/welcome-unfolded" aria-label="Foursquare acquires geospatial powerhouse Unfolded ">
+    <svg class="icon-divider" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 7" role="presentation">
+        <path stroke="currentColor" d="M1 6.5L6.5 1M7 6.5L12.5 1M13 6.5L18.5 1"/>
+    </svg>
+    <span class="link__text">Foursquare acquires geospatial powerhouse Unfolded </span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+
+    
+</article>
+
+                                                        </li>
+                                                    </ul>
+                                            </article>
+                                        
+                                    </aside>
+                                <div class="subnav__main">
+                                    
+                                        <div>
+                                                <p class="subnav__subtitle">[company]</p>
+                                            
+                                                
+                                                <div class="subnav__main-grid subnav__main-grid--2-col"><ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/about" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Our Story</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/team" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Our Team</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/culture" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Our Culture</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/careers" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Careers</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    <ul class="subnav__main-grid-col"><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/for-good" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">For Good</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/accreditation" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Accreditations</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/privacy" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Our Privacy Stance</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li><li class="subnav__main-grid-item">
+<div>
+    
+    
+        
+    
+        <a href="/press" class="flex-combo  flex-combo--link subnav__main-link" >
+                <div>
+                        <p class="flex-combo__title flex-combo__title--l">Press</p>
+                    
+                </div>
+            
+        </a>
+</div>
+
+
+                                                            </li></ul>
+                                                    </div>
+                                            
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+            <ul class="nav__buttons">
+                
+                    <li class="nav__buttons-list">
+                        <a class="link button button--xs-dark  " href="https://www.foursquare.com/log-in" aria-label="Log in to our products"><span class="link__text">Log In</span>
+</a>
+
+                    </li>
+                
+                    <li class="nav__buttons-list">
+                        <a class="link button button--xs-white  " href="https://www.foursquare.com/contact-us" aria-label="Have a question or want to reach our sales team? Contact us!"><span class="link__text">Contact Us</span>
+</a>
+
+                    </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <main id="main">
+            
+
+    
+      
+  
+    
+
+ 
+    
+
+ <article class="section section--layout
+    section--top-none
+    section--bottom-m    "  >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col layout--row-m ">
+                  
+    <section class="superfeature">
+        <div class="superfeature__img">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/3CN7gbwtC7U9bdVUCevL2D/ebc9890b72e6c518fee4c77deed42dda/image5.jpeg?w=1440&q=75&fm=jpg&fl=progressive" alt="Unfolded data visualization gallery ">
+        </picture>
+        </div>
+    <div class="superfeature__content ">
+            <p class="superfeature__caption">[ company news ]</p>
+        
+            
+                
+            <a class="superfeature__link" href="/article/foursquare-joins-linux-foundation-to-accelerate-open-geospatial-software" >
+                <h2 class="superfeature__heading js-superfeature-heading">Foursquare joins Linux Foundation to accelerate open geospatial software development</h2>
+            </a>
+        </div>
+</section>
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+ 
+    
+
+ <article class="section section--layout
+    section--top-l
+    section--bottom-m  section--black    "  >
+    <div class="container ">
+        <div class="layout layout--50-50 layout--multi-col layout--row-m ">
+                  
+    <section class="hero-content "><div class="hero__heading js-hero-heading hero__heading--xl "><h2><strong>If it tells you where,<br>
+it’s probably built on Foursquare</strong></h2>
+</div>
+    </section>
+
+
+  
+    <section class="hero-content ">
+        <div class="hero__description text hero__description--xl "><p>With uncompromising accuracy, accessibility, scale, and respect for consumer data privacy, Foursquare is the location technology platform the world trusts.</p>
+</div>
+    
+        <div class="hero-content__bottom">
+                
+                <ul class="list list--inline ">
+    
+        <li><a class="link button button--default-dark  " href="/contact-us" aria-label="contact our sales team"><span class="link__text">Request Demo</span>
+                    <span class="link__icon"><p><svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.125 2.813H3.75c-.563 0-.938.374-.938.937v6.563c0 .562.376.937.938.937H7.5v-.938H3.75V3.75h9.375v6.563H9.75L7.5 13.5l.75.563 1.969-2.813h2.906c.563 0 .938-.375.938-.938V3.75c0-.563-.376-.938-.938-.938z" fill="currentColor"/><path d="M1.875 8.438H.937V2.343c0-.797.61-1.406 1.407-1.406h6.094v.937H2.343c-.281 0-.469.188-.469.469v6.094z" fill="currentColor"/></svg></p>
+</span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-white  " href="/about" aria-label="Learn about Foursquare&#39;s story"><span class="link__text">Our Story</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+</ul>
+
+            </div>
+    </section>
+
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+ 
+    
+
+ <article class="section section--layout
+    section--top-l
+    section--bottom-l    "  >
+    <div class="container container--none">
+        <div class="layout layout-- layout--multi-col layout--row-s layout--column-s">
+                <div class="section__heading-content  ">
+                        <p class="section__caption">[recent articles and news]</p>
+                    
+                        <div class="section__heading "><h2>Learn more about Foursquare</h2>
+</div>
+                    </div>
+            
+                  
+    
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <section class="product-thumbnails">
+        <div class="container">
+            <div class="product-thumbnails__grid js-carousel carousel-thumbnails ">
+    
+<article class="thumbnail how-to ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-white-papers">[How To]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=1920 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=1440 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=1200 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=800 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=600 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/1xq1Ck28LC1oWzgbLJm1uq/71c7fd4ef4e162348bfb5e43d658043a/unfolded_spinning_globe.gif?w=1440" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Sep 08, 2021</p>
+    <a href="/article/the-benefits-of-using-geospatial-data-in-analytics"  class="thumbnail__heading thumbnail__heading--link">The benefits of using geospatial data in analytics</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Geospatial analytics can help solve data analysis challenges by bringing large-scale datasets to diverse platforms and creating amazing visuals via your SDK.</div>
+    
+        <a class="link button button--cta" href="/article/the-benefits-of-using-geospatial-data-in-analytics" aria-label="Read more about The benefits of using geospatial data in analytics">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail company-news ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-blog">[Company News]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/4rtdCucDUXrSCrqlC5WeUY/c121a71dbd349709ed8ec2f8b8d4f977/andrae-ricketts-0_la3_Slfwk-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Sep 07, 2021</p>
+    <a href="/article/foursquare-and-clear-channel-outdoor-partner-to-help-advertisers-optimize"  class="thumbnail__heading thumbnail__heading--link">Foursquare and Clear Channel Outdoor partner to help advertisers optimize mid-campaign </h2>
+            </a>
+    
+        <div class="text thumbnail__description">Through this industry-first integration, Foursquare will provide Clear Channel Outdoor customers with daily DOOH performance data, more fully understanding ad reach.</div>
+    
+        <a class="link button button--cta" href="/article/foursquare-and-clear-channel-outdoor-partner-to-help-advertisers-optimize" aria-label="Read more about Foursquare and Clear Channel Outdoor partner to help advertisers optimize mid-campaign ">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail data-and-insights ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-blog">[Data and Insights]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/4Pi2RM0zTUCJTm2s2bys2N/af7e78d984608572aa45ffd0dc86f7a0/cem-ersozlu-gy-onaIUdJc-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Sep 01, 2021</p>
+    <a href="/article/how-one-of-the-worlds-largest-restaurant-brands-makes-smarter-site-selection"  class="thumbnail__heading thumbnail__heading--link">How one of the world&#39;s largest restaurant brands makes smarter site selection decisions with Foursquare’s point-of-interest data</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Selecting the right site for your next business venture is a science. Using Foursquare&#39;s point of interest database, Yum! Brands has harnessed the location data.</div>
+    
+        <a class="link button button--cta" href="/article/how-one-of-the-worlds-largest-restaurant-brands-makes-smarter-site-selection" aria-label="Read more about How one of the world&#39;s largest restaurant brands makes smarter site selection decisions with Foursquare’s point-of-interest data">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail data-and-insights ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-blog">[Data and Insights]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/3GDeInNkuSAVLvQboDM980/00e241700390ff20e0d1a5def54fbf5e/suzanne-emily-o-connor-NHJV8rOPDXk-unsplash__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Aug 26, 2021</p>
+    <a href="/article/a-closer-look-whats-driving-the-key-consumer-trends-around-gas-gas-stations"  class="thumbnail__heading thumbnail__heading--link">A closer look: What’s driving the key consumer trends around gas/gas stations?</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Foursquare and GasBuddy discuss joint report that analyzed key consumer trends from their recently released report examining foot traffic and pricing data from gas stations across the country. </div>
+    
+        <a class="link button button--cta" href="/article/a-closer-look-whats-driving-the-key-consumer-trends-around-gas-gas-stations" aria-label="Read more about A closer look: What’s driving the key consumer trends around gas/gas stations?">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail videos ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-white-papers">[Videos]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/5XdxYBCbheIzb9OGvjMSm4/206d9288e3e766aa6405732439c7e2b8/Screen_Shot_2020-11-11_at_9.26.01_PM.png?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Aug 25, 2021</p>
+    <a href="/article/the-power-of-hexagons"  class="thumbnail__heading thumbnail__heading--link">The Power of Hexagons</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Learn about H3, an open source Hexagonal Hierarchical Spatial Indexing library that powers Unfolded&#39;s geospatial visualization and analytics technology.</div>
+    
+        <a class="link button button--cta" href="/article/the-power-of-hexagons" aria-label="Read more about The Power of Hexagons">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail insights ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-white-papers">[Insights]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/YvsTA8uhl4JtzL18JVclc/4cd21dacbfe9bf4a1599e5c9c3d51264/dino-reichmuth-A5rCN8626Ck-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Aug 24, 2021</p>
+    <a href="/article/uncovering-the-great-american-road-trip-with-location-and-gas-pricing-data"  class="thumbnail__heading thumbnail__heading--link">Uncovering the Great American Road Trip with location and gas pricing data</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Foursquare and GasBuddy took a closer look at gas prices and the behavioral patterns and preferences of U.S. road trippers with a focus on value-minded travelers.</div>
+    
+        <a class="link button button--cta" href="/article/uncovering-the-great-american-road-trip-with-location-and-gas-pricing-data" aria-label="Read more about Uncovering the Great American Road Trip with location and gas pricing data">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail how-to ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-white-papers">[How To]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/6C2wFiGYQENxqx0APOnYpK/cbe6edf639187708b582f286f0928fa8/christian-wiediger-HKdHSbOXJKY-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Aug 18, 2021</p>
+    <a href="/article/a-guide-to-getting-the-most-out-of-pilgrim-sdk"  class="thumbnail__heading thumbnail__heading--link">A guide to getting the most out of Pilgrim SDK</h2>
+            </a>
+    
+        <div class="text thumbnail__description">Using Pilgrim SDK, developers can gain valuable consumer insights, enrich experiences, and much more. </div>
+    
+        <a class="link button button--cta" href="/article/a-guide-to-getting-the-most-out-of-pilgrim-sdk" aria-label="Read more about A guide to getting the most out of Pilgrim SDK">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    
+    
+<article class="thumbnail how-to ">
+        <p class="thumbnail__caption  thumbnail__caption--product thumbnail__caption--product-white-papers">[How To]</p>
+    
+        <figure class="thumbnail__img     thumbnail__img--16-9 thumbnail__img--cover">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="(min-width: 1080px) 25vw, (min-width: 680px) 50vw, 100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/zdnL3p0QSEndUshQwt3Th/45fa8d5e9948c1a2b4271c4f4db3d55f/priscilla-du-preez-cIfLUEZYLVg-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="">
+        </picture>
+        </figure>
+    
+        <p class="thumbnail__date">Aug 12, 2021</p>
+    <a href="/article/q-and-a-with-snowflake-how-to-optimize-your-360-customer-view-with-location"  class="thumbnail__heading thumbnail__heading--link">Q&amp;A with Snowflake: How to optimize your 360 customer view with location data. </h2>
+            </a>
+    
+        <div class="text thumbnail__description">Q&amp;A with Snowflake account executive Savannah English on the benefits of enriching your CRM on the Snowflake cloud platform with Foursquare location data.</div>
+    
+        <a class="link button button--cta" href="/article/q-and-a-with-snowflake-how-to-optimize-your-360-customer-view-with-location" aria-label="Read more about Q&amp;A with Snowflake: How to optimize your 360 customer view with location data. ">
+            <span class="link__text">Read</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+        </a>
+    
+</article>
+
+                    </div>
+        </div>
+    </section>
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+    
+    
+
+ <article class="section section--layout
+    section--top-l
+    section--bottom-m    "  >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col  ">
+                <div class="section__heading-content section__heading-content--75 ">
+                        <p class="section__caption">[solutions for your business]</p>
+                    
+                        <div class="section__heading section__heading--xl "><h2>How can Foursquare location data help drive your business forward?</h2>
+</div>
+                    </div>
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+    
+    
+
+ <article class="section section--layout
+    section--top-m
+    section--bottom-l    "  >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col layout--row-s layout--column-l">
+                  
+    <section class="stacked"><div class="stacked__row stacked__row--layout-50-50">
+    <div class="image image--fill     " >
+        <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/37hGtoX6pqflr9ssCm0CHr/c0e561bd04700589daad66b8174a32ac/pexels-ketut-subiyanto-4350217.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="3 women drinking coffee and looking at a phone">
+        </picture>
+    </div>
+<article class="text-block text--normal"><p class="section__caption">[build with Foursquare]</p><div class="text-block__heading  text-block__heading--m"><h3>Create location-based experiences your users will crave</h3>
+</div>
+    
+
+    
+        <div class="text-block__body text text-block__body--m">
+            <p>Bring your ideas to life with solutions designed for app developers. Imagine the personalized functionalities you will deliver when you have the most comprehensive map of the world and the ability to understand human movement. Some of the largest brands are using geolocation API to increase the utility, engagement, and delight their users experience on a daily basis, and you can too.</p>
+<p>Learn more about:</p>
+
+        </div>
+    
+
+    
+        
+            <ul class="list list--inline list--xs">
+    
+        <li><a class="link button button--default-dark  " href="/products/places" aria-label="learn more about the places product"><span class="link__text">/places</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-dark  " href="/products/pilgrim-sdk" aria-label="learn more about our pilgrim SDK product"><span class="link__text">/pilgrim SDK</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+</ul>
+
+        
+    
+</article></div></section>
+
+  
+    <section class="stacked"><div class="stacked__row stacked__row--layout-50-50"><article class="text-block text--normal"><p class="section__caption">[data for analytics]</p><div class="text-block__heading  text-block__heading--m"><h3>Solve your most complex business problems</h3>
+</div>
+    
+
+    
+        <div class="text-block__body text text-block__body--m">
+            <p>Information about people and information about places - we package them together into practical and flexible location data sets that you can add in your business intelligence tools and customer databases. Urban planning, financial modeling, and customer segmentation are just a few areas where an understanding of human movement using geospatial data will lead to smarter outcomes.</p>
+<p>Learn more about:</p>
+
+        </div>
+    
+
+    
+        
+            <ul class="list list--inline ">
+    
+        <li><a class="link button button--default-dark  " href="/products/visits" aria-label="Learn more about our visits product"><span class="link__text">/visits</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-dark  " href="/products/places" aria-label="learn more about the places product"><span class="link__text">/places</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-dark  " href="/products/audience" aria-label="learn more about our audience product"><span class="link__text">/audience</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+</ul>
+
+        
+    
+</article>
+    <div class="image image--fill     " >
+        <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/2ZD2CQ8RHyEBtoWjb2O3c3/6b5e27841c072c1f61905c4e7b13d2c5/tobias-CyX3ZAti5DA-unsplash.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="Point of view of person holding ipad with map on it.">
+        </picture>
+    </div>
+</div></section>
+
+  
+    <section class="stacked"><div class="stacked__row stacked__row--layout-50-50">
+    <div class="image image--fill     " >
+        <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/1CIRo8OqT8m5HLMyaUkJBh/94a2129f6087a33e92427ae8f70d9960/window_shopping.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="An image of a woman window shopping">
+        </picture>
+    </div>
+<article class="text-block text--normal"><p class="section__caption">[effectively advertise]</p><div class="text-block__heading  text-block__heading--m"><h3>Transform your advertising with progressive solutions</h3>
+</div>
+    
+
+    
+        <div class="text-block__body text text-block__body--m">
+            <p>Effective campaigns are powered by real-world location data. By incorporating your customers’ behaviors - the places they go, the visits they make - into your strategy, success will mean more than clicks and views. Bring more customers into your stores with located-based targeting and identify the top drivers of incremental foot traffic to optimize your media plan.</p>
+<p>Learn more about:</p>
+
+        </div>
+    
+
+    
+        
+            <ul class="list list--inline ">
+    
+        <li><a class="link button button--default-dark  " href="/products/audience" aria-label="learn more about our audience product"><span class="link__text">/audience</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-dark  " href="/products/proximity" aria-label="learn about our proximity product"><span class="link__text">/proximity</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+        <li><a class="link button button--default-dark  " href="/products/attribution" aria-label="learn about our attribution product"><span class="link__text">/attribution</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+</ul>
+
+        
+    
+</article></div></section>
+
+  
+    <section class="stacked"><div class="stacked__row stacked__row--layout-50-50"><article class="text-block text--normal"><p class="section__caption">[media measurement services]</p><div class="text-block__heading  text-block__heading--m"><h3>Capitalize on a managed service that innovates with location technology</h3>
+</div>
+    
+
+    
+        <div class="text-block__body text text-block__body--m">
+            <p>You’ve built your brand and we’re here to deliver its message. With our complete suite of in-house offerings, from media planning to creative development to attribution measurement, your marketing investment will move people into your stores. Use location analytics to capitalize on data.</p>
+<p>Learn more about:</p>
+
+        </div>
+    
+
+    
+        
+            <ul class="list list--inline ">
+    
+        <li><a class="link button button--default-dark  " href="/products/attribution" aria-label="learn about our attribution product"><span class="link__text">/attribution</span>
+            <span class="link__icon">
+                
+<span class="icon--default-arrow">
+    <svg>
+        <use xlink:href="#icon-arrow-animate"></use>
+    </svg>
+</span>
+
+            </span>
+    
+</a>
+</li>
+    
+</ul>
+
+        
+    
+</article>
+    <div class="image image--fill     " >
+        <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/3dPyLPph1hHOSxYpexp2wZ/08ff8b3c1a95c4f8f1fc32c4e8ccda45/stefan-stefancik-Ue2-23uBwNw-unsplash__1___1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="A man in a cap looking at his phone with blurred buildings behind him">
+        </picture>
+    </div>
+</div></section>
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+ 
+    
+
+ <article class="section section--layout
+    section--top-s
+    section--bottom-s  layout--logos  "  >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col layout--row-m ">
+                <div class="section__heading-content  section__heading--center">
+                        <div class="section__heading section__heading--l "><h2><a href="#homelogos/">Join the best who trust in Foursquare</a></h2>
+</div>
+                    
+                        <div class="section__description text section__description--m "><p><strong><a href="https://foursquare.com/partners/">See all our Partners</a></strong></p>
+</div>
+                    </div>
+            
+                  
+    
+
+<ul class="logos  logos-layout--4-col " role="presentation">
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/3wEB5kxx2GHSuqhYfKdJrb/f297eb11d549d7a91a4a42a72d0f60fb/Logo___snapchat.svg?&q=85"  alt="The logo of snapchat">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/uTAvhTR5CqiD0fRpevKAk/ce6d019402218c3ddbc969be6295d677/airbnb_horizontal_lockup_web.png?&q=85"  alt="Airbnb&#39;s logo">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/3gi22a7c2AxhcGWb0mgHZb/01e9d9c91379adeaa822d9c6ebe33bbb/Uber_logo_2018.png?&q=85"  alt="Logo of Uber">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/1MDJMwI32yAUbbjS4PqPu9/31ccecfbf83005ac58fc88dc79028e12/twitter.png?&q=85"  alt="Twitter logo">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/3z5oGbAzg4eqtDbuYqZPqI/b9a0d53a6156bbb88ab8bbdbc85edc9e/Spotify_Logo_RGB_Green-2.svg?&q=85"  alt="Spotify logo">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/3PD9Y4VFMxh9q6mZ4isV2P/c0006fcb38be67a246ae488970015e2f/Yum_Brands_logo__1_.png?&q=85"  alt="Yum! brands&#39; logo">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/2GqiypKpFgXrRxT2LnXEW9/1c4f84d70e37ae9496bdfc8285829c99/Logo___global-samsung-logo-2.svg?&q=85"  alt="The logo Samsung">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/3JwCylTIy1Xm5j5CGE6ZE9/3c841ff81b14c5a1a1d13c92c8f576c4/AWS_logo_RGB.png?&q=85"  alt="The logo of Amazon">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/1e0UGR4EiXeJFdbpz9ekTR/248c4a33f62aed99cb8d80f1525414d0/apple.png?&q=85"  alt="Apple Logo">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/2RYojKm1czzdiyJtgomYso/3a82bc00adaf6f947de24cfdb74ff148/Logo___Microsoft-Logo.png?&q=85"  alt="The logo of Microsoft">
+
+
+
+        </li>
+    
+        <li class="logos-list__item">
+            
+
+
+
+
+
+
+
+
+    <img loading="lazy" class=" logo__icon" src="//images.ctfassets.net/exg8oyvb0wfw/2bpdgZLFV4mP2K52v035LG/1fd57139bfd58afcea0ffe17a1c35727/logo-snowflake-01__1_.png?&q=85"  alt="The logo of the company Snowflake">
+
+
+
+        </li>
+    </ul>
+
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+    
+    
+
+    <article class="section section--layout
+    section--top-s callout
+    section--bottom-tiny section--bg section--white    section--bg-narrow  " style="background-color: #3333FF;  " >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col layout--row-m ">
+                <div class="section__heading-content section__heading-content--75 ">
+                        <div class="section__heading section__heading--l "><h2>Get in touch with our location experts. Together, we’ll move your business forward.</h2>
+</div>
+                    </div>
+            
+                  
+    <ul class="list list--block ">
+    
+        <li><a class="link button button--default-white  " href="/contact-us" aria-label="Contact us"><span class="link__text">Contact Us</span>
+                    <span class="link__icon"><p><svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.125 2.813H3.75c-.563 0-.938.374-.938.937v6.563c0 .562.376.937.938.937H7.5v-.938H3.75V3.75h9.375v6.563H9.75L7.5 13.5l.75.563 1.969-2.813h2.906c.563 0 .938-.375.938-.938V3.75c0-.563-.376-.938-.938-.938z" fill="currentColor"/><path d="M1.875 8.438H.937V2.343c0-.797.61-1.406 1.407-1.406h6.094v.937H2.343c-.281 0-.469.188-.469.469v6.094z" fill="currentColor"/></svg></p>
+</span>
+    
+</a>
+</li>
+    
+</ul>
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+    
+      
+  
+    
+
+ 
+    
+
+ <article class="section section--layout
+    section--top-m
+    section--bottom-m    "  >
+    <div class="container ">
+        <div class="layout layout-- layout--multi-col layout--row-m ">
+                  
+    <section class="superfeature">
+        <div class="superfeature__img">
+            <picture class="">
+            <source
+                srcset="//images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=1920&q=75&fm=jpg&fl=progressive 1920w,
+                //images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive 1440w,
+                //images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=1200&q=75&fm=jpg&fl=progressive 1200w,
+                //images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=800&q=75&fm=jpg&fl=progressive 800w,
+                //images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=600&q=75&fm=jpg&fl=progressive 600w"
+                sizes="100vw">
+            <img class="js-fade-in" loading="lazy" src="//images.ctfassets.net/exg8oyvb0wfw/5fs2JIWMXbdtB6R6sWdoVs/477f592095dfd5783234df988be763a9/xiang-ji-AR8XAYZVB7Q-unsplash__1_.jpg?w=1440&q=75&fm=jpg&fl=progressive" alt="A busy city at night lit up by lights and cars in a blue/purple hue.">
+        </picture>
+        </div>
+    <div class="superfeature__content ">
+            <p class="superfeature__caption">[company news]</p>
+        
+            
+                
+            <a class="superfeature__link" href="/article/foursquare-visits-receives-first-media-rating-coun" >
+                <h2 class="superfeature__heading js-superfeature-heading">MRC grants Foursquare Visits first-ever accreditation</h2>
+            </a>
+        </div>
+</section>
+
+  
+
+            
+        </div>
+    </div>
+</article>
+
+
+
+
+
+        </main>
+
+        <footer class="site-footer" role="contentinfo">
+    
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-grid__item footer-grid__item--logo">
+                
+                    
+                    
+
+
+
+
+
+
+
+
+    <span loading="lazy" class=" logo__icon" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 67 81">
+  <path fill="currentColor" d="M.703 0h24.764v4.064H4.814v11.379h18.358v4.064H4.814v16.449H.704V0zM0 68.043l4.018-.908c.717 4.972 4.157 7.938 9.754 7.938 5.018 0 8.99-2.342 8.99-6.169 0-2.723-2.007-5.019-9.852-7.36C4.018 59.01 1.052 55.757 1.052 50.98c0-6.17 4.972-9.465 12.194-9.465 8.077 0 11.667 4.11 12.91 9.753l-4.018.908C21.132 47.54 17.98 45.58 13.1 45.58c-4.59 0-7.84 1.723-7.84 5.019 0 2.677 2.104 4.735 9.372 7.03 8.655 2.677 12.384 5.596 12.384 11.141 0 6.886-5.787 10.47-13.148 10.47C6.17 79.232.908 75.214 0 68.044zM31.128 60.487c0-10.662 6.979-18.982 17.692-18.982 10.661 0 17.547 8.367 17.547 18.982 0 5.307-1.77 9.898-4.735 13.245a122.024 122.024 0 014.209 4.4L62.875 81a192.912 192.912 0 00-4.4-4.544c-2.723 1.769-5.977 2.775-9.655 2.775-10.331 0-17.692-7.938-17.692-18.744zm24.237 12.91a105.44 105.44 0 00-4.208-3.874l2.868-2.914a123.314 123.314 0 014.492 4.11c2.151-2.578 3.441-6.117 3.441-10.279 0-8.413-5.117-14.819-13.148-14.819-8.03 0-13.194 6.406-13.194 14.82 0 8.654 5.592 14.725 13.194 14.725 2.445 0 4.642-.624 6.555-1.769z"/>
+</svg></span>
+
+
+
+                
+            </div>
+            <div class="footer-grid__item footer-grid__item--links">
+                <ul class="footer-links">
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Products &amp; Solutions</p>
+                            
+                                <div class="footer-links__block">
+                                        <p class="footer-links__block-heading">[Platform]</p>
+                                    <ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/attribution/" aria-label="Learn about Foursquare&#39;s attribution product"><span class="link__text">Attribution</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/audience/" aria-label="Learn more about Foursquare&#39;s Audience product"><span class="link__text">Audience</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/pilgrim-sdk/" aria-label="Learn more about Foursquare&#39;s Pilgrim SDK product"><span class="link__text">Pilgrim SDK</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/places/" aria-label="Learn more about Foursquare&#39;s Places product"><span class="link__text">Places</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/proximity/" aria-label="Learn more about Foursquare&#39;s Proximity product"><span class="link__text">Proximity</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/products/visits/" aria-label="Learn more about Foursquare&#39;s Visits product"><span class="link__text">Visits</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/solutions" aria-label="learn more about Foursquare&#39;s Solutions"><span class="link__text">Solutions</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                                <div class="footer-links__block">
+                                        <p class="footer-links__block-heading">[Apps]</p>
+                                    <ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/city-guide" aria-label="Go to our City Guide download page"><span class="link__text">City Guide</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://apps.apple.com/us/app/marsbot-for-airpods/id1481091266?ref=producthunt" aria-label="Download Marsbot for Airpods"><span class="link__text">Marsbot for Airpods</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://getpanelapp.com/" aria-label="Go to Foursquare&#39;s Panel App download page"><span class="link__text">Panel App</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://swarmapp.com" aria-label="Go to our Swarm download page"><span class="link__text">Swarm</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/labs/" aria-label="Learn about Foursquare&#39;s labs team"><span class="link__text">Labs</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Developer</p>
+                            
+                                <div class="footer-links__block"><ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="/docs" ><span class="link__text">Developer Docs</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="/developer-blog" aria-label="Link to developer bolg"><span class="link__text">Developer Blog</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://status.foursquare.com/" aria-label="Link to API Status"><span class="link__text">API Status</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/developers/support" aria-label="link to developer support "><span class="link__text">Developer Support</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Resources</p>
+                            
+                                <div class="footer-links__block"><ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/blog/" aria-label="View our blog"><span class="link__text">Blog</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/reports/" aria-label="View reports and guides by Foursquare"><span class="link__text">Reports &amp; Guides</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/glossary/" aria-label="Learn about location terms through our location glossary"><span class="link__text">Location Glossary</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/edit" aria-label="View our Superuser tools for City Guide"><span class="link__text">Superuser Tools</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://developer.foursquare.com/" aria-label="View foursquare&#39;s tools for developers"><span class="link__text">For Developers</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Partners</p>
+                            
+                                <div class="footer-links__block"><ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/partners/" aria-label="view our partners"><span class="link__text">Our Partners</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/partners/solutions/" aria-label="Learn more about our partner benefits"><span class="link__text">Partner Solutions</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/case-studies/" aria-label="See case studies"><span class="link__text">Case Studies</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Company</p>
+                            
+                                <div class="footer-links__block"><ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/about/" aria-label="Learn about Foursquare&#39;s history"><span class="link__text">Our Story</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/team/" aria-label="View Foursquare&#39;s executive team"><span class="link__text">Our Team</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/culture/" aria-label="Learn about the culture at Foursquare"><span class="link__text">Our Culture</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/careers/" aria-label="View careers at Foursquare"><span class="link__text">Careers</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/for-good/" aria-label="Learn about Foursquare&#39;s initiatives to make the world a better place"><span class="link__text">For Good</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/accreditation/" aria-label="See accreditations Foursquare has earned"><span class="link__text">Accreditations</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/privacy/" aria-label="Learn more about our privacy stance"><span class="link__text">Our Privacy Stance</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/press/" aria-label="View Foursquare in the press"><span class="link__text">Press</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/brand/" aria-label="Learn about Foursquare&#39;s brand"><span class="link__text">Our Brand</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    
+                        <li class="footer-links__item">
+                            <p class="footer-links__item-heading">Legal</p>
+                            
+                                <div class="footer-links__block"><ul class="footer-links__block-list">
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/privacy/policies/" aria-label="View Foursquare&#39;s privacy policies"><span class="link__text">Privacy Policies</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/legal/enterprise/siteterms" aria-label="View Foursquare&#39;s Terms of Use"><span class="link__text">Site Terms</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/data-requests/" aria-label="Learn about your data rights"><span class="link__text">Do not sell my personal info</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://www.foursquare.com/privacy/enterprise/#OptOut/" aria-label="Opt out "><span class="link__text">Opt Out</span>
+</a>
+
+                                        </li>
+                                    
+                                        <li class="footer-links__block-list-item">
+                                            <a class="link   " href="https://foursquare.com/legal/" aria-label="View Foursquare&#39;s legal terms and policies"><span class="link__text">Other Terms &amp; Policies</span>
+</a>
+
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                            
+                        </li>
+                    </ul>
+            </div>
+            <div class="footer-grid__item footer-grid__item--form">
+                
+                    
+                        <p class="site-footer__form-heading">Sign up for our newsletter</p>
+                    
+                    <div class="site-footer__form">
+                        <script src="//app-ab42.marketo.com/js/forms2/js/forms2.min.js"></script>
+<form id="mktoForm_1049"></form>
+<script>
+  MktoForms2.loadForm("//app-ab42.marketo.com", "579-FAI-132", 1049);</script>
+                        <p class="js-adblocker-message" style="display: none;">This form is blocked because of an adblocker. <br /> Please turn off your adblocker to see the form.</p>
+                    </div>
+                
+            </div>
+            <div class="footer-grid__item footer-grid__item--credits">
+                
+                    <div class="site-footer__text">
+                        <span class="site-footer__credits">© Foursquare 2021</span> <p>Lovingly made in NYC, CHI, SEA, SF &amp; LA</p>
+
+                    </div>
+                
+                
+                    <nav>
+                        <ul class="social-nav">
+                            
+                                <li class="social-nav__icon">
+                                    
+
+
+<a href="https://www.facebook.com/foursquare/">
+
+
+
+
+
+
+
+    <span loading="lazy" class=" logo__icon" ><p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><title>Facebook</title><path fill="currentColor" fill-rule="evenodd" d="M16 15.117a.883.883 0 01-.883.883H11.04V9.804h2.08l.311-2.415H11.04V5.847c0-.699.194-1.175 1.197-1.175h1.278v-2.16c-.221-.03-.98-.095-1.863-.095-1.843 0-3.106 1.125-3.106 3.192v1.78H6.461v2.415h2.085V16H.883A.883.883 0 010 15.117V.883C0 .395.395 0 .883 0h14.234c.488 0 .883.395.883.883v14.234z" clip-rule="evenodd"/><br>
+</svg></p>
+</span>
+
+
+</a>
+
+
+                                </li>
+                            
+                                <li class="social-nav__icon">
+                                    
+
+
+<a href="https://twitter.com/foursquare?lang=en">
+
+
+
+
+
+
+
+    <span loading="lazy" class=" logo__icon" ><p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><title>Twitter</title><path fill="currentColor" fill-rule="evenodd" d="M14.315 1.115A3.458 3.458 0 0011.769 0C9.845 0 8.283 1.583 8.283 3.534c0 .277.03.546.09.805C5.474 4.19 2.905 2.786 1.183.645a3.566 3.566 0 00-.472 1.779c0 1.225.616 2.307 1.552 2.941a3.455 3.455 0 01-1.58-.44v.043c0 1.713 1.202 3.142 2.798 3.465a3.437 3.437 0 01-1.575.062c.444 1.404 1.731 2.426 3.258 2.453A6.938 6.938 0 010 12.413 9.791 9.791 0 005.347 14c6.415 0 9.923-5.385 9.923-10.055 0-.154-.003-.308-.009-.458A7.106 7.106 0 0017 1.657a6.894 6.894 0 01-2.003.557A3.534 3.534 0 0016.531.259a6.906 6.906 0 01-2.216.856z" clip-rule="evenodd"/><br>
+</svg></p>
+</span>
+
+
+</a>
+
+
+                                </li>
+                            
+                                <li class="social-nav__icon">
+                                    
+
+
+<a href="https://www.instagram.com/foursquare/?hl=en">
+
+
+
+
+
+
+
+    <span loading="lazy" class=" logo__icon" ><p><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><title>Instagram</title><path fill-rule="evenodd" clip-rule="evenodd" d="M14.098 0H1.902A1.9 1.9 0 000 1.897v12.205A1.9 1.9 0 001.902 16h12.196A1.9 1.9 0 0016 14.102V1.898A1.9 1.9 0 0014.098 0zM11.5 2.5A.5.5 0 0112 2h1.5a.5.5 0 01.5.5V4a.5.5 0 01-.5.5H12a.5.5 0 01-.5-.5V2.5zM8.02 4.949c1.699 0 3.077 1.375 3.077 3.07a3.073 3.073 0 01-3.077 3.07 3.073 3.073 0 01-3.077-3.07 3.074 3.074 0 013.077-3.07zm6.481 9.05a.5.5 0 01-.5.501H2a.5.5 0 01-.5-.5V6.5h2c-.26.375-.349 1.074-.349 1.519 0 2.677 2.184 4.855 4.868 4.855s4.867-2.178 4.867-4.855c0-.445-.063-1.133-.386-1.52h2V14z" fill="currentColor"/></svg></p>
+</span>
+
+
+</a>
+
+
+                                </li>
+                            
+                                <li class="social-nav__icon">
+                                    
+
+
+<a href="https://www.linkedin.com/company/foursquare">
+
+
+
+
+
+
+
+    <span loading="lazy" class=" logo__icon" ><p><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><title>LinkedIn</title><path d="M16.013 1.176v13.647A1.177 1.177 0 0114.836 16H1.19a1.176 1.176 0 01-1.176-1.177V1.176A1.176 1.176 0 011.189 0h13.647a1.176 1.176 0 011.177 1.176zM4.719 6.118H2.366v7.53h2.353v-7.53zm.211-2.589a1.355 1.355 0 00-1.346-1.364h-.042a1.365 1.365 0 100 2.73A1.355 1.355 0 004.93 3.571v-.043zm8.73 5.544c0-2.264-1.44-3.144-2.87-3.144a2.683 2.683 0 00-2.382 1.215h-.066V6.118H6.13v7.53h2.353V9.641a1.562 1.562 0 011.412-1.684h.09c.748 0 1.303.47 1.303 1.656v4.033h2.353l.019-4.574z" fill="currentColor"/></svg></p>
+</span>
+
+
+</a>
+
+
+                                </li>
+                            
+                        </ul>
+                    </nav>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+        <!-- Current page: / -->
+    </body>
+</html>

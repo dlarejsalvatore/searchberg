@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js no-svg">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/jpeg" href="https://tweakyourbiz.com/wp-content/themes/tyb/images/fav.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.0 (Yoast SEO v17.0) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Don’t Make These 7 Student Loan Mistakes - Tweak Your Biz</title><style id="rocket-critical-css">.bd{background:#80a324;background:-moz-linear-gradient(left,#80a324 0%,#1291b5 100%);background:-webkit-linear-gradient(left,#80a324 0%,#1291b5 100%);background:linear-gradient(to right,#80a324 0%,#1291b5 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#80a324', endColorstr='#1291b5',GradientType=1 );border:none;clear:both;height:3px;margin:0px;padding:0px;width:100%}.sidebar{position:relative;padding-bottom:50px}.topbar{border-width:0;border-color:#e2e2e2;margin:0px 0px 120px;width:100%}.main-content h1{color:#000;font-family:"Montserrat",sans-serif;font-size:45px;font-weight:100}.post{padding:0px 15px;width:100%}.post .category{font-size:14px;font-weight:700;margin:0px;text-transform:uppercase}.post h5{color:#999;font-size:14px;font-weight:700;text-transform:uppercase}.post h5 a{color:#999}.post .category .cname{color:#fff;font-size:12px;font-weight:700;display:inline-block;margin:5px 5px 5px 0px;padding:5px 10px;text-transform:uppercase}.nopadding{padding:0}.pull-left .avatar{width:56px;border-radius:50%;border:3px solid white;margin-right:7px}.read{margin-top:23px}.read span{color:#999;font-size:11px;font-weight:600;margin-left:15px;text-transform:uppercase}.read img{margin-top:-3px}.photo{clear:both;padding:20px 0px 30px;text-align:right}.photo img{width:100%;height:auto}@media only screen and (max-width:767px){.main-content h1{font-size:38px}.sharebtns{margin-bottom:20px;margin-top:0!important}}@media only screen and (min-width:768px) and (max-width:991px){.main-content h1{font-size:38px}}body{overflow-x:hidden}.wp-megamenu .wp-megamenu-wrap ul{position:relative;display:block}.wp-megamenu-wrap .wpmm-nav-wrap>ul>li>a{padding:15px 14px;color:#444;display:inline-block;margin:0}.wp-megamenu-wrap .wpmm-nav-wrap>ul>li>a:after{display:none!important}body .wp-megamenu-wrap .wpmm-nav-wrap>ul{display:block;padding:0;margin:0;list-style:none;position:relative;left:auto;top:auto}.wp-megamenu-wrap .wpmm-nav-wrap ul ul{opacity:1;display:block;position:relative;left:auto;top:auto;box-shadow:none}.wp-megamenu-wrap .wpmm-nav-wrap>ul>li{display:inline-block;border-top:none;position:static;line-height:inherit}.wp-megamenu-wrap{z-index:99999}.wp-megamenu-wrap{position:relative}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu li.wpmm_mega_menu ul.wp-megamenu-sub-menu{list-style:none;padding:0;margin:0;left:0}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container ul.wp-megamenu-sub-menu>li.wpmm-row{clear:both;width:100%;height:100%}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu li.wpmm_mega_menu .wpmm-strees-row-and-content-container>.wp-megamenu-sub-menu>li{padding:10px 15px}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu li.wpmm_mega_menu .wpmm-strees-row-and-content-container>.wp-megamenu-sub-menu>li>.wp-megamenu-sub-menu>li{padding:15px}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container>ul.wp-megamenu-sub-menu{position:absolute;left:0;top:100%;text-align:left;right:auto;padding:0;margin:0;border:none;line-height:0;display:none;font-size:0;width:100%;opacity:0;z-index:-1;visibility:hidden}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container ul.wp-megamenu-sub-menu li{font-size:14px;line-height:1.4;position:relative}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container ul.wp-megamenu-sub-menu>li.wpmm-row>ul.wp-megamenu-sub-menu>li:last-child{border-right:none!important}.wpmm-row-content-strees-extra{position:absolute;left:0;top:100%;text-align:left;right:auto;width:100%;z-index:222;height:0}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_dropdown_menu{position:relative!important}.wp-megamenu-wrap ul.wp-megamenu>li{float:none!important}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu ul.wp-megamenu-sub-menu li a{display:block;font-weight:300}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu ul.wp-megamenu-sub-menu li.wpmm-type-widget{margin-bottom:6px}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu ul.wp-megamenu-sub-menu li:last-child{margin-bottom:0}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li>a i{margin-right:0;width:auto;height:auto;line-height:normal;font-size:inherit}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container ul.wp-megamenu-sub-menu>li.wpmm-row>ul.wp-megamenu-sub-menu{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;left:auto;right:auto;top:auto;bottom:0;margin-top:0;width:100%}.wpmm-col.wpmm-col-12{width:100%}.wp-megamenu-wrap ul ul a{width:auto!important}.wpmm_mobile_menu_btn{color:#ffffff;background-color:#2964d8;font-size:14px}.wpmm_mobile_menu_btn i{font-size:14px}.wpmm_mobile_menu_btn{font-size:14px;display:none!important}.wpmm-nav-wrap ul li ul.wp-megamenu-sub-menu{margin-top:3px}@media (max-width:767px){.wp-megamenu-wrap ul.wp-megamenu li ul li{width:100%}.wp-megamenu-wrap .wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container>ul.wp-megamenu-sub-menu{z-index:1}}.fa{font:normal normal normal 14px/1 FontAwesome!important}#wp-megamenu-main-menu{z-index:9999;text-align:left;background-color:#fff}#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu>li>a{font-family:'Montserrat';color:#000;font-size:16px;font-weight:800;line-height:20px;text-transform:uppercase}#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu li a,#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu li,#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu h4{font-family:'Montserrat'!important}#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu li a{color:#fff;font-size:14px;font-weight:600;line-height:15px;text-transform:uppercase;background-color:#000;padding-top:5px;padding-right:15px;padding-bottom:5px;padding-left:15px}#wp-megamenu-main-menu>.wpmm-nav-wrap>ul.wp-megamenu>li.wpmm_mega_menu>.wpmm-strees-row-and-content-container>ul.wp-megamenu-sub-menu{background:#000}#wp-megamenu-main-menu>.wpmm-nav-wrap ul.wp-megamenu li.wpmm-type-widget{color:#fff}@media (max-width:767px){.wpmm_mobile_menu_btn{display:block}a.wpmm_mobile_menu_btn{display:inline-block!important}.wpmm_mobile_menu_btn{color:#ffffff!important;background-color:#2964d8;font-size:14px}.wpmm_mobile_menu_btn i{font-size:14px}}.nav.navbar-nav>li{display:none}.wpmm-grid-post-img-wrap a{padding:0!important}.wpmm-grid-post-img{position:relative;line-height:0;font-size:0;height:180px;background-position:50%!important}.wpmm-grid-post-img-wrap{position:relative}.wpmm-grid-post-content .grid-post-title{margin:5px 0 0;padding:0;font-weight:600}.wpmm-grid-post-content .grid-post-title a{padding:0;margin:0;width:auto;color:#000;font-weight:600!important;overflow:hidden;text-overflow:ellipsis}.wpmm-grid-post-row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -10px}.wpmm-grid-post{padding:0 10px}.wpmm-grid-post.col5{width:20%}@media (max-width:767px){.wpmm-grid-post.col5{width:50%}}body{background-color:#fff;color:#000;font-family:"Montserrat",sans-serif,Arial,Helvetica;font-weight:400}.navbar-brand>img{display:inline-block}h1,h4,h5{font-family:"Montserrat",serif;font-size:100%}ul>li{color:#666;font-family:"Montserrat",sans-serif,Arial,Helvetica;font-size:14px;font-weight:300;line-height:26px;overflow-wrap:break-word;word-wrap:break-word}.center{text-align:center}header{clear:both;width:100%}.navbar-header{padding:30px 0px 24px;position:relative;text-align:center;width:100%}.navbar-header .social{position:absolute;left:0px;top:64px;z-index:1}.social a{width:44px;color:#999;font-size:27px;font-weight:400;margin:0;text-align:center}.navbar-brand{float:none;height:auto;padding:15px 0px}.subnav-right{position:absolute;right:0px;top:69px;z-index:1}.subnav-right ul{float:right;list-style:none;margin:10px 0px 0px;padding:0px}.bd{background:#80a324;background:-moz-linear-gradient(left,#80a324 0%,#1291b5 100%);background:-webkit-linear-gradient(left,#80a324 0%,#1291b5 100%);background:linear-gradient(to right,#80a324 0%,#1291b5 100%);border:none;clear:both;height:3px;margin:0px;padding:0px;width:100%}.main-nav{background-color:#fff;clear:both;width:100%}.navbar-default{background-color:#111;border:none;border-radius:0px;margin:0px}.navbar-default .navbar-nav>li{color:#222;font-size:16px;font-weight:800;text-transform:uppercase}.navbar-default .navbar-nav>li>a{color:#222;margin:15px;padding:7px 0px;font-size:18px}.navbar-default .navbar-nav>li:first-child>a{margin-left:0px}.search{top:0;float:right;position:relative;width:23%;height:50px;overflow:hidden}.search .fa-search{position:relative;top:22px}.search-box{overflow:hidden;margin-top:0;width:100%;right:-500px;position:absolute;height:50px;top:8px}.search-box .form-control{background:url(https://tweakyourbiz.com/wp-content/themes/tyb/images/lens.jpg) no-repeat 10px center;border-color:#e2e2e2;border-radius:2px;box-shadow:none;color:#999;float:left;font-size:14px;font-weight:300;width:90%!important;padding:7px 5px!important;padding-left:35px!important;background-color:#fff}.search-box .fa{color:#666;margin:8px 0px}.search-box{width:0px;overflow:hidden}.main-nav>.container{overflow-x:hidden}.navbar-collapse{padding:0px}.main-content{padding-bottom:50px}#headerSpacer{height:225px}header{position:fixed;top:0;z-index:999}header .navbar-brand img{height:105px}header .main-nav{border-bottom:2px solid #ccc}header form{margin-top:7px}@media only screen and (max-width:767px){.navbar-header .social,.subnav-right{display:none}.navbar-header{width:auto}.navbar-brand>img{height:80px}.navbar-collapse{padding:0px 15px;margin:0px -15px}.navbar-nav{margin:0px -15px}.navbar-default .navbar-nav>li{font-size:12px}.navbar-default .navbar-nav>li>a{padding:8px 0px}.navbar-default .navbar-nav>li:first-child>a{margin-left:15px}#headerSpacer{height:auto!important}.search{width:100%;margin-bottom:15px}.search-box{display:inline-block!important;width:100%;right:0;margin-top:-6px}}@media only screen and (min-width:768px) and (max-width:991px){.subnav-right{top:50px}.navbar-default .navbar-nav>li>a{margin:0px 10px;font-size:14px}.search{float:none;width:100%;margin-bottom:15px}}@media only screen and (min-width:992px) and (max-width:1199px){.subnav-right{top:55px}.navbar-default .navbar-nav>li{font-size:14px}.navbar-default .navbar-nav>li>a{font-size:14px;margin:15px 9px}}@media (min-width:1200px){.container{width:1170px}.navbar-default .navbar-nav>li>a{font-size:16px}}</style><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" /></noscript><link rel="preload" href="https://tweakyourbiz.com/wp-content/cache/min/1/db308c803d6bcd477acdddc9dab1a173.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+	<meta name="description" content="Often students and their parents get caught up in the whirlwind of excitement and prospects for the future when it&#039;s time to figure out what their college situation will look like." />
+	<link rel="canonical" href="https://tweakyourbiz.com/finance/loans/student-mistakes" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Don’t Make These 7 Student Loan Mistakes" />
+	<meta property="og:description" content="Often students and their parents get caught up in the whirlwind of excitement and prospects for the future when it&#039;s time to figure out what their college situation will look like." />
+	<meta property="og:url" content="https://tweakyourbiz.com/finance/loans/student-mistakes" />
+	<meta property="og:site_name" content="Tweak Your Biz" />
+	<meta property="article:publisher" content="https://www.facebook.com/TweakYourBiz/" />
+	<meta property="article:published_time" content="2020-07-29T10:32:00+00:00" />
+	<meta property="article:modified_time" content="2020-07-28T19:32:56+00:00" />
+	<meta property="og:image" content="https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg" />
+	<meta property="og:image:width" content="2048" />
+	<meta property="og:image:height" content="1595" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@TweakYourBiz" />
+	<meta name="twitter:site" content="@TweakYourBiz" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Samantha Jones" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tweakyourbiz.com/#organization","name":"Tweak Your Biz","url":"https://tweakyourbiz.com/","sameAs":["https://www.facebook.com/TweakYourBiz/","https://www.linkedin.com/company/bloggertone/","https://twitter.com/TweakYourBiz"],"logo":{"@type":"ImageObject","@id":"https://tweakyourbiz.com/#logo","inLanguage":"en-US","url":"https://tweakyourbiz.com/wp-content/uploads/2018/06/white_TYB.png","contentUrl":"https://tweakyourbiz.com/wp-content/uploads/2018/06/white_TYB.png","width":"1000","height":"1000","caption":"Tweak Your Biz"},"image":{"@id":"https://tweakyourbiz.com/#logo"}},{"@type":"WebSite","@id":"https://tweakyourbiz.com/#website","url":"https://tweakyourbiz.com/","name":"Tweak Your Biz","description":"","publisher":{"@id":"https://tweakyourbiz.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tweakyourbiz.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#primaryimage","inLanguage":"en-US","url":"https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg","contentUrl":"https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg","width":2048,"height":1595},{"@type":"WebPage","@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#webpage","url":"https://tweakyourbiz.com/finance/loans/student-mistakes","name":"Don\u2019t Make These 7 Student Loan Mistakes - Tweak Your Biz","isPartOf":{"@id":"https://tweakyourbiz.com/#website"},"primaryImageOfPage":{"@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#primaryimage"},"datePublished":"2020-07-29T10:32:00+00:00","dateModified":"2020-07-28T19:32:56+00:00","description":"Often students and their parents get caught up in the whirlwind of excitement and prospects for the future when it's time to figure out what their college situation will look like.","breadcrumb":{"@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tweakyourbiz.com/finance/loans/student-mistakes"]}]},{"@type":"BreadcrumbList","@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tweakyourbiz.com/"},{"@type":"ListItem","position":2,"name":"Don\u2019t Make These 7 Student Loan Mistakes"}]},{"@type":"Article","@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#article","isPartOf":{"@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#webpage"},"author":{"@id":"https://tweakyourbiz.com/#/schema/person/7c832dc4d9ebea8b40e3ac32e0625076"},"headline":"Don\u2019t Make These 7 Student Loan Mistakes","datePublished":"2020-07-29T10:32:00+00:00","dateModified":"2020-07-28T19:32:56+00:00","mainEntityOfPage":{"@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#webpage"},"wordCount":1108,"publisher":{"@id":"https://tweakyourbiz.com/#organization"},"image":{"@id":"https://tweakyourbiz.com/finance/loans/student-mistakes#primaryimage"},"thumbnailUrl":"https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg","articleSection":["Finance","Loans"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://tweakyourbiz.com/#/schema/person/7c832dc4d9ebea8b40e3ac32e0625076","name":"Samantha Jones","image":{"@type":"ImageObject","@id":"https://tweakyourbiz.com/#personlogo","inLanguage":"en-US","url":"https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-96x96.jpg","contentUrl":"https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-96x96.jpg","caption":"Samantha Jones"},"description":"Samantha has over a decade of experience in blogging about technology products. Samantha loves to share information on early childhood care, literacy activities, and recent technology trends that shape business and personal activities. Samantha is an avid reader and blogger, and enjoys the process that goes into researching new and exciting topics that will bring value to the readers.","url":"https://tweakyourbiz.com/author/samanthajones"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+
+
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://tweakyourbiz.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+
+
+<script type='text/javascript' src='https://tweakyourbiz.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://tweakyourbiz.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/plugins/wp-megamenu/addons/wpmm-featuresbox/wpmm-featuresbox.js?ver=1630624607' id='featuresbox-style-js'></script>
+<script type='text/javascript' id='postgrid-style-js-extra'>
+/* <![CDATA[ */
+var postgrid_ajax_load = {"ajax_url":"https:\/\/tweakyourbiz.com\/wp-admin\/admin-ajax.php","redirecturl":"https:\/\/tweakyourbiz.com\/"};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/plugins/wp-megamenu/addons/wpmm-gridpost/wpmm-gridpost.js?ver=1630624607' id='postgrid-style-js'></script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/themes/tyb/js/article.js?ver=1630624608' id='article-js'></script>
+<link rel="https://api.w.org/" href="https://tweakyourbiz.com/wp-json/" /><link rel="alternate" type="application/json" href="https://tweakyourbiz.com/wp-json/wp/v2/posts/176274" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tweakyourbiz.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tweakyourbiz.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://tweakyourbiz.com/?p=176274' />
+<link rel="alternate" type="application/json+oembed" href="https://tweakyourbiz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftweakyourbiz.com%2Ffinance%2Floans%2Fstudent-mistakes" />
+<link rel="alternate" type="text/xml+oembed" href="https://tweakyourbiz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftweakyourbiz.com%2Ffinance%2Floans%2Fstudent-mistakes&#038;format=xml" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-11026588-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-11026588-1');
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+    var _ss = _ss || [];
+    _ss.push(['_setDomain', 'https://koi-3QNM6IF6C0.marketingautomation.services/net']);
+    _ss.push(['_setAccount', 'KOI-496JK248Y0']);
+    _ss.push(['_trackPageView']);
+(function() {
+    var ss = document.createElement('script');
+    ss.type = 'text/javascript'; ss.async = true;
+    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNM6IF6C0.marketingautomation.services/client/ss.js?ver=2.4.0';
+    var scr = document.getElementsByTagName('script')[0];
+    scr.parentNode.insertBefore(ss, scr);
+})();
+</script><style type="text/css">.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-90524.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-90524>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-90524>a { }li#wp-megamenu-item-90524> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-90524 a { }#wp-megamenu-item-90524> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81316.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81316>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81316>a { }li#wp-megamenu-item-81316> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81316 a { }#wp-megamenu-item-81316> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81321.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81321>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81321>a { }li#wp-megamenu-item-81321> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81321 a { }#wp-megamenu-item-81321> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81320.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81320>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81320>a { }li#wp-megamenu-item-81320> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81320 a { }#wp-megamenu-item-81320> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81319.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81319>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81319>a { }li#wp-megamenu-item-81319> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81319 a { }#wp-megamenu-item-81319> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81318.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81318>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81318>a { }li#wp-megamenu-item-81318> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81318 a { }#wp-megamenu-item-81318> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81317.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81317>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81317>a { }li#wp-megamenu-item-81317> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81317 a { }#wp-megamenu-item-81317> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-155624.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-155624>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-155624>a { }li#wp-megamenu-item-155624> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-155624 a { }#wp-megamenu-item-155624> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104118.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104118>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104118>a { }li#wp-megamenu-item-104118> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104118 a { }#wp-megamenu-item-104118> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104124.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104124>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104124>a { }li#wp-megamenu-item-104124> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104124 a { }#wp-megamenu-item-104124> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104126.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104126>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104126>a { }li#wp-megamenu-item-104126> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104126 a { }#wp-megamenu-item-104126> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104122.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104122>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104122>a { }li#wp-megamenu-item-104122> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104122 a { }#wp-megamenu-item-104122> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104123.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104123>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104123>a { }li#wp-megamenu-item-104123> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104123 a { }#wp-megamenu-item-104123> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104121.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104121>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104121>a { }li#wp-megamenu-item-104121> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104121 a { }#wp-megamenu-item-104121> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-104125.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-104125>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-104125>a { }li#wp-megamenu-item-104125> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-104125 a { }#wp-megamenu-item-104125> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-108162.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-108162>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-108162>a { }li#wp-megamenu-item-108162> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-108162 a { }#wp-megamenu-item-108162> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81349.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81349>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81349>a { }li#wp-megamenu-item-81349> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81349 a { }#wp-megamenu-item-81349> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81351.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81351>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81351>a { }li#wp-megamenu-item-81351> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81351 a { }#wp-megamenu-item-81351> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81347.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81347>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81347>a { }li#wp-megamenu-item-81347> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81347 a { }#wp-megamenu-item-81347> .wp-megamenu-sub-menu { }.wp-megamenu-wrap > ul.wp-megamenu > li.wpmm_mega_menu > .wpmm-strees-row-container 
+                        > ul.wp-megamenu-sub-menu { width: 100% !important;}.wp-megamenu > li.wp-megamenu-item-81340.wpmm-item-fixed-width  > ul.wp-megamenu-sub-menu { width: 100% !important;}.wpmm-nav-wrap ul.wp-megamenu>li ul.wp-megamenu-sub-menu #wp-megamenu-item-81340>a { }.wpmm-nav-wrap .wp-megamenu>li>ul.wp-megamenu-sub-menu li#wp-megamenu-item-81340>a { }li#wp-megamenu-item-81340> ul ul ul> li { width: 100%; display: inline-block;} li#wp-megamenu-item-81340 a { }#wp-megamenu-item-81340> .wp-megamenu-sub-menu { }</style><style type="text/css"></style><!-- Markup (JSON-LD) structured in schema.org ver.4.8.1 START -->
+<!-- Markup (JSON-LD) structured in schema.org END -->
+<link rel="icon" href="https://tweakyourbiz.com/wp-content/uploads/2018/06/cropped-tyb_trans-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tweakyourbiz.com/wp-content/uploads/2018/06/cropped-tyb_trans-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tweakyourbiz.com/wp-content/uploads/2018/06/cropped-tyb_trans-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tweakyourbiz.com/wp-content/uploads/2018/06/cropped-tyb_trans-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.a2a_dd,.sharebtns,ul.sub-menu .yawp_wim_title{display:none !important;}header .search-box{height:0px;}
+header .search-box.show{height: 40px;}
+img{max-width:100%;height:auto;}
+.wp-caption{max-width:100%;height:auto;}
+.follow a{margin-right:10px;}
+.home .widget.widget_cool_tag_cloud
+{display:none;}
+.searchs { float: right; position: relative; width: 23%; height: 50px; overflow: hidden; }
+.col-sm-3.col-md-3.searchs .fa { color: #999; float: right; font-size: 18px; margin: 23px 0px; }
+.col-sm-3.col-md-3.searchs .fa { margin: 23px 0px; }
+.sumome-share-client-wrapper.sumome-share-client-wrapper-left-page.sumome-share-client-counts.sumome-share-client-light.sumome-share-client-medium {
+    display: none;
+}
+.search.search-results{
+	width:100%;
+	max-width:100%;
+	position:initial;
+	float:none;
+	height: auto;
+    overflow: initial;
+}
+ul.sub-menu{  display: none;
+    position: absolute;
+    background-color: #000;
+	list-style-type:none;
+	padding:20px;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.navbar-default .navbar-nav > li:hover>ul.sub-menu{display:block;}
+.sub-menu:after{  content: "";
+  display: table;
+  clear: both;}
+.sub-menu li{width:100%;float:left;}
+.main-nav > .container{position:relative;overflow-x: visible;}
+.navbar-default .navbar-nav > li{position:unset;}
+footer ul.sub-menu{  display: none !important;}
+ul.sub-menu h4.grid-post-title a, ul.sub-menu{color:#fff;}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="post-template-default single single-post postid-176274 single-format-standard wp-megamenu elementor-default elementor-kit-167284">
+<div id="container">
+<div id="headerSpacer"></div>
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle clk" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="social">
+			<a href="https://www.facebook.com/TweakYourBiz/" class="fa fa-facebook" target="_blank"></a>
+			
+			<a href="https://twitter.com/TweakYourBiz?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter" target="_blank"></a>
+			<a href="https://www.linkedin.com/company/bloggertone" class="fa fa-linkedin" target="_blank"></a>
+        </div>
+        <div class="subnav-right">
+          <ul>
+                      </ul>
+        </div>
+        <a href="/" class="navbar-brand"><img width="173" height="105" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20173%20105'%3E%3C/svg%3E" alt="TYB Logo" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2018/08/logo.png"><noscript><img width="173" height="105" src="https://tweakyourbiz.com/wp-content/uploads/2018/08/logo.png" alt="TYB Logo"></noscript></a>
+      </div>
+    </div>
+    <hr class="bd">
+    <div class="main-nav">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+		    <li><a href="/" class="fa fa-home"></a></li>
+            <nav id="wp-megamenu-main-menu" class="wp-megamenu-wrap   ">
+			<div class="wpmm-fullwidth-wrap"></div>
+			<div class="wpmm-nav-wrap wpmm-main-wrap-main-menu">
+				<a href="javascript:;" class="wpmm_mobile_menu_btn show-close-icon"><i class="fa fa-bars"></i> Menu</a> 
+					<ul id="menu-main-menu" class="wp-megamenu" ><li id="wp-megamenu-item-155624" class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-155624  wpmm_dropdown_menu  wpmm-fadeindown wpmm-submenu-right"><a href="/"><i class="fa fa-home"></i></a></li>
+<li id="wp-megamenu-item-90524" class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-90524  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="https://tweakyourbiz.com/business">Business</a>
+<div id='wpmm-strees-row-90524' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-8883209173442683924" class="wpmm-row wp-megamenu-item-8883209173442683924 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-1.0827828865246E+19" class="wpmm-col wpmm-col-12 wp-megamenu-item-1.0827828865246E+19 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-90524 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/how-to-identify-lucrative-business-opportunities-6-tips"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Lucrative-Business-Opportunities.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/how-to-identify-lucrative-business-opportunities-6-tips">How To Identify Lucrative Business Opportunities: 6 Tips</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/press-release/how-to-choose-a-broker"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Forex.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/press-release/how-to-choose-a-broker">How to Choose A Broker</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/education/what-can-you-expect-from-a-career-in-business-administration"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Business-Administration.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/education/what-can-you-expect-from-a-career-in-business-administration">WHAT CAN YOU EXPECT FROM A CAREER IN BUSINESS ADMINISTRATION?</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/finance/loans/7-tips-to-securing-your-personal-loan"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Personal-Loan.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/finance/loans/7-tips-to-securing-your-personal-loan">7 tips to securing your personal loan</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/crm/5-ways-legal-crm-can-boost-your-practice"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/AdobeStock_258669413-scaled.jpeg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/crm/5-ways-legal-crm-can-boost-your-practice">5 Ways Legal CRM Can Boost Your Practice</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="wp-megamenu-item-81316" class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81316  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/sales">Sales</a>
+<div id='wpmm-strees-row-81316' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-6691220341800691656" class="wpmm-row wp-megamenu-item-6691220341800691656 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-7430086686012627053" class="wpmm-col wpmm-col-12 wp-megamenu-item-7430086686012627053 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81317" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81317 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/sales/the-secrets-to-building-an-effective-sales-team"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/business-1.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/sales/the-secrets-to-building-an-effective-sales-team">The Secrets to Building an Effective Sales Team</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/sales/b2c-sales/selling-at-online-auctions-6-tips-for-beginners"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/AdobeStock_198043934.jpeg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/sales/b2c-sales/selling-at-online-auctions-6-tips-for-beginners">Selling At Online Auctions: 6 Tips For Beginners</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/marketing-strategy/from-customer-satisfaction-surveys-to-informed-online-marketing-decisions-examples-and-tips"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Online-Marketing.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/marketing-strategy/from-customer-satisfaction-surveys-to-informed-online-marketing-decisions-examples-and-tips">From Customer Satisfaction Surveys to Informed Online Marketing Decisions – Examples and Tips</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/b2b-sales/how-to-optimize-your-b2b-customer-touchpoints"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/07/pexels-negative-space-34577-scaled.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/b2b-sales/how-to-optimize-your-b2b-customer-touchpoints">How to Optimize Your B2B Customer Touchpoints</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/top-advantages-and-disadvantages-of-customer-feedback"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/07/user-feedback-750x365-1.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/top-advantages-and-disadvantages-of-customer-feedback">Top Advantages and Disadvantages of customer feedback</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81317  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/finance">Finance</a>
+<div id='wpmm-strees-row-81317' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-6941478976447141182" class="wpmm-row wp-megamenu-item-6941478976447141182 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-1.5229335528013E+19" class="wpmm-col wpmm-col-12 wp-megamenu-item-1.5229335528013E+19 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81318" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81318 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/press-release/how-to-choose-a-broker"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Forex.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/press-release/how-to-choose-a-broker">How to Choose A Broker</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/finance/loans/beware-of-the-loan-scam-list-of-things-to-check-before-loaning"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Loans.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/finance/loans/beware-of-the-loan-scam-list-of-things-to-check-before-loaning">Beware of The Loan Scam: List of Things to Check Before Loaning</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/finance/loans/7-tips-to-securing-your-personal-loan"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Personal-Loan.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/finance/loans/7-tips-to-securing-your-personal-loan">7 tips to securing your personal loan</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/finance/financial-planning/where-to-start-your-debt-payoff-journey"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Debt-Payoff.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/finance/financial-planning/where-to-start-your-debt-payoff-journey">Where to Start your Debt Payoff Journey</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/finance/financial-planning/how-to-get-your-funds-back-in-a-legit-way"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Financial-Scam.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/finance/financial-planning/how-to-get-your-funds-back-in-a-legit-way">How to Get Your Funds Back in a Legit Way</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81318  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/marketing">Marketing</a>
+<div id='wpmm-strees-row-81318' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-66865232553430740" class="wpmm-row wp-megamenu-item-66865232553430740 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-3010070572778486121" class="wpmm-col wpmm-col-12 wp-megamenu-item-3010070572778486121 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81319" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81319 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/six-experience-based-tips-to-get-a-higher-roi-from-guest-posting"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/SEO1.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/six-experience-based-tips-to-get-a-higher-roi-from-guest-posting">Six Experience-Based Tips to Get a Higher ROI from Guest Posting</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/digital-marketing/how-to-earn-backlinks-in-2021-6-proven-ways"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Backlink-Building.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/digital-marketing/how-to-earn-backlinks-in-2021-6-proven-ways">How to Earn Backlinks In 2021 &#8211; 6 Proven Ways</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/content-marketing/how-to-make-your-content-more-relevant-with-journey-mapping"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/unnamed.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/content-marketing/how-to-make-your-content-more-relevant-with-journey-mapping">How to make your content more relevant with journey mapping</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/marketing-strategy/6-simple-tips-for-designing-a-booklet-or-catalog"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Catalog.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/marketing-strategy/6-simple-tips-for-designing-a-booklet-or-catalog">6 Simple Tips for Designing a Booklet or Catalog</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/seo/how-to-choose-the-right-seo-technique-for-your-business"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/AdobeStock_220392229.jpeg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/seo/how-to-choose-the-right-seo-technique-for-your-business">How To Choose The Right SEO Technique For Your Business</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81319  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/management">Management</a>
+<div id='wpmm-strees-row-81319' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-7443315521516780095" class="wpmm-row wp-megamenu-item-7443315521516780095 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-1.5850239416579E+19" class="wpmm-col wpmm-col-12 wp-megamenu-item-1.5850239416579E+19 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81320" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81320 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/business-plans/5-biggest-business-plan-mistakes-entrepreneurs-make"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Business-Plan.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/business-plans/5-biggest-business-plan-mistakes-entrepreneurs-make">5 Biggest Business Plan Mistakes Entrepreneurs Make</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/customer-service/how-to-succeed-in-the-services-industry"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Customer-Service.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/customer-service/how-to-succeed-in-the-services-industry">How To Succeed In The Services Industry</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/management/5-tips-to-improve-human-capital-management"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/AdobeStock_177237273.jpeg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/management/5-tips-to-improve-human-capital-management">5 Tips To Improve Human Capital Management</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/management/the-building-blocks-of-productive-employer-employee-relationships-5-tips-for-success"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Employer-Employee-Relationships.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/management/the-building-blocks-of-productive-employer-employee-relationships-5-tips-for-success">The Building Blocks of Productive Employer-Employee Relationships: 5 Tips For Success</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/management/workplace-relationships/common-issues-that-you-might-face-in-your-workplace-and-how-to-prevent-them"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Workplace-issues.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/management/workplace-relationships/common-issues-that-you-might-face-in-your-workplace-and-how-to-prevent-them">8 Common Issues That You Might Face In Your Workplace And How To Prevent Them</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81320  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/growth">Growth</a>
+<div id='wpmm-strees-row-81320' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-6439619436731041390" class="wpmm-row wp-megamenu-item-6439619436731041390 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-1.2124202652868E+19" class="wpmm-col wpmm-col-12 wp-megamenu-item-1.2124202652868E+19 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81321" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81321 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/business-plans/5-biggest-business-plan-mistakes-entrepreneurs-make"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Business-Plan.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/business-plans/5-biggest-business-plan-mistakes-entrepreneurs-make">5 Biggest Business Plan Mistakes Entrepreneurs Make</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/customer-service/how-to-succeed-in-the-services-industry"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Customer-Service.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/customer-service/how-to-succeed-in-the-services-industry">How To Succeed In The Services Industry</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/growth/productivity/5-precautions-to-take-when-your-office-decides-to-go-paperless"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Go-Paperless.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/growth/productivity/5-precautions-to-take-when-your-office-decides-to-go-paperless">5 Precautions To Take When Your Office Decides To Go Paperless</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/growth/all-you-need-to-know-about-becoming-a-front-end-developer-in-2021"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/nubelson-fernandes-gTs2w7bu3Qo-unsplash-scaled.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/growth/all-you-need-to-know-about-becoming-a-front-end-developer-in-2021">All You Need to Know About Becoming a Front End Developer in 2021</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/growth/growth-hacking/helpful-tips-for-working-with-data-in-microsoft-excel"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/john-schnobrich-FlPc9_VocJ4-unsplash-scaled.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/growth/growth-hacking/helpful-tips-for-working-with-data-in-microsoft-excel">Helpful Tips For Working With Data in Microsoft Excel</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom wp-megamenu-item-81321  wpmm_mega_menu  wpmm-fadeindown wpmm-strees-row-and-content wpmm-submenu-right"><a href="/technology">Tech</a>
+<div id='wpmm-strees-row-81321' class='wpmm-strees-row-and-content-container'> <div class='wpmm-row-content-strees-extra'></div>  <ul class="wp-megamenu-sub-menu">
+	<li id="wp-megamenu-item-4992766429465529139" class="wpmm-row wp-megamenu-item-4992766429465529139 wpmm-submenu-right">
+	<ul class="wp-megamenu-sub-menu" >
+		<li id="wp-megamenu-item-7155405966044423275" class="wpmm-col wpmm-col-12 wp-megamenu-item-7155405966044423275 wpmm-submenu-right">
+		<ul class="wp-megamenu-sub-menu" >
+			<li id="wp-megamenu-item-81322" class="menu-item wpmm-type-widget menu-widget-class wpmm-type-widget wp-megamenu-item-81322 wpmm-submenu-right"><div class="wpmm-grid-post-addons wpmm-grid-post-row"><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/technology/software-technology/the-top-benefits-of-python-performance-monitoring"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/09/Python-Monitoring.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/technology/software-technology/the-top-benefits-of-python-performance-monitoring">The Top Benefits of Python Performance Monitoring</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/technology/mobile-technology/what-does-it-take-to-create-a-wellness-app-for-ios-and-android"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/shotbabes_1.png) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/technology/mobile-technology/what-does-it-take-to-create-a-wellness-app-for-ios-and-android">What does it take to create a Wellness App for IOS and Android</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/marketing/interviews/how-to-conduct-an-effective-ux-interview"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Interview.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/marketing/interviews/how-to-conduct-an-effective-ux-interview">How to Conduct an Effective UX Interview</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/business/wordpress/how-a-page-builder-can-enhance-your-wordpress-site"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/shutterstock_350982161.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/business/wordpress/how-a-page-builder-can-enhance-your-wordpress-site">How a Page Builder Can Enhance Your WordPress Site</a></h4></div></div><div class="wpmm-grid-post col5"><div class="wpmm-grid-post-content"><div class="wpmm-grid-post-img-wrap"><a href="https://tweakyourbiz.com/growth/productivity/5-precautions-to-take-when-your-office-decides-to-go-paperless"><div class="wpmm-grid-post-img" style="background: url(https://tweakyourbiz.com/wp-content/uploads/2021/08/Go-Paperless.jpg) no-repeat;background-size: cover;"></div></a></div><h4 class="grid-post-title"><a href="https://tweakyourbiz.com/growth/productivity/5-precautions-to-take-when-your-office-decides-to-go-paperless">5 Precautions To Take When Your Office Decides To Go Paperless</a></h4></div></div></div></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul>
+			</div>
+
+
+			
+		    
+		</nav>			
+          </ul>
+          <div class="col-sm-3 col-md-3 search">
+            <a href="#" class="fa fa-search"></a>
+            <div class="search-box">
+              <form action="/" method="get">
+				<input type="hidden" name="post_type" value="post">
+                <input type="text" name="s" class="form-control" placeholder="Search TYB"> <a href="" class="fa fa-times"></a>
+              </form>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<div class="h-spacer"></div>
+<div id="body">
+
+<hr class="topbar">
+
+<div class="container">
+	<div class="row">
+		<div class="wrapper">
+			<div class="col-sm-8 col-md-8 main-content nopadding">
+				<div class="post">
+					<div class="category"><span class="cname" style="background-color:">
+					</span>
+					<span class="read"><span> July 29, 2020 <img width="14" height="14" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2014%2014'%3E%3C/svg%3E" alt="" data-lazy-src="https://tweakyourbiz.com/wp-content/themes/tyb/images/clock.png"><noscript><img width="14" height="14" src="https://tweakyourbiz.com/wp-content/themes/tyb/images/clock.png" alt=""></noscript> Last updated July 29th, 2020</span>  
+					<span><img width="16" height="14" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2014'%3E%3C/svg%3E" alt="" data-lazy-src="https://tweakyourbiz.com/wp-content/themes/tyb/images/eye.png"><noscript><img width="16" height="14" src="https://tweakyourbiz.com/wp-content/themes/tyb/images/eye.png" alt=""></noscript>
+ 808 Reads</span> <a class="a2a_dd" href="https://www.addtoany.com/share"><span><img width="14" height="14" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2014%2014'%3E%3C/svg%3E" alt="" data-lazy-src="https://tweakyourbiz.com/wp-content/themes/tyb/images/share.png"><noscript><img width="14" height="14" src="https://tweakyourbiz.com/wp-content/themes/tyb/images/share.png" alt=""></noscript> share</span></a></span></div>
+					<h1>Don’t Make These 7 Student Loan Mistakes</h1>
+					<div class="pull-left"><h5><img width="96" height="96" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" class="avatar" alt="Samantha Jones" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-96x96.jpg"><noscript><img width="96" height="96" src="https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-96x96.jpg" class="avatar" alt="Samantha Jones"></noscript> <a href="https://tweakyourbiz.com/author/samanthajones">Samantha Jones</a></h5></div>
+					<!--<div class="pull-right"><span class="share facebook"><i class="fa fa-facebook"></i>share <span class="like">57</span></span> <span class="share twitter"><i class="fa fa-twitter"></i>tweet <span class="like">57</span></span> <span class="share google-plus"><i class="fa fa-google-plus"></i>plus one <span class="like">57</span></span> <span class="share linkedin"><i class="fa fa-linkedin"></i>share <span class="like">57</span></span></div>//-->
+
+					<div class="photo featuredimg"><img width="1024" height="798" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20798'%3E%3C/svg%3E" class="attachment-large size-large wp-post-image" alt="" data-lazy-srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1024x798.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-300x234.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-768x598.jpg 768w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1536x1196.jpg 1536w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg 2048w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1024x798.jpg" /><noscript><img width="1024" height="798" src="https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1024x798.jpg" class="attachment-large size-large wp-post-image" alt="" srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1024x798.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-300x234.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-768x598.jpg 768w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-1536x1196.jpg 1536w, https://tweakyourbiz.com/wp-content/uploads/2020/07/studentloans-scaled.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript><small>Image Credit: DepositPhotos</small></div>
+
+					<div class="row">
+					<div class="col-md-1 sharebtns">
+						<!-- AddToAny BEGIN -->
+						<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+							<a class="a2a_button_facebook"></a>
+							<a class="a2a_button_twitter"></a>
+							<a class="a2a_button_google_plus"></a>
+							<a class="a2a_button_linkedin"></a>
+							<a class="a2a_button_pinterest"></a>
+							<a class="a2a_button_facebook_messenger"></a>
+							<a class="a2a_button_tumblr"></a>
+							<a class="a2a_button_email"></a>
+						</div>
+						<!-- AddToAny END -->
+					</div>
+					<div class="col-md-11">
+						<article>
+							<p>Often students and their parents get caught up in the whirlwind of excitement and prospects for the future when it&#8217;s time to figure out what their college situation will look like.</p>
+<p>It certainly is exciting, and there&#8217;s no downplaying that. It&#8217;s the cumulation of years of hard work and dedication, getting into a good school, especially if it&#8217;s one of your top choices. And if you&#8217;re one of the <a href="https://www.forbes.com/sites/zackfriedman/2020/02/03/student-loan-debt-statistics/">45 million borrowers in the U.S.,</a> you’re likely to have a few concerns about <a href="https://tweakyourbiz.com/finance/financial-planning/financial-aid-appeals">financial aid</a>.</p>
+<p>You might wonder if it&#8217;s a good idea at all, or if it&#8217;s worth the investment. You might be panicking at the thought of owing thousands of dollars <em>and</em> interest. You’re not wrong to be worried. Federal student debt has reached an all-time high, <a href="https://www.americanprogress.org/issues/education-postsecondary/reports/2019/06/12/470893/addressing-1-5-trillion-federal-student-loan-debt/#:~:text=About%2043%20million%20adult%20Americans,not%20backed%20by%20the%20government.">at nearly $1.56 trillion.</a></p>
+<p>There are a few crucial choices and practices to avoid when taking on and repaying student loans. Albeit common and often avoidable, you’d be surprised to learn how often people end up making these mistakes:</p>
+<h2>1.     Not Researching Scholarships and Grants</h2>
+<p>While a loan is intended to help you finance your education, living, and other expenses for the duration of your degree, it&#8217;s important to look into grants, scholarships, and funding that might help finance part of your education.</p>
+<p>Look at external and internal scholarships that will give you a ride into the school of your choice—another factor that’s important to consider. Choosing a college based on the short-term benefits, such as the party scene or travel opportunity, can cost you in the long-run.</p>
+<h2>2.     Borrowing Too Much</h2>
+<p>This is another major mistake that you&#8217;re making without realizing it. Just because your lender allows you a certain amount, <a href="https://www.businessinsider.com/the-4-dangers-of-borrowing-money-the-wrong-way-2011-10">doesn’t mean you need to take all of it.</a> Remember that you have to pay it back in its entirety and then some. For every $1 you take, you give back $2.</p>
+<p>When you start thinking of it like that, you’ll be more careful about how much you take. Work on a budget before college starts, factoring tuition, textbooks, food, and living costs, and stick to that.</p>
+<p>This is part of thinking long-term; right now, it might feel great to take on extra because it gives you a chance to indulge, or have more than you need, but the greater the amount, the more the interest too.</p>
+<h2>3.     Using Your Loan for Recreation</h2>
+<p>Don’t be the person that uses their loan money to spend a weekend or spring break partying in Miami. People end up <a href="https://www.forbes.com/sites/kateashford/2017/03/29/loans-spring-break/">using their loan amount to vacation, party, indulge, and enjoy</a> their time in college, which is more often than not a violation of their loan agreement and an added burden for their future selves.</p>
+<p><img class="aligncenter wp-image-176276 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20333'%3E%3C/svg%3E" alt="Student Loan Mistakes2" width="500" height="333" data-lazy-srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1.jpg 500w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1-300x200.jpg 300w" data-lazy-sizes="(max-width: 500px) 100vw, 500px" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1.jpg" /><noscript><img class="aligncenter wp-image-176276 size-full" src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1.jpg" alt="Student Loan Mistakes2" width="500" height="333" srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1.jpg 500w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog2-1-300x200.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" /></noscript></p>
+<p>That trip with your friends might seem like a great idea right now, but when you’re paying off twice that amount after college, it&#8217;s not something you&#8217;ll look back on fondly.</p>
+<p>Yes, your loan is intended to help cover basic living costs, which do include food and clothing, but indulging in fancy dinners and shopping sprees is not only a bad idea, it&#8217;s unethical. Treating yourself isn&#8217;t entirely off the table; you can and should work part-time if possible to save up for travel because that is an important part of the college experience.</p>
+<h2>4.     Not Saving and Managing</h2>
+<p>Building <a href="https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/ways-to-save-money">good financial habits is important</a> before, during, and after college too. You need to be able t<a href="https://tweakyourbiz.com/growth/personal-growth/fixing-finances">o save wherever possible</a>, instead of treating this as an afterthought.</p>
+<p>Auto-debit might result in lowered interest rates, if your vendor allows, and help you avoid delayed payments and penalties on them.</p>
+<p>You should also file your loan payments and interest as part of your taxes to help reduce the amount of taxable income.</p>
+<p>Another way to save in the long-term is to pay off interest during college. Working and saving can help you accrue a small amount of the interest you&#8217;ll be paying throughout your repayment plan. Speak to your lender about this option, because they can have varying policies.</p>
+<h2>5.     Deferring Payments Unnecessarily</h2>
+<p>You might think it’s okay to skip your installment for the month by making up for it next month, or paying a larger sum a couple of months in. But this can end up reflecting poorly on your record and still lead to interest accruing.</p>
+<p>If there is a <a href="https://money.howstuffworks.com/personal-finance/college-planning/financial-aid/student-loan-deferment-forbearance4.htm">legitimate reason for not paying</a>, contact your lender and let them know. However, if you can afford it, don’t defer or delay payments for any reason. It’s not worth the long-term effects.</p>
+<p>If you&#8217;re going on to grad-school or post-grad, for instance, some lenders offer you the chance to freeze your loan for that duration; however, interest rates are likely to remain.</p>
+<h2>6.     Choosing the Wrong Repayment Plan</h2>
+<p>Another mistake that a lot of people end up making is choosing the wrong repayment plan. The smaller monthly payments might seem like a good idea because you can focus on paying for other expenses and luxuries.</p>
+<p>However, you should consider the fact that smaller payments make for a longer repayment period and more interest.</p>
+<p><img class="alignnone size-full wp-image-176277" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201125%20750'%3E%3C/svg%3E" alt="Student Loan Mistakes3" width="1125" height="750" data-lazy-srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1.jpg 1125w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-300x200.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-1024x683.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-768x512.jpg 768w" data-lazy-sizes="(max-width: 1125px) 100vw, 1125px" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1.jpg" /><noscript><img class="alignnone size-full wp-image-176277" src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1.jpg" alt="Student Loan Mistakes3" width="1125" height="750" srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1.jpg 1125w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-300x200.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-1024x683.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog3-1-768x512.jpg 768w" sizes="(max-width: 1125px) 100vw, 1125px" /></noscript></p>
+<p>If you choose to pay off your loan sooner, paying larger installments at the start, you can focus on a debt-free future within a few years. The more you pay off from the principal amount, the smaller your interest gets and adds up to, and the faster your payments are cleared.</p>
+<h2>7.     Not Refinancing Your Loan When You Can</h2>
+<p>Taking another loan to pay off your first one doesn’t sound like the best idea at first. But <a href="https://www.thebalance.com/what-is-refinancing-315633">refinancing is a practical and effective solution</a> to clearing off major loans. <a href="https://tweakyourbiz.com/finance/financial-planning/debt-consolidation-loans">Consolidating</a> and clearing out multiple loans, smaller payments, older loans, and choosing lower interest rates will help you work toward a debt-free tomorrow.</p>
+<p><img class="alignnone size-full wp-image-176278" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201125%20750'%3E%3C/svg%3E" alt="Student Loan Mistakes4" width="1125" height="750" data-lazy-srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4.jpg 1125w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-300x200.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-1024x683.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-768x512.jpg 768w" data-lazy-sizes="(max-width: 1125px) 100vw, 1125px" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4.jpg" /><noscript><img class="alignnone size-full wp-image-176278" src="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4.jpg" alt="Student Loan Mistakes4" width="1125" height="750" srcset="https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4.jpg 1125w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-300x200.jpg 300w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-1024x683.jpg 1024w, https://tweakyourbiz.com/wp-content/uploads/2020/07/blog4-768x512.jpg 768w" sizes="(max-width: 1125px) 100vw, 1125px" /></noscript></p>
+<p>A lot of lenders provide student loan refinancing options that give borrowers a chance to get their finances in order and focus on one loan, as opposed to multiple others. However, it’s important to speak to your lender in detail, tallying out the pros and cons of refinancing based on your current schedules and monthly payments.</p>
+<p>The right planning and foresight can help you stay clear of debt and manage your finances better, freeing you up for major life changes and investments in the future. From buying a home to moving across the country, starting a family, or switching jobs, all become significantly easier when you’re not worrying about thousands of dollars worth of student debt.</p>
+<p>You can reach out to the team at <a href="https://www.elfi.com/">Education Loan Finance</a> (ELFI) to know more about loan repayments and refinancing plans.</p>
+<p style="text-align: right;">DepositPhotos &#8211; <a href="https://depositphotos.com/stock-photos/student-loans.html?qview=86972626">student loans</a></p>
+						</article>
+					</div>
+					</div>
+
+
+					<div class="display">
+						<div class="col-sm-3 col-md-3 center">
+							<img width="150" height="150" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" class="img-responsive" alt="Samantha Jones" data-lazy-src="https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-150x150.jpg"><noscript><img width="150" height="150" src="https://tweakyourbiz.com/wp-content/uploads/2019/06/avatar_user_4037_1560318422-150x150.jpg" class="img-responsive" alt="Samantha Jones"></noscript><br>
+																																		</div>
+						<div class="col-sm-9 col-md-9">
+							<h3>Samantha Jones</h3>
+														<p></p>
+							<a href="https://tweakyourbiz.com/author/samanthajones" class="read">Read Full Bio</a>
+						</div>
+					</div>
+					<hr class="bd"><br>
+					
+				<div>
+<div id="disqus_thread"></div>
+<script type="rocketlazyloadscript">
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://bloggertone.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+				</div>
+					
+									</div>
+			</div>
+
+			<div class="col-sm-4 col-md-4 sidebar">
+				<div class="center"></div>				
+							</div>
+		</div>
+	</div>
+</div>
+
+<script data-minify="1" async src="https://tweakyourbiz.com/wp-content/cache/min/1/menu/page.js?ver=1630624608"></script>
+<script type="rocketlazyloadscript">
+var a2a_config = a2a_config || {};
+a2a_config.templates = a2a_config.templates || {};
+a2a_config.overlays = a2a_config.overlays || [];
+
+a2a_config.overlays.push({});
+
+</script>
+
+</div>
+
+<footer>
+  <a href="" class="gotop"><i class="fa fa-angle-up"></i></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-8">
+        <a href="https://tweakyourbiz.com/"><i class="fa fa-home"></i></a>
+<a href="https://tweakyourbiz.com/business">Business</a>
+<a href="/sales">Sales</a>
+<a href="/finance">Finance</a>
+<a href="/marketing">Marketing</a>
+<a href="/management">Management</a>
+<a href="/growth">Growth</a>
+<a href="/technology">Tech</a>
+        <div class="sub">
+<a href="https://tweakyourbiz.com/about">About</a>
+<a href="https://tweakyourbiz.com/disclaimer">Privacy Statement</a>
+<a href="https://tweakyourbiz.com/terms-of-service">Terms of Service</a>
+<a href="https://tweakyourbiz.com/contact">Contact</a>
+<a href="https://tweakyourbiz.com/login">Login</a>
+		</div>
+      </div>
+      <div class="col-sm-4 col-md-4 follow">
+        <h5>Follow us on social networks</h5>
+		<a href="https://www.facebook.com/TweakYourBiz/" class="fa fa-facebook" target="_blank"></a>
+		
+		<a href="https://twitter.com/TweakYourBiz" class="fa fa-twitter" target="_blank"></a>
+		<a href="https://www.linkedin.com/company/bloggertone" class="fa fa-linkedin" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6">Copyright 2021 &copy; <a href="https://tweakyourbiz.com/">Tweak Your Biz</a> - All Rights Reserved</div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script type='text/javascript' src='https://tweakyourbiz.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://tweakyourbiz.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/tweakyourbiz.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1630624608' id='contact-form-7-js'></script>
+<script type='text/javascript' id='wpmm_js-js-extra'>
+/* <![CDATA[ */
+var ajax_objects = {"ajaxurl":"https:\/\/tweakyourbiz.com\/wp-admin\/admin-ajax.php","redirecturl":"https:\/\/tweakyourbiz.com\/","loadingmessage":"Sending user info, please wait..."};
+var wpmm_object = {"ajax_url":"https:\/\/tweakyourbiz.com\/wp-admin\/admin-ajax.php","wpmm_responsive_breakpoint":"767px","wpmm_disable_mobile":"false"};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/plugins/wp-megamenu/assets/js/wpmm.js?ver=1630624608' id='wpmm_js-js'></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin|\/logout|\/wp-login.php","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/tweakyourbiz.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Lcx4-sUAAAAAOdWPIe8mObkW-KCKvfl8QTyU6YW&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6Lcx4-sUAAAAAOdWPIe8mObkW-KCKvfl8QTyU6YW","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script data-minify="1" type='text/javascript' src='https://tweakyourbiz.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1630624608' id='wpcf7-recaptcha-js'></script>
+<script type='text/javascript' src='https://tweakyourbiz.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://tweakyourbiz.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script><script src="https://tweakyourbiz.com/wp-content/themes/tyb/js/jquery.min.js"></script>
+<script src="https://tweakyourbiz.com/wp-content/themes/tyb/js/bootstrap.min.js"></script>
+<script type="rocketlazyloadscript">
+jQuery(".gotop").click(function() { jQuery("html, body").animate({ scrollTop: 0 }, "slow"); return false; });
+jQuery('a[href="#showsearch"]').click(function(e) { e.preventDefault(); jQuery('.searchbar').addClass('show'); jQuery('.searchbar input').focus(); });
+jQuery('.searchbar .closeme').click(function(e) { e.preventDefault(); jQuery('.searchbar').removeClass('show'); });
+</script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="https://tweakyourbiz.com/wp-content/cache/min/1/db308c803d6bcd477acdddc9dab1a173.css" media="all" data-minify="1" /></noscript></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

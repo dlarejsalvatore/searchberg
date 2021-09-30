@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Website Design &amp; Development &#8211; Search Berg</title>
+	<atom:link href="https://www.searchberg.com/blog/category/website-design-development/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.searchberg.com/blog</link>
+	<description></description>
+	<lastBuildDate>Mon, 13 Aug 2018 06:46:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+	<item>
+		<title>Don’t Destroy Your Website SEO By Making These Redesign Mistakes</title>
+		<link>https://www.searchberg.com/blog/dont-destroy-your-website-seo-by-making-these-redesign-mistakes/</link>
+					<comments>https://www.searchberg.com/blog/dont-destroy-your-website-seo-by-making-these-redesign-mistakes/#respond</comments>
+		
+		<dc:creator><![CDATA[Aaron Tylor]]></dc:creator>
+		<pubDate>Mon, 13 Aug 2018 06:46:17 +0000</pubDate>
+				<category><![CDATA[Website Design & Development]]></category>
+		<guid isPermaLink="false">https://www.searchberg.com/blog/?p=982</guid>
+
+					<description><![CDATA[<p>There are more than 200 million live websites in the world and seemingly as many web design mistakes that are committed—knowingly or unknowingly—by designers on a regular basis. If you want to remain competitive, it’s important to keep up with technological changes, trends, and updates to user experience conventions.  Unfortunately, this essential task presents certain [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/dont-destroy-your-website-seo-by-making-these-redesign-mistakes/">Don’t Destroy Your Website SEO By Making These Redesign Mistakes</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>There are more than <a href="http://www.internetlivestats.com/total-number-of-websites/">200 million</a> live websites in the world and seemingly as many web design mistakes that are committed—knowingly or unknowingly—by designers on a regular basis.</p>
+<p>If you want to remain competitive, it’s important to keep up with technological changes, trends, and updates to user experience conventions.  Unfortunately, this essential task presents certain high-stake risks as far as SEO is concerned.</p>
+<p>This blog will discuss some common web redesign mistakes which can potentially destroy website SEO.</p>
+<h2>Changing The Name Of An Image On A Web Page That’s Ranking High</h2>
+<p>While doing this isn’t always a problem, when companies change the name of an image from a web page that’s ranking well, it can backfire. Arbitrarily assigning a new name to an image may lead to pretty substantial drops in search engine ranking.</p>
+<p>Inexperienced web designers are usually guilty of committing this mistake. We’ve observed more than one instance where the wrong web designer has negatively impacted the SEO of a client’s web page.</p>
+<p>Sometimes web designers who have little know-how of SEO are hired to redesign a website which was already doing well in terms of ranking. They redesign aspects of the website which didn’t need to be altered.</p>
+<p>Since they lack the experience, they replace existing images with larger ones. The worst is when they use names for these images that offer no SEO value. This takes away the context, a crucial element that search engines use to determine the ranking of a particular web page.</p>
+<h2>Not Redirecting To Pages After Changing Their URLs</h2>
+<p>It’s possible to no longer have use for certain web pages after a redesign. It’s the mark of an expert web designer to change the URL of web pages that are renamed and/or moved.</p>
+<p>It’s a big mistake to simply delete these web pages as they might have high rankings. There’s also a high chance that these pages could’ve been bookmarked by customers or may contain inbound links pointing to the web pages.</p>
+<p>Pages that are deleted and have inbound links may <a href="https://www.webmasterworld.com/google/4922572.htm">lose the SEO value</a> generated from those links. Under some conditions, drastic loss of current ranking may occur—something you definitely don’t want.</p>
+<p>Unfortunately, this is a multi-faceted problem. For example, potential customers who click on those links can be directed to a 404 page.</p>
+<p>This creates a frustrating user experience and is not the kind of thing that should be greeting your visitors.</p>
+<ul>
+<li>
+<h3>The Right Way To Delete or Move Web Pages</h3>
+</li>
+</ul>
+<p>If you want to delete a page, the proper way to go about it is by redirecting traffic to a currently existing, relevant page. As far as moving pages is concerned, it usually involves changing the URL of that page. In this case, it’s important to redirect traffic to the new URL.</p>
+<p>A 301 redirect can be used in both scenarios. It indicates to the search engines that the previous page has been permanently relocated. In the case of most web hosting service providers, this can be accomplished by using the correct entry in your .htaccess file.</p>
+<p>Sometimes the .htaccess file isn’t visible on your server. Simply adjust your FTP program settings so that you can view hidden files. Keep in mind that your hosting platforms might be using a different method, so verify if you can go this route with their support team.</p>
+<h2>Making the Development Environment Index able</h2>
+<p>Designers have their own way of handling the development environment. The majority include a subfolder in their domain. Others create a domain for the sole purpose of web development.</p>
+<p>Search engines index content and follow links that they find. This can sometimes create a problem. For example, it’s possible for a search engine to index two different versions of the same website. This can cause issues with the content and the links.</p>
+<h2>Not Performing a Website Crawl Post Migration</h2>
+<p>It doesn’t matter which method you use to migrate your website, there’s always a chance that errors will occur. The typical course of action is to migrate a live website to the development area.</p>
+<p>This is then followed by making the changes you desire and testing them. Finally, designers send the live website back to the live server.</p>
+<p>A common mistake we’ve noticed designers commit is that they frequently send content-bound links directing traffic to the wrong place. This usually happens after they migrate the completed website back to the live server.</p>
+<p>The content posts and pages still have links directing to the development environment pages, images, CSS file, or JavaScript.</p>
+<ul>
+<li><strong>The Solution</strong></li>
+</ul>
+<p>Download the crawler <a href="https://www.screamingfrog.co.uk/seo-spider/">Screaming Frog</a> on your desktop to gather comprehensive information about your website. It can also be downloaded on the cloud-based tool, SEMrush. The free version of the software can crawl 500 URLs.</p>
+<p>The software can be used to crawl your small business website much like how Google’s spider bots function. It can be used to crawl text links, links to JavaScript, image, and CSS files which might be hidden in the website’s HTML.</p>
+<p>The URL tab can be used to review your web page’s URLs. The software studies the URL structure and optimizes it as needed.</p>
+<p>It makes it easier for Google to index web pages with a URL structure containing keywords and lower-case letters which accurately describe the web page content.</p>
+<p>Note that as it’s free, it might have certain limitations like less-than-100%-accurate results.</p>
+<h2>Neglecting To Reconfigure WordPress Post Migration</h2>
+<p>It’s very important to allow search engines to crawl and index your development environment after the designers migrate a website to the live server. Failing to do so could cause the website to be dropped completely from Google’s index.</p>
+<p>Given the magnitude of the impact of such mistakes, designers should immediately check the configuration of any plugins like WordPress, which might affect how search engines assess your website.</p>
+<h2>Conclusion</h2>
+<p>None of the above-mentioned mistakes are particularly difficult to avoid. All you need to do is to hire expert web designers like those from <a href="https://www.searchberg.com/">Search Berg</a>. A salient feature of any website is a fully functional web design which your target audience can easily access from a number of devices.</p>
+<p>Our <a href="https://www.searchberg.com/web-design-development-services.html">web design and development</a> services guarantee responsive web designs for all platforms. Our team specializes in top CMS platforms including Shopify, WordPress, BigCommerce, and more.</p>
+<p>The web design and development mix we provide includes landing page optimization, web copywriting &amp; SEO optimization, E-Commerce solutions, custom CMS customization, and more.</p>
+<p>Get in touch with us today.</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/dont-destroy-your-website-seo-by-making-these-redesign-mistakes/">Don’t Destroy Your Website SEO By Making These Redesign Mistakes</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/dont-destroy-your-website-seo-by-making-these-redesign-mistakes/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SearchBerg Web Design &#038; Development Services</title>
+		<link>https://www.searchberg.com/blog/searchberg-web-design-development-services/</link>
+					<comments>https://www.searchberg.com/blog/searchberg-web-design-development-services/#respond</comments>
+		
+		<dc:creator><![CDATA[Aaron Tylor]]></dc:creator>
+		<pubDate>Tue, 30 May 2017 15:17:22 +0000</pubDate>
+				<category><![CDATA[Website Design & Development]]></category>
+		<guid isPermaLink="false">http://www.searchberg.com/blog/?p=668</guid>
+
+					<description><![CDATA[<p>We, at SearchBerg, ensure that your website resonates with your target market!</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/searchberg-web-design-development-services/">SearchBerg Web Design &#038; Development Services</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div style="clear:both;"></div>
+<p>We, at SearchBerg, ensure that your website resonates with your target market!</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-669" src="http://www.searchberg.com/blog/wp-content/uploads/2017/06/sb-website-design.jpg" alt="" width="690" height="6087" /></p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/searchberg-web-design-development-services/">SearchBerg Web Design &#038; Development Services</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/searchberg-web-design-development-services/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,2625 @@
+<!DOCTYPE html>
+
+
+<!-- Cached From ID: Unknown -->
+
+<!--[if lt IE 7]>      <html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-US" itemscope itemtype="">
+<!--<![endif]-->
+
+
+
+<head>
+
+
+<!-- BrightEdge Integration -->
+
+<!-- be_ixf, sdk, gho-->
+<meta name="be:sdk" content="java_sdk_1.5.0" />
+<meta name="be:timer" content="35ms" />
+<meta name="be:norm_url" content="https://www.benjerry.com/whats-new/2020/06/defund-the-police" />
+<meta name="be:capsule_url" content="https://ixfd-api.bc0a.com/api/ixf/1.0.0/get_capsule/f00000000012133/01685894725" />
+<meta name="be:api_dt" content="pny_2021; pnm_09; pnd_05; pnh_15; pnmh_50; pn_epoch:1630882242282" />
+<meta name="be:mod_dt" content="pny_2021; pnm_09; pnd_05; pnh_15; pnmh_50; pn_epoch:1630882242282" />
+<meta name="be:orig_url" content="https://www.benjerry.com/whats-new/2020/06/defund-the-police" />
+<meta name="be:messages" content="0" /><script type='text/javascript'>
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+
+<style>
+.be-ix-link-block{clear:both}
+.be-ix-link-block .be-related-link-container{margin:0 auto;padding:0 15px}
+.be-ix-link-block .be-related-link-container .be-label,.be-ix-link-block .be-related-link-container .be-list{font-family:"chunk_rethunkregular","Arial Black",Arial,sans-serif;font-size:2.6rem;line-height:1.25}
+.be-ix-link-block .be-related-link-container .be-label{margin:0;color:#fff}
+.be-ix-link-block .be-related-link-container .be-list{list-style:none;margin:0;padding:0}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{margin:0;padding:0;font-family:"severance_the_sequelregular",Georgia,serif;font-size:1.8rem}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a{color:#fff}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a:hover{color:#ed9237}
+@media (max-width: 767px) {
+.be-ix-link-block .be-related-link-container{text-align:center;margin-top:15px}
+.be-ix-link-block .be-related-link-container .be-label{width:100%;margin-bottom:10px}
+.be-ix-link-block .be-related-link-container .be-list{display:block;width:100%}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:block}
+}
+@media (min-width: 768px) {
+.be-ix-link-block .be-related-link-container{display:flex;justify-content:center}
+.be-ix-link-block .be-related-link-container .be-label{display:inline-block;margin-right:15px;flex-basis:220px;flex-grow:0;flex-shrink:0}
+.be-ix-link-block .be-related-link-container .be-list{display:inline-block;width:auto}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:inline-block;margin-right:15px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item:last-child{margin-right:0}
+}
+</style>
+
+
+<script data-cfasync="false" data-testmode="true" id="marvel" data-customerid="f00000000012133" src="https://marvel-b2-cdn.bc0a.com/marvel.js"></script>
+
+    <script>
+      (function() {
+      var bec = document.createElement('script');
+      bec.type = 'text/javascript';
+      bec.async = true;
+      bec.setAttribute("data-id", "bec");
+      bec.setAttribute("org-id", "f00000000012133");
+      bec.setAttribute("domain", ".benjerry.com");
+      bec.setAttribute("session-timeout", 86400000);
+      bec.src = document.location.protocol + '//cdn.b0e8.com/conv_v3.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(bec, s);
+})();
+</script>
+
+
+<!-- Price Spider Integration -->
+<!-- CookieQ Integration -->
+
+		<meta name="enablePriceSpider" content="true">
+		
+<meta name="siteLoc" content="200_bnj-template">
+
+
+
+<meta property="fb:app_id" content="382543155247929" />
+<meta property="og:site_name" content="https://www.benjerry.com" />
+<meta property="og:locale" content="en_US" />
+
+			<meta property="og:image" content="https://www.benjerry.com/files/live/sites/systemsite/files/whats-new/defund-police/DRV_DefundThePolice_Illustration_1200x630.jpg" />
+			<meta name="twitter:image" content="https://www.benjerry.com/files/live/sites/systemsite/files/whats-new/defund-police/DRV_DefundThePolice_Illustration_1200x630.jpg" />
+			
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+<meta name="twitter:site" content="@benandjerrys" />
+    
+<meta property="fb:pages" content="10461186460" />
+
+		<meta property="fb:pages" content="10461186460" />
+	
+				<title>Defund the Police and Invest in Our Communities | Ben &amp; Jerry&rsquo;s</title>
+			
+				<meta property="og:title" content="Defund the Police and Invest in Our Communities" />
+				<meta name="twitter:title" content="Defund the Police and Invest in Our Communities" />
+			
+				<meta name="description" content="It’s time to dismantle the racist and ineffective model of American policing and create a new system that strengthens communities and guarantees freedom and justice for all." />
+			
+				<meta property="og:description" content="It’s time to dismantle the racist and ineffective model of American policing and create a new system that strengthens communities and guarantees freedom and justice for all." />
+				<meta name="twitter:description" content="It’s time to dismantle the racist and ineffective model of American policing and create a new system that strengthens communities and guarantees freedom and justice for all." />
+			
+		<!--  Canonical link -->
+		
+				<link rel="canonical" href="https://www.benjerry.com/whats-new/2020/06/defund-the-police">
+			
+				<meta property="og:url" content="https://www.benjerry.com/whats-new/2020/06/defund-the-police" />
+			
+		<!-- End: canonical link -->
+		
+				<meta name="keywords" content="racial justice, Black Lives Matter, activism, defund the police, Ben & Jerry's" />
+			
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="benjerry.com" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+<link rel="shortcut icon" type="image/ico" href="/modules/bnj-templates/img/favicon.ico">
+<link rel="apple-touch-icon" href="/modules/bnj-templates/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/modules/bnj-templates/img/apple-touch-icon-72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/modules/bnj-templates/img/apple-touch-icon-114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/modules/bnj-templates/img/apple-touch-icon-144.png">
+
+
+
+		<!--[if !IE]><!-->
+	
+			<link type="text/css" rel="stylesheet" media="all" href="/modules/bnj-templates/css/build/v0902202111/style.min.css">
+		
+    <style>
+      @font-face {
+    font-family: 'chunk_rethunkregular';
+    font-display: 'fallback';
+    src: url('/modules/bnj-templates/css/fonts/en/chunk-rethunk-webfont-en.woff2') format('woff2'),
+         url('/modules/bnj-templates/css/fonts/en/chunk-rethunk-webfont-en.woff') format('woff'),
+         url('/modules/bnj-templates/css/fonts/en/chunk-rethunk-webfont-en.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'severance_the_sequelmedium';
+    font-display: 'fallback';
+    src: url('/modules/bnj-templates/css/fonts/en/severancethesequel-medium-webfont-en.woff2') format('woff2'),
+         url('/modules/bnj-templates/css/fonts/en/severancethesequel-medium-webfont-en.woff') format('woff'),
+         url('/modules/bnj-templates/css/fonts/en/severancethesequel-medium-webfont-en.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'severance_the_sequelregular';
+    font-display: 'fallback';
+    src: url('/modules/bnj-templates/css/fonts/en/severancethesequel-regular-webfont-en.woff2') format('woff2'),
+         url('/modules/bnj-templates/css/fonts/en/severancethesequel-regular-webfont-en.woff') format('woff'),
+         url('/modules/bnj-templates/css/fonts/en/severancethesequel-regular-webfont-en.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima-nova';
+    font-display: 'fallback';
+    src: url('/modules/bnj-templates/css/fonts/en/proximanova-reg-webfont-en.woff2') format('woff2'),
+         url('/modules/bnj-templates/css/fonts/en/proximanova-reg-webfont-en.woff') format('woff'),
+         url('/modules/bnj-templates/css/fonts/en/proximanova-reg-webfont-en.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    </style>
+  
+		<!--<![endif]-->
+
+		<!-- Serve blessed stylesheets with media queries for IE9 -->
+		<!--[if IE 9]>
+			<link href="/modules/bnj-templates/css/ie9-screen.css" rel="stylesheet" media="screen, projection" type="text/css" />
+			<link href="/modules/bnj-templates/css/ie9Overflow.css" rel="stylesheet" media="screen, projection" type="text/css" />
+			<![endif]-->
+
+		<!-- Serve blessed stylesheets without media queries for IE8 and below -->
+		<!--[if lt IE 9]>
+				<link href="/modules/bnj-templates/css/nomediaqueries.css" rel="stylesheet" media="screen" type="text/css" />
+			<![endif]-->
+
+		<!-- <link type="text/css" rel="stylesheet" media="print" href="/modules/bnj-templates/css/print.css"> -->
+	
+
+<!-- Global Javascript Variables -->
+<script defer>
+	var lang_locale = "en_US";
+	var siteKey ="us";
+	var pageCats ='"values", "racial justice"';
+	var adobeTracking = true;
+	var adobeAnalytics = true;
+	var useLocator = false;
+
+    
+
+	var renderContext_mainResource_node_path = "/sites/us/home/whats-new/2020/06/defund-the-police";
+	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	var isChrome = !!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor));
+	var isAndroid = !!userAgent.match( /Android/i );
+	var isChromeDesktop = isChrome && !isAndroid;
+	var isTouchDevice = 'ontouchstart' in window || !!navigator.maxTouchPoints;
+	var isEditMode = false;
+	var newWinTxt="Opens a new window";
+	document.documentElement.className += ' js';
+	if(isTouchDevice==false){
+		  document.documentElement.className += ' no-touch';
+	  }
+	var workspace = 'live';
+</script>
+
+<!-- site CSS override  -->
+
+<!-- END:site CSS override -->
+
+<!-- parent's css -->
+
+			<link type="text/css" rel="stylesheet" href="/files/live/sites/us/files/css/follow-us.css">
+		
+			<link type="text/css" rel="stylesheet" href="/files/live/sites/us/files/home/bjnt_whatsNewRecent.min.css">
+		
+<!-- END:parent's css -->
+
+<!-- CSS Injector -->
+
+	<!-- site-specific js/head -->
+	
+	<!-- END:site-specific js/head -->
+
+	<!-- parent's javascript (HEAD) -->
+	
+	<!-- END:parent's javascript (HEAD) -->
+
+	<!-- page-specific javascript (HEAD) -->
+	
+	<!-- END:page-specific javascript (HEAD) -->
+
+		<script>
+			var ctConstants = "";
+			var adobeContentType = "";
+			var adobeTemplateType = "";
+			function isMobile() {
+			    var check = false;
+			    (function(a) {
+			        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i
+			                .test(a)
+			                || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i
+			                    .test(a.substr(0, 4))) {
+			            check = true;
+			        }
+			    })(navigator.userAgent || navigator.vendor || window.opera);
+			    return check;
+			}
+
+			var channelVal;
+			if (isMobile()) {
+			    channelVal = "Mobile Site";
+			} else {
+			    channelVal = "Brand Site";
+			}
+
+			var adobePageType;
+			var is_prod_detail = false;
+			
+			if(is_prod_detail) {
+	    		adobePageType = "product";
+	    	} else if (adobeTemplateType != null && adobeTemplateType != "") {
+	    		adobePageType = adobeTemplateType;
+	    	} else {
+	    		adobePageType = "page template type";
+	    	}
+
+			if(adobeContentType == null || adobeContentType == "") {
+				adobeContentType = "content type of page";
+			}
+
+			digitalData = {
+				pageDetails:{
+					pageName:"en_US : Defund the Police and Invest in Our Communities",
+					pageSiteSection:"What’s New",
+					pageServer:"https://www.benjerry.com",
+					pageURL: (("" != "") ?  "" : window.location.href),
+					pageWebsiteLocale:"en_US",
+					pageSubSection:"2020",
+				},
+				pageInteractions:{},
+				userAction:{},
+				siteSearch:{},
+				leadGen:{},
+				siteInfo : {
+				    channel : '',
+				    sitetype : 'Non-Avinash'
+				},
+				page : {
+				    pageInfo : {
+				        destinationURL : (("" != "") ?  "" : window.location.href)
+				    },
+				    category : {
+				    	pageType : adobePageType
+				    }
+				},
+				video : [],
+				campaign: [],
+				product : [],
+				privacy : {
+				    accessCategories : [ {
+				        domains : []
+				    } ]
+				},
+				component : [],
+				trackingInfo : {
+				    GID : '',
+				    "un" : "",
+				    tool : [ {
+				        ids : ""
+				    } ]
+				},
+				promotion : []
+			}
+			digitalData.siteInfo.channel = channelVal;
+			digitalData.page.category.primaryCategory = channelVal;
+			digitalData.trackingInfo = {};
+			digitalData.trackingInfo.tool = [ {} ];
+			digitalData.privacy = {};
+			digitalData.page.attributes = {};
+			digitalData.privacy.accessCategories = [ {} ];
+			digitalData.privacy.accessCategories[0].domains = [];
+			digitalData.event = [];
+			digitalData.page.pageInfo.pageName = "en_US : Defund the Police and Invest in Our Communities";
+			digitalData.page.attributes.contentType = adobeContentType;
+			digitalData.page.attributes.brandCategory = 'Foods';
+			digitalData.page.attributes.country = 'US';
+			digitalData.page.attributes.globalBrand = 'Ben & Jerry\'s';
+			digitalData.page.attributes.localBrand = 'Ben & Jerry\'s';
+			digitalData.trackingInfo.tool[0].id = "";
+		</script>
+	
+
+<!-- Google Analytics -->
+<script defer>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  
+          ga ( 'create', 'UA-2392172-1', 'auto', { 'name' : 'us_main' } );
+
+          
+              // Loosegrip dimension: page type
+              ga ( 'us_main.set', 'dimension3', 'Blog' );
+            
+
+          // Google Analytics pageview
+          ga ( 'us_main.send', 'pageview' );
+        
+
+      // Global tracker
+      ga ( 'create', 'UA-26584030-1', 'auto', { 'name' : 'global' } );
+
+      // Is page local scoop shop?
+      
+
+      // Global dimensions
+      
+        ga ( 'global.set', 'dimension11', '' ); // Adobe content type
+        ga ( 'global.set', 'dimension12', '' ); // Adobe template type
+      
+
+      // Global pageview
+      ga ( 'global.send', 'pageview' );
+    
+</script>
+
+<script>
+  // Picture element HTML5 shiv
+  document.createElement( "picture" );
+</script>
+
+	
+		<script>var isPS = false;</script>
+	
+			<script>(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);</script>
+			<script src="//assets.adobedtm.com/launch-EN99befe1e01634648841645684ab16438.min.js"  async></script>
+		
+      <!-- Google Tag Manager (us) -->
+      <script>
+        var dataLayerGTM = [];
+      </script>
+
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayerGTM','GTM-T6JKRW6');</script>
+      <!-- End: Google Tag Manager (us) -->
+    
+
+	<!--  New Relic Scripts	-->
+	<script type="text/javascript">
+    //US
+    ;window.NREUM||(NREUM={});NREUM.init={privacy:{cookies_enabled:true}};
+    window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(28),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{l?l-=1:o(c||new UncaughtException(t,e,n),!0)}catch(u){try{i("ierr",[u,s.now(),!0])}catch(d){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(29),c=t("ee"),s=t("loader"),u=t("gos"),f=window.onerror,d=!1,p="nr@seenError",l=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(l+=1)}),c.on("fn-err",function(t,e,n){d&&!n[p]&&(u(n,p,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,T=g.hash,this[f]=y.now()}function o(){L--,g.hash!==T&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[f],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var c="-start",s="-end",u="-body",f="fn"+c,d="fn"+s,p="cb"+c,l="cb"+s,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),P=t(14),M=t(9),S=t("ee"),C=S.get("tracer");t(16),y.features.spa=!0;var T,L=0;S.on(f,r),b.on(p,r),M.on(p,r),S.on(d,o),b.on(l,o),M.on(l,o),S.buffer([f,d,"xhr-done","xhr-resolved"]),R.buffer([f]),O.buffer(["setTimeout"+s,"clearTimeout"+c,f]),P.buffer([f,"new-xhr","send-xhr"+c]),N.buffer([m+c,m+"-done",m+u+c,m+u+s]),E.buffer(["newURL"]),x.buffer([f]),b.buffer(["propagate",p,l,"executor-err","resolve"+c]),C.buffer([f,"no-"+f]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(P,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(N,m+c),a(N,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",u="addEventListener",f="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u in window.performance&&(window.performance["c"+s]?window.performance[u](f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[u]("webkit"+f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[u]("scroll",r,{passive:!0}),document[u]("keypress",r,!1),document[u]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(f);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[f,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),u=XMLHttpRequest,f="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(u.prototype)):u.prototype.hasOwnProperty(f)&&(o(window),o(u.prototype)),a.on(f+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(29),a=t(28);e.exports=o;var c=window,s="fetch-",u=s+"body-",f=["arrayBuffer","blob","json","text","formData"],d=c.Request,p=c.Response,l=c.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(f,function(t,e){r(d[h],e,u),r(p[h],e,u)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],p),s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var f=c(a),d="function"==typeof f.parent[f.key];if(d){var p={};u.inPlace(f.parent,[f.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(f);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),u=t("wrap-function")(s);if(e.exports=s,o()){var f=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,l,"dom-"):(u.inPlace(HTMLElement.prototype,l,"dom-"),u.inPlace(HTMLHeadElement.prototype,l,"dom-"),u.inPlace(HTMLBodyElement.prototype,l,"dom-")),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=c(t,"executor-",e,null,!1),r=new u(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,c=o(i),s=t(28),u=NREUM.o.PR;e.exports=i,u&&(window.Promise=r,["all","race"].forEach(function(t){var e=u[t];u[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(u,arguments),c=u.resolve(a);return c}}),["resolve","reject"].forEach(function(t){var e=u[t];u[t]=function(t){var n=e.apply(u,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),u.prototype["catch"]=function(t){return this.then(null,t)},u.prototype=Object.create(u.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(u),function(t,e){try{r[e]=u[e]}catch(n){}}),o.wrapInPlace(u.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=c(n[0],"cb-",r,null,!1),n[1]=c(n[1],"cb-",r,null,!1);var s=t.apply(this,n);return r.nextPromise=s,i.emit("propagate",[e,!0],s,!1,!1),s}}),i.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this,null,!1),t[1]=c(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+u})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",u="clearTimeout",f="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[u,"clearImmediate"],u+d),i.on(s+f,r),i.on(c+f,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=f.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,f.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var u=t("ee"),f=u.get("xhr"),d=t("wrap-function")(f),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=f;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{f.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}return e};if(s(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),f.on("send-xhr-start",function(t,e){r(t,e),i(e)}),f.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else u.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,u=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,u)),(t.sameOrigin&&!f()||!t.sameOrigin&&s(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,u)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",u="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+u+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return u()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(25),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(17),u=t(15).generateTracePayload,f=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=u(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<p;c++)e.addEventListener(d[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),f.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=u(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[u.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(28),c=t(29),s=t("ee").get("tracer"),u=t("loader"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),f.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[u.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[u.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,u.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,c=t(30);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],23:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],24:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,u,f,d=t("handle"),p=t("loader"),l=t(27),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(c)}},{}],25:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],26:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],27:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],28:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],29:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],30:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,s,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var c=e(o),s=m(n),u=s.length,f=0;f<u;f++)s[f].apply(c,r);var p=d[y[n]];return p&&p.push([x,n,r,c]),c}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:c,aborted:!1};return x}function i(t){return u(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var s="nr@context",u=t("gos"),f=t(28),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(22),c=t("handle"),s=t(28),u=t("ee"),f=t(26),d=t(23),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1208.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:f};t(19),t(24),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,u){function nrWrapper(){var i,a,f,p;try{a=this,i=d(arguments),f="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,s],f],t)}c(n+"start",[i,a,s],f,u);try{return p=e.apply(a,i)}catch(h){throw c(n+"err",[i,a,h],f,u),h}finally{c(n+"end",[i,a,p],f,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var c,s,u,f="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],c=t[s],a(c)||(t[s]=n(c,f?s+r:r,o,s,i))}function c(n,r,i,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,i,e,a)}catch(s){o([s,n,r,i],t)}h=c}}return t||(t=f),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=f);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,i(t,n,f),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var f=t("ee"),d=t(29),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=u},{}]},{},["loader",2,16,5,3,4]);
+    ;NREUM.loader_config={accountID:"2743297",trustKey:"93570",agentID:"1300289910",licenseKey:"NRJS-6f151aedbd4862cc1fb",applicationID:"1300289910"}
+    ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"NRJS-6f151aedbd4862cc1fb",applicationID:"1300289910",sa:1}
+</script>
+	<!--  End: New Relic Scripts -->
+
+
+<script type="text/javascript">
+var contextJsParameters={contextPath:"",lang:"en_US",uilang:"en_US",siteUuid:"fe177d88-7ac7-44f5-ab1e-1538870ffa62",wcag:true,ckeCfg:""}; var CKEDITOR_BASEPATH="/modules/ckeditor/javascript/"; var scayt_custom_params=new Array(); scayt_custom_params['sLang']='en_US';
+</script>
+
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="LTS99-3MGBJ-8Z4RR-Q97ZF-QK3CT",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"LTS99-3MGBJ-8Z4RR-Q97ZF-QK3CT",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="pibgedlw25fjiyjzdgua-f-81a4df04f-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"32","ak.cp":"23825","ak.ai":parseInt("342554",10),"ak.ol":"0","ak.cr":10,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"4b712168","ak.r":7802,"ak.a2":e,"ak.m":"x","ak.n":"essl","ak.bpcip":"122.2.98.0","ak.cport":33864,"ak.gh":"58.71.107.52","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1631132072","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==W7s8fwOofE7iyMsOHEH/9XtmRf2qz6wua/R5Q855weNLyP1ZPbclZ4RJSLT+/SRajGFZMv3nGABdeE9NjJrddLOUlaLe47TmB/2LJsoRj3EcRRmW7uas+RKBJs63VYbYZTqRcwOd0OsjR6J5nIPyY+wnY9foSgB0GCcX93YK3iCSL5gLHSugv8T9CqDUyuYTR4AazONE/4eoVRayp7bMrx3osd55sM09bbZrhSwsQNUZuHccL30DAG3tB/rCxBQAvXV30OaOIhUZPUc6wYDL2HO1LTOx8cHY6worS0SJSqOWUIDAgWlHBvoQkAtJ/EDbEn6UVG5nGIS9acalCyluu7umlN/yxg8xKA410bjk9fsok3ziHRw7nO7eFqwHSAm4k7ZOPP2zHqY9CWhwHXuUk9AmXdREO/Q+XRCTxujNNYY=","ak.pv":"153","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+
+<body>
+  
+      <!-- Google Tag Manager (noscript) (us) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6JKRW6"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End: Google Tag Manager (noscript) (us) -->
+    
+      <!-- PriceSpider Universal Tracking (uk) -->
+      <script src="//cdn.pricespider.com/1/2442/ps-utid.js" async></script>
+      <!-- End: PriceSpider Universal Tracking (uk) -->
+    
+
+	<div class="bodywrapper">
+		
+				<div class="general defund-the-police wrapper">
+			
+
+		<p class="move">
+			<a href="#skip">Skip to main content</a>
+		</p>
+
+		
+		<header>
+			<style>
+	@media (max-width: 767px){
+		.tool-tip-toggle {margin-right: 0;}
+		.cbp-tm-nav .toggle .bjnt_locator {margin-right:10px}
+	}
+
+</style>
+
+	<nav role="navigation" class="cbp-tm-nav" aria-label="Main Navigation">
+		<div class="toggle">
+			
+			<a class="mobile-logo tm-desktop-hide" href="/">
+				<img alt="Ben &amp; Jerry&rsquo;s Home Page" src="/modules/bnj-templates/img/logo-small.png">
+			</a>
+			<a href="#" class="tool-tip-toggle tm-desktop-hide" aria-expanded="false"><i aria-hidden="true" class="ss-icon ss-rows"></i></a>
+			
+		<div class="bjnt_locator menu-button tm-desktop-hide">
+			<a class="bottom-arrow smallmarket" href="/ice-cream-near-me/grocery-stores-near-me" title="Find our Ice Cream & Scoop Shops" aria-label="Link to Find our Ice Cream & Scoop Shops"><i aria-hidden="true" class="ss-icon ss-location"></i></a>
+		</div>
+	
+				<a href="#" class="toggle-utility-nav tm-desktop-hide tm-mobile-hide"><i aria-hidden="true" class="ss-icon ss-location"><span>Locate</span></i></a>
+			
+				<div class="stickyNav">
+					<a class="stickyNavLinkMobile" href="/scoop-shops" target="_self">Scoop Shops</a><a class="stickyNavLinkMobile" href="/ice-cream-near-me?tab=delivery" target="_self">Shop Now</a>
+				</div>
+			
+		</div>
+		<div class="cbp-tm-navmenu">
+			<div class="cbp-tm-nav-left nav">
+				<div class="logo tm-mobile-hide">
+					<a  href="/"> <img alt="Ben &amp; Jerry&rsquo;s Home Page" src="/modules/bnj-templates/img/logo-small.png" />
+					</a>
+				</div>
+				<ul id="cbp-tm-menu" class="cbp-tm-menu tm-mobile-hide" aria-expanded="false">
+					
+										<li>
+											<a  aria-haspopup="true" href="/flavors">Flavors</a><button class="accordion-button tm-desktop-hide processed" tabindex="0" type="button"
+				aria-label="Flavors menu"  aria-expanded="false">
+			<i aria-hidden="true" class="ss-icon ss-plus tm-desktop-hide"></i>
+			<span><span class="visuallyhidden">show submenu for Flavors</span></span>
+		</button>
+		<ul class="cbp-tm-submenu tm-mobile-hide dropdown">
+			
+				<li>
+					
+					<a href="/flavors"><span>Our Flavors</span></a>
+				</li>
+			
+								<li>
+									<a href="/flavors/ice-cream-pints">Ice Cream Pints</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/ice-cream-novelties">Pint Slices</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/moophoria">Light Ice Cream</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/non-dairy">Non-Dairy Pints</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/cores-ice-cream-pints">Cores Ice Cream Pints</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/frozen-yogurt">Frozen Yogurt Pints</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/ice-cream-cups">Mini Cups</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/cookie-dough-chunks">Cookie Dough Chunks</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/netflix-original-flavors">Netflix Original Flavors</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/ice-cream-shop-flavors">Scoop Shop Flavors</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/doggie-desserts">Doggie Desserts</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/topped">Topped</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/gluten-free">Certified Gluten-Free Flavors</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/recipes">Ice Cream Recipes</a>
+								</li>
+							
+								<li>
+									<a href="http://www.benjerry.com/ice-cream-near-me?tab=store" target="_self">
+	Find Ice Cream Near Me
+</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/flavor-gurus">Flavor Gurus</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/flavor-graveyard">Flavor Graveyard</a>
+								</li>
+							
+		</ul>
+										</li>
+									
+										<li>
+											<a  aria-haspopup="true" href="/scoop-shops">Shops & Catering</a><button class="accordion-button tm-desktop-hide processed" tabindex="0" type="button"
+				aria-label="Shops & Catering menu"  aria-expanded="false">
+			<i aria-hidden="true" class="ss-icon ss-plus tm-desktop-hide"></i>
+			<span><span class="visuallyhidden">show submenu for Shops & Catering</span></span>
+		</button>
+		<ul class="cbp-tm-submenu tm-mobile-hide dropdown">
+			
+				<li>
+					
+					<a href="/scoop-shops"><span>Home</span></a>
+				</li>
+			
+								<li>
+									<a href="https://www.benjerry.com/ice-cream-near-me/scoop-shops-catering-near-me" target="_self">
+	Find an Ice Cream Shop
+</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/catering">Ice Cream Catering</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/cakes">Ice Cream Cakes</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/franchise">Open a Franchise</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/free-cone-day">Free Cone Day</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/takeout">Take Out</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/gift-cards">Gift Cards</a>
+								</li>
+							
+								<li>
+									<a href="/scoop-shops/flavor-fanatics" target="_self">
+	Become a Flavor Fanatic
+</a>
+								</li>
+							
+		</ul>
+										</li>
+									
+										<li>
+											<a  aria-haspopup="true" href="/values">Values</a><button class="accordion-button tm-desktop-hide processed" tabindex="0" type="button"
+				aria-label="Values menu"  aria-expanded="false">
+			<i aria-hidden="true" class="ss-icon ss-plus tm-desktop-hide"></i>
+			<span><span class="visuallyhidden">show submenu for Values</span></span>
+		</button>
+		<ul class="cbp-tm-submenu tm-mobile-hide dropdown">
+			
+				<li>
+					
+					<a href="/values"><span>Overview</span></a>
+				</li>
+			
+								<li>
+									<a href="/values/how-we-do-business">How We Do Business</a>
+								</li>
+							
+								<li>
+									<a href="/values/issues-we-care-about">Issues We Care About</a>
+								</li>
+							
+								<li>
+									<a href="http://www.benandjerrysfoundation.org/" target="_blank">
+	Ben &amp; Jerry&#039;s Foundation
+</a>
+								</li>
+							
+								<li>
+									<a href="/values/our-progressive-values">Our Progressive Values</a>
+								</li>
+							
+		</ul>
+										</li>
+									
+										<li>
+											<a  aria-haspopup="true" href="/about-us">About Us</a><button class="accordion-button tm-desktop-hide processed" tabindex="0" type="button"
+				aria-label="About Us menu"  aria-expanded="false">
+			<i aria-hidden="true" class="ss-icon ss-plus tm-desktop-hide"></i>
+			<span><span class="visuallyhidden">show submenu for About Us</span></span>
+		</button>
+		<ul class="cbp-tm-submenu tm-mobile-hide dropdown">
+			
+				<li>
+					
+					<a href="/about-us"><span>Overview</span></a>
+				</li>
+			
+								<li>
+									<a href="/about-us/how-were-structured">How We're Structured</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/factory-tours">Factory Tour</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/b-corp">B Corp</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/sear-reports">SEAR Reports</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/our-k9-5ers">Our K9-5ers</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/media-center">Press</a>
+								</li>
+							
+								<li>
+									<a href="/flavors/how-we-make-ice-cream" target="_self">
+	How We Make Ice Cream
+</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/contact-us" target="_self">
+	Contact Us
+</a>
+								</li>
+							
+								<li>
+									<a href="/about-us/where-we-do-business">Where We Do Business</a>
+								</li>
+							
+		</ul>
+										</li>
+									
+										<li>
+											<a href="/whats-new" target="_self">
+	What&#039;s New
+</a>
+										</li>
+									
+										<li>
+											<a  aria-haspopup="true" href="/ice-cream-near-me">Find Us</a><button class="accordion-button tm-desktop-hide processed" tabindex="0" type="button"
+				aria-label="Find Us menu"  aria-expanded="false">
+			<i aria-hidden="true" class="ss-icon ss-plus tm-desktop-hide"></i>
+			<span><span class="visuallyhidden">show submenu for Find Us</span></span>
+		</button>
+		<ul class="cbp-tm-submenu tm-mobile-hide dropdown">
+			
+								<li>
+									<a href="/ice-cream-near-me/instant-ice-cream-delivery-near-me">Instant Ice Cream Delivery Near Me</a>
+								</li>
+							
+								<li>
+									<a href="/ice-cream-near-me/grocery-delivery-near-me">Grocery Delivery Near Me</a>
+								</li>
+							
+								<li>
+									<a href="/ice-cream-near-me/grocery-stores-near-me">Grocery Stores Near Me</a>
+								</li>
+							
+								<li>
+									<a href="/ice-cream-near-me/scoop-shops-catering-near-me">Scoop Shops & Catering Near Me</a>
+								</li>
+							
+		</ul>
+										</li>
+									<!--searchMobile-->
+<li class="search tm-desktop-hide skip-responsive">
+	<div role="search" aria-labelledby="searchTermMobile">
+		<a href="#" class="toggle-search bottom-arrow" title="Search Ben & Jerry's" aria-label="Link to mobile search page">
+			<i aria-hidden="true" class="ss-icon">Search</i>
+		</a>
+		
+<form method="post" name="searchForm" action="/search-results" id="searchFormMobile" class="simplesearchform tm-desktop-hide" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="us"/>
+    
+			<input type="hidden" value="/home/headercontenttooltip/navigation-menu-publish.autoSuggestAction.do" class="searchPostUrl">
+			<p>
+				
+				<label for="searchTermMobile" class="error hide">
+					<span role="alert">Error! Please enter a search term.</span>
+				</label>
+				
+<input name="src_terms[0].term" id="searchTermMobile" placeholder="ex: Cherry Garcia" type="text" class="input-text search-box required" aria-label="Mobile "  value=""/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+<input type="hidden" name="src_sites.values" value="us"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="en_US"/><input type="hidden" name="src_nodeType" value="jnt:page"/>
+				<button type="submit" aria-label="Search Mobile" class="btn-submit">
+					<span>Search</span><i aria-hidden="true" class="ss-icon ss-search"></i>
+				</button>
+			</p>
+		
+</form>
+	</div>
+</li>
+				</ul>
+			</div>
+			<div class="cbp-tm-nav-right">
+				
+				<div class="tm-languages tm-mobile-hide">
+					
+					<ul>
+						
+					</ul>
+				</div>
+				<!--search regular-->
+<div class="search search-menu tm-mobile-hide">
+	<div class="headline accordion-button search-arrow">
+		<div class="arrow-link"
+			 onclick="addAdobeSearchTracking();"
+			 onkeypress="addAdobeSearchTracking();">
+			<a class="bottom-arrow" tabindex="0" title="Search Ben & Jerry's" aria-label="Link to search page" href="#" aria-expanded="false"><i aria-hidden="true" class="ss-icon ss-search"></i>
+				<div></div></a>
+		</div>
+	</div>
+	<div class="accordion-content" role="search" aria-labelledby="searchTerm">
+		
+<form method="post" name="searchForm" action="/search-results" id="searchForm" class="simplesearchform" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="us"/>
+    
+			<input type="hidden" value="/home/headercontenttooltip/navigation-menu-publish.autoSuggestAction.do" class="searchPostUrl">
+			<p>
+				
+				<label for="searchTerm" class="error hide" >
+					<span role="alert">Error! Please enter a search term.</span>
+				</label>
+				
+<input name="src_terms[0].term" id="searchTerm" placeholder="ex: Cherry Garcia" type="text" class="input-text search-box required" aria-label="Search the Ben &amp; Jerry’s site:"  value=""/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+<input type="hidden" name="src_sites.values" value="us"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="en_US"/><input type="hidden" name="src_nodeType" value="jnt:page"/>
+				<button type="submit"aria-label="Search" class="btn-submit">
+					<span>Search</span><i aria-hidden="true" class="ss-icon ss-search"></i>
+				</button>
+			</p>
+		
+</form>
+	</div>
+</div>
+
+<div class="bjnt_locator menu-button tm-mobile-hide">
+	<a class="bottom-arrow smallmarket" title="Link to Ben & Jerry's locator" aria-label="Link to locator page" href="/ice-cream-near-me"><i aria-hidden="true" class="ss-icon ss-location"></i></a>
+</div>
+
+
+					<nav class="country-nav tm-mobile-hide" aria-label="country selector">
+						
+						<a href="#" title="Select a Country (United States)" class="country-button accordion-button" aria-haspopup="true" aria-expanded="false">
+							<img src="/modules/bnj-templates/css/img/US-flag.png" alt="" role="presentation" class="flag selected"/>
+							<span class="sr-only">
+								You are on the United States website. Select another country.
+							</span>
+							<i aria-hidden="true" class="ss-icon ss-dropdown"></i>
+						</a>
+						<ul class="accordion-content">
+							<li class="country-option">
+								<a href="https://www.benandjerry.com.au">
+									<img src="/modules/bnj-templates/css/img/AU-flag.png" alt="" role="presentation" class="flag"/> <span class="country-name">Australia</span>
+								</a>
+							</li>
+							<li class="country-option"><a href="https://www.benjerry.at">
+								<img src="/modules/bnj-templates/css/img/AT-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Austria</span>
+							</a></li>
+							<li class="country-option"><a href="https://www.benjerry.be"><img src="/modules/bnj-templates/css/img/BE-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Belgium</span></a></li>
+							<li class="country-option"><a href="https://www.benandjerry.com.br"><img src="/modules/bnj-templates/css/img/BR-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Brazil</span></a></li>
+							<li class="country-option"><a href="https://www.benandjerrys.ca"><img src="/modules/bnj-templates/css/img/CA-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Canada</span></a></li>
+							<li class="country-option"><a href="https://www.benandjerry.cz"><img src="/modules/bnj-templates/css/img/CZ-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Czech Republic</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.dk"><img src="/modules/bnj-templates/css/img/DK-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Denmark</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.fi"><img src="/modules/bnj-templates/css/img/FI-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Finland</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.fr"><img src="/modules/bnj-templates/css/img/FR-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">France</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.de"><img src="/modules/bnj-templates/css/img/DE-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Germany</span></a></li>
+							<li class="country-option"><a href="https://www.ben-jerry.gr"><img src="/modules/bnj-templates/css/img/GR-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Greece</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.ie"><img src="/modules/bnj-templates/css/img/IE-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Ireland</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.co.il"><img src="/modules/bnj-templates/css/img/IL-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Israel</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.it"><img src="/modules/bnj-templates/css/img/IT-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Italy</span></a></li>
+							<li class="country-option"><a href="https://www.benandjerrys.com.mx"><img src="/modules/bnj-templates/css/img/MX-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Mexico</span></a></li>
+							
+							<li class="country-option"><a href="https://www.benjerry.nl"><img src="/modules/bnj-templates/css/img/NL-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Netherlands</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.no"><img src="/modules/bnj-templates/css/img/NO-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Norway</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.co.nz"><img src="/modules/bnj-templates/css/img/NZ-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">New Zealand</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.pl"><img src="/modules/bnj-templates/css/img/PL-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Poland</span></a></li>
+							<li class="country-option"><a href="https://www.benandjerrys.pt"><img src="/modules/bnj-templates/css/img/PT-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Portugal</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.com.pr"><img src="/modules/bnj-templates/css/img/PR-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Puerto Rico</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.com.sg"><img src="/modules/bnj-templates/css/img/SG-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Singapore</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.co.kr"><img src="/modules/bnj-templates/css/img/KR-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">South Korea</span></a></li>
+							<li class="country-option"><a href="https://www.ben-jerrys.es"><img src="/modules/bnj-templates/css/img/ES-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Spain</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.se"><img src="/modules/bnj-templates/css/img/SE-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Sweden</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.ch"><img src="/modules/bnj-templates/css/img/CH-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Switzerland</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.co.th"><img src="/modules/bnj-templates/css/img/TH-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">Thailand</span></a></li>
+							<!-- <li class="country-option">
+								<a href="http://www.benandjerrys.com.tr"><strong class="flag TR"></strong><span class="country-name">Turkey</span></a>
+							</li> -->
+							<li class="country-option"><a href="https://www.benjerry.co.uk"><img src="/modules/bnj-templates/css/img/GB-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">United Kingdom</span></a></li>
+							<li class="country-option"><a href="https://www.benjerry.com"><img src="/modules/bnj-templates/css/img/US-flag.png" class="flag" alt="" role="presentation"/> <span class="country-name">United States</span></a></li>
+						</ul>
+					</nav>
+				
+			</div>
+		</div>
+	</nav>
+	<div class="clearfix" aria-hidden="true"></div>
+
+	<script defer>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			var isLanguageSwitcher = "true" == "false";//account for var possibly being empty
+			var allowSearch = "true" == "true";//account for var possibly being empty
+			var cookieName = "recentSearch";
+			var requiresCookieConsent = "true" == "false";//account for var possibly being empty
+			setupCookies(isLanguageSwitcher, allowSearch, cookieName, requiresCookieConsent);
+		});
+	</script>
+	<script defer>
+		var toolTip = true;
+		var responsiveNavActive = false;
+		document.addEventListener("DOMContentLoaded", function(event) {
+			/*
+			Responsive navigation written by Martin Blackburn.
+			www.martinblackburn.co.uk
+
+			Freel free to use this for your own projects, just be nice and link back here, or my site :)
+			 */
+
+			ResponsiveNav = function(nav, breakPoint) {
+				//if no nav container, output an error
+				if (typeof nav === "undefined") {
+					//console.log("The nav container needs setting.");
+					return false;
+				}
+
+				//variables
+				var breakPoint = (typeof breakPoint != "number") ? 768 : breakPoint;
+				var usingOverflowMenu = false;
+				var iteration_counter = 0;
+
+				//listener for screen width
+				$(window).resize($.debounce(250, false, function() {
+					if (!responsiveNavActive) {
+						var date = new Date(), time = date.getTime();
+						responsiveNavActive = true;
+						detectMobileWidth();
+						responsiveNavActive = false;
+						var date2 = new Date(), time2 = date2.getTime();
+						//console.log("Done in " + (time2 - time) + "ms");
+					}
+				})).resize();
+
+				//added a extra dropdown if not already there
+				function addOverflowMenu() {
+					if (!usingOverflowMenu) {
+						var $nav = $(nav).find("ul").first();
+						$nav.append($('<li id="mobile-menu-icon-responsive" data-toggle="mobileMenu" tabindex="0"><a><div aria-hidden="true" class="icon-items">&nbsp;<span></span><span></span><span></span><span></span></div></a><ul class="cbp-tm-submenu tm-mobile-hide dropdown skip-responsive"></ul></li>'));
+						usingOverflowMenu = true;
+						dbpTooltipMenu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+					}
+				}
+
+				//make sure the LIs fit into the nav
+				function checkNavForOverflow() {
+					iteration_counter++;
+					//console.log("starting checkNavForOverflow #" + iteration_counter);
+					var $nav = $(nav).find("ul").first();
+					var $logo = $(".logo").first();
+					var $rightnav = $(".cbp-tm-nav-right").first();
+					//console.log($logo);
+					var logo_width = $logo.outerWidth(true);
+					var rightnav_width = $rightnav.outerWidth(true);
+					//console.log("logo_width: " + logo_width);
+					var $overflowMenu = $("#mobile-menu-icon-responsive>ul.dropdown").first();
+					//console.log($overflowMenu);
+					var overflow_menu_width = $("#mobile-menu-icon-responsive").outerWidth(true);
+					//console.log("overflow_menu_width: " + overflow_menu_width);
+					var nav_width = $nav.width();
+					//console.log("nav_width: " + nav_width);
+					var available_space = nav_width - logo_width - rightnav_width;
+					//console.log("available_space: " + available_space);
+					var total_length = 0;
+					var $allMenuItems = $nav.children();
+					$allMenuItems.each(function() {
+						var $this = $(this), this_current_width = $this.outerWidth(true);
+						//console.log("this_current_width: " + this_current_width);
+						$this.data("default-width", this_current_width);
+						total_length += this_current_width;
+					});
+					//console.log("total_length: " + total_length);
+					
+					var $overflowMenuItems = $overflowMenu.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+					var number_of_overflow_items = $overflowMenuItems.length;
+					//console.log("number_of_overflow_items: " + number_of_overflow_items);
+					var first_overflow_item_width = $overflowMenuItems.first().data("default-width");
+					//console.log("first_overflow_item_width: " + first_overflow_item_width);
+					
+					//need a dropdown
+					if (total_length > available_space) {//add an element to dropdown
+						//console.log("should add item");
+						putItemInOverflowMenu();
+					} else if (number_of_overflow_items > 1 && total_length + first_overflow_item_width <= available_space) {//remove an element from dropdown
+						//console.log("should remove item");
+						takeItemOutOfOverflowMenu();
+					} else if (number_of_overflow_items === 1 && total_length + first_overflow_item_width - overflow_menu_width <= available_space) {//move last out and remove dropdown
+						//console.log("should remove item and remove menu");
+						emptyAndRemoveOverflowMenu();
+					} else {
+						//console.log("should take no action");
+					}
+					//console.log("ending checkNavForOverflow #" + iteration_counter);
+					iteration_counter--;
+				}
+
+				//move LIs to the extra dropdown from main nav
+				function putItemInOverflowMenu() {
+					var $nav = $(nav).find("ul").first();
+					var $menuItems = $nav.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+					if ($menuItems.length) {
+						if (!usingOverflowMenu) {
+							addOverflowMenu();
+						}
+						var $menuItem = $menuItems.last().detach();
+						if ($menuItem.hasClass('cbp-tm-submenu')) {
+							$menuItem.addClass('cbp-tm-submenu-removed');
+							$menuItem.removeClass('cbp-tm-submenu');
+						}
+						$nav.find("#mobile-menu-icon-responsive>ul.dropdown").first().prepend($menuItem);
+						checkNavForOverflow();
+
+						$("#mobile-menu-icon-responsive .cbp-tm-submenu li").on('keydown', function(event) {
+							if(event.keyCode == 27) {
+								$('li.cbp-tm-show-below').removeClass('cbp-tm-show');
+								$('li.cbp-tm-show-below').attr('aria-expanded', 'false');
+								$('li.cbp-tm-show-below').removeClass('cbp-tm-show-below');
+								$(this.parentElement.parentElement).focus();
+							}
+						});
+					}
+				}
+
+				//move LIs to the extra dropdown from main nav
+				function takeItemOutOfOverflowMenu() {
+					var $overflowMenu = $("#mobile-menu-icon-responsive>ul.dropdown");
+					var $overflowMenuItems = $overflowMenu.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+					if ($overflowMenuItems.length) {
+						var $menuItem = $overflowMenuItems.first().detach();
+						if ($menuItem.hasClass('cbp-tm-submenu-removed')) {
+							$menuItem.removeClass('cbp-tm-submenu-removed');
+							$menuItem.addClass('cbp-tm-submenu');
+						}
+						var $nav = $(nav).find("ul").first();
+						var $menuItems = $nav.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+						$menuItems.last().after($menuItem);
+						checkNavForOverflow();
+					}
+				}
+
+				//move all LIs from extra dropdown back to the nav
+				function emptyAndRemoveOverflowMenu() {
+					var $overflowMenu = $("#mobile-menu-icon-responsive>ul.dropdown");
+					var $overflowMenuItems = $overflowMenu.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+					$overflowMenuItems.each(function() {
+						//console.log"returning element...");
+						var $menuItem = $(this).detach();
+						if ($menuItem.hasClass('cbp-tm-submenu-removed')) {
+							$menuItem.removeClass('cbp-tm-submenu-removed');
+							$menuItem.addClass('cbp-tm-submenu');
+						}
+						var $nav = $(nav).find("ul").first();
+						var $menuItems = $nav.children('li:not(.skip-responsive, #mobile-menu-icon-responsive)');
+						$menuItems.last().after($menuItem);
+					});
+					$("#mobile-menu-icon-responsive").remove();
+					usingOverflowMenu = false;
+				}
+
+				//check if to use mobile nav or not
+				function detectMobileWidth() {
+					if (window.matchMedia('(min-width: ' + breakPoint + 'px)').matches) {
+						checkNavForOverflow();
+					} else {
+						emptyAndRemoveOverflowMenu();
+					}
+				}
+
+			};
+			$('.nav').each(function() {
+				new ResponsiveNav($(this), 768);
+				dbpTooltipMenu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+			});
+
+			$('#mobile-menu-icon-responsive').on('touch', function(event) {
+				$(this).toggleClass('cbp-tm-show');
+				$(this).toggleClass('cbp-tm-show-below');
+			});
+			if ( $(window).width() <= 766 ) {
+				$("ul.cbp-tm-submenu.dropdown li:nth-child(n+2) a").each(function (i, v) {
+					$(v).contents().wrap('<span/>');
+				});
+			}
+		});
+	</script>
+	<style>
+@media ( min-width :768px) {	
+	/* default/closed state */
+	.dropdown {
+		display: none;
+		top: 100%;
+		width: 16em;
+		left: 50%;
+		position: absolute;
+		margin: .5rem 0 0 -8em;
+		border-radius: 14px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+		background: #0475a1;
+		padding: 10px;
+	}
+	.dropdown li {
+		display: block;
+		margin-bottom: 5px !important;
+	}
+	.dropdown a {
+		padding: 10px;
+		margin-right: 0;
+		text-align: left;
+	}
+	.dropdown>li.is-dropdown-submenu-parent>a:after {
+		margin-top: -1rem;
+	}
+	#mobile-menu-icon-responsive {
+		width: 2.4rem;
+		cursor: pointer;
+		left: 5px; /*per #3068	Top Navigation UX comment #90 http://digital.benjerry.com/redmine/issues/3068#note-90 PMS 2017-11-09 */
+		bottom: 3px; /*per #3068	Top Navigation UX comment #90 http://digital.benjerry.com/redmine/issues/3068#note-90 PMS 2017-11-09 */
+	}
+	#mobile-menu-icon-responsive span {
+		display: block;
+		position: absolute;
+		width: 2.4rem;
+		background: #fff;
+		border-radius: .9rem;
+		opacity: 1;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+	}
+	#mobile-menu-icon-responsive span:nth-child(1) {
+		bottom: 80%;
+		height: 20%;
+	}
+	#mobile-menu-icon-responsive span:nth-child(2),#mobile-menu-icon-responsive span:nth-child(3) {
+		bottom: 40%;
+		height: 20%;
+	}
+	#mobile-menu-icon-responsive span:nth-child(4) {
+		bottom: 0%;
+		height: 20%;
+	}
+	#mobile-menu-icon-responsive>a {
+		padding: 0;
+	}
+	#mobile-menu-icon-responsive .icon-items {
+		height: 1.5rem;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+	}
+	#mobile-menu-icon-responsive .dropdown {
+		margin-top: 0.5rem;
+	}
+
+	/* open/hover state */
+	li.cbp-tm-show-below>.dropdown,li:hover>.dropdown,li:hover>.dropdown,li:hover>.dropdown {
+		display: block;
+	}
+	#mobile-menu-icon-responsive.cbp-tm-show-below span:nth-child(1),#mobile-menu-icon-responsive:hover span:nth-child(1) {
+		height: 0;
+		width: 0;
+		bottom: 40%;
+	}
+	#mobile-menu-icon-responsive.cbp-tm-show-below span:nth-child(2),#mobile-menu-icon-responsive:hover span:nth-child(2) {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	#mobile-menu-icon-responsive.cbp-tm-show-below span:nth-child(3),#mobile-menu-icon-responsive:hover span:nth-child(3) {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+	#mobile-menu-icon-responsive.cbp-tm-show-below span:nth-child(4),#mobile-menu-icon-responsive:hover span:nth-child(4) {
+		height: 0;
+		width: 0;
+		bottom: 40%;
+	}
+	#mobile-menu-icon-responsive.cbp-tm-show-below .dropdown,#mobile-menu-icon-responsive:hover .dropdown {
+		display: block;
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	/* NEVER display dropdown in a dropdown in overflow */
+	#mobile-menu-icon-responsive .dropdown .dropdown {
+		display: none !important;
+	}
+}
+</style><div >
+	
+	<div class="description">
+		<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    if (location.pathname.includes('/values') === true) {
+      $('.benjerrys-promo-bar').hide();
+    }
+  });
+</script>
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div class="clear"></div>
+		</header>
+
+		
+		<div class="widthWrapper">
+			<header class="page-header" role="banner" id="top">
+
+				<div class="clear"></div>
+			</header>
+		</div>
+		
+		<div class="content" id="skip"  >
+			
+			<header class="content-header">
+			<div class="clear"></div>
+				<div class="clearfix" aria-hidden="true"></div>
+			</header>
+
+		<header class="content-header">
+	<div class="textWithLinks ">
+	
+	<div class="description">
+		
+			<h1>Defund the Police and Invest in Our Communities</h1>
+		
+	</div>
+</div><div class="clear"></div>
+</header><div class="row grid-parent" >
+			<div class="two-thirds grid-left">
+				<div >
+	
+	<div class="description">
+		
+			<span class="h5span">June 19, 2020</span>
+		
+
+
+<!-- AddThis button set -->
+<div class="addThis">
+    <div class="addthis_responsive_sharing"></div>
+</div>
+
+
+
+
+    <script defer>
+        document.addEventListener( 'DOMContentLoaded', function ( event ) { // DOMContentLoaded
+            // Configure AddThis sharing buttons
+            var configureAddThisShareButtons = setInterval ( function () {
+                if ( typeof addthis == 'object' &&
+                     typeof addPageInteraction == 'function' &&
+                     typeof addUDMEvent == 'function' &&
+                     typeof adobeTracking == 'boolean' &&
+                     typeof isEditMode == 'boolean' &&
+                     typeof jQuery == 'function' ) {
+                    clearInterval ( configureAddThisShareButtons );
+
+					//#8732 - ADA - Make sure tabindex is 0
+					setTimeout(function(){
+                        $('a.at-icon-wrapper.at-share-btn').each(function(){
+                            $(this).attr('tabindex', '0');
+							var title = "[" + newWinTxt +"]";
+							if($(this).attr('title')){
+								title = $(this).attr('title').concat(" " + title);
+							}
+							$(this).attr('title', title);
+							var linkText = $(this).html();
+							var newwindow = '<span class=\"new-window\">'+newWinTxt + "</span>";
+							if(linkText.includes(newWinTxt)){
+								newwindow = "";
+							}
+							$(this).html(linkText + newwindow);
+                        });
+					}, 2000);
+
+                    // Add Twitter text
+                    var twitterText = "People protesting the murder of #GeorgeFloyd are calling to defund the police. @benandjerrys talks about what that means:";
+                    twitterText = twitterText.replace(/[\\]/g, "\\");
+
+                    twitter_options = {
+                        passthrough : {
+                            twitter : {
+                                via : "benandjerrys",
+                                text : twitterText,
+                                related : ""
+                            }
+                        }
+                    };
+
+                    $.extend(true, addthis_share, twitter_options);
+
+                    // When AddThis buttons are clicked/shared
+                    addthis.addEventListener ( 'addthis.menu.share', function ( evt ) {
+
+                        // Default service of share button clicked
+                        var serviceOfShareButtonClicked = evt.data.service;
+
+                        // Modify service label
+                        switch ( serviceOfShareButtonClicked ) {
+                            case 'email':
+                                serviceOfShareButtonClicked = 'Email';
+                                break;
+                            case 'facebook':
+                                serviceOfShareButtonClicked = 'Facebook';
+                                break;
+                            case 'pinterest_share':
+                                serviceOfShareButtonClicked = 'Pinterest';
+                                break;
+                            case 'twitter':
+                                serviceOfShareButtonClicked = 'Twitter';
+                                break;
+                        }
+
+                        // Send event to Google Analytics
+                        addUDMEvent ( 'Pages', 'Shared', serviceOfShareButtonClicked );
+
+                        // Send data to Adobe
+                        if ( adobeTracking && !isEditMode ){
+                            adobeSocialShareContent(serviceOfShareButtonClicked);
+                        }
+                    });
+                }
+            }, 1000);
+        }); // DOMContentLoaded
+    </script>
+
+    <!-- Load AddThis script -->
+    <script defer src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5407595a4b19d366"></script>
+<p><img alt="Illustration of an ice cream sundae representing the US's $115 billion police budget" class="lazy" data-original="/files/{workspace}/sites/systemsite/files/whats-new/defund-police/DRV_DefundThePolice_Illustration_779x400.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></p>
+
+<p>Juneteenth is celebrated every year to mark the end of slavery. But while slavery may have ended on June 19, 1865, that did not usher in a new era of freedom for formerly enslaved people. Jim Crow. Mass incarceration. Police brutality. All forms of enslavement by different names. Even today, 155 years later, we know that <a href="https://www.npr.org/2020/05/29/865261916/a-decade-of-watching-black-people-die" target="_blank">Black men, women, and children</a> are not fully free. They&rsquo;re not free to live their own lives in their own skin, free of harassment, free of violence, and free of fear.</p>
+
+<p>It&rsquo;s long past time for that to change.</p>
+
+<p>In the aftermath of <a href="https://www.benjerry.com/about-us/media-center/dismantle-white-supremacy" target="_blank">George Floyd&rsquo;s murder</a> at the hands of police officers, we&rsquo;ve been hearing calls in the streets to &ldquo;defund the police.&rdquo; For Juneteenth 2020, we thought we&rsquo;d take a look at the &ldquo;defund&rdquo; movement and explain why it offers the best opportunity in generations to completely transform our model of policing and create stronger, safer communities where Black Americans and people of color can finally experience and celebrate true freedom.</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><link type="text/css" rel="stylesheet" href="/modules/bnj-templates/css/build/callToAction.min.css">
+
+
+<a class="callToAction" href="https://act.colorofchange.org/sign/defund_police_national/"
+   onkeypress="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')"
+   onclick="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')" target="_self">
+	
+		<img alt="" class="callToAction-thumbnail" src="/files/live/sites/systemsite/files/our-values/issues-we-care-about/BLM-100x100.jpg" role="presentation"/>
+	
+
+	<div>
+		<p class="callToAction-line1">Take Action Now!</p>
+		<p class="callToAction-line2">Sign The Petition To Defund The Police & Invest In Communities</p>
+	</div>
+</a><h2 >What “Defund the Police” Means</h2><div >
+	
+	<div class="description">
+		<p>&ldquo;<a href="https://www.washingtonpost.com/video/national/what-protesters-mean-by-defund-the-police/2020/06/11/12d1e09a-2bf6-4ea7-8388-cf6ef17d832a_video.html" target="_blank">Defund the police</a>&rdquo; means that we stop spending our tax dollars on so many of the discredited, dangerous, and racist parts of policing and instead invest that money in community-driven solutions that foster real health, peacekeeping, and safety. So, rather than endlessly growing police budgets, loading up on manpower, surveillance, armor, and weapons of war, we&rsquo;d increase funding for things that people really need, like:</p>
+
+<ul class="bulleted-list">
+	<li>Affordable housing</li>
+	<li>Job training</li>
+	<li>Education</li>
+	<li>Healthcare</li>
+	<li>Mental-health treatment and counseling</li>
+	<li>Substance-use treatment and counseling</li>
+	<li>Childcare</li>
+	<li>Parks and recreation</li>
+	<li>Community centers and libraries</li>
+</ul>
+
+<p>The &ldquo;defund&rdquo; movement acknowledges that police are not appropriate or effective responders to homelessness, mental illness, addiction, school discipline, or any number of issues and activities that aren&rsquo;t criminal and pose no danger to anyone. In fact, relying on the police to &ldquo;solve&rdquo; those problems only escalates interactions, resulting in unnecessary conflict. It criminalizes behavior that would be better handled by a professional and compassionate social safety system. Enough is enough. We can&rsquo;t <a href="https://www.usatoday.com/story/news/investigations/2019/02/13/marshall-project-more-cops-dont-mean-less-crime-experts-say/2818056002/" target="_blank">arrest</a> or <a href="https://www.vox.com/policy-and-politics/2018/1/16/16897474/mass-incarceration-crime-chart-2016" target="_blank">incarcerate</a> our way out of the challenges that face our communities. It doesn&rsquo;t work. It doesn&rsquo;t make us safer&mdash;but <a href="https://www.aclu.org/news/criminal-law-reform/defunding-the-police-will-actually-make-us-safer/" target="_blank">investing in our communities</a> does.</p>
+
+<p>That&rsquo;s what inspired our <a href="https://www.benjerry.com/values/issues-we-care-about/justice-remixd" target="_self">Justice ReMix&rsquo;d</a> campaign, and since we launched it a year and a half ago we&rsquo;ve worked with our grassroots <a href="https://www.benjerry.com/values/issues-we-care-about/justice-remixd#partners" target="_self">partners</a> in St. Louis to <a href="https://www.benjerry.com/values/issues-we-care-about/close-the-workhouse-jail" target="_self">close the Workhouse jail</a> and in <a href="https://www.benjerry.com/whats-new/2019/09/miami-school-board-vote" target="_self">Miami</a> to hire more school counselors, and fewer police officers. We know that the only way to move forward is with a community-based model of public safety that puts people&rsquo;s health and safety first.</p>
+
+<p>&nbsp;</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><h2 >A New Way of Ensuring Public Safety</h2><div >
+	
+	<div class="description">
+		<p>It&rsquo;s not just advocates and protesters who are <a href="https://advancementproject.org/wp-content/uploads/2020/06/PolicingDemandsFinal.pdf" target="_blank">demanding change</a>&mdash;many police officers also believe that they are being asked to do things that they are ill equipped for. In 2016, then Dallas police chief David Brown <a href="https://qz.com/729378/dallas-police-chief-david-brown-were-asking-cops-to-do-too-much-in-this-country/" target="_blank">said</a>, &ldquo;Every societal failure, we put it on the cops to solve.&rdquo;</p>
+
+<blockquote>
+<p><em>Not enough mental health funding? Let the cop handle it. Not enough drug-addiction funding? Let&rsquo;s give it to the cops. Here in Dallas we have a loose dog problem. Let&rsquo;s have the cops chase loose dogs. Schools fail&mdash;give it to the cops...That&rsquo;s too much to ask. Policing was never meant to solve all those problems.&nbsp;&nbsp;</em></p>
+
+<p>&ndash;David Brown</p>
+</blockquote>
+
+<p>So, what does <a href="https://www.aclu.org/news/criminal-law-reform/reimagining-the-role-of-police/" target="_blank">the end of policing as we know it</a> look like? We think police work should be limited in scope and rooted in shared community-centered principles, including:</p>
+
+<ul class="bulleted-list">
+	<li>Ensuring community oversight and representation</li>
+	<li>Ending discriminatory practices like &ldquo;<a href="https://www.pbs.org/wgbh/frontline/article/the-problem-with-broken-windows-policing/" target="_blank">broken windows</a>&rdquo; policing</li>
+	<li>Turning to compassionate professionals instead of police to address noncriminal activities</li>
+	<li>Emphasizing de-escalation and severely limiting the use of force</li>
+	<li><a href="https://www.aclu.org/issues/criminal-law-reform/reforming-police/police-militarization" target="_blank">Demilitarizing</a> police departments&mdash;our neighborhoods are not battlefields</li>
+	<li>Safeguarding transparency and accountability in all interactions and procedures</li>
+</ul>
+
+<p>Imagine sending trained, caring professionals to help during a mental-health crisis. Imagine calling on a <a href="https://www.themarshallproject.org/records/1510-violence-interrupter" target="_blank">violence </a><a href="https://www.themarshallproject.org/records/1510-violence-interrupter">interrupter</a> to help families in conflict. Imagine providing communities with abundant, and much-needed, housing, employment, healthcare, and transportation.</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><link type="text/css" rel="stylesheet" href="/modules/bnj-templates/css/build/callToAction.min.css">
+
+
+<a class="callToAction" href="https://act.colorofchange.org/sign/defund_police_national/"
+   onkeypress="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')"
+   onclick="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')" target="_self">
+	
+		<img alt="" class="callToAction-thumbnail" src="/files/live/sites/systemsite/files/our-values/issues-we-care-about/BLM-100x100.jpg" role="presentation"/>
+	
+
+	<div>
+		<p class="callToAction-line1">Take Action Now!</p>
+		<p class="callToAction-line2">Sign The Petition To Defund The Police & Invest In Communities</p>
+	</div>
+</a><h2 >The History of Police in America</h2><div >
+	
+	<div class="description">
+		<p>But let&rsquo;s take a step back. How did we get to this point? The <a href="https://slate.com/news-and-politics/2020/06/police-abolition-13th-amendment-slavery-racism.html" target="_blank">first organized police forces</a> in the South were created in the 1700s as slave patrols, to hunt down escaped enslaved people. In the North, they originated in the early 1800s to control immigrants, workers, and free Black people. After the end of the Civil War, police enforced <a href="https://www.history.com/topics/black-history/black-codes" target="_blank">Black Codes</a>, ensuring that, thanks to the <a href="http://www.avaduvernay.com/13th" target="_blank">13th Amendment</a>, a form of slavery could continue behind prison walls.</p>
+
+<p>There is no way to separate policing from the criminalization of Black and Brown skin. Straight on through the passage of the Civil Rights Act of 1964, police departments continued to enforce segregation and laws that kept white people in a position of power. Like those slave patrols centuries ago, modern policing (<a href="https://www.businessinsider.com/nixon-adviser-ehrlichman-anti-left-anti-black-war-on-drugs-2019-7" target="_blank">right</a> <a href="https://racism.org/index.php?option=com_content&amp;view=article&amp;id=820:crime09-1" target="_blank">up</a> <a href="https://www.themarshallproject.org/2016/04/11/bill-clinton-black-lives-and-the-myths-of-the-1994-crime-bill" target="_blank">until</a> <a href="https://www.pbs.org/wgbh/frontline/article/the-problem-with-broken-windows-policing/" target="_blank">this</a> <a href="https://www.vox.com/first-person/2020/2/14/21136892/stop-and-frisk-bloomberg-activist" target="_blank">very</a> <a href="https://www.aclu.org/issues/racial-justice/race-and-criminal-justice/racial-profiling" target="_blank">day</a>) has its roots in anti-Black violence and white supremacy.</p>
+
+<p>&nbsp;</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><h2 >The Current System: Good at Racism, Bad at Solving Crimes</h2><div >
+	
+	<div class="description">
+		<p><a href="https://www.vera.org/publications/arrest-trends-every-three-seconds-landing/arrest-trends-every-three-seconds/overview" target="_blank">A comprehensive study</a> published in 2019 found that police across the US make a total of about 10.5 million arrests every single year, aggressively pursuing <a href="https://www.benjerry.com/whats-new/2019/04/420-cannabis-justice" target="_self">drug violations</a> (disproportionately affecting Black people) and low-level offenses. (80% of all arrests are for low-level crimes, and only 5% for crimes that involve violence.) More than 10 million arrests is a lot! But all that activity doesn&rsquo;t signal effectiveness: Only 40% of victims report crimes to the police (which speaks to a lack of trust), and police only solve <a href="https://theintercept.com/2019/01/31/arrests-policing-vera-institute-of-justice/" target="_blank">25%</a> of those reported crimes. With <a href="https://www.washingtonpost.com/politics/2020/06/07/over-past-60-years-more-spending-police-hasnt-necessarily-meant-less-crime/" target="_blank">spending on police</a> skyrocketing over the past six decades, you&rsquo;d think it would lead to less crime and more effective investigations, but no.</p>
+
+<p>American police do rank highly, though, in their use of force. As <a href="https://www.cnn.com/2020/06/08/us/us-police-floyd-protests-country-comparisons-intl/index.html" target="_blank">CNN </a>puts it, &ldquo;American police shoot, kill, and imprison more people than other developed countries.&rdquo; And given the <a href="https://www.benjerry.com/whats-new/2019/04/stop-unnecessary-prosecutions" target="_blank">racism</a> in the overall criminal justice system, it&rsquo;s sadly no surprise that Black people are more at risk than white people of being killed by police. Black men are up to <a href="https://ajph.aphapublications.org/doi/10.2105/AJPH.2018.304559" target="_blank">3.5 times more likely</a> than white men to be killed by law enforcement&mdash;in fact, <a href="https://www.pnas.org/content/116/34/16793" target="_blank"><em>1 in every 1,000 Black men</em></a> will die <a href="https://www.washingtonpost.com/outlook/police-violence-pandemic/2020/06/05/e1a2a1b0-a669-11ea-b619-3f9133bbb482_story.html" target="_blank">at the hands of police</a>. Maybe this is one of the reasons that the mayor of Boston recently <a href="https://www.npr.org/sections/live-updates-protests-for-racial-justice/2020/06/12/876327158/boston-mayor-declares-racism-a-public-health-crisis" target="_blank">declared racism a public health crisis</a>.</p>
+
+<p>And for all this violence, Americans spend about <a href="https://www.bloomberg.com/news/articles/2020-06-04/america-s-policing-budget-has-nearly-tripled-to-115-billion" target="_blank">$115 billion a year</a>. New York City&rsquo;s police budget, to cite just one hard-to-believe example, is about <a href="https://ny.curbed.com/2020/6/5/21279214/nyc-defund-nypd-police-budget-affordable-housing-homelessness" target="_blank">$6 billion</a>, way way way more than the city spends on health and community services. Even in our own hometown of <a href="https://www.sevendaysvt.com/OffMessage/archives/2020/06/04/activists-demand-burlington-defund-its-police-department" target="_blank">Burlington, Vermont,</a> the $17.4 million spent on the police department accounts for about 22% of the city&#39;s proposed overall budget, leaving vital community programs underfunded. Does it make any sense for Americans to <a href="https://www.nytimes.com/interactive/2020/06/12/upshot/cities-grew-safer-police-budgets-kept-growing.html" target="_blank">pay billions upon billions of dollars</a> for a violent, racist, and ineffective system that causes so many people so much pain?</p>
+
+<p>&nbsp;</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><h2 >Time to Defund the Police!</h2><div >
+	
+	<div class="description">
+		<p>Incremental reforms. Promises to do better. Increased training. <a href="https://www.nytimes.com/2020/06/13/us/unrest-ferguson-police-reform.html?action=click&amp;pgtype=Article&amp;state=default&amp;module=styln-george-floyd&amp;variant=show&amp;region=TOP_BANNER&amp;context=storylines_menu" target="_blank">We&rsquo;ve tried that</a>. But American policing is fundamentally flawed&mdash;Band-Aids won&rsquo;t fix it. So it&rsquo;s time to do something fundamentally different. The good news is that many states and cities have clearly heard protesters&rsquo; demands and are already working to do just that:</p>
+
+<ul class="bulleted-list">
+	<li><a href="https://www.washingtonpost.com/education/2020/06/12/schools-police-george-floyd-protests/" target="_blank">School districts</a> around the US are cutting ties with police departments, helping shut down the <a href="https://www.benjerry.com/whats-new/2019/02/school-to-prison-pipeline" target="_self">school-to-prison pipeline</a>.</li>
+	<li><a href="https://www.theguardian.com/us-news/2020/jun/08/minneapolis-city-council-police-department-dismantle" target="_blank">Minneapolis</a> has vowed to disband its police department.</li>
+	<li><a href="https://www.nytimes.com/2020/06/08/us/unrest-defund-police.html" target="_blank">Mayors, governors, and other politicians</a> are pledging to reduce police department budgets and spend the money on community services instead.</li>
+	<li><a href="https://www.nytimes.com/2020/06/12/nyregion/50a-repeal-police-floyd.html" target="_blank">New York</a> just passed a law to put historic restrictions on the police.</li>
+	<li><a href="https://www.washingtonpost.com/national/san-francisco-police-wont-respond-to-non-criminal-calls/2020/06/11/214aac0a-ac40-11ea-a43b-be9f6494a87d_story.html" target="_blank">San Francisco</a> will send trained experts, instead of police, to calls regarding homelessness,&nbsp; school discipline, mental-health crises, and other non-criminal activities.&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<p>This is a great start. But more must be done. George Floyd was murdered over a disputed $20 transaction at a grocery store. The response by the police took his life, failed his community, and made our world less safe. This Juneteenth, on what should be our nation&rsquo;s true Independence Day, it&rsquo;s time to liberate ourselves from a dangerous, racist model of law enforcement and work toward a new vision of building thriving communities where all people have what they need to be healthy and safe. Let&rsquo;s dismantle the old system and build a new one that guarantees freedom and justice for all.</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><link type="text/css" rel="stylesheet" href="/modules/bnj-templates/css/build/callToAction.min.css">
+
+
+<a class="callToAction" href="https://act.colorofchange.org/sign/defund_police_national/"
+   onkeypress="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')"
+   onclick="javascript:addUDMEvent('Call to Action','Clicked','https://act.colorofchange.org/sign/defund_police_national/')" target="_self">
+	
+		<img alt="" class="callToAction-thumbnail" src="/files/live/sites/systemsite/files/our-values/issues-we-care-about/BLM-100x100.jpg" role="presentation"/>
+	
+
+	<div>
+		<p class="callToAction-line1">Take Action Now!</p>
+		<p class="callToAction-line2">Sign The Petition To Defund The Police & Invest In Communities</p>
+	</div>
+</a><div >
+	
+	<div class="description">
+		<p>
+	&nbsp;</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div class="addthis-buttons-left">
+    
+
+
+<!-- AddThis button set -->
+<div class="addThis">
+    <div class="addthis_responsive_sharing"></div>
+</div>
+
+
+
+</div><link type="text/css" rel="stylesheet" href="/modules/bnj-templates/css/build/bjnt_whatsNewRecent.min.css">
+	
+				<div class="bjnt_whatsNewRecent carousel tolist bx-slider-controls" id="bjnt_whatsNewRecent-49ace816-08c9-49ad-bda6-05c895d7c280">
+					<h2 class="h3style">Related Articles</h2>
+					<div class="rows">
+						<a href="/whats-new/2021/09/kaepernick-protest-anniversary" tabindex="0"
+  onclick="adobeRelatedArticle('5 Years Ago, Colin Kaepernick & Eric Reid Took a Knee to Protest Oppression. Today, We Honor the Work of Know Your Rights Camp.');"
+  onkeypress="adobeRelatedArticle('5 Years Ago, Colin Kaepernick & Eric Reid Took a Knee to Protest Oppression. Today, We Honor the Work of Know Your Rights Camp.');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/kaepernick-protest-anniversary/Kaepernick-200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/kaepernick-protest-anniversary/Kaepernick-200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>5 Years Ago, Colin Kaepernick & Eric Reid Took a Knee to Protest Oppression. Today, We Honor the Work of Know Your Rights Camp.</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2021/08/attorney-benjamin-crump-interview" tabindex="0"
+  onclick="adobeRelatedArticle('“This Is Our Moment, America”: An Interview with Attorney Benjamin Crump');"
+  onkeypress="adobeRelatedArticle('“This Is Our Moment, America”: An Interview with Attorney Benjamin Crump');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/attorney-crump-interview/Crump-200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/attorney-crump-interview/Crump-200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>“This Is Our Moment, America”: An Interview with Attorney Benjamin Crump</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2021/05/brown-v-board-education" tabindex="0"
+  onclick="adobeRelatedArticle('From Brown v. Board of Education to the School-to-Prison Pipeline: The Backlash to the Historic Decision');"
+  onkeypress="adobeRelatedArticle('From Brown v. Board of Education to the School-to-Prison Pipeline: The Backlash to the Historic Decision');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/brown-v-board-anniversary/DRV_BrownvBoard_200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/brown-v-board-anniversary/DRV_BrownvBoard_200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>From Brown v. Board of Education to the School-to-Prison Pipeline: The Backlash to the Historic Decision</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2021/04/first-100-days" tabindex="0"
+  onclick="adobeRelatedArticle('Reviewing the Biden Administration’s First 100 Days');"
+  onkeypress="adobeRelatedArticle('Reviewing the Biden Administration’s First 100 Days');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/first-100-days-recap/DRV_First100DaysRevisited_200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/first-100-days-recap/DRV_First100DaysRevisited_200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>Reviewing the Biden Administration’s First 100 Days</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2021/04/earth-day-climate-justice" tabindex="0"
+  onclick="adobeRelatedArticle('3 Reasons to Make this Earth Day about Climate Justice');"
+  onkeypress="adobeRelatedArticle('3 Reasons to Make this Earth Day about Climate Justice');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/earth-day-climate-justice/DRV_2021EarthDay_ClimateJustice_200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/earth-day-climate-justice/DRV_2021EarthDay_ClimateJustice_200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>3 Reasons to Make this Earth Day about Climate Justice</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2020/04/cannabis-justice" tabindex="0"
+  onclick="adobeRelatedArticle('Cannabis Justice By The Numbers');"
+  onkeypress="adobeRelatedArticle('Cannabis Justice By The Numbers');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/cannabis-justice-2020/DRV_42020Infographic_200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/cannabis-justice-2020/DRV_42020Infographic_200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>Cannabis Justice By The Numbers</span>
+        </figcaption>
+      
+  </figure>
+</a>
+					</div>
+				</div>
+				
+<script defer>
+	document.addEventListener("DOMContentLoaded", function(event) { 
+		if ($('#bjnt_whatsNewRecent-49ace816-08c9-49ad-bda6-05c895d7c280 .bx-wrapper .rows').length == 0) {
+			var slider49ace81608c949adbda605c895d7c280 = $('#bjnt_whatsNewRecent-49ace816-08c9-49ad-bda6-05c895d7c280 .rows').bxSlider({
+				pager : false,
+				
+			});
+			loadSlider49ace81608c949adbda605c895d7c280();
+			var resizeTimer49ace81608c949adbda605c895d7c280;
+			$(window).resize(function() {
+				clearTimeout(resizeTimer49ace81608c949adbda605c895d7c280);
+				resizeTimer49ace81608c949adbda605c895d7c280 = setTimeout(loadSlider49ace81608c949adbda605c895d7c280, 250);
+			});
+			function loadSlider49ace81608c949adbda605c895d7c280() {
+				function onSlideBefore($slideElement, oldIndex, newIndex) {
+					forceLoadLazyImage($slideElement);
+					forceLoadLazyImage($slideElement.siblings().find(".bx-clone"));
+				}
+				function onSlideAfter($slideElement, oldIndex, newIndex) {
+					updateLazyloader();
+				}
+				var touchEnabled = true;
+				if (window.matchMedia('(max-width: 479px)').matches && true) {
+					touchEnabled = false;
+				}
+				var layoutSlides = (window.matchMedia('(max-width: 479px)').matches ? 1 : window.matchMedia('(max-width: 767px)').matches ? 2 : 3),
+					contentSlides  = Math.min(layoutSlides, 3),
+					maxSlides = Math.min(contentSlides, 6),
+					slideMargin = 10,
+					totalWrapperCssMargin = 42,
+					containerWidth = document.getElementById('bjnt_whatsNewRecent-49ace816-08c9-49ad-bda6-05c895d7c280').offsetWidth,
+					slideWidth = ((containerWidth - totalWrapperCssMargin * 2) / maxSlides) - slideMargin,
+					sliderOptions = {
+						minSlides : 1,
+						maxSlides : maxSlides,
+						slideWidth : slideWidth,
+						slideMargin : slideMargin,
+						slideSelector : '.row-item',
+						moveSlides : 1,
+						pager : false,
+						onSlideAfter : onSlideAfter,
+						onSlideBefore : onSlideBefore,
+						touchEnabled : touchEnabled,
+						
+					};
+				slider49ace81608c949adbda605c895d7c280.reloadSlider(sliderOptions);
+			};
+		}
+// #35125 ADA tabindex		
+		setTimeout(function(){
+		$('.bjnt_whatsNewRecent.carousel.tolist a').each(function(){ 
+		$(this).attr('tabindex', '0'); 
+		}); 
+		}, 2000);			
+		
+	});
+</script>
+
+
+				</script>
+			
+	<script defer src="/modules/bnj-templates/javascript/build/whatsNewRecentCarousel.min.js"></script><div >
+	
+	<div class="description">
+		<p>
+	&nbsp;</p>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div class="clear"></div>
+			</div>
+			<div class="one-third-last grid-right sub">
+				<div class="bjnt_whatsNewRecent shortlist" id="bjnt_whatsNewRecent-9b2cc0cf-1f0a-453b-afb5-b0a19d4c77c4">
+			<h2 class="h3style">Most Popular</h2>
+			<div class="rows">
+        <a href="/whats-new/2020/12/top-flavors-2020" tabindex="0"
+  onclick="adobeRelatedArticle('Top 10 Ben & Jerry’s Flavors of 2020');"
+  onkeypress="adobeRelatedArticle('Top 10 Ben & Jerry’s Flavors of 2020');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/top-flavors-2020/top-flavors-thumbnail.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/top-flavors-2020/top-flavors-thumbnail.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>Top 10 Ben & Jerry’s Flavors of 2020</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2020/06/reparations-questions" tabindex="0"
+  onclick="adobeRelatedArticle('5 Questions About Reparations: Answered');"
+  onkeypress="adobeRelatedArticle('5 Questions About Reparations: Answered');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/reparations-questions/DRV_ReparationsExplained_200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/reparations-questions/DRV_ReparationsExplained_200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>5 Questions About Reparations: Answered</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/flavors/recipes/edible-cookie-dough" tabindex="0"
+  onclick="adobeRelatedArticle('Edible Cookie Dough Recipe');"
+  onkeypress="adobeRelatedArticle('Edible Cookie Dough Recipe');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/flavors/recipes/edible-cookie-dough/Beauty%20Reshoot/DRV_EdibleCookieDough_BeautyShot_BNJ2106-15_7465_200x200_AR.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/flavors/recipes/edible-cookie-dough/Beauty%20Reshoot/DRV_EdibleCookieDough_BeautyShot_BNJ2106-15_7465_200x200_AR.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>Edible Cookie Dough Recipe</span>
+        </figcaption>
+      
+  </figure>
+</a><a href="/whats-new/2017/11/systemic-racism-education" tabindex="0"
+  onclick="adobeRelatedArticle('How Systemic Racism Infiltrates Education');"
+  onkeypress="adobeRelatedArticle('How Systemic Racism Infiltrates Education');"
+  class="row-item shorterrows-noborder">
+  <figure class="photo">
+      
+		<img alt="" class="lazy polaroid-thin"
+				 data-original="/files/live/sites/systemsite/files/whats-new/7089-racism-in-education/22046b4-SystemicRacismHeader-Edu200x200.jpg" height="200" width="200" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" role="presentation"/>
+		<noscript>
+			<img alt=""
+					 class="polaroid-thin" src="/files/live/sites/systemsite/files/whats-new/7089-racism-in-education/22046b4-SystemicRacismHeader-Edu200x200.jpg" height="200" width="200"role="presentation"/>
+		</noscript>
+	
+        <figcaption>
+          <span>How Systemic Racism Infiltrates Education</span>
+        </figcaption>
+      
+  </figure>
+</a>
+			</div>
+		</div><div class="twitter-feed item ">
+	
+		<h2 class="h3style"><i aria-hidden="true" class="ss-social ss-twitter"></i>Recent Tweets</h2>
+	<div class="twitterSection">
+			<section>
+				<a class="twitter-timeline" href="https://twitter.com/benandjerrys"><span class="hide">twitter timeline</span></a>
+			</section>
+		</div>
+		
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- .twitter-feed -->
+</div><div class="clear"></div>
+			</div>
+		</div><div class="clear"></div>
+		</div>
+
+	
+		<div class="cloud-1"></div>
+		<div class="cloud-2"></div>
+		<div class="cloud-3"></div>
+		<div class="cloud-4"></div>
+		<div class="cloud-5"></div>
+		<div class="cloud-6"></div>
+	
+
+	<div class="contentInClouds">
+		<div class="clear"></div>
+	</div>
+
+	
+	<div class="hills-wrap footer-hills">
+		<div class="hills">
+			<div class="hill-1"></div>
+			<div class="hill-2"></div>
+			<div class="hill-3"></div>
+
+			<div class="cows"></div>
+			<div class="cow"></div>
+
+			
+		</div>
+	</div>
+
+	
+	<div class="contentBelowCows">
+		<div class="clear"></div>
+	</div>
+
+	
+	<footer class="page-footer" role="contentinfo">
+		<div class="topfootercontent">
+			<div class="bjnt_gridRow row description" style=''>
+			<div class="col-1_2">
+				<script defer>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        $('#help').change(function () {
+            $('.hide.contactUsGetHelp').removeClass('hide');
+        });
+        $('#contactUsGetHelpLink').click(function () {
+            var url = $('#help').val();
+            var target = $('#help option:selected').attr('target');
+
+            if(target == "_blank") {
+                window.open(url);
+            }
+            else {
+                location = url;
+            }
+        });
+    });
+</script>
+
+
+    <div class="help redesign">
+        <span class="h3span-genericText">Connect with Us</span>
+        <label for="help">How can we help you?</label>
+        <div>
+            <select id="help">
+                <option value="https://www.benjerry.com/whats-new/2016/?selectedForm=comment#selectForm" target="">
+		Select
+</option><option value="/about-us/contact-us?selectedForm=packageConcern#selectForm" target="">
+		Send us a product concern
+</option><option value="/about-us/contact-us?selectedForm=comment#selectForm" target="">
+		Send us a comment
+</option><option value="/about-us/contact-us?selectedForm=shopConcern#selectForm" target="">
+		Send us a scoop shop concern
+</option><option value="/about-us/contact-us?selectedForm=shopPraise#selectForm" target="">
+		Send us scoop shop praise
+</option><option value="/about-us/contact-us?selectedForm=suggest#selectForm" target="">
+		Send us a flavor suggestion
+</option><option value="/about-us/contact-us?selectedForm=resurrect#selectForm" target="">
+		Resurrect a flavor
+</option><option value="/about-us/contact-us?selectedForm=newsletter#selectForm" target="">
+		Sign up for our newsletter
+</option><option value="https://benjerry.csharmony.epsilon.com/Loyalty/Preference"  target="_blank">
+    Unsubscribe/Do Not Contact
+</option>
+            </select>
+
+            <input id="contactUsGetHelpLink" type="submit" class="input-submit ui-button ui-corner-all ui-widget hide contactUsGetHelp" value="Get Help" aria-label="Get Help" role="button">
+
+        </div>
+        
+        <div aria-hidden="true" class="clearfix">&nbsp;</div>
+        <div class="clear">&nbsp;</div>
+    </div>
+
+<div class="clearfix editModeClear" aria-hidden="true"></div><div class="clear"></div>
+			</div>
+			<div class="col-1_2">
+				<div class="chunkmail-signup stop-validation-scroll bjfnt_simpleChunkMailForm footer-redesign" id="footerRedesignNewsletterSignUp-06d15dfb-802b-4560-a84a-35f482e43169">
+	<span class="h3span-genericText">It's Like Dessert For Your Inbox</span>
+	<div class="simpleChunkMailButtons">
+		<p class="simpleChunkMailCopy">Sign Up For Our Email Newsletter And Get The Inside Scoop!</p>
+		<p class="simpleChunkMailEmail">
+			<input class="input-text email" id="emailNonFormFooterRedsign" placeholder="address@email.com" type="email" aria-label="Enter your email address"/>
+		</p>
+		<input type="submit" class="input-submit acquisition-open-dialog-footer-redesign" value="Subscribe"/>
+	</div>
+</div>
+
+
+
+<div id="dialog-form-footer-sign-up" class="item hide pad24">
+	<input type="button" class="pull-right close-dialog" aria-label="Close footer newsletter subscribe dialog box" value="X" />
+	<form method="post" action="/home/topfootercontent/grid-row-redesign/columnTwo/form-selector.EpsilonUSAcqusitionAction.do" name="EpsilonUSAcqusitionAction" id="EpsilonUSAcqusitionActionDialogFooter" class="ajax-form acquisition-form-footer stop-validation-scroll">
+		<input type="hidden" value="get" name='jcrMethodToCall' />
+		<input type="hidden" name="originUrl" value="https://www.benjerry.com/cms/render/live/en_US/sites/us/home/whats-new/2016/told-the-truth.html#selectForm" />
+		<input type="hidden" name="jcrNodeType" value="jnt:responseToForm" />
+		
+			<input type="hidden" name="jcrRedirectTo" value="/home/whats-new/2016/told-the-truth" />
+		
+		<input type="hidden" value="false" name='includeCaptcha' />
+
+		
+				<input type="hidden" name="controlId" value="9000063871" />
+			
+
+		<input type="hidden" name="dataSourceId" value="2000041127" />
+		<input type="hidden" name="chunkSpelunker" value="Y" />
+		<div class="form-content">
+			<div class="form-item">
+				<span class="h4span-genericText">
+					It's Like Dessert For Your Inbox
+				</span>
+			</div>
+			<div class="form-item">
+				<p>
+					Sign Up For Our Email Newsletter And Get The Inside Scoop!
+				</p>
+			</div>
+			<div class="form-item">
+				<p>
+					* = Required Field
+				</p>
+			</div>
+			<div class="form-item">
+				<label for="dialog-form-firstName-footer">First name</label>
+				<p>
+					<input class="input-text names" type="text" id="dialog-form-firstName-footer" name="f_firstName" aria-describedby="errorFirstName-footer"/>
+					<input type="text" name="firstName" class="bnj_f_field" autocomplete="off" />
+					<span id="errorFirstName-footer" class="error hide" role="alert" aria-hidden="true">Oops! Please enter a valid&nbsp;first name.</span>
+				</p>
+			</div>
+			<div class="form-item">
+				<label for="dialog-form-lastName-footer">Last name</label>
+				<p>
+					<input class="input-text names" type="text" id="dialog-form-lastName-footer" name="f_lastName" aria-describedby="errorLastName-footer"/>
+					<input type="text" name="lastName" class="bnj_f_field" autocomplete="off" />
+					<span id="errorLastName-footer" class="error hide" role="alert" aria-hidden="true">Oops! Please enter a valid&nbsp;last name.</span>
+				</p>
+			</div>
+			<div class="form-item">
+				<label for="dialog-form-email-footer">*&nbsp;Email address</label>
+				<p>
+					<input class="input-text required email " id="dialog-form-email-footer" name="f_email" aria-required="true" aria-describedby="errorEmail-footer" aria-label="Enter your email address"/>
+					<input type="text" name="email" class="bnj_f_field" autocomplete="off" />
+					<span id="errorEmail-footer" class="error hide" role="alert" aria-hidden="true">Oops! Please enter a valid&nbsp;email.</span>
+				</p>
+			</div>
+			
+			<div>
+				<button id="sub-footer" type="submit" class="input-submit" >
+					SUBSCRIBE
+				</button>
+			</div>
+		</div>
+		<div class="loading">
+			<img alt=" ajax-loader.gif" src="/modules/bnj-forms/img/ajax-loader.gif" />
+		</div>
+		<div class="form-success">
+			<span class="h4span-genericText">
+				Thanks for signing up for our newsletter!
+			</span>
+		</div>
+		<div class="form-fail hide">
+			<span class="h4span-genericText">
+				There was an error sending your request. Please try again later.
+			</span>
+		</div>
+	</form>
+	<div class="underage-error" style="display: none;">
+		<span class="h4span-genericText">
+			We are sorry but we cannot process your request.
+		</span>
+	</div>
+</div>
+
+<script defer src="/modules/bnj-forms/javascript/formSelector.footerSignUp.js"></script>
+
+<link type="text/css" rel="stylesheet" media="all" href="/modules/bnj-forms/css/formSelector.acquisition.privacy.css"><div class="clear"></div>
+			</div>
+		</div><div class="bjnt_gridRow row" style=''>
+			<div class="col-1_3">
+				<div class="stickyFooter js-sticky footer ">
+  <input class="stickyFooter-close" type="button" aria-label="Close dialog box" value="X" style="position: absolute; right: 0px; top: 0px;">
+  <span class="stickyFooter-text h5span-genericText">Go for the dough! Browse Cookie Dough Chunks now.</span>
+  <a class="stickyFooter-button btn" href="/flavors/cookie-dough-chunks"
+     onclick="addUDMEvent('Sticky', 'Dough Chunks', window.location.pathname)"
+     onkeypress="addUDMEvent('Sticky', 'Dough Chunks', window.location.pathname)"
+     title="Browse Flavors">Browse Flavors</a>
+</div>
+
+
+
+<script>
+  document.addEventListener("consent",function(e){
+
+    function isMobile() {
+      var check = false;
+      (function(a) {
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i
+                        .test(a)
+                || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i
+                        .test(a.substr(0, 4))) {
+          check = true;
+        }
+      })(navigator.userAgent || navigator.vendor || window.opera);
+      return check;
+    }
+
+    //move cqBadge out of the way of sticky form
+    if(isMobile()){
+      if($('.js-sticky').is(':visible')){
+        let height = $('.js-sticky').css('height').replace('px', '');
+        let newPos = Number(height) + 70;
+        $('#cqButton').css('bottom', newPos + 'px');
+      }
+    }
+
+  });
+
+  document.addEventListener('DOMContentLoaded', function (event) { // DOMContentLoaded
+
+    
+
+    // Listen for AddThis dock to be hidden
+    document.addEventListener('addThisDockHide', function (event) { 
+      $('.stickyFooter').css('bottom', '0');
+    });
+
+    // Listen for AddThis dock to be shown
+    document.addEventListener('addThisDockShow', function (event) { 
+      $('.stickyFooter').css('bottom', '50px');
+    });
+    
+    // Hide sticky footer whent 'X' or button is clicked
+      $('.footer .stickyFooter-close, .footer .stickyFooter-button').on('click', function () {
+        // Hide the sticky after it has been closed out for 3 months
+        var now = new Date();
+        now.setMonth( now.getMonth() + 3 );
+        document.cookie = "hideStickyFooter=true;expires=" + now.toUTCString() + ";path=/";
+        $('.stickyFooter').hide();
+        $('#cqButton').css('bottom', '20px');
+      });
+        
+        // Show sticky footer in live/preview mode if cookie is not present
+        if(document.cookie.indexOf('hideStickyFooter') < 0 && $('.stickyFooter').length < 2){
+          $('.stickyFooter').show();
+        }
+        
+  }); // DOMContentLoaded
+</script><div class="clear"></div>
+			</div>
+			<div class="col-1_3">
+				<div class="social redesign">
+	<ul>
+
+		<li>
+	<a href="https://www.facebook.com/benandjerrysUS" aria-label="Follow us on Facebook" class="link-to-social" target='_blank'>
+		
+		<img class="lazy social-icon" data-original="/modules/bnj-modules/img/social-icons/redesign/facebook.svg" src="/modules/bnj-modules/img/social-icons/redesign/facebook.svg" alt="Follow us on Facebook">
+	</a>
+</li><li>
+	<a href="https://twitter.com/benandjerrys" aria-label="Follow us on Twitter" class="link-to-social" target='_blank'>
+		
+		<img class="lazy social-icon" data-original="/modules/bnj-modules/img/social-icons/redesign/twitter.svg" src="/modules/bnj-modules/img/social-icons/redesign/twitter.svg" alt="Follow us on Twitter">
+	</a>
+</li><li>
+	<a href="http://instagram.com/benandjerrys" aria-label="Follow us on Instagram" class="link-to-social" target='_blank'>
+		
+		<img class="lazy social-icon" data-original="/modules/bnj-modules/img/social-icons/redesign/instagram.svg" src="/modules/bnj-modules/img/social-icons/redesign/instagram.svg" alt="Follow us on Instagram">
+	</a>
+</li><li>
+	<a href="https://www.snapchat.com/add/benandjerrys" aria-label="Follow us on Snapchat" class="link-to-social" target='_blank'>
+		
+		<img class="lazy social-icon" data-original="/modules/bnj-modules/img/social-icons/redesign/snapchat.svg" src="/modules/bnj-modules/img/social-icons/redesign/snapchat.svg" alt="Follow us on Snapchat">
+	</a>
+</li>
+
+	</ul>
+</div>
+<div class="clearfix editModeClear" aria-hidden="true"></div><div class="clear"></div>
+			</div>
+			<div class="col-1_3">
+				<div class="clear"></div>
+			</div>
+		</div><div >
+	
+	<div class="description">
+		<style>
+@media only screen and (max-width: 599px) {
+.bjnt_flavorLanding.carousel.bx-slider-controls.touchDevice .controls-prev-next.next {
+    margin-left: 89% !important;
+}
+.bjnt_whatsNewRecent.carousel .controls-prev-next.next {
+	margin-left: 81% !important;
+}
+}
+</style>
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div >
+	
+	<div class="description">
+		<style>
+  .social.redesign {
+    margin-top: 35px;
+  }
+</style>
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div class="clear"></div>
+				<div class="be-ix-link-block">
+					
+<!-- be_ixf, bodystr, _body_open --><script type='text/javascript'>
+    function positionLinkBlock(targetContainer) {
+        if (targetContainer != null) {
+            var strLinkBlock = '<div class="be-related-link-container"><div class="be-label">Also of Interest</div><ul class="be-list"><li class="be-list-item"><a class="be-related-link" href="https://www.benjerry.com/sitemap">Sitemap</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.benjerry.com/whats-new/2020/07/qualified-immunity">What the Fudge Is Qualified Immunity, And...</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.benjerry.com/flavors/justice-remixd-ice-cream.html">Justice ReMix&#39;d ™</a></li></ul></div>';
+            targetContainer.insertAdjacentHTML('afterbegin', strLinkBlock);
+        }
+    }
+
+    jsElementReady('.be-ix-link-block', positionLinkBlock);
+
+</script>
+
+				</div>
+			<div class="footer-links">
+			<ul>
+        
+            <li class="contact-us">
+				<a href="/about-us/contact-us" target="_self">Contact Us</a>
+            </li>
+        
+            <li class="franchise">
+				<a href="/scoop-shops/franchise" target="_self">Franchise</a>
+            </li>
+        
+            <li class="press">
+				<a href="/about-us/media-center" target="_self">Press</a>
+            </li>
+        
+            <li class="jobs">
+				<a href="/about-us/jobs" target="_self">Jobs</a>
+            </li>
+        
+            <li class="terms-of-use">
+				<a href="/about-us/terms-and-conditions" target="_self">Terms of Use</a>
+            </li>
+        
+            <li class="privacy-policy-1">
+				<a href="https://www.unilevernotices.com/usa/english/privacy-notice/notice.html" target="_blank">Privacy Notice</a>
+            </li>
+        
+            <li class="sitemap">
+				<a href="/sitemap" >Sitemap</a>
+            </li>
+        
+            <li class="accessibility">
+				<a href="https://www.unileverusa.com/accessibility.html" target="_blank">Accessibility</a>
+            </li>
+         
+	        <li>
+				<!--
+				Evidon tag
+				cid: 2523
+				pid: 21143
+				-->
+				    <a id="_bapw-link" href="#" title="AdChoices-Do Not Sell"><img alt="AdChoices-Do Not Sell" title="AdChoices-Do Not Sell" id="_bapw-icon" class="bapw-icon"/>AdChoices-Do Not Sell</a><script defer>/*<![CDATA[*/(function(){var k=21143,m=2523,n=1,b=false,l=document,p=l.getElementById("_bapw-link"),h=(l.location.protocol=="https:"),i=(h?"https":"http")+"://",g=i+"c.betrad.com/pub/",r=window._bap_p_overrides,e=0,a=0,f=560,q=720,o=h||(r&&r.hasOwnProperty(k)&&r[k].new_window);function c(s){var d=new Image();d.src=i+"l.betrad.com/pub/p.gif?pid="+k+"&ocid="+m+"&i"+s+"=1&r="+Math.random()}function j(){if(typeof(window.innerWidth)=="number"&&typeof(window.innerHeight)=="number"){e=window.innerWidth;a=window.innerHeight}else{if(document.documentElement&&document.documentElement.clientWidth&&document.documentElement.clientHeight){e=document.documentElement.clientWidth;a=document.documentElement.clientHeight}else{if(document.body&&document.body.clientWidth&&document.body.clientHeight){e=document.body.clientWidth;a=document.body.clientHeight}}}return(a<=f)||(e<=q)}l.getElementById("_bapw-icon").src=g+"icon1.png";p.onmouseover=function(){p.href="//info.evidon.com/pub_info/"+k+"?v=1&nt="+n+"&nw="+((o||j())?"true":"false")};p.onclick=function(){if(o||j()){c("c");return true}function d(u,x){var v=l.getElementsByTagName("head")[0]||l.documentElement,t=b,s=l.createElement("script");function w(){s.onload=s.onreadystatechange=null;v.removeChild(s);x()}s.src=u;s.onreadystatechange=function(){if(!t&&(this.readyState=="loaded"||this.readyState=="complete")){t=true;w()}};s.onload=w;v.insertBefore(s,v.firstChild)}this.onclick="return "+b;d(i+"ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js",function(){d(g+"pub2.js",function(){BAPW.i(p,{pid:k,ocid:m})})});return b};c("i")}());/*]]>*/</script>
+			</li>
+		
+        </ul>
+</div><div >
+	
+	<div class="description">
+		<p style="margin-bottom:0;text-align:center; background-color:#191919; font-size:0.7em; color:#ccc; padding:15px 8px;">&copy; 2020&nbsp;Ben &amp; Jerry&#39;s Homemade, Inc. This website is directed only to U.S. consumers for products and services of Ben &amp; Jerry&#39;s Homemade, Inc. This website is not directed to consumers outside of the U.S.</p>
+<style type="text/css">@media (max-width: 766px){
+ul.cbp-tm-submenu.dropdown>li>a{color:#fff!important;}
+}
+
+@media (max-width:767px) {  
+.hv2 .three-items .col-1_3 {display: block;margin-top:0;}
+.hv2 .three-items .col-1_3 .description {margin-top: 35px;margin-left:89px}
+.hv2 .three-items .col-1_3 img {float: left;}
+}
+@media only screen and (max-width: 414px){
+#hero-delivery a {top: 0;}
+}
+</style>
+
+	</div>
+</div>
+
+<div class="clearfix" aria-hidden="true"></div><div class="clear"></div>
+		</div>
+	</footer>
+
+	
+	<div id="common-footer">
+	</div>
+	</div>
+</div>
+	
+			<script defer src="/modules/bnj-templates/javascript/lib/lazyload.min.js"></script>
+			
+		<script defer src="//cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
+		<script defer src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		
+			<script defer src="/modules/bnj-templates/javascript/build/v0902202111/script.min.js"></script>
+			
+
+		<!-- site-specific js/body -->
+		
+		<!-- END:site-specific js/body -->
+
+		<!-- parent's javascript (BODY) -->
+		
+					<script defer src="/files/live/sites/systemsite/files/js/add-this-labels.js"></script>
+				
+					<script defer src="/files/live/sites/us/files/js/outbrain-pixel.js"></script>
+				
+		<!-- END:parent's javascript (BODY) -->
+
+		<!-- page-specific javascript (BODY) -->
+		
+    <!-- END:page-specific javascript (BODY) -->
+
+	<!--
+	Migrated to Adobe Tag Manager:
+		- Bidtellect (us)
+		- DoubleClick Floodlight (us)
+		- Pinterest (us)
+		- Taboola (us)
+
+	Removed:
+		- Outbrain (us)
+	-->
+
+	
+
+<!-- Universal global Facebook pixel from Unilever -->
+
+
+	<!-- isWhatsNew JavaScript Variable -->
+	
+
+	<script>
+		var isWhatsNew = true;
+	</script>
+
+    
+<style>
+  body {
+    
+
+    /* Background position */
+    background-position: center top, center top;
+
+    
+        /* Background image position and sizing */
+        
+  }
+
+  body .bodywrapper .cloud-1,
+  body .bodywrapper .cloud-2,
+  body .bodywrapper .cloud-3,
+  body .bodywrapper .cloud-4,
+  body .bodywrapper .cloud-5,
+  body .bodywrapper .cloud-6 {
+    
+  }
+
+  
+</style>
+
+
+	<script defer>
+	  if(document.getElementById("twttr")){
+			twttr.widgets.load(
+			  document.getElementById("tcontainer")
+			);
+	  }
+	</script>
+
+	
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+		<script defer src="/modules/bnj-templates/javascript/build/ada.min.js"></script>
+	
+      <style>
+        @media only screen and (max-width: 767px) {
+          header nav[role="navigation"] .bjnt_locator {
+            display: none;
+          }
+        }
+      </style>
+    
+<!-- Start Conversant Tag -->
+<script type="text/javascript">
+    var dtmSrc = window.location.protocol + "//login.dotomi.com/ucm/UCMController?" +
+        "dtm_com=28&dtm_cid=80143&dtm_cmagic=b4386b&dtm_format=5";
+    var dtmTag = new Array();
+    dtmTag.dtm_fid = 101;
+    dtmTag.cli_promo_id = "14";
+    dtmTag.dtmc_brand = "Ben & Jerry's";
+    
+        dtmTag.dtmc_department = "What's New";
+    
+        dtmTag.dtmc_category = "values, racial justice";
+    
+        dtmTag.dtmc_sub_category = "Defund the Police and Invest in Our Communities";
+    
+
+    dtmTag.canonical_url = "";
+    dtmTag.dtm_user_token = "";
+    dtmTag.dtmc_ref = document.referrer;
+    dtmTag.dtmc_loc = document.location.href;
+    dtmTag.fpc_status = "";
+    function readCanonicalUrl() {
+        if (document.querySelector("link[rel=canonical]")) {
+            var canonical_selector = document.querySelector("link[rel=canonical]").href;
+            if (canonical_selector) { dtmTag.canonical_url = canonical_selector; }
+        }
+    }
+    readCanonicalUrl();
+    function readCookieDotomi() {
+        var nameEQ = "dtm_token=";
+        var fpcStatus = 'DotomiStatus=';
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') { c = c.substring(1, c.length); }
+            if (c.indexOf(nameEQ) == 0) { dtmTag.dtm_user_token = c.substring(nameEQ.length, c.length); }
+            if (c.indexOf(fpcStatus) == 0) { dtmTag.fpc_status = c.substring(fpcStatus.length, c.length); }
+        }
+    }
+    readCookieDotomi();
+    for (var item in dtmTag) {
+        if (typeof dtmTag[item] != "function" && typeof dtmTag[item] != "object") {
+            dtmSrc += "&" + item + "=" + encodeURIComponent(dtmTag[item]);
+        }
+    }
+    setTimeout('document.getElementById("dtmdiv").innerHTML = ""', 2000);
+    var dotomiNode = document.createElement("div");
+    dotomiNode.style.display = "none";
+    dotomiNode.id = "dtmdiv";
+    var dotomiIFrame = document.createElement("iframe");
+    dotomiIFrame.name = "response_frame";
+    dotomiIFrame.src = dtmSrc;
+    dotomiNode.appendChild(dotomiIFrame);
+    document.getElementsByTagName('body')[0].appendChild(dotomiNode);
+</script>
+<!-- End Conversant Tag -->
+
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="/js/moment.min.js"></script>
+    <link href="/selectize/selectize.bootstrap3.css" rel="stylesheet">
+    <link href="/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css" rel="stylesheet">
+    <link href="/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/introjs/introjs.min.css" rel="stylesheet">
+
+    <!-- includes responsive plugin and foundation ui  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/zf/dt-1.10.9,r-1.0.7/datatables.min.css"/>
+
+
+
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/plugins/datepicker/datepicker3.css" rel="stylesheet">
+<link href="/css/animate.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/overrides.css" rel="stylesheet">
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="/sweetalert/sweetalert.css" rel="stylesheet">
+<script src="/js/jquery-2.2.2.min.js"></script>
+<script src="/sweetalert/sweetalert.min.js"></script>
+
+
+
+</head>
+<body class="fixed-navigation">
+
+<div id="wrapper">
+    <div id="preloader"></div>
+<input id="projects" type="hidden" value="1" />
+
+<div class="row hidden-print" style="background-image: url('/images/hdr-background.png');">
+    <div class="col-sm-12">
+        <a href="/"><img src="/images/hdr-left.png" /></a>
+
+        <span class="hideAt800">
+            <strong style="position:relative; top:-5px">
+                Market Share Statistics for Internet Technologies
+            </strong>
+        </span>
+
+        
+        <div class="pull-right" style="margin-top:24px">
+            <a href="/login"class="btn btn-xs btn-success" style="padding-top:0; padding-bottom:0; margin-right:10px;margin-left:15px">Login</a>
+        </div>
+        
+
+        <div class="pull-right hideAt400" style="margin-top:24px">
+
+        </div>
+    </div>
+</div>
+
+    
+<div style="width:100%;background-color:white" class=" hidden-print">
+    <div class="menu-toggle-btn" style="width:70px; background-color: white">
+        <div style="width:50px;padding-left:25px;text-align:left; z-index: 3011">
+            <a class="menu-button navbar-minimalize btn btn-xs btn-success showAt768 hidden-print" style="display:none;margin-top:11px;" href="#">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar-default navbar-static-side hideAt768 hidden-print" role="navigation" style="z-index: 2011">
+    <div id="side-menu-container" class="sidebar-collapse hidden-print">
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        Page.menuItems = [{"title":"What's New","icon":"fa fa-star","url":"/welcome"},{"title":"Browsers","icon":"fa fa-globe","items":[{"title":"Desktop","url":"/browser-market-share.aspx"},{"title":"Desktop Versions","url":"/browser-market-share.aspx?id=browsersDesktopVersions"},{"title":"Mobile","url":"/browser-market-share.aspx?id=browsersMobile"},{"title":"Tablet","url":"/browser-market-share.aspx?id=browsersTablet"},{"title":"HTTP vs. HTTPS","url":"/report.aspx?id=https"}]},{"title":"Operating Systems","icon":"fa fa-pie-chart","items":[{"title":"Desktop","url":"/operating-system-market-share.aspx"},{"title":"Desktop Versions","url":"/operating-system-market-share.aspx?id=platformsDesktopVersions"},{"title":"Mobile","url":"/operating-system-market-share.aspx?id=platformsMobile"},{"title":"Mobile Versions","url":"/operating-system-market-share.aspx?id=platformsMobileVersions"},{"title":"Tablet","url":"/operating-system-market-share.aspx?id=platformsTablet"},{"title":"Tablet Versions","url":"/operating-system-market-share.aspx?id=platformsTabletVersions"}]},{"title":"Search Engines","icon":"fa fa-search","items":[{"title":"Desktop","url":"/search-engine-market-share.aspx"},{"title":"Mobile","url":"/search-engine-market-share.aspx?id=searchEnginesMobile"},{"title":"Tablet","url":"/search-engine-market-share.aspx?id=searchEnginesTablet"}]},{"title":"Devices","icon":"fa fa-tablet","items":[{"title":"Types","url":"/device-market-share"},{"title":"Mobile","url":"/mobile-market-share"},{"title":"Mobile Vendors","url":"/mobile-market-share?id=devicesMobileVendors"},{"title":"Tablet","url":"/tablet-market-share"},{"title":"Tablet Vendors","url":"/tablet-market-share?id=devicesTabletVendors"},{"title":"Console","url":"/console-market-share"}]},{"title":"Most Popular","icon":"fa fa-thumbs-up ","items":[{"title":"Windows Market Share","url":"/windows-market-share"},{"title":"Mac Market Share","url":"/apple-market-share"},{"title":"Linux Market Share","url":"/linux-market-share"},{"title":"Smartphone Market Share","url":"/smartphone-market-share"}]},{"title":"Methodology","icon":"fa fa-flask","url":"/methodology"},{"title":"About Us","icon":"fa fa-info-circle","url":"/about"},{"title":"Developers","icon":"fa fa-code","items":[{"title":"REST API","url":"/rest"},{"title":"Query Language","url":"/querylanguage"},{"title":"Query Tester","url":"/querytester"}]}];
+        Page.renderMenu();
+    });
+</script>
+    <div id="page-wrapper" class="white-bg">
+        <div id="content" class="wrapper wrapper-content" style="padding-right: 15px;">
+            <div id="messagePlaceholder"></div>
+
+            <div class="row white-bg">
+                <div class="col-lg-12" style="height:1200px">
+                    <h1>Error</h1>
+                    <br>
+                    No data entity specified for report
+                </div>
+            </div>
+        </div>
+        <br><div class="footer hidden-print">
+    <div class="hideAt600 pull-right hidden-print">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/terms">Terms</a>
+            </li>
+            <li>
+                <a href="/privacy">Privacy</a>
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <strong>Copyright</strong> NetApplications.com &copy; 2017
+    </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/js/lib.js"></script>
+
+<script src="/metisMenu/metisMenu.min.js"></script>
+<script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="/js/inspinia.js"></script>
+
+<!-- jQuery UI -->
+<script src="/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="/js/plugins/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript">
+    if (!Aggregator){var Aggregator=function(o){
+        var d=document,p=Aggregator.prototype;this.options=o;this.q=[];d.cookie='__na_c=1';p.p=function(c){return function(){
+        this.q.push([c,arguments])}};p.setPerson=p.p(4,arguments);p.logEvent=p.p(0,arguments);p.logPageview=p.p(1,arguments);
+        p.ready=p.p(2,arguments);p.logOutbound=p.p(3,arguments);p.updatePerson=p.p(5,arguments);p.updateSession=p.p(6,arguments);
+        p.updateEvent=p.p(7,arguments);p.push=p.p(8,arguments);var s=d.createElement('script');s.type='text/javascript';
+        s.async=true;(function(i){s.onreadystatechange=function(){if(s.readyState=='loaded'||s.readyState=='complete'){i.run();}};
+        s.onload=function(){i.run();}})(this);e=location.protocol=='https:';s.src='http'+(e?'s://':'://')+
+        (e&&navigator.userAgent.indexOf('MSIE')>-1?'a-{0}.gatorapi.com':'a-{0}.scripts.gatorapi.com').replace('{0}',o.projectId)+
+        '/web?t='+Math.floor((new Date()*.00001)/36);var e=d.getElementsByTagName('script')[0];e.parentNode.insertBefore(s,e);
+    }}
+
+    var nmsTest = new Aggregator({
+        "projectId": "52342784"
+    });
+    nmsTest.logPageview();
+</script>
+
+<script type="text/javascript">
+    if (!Aggregator){var Aggregator=function(o){
+        var d=document,p=Aggregator.prototype;this.options=o;this.q=[];d.cookie='__na_c=1';p.p=function(c){return function(){
+        this.q.push([c,arguments])}};p.setPerson=p.p(4,arguments);p.logEvent=p.p(0,arguments);p.logPageview=p.p(1,arguments);
+        p.ready=p.p(2,arguments);p.logOutbound=p.p(3,arguments);p.updatePerson=p.p(5,arguments);p.updateSession=p.p(6,arguments);
+        p.updateEvent=p.p(7,arguments);p.push=p.p(8,arguments);var s=d.createElement('script');s.type='text/javascript';
+        s.async=true;(function(i){s.onreadystatechange=function(){if(s.readyState=='loaded'||s.readyState=='complete'){i.run();}};
+        s.onload=function(){i.run();}})(this);e=location.protocol=='https:';s.src='http'+(e?'s://':'://')+
+        (e&&navigator.userAgent.indexOf('MSIE')>-1?'a-{0}.gatorapi.com':'a-{0}.scripts.gatorapi.com').replace('{0}',o.projectId)+
+        '/web?t='+Math.floor((new Date()*.00001)/36);var e=d.getElementsByTagName('script')[0];e.parentNode.insertBefore(s,e);
+    }}
+
+    var gatorDemo = new Aggregator({
+        "projectId": "63653888"
+    });
+    gatorDemo.logPageview();
+</script>
+
+<script type="text/javascript">
+    if (!Aggregator){var Aggregator=function(o){
+        var d=document,p=Aggregator.prototype;this.options=o;this.q=[];d.cookie='__na_c=1';p.p=function(c){return function(){
+        this.q.push([c,arguments])}};p.setPerson=p.p(4,arguments);p.logEvent=p.p(0,arguments);p.logPageview=p.p(1,arguments);
+        p.ready=p.p(2,arguments);p.logOutbound=p.p(3,arguments);p.updatePerson=p.p(5,arguments);p.updateSession=p.p(6,arguments);
+        p.updateEvent=p.p(7,arguments);p.push=p.p(8,arguments);var s=d.createElement('script');s.type='text/javascript';
+        s.async=true;(function(i){s.onreadystatechange=function(){if(s.readyState=='loaded'||s.readyState=='complete'){i.run();}};
+        s.onload=function(){i.run();}})(this);e=location.protocol=='https:';s.src='http'+(e?'s://':'://')+
+        (e&&navigator.userAgent.indexOf('MSIE')>-1?'a-{0}.ns8ds.com':'a-{0}.cdn.ns8ds.com').replace('{0}',o.projectId)+
+        '/web?t='+Math.floor((new Date()*.00001)/36);var e=d.getElementsByTagName('script')[0];e.parentNode.insertBefore(s,e);
+    }}
+
+    // NS8 V1 API
+    var golfGifts = new Aggregator({
+        "processorHost": "a-63653888.ns8ds.com",
+        "projectId": "63653888",
+        "timing": 1
+    });
+    golfGifts.logPageview();
+</script>
+<script src="/js/numeral.min.js"></script>
+<script src="/js/reporting.js"></script>
+<script src="/selectize/selectize.min.js"></script>
+<script src="/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/r/bs/dt-1.10.9,r-1.0.7/datatables.min.js"></script>
+<script src="/introjs/intro.min.js"></script>
+
+<!-- Flot -->
+<script src="/flot/jquery.flot.min.js"></script>
+<script src="/flot/jquery.flot.resize.min.js"></script>
+<script src="/flot/jquery.flot.pie.min.js"></script>
+<script src="/flot/jquery.flot.time.min.js"></script>
+<script src="/flot/jquery.flot.categories.min.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1574 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUAUVNXDRACU1BUBAIHXw==",licenseKey:"94778f977a",applicationID:"27163309"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(25),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(26),a=t(25);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||c(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(22),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(18),m=t(17),w=t(14),v=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;"string"==typeof o?n=o:"object"==typeof o&&o instanceof v?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n);var s=(""+(o&&o instanceof v&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(17);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],19:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(27);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],20:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[l.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),l=t("loader"),p=t(24),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(s)}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],23:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],24:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(25),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(19),s=t("handle"),c=t(25),f=t("ee"),u=t(23),d=t(20),l=t(16),p=l.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,w="addEventListener",v="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},R=g&&y&&y[w]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(15),t(21),m[w]?(m[w]("DOMContentLoaded",o,!1),h[w]("load",r,!1)):(m[v]("onreadystatechange",i),h[v]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(26),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149338957-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(&#039;js&#039;, new Date());
+
+  gtag(&#039;config&#039;, &#039;UA-149338957-1&#039;);
+</script> <link rel="shortcut icon" href="https://cdcssl.ibsrv.net/ibimg/smb/16x16_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png" type="image/x-icon"/>
+<link rel="apple-touch-icon" href="https://cdcssl.ibsrv.net/ibimg/smb/57x57_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="57x57" href="https://cdcssl.ibsrv.net/ibimg/smb/57x57_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="https://cdcssl.ibsrv.net/ibimg/smb/72x72_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="https://cdcssl.ibsrv.net/ibimg/smb/76x76_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="https://cdcssl.ibsrv.net/ibimg/smb/114x114_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="https://cdcssl.ibsrv.net/ibimg/smb/120x120_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="https://cdcssl.ibsrv.net/ibimg/smb/144x144_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="https://cdcssl.ibsrv.net/ibimg/smb/152x152_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdcssl.ibsrv.net/ibimg/smb/180x180_80/webmgr/05/9/p/5bc6286cab775_5a6645b2e5632chiropractor48th6thavelogo012318.png"/>
+<title>Chiropractor in Midtown | NuView Health Medical</title>
+<meta name="description" content="We treat pain using a combination of physical therapy, acupuncture, massage, and manual adjustment. Receive multiple treatments for your pain in one setting.">
+<meta name="keywords" content="pain treatment">
+<meta name="SiteID" content="0006829">
+<link rel="canonical" href="https://nuviewhealthmedical.com"/>
+<meta property="og:title" content="Chiropractor in Midtown | NuView Health Medical"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="We treat pain using a combination of physical therapy, acupuncture, massage, and manual adjustment. Receive multiple treatments for your pain in one setting."/>
+<meta property="og:url" content="https://nuviewhealthmedical.com"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105094158-1"></script>
+<script> window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'UA-105094158-1');
+
+                        gtag('event', 'page_view', {'send_to': 'UA-42651322-3'});
+                    </script>
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,700&display=swap" rel="stylesheet">
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2007998916177543');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2007998916177543&ev=PageView&noscript=1"/></noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196949288-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-196949288-1');
+</script>
+<script>var baseUrlForMyPages='//nuviewhealthmedical.com';</script>
+<script type="text/javascript">
+    window.addEventListener("load", function() {
+        var piwikElTel = document.querySelectorAll('a[href^="tel:"]:not(.piwik_ignore)');
+        for (var i = 0; i < piwikElTel.length; i++) {
+            piwikElTel[i].classList.add("piwik_ignore");
+        }
+
+        var piwikElFax = document.querySelectorAll('a[href^="fax:"]:not(.piwik_ignore)');
+        for (var j = 0; j < piwikElFax.length; j++) {
+            piwikElFax[j].classList.add("piwik_ignore");
+        }
+    });
+</script>
+<script>
+    /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+    (function(w){
+        "use strict";
+        /* exported loadCSS */
+        var loadCSS = function( href, before, media ){
+            // Arguments explained:
+            // `href` [REQUIRED] is the URL for your CSS file.
+            // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+            // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+            // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+            var doc = w.document;
+            var ss = doc.createElement( "link" );
+            var ref;
+            if( before ){
+                ref = before;
+            }
+            else {
+                var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+                ref = refs[ refs.length - 1];
+            }
+
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+            ss.media = "only x";
+
+            // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+            function ready( cb ){
+                if( doc.body ){
+                    return cb();
+                }
+                setTimeout(function(){
+                    ready( cb );
+                });
+            }
+            // Inject link
+            // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+            // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+            ready( function(){
+                ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+            });
+            // A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+            var onloadcssdefined = function( cb ){
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while( i-- ){
+                    if( sheets[ i ].href === resolvedHref ){
+                        return cb();
+                    }
+                }
+                setTimeout(function() {
+                    onloadcssdefined( cb );
+                });
+            };
+
+            function loadCB(){
+                if( ss.addEventListener ){
+                    ss.removeEventListener( "load", loadCB );
+                }
+                ss.media = media || "all";
+            }
+
+            // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+            if( ss.addEventListener ){
+                ss.addEventListener( "load", loadCB);
+            }
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined( loadCB );
+            return ss;
+        };
+        // commonjs
+        if( typeof exports !== "undefined" ){
+            exports.loadCSS = loadCSS;
+        }
+        else {
+            w.loadCSS = loadCSS;
+        }
+    }( typeof global !== "undefined" ? global : this ));
+</script>
+<script>loadCSS("//nuviewhealthmedical.com/combine/d469065100b01429e7b8d3a38cd998b5-1630581528.css");</script>
+<link rel="stylesheet" href="combine/e9b8d75e2c2d541c27f1ce528268a031-1630702431.css">
+<link rel="stylesheet" href="combine/3c488ba4b8d398e73a4813514bf45ff6-1630702438.css">
+<!--[if lte IE 9]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser.  Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<script type="application/ld+json">
+[{"@context":["http://schema.org",{"language":"en-us"}],"@type":"MedicalBusiness","url":"https://nuviewhealthmedical.com","name":"NuView Health Medical","description":"Home in New York. Do you have strain or a sports injury? NuView Health Medical provides non-invasive chiropractic treatments. Call (212) 577-9247.","image":"https://cdcssl.ibsrv.net/ibimg/smb/100x100_80-1/webmgr/05/9/p/","telephone":"(212) 588-0707","email":"jcinnyc7@aol.com","priceRange":"Call for pricing options","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","postalCode":"10036","streetAddress":"22 W 48th St #306 ","addressCountry":"US"},"sameAs":["https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://www.youtube.com/user/webmarketingimatrix","https://youtu.be/QB7saR0WsJk","https://g.page/nuview-health-medical/review?gm","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://youtu.be/QB7saR0WsJk","https://g.page/nuview-health-medical/review?gm","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://youtu.be/QB7saR0WsJk","https://g.page/nuview-health-medical/review?gm","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://www.yelp.com/writeareview/biz/2glx-KXAmw5WPIiURIruNQ?return_url=%2Fbiz%2F2glx-KXAmw5WPIiURIruNQ","https://youtu.be/QB7saR0WsJk","https://g.page/nuview-health-medical/review?gm","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://www.yelp.com/writeareview/biz/2glx-KXAmw5WPIiURIruNQ?return_url=%2Fbiz%2F2glx-KXAmw5WPIiURIruNQ","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://twitter.com/NuviewM","http://instagram.com/","https://www.youtube.com/user/webmarketingimatrix","https://youtu.be/QB7saR0WsJk","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://twitter.com/NuviewM","https://youtu.be/QB7saR0WsJk","https://www.facebook.com/NuView-Health-Medical-931801463635846/","https://twitter.com/NuviewM"],"geo":{"@type":"GeoCoordinates","latitude":40.757640000000002,"longitude":-73.97954},"logo":"https://nuviewhealthmedical.com/storage/app/media/images/chiropractor48th6thavelogo.png"}]</script>
+</head><body class='chiropractic albany color-x23-trad-3'><div class="mobileHeader-container d-md-none sticky-top">
+<div class="mobileHeader-navWrap">
+<div class="mobileHeader-navigation">
+<i id="mobileHeaderNavBtn" class="icon icon-bars"></i>
+<nav id="mobileHeaderNav">
+<ul>
+<li>
+<a href="/">
+Home </a>
+</li>
+<li>
+<a href="about-us" data-title="About Us Submenu">
+About Us </a>
+<ul> <li>
+<a href="meet-the-doctor">
+Meet the Doctors </a>
+</li>
+<li>
+<a href="online-forms">
+Online Forms </a>
+</li>
+<li>
+<a href="virtual-tour/page">
+Virtual Tour </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="services-and-techniques" data-title="Services Submenu">
+Services </a>
+<ul> <li>
+<a href="chiropractic-medicine">
+Chiropractic </a>
+</li>
+<li>
+<a href="physical-therapy">
+Physical Therapy </a>
+</li>
+<li>
+<a href="massage-therapy" data-title="Massage Therapy Submenu">
+Massage Therapy </a>
+<ul> <li>
+<a href="muscle-spasm-massage">
+Muscle Spasm Massage </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="acupuncture" data-title="Acupuncture Submenu">
+Acupuncture </a>
+<ul> <li>
+<a href="insomnia">
+Insomnia </a>
+</li>
+<li>
+<a href="allergies">
+Allergies </a>
+</li>
+<li>
+<a href="alopecia">
+Alopecia </a>
+</li>
+<li>
+<a href="pms-and-menopause">
+PMS and Menopause </a>
+</li>
+<li>
+<a href="acupuncture-care">
+Acupuncture Care </a>
+</li>
+<li>
+<a href="pain">
+Pain </a>
+</li>
+<li>
+<a href="stress-and-anxiety">
+Stress and Anxiety </a>
+</li>
+<li>
+<a href="depression">
+Depression </a>
+</li>
+<li>
+<a href="infertility">
+Infertility </a>
+</li>
+<li>
+<a href="cupping">
+Cupping </a>
+</li>
+<li>
+<a href="infra-red-therapy">
+Infra-Red Therapy </a>
+</li>
+<li>
+<a href="smoking-cessation">
+Smoking Cessation </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="dry-needling">
+Dry Needling </a>
+</li>
+<li>
+<a href="spinal-decompression-therapy">
+Spinal Decompression Therapy </a>
+</li>
+<li>
+<a href="sports-medicine">
+Sports Medicine </a>
+</li>
+<li>
+<a href="Medical-Massage">
+Medical Massage </a>
+</li>
+<li>
+<a href="x-ray-imaging">
+X-Ray Imaging </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="medical-conditions" data-title="Medical Conditions Submenu">
+Medical Conditions </a>
+<ul> <li>
+<a href="neck-pain" data-title="Neck Pain Submenu">
+Neck Pain </a>
+<ul> <li>
+<a href="text-neck">
+Text Neck </a>
+</li>
+<li>
+<a href="whiplash">
+Whiplash </a>
+</li>
+<li>
+<a href="cervical-spinal-degeneration">
+Cervical Spinal Degeneration </a>
+</li>
+<li>
+<a href="neck-sprains-and-strains">
+Sprains and Strains </a>
+</li>
+<li>
+<a href="neck-misalignment">
+Misalignment </a>
+</li>
+<li>
+<a href="stiff-neck-a-muscle-spasm">
+Stiff Neck & Muscle Spasm </a>
+</li>
+<li>
+<a href="tech-neck">
+Tech Neck </a>
+</li>
+<li>
+<a href="spinal-misalignment">
+Spinal Misalignment </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="leg-numbness">
+Numbness & Tingling in Arms or Legs </a>
+</li>
+<li>
+<a href="low-back-pain" data-title="Low Back Pain Submenu">
+Low Back Pain </a>
+<ul> <li>
+<a href="low-back-sprains-and-strains">
+Sprains and Strains </a>
+</li>
+<li>
+<a href="low-back-pinched-nerve">
+Pinched Nerve </a>
+</li>
+<li>
+<a href="low-back-misalignment">
+Misalignment </a>
+</li>
+<li>
+<a href="low-back-muscle-spasm">
+Muscle Spasm </a>
+</li>
+<li>
+<a href="scoliosis">
+Scoliosis </a>
+</li>
+<li>
+<a href="spinal-stenosis">
+Spinal Stenosis </a>
+</li>
+<li>
+<a href="osteoarthritis">
+Osteoarthritis </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="neck-pinched-nerve">
+Pinched Nerve </a>
+</li>
+<li>
+<a href="bulging-disc">
+Bulging Disc </a>
+</li>
+<li>
+<a href="knee-pain" data-title="Knee Pain Submenu">
+Knee Pain </a>
+<ul> <li>
+<a href="runners-knee">
+Runner's Knee </a>
+</li>
+<li>
+<a href="shin-splints">
+Shin Splints </a>
+</li>
+<li>
+<a href="popping-and-clicking">
+Popping and Clicking </a>
+</li>
+<li>
+<a href="chondromalacia-patella">
+Chondromalacia Patella </a>
+</li>
+<li>
+<a href="iliotibial-band-syndrome">
+Iliotibial Band Syndrome </a>
+</li>
+<li>
+<a href="patella-femoral-syndrome">
+Patella Femoral Syndrome </a>
+</li>
+<li>
+<a href="anterior-cruciate-injuries">
+Anterior Cruciate Injuries </a>
+</li>
+<li>
+<a href="collateral-ligament-injuries">
+Collateral Ligament Injuries </a>
+</li>
+<li>
+<a href="meniscal-tears">
+Meniscal Tears </a>
+</li>
+<li>
+<a href="tendon-tears-and-tendonitis">
+Tendon Tears and Tendonitis </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="tmj">
+TMJ </a>
+</li>
+<li>
+<a href="sciatica">
+Sciatica </a>
+</li>
+<li>
+<a href="headaches" data-title="Headaches Submenu">
+Headaches </a>
+<ul> <li>
+<a href="migraines">
+Migraines </a>
+</li>
+<li>
+<a href="tension-headaches">
+Tension headaches </a>
+</li>
+<li>
+<a href="cluster-headaches">
+Cluster Headaches </a>
+</li>
+<li>
+<a href="sinus-headaches">
+Sinus Headaches </a>
+</li>
+<li>
+<a href="rebound-headaches">
+Rebound Headaches </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="shoulder-pain" data-title="Shoulder Pain Submenu">
+Shoulder Pain </a>
+<ul> <li>
+<a href="frozen-shoulder">
+Frozen Shoulder </a>
+</li>
+<li>
+<a href="ac-joint-separation">
+AC Joint Separation </a>
+</li>
+<li>
+<a href="sprains-and-strains">
+Sprains and Strains </a>
+</li>
+<li>
+<a href="impingement-syndrome">
+Impingement Syndrome </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="back-pain">
+Mid Back Pain </a>
+</li>
+<li>
+<a href="elbow-pain" data-title="Elbow Pain Submenu">
+Elbow Pain </a>
+<ul> <li>
+<a href="dislocations-and-fractures">
+Dislocations and Fractures </a>
+</li>
+<li>
+<a href="elbow-sprains-and-strains">
+Elbow Sprains and Strains </a>
+</li>
+<li>
+<a href="elbow-bursitis">
+Elbow Bursitis </a>
+</li>
+<li>
+<a href="osteoarthritis">
+Osteoarthritis </a>
+</li>
+<li>
+<a href="tennis-a-golfers-elbow">
+Tennis & Golfer's Elbow </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="wrist-and-hand-pain">
+Hand & Wrist Pain </a>
+</li>
+<li>
+<a href="hip-pain">
+Hip Pain </a>
+</li>
+<li>
+<a href="ankle-pain">
+Ankle Pain </a>
+</li>
+<li>
+<a href="foot-pain" data-title="Foot Pain Submenu">
+Foot Pain </a>
+<ul> <li>
+<a href="plantar-fascitis">
+Plantar Fascitis </a>
+</li>
+<li>
+<a href="heel-spurs-a-bone-spurs">
+Heel Spurs & Bone Spurs </a>
+</li>
+<li>
+<a href="foot-a-ankle-sprains-and-strains">
+Foot & Ankle Sprains and Strains </a>
+</li>
+<li>
+<a href="mortons-neuroma">
+Morton's Neuroma </a>
+</li>
+<li>
+<a href="bunions">
+Bunions </a>
+</li>
+<li>
+<a href="hallux-rigidus">
+Hallux Rigidus </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="testimonials">
+Patient Testimonials </a>
+</li>
+<li>
+<a href="contact" data-title="Contact Us Submenu">
+Contact Us </a>
+<ul> <li>
+<a href="areas-we-serve" data-title="Areas We Serve Submenu">
+Areas We Serve </a>
+<ul> <li>
+<a href="hells-kitchen">
+Hell's Kitchen </a>
+</li>
+<li>
+<a href="midtown">
+Midtown </a>
+</li>
+<li>
+<a href="midtown-east">
+Midtown East </a>
+</li>
+<li>
+<a href="midtown-west">
+Midtown West </a>
+</li>
+<li>
+<a href="rockefeller-center">
+Rockefeller Center </a>
+</li>
+<li>
+<a href="manhattan">
+Manhattan </a>
+</li>
+<li>
+<a href="columbus-circle">
+Columbus circle </a>
+</li>
+<li>
+<a href="theater-district">
+Theater District </a>
+</li>
+<li>
+<a href="bryant-park">
+Bryant Park </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="referrals">
+Referrals </a>
+</li>
+<li>
+<a href="request-appointment-forms">
+Request Appointment </a>
+</li>
+</ul>
+</li>
+<li>
+<a href="blog">
+Blog </a>
+</li>
+</ul>
+</nav>	</div>
+<div class="mobileHeader-logo">
+<a href="/">
+<p>NuView Health Medical</p>
+</a>
+</div>
+<div class="mobileHeader-phone">
+<a href="tel:(212) 588-0707" class="phoneIconLink icon icon-phone"></a>
+</div>
+</div>
+<div class="mobileHeader-locWrap">
+</div>
+</div>
+<noscript>
+<div class="no-js-alert">Javascript must be enabled for the correct page display</div>
+</noscript>
+<style id="sectionCss">#id_59eb847c-bf37-5104-b741-bbace5443c46::before{opacity:1}#id_59eb847c-bf37-5104-b741-bbace5443c46 .section__column-1.ple-column-padding{padding-right:20px}#id_59eb847c-bf37-5104-b741-bbace5443c46 .section__column-2.ple-column-padding{padding-left:20px}#id_291b5cfe-c107-5452-a1a7-d3dd6170ce41::before{opacity:1}#id_291b5cfe-c107-5452-a1a7-d3dd6170ce41 .section__column-1.ple-column-padding{padding-top:20px;padding-bottom:20px}#id_33d80fff-caf5-578d-904c-fe989d3a840b::before{opacity:1}#id_33d80fff-caf5-578d-904c-fe989d3a840b .section__column-1.ple-column-padding{padding-right:20px}#id_33d80fff-caf5-578d-904c-fe989d3a840b .section__column-2.ple-column-padding{padding-left:20px}#id_b388675f-52e1-5e10-bda8-920467f34b18::before{opacity:1}#id_b388675f-52e1-5e10-bda8-920467f34b18 .section__column-1.ple-column-padding{padding-top:20px;padding-bottom:20px}#id_d2812cb3-681c-5c2a-a7b2-2cf94fd09ecc::before{opacity:1}#id_db33bf29-d743-5f74-8803-435d5cec571e::before{opacity:1}#id_db33bf29-d743-5f74-8803-435d5cec571e .section__column-1.ple-column-padding{padding-top:20px;padding-bottom:20px}#id_4fd90d4e-470c-540e-98fc-1cc1cdb197b0::before{opacity:1}#id_4fd90d4e-470c-540e-98fc-1cc1cdb197b0 .section__column-1.ple-column-padding{padding-left:50px;padding-right:50px;padding-bottom:20px}#id_4fd90d4e-470c-540e-98fc-1cc1cdb197b0 .section__column-2.ple-column-padding{padding-left:50px;padding-right:50px;padding-bottom:20px}#id_ae6475b0-25ba-5136-97c4-ef1636aba66c::before{opacity:1}#id_ae6475b0-25ba-5136-97c4-ef1636aba66c .section__column-1.ple-column-padding{padding-top:20px}#id_88f9aed9-7e83-58d3-a5fd-96a3eb57d871::before{opacity:1}#id_88f9aed9-7e83-58d3-a5fd-96a3eb57d871 .section__column-1.ple-column-padding{padding-top:50px;padding-bottom:50px}#id_d686d9ba-7df5-51a5-9067-0e834f4122f2{background-size:cover;background-position:center}#id_d686d9ba-7df5-51a5-9067-0e834f4122f2::before{opacity:.5}#id_a92f74bf-4993-510b-aacd-365139549ad2{background-size:cover;background-position:center}#id_a92f74bf-4993-510b-aacd-365139549ad2::before{opacity:.61}#id_e182db01-012d-5965-b071-4cc0ddabc5bd{background-size:cover;background-position:center}#id_e182db01-012d-5965-b071-4cc0ddabc5bd::before{opacity:.5}#id_e182db01-012d-5965-b071-4cc0ddabc5bd .section__column-1.ple-column-padding{padding-top:20px;padding-bottom:20px}#id_e182db01-012d-5965-b071-4cc0ddabc5bd .section__column-2.ple-column-padding{padding-top:20px;padding-bottom:20px}#id_0dee376d-877b-57cb-9fb6-08b18ea4fffb::before{opacity:1}#id_0dee376d-877b-57cb-9fb6-08b18ea4fffb .section__column-1.ple-column-padding{padding-top:20px}#id_0dee376d-877b-57cb-9fb6-08b18ea4fffb .section__column-2.ple-column-padding{padding-top:20px}#id_8fe7eebd-2d97-5f1e-b5e8-2ecfc6035e5d::before{opacity:1}</style>
+<div data-control="layout-editor">
+<div id="ple_html_content">
+<div class="ple__container pagelayouteditor__container "><div class=" ple__container--inner pagelayouteditor__container--inner" data-component-name="ple" data-component-alias="ple"><style>.sweet-alert{display:none}.section-lazy{background-image:none!important}</style>
+<style id="dynamicSectionCss">#id_d686d9ba-7df5-51a5-9067-0e834f4122f2{background-image:url(storage/app/media/albany/slider_1.jpg)}#id_a92f74bf-4993-510b-aacd-365139549ad2{background-image:url(storage/app/media/_img/NY-NY-Chiropractor_resized.jpg)}#id_e182db01-012d-5965-b071-4cc0ddabc5bd{background-image:url(storage/app/media/_img/NY-NY-Chiropractor_resized.jpg)}</style>
+<script id="ple-data-json" type="application/json">
+    {
+    "fixedSection":	  {"id":"ple_fixed","backToTop":true,"hideSiteEditor":false,"placement":{"place":"center-right","useDefaultOffset":true,"offsetDistance":null},"spacing":{"space":"default","offsetDistance":null},"ordering":[],"sectionClassName":null}
+    }
+</script>
+</div></div> </div>
+<div class="fullwidth-layout">
+<div data-control="section-available" class="section-available"><div class="section-base-container ple-hide-for-mobile" data-section-id="id_59eb847c-bf37-5104-b741-bbace5443c46"><div class="section-overlap-container"></div><div id="id_59eb847c-bf37-5104-b741-bbace5443c46" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-logo section-editable"><div class="section--inner container-fluid section--light  "><div class="row equal"><div class="col-lg-6 section__column-1 ple-column-padding col-sm-12 align-self-center alias-header_logo"><div class="componentWith__container logo__container "><div class="ple-column--single ple-module-container header_logo__container--inner logo__container--inner" data-component-name="header_logo" data-component-alias="header_logo" data-widget-alias="SMB__Logo__Widgets__LogoSettings___header_logo" data-widget-id-base="LogoSettings-SMB__Logo__Widgets__LogoSettings___header_logo" data-component-prop-colData="" data-component-prop-componentWith="6"><div class="logo ">
+<div class="logo-a logo-a--6 logo-a__horizontal__left">
+<a href="/" class="logo-a__image-link">
+<div class="logo-a__image">
+<img src="storage/app/media/images/chiropractor48th6thavelogo.png" class="logo-a__img" alt="NuView Health Medical" title="">
+</div>
+</a>
+</div>
+</div></div></div></div><div class="col-lg-6 section__column-2 ple-column-padding col-sm-12 alias-editable_contentheader"><div class="editable_contentheader__container editable__container "><div class="ple-column--single ple-module-container editable_contentheader__container--inner editable__container--inner" data-component-name="editable_contentheader" data-component-alias="editable_contentheader"><div class="header_wrap">
+<div class="flex_1">
+<h2>Call<br><a href="tel:2122351463" class="piwik_ignore">(212) 588-0707</a></h2>
+</div>
+<div class="flex_1">
+<p><span class="header_1">22 W 48th St #306<br>New York, NY 10036</span><br><span class="header_2">(Between 5th and 6th Ave, across from Nintendo NY)</span></p>
+</div>
+<div class="flex_1">
+</div></div></div></div></div></div></div></div></div><div class="section-base-container ple-hide-for-mobile" data-section-id="id_291b5cfe-c107-5452-a1a7-d3dd6170ce41"><div class="section-overlap-container"></div><div id="id_291b5cfe-c107-5452-a1a7-d3dd6170ce41" data-control="section" class="section section__bg--dark-1    forms--fullwidth forms-option--a section-navigation"><div class="section--inner container section--dark  "><div class="row equal"><div class="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-navigation_header"><div class="componentWith__container navigation__container "><div class="ple-column--single ple-module-container navigation_header__container--inner navigation__container--inner" data-component-name="navigation_header" data-component-alias="navigation_header" data-widget-alias="SMB__Navigation__Widgets__NavigationSettings___navigation_header" data-widget-id-base="NavigationSettings-SMB__Navigation__Widgets__NavigationSettings___navigation_header" data-component-prop-componentWith="12">
+<div id="navigation_header" class="navigation component " data-more-button="1">
+<nav class="navigation-a navigation-a--12" id="ple-navigation-navigation_header" data-more-button="1">
+<ul class="navigation__list navigation__list--head more_nav"> <li class="navigation__item navigation__item--default ">
+<a href="/" class="navigation__item--link">Home</a>
+</li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="about-us" class="navigation__item--link">About Us</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="meet-the-doctor" class="navigation__item--link">Meet the Doctors</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="online-forms" class="navigation__item--link">Online Forms</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="virtual-tour/page" class="navigation__item--link">Virtual Tour</a>
+</li></ul></li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="services-and-techniques" class="navigation__item--link">Services</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="chiropractic-medicine" class="navigation__item--link">Chiropractic</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="physical-therapy" class="navigation__item--link">Physical Therapy</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="massage-therapy" class="navigation__item--link">Massage Therapy</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="muscle-spasm-massage" class="navigation__item--link">Muscle Spasm Massage</a>
+</li></ul></li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="acupuncture" class="navigation__item--link">Acupuncture</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="insomnia" class="navigation__item--link">Insomnia</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="allergies" class="navigation__item--link">Allergies</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="alopecia" class="navigation__item--link">Alopecia</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="pms-and-menopause" class="navigation__item--link">PMS and Menopause</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="acupuncture-care" class="navigation__item--link">Acupuncture Care</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="pain" class="navigation__item--link">Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="stress-and-anxiety" class="navigation__item--link">Stress and Anxiety</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="depression" class="navigation__item--link">Depression</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="infertility" class="navigation__item--link">Infertility</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cupping" class="navigation__item--link">Cupping</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="infra-red-therapy" class="navigation__item--link">Infra-Red Therapy</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="smoking-cessation" class="navigation__item--link">Smoking Cessation</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="dry-needling" class="navigation__item--link">Dry Needling</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-decompression-therapy" class="navigation__item--link">Spinal Decompression Therapy</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sports-medicine" class="navigation__item--link">Sports Medicine</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="Medical-Massage" class="navigation__item--link">Medical Massage</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="x-ray-imaging" class="navigation__item--link">X-Ray Imaging</a>
+</li></ul></li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="medical-conditions" class="navigation__item--link">Medical Conditions</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="neck-pain" class="navigation__item--link">Neck Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="text-neck" class="navigation__item--link">Text Neck</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="whiplash" class="navigation__item--link">Whiplash</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cervical-spinal-degeneration" class="navigation__item--link">Cervical Spinal Degeneration</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="neck-sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="neck-misalignment" class="navigation__item--link">Misalignment</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="stiff-neck-a-muscle-spasm" class="navigation__item--link">Stiff Neck &amp; Muscle Spasm</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tech-neck" class="navigation__item--link">Tech Neck</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-misalignment" class="navigation__item--link">Spinal Misalignment</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="leg-numbness" class="navigation__item--link">Numbness &amp; Tingling in Arms or Legs</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="low-back-pain" class="navigation__item--link">Low Back Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="low-back-sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-pinched-nerve" class="navigation__item--link">Pinched Nerve</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-misalignment" class="navigation__item--link">Misalignment</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-muscle-spasm" class="navigation__item--link">Muscle Spasm</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="scoliosis" class="navigation__item--link">Scoliosis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-stenosis" class="navigation__item--link">Spinal Stenosis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="osteoarthritis" class="navigation__item--link">Osteoarthritis</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="neck-pinched-nerve" class="navigation__item--link">Pinched Nerve</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bulging-disc" class="navigation__item--link">Bulging Disc</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="knee-pain" class="navigation__item--link">Knee Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="runners-knee" class="navigation__item--link">Runner&#039;s Knee</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="shin-splints" class="navigation__item--link">Shin Splints</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="popping-and-clicking" class="navigation__item--link">Popping and Clicking</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="chondromalacia-patella" class="navigation__item--link">Chondromalacia Patella</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="iliotibial-band-syndrome" class="navigation__item--link">Iliotibial Band Syndrome</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="patella-femoral-syndrome" class="navigation__item--link">Patella Femoral Syndrome</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="anterior-cruciate-injuries" class="navigation__item--link">Anterior Cruciate Injuries</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="collateral-ligament-injuries" class="navigation__item--link">Collateral Ligament Injuries</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="meniscal-tears" class="navigation__item--link">Meniscal Tears</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tendon-tears-and-tendonitis" class="navigation__item--link">Tendon Tears and Tendonitis</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="tmj" class="navigation__item--link">TMJ</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sciatica" class="navigation__item--link">Sciatica</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="headaches" class="navigation__item--link">Headaches</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="migraines" class="navigation__item--link">Migraines</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tension-headaches" class="navigation__item--link">Tension headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cluster-headaches" class="navigation__item--link">Cluster Headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sinus-headaches" class="navigation__item--link">Sinus Headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="rebound-headaches" class="navigation__item--link">Rebound Headaches</a>
+</li></ul></li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="shoulder-pain" class="navigation__item--link">Shoulder Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="frozen-shoulder" class="navigation__item--link">Frozen Shoulder</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="ac-joint-separation" class="navigation__item--link">AC Joint Separation</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="impingement-syndrome" class="navigation__item--link">Impingement Syndrome</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="back-pain" class="navigation__item--link">Mid Back Pain</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="elbow-pain" class="navigation__item--link">Elbow Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="dislocations-and-fractures" class="navigation__item--link">Dislocations and Fractures</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="elbow-sprains-and-strains" class="navigation__item--link">Elbow Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="elbow-bursitis" class="navigation__item--link">Elbow Bursitis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="osteoarthritis" class="navigation__item--link">Osteoarthritis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tennis-a-golfers-elbow" class="navigation__item--link">Tennis &amp; Golfer&#039;s Elbow</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="wrist-and-hand-pain" class="navigation__item--link">Hand &amp; Wrist Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="hip-pain" class="navigation__item--link">Hip Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="ankle-pain" class="navigation__item--link">Ankle Pain</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="foot-pain" class="navigation__item--link">Foot Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="plantar-fascitis" class="navigation__item--link">Plantar Fascitis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="heel-spurs-a-bone-spurs" class="navigation__item--link">Heel Spurs &amp; Bone Spurs</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="foot-a-ankle-sprains-and-strains" class="navigation__item--link">Foot &amp; Ankle Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="mortons-neuroma" class="navigation__item--link">Morton&#039;s Neuroma</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bunions" class="navigation__item--link">Bunions</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="hallux-rigidus" class="navigation__item--link">Hallux Rigidus</a>
+</li></ul></li></ul></li> <li class="navigation__item navigation__item--default ">
+<a href="testimonials" class="navigation__item--link">Patient Testimonials</a>
+</li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="contact" class="navigation__item--link">Contact Us</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="areas-we-serve" class="navigation__item--link">Areas We Serve</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="hells-kitchen" class="navigation__item--link">Hell&#039;s Kitchen</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown" class="navigation__item--link">Midtown</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown-east" class="navigation__item--link">Midtown East</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown-west" class="navigation__item--link">Midtown West</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="rockefeller-center" class="navigation__item--link">Rockefeller Center</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="manhattan" class="navigation__item--link">Manhattan</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="columbus-circle" class="navigation__item--link">Columbus circle</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="theater-district" class="navigation__item--link">Theater District</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bryant-park" class="navigation__item--link">Bryant Park</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="referrals" class="navigation__item--link">Referrals</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="request-appointment-forms" class="navigation__item--link">Request Appointment</a>
+</li></ul></li> <li class="navigation__item navigation__item--default ">
+<a href="blog" class="navigation__item--link">Blog</a>
+</li> </ul>
+</nav>
+</div>
+</div></div></div></div></div></div></div><div class="section-base-container ple-hide-for-mobile" data-section-id="id_33d80fff-caf5-578d-904c-fe989d3a840b"><div class="section-overlap-container"></div><div id="id_33d80fff-caf5-578d-904c-fe989d3a840b" data-control="section" class="section section__bg--light-1  ple_module_sticky  forms--fullwidth forms-option--a section-logo section-editable"><div class="section--inner container-fluid section--light  "><div class="row equal"><div class="col-lg-6 section__column-1 ple-column-padding col-sm-12 align-self-center alias-header_logo"><div class="componentWith__container logo__container "><div class="ple-column--single ple-module-container header_logo__container--inner logo__container--inner" data-component-name="header_logo" data-component-alias="header_logo" data-widget-alias="SMB__Logo__Widgets__LogoSettings___header_logo" data-widget-id-base="LogoSettings-SMB__Logo__Widgets__LogoSettings___header_logo" data-component-prop-colData="" data-component-prop-componentWith="6"><div class="logo ">
+<div class="logo-a logo-a--6 logo-a__horizontal__left">
+<a href="/" class="logo-a__image-link">
+<div class="logo-a__image">
+<img src="storage/app/media/images/chiropractor48th6thavelogo.png" class="logo-a__img" alt="NuView Health Medical" title="">
+</div>
+</a>
+</div>
+</div></div></div></div><div class="col-lg-6 section__column-2 ple-column-padding col-sm-12 align-self-center alias-editable_contentheader2"><div class="editable_contentheader2__container editable__container "><div class="ple-column--single ple-module-container editable_contentheader2__container--inner editable__container--inner" data-component-name="editable_contentheader2" data-component-alias="editable_contentheader2"><div class="header_wrap">
+<div class="flex_1">
+<h2>Call<br><a href="tel:2122351463" class="piwik_ignore">(212) 588-0707</a></h2>
+</div>
+<div class="flex_1">
+<p><span class="header_1">22 W 48th St #306<br>New York, NY 10036</span><br><span class="header_2">(Between 5th and 6th Ave, across from Nintendo NY)</span></p>
+</div>
+<div class="flex_1">
+</div></div></div></div></div></div></div></div></div><div class="section-base-container ple-hide-for-mobile" data-section-id="id_b388675f-52e1-5e10-bda8-920467f34b18"><div class="section-overlap-container"></div><div id="id_b388675f-52e1-5e10-bda8-920467f34b18" data-control="section" class="section section__bg--dark-1  ple_module_sticky  forms--fullwidth forms-option--a section-navigation"><div class="section--inner container section--dark  "><div class="row equal"><div class="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-navigation_header"><div class="componentWith__container navigation__container "><div class="ple-column--single ple-module-container navigation_header__container--inner navigation__container--inner" data-component-name="navigation_header" data-component-alias="navigation_header" data-widget-alias="SMB__Navigation__Widgets__NavigationSettings___navigation_header" data-widget-id-base="NavigationSettings-SMB__Navigation__Widgets__NavigationSettings___navigation_header" data-component-prop-componentWith="12">
+<div id="navigation_header" class="navigation component " data-more-button="1">
+<nav class="navigation-a navigation-a--12" id="ple-navigation-navigation_header" data-more-button="1">
+<ul class="navigation__list navigation__list--head more_nav"> <li class="navigation__item navigation__item--default ">
+<a href="/" class="navigation__item--link">Home</a>
+</li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="about-us" class="navigation__item--link">About Us</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="meet-the-doctor" class="navigation__item--link">Meet the Doctors</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="online-forms" class="navigation__item--link">Online Forms</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="virtual-tour/page" class="navigation__item--link">Virtual Tour</a>
+</li></ul></li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="services-and-techniques" class="navigation__item--link">Services</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="chiropractic-medicine" class="navigation__item--link">Chiropractic</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="physical-therapy" class="navigation__item--link">Physical Therapy</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="massage-therapy" class="navigation__item--link">Massage Therapy</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="muscle-spasm-massage" class="navigation__item--link">Muscle Spasm Massage</a>
+</li></ul></li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="acupuncture" class="navigation__item--link">Acupuncture</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="insomnia" class="navigation__item--link">Insomnia</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="allergies" class="navigation__item--link">Allergies</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="alopecia" class="navigation__item--link">Alopecia</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="pms-and-menopause" class="navigation__item--link">PMS and Menopause</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="acupuncture-care" class="navigation__item--link">Acupuncture Care</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="pain" class="navigation__item--link">Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="stress-and-anxiety" class="navigation__item--link">Stress and Anxiety</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="depression" class="navigation__item--link">Depression</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="infertility" class="navigation__item--link">Infertility</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cupping" class="navigation__item--link">Cupping</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="infra-red-therapy" class="navigation__item--link">Infra-Red Therapy</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="smoking-cessation" class="navigation__item--link">Smoking Cessation</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="dry-needling" class="navigation__item--link">Dry Needling</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-decompression-therapy" class="navigation__item--link">Spinal Decompression Therapy</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sports-medicine" class="navigation__item--link">Sports Medicine</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="Medical-Massage" class="navigation__item--link">Medical Massage</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="x-ray-imaging" class="navigation__item--link">X-Ray Imaging</a>
+</li></ul></li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="medical-conditions" class="navigation__item--link">Medical Conditions</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="neck-pain" class="navigation__item--link">Neck Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="text-neck" class="navigation__item--link">Text Neck</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="whiplash" class="navigation__item--link">Whiplash</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cervical-spinal-degeneration" class="navigation__item--link">Cervical Spinal Degeneration</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="neck-sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="neck-misalignment" class="navigation__item--link">Misalignment</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="stiff-neck-a-muscle-spasm" class="navigation__item--link">Stiff Neck &amp; Muscle Spasm</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tech-neck" class="navigation__item--link">Tech Neck</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-misalignment" class="navigation__item--link">Spinal Misalignment</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="leg-numbness" class="navigation__item--link">Numbness &amp; Tingling in Arms or Legs</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="low-back-pain" class="navigation__item--link">Low Back Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="low-back-sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-pinched-nerve" class="navigation__item--link">Pinched Nerve</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-misalignment" class="navigation__item--link">Misalignment</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="low-back-muscle-spasm" class="navigation__item--link">Muscle Spasm</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="scoliosis" class="navigation__item--link">Scoliosis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="spinal-stenosis" class="navigation__item--link">Spinal Stenosis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="osteoarthritis" class="navigation__item--link">Osteoarthritis</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="neck-pinched-nerve" class="navigation__item--link">Pinched Nerve</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bulging-disc" class="navigation__item--link">Bulging Disc</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="knee-pain" class="navigation__item--link">Knee Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="runners-knee" class="navigation__item--link">Runner&#039;s Knee</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="shin-splints" class="navigation__item--link">Shin Splints</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="popping-and-clicking" class="navigation__item--link">Popping and Clicking</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="chondromalacia-patella" class="navigation__item--link">Chondromalacia Patella</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="iliotibial-band-syndrome" class="navigation__item--link">Iliotibial Band Syndrome</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="patella-femoral-syndrome" class="navigation__item--link">Patella Femoral Syndrome</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="anterior-cruciate-injuries" class="navigation__item--link">Anterior Cruciate Injuries</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="collateral-ligament-injuries" class="navigation__item--link">Collateral Ligament Injuries</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="meniscal-tears" class="navigation__item--link">Meniscal Tears</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tendon-tears-and-tendonitis" class="navigation__item--link">Tendon Tears and Tendonitis</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="tmj" class="navigation__item--link">TMJ</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sciatica" class="navigation__item--link">Sciatica</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="headaches" class="navigation__item--link">Headaches</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="migraines" class="navigation__item--link">Migraines</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tension-headaches" class="navigation__item--link">Tension headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="cluster-headaches" class="navigation__item--link">Cluster Headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sinus-headaches" class="navigation__item--link">Sinus Headaches</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="rebound-headaches" class="navigation__item--link">Rebound Headaches</a>
+</li></ul></li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="shoulder-pain" class="navigation__item--link">Shoulder Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="frozen-shoulder" class="navigation__item--link">Frozen Shoulder</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="ac-joint-separation" class="navigation__item--link">AC Joint Separation</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="sprains-and-strains" class="navigation__item--link">Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="impingement-syndrome" class="navigation__item--link">Impingement Syndrome</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="back-pain" class="navigation__item--link">Mid Back Pain</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="elbow-pain" class="navigation__item--link">Elbow Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="dislocations-and-fractures" class="navigation__item--link">Dislocations and Fractures</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="elbow-sprains-and-strains" class="navigation__item--link">Elbow Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="elbow-bursitis" class="navigation__item--link">Elbow Bursitis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="osteoarthritis" class="navigation__item--link">Osteoarthritis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="tennis-a-golfers-elbow" class="navigation__item--link">Tennis &amp; Golfer&#039;s Elbow</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="wrist-and-hand-pain" class="navigation__item--link">Hand &amp; Wrist Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="hip-pain" class="navigation__item--link">Hip Pain</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="ankle-pain" class="navigation__item--link">Ankle Pain</a>
+</li><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="foot-pain" class="navigation__item--link">Foot Pain</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="plantar-fascitis" class="navigation__item--link">Plantar Fascitis</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="heel-spurs-a-bone-spurs" class="navigation__item--link">Heel Spurs &amp; Bone Spurs</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="foot-a-ankle-sprains-and-strains" class="navigation__item--link">Foot &amp; Ankle Sprains and Strains</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="mortons-neuroma" class="navigation__item--link">Morton&#039;s Neuroma</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bunions" class="navigation__item--link">Bunions</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="hallux-rigidus" class="navigation__item--link">Hallux Rigidus</a>
+</li></ul></li></ul></li> <li class="navigation__item navigation__item--default ">
+<a href="testimonials" class="navigation__item--link">Patient Testimonials</a>
+</li> <li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="contact" class="navigation__item--link">Contact Us</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default  has-drop-down ">
+<a href="areas-we-serve" class="navigation__item--link">Areas We Serve</a>
+<ul class="navigation__list navigation__list--sub"><li class="navigation__item navigation__item--default ">
+<a href="hells-kitchen" class="navigation__item--link">Hell&#039;s Kitchen</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown" class="navigation__item--link">Midtown</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown-east" class="navigation__item--link">Midtown East</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="midtown-west" class="navigation__item--link">Midtown West</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="rockefeller-center" class="navigation__item--link">Rockefeller Center</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="manhattan" class="navigation__item--link">Manhattan</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="columbus-circle" class="navigation__item--link">Columbus circle</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="theater-district" class="navigation__item--link">Theater District</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="bryant-park" class="navigation__item--link">Bryant Park</a>
+</li></ul></li><li class="navigation__item navigation__item--default ">
+<a href="referrals" class="navigation__item--link">Referrals</a>
+</li><li class="navigation__item navigation__item--default ">
+<a href="request-appointment-forms" class="navigation__item--link">Request Appointment</a>
+</li></ul></li> <li class="navigation__item navigation__item--default ">
+<a href="blog" class="navigation__item--link">Blog</a>
+</li> </ul>
+</nav>
+</div>
+</div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_d2812cb3-681c-5c2a-a7b2-2cf94fd09ecc"><div class="section-overlap-container"></div><div id="id_d2812cb3-681c-5c2a-a7b2-2cf94fd09ecc" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-banner"><div class="section--inner container-fluid section--light  "><div class="row equal"><div class="col-lg-12 section__column-1 col-sm-12 alias-home_banner"><div class="componentWith__container banner__container "><div class="ple-column--single ple-module-container home_banner__container--inner banner__container--inner" data-component-name="home_banner" data-component-alias="home_banner" data-widget-alias="Smb__Banner__Widgets__BannerSettings___home_banner" data-widget-id-base="BannerSettings-Smb__Banner__Widgets__BannerSettings___home_banner" data-component-prop-colData="" data-component-prop-componentWith="12"><div class="comp-banner ">
+<div class="banner component  skrollr-body">
+<style>.banner-c .slider__background--overlay.setOpacity:after{opacity:0}</style>
+<div class="banner-c">
+<div class="flexslider" data-autoplay="1" data-speed="3568" data-delay="298">
+<ul class="slides">
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome To NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving The NYC Area For Over 15 Years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target=_blank rel="noopener">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/608c248b20779_croppedNewYorkCitySkylineaerialview.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/608c248b20779_croppedNewYorkCitySkylineaerialview.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/608c248b20779_croppedNewYorkCitySkylineaerialview.jpg">
+<img src="storage/app/media/608c248b20779_croppedNewYorkCitySkylineaerialview.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome To NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving The NYC Area For Over 15 Years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target=_blank rel="noopener">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/608c23fc885a4_backacheslider1.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/608c23fc885a4_backacheslider1.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/608c23fc885a4_backacheslider1.jpg">
+<img src="storage/app/media/608c23fc885a4_backacheslider1.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome to NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving NYC for over 15 years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target=_blank rel="noopener">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/608c245f9b30f_pedestriansJuly4blur.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/608c245f9b30f_pedestriansJuly4blur.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/608c245f9b30f_pedestriansJuly4blur.jpg">
+<img src="storage/app/media/608c245f9b30f_pedestriansJuly4blur.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome To NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving The NYC Area For Over 15 Years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target=_blank rel="noopener">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/609966fc1140a_59b18494e04da59b017ae73d2dblurredbanner2mod.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/609966fc1140a_59b18494e04da59b017ae73d2dblurredbanner2mod.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/609966fc1140a_59b18494e04da59b017ae73d2dblurredbanner2mod.jpg">
+<img src="storage/app/media/609966fc1140a_59b18494e04da59b017ae73d2dblurredbanner2mod.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome To NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving The NYC Area For Over 15 Years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target=_blank rel="noopener">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/59a9c3e5ef984_59a5df5a5d40bshutterstock147162677edit090117.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/59a9c3e5ef984_59a5df5a5d40bshutterstock147162677edit090117.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/59a9c3e5ef984_59a5df5a5d40bshutterstock147162677edit090117.jpg">
+<img src="storage/app/media/59a9c3e5ef984_59a5df5a5d40bshutterstock147162677edit090117.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+<li class="slider__item">
+<div class="slider__background slider__background--overlay setOpacity">
+<div class="slider__wrapper">
+<div class="banner-c__text banner-text__wrapper component__text row align-items-center">
+<div class="col-sm-12">
+<div class="row text-right   d-flex justify-content-end ">
+<div class="col-12 ">
+<div class="round row">
+<div class="col-12">
+<h3 class="banner-c__title component__title banner-text__title--extraLarge ">Welcome to NuView Health Medical</h3>
+<p class="banner-c__subtitle component__subtitle banner-text__subtitle--medium ">Serving NYC for over 15 years</p>
+<div class="row    d-flex justify-content-end ">
+<div class="col-12 col-lg-6 col-md-6 d-flex align-items-center flex-column flex-lg-row">
+<div class="mr-lg-3 w-100 w-lg-50 banner-c__button component__button text-right">
+<a class="cta__button component__button--2" href="request-appointment-forms">Request Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__button-wrapper banner-img__wrapper">
+<picture>
+<source media="(min-width: 1024px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1400x1400_80/webmgr/05/9/p/608c241f296a8_b16.jpg">
+<source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/1023x1023_80/webmgr/05/9/p/608c241f296a8_b16.jpg">
+<source media="(min-width: 320px) and (max-width: 767px)" srcset="https://cdcssl.ibsrv.net/ibimg/smb/767x767_80/webmgr/05/9/p/608c241f296a8_b16.jpg">
+<img src="storage/app/media/608c241f296a8_b16.jpg" class="banner_media_pciture_image " alt="">
+</picture>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div></div>
+</div></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_db33bf29-d743-5f74-8803-435d5cec571e"><div class="section-overlap-container"></div><div id="id_db33bf29-d743-5f74-8803-435d5cec571e" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-editable"><div class="section--inner container section--light  "><div class="row equal"><div class="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-editable_featured"><div class="editable_featured__container editable__container "><div class="ple-column--single ple-module-container editable_featured__container--inner editable__container--inner" data-component-name="editable_featured" data-component-alias="editable_featured"><div class="flex_wrap">
+<div class="flex_1">
+<div class="img_wrap" style="background:url(storage/app/media/albany/featuredservice_2.jpg)" data-before-bg-color="#d02c2c">
+<a href="chiropractic-medicine" data-source-type="my-pages" data-index="22">Chiropractic</a>
+</div>
+</div>
+<div class="flex_1">
+<div class="img_wrap" style="background:url(storage/app/media/12j.jpg)" data-before-bg-color="#d02c2c">
+<a href="physical-therapy" data-source-type="my-pages" data-index="94">Physical Therapy</a>
+</div>
+</div>
+<div class="flex_1">
+<div class="img_wrap" style="background:url(storage/app/media/Chiro1-Hero.jpg)" data-before-bg-color="#d02c2c">
+<a href="massage-therapy" data-source-type="my-pages" data-index="67">Massage Therapy</a>
+</div>
+</div>
+<div class="flex_1">
+<div class="img_wrap" style="background:url(storage/app/media/11j.jpg)" data-before-bg-color="#d02c2c">
+<a href="sports-medicine" data-source-type="my-pages" data-index="121">Sports Medicine</a>
+</div>
+</div>
+<div class="flex_1">
+<div class="img_wrap" style="background:url(storage/app/media/1g.jpg)" data-before-bg-color="#d02c2c">
+<a href="acupuncture" data-source-type="my-pages" data-index="2">Acupuncture</a>
+</div>
+</div>
+</div>
+<div class="flex_wrap">
+<div class="flex_1">
+<a class="featured2" href="neck-pain" data-source-type="my-pages" data-index="80">
+<div class="wrap_featured">
+<img src="storage/app/media/_img/neck-pain-img.png">
+<h2>Neck Pain</h2>
+</div>
+</a>
+</div>
+<div class="flex_1">
+<a class="featured2" href="back-pain" data-source-type="my-pages" data-index="15">
+<div class="wrap_featured">
+<img src="storage/app/media/_img/Low-Back-Pain-image.png">
+<h2>Back Pain</h2>
+</div>
+</a>
+</div>
+<div class="flex_1">
+<a class="featured2" href="neck-pinched-nerve" data-source-type="my-pages" data-index="95">
+<div class="wrap_featured">
+<img src="storage/app/media/_img/elbow-image.png">
+<h2>Pinched Nerve</h2>
+</div>
+</a>
+</div>
+<div class="flex_1">
+<a class="featured2" href="sciatica" data-source-type="my-pages" data-index="108">
+<div class="wrap_featured">
+<img src="storage/app/media/_img/hip-image.png">
+<h2>Sciatica</h2>
+</div>
+</a>
+</div>
+<div class="flex_1">
+<a class="featured2" href="headaches" data-source-type="my-pages" data-index="47">
+<div class="wrap_featured">
+<img src="storage/app/media/_img/headache-image.png">
+<h2>Headache</h2>
+</div>
+</a>
+</div>
+</div></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_4fd90d4e-470c-540e-98fc-1cc1cdb197b0"><div class="section-overlap-container"></div><div id="id_4fd90d4e-470c-540e-98fc-1cc1cdb197b0" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-editable section-editable"><div class="section--inner container section--light  "><div class="row equal"><div class="col-lg-8 section__column-1 ple-column-padding col-sm-12 alias-editable_contenthome"><div class="editable_contenthome__container editable__container "><div class="ple-column--single ple-module-container editable_contenthome__container--inner editable__container--inner" data-component-name="editable_contenthome" data-component-alias="editable_contenthome"><p data-uw-styling-context="true">Our chiropractors in midtown are super-friendly! Book with them on Zocdoc.</p>
+<h5 data-uw-styling-context="true">Team:</h5>
+<ul><li data-uw-styling-context="true"><a href="meet-the-doctor" data-source-type="my-pages" data-index="70" data-uw-styling-context="true">Dr. Megan Cloud</a>&nbsp;is very active and enjoys exercising, and was a competitive equestrian</li><li data-uw-styling-context="true"><a href="meet-the-doctor" data-source-type="my-pages" data-index="70" data-uw-styling-context="true">Dr. Leacee Caday-Go</a>&nbsp;is super-friendly and listens with great care about any pains you may have</li></ul>
+<h5 data-uw-styling-context="true">Chiropractor for Back Pain</h5>
+<p data-uw-styling-context="true">Chiropractic care is drug-free. It can strengthen your own body’s pain relief mechanisms so it has no side effects compared to prescription medications or injected analgesics.</p>
+<h5 data-uw-styling-context="true">Chiropractor at Nuview Health Medical</h5>
+<p data-uw-styling-context="true">We provide a multi-disciplinary approach. You can add on additional treatments like&nbsp;<a href="massage-therapy" data-source-type="my-pages" data-index="67" data-uw-styling-context="true">massage therapy</a>, physical therapy, acupuncture, and spinal decompression. Combining treatments for your individual case is more effective in relieving&nbsp;<a href="back-pain" data-source-type="my-pages" data-index="15" data-uw-styling-context="true">back pain</a>,&nbsp;<a href="shoulder-pain" data-source-type="my-pages" data-index="113" data-uw-styling-context="true">shoulder sprains</a>,&nbsp;<a href="headaches" data-source-type="my-pages" data-index="47" data-uw-styling-context="true">rebound headaches</a>, and more.</p>
+<p data-uw-styling-context="true">NuView Health Medical accepts most insurances – get a “new view” on life by calling us or&nbsp;<a href="https://www.zocdoc.com/practice/nuview-health-medical-50009?lock=true&isNewPatient=false&referrerType=widget" target="_blank" rel="noopener" data-uw-styling-context="true">booking online with ZocDoc</a>.</p><p data-uw-styling-context="true"><br></p>
+<p><img src="storage/app/media/_img/lobby-22West48th.jpg" data-image="mediaManagerImagelobby-22West48th.jpg" alt="." class="align-center" style="width: 100%; max-width: 500px; display: block; margin: auto;" title="."></p>
+<figcaption></figcaption>
+<p></p>
+<h3 class="text-center"><a href="https://www.facebook.com/NuView-Health-Medical-931801463635846/reviews/" target="_blank" rel="noopener" data-uw-styling-context="true">Recommended on Facebook</a></h3>
+<p><br></p></div></div></div><div class="col-lg-4 section__column-2 ple-column-padding col-sm-12 alias-home_side2"><div class="home_side2__container editable__container "><div class="ple-column--single ple-module-container home_side2__container--inner editable__container--inner" data-component-name="home_side2" data-component-alias="home_side2"><div class="side_content">
+<h1 style="text-align: center;" class="text-center" data-uw-styling-context="true">Call</h1>
+<h1 style="text-align: center;" class="text-center"><a href="tel:2122351463" class="piwik_ignore" data-uw-styling-context="true">(212) 588-0707</a></h1>
+<h2 class="text-center" data-uw-styling-context="true">Immediate Appointments</h2>
+<p><a href="request-appointment-forms"><img src="storage/app/media/1-rev-buttons/Midtown-Chiropractic-NYC-min.png" data-image="mediaManagerImageMidtown-Chiropractic-NYC-min.png" alt="book button" class="align-center" style="display: block; margin: auto; width: 216px; height: auto;" title="book button" width="216" height="195"></a></p>
+<p style="text-align: center; margin: 50px 0px" class="text-center"> <a class="btn_zocdoc" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target="_blank" data-uw-styling-context="true">Book Online with Zocdoc</a></p>
+<figcaption></figcaption><p></p><figcaption></figcaption><figcaption></figcaption>
+<h3 class="text-center" data-uw-styling-context="true">22 W 48th St #306<br>New York, NY 10036</h3>
+<hr>
+<h1 style="text-align: center;" class="text-center" data-uw-styling-context="true">Office Hours</h1>
+<h5 class="text-center" data-uw-styling-context="true">Monday - Friday<br>11:00am - 7:00pm</h5>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">Across from Nintendo NY (Between 5th & 6th Ave)</p>
+<hr>
+<p style="text-align: center;" class="text-center"><span style="font-size: 1.25rem; font-weight: normal " data-uw-styling-context="true" data-redactor-style-cache="font-size: 1.25rem; font-weight: normal ">WE ACCEPT INSURANCE</span></p>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">Aetna&nbsp;<br>Blue Cross Blue Shield<br>Cigna<br>Guardian<br>Oxford<br>PHCS<br>PHS<br>UMR&nbsp;</p>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">United Health Care &hellip;and more!</p>
+<hr>
+<p style="text-align: center;" class="text-center"><b data-uw-styling-context="true">Not Accepting</b><br></p>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">Medicaid<br>Medicare<br>HMOs or EPOs</p>
+<hr>
+<h1 class="text-center" style="text-align: center;" data-uw-styling-context="true">Patient Reviews</h1>
+<p><a href="https://www.google.com/search?gs_ssp=eJwFwTEOgCAMAMC4mji6szjTVkjAJ_gLLEVI0EmF53s3TvrUiEcjTEwGhm2B7jyTdQkCY4xEdoMuKxgjKD4AGwLa5_v9ijSVJdQnq0ti4VB_NZYWxQ&q=nuview+health+medical&oq=nuviewhealthmedical.com&aqs=chrome.2.69i58j69i57j46i13i175i199j0i13i30.4983j1j7&sourceid=chrome&ie=UTF-8#lrd=0x89c258f0ac1dd225:0xe3044e1e9a0c4202,3,,," target="_blank"><img src="storage/app/media/1-rev-buttons/google-min.jpg" data-image="mediaManagerImagegoogle-min.jpg" alt="google" class="align-center" style="display: block; margin: auto;"></a></p>
+<p><a href="https://www.facebook.com/NuView-Health-Medical-931801463635846/" target="_blank"><img src="storage/app/media/1-rev-buttons/fb-min.jpg" data-image="mediaManagerImagefb-min.jpg" alt="Facebook" class="align-center" style="display: block; margin: auto;"></a></p>
+<hr>
+<h3 class="text-center" data-uw-styling-context="true">22 W 48th St #306<br>New York, NY 10036</h3>
+<p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12088.781737666608!2d-73.9793694!3d40.7577261!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3044e1e9a0c4202!2sNuView%20Health%20Medical!5e0!3m2!1sen!2sph!4v1620320436704!5m2!1sen!2sph" style="border:0" allowfullscreen="" width="100%" height="250" frameborder="0"></iframe></p>
+</div>
+<div class="side_content">
+<p style="text-align: center;" class="text-center header_2"><span style="font-size: 1.25rem; font-weight: normal " data-uw-styling-context="true" data-redactor-style-cache="font-size: 1.25rem; font-weight: normal ">WE ACCEPT INSURANCE</span></p><p></p>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">Aetna&nbsp;<br>Blue Cross Blue Shield<br>Cigna<br>Guardian<br>Oxford<br>PHCS<br>PHS<br>UMR&nbsp;</p>
+<p style="text-align: center;" class="text-center" data-uw-styling-context="true">United Health Care
+&hellip;and more!</p>
+<h1 style="text-align: center; margin-top: 40px; bottom: 30px" class="text-center"><a href="tel:2122351463" class="piwik_ignore" data-uw-styling-context="true">Call 212-588-0707</a></h1>
+<h2 class="text-center" data-uw-styling-context="true">Hours</h2>
+<h3 class="text-center" data-uw-styling-context="true">Mon. 11:00a - 7:00p
+Tues. 11:00a - 7:00p<br>
+Wed. 11:00a - 7:00p<br>
+Thurs 11:00a - 7:00p<br>
+Fri. 11:00a - 7:00p<br>
+Sat - Sun Closed</h3>
+<h2 class="text-center"><a href="https://g.page/nuview-health-medical?share" target="_blank" data-uw-styling-context="true">Location</a></h2>
+<h3 class="text-center" data-uw-styling-context="true">22 W 48th St #306<br>
+New York, NY 10036</h3><h2 class="text-center" data-uw-styling-context="true">Across from Nintendo NY (Between 5th & 6th Ave)</h2>
+</div></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_ae6475b0-25ba-5136-97c4-ef1636aba66c"><div class="section-overlap-container"></div><div id="id_ae6475b0-25ba-5136-97c4-ef1636aba66c" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-editable"><div class="section--inner container section--light  "><div class="row equal"><div class="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-home_content3"><div class="home_content3__container editable__container "><div class="ple-column--single ple-module-container home_content3__container--inner editable__container--inner" data-component-name="home_content3" data-component-alias="home_content3"><h5><b>What A Chiropractor Does for You</b></h5>
+<p>If you’re someone who experiences regular back pain, or you’ve been suffering from a recent injury to your lower body that’s resulted in back aches, chiropractic care could be the solution for you. But let’s go through this fact in a little more detail.&nbsp;It’s the most common question people ask before getting in touch – what does chiropractic care actually do?&nbsp;</p>
+<p>Chiropractic care manipulates the spine, to ensure the vertebrae located in the spine are moved back into place after a misalignment, to both alleviate pain and restore normal function to the nervous system. A spinal misalignment can occur for a variety of reasons. However, it most commonly occurs due to a decrease in muscle tone – usually as a result of an irregular exercise routine.&nbsp;</p>
+<p>And when someone doesn’t exercise often, the muscles and tendons in their back become much weaker, putting all of the pressure of their body on their spine alone, pushing it out of place and causing pain and general weakness in their back.&nbsp;</p>
+<h5><b>Chiropractic Adjustment Techniques</b></h5>
+<p>Being over 100 years old, in a professional sense, the development of chiropractic techniques have come a long way over the years. As such, there are many adjustment techniques that are used in day to day chiropractic care, and your chiropractor will use the most relevant and helpful technique once they get to know your specific problems. Here are three of the most common:&nbsp;</p>
+<ul><li><b>Direct Thrust Technique</b></li></ul>
+<p>The direct thrust technique is most commonly used in chiropractic care, and is also the oldest adjustment technique to still be in use today. A chiropractor will apply rapid, strong thrusts to a patient’s spine in order to realign it.&nbsp;
+</p>
+<p>The doctor performing your care will take a portion of your spine at a time and move it with quick, sharp pulses. Ultimately, the goal is to realign the spine and help with a patient’s range of movement, allowing for more freedom in their back.&nbsp;</p>
+<ul><li><b>Spinal Mobilization</b></li></ul>
+<p>This is another adjustment technique that uses the same principles as the direct thrust technique listed above. However, this technique is much more gentle in terms of the thrusts used, and also uses a lot more stretching to help keep a patient’s muscles supple.&nbsp;
+</p>
+<ul><li><b>Drop Technique&nbsp;</b></li></ul>
+<p>Via the use of treatment tables with ‘drop mechanisms’, this adjustment technique is specifically used to help realign the joints in your spine (and the affected joints around your spine). It’s a more modern approach to the more traditional forms of chiropractic care, and allows a deeper manipulation of a patient’s bones.</p><p></p></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_88f9aed9-7e83-58d3-a5fd-96a3eb57d871"><div class="section-overlap-container"></div><div id="id_88f9aed9-7e83-58d3-a5fd-96a3eb57d871" data-control="section" class="section section__bg--light-2    forms--fullwidth forms-option--a section-editable"><div class="section--inner container section--light  "><div class="row equal"><div class="col-lg-12 section__column-1 ple-column-padding col-sm-12 alias-editable_testimonials"><div class="editable_testimonials__container editable__container "><div class="ple-column--single ple-module-container editable_testimonials__container--inner editable__container--inner" data-component-name="editable_testimonials" data-component-alias="editable_testimonials"><script src="https://apps.elfsight.com/p/platform.js" defer=""></script>
+<div class="elfsight-app-57770b42-9e16-41d9-b362-e94acd0e04fa"></div></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_d686d9ba-7df5-51a5-9067-0e834f4122f2"><div class="section-overlap-container"></div><div id="id_d686d9ba-7df5-51a5-9067-0e834f4122f2" data-control="section" class="section section__bg--dark-1 global-offset appointment-request   forms--fullwidth forms-option--a"><div class="section--inner container section--dark  "><div class="row equal"></div></div></div></div><div class="section-base-container" data-section-id="id_a92f74bf-4993-510b-aacd-365139549ad2"><div class="section-overlap-container"></div><div id="id_a92f74bf-4993-510b-aacd-365139549ad2" data-control="section" class="section section__bg--dark-3 global-offset appointment-request   forms--fullwidth forms-option--a section-form"><div class="section--inner container section--dark  "><div class="row equal"><div class="col-lg-12 section__column-1 col-sm-12 alias-home_appointmentreq"><div class="componentWith__container form__container "><div class="ple-column--single ple-module-container home_appointmentreq__container--inner form__container--inner" data-component-name="home_appointmentreq" data-component-alias="home_appointmentreq" data-widget-alias="SMB__Form__Widgets__FormSettings___home_appointmentreq" data-widget-id-base="FormSettings-SMB__Form__Widgets__FormSettings___home_appointmentreq" data-component-prop-componentWith="12"><div class="form   isPleForm ">
+<div class="component__title-caption-wrap">
+<h2 class="form__title component__title">Request an Appointment</h2>
+</div>
+<script type="text/javascript" data-cfasync="false">
+            (function (s, o, h, g, r, a, m) {
+                a = s.createElement(o); m = s.getElementsByTagName(h)[0];
+                a.async = 1; a.src = g; m.appendChild(a);
+            })(document, 'script', 'head', "https://smbleads.ibsmb.com/v1/leads/create_form/CMEdzYH7GAmrSDE7A8ETsuO3");
+        </script>
+<div class="leadForm_CMEdzYH7GAmrSDE7A8ETsuO3" data-control="form" data-template-id="custom-website-custom-template" data-mhorgid=""></div>
+</div>
+</div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_e182db01-012d-5965-b071-4cc0ddabc5bd"><div class="section-overlap-container"></div><div id="id_e182db01-012d-5965-b071-4cc0ddabc5bd" data-control="section" class="section section__bg--dark-3    forms--fullwidth forms-option--a section-editable section-editable"><div class="section--inner container section--dark  "><div class="row equal"><div class="col-lg-6 section__column-1 ple-column-padding col-sm-12 alias-edit_footer1"><div class="edit_footer1__container editable__container "><div class="ple-column--single ple-module-container edit_footer1__container--inner editable__container--inner" data-component-name="edit_footer1" data-component-alias="edit_footer1"><div class="wrap_footer">
+<h2 style="text-align: center;" class="text-center">Our Multi-Disciplinary Approach</h2>
+<p style="text-align: center;" class="text-center">Learn more about each service:</p>
+<p style="text-align: center;" class="text-center"><a href="chiropractic-medicine" data-source-type="my-pages" data-index="22">Chiropractic</a></p>
+<p style="text-align: center;" class="text-center"><a href="physical-therapy" data-source-type="my-pages" data-index="94">Physical Therapy</a></p>
+<p style="text-align: center;" class="text-center"><a href="massage-therapy" data-source-type="my-pages" data-index="67">Massage Therapy</a></p>
+<p style="text-align: center;" class="text-center"><a href="acupuncture" data-source-type="my-pages" data-index="2">Acupuncture</a></p>
+<p style="text-align: center;" class="text-center"><a href="dry-needling" data-source-type="my-pages" data-index="34">Dry Needling</a></p>
+<p style="text-align: center;" class="text-center"><a href="spinal-decompression-therapy" data-source-type="my-pages" data-index="118">Spinal Decompression</a></p>
+</div></div></div></div><div class="col-lg-6 section__column-2 ple-column-padding col-sm-12 alias-edit_footer2"><div class="edit_footer2__container editable__container "><div class="ple-column--single ple-module-container edit_footer2__container--inner editable__container--inner" data-component-name="edit_footer2" data-component-alias="edit_footer2"><div class="wrap_footer">
+<p style="text-align: center;" class="text-center"><a class="btn_zocdoc" href="https://www.zocdoc.com/practice/nuview-health-medical-50009" target="_blank">Book Online with Zocdoc<strong></strong></a></p>
+<h1 style="text-align: center;" class="text-center"></h1>
+<h1 style="text-align: center;" class="text-center"></h1><h1 style="text-align: center;" class="text-center"></h1><h1 style="text-align: center;" class="text-center">Hours</h1>
+<h2 style="text-align: center;" class="text-center">Mon. 11:00a - 7:00p<br>
+Tues. 11:00a - 7:00p<br>
+Wed. 11:00a - 7:00p<br>
+Thurs 11:00a - 7:00p<br>
+Fri. 11:00a - 7:00p<br>
+Sat - Sun Closed</h2>
+</div></div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_0dee376d-877b-57cb-9fb6-08b18ea4fffb"><div class="section-overlap-container"></div><div id="id_0dee376d-877b-57cb-9fb6-08b18ea4fffb" data-control="section" class="section section__bg--light-1    forms--fullwidth forms-option--a section-logo section-socialmedia"><div class="section--inner container section--light  "><div class="row equal"><div class="col-lg-8 section__column-1 ple-column-padding col-sm-12 ple-module-justify-left align-self-center alias-logo_footer"><div class="componentWith__container logo__container "><div class="ple-column--single ple-module-container logo_footer__container--inner logo__container--inner" data-component-name="logo_footer" data-component-alias="logo_footer" data-widget-alias="SMB__Logo__Widgets__LogoSettings___logo_footer" data-widget-id-base="LogoSettings-SMB__Logo__Widgets__LogoSettings___logo_footer" data-component-prop-colData="" data-component-prop-componentWith="8"><div class="logo ">
+<div class="logo-a logo-a--8 logo-a__horizontal__left">
+<a href="/" class="logo-a__image-link">
+<div class="logo-a__image">
+<img src="storage/app/media/images/chiropractor48th6thavelogo.png" class="logo-a__img" alt="NuView Health Medical" title="">
+</div>
+</a>
+</div>
+</div></div></div></div><div class="col-lg-4 section__column-2 ple-column-padding col-sm-12 ple-module-justify-right align-self-center alias-socialmedia"><div class="componentWith__container socialmedia__container "><div class="ple-column--single ple-module-container socialmedia__container--inner socialmedia__container--inner" data-component-name="socialmedia" data-component-alias="socialmedia" data-widget-alias="SMB__Socialmedia__Widgets__SocialmediaSettings___socialmedia" data-widget-id-base="SocialmediaSettings-SMB__Socialmedia__Widgets__SocialmediaSettings___socialmedia" data-component-prop-componentWith="4">
+<div class="socialmedia  text-center isPle">
+<div class="row">
+<div class="col-md-12">
+<ul class="socialmedia__list">
+<li class="socialmedia__item">
+<a class="socialmedia__link-wrapper" href="https://youtu.be/QB7saR0WsJk" target="_blank" rel="noopener" title="Youtube" aria-label="icon youtube">
+<span class="socialmedia__link socialmedia__link--small icon icon-youtube" aria-hidden="true"></span>
+</a>
+</li>
+<li class="socialmedia__item">
+<a class="socialmedia__link-wrapper" href="https://g.page/nuview-health-medical/review?gm" target="_blank" rel="noopener" title="Google My Business" aria-label="cicon google_1">
+<span class="socialmedia__link socialmedia__link--small icon cicon-google_1" aria-hidden="true"></span>
+</a>
+</li>
+<li class="socialmedia__item">
+<a class="socialmedia__link-wrapper" href="https://www.facebook.com/NuView-Health-Medical-931801463635846/" target="_blank" rel="noopener" title="Facebook" aria-label="icon facebook">
+<span class="socialmedia__link socialmedia__link--small icon icon-facebook" aria-hidden="true"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div class="section-base-container" data-section-id="id_8fe7eebd-2d97-5f1e-b5e8-2ecfc6035e5d"><div class="section-overlap-container"></div><div id="id_8fe7eebd-2d97-5f1e-b5e8-2ecfc6035e5d" data-control="section" class="section section__bg--dark-1    forms--fullwidth forms-option--a section-copyright"><div class="section--inner container section--dark  "><div class="row equal"><div class="col-lg-12 section__column-1 col-sm-12 alias-copyright"><div class="componentWith__container copyright__container "><div class="ple-column--single ple-module-container copyright__container--inner copyright__container--inner" data-component-name="copyright" data-component-alias="copyright" data-widget-alias="Editor__Cms__Widgets__Copyright___copyright" data-widget-id-base="Copyright-Editor__Cms__Widgets__Copyright___copyright" data-component-prop-componentWith="12">
+<div class="footer_disclaimer_component copyright_disclaimer">
+<div class="row">
+<div class="col-sm-12">
+<div id="copyright" class="copyright">
+<ul class="copyright__list">
+<li class="copyright__item">
+<a rel="nofollow" class="copyright__link" href="//chiromatrix.com" target="_blank">Copyright © 2021 MH Sub I, LLC dba iMatrix</a>
+</li>
+<li class="copyright__item">
+<a rel="nofollow" class="copyright__link" href="https://portal.chiromatrixbase.com" target="_blank">Admin Log In</a>
+</li>
+<li class="copyright__item">
+<a rel="nofollow" class="copyright__link" href="sitemap" target="_blank">Site Map</a>
+</li>
+<li class="copyright__item">
+<a rel="nofollow" class="copyright__link" href="disclaimers/privacy_policy" target="_blank">Privacy Policy</a>
+</li>
+<li class="copyright__item">
+<a rel="nofollow" class="copyright__link" href="disclaimers/healthdisclaimer" target="_blank">Health Disclaimer</a>
+</li>
+</ul>
+</div>
+<div class="copyright__description">
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div id="ple_fixed" data-control="section" class="section section--fixed  "><div class="section--inner"><div class="ple__browserlock-modules"><div class="row"><div></div></div></div><div class="ple__back-to-top"><a href="#top" class="btn btn--back-to-top"><i class="back-to-top__icon"></i></a></div></div></div></div>
+</div>
+<script type="text/javascript" src="themes/common/javascripts/vendor/jquery/jquery-1.11.1.min.js"></script>
+<script src="combine/2db181be9d0ad3a1a1354f0280a30a10-1630702438.js" defer></script>
+<script src="https://smbleads.ibsmb.com/v1/js/CampaignTracker.min.js" defer></script>
+</div>
+<script type="text/javascript">
+  _ctRewriteUrl = "https://apps.chiromatrixbase.com/CallTracking/RewriteRule/clientId/47210"; 
+</script>
+<script type="text/javascript" src="https://apps.chiromatrixbase.com/js/smb-number-changer.js"></script>
+<script type="text/javascript"><!--
+vs_account_id = "Ch4NpFl-Wmc2GQC5"; 
+//--></script>
+<script type="text/javascript">
+    var _userway_config = {
+        position: 3,
+        account: "RcNKI7Xfag"
+    };
+</script>
+<script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
+<script>
+$('.comp-phone a').attr('href', 'tel:2122351463');
+$('.piwik_ignore').attr('href', 'tel:2122351463');
+$('.map-search__location-phone').wrap('<a href="tel:2122351463" style="color: #fff;"></a>');
+$('#gmap').html('<iframe src="http://bit.do/fgXTc" width="100%" height="100%" style="position: absolute;" frameborder="0" style="border:0;" allowfullscreen=""></iframe>');
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"94778f977a","applicationID":"27163309","transactionName":"MlFUMhRZD0AEAkMPVgsbdwUSUQ5dSiJaFWUmWFcVFV0SbyYMRCVWC0BECQpUBEElE0II","queueTime":0,"applicationTime":455,"atts":"HhZDRFxDHB9HABVcQhhJ","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body></html>

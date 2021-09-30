@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta charset="UTF-8" /><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9537276cb2",applicationID:"6974453"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">
+            var wpdm_site_url = 'https://www.socialmediaexaminer.com/';
+            var wpdm_home_url = 'https://www.socialmediaexaminer.com/';
+            var ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var ajaxurl = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_popup = '0';
+        </script>
+<title>How Consumers Respond to Brands on Social Media: New Research : Social Media Examiner</title>
+<style type="text/css">
+	.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/08/SMMW22_Masthead.png)!important; }
+	.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo.png); }
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021-border.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021.png);
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1240px), not all, not all, not all, not all, screen and (min-resolution: 192dpi) and (min-width: 1240px), screen and (min-resolution: 2dppx) and (min-width: 1240px) {
+		.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/08/SMMW22_Masthead@2x.png)!important; }
+		.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo@2x.png); }
+
+	}
+	.header-promo-content { background-color:; }
+	.header-promo-content .promo-title { color:#ffd34c; }
+	.header-promo-content .promo-content { color:#ffffff; }
+	.header-promo-content .button { background-color:#ffd345; color: #0a382d }
+
+
+
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021@2x.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021-border@2x.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021@2x.png);
+	}
+
+	</style><meta name='robots' content='max-image-preview:large' />
+
+<meta name="description" content="Wondering if the tone of your social media marketing affects sales? Discover new research about how consumers feel about business content on social media." />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.socialmediaexaminer.com/#organization","name":"Social Media Examiner","url":"https://www.socialmediaexaminer.com/","sameAs":["https://www.facebook.com/smexaminer","https://www.instagram.com/smexaminer/","https://www.linkedin.com/company/576649","https://www.youtube.com/user/socialmediaexaminer","https://www.pinterest.com/smexaminer/","https://twitter.com/smexaminer"],"logo":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#logo","inLanguage":"en-US","url":false,"caption":"Social Media Examiner"},"image":{"@id":"https://www.socialmediaexaminer.com/#logo"}},{"@type":"WebSite","@id":"https://www.socialmediaexaminer.com/#website","url":"https://www.socialmediaexaminer.com/","name":"Social Media Examiner | Social Media Marketing","inLanguage":"en-US","description":"Your Guide to the Social Media Jungle","publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.socialmediaexaminer.com/?s={search_term_string}","query-input":"required name=search_term_string"}]},{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#primaryimage","inLanguage":"en-US","url":"https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-600.png","width":600,"height":315},{"@type":"WebPage","@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#webpage","url":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/","name":"How Consumers Respond to Brands on Social Media: New Research : Social Media Examiner","isPartOf":{"@id":"https://www.socialmediaexaminer.com/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#primaryimage"},"datePublished":"2017-07-12T10:00:05+00:00","dateModified":"2019-01-16T17:38:36+00:00","description":"Wondering if the tone of your social media marketing affects sales? Discover new research about how consumers feel about business content on social media.","potentialAction":[{"@type":"ReadAction","target":["https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/"]}]},{"@type":"Article","@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#article","isPartOf":{"@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#webpage"},"author":{"@id":"https://www.socialmediaexaminer.com/#/schema/person/1e8803ce9b29ce796fcce25776204de5"},"headline":"How Consumers Respond to Brands on Social Media: New Research","datePublished":"2017-07-12T10:00:05+00:00","dateModified":"2019-01-16T17:38:36+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#webpage"},"publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"image":{"@id":"https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#primaryimage"},"keywords":"Social Media Research","articleSection":"Research","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/#respond"]}]},{"@type":["Person"],"@id":"https://www.socialmediaexaminer.com/#/schema/person/1e8803ce9b29ce796fcce25776204de5","name":"Michelle Krasniak","image":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#authorlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/8391f74a5d7fc6268b5b18b5ac69e4ce?s=96&d=mm&r=g","caption":"Michelle Krasniak"},"description":"Michelle Krasniak is a copywriter with over 15 years of experience in finding the perfect way to say anything. Connect with her on <a href=\"https://www.linkedin.com/in/michellekrasniak\">LinkedIn</a>.","sameAs":["https://www.facebook.com/Michelle.Krasniak"]}]}</script>
+
+<link rel='dns-prefetch' href='//www.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//ca9707.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Feed" href="https://www.socialmediaexaminer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Comments Feed" href="https://www.socialmediaexaminer.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; How Consumers Respond to Brands on Social Media: New Research Comments Feed" href="https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/feed/" />
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.socialmediaexaminer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.socialmediaexaminer.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sme-pro-style-css' href='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/css/main.css?ver=0.4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='ionicons-css' href='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/css/ionicons.min.css?ver=0.4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='sme-calluna-font-css' href='https://use.typekit.net/hvy7swx.css?ver=0.4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://www.socialmediaexaminer.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" id='affwp-erl-js-extra'>
+/* <![CDATA[ */
+var affwp_erl_vars = {"cookie_expiration":"30","referral_variable":"aff","url":"https:\/\/known.socialmediaexaminer.com","cookie":"wp-affwp_erl_id"};
+/* ]]> */
+</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/plugins/affiliatewp-external-referral-links/assets/js/affwp-external-referral-links.min.js?ver=1.1.2' id='affwp-erl-js'></script>
+<link rel="https://api.w.org/" href="https://www.socialmediaexaminer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.socialmediaexaminer.com/wp-json/wp/v2/posts/132025" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.socialmediaexaminer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.socialmediaexaminer.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://www.socialmediaexaminer.com/?p=132025' />
+<link rel="alternate" type="application/json+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2Fhow-consumers-respond-to-brands-on-social-media-new-research%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2Fhow-consumers-respond-to-brands-on-social-media-new-research%2F&#038;format=xml" />
+<style type="text/css"><!--
+			.backtick{background:#e3e3ff;color:#000;}
+			div.backtick{max-height:20em;width:90%;margin-left:auto;margin-right:auto;overflow:auto;border:#88a 1px solid;padding:1em;}
+			div.backtick pre{padding:0;margin:0;}
+		// -->
+		</style>
+
+<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<style>.async-hide { opacity: 0 !important} </style>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-N8VWT4':true});</script>
+
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8VWT4');</script>
+
+
+<style type="text/css" id="wp-custom-css">
+			body.page-id-139821 li.smmworld_register,
+body.page-id-139475 li.smmworld_register,
+body.page-id-150898 li.smmworld_register,
+body.page-id-58061 li.smmworld_register,
+body.page-id-24160 li.smmworld_register,
+body.page-id-24587 li.smmworld_register,
+body.page-id-35864 li.smmworld_register,
+body.page-id-34595 li.smmworld_register,
+body.page-id-58091 li.smmworld_register,
+body.page-id-139821 .header-promo-content .smmw_register_button,
+body.page-id-139475 .header-promo-content .smmw_register_button,
+body.page-id-150898 .header-promo-content .smmw_register_button,
+body.page-id-58061 .header-promo-content .smmw_register_button,
+body.page-id-24160 .header-promo-content .smmw_register_button,
+body.page-id-24587 .header-promo-content .smmw_register_button,
+body.page-id-35864 .header-promo-content .smmw_register_button,
+body.page-id-34595 .header-promo-content .smmw_register_button,
+body.page-id-58091 .header-promo-content .smmw_register_button,
+/* course register page */
+body.page-id-202197 .smmworld_register ,
+body.page-id-202197 .course_four_register_button
+/* course register page end */
+{
+    display: none !important;
+}
+
+/* hide search from mobile menu dropdown */
+@media (max-width:767px){
+	.genesis-responsive-menu ul li#menu-item-219956{
+			display: none !important;
+	}
+}
+
+/* Preventing GSC overlay transition flash on load */
+.gsc-results-wrapper-overlay {
+	transition: none !important;
+}
+
+.header-promo img {
+	z-index: 1;
+}
+/* remove CTA and nav button from thanks page and child pages */
+.page-template-template-coursetwo.conference.page-child .header-promo,
+.page-template-template-coursetwo.conference.page-child .menu a,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu a,
+.page-template-template-coursetwo.conference.page-child .sme-top-banner, .page-id-178382 .header-promo, .page-id-178382 .menu a, .page-id-212608 .header-promo, .page-id-212608 .menu a, .page-id-212570 .header-promo, .page-id-212570 .menu a, .page-id-222524 #menu-item-150985, .page-id-222524 .header-promo-content a
+{
+	display:none !important;
+}
+.page-template-template-coursetwo.conference.page-child .menu,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu, .page-id-178382 .menu,.page-id-212608 .menu, .page-id-212570 .menu
+	{height:50px}
+/* remove CTA and nav button from thanks page and child pages */
+
+.w3eden .btn-danger {
+	background-color:#ba342b;
+	border-color:#ba342b;
+}
+.addeventatc {z-index:1 !important;}
+
+
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+		margin-bottom: 1em;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+/* CTA adjustments 12/20 */
+
+@media (min-width: 1240px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1024px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1240px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 1024px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 768px){
+.promo-sale-highlight {
+    font-size: 2.4rem !important;
+}}
+/* End CTA adjustments */
+@media (min-width: 768px) {.single-format-standard .entry-header .entry-meta {margin-bottom:30px !important;}}
+.stack-two {
+	width: 50%; float: left;
+}
+@media (max-width: 767px) {
+.stack-two {
+	width: 100%; float: left;
+}}
+.sme-alert-div-tan {padding:25px;}
+
+@media (max-width: 767px){
+.has-top-bar.mobile-header-wrap.mobile-header-conf {
+	top: 41px !important; 
+	}
+}
+
+
+@media (max-width: 767px){
+.has-top-bar .mobile-header-wrap {
+    top: 62px !important;
+	}
+}
+
+@media (max-width: 767px){
+.mobile-header-wrap {
+	top: 0 !important;
+	}
+}
+@media (max-width: 767px){
+.conference .site-inner {
+    margin-top: 20px !important;
+	}
+}
+@media (max-width: 767px){
+.has-top-bar .content-sidebar-wrap {
+    margin-top: 60px;
+} 
+}
+
+li#menu-item-219956 {
+	float: right; 
+}
+
+.club-inline-form {
+    width: 36%;
+    float: left;
+    margin-right: 5px;
+}
+.club-inline-form-button {
+	width:25%;
+	float:left;
+}
+.inline-drip-form {
+	width:100%;
+	margin:auto;
+}
+.inline-drip-form input	 {
+	padding:18px !important;
+}
+@media (max-width: 767px) {
+	.club-inline-form {
+    width: 100%;
+		margin-bottom: 5px;
+	}
+	.club-inline-form-button {
+		width:100%;
+	}
+}
+
+
+.nav-primary {
+	width: calc(100% - 17px);
+}
+
+.site-header::after {
+	z-index: 1;
+}
+.home-promo .conference-table-extend {margin-left:0px !important; margin-right:0px !important;}
+
+@media (max-width: 767px) {
+	body>div {font-size:1.9rem !important;}
+}
+
+main#genesis-content {
+    height: auto !important;
+}
+@media (min-width: 960px) {
+.archive.full-width-content .content .entry {
+    font-size: 2rem;
+	}}		</style>
+<meta name="generator" content="WordPress Download Manager 5.0.93" />
+
+
+<meta property="og:site_name" content="Social Media Examiner | Social Media Marketing" />
+<meta property="og:title" content="How Consumers Respond to Brands on Social Media: New Research : Social Media Examiner" />
+<meta property="og:url" content="https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Wondering if the tone of your social media marketing affects sales? Discover new research about how consumers feel about business content on social media." />
+<meta property="og:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-1200.png" />
+<meta property="og:image:url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-1200.png" />
+<meta property="og:image:secure_url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-1200.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="article:author" content="https://www.facebook.com/Michelle.Krasniak" />
+<meta property="article:publisher" content="https://www.facebook.com/smexaminer" />
+<meta property="fb:app_id" content="417952779368030" />
+
+
+<meta name="twitter:title" content="How Consumers Respond to Brands on Social Media: New Research : Social Media Examiner" />
+<meta name="twitter:url" content="https://www.socialmediaexaminer.com/how-consumers-respond-to-brands-on-social-media-new-research/" />
+<meta name="twitter:description" content="Wondering if the tone of your social media marketing affects sales? Discover new research about how consumers feel about business content on social media." />
+<meta name="twitter:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-1200.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@smexaminer" />
+
+
+
+
+<style>
+        /* WPDM Link Template Styles */
+
+
+
+        </style>
+<style>
+
+            :root {
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #4a8eff;
+                --color-primary-active: #4a8eff;
+                --color-secondary: #6c757d;
+                --color-secondary-rgb: 108, 117, 125;
+                --color-secondary-hover: #6c757d;
+                --color-secondary-active: #6c757d;
+                --color-success: #18ce0f;
+                --color-success-rgb: 24, 206, 15;
+                --color-success-hover: #18ce0f;
+                --color-success-active: #18ce0f;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-danger.btn-lg {
+                border-radius: 4px;
+            }
+
+
+        </style>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="post-template-default single single-post postid-132025 single-format-standard header-full-width full-width-content-narrow genesis-breadcrumbs-hidden genesis-footer-widgets-visible"><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><header class="site-header"><div class="wrap"><div class="mobile-header-wrap"><div class="title-area"><p class="site-title"><a href="https://www.socialmediaexaminer.com/">Social Media Examiner | Social Media Marketing</a></p><p class="site-description">Your Guide to the Social Media Jungle</p></div><nav class="nav-primary" aria-label="Main" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-12804" class="main menu-item menu-item-type-custom menu-item-object-custom menu-item-12804"><a title="Social Media Examiner main page" href="/"><span>Home</span></a></li>
+<li id="menu-item-219562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-219562"><a title="Explore our written and video content for marketers" href="#"><span>Content</span></a>
+<ul class="sub-menu">
+<li id="menu-item-163511" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-163511"><a title="Rich content for marketers" href="#"><span>Articles</span></a>
+<ul class="sub-menu">
+<li id="menu-item-163512" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-163512"><a title="Discover the latest tactics" href="https://www.socialmediaexaminer.com/category/how-to/"><span>How To</span></a>
+<ul class="sub-menu">
+<li id="menu-item-167676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167676"><a href="https://www.socialmediaexaminer.com/tag/instagram/"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-167675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167675"><a href="https://www.socialmediaexaminer.com/tag/facebook-ads/"><span>Facebook Ads</span></a></li>
+<li id="menu-item-167673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167673"><a href="https://www.socialmediaexaminer.com/tag/facebook/"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-167678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167678"><a href="https://www.socialmediaexaminer.com/tag/youtube/"><span>YouTube Marketing</span></a></li>
+<li id="menu-item-221030" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-221030"><a href="https://www.socialmediaexaminer.com/tag/youtube-ads/"><span>YouTube Ads</span></a></li>
+<li id="menu-item-167677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167677"><a href="https://www.socialmediaexaminer.com/tag/linkedin/"><span>LinkedIn Marketing</span></a></li>
+<li id="menu-item-178106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-178106"><a href="https://www.socialmediaexaminer.com/tag/tiktok/"><span>TikTok Marketing</span></a></li>
+<li id="menu-item-215017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215017"><a href="https://www.socialmediaexaminer.com/tag/clubhouse/"><span>Clubhouse</span></a></li>
+</ul>
+</li>
+<li id="menu-item-182387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-182387"><a href="https://www.socialmediaexaminer.com/category/view-points/"><span>View Points</span></a></li>
+<li id="menu-item-163513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163513"><a title="Learn from experts" href="https://www.socialmediaexaminer.com/category/expert-interviews/"><span>Expert Interviews</span></a></li>
+<li id="menu-item-163514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163514"><a title="Discover helpful tools" href="https://www.socialmediaexaminer.com/category/tools/"><span>Tools</span></a></li>
+</ul>
+</li>
+<li id="menu-item-204594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-204594"><a title="Check out our video tutorials" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Video Tutorials</span></a>
+<ul class="sub-menu">
+<li id="menu-item-204595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204595"><a href="https://www.youtube.com/watch?v=bgNmS2Pdooc&#038;list=PLyqdnWmgSb_ZdMIrpffuFf9eNlFUVN_l0" class="external" target="_blank"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-215034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215034"><a href="https://www.youtube.com/watch?v=9XrQM7p-aQg&#038;list=PLyqdnWmgSb_ah86dGUZMOf0rknNutskbL&#038;index=1" class="external" target="_blank"><span>Instagram Ads</span></a></li>
+<li id="menu-item-215019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215019"><a href="https://www.youtube.com/playlist?list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb" class="external" target="_blank"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-204597" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204597"><a href="https://www.youtube.com/watch?v=N8M5-FqJw-o&#038;list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb&#038;index=1" class="external" target="_blank"><span>Facebook Ads</span></a></li>
+<li id="menu-item-204599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204599"><a href="https://www.youtube.com/watch?v=j2FS5-Kh1xY&#038;list=PLyqdnWmgSb_ajPnCIRsJFtUQ-KuSBE3Mn&#038;index=1" class="external" target="_blank"><span>LinkedIn Ads</span></a></li>
+<li id="menu-item-204598" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204598"><a href="https://www.youtube.com/watch?v=74TBuT7lZSE&#038;list=PLyqdnWmgSb_ZT8ZIQw8i5hREskurr1BzI&#038;index=1" class="external" target="_blank"><span>TikTok</span></a></li>
+<li id="menu-item-215018" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215018"><a href="https://www.youtube.com/watch?v=o7gv7U-rZl8&#038;list=PLyqdnWmgSb_ZPcCYKqK1ZNZl5VlWKn72E&#038;index=1" class="external" target="_blank"><span>Clubhouse</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-23650" class="main menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23650"><a title="Discover our weekly shows" href="https://www.socialmediaexaminer.com/shows/"><span>Shows</span></a>
+<ul class="sub-menu">
+<li id="menu-item-167681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167681"><a title="Top 50 Business Podcast" href="https://www.socialmediaexaminer.com/social-media-marketing-podcast/"><span>Social Media Marketing Podcast</span></a></li>
+<li id="menu-item-163520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163520"><a title="Weekly live show and podcast" href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/"><span>Social Media Marketing Talk Show</span></a></li>
+<li id="menu-item-193628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193628"><a title="Original videos each week" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Our YouTube Channel</span></a></li>
+</ul>
+</li>
+<li id="menu-item-12822" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12822"><a title="Get our latest Social Media Marketing Industry Report" href="https://www.socialmediaexaminer.com/subscribe/"><span>FREE Report</span></a></li>
+<li id="menu-item-222825" class="register-button register-button-inline menu-item menu-item-type-custom menu-item-object-custom menu-item-222825"><a title="Social Media Marketing World" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-navbar-conference"><span>Conference</span></a></li>
+<li id="menu-item-221651" class="smmworld_register register-button register-button-inline register-button-alt menu-item menu-item-type-custom menu-item-object-custom menu-item-221651"><a title="Get trends analysis and insights" href="https://www.socialmediaexaminer.com/strategyclub/?smesite=ssclub-site-navbar"><span>Strategy Club</span></a></li>
+<li id="menu-item-217946" class="register-button register-button-inline menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-217946"><a><span>TRAINING</span></a>
+<ul class="sub-menu">
+<li id="menu-item-221650" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-221650"><a href="https://www.socialmediaexaminer.com/society/?smesite=societyevergreen-site-navbar"><span>Social Media Marketing Society</span></a></li>
+<li id="menu-item-179498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179498"><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-navbar-training"><span>Social Media Marketing World</span></a></li>
+<li id="menu-item-219516" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-219516"><a href="https://www.socialmediaexaminer.com/gacourse/?smesite=gamevergreen-site-navbar"><span>Google Analytics for Marketers</span></a></li>
+</ul>
+</li>
+<li id="menu-item-12808" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12808"><a title="All about Social Media Examiner" href="https://www.socialmediaexaminer.com/about/"><span>About</span></a>
+<ul class="sub-menu">
+<li id="menu-item-213565" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-213565"><a title="Get your business in front of our audience" href="https://www.socialmediaexaminer.com/sponsor/"><span>Sponsor</span></a>
+<ul class="sub-menu">
+<li id="menu-item-213566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213566"><a title="Get your business on our podcast!" href="https://www.socialmediaexaminer.com/sponsor/podcast/"><span>Podcast Sponsorship</span></a></li>
+<li id="menu-item-218507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218507"><a href="https://www.socialmediaexaminer.com/sponsor/email/"><span>Email Sponsorship</span></a></li>
+</ul>
+</li>
+<li id="menu-item-12806" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12806"><a title="Check out these social media events" href="https://www.socialmediaexaminer.com/upcoming-events/"><span>Events</span></a></li>
+</ul>
+</li>
+<li id="menu-item-219956" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-219956"><a href="/search-site"><span><i class="icon ion-ios-search"></i></span></a></li>
+</ul></div></nav><li class="mobile-search-header"><a href="/search-site/">Search</a></li></div><div class="header-promo"><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-masthead"><img src="" /></a><div class="header-promo-content"><span class="promo-title">Social Media Marketing World</span><span class="promo-content">Get your tickets now! Sale ends Wednesday!</span><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-masthead" class="button">LEARN FROM PROS</a></div></div></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-132025 post type-post status-publish format-standard has-post-thumbnail category-research tag-social-media-research entry" aria-label="How Consumers Respond to Brands on Social Media: New Research"><header class="entry-header"><h1 class="entry-title">How Consumers Respond to Brands on Social Media: New Research</h1>
+<p class="entry-meta"><img alt='' src='https://secure.gravatar.com/avatar/8391f74a5d7fc6268b5b18b5ac69e4ce?s=35&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8391f74a5d7fc6268b5b18b5ac69e4ce?s=70&#038;d=mm&#038;r=g 2x' class='avatar avatar-35 photo' height='35' width='35' loading='lazy' /><i class="byline">by</i> <span class="entry-author"><a href="https://www.socialmediaexaminer.com/author/michelle-krasniak/" class="entry-author-link" rel="author"><span class="entry-author-name">Michelle Krasniak</span></a></span> / <time class="entry-time">July 12, 2017</time></p></header><div class="entry-content"><p><a href="https://www.socialmediaexaminer.com/category/research/" target="_blank" rel="noopener"><img loading="lazy" class="alignright" title="social media research" src="https://www.socialmediaexaminer.com/images/research-pose.png" alt="social media research" width="110" height="166" /></a>Want to know why some brands connect with consumers more than others on social media?</p>
+<p>Wondering if the tone of your social media marketing is affecting sales?</p>
+<p>In this article, you&#8217;ll <strong>find insights from new research that reveal how consumers feel about the content and conversations businesses are serving up on social media</strong>.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-600.png" alt="How Consumers Respond to Brands on Social Media: New Research by Michelle Krasniak on Social Media Examiner." width="600" height="315" /><figcaption class="wp-caption-text">How Consumers Respond to Brands on Social Media: New Research by Michelle Krasniak on Social Media Examiner.</figcaption></figure>
+<p><span id="more-132025"></span></p>
+<h2>#1: Brand Behavior Affects Consumer Purchase Decisions</h2>
+<p>It&#8217;s not only about what types of content you post, according to a recent study by Sprout Social.</p>
+<p>For their Q2 2017 Sprout Social Index report titled, <a href="http://sproutsocial.com/insights/data/q2-2017/" class="external" target="_blank">Consumers Aren&#8217;t Looking to Buy From Brands That Are &#8220;Cool&#8221; on Social</a>, they studied 289,000 public social media profiles and surveyed more than 1,000 consumers and found that nearly half of respondents (48%) want to purchase from brands that are <a href="https://www.socialmediaexaminer.com/social-customer-care-apps-and-processes-for-success-dan-gingiss/">responsive to their customers on social media</a>. This supports the basic premise of social media marketing: It&#8217;s about the conversations you have with your audience.</p>
+<p>Furthermore, 36% of respondents say that when a brand is humorous, they&#8217;re more likely to buy from them.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/mk-emarketer-brand-actions-on-social-media-that-prompt-users-to-purchase.png" alt="How different brand actions on social media impact consumer purchases." width="600" height="665" /><figcaption class="wp-caption-text">How different brand actions on social media impact consumer purchases.</figcaption></figure>
+<p>Interestingly, while 67% of respondents say they don&#8217;t like it when brands make fun of competitors, 10% of people surveyed say that they&#8217;ll purchase from brands that trash-talk competitors.</p>
+<p>In fact, Sprout Social found several things that brands do that their audience dislikes including making fun of customers (88%), talking politics (71%), and using slang (69%).</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/mk-sprout-social-consumer-sentiment-on-brand-behaviors.png" alt="It's important to pay attention to consumer sentiment when it comes to social media content." width="600" height="587" /><figcaption class="wp-caption-text">It&#8217;s important to pay attention to consumer sentiment when it comes to social media content.</figcaption></figure>
+<p><strong>Takeaway</strong></p>
+<p>Not surprisingly, audience preferences on <a href="https://www.socialmediaexaminer.com/4-ways-to-humanize-your-social-media-updates/">the personality a brand projects</a> on social media depends on the platform.</p>
+<p>For example, Sprout Social found that 79% of Millennials and 84% of other generations prefer brands to let their personalities shine on Facebook, while 51% of Millennials and 35% of other generations like it on Twitter.</p>
+<p>This could have a lot to do with the types of content posted on the respective sites.</p>
+<p>On Twitter, brands must be concise and link to other types of content, while on Facebook, the audience can consume much of the content directly on the platform. There&#8217;s more space to write interesting or funny descriptions on Facebook, allowing for the brand&#8217;s personality to be communicated better.</p>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="1" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;">Get Expert Social Media Marketing Training from the Pros</h2>
+<img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2019/10/SMMWLogoBigger@2x.png" alt="Social Media Marketing World" width="250" height="187" />
+<p style="text-align: left;">Want to get ahead of the competition or learn how to diversify your strategy? </p>
+<p style="text-align: left;">Learn from dozens of the industry's most trusted experts, rub elbows with other smart marketers, and take your marketing to the next level during this 3-day event in sunny San Diego, CA.</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-midpage-ad1">CLICK TO LEARN MORE</a>
+</div>
+</div>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/mk-sprout-social-platforms-where-consumers-prefer-brand-personality.png" alt="Consumers prefer brands to be more personable on Facebook." width="600" height="409" /><figcaption class="wp-caption-text">Consumers prefer brands to be more personable on Facebook.</figcaption></figure>
+<h2>#2: Audiences React Adversely When Brands Cross the Line</h2>
+<p>There doesn&#8217;t seem to be a &#8220;three strikes and you&#8217;re out&#8221; rule when it comes to how consumers feel about a brand&#8217;s social media activities.</p>
+<p>Sprout Social learned that 51% of respondents will automatically unfollow a brand that does something they dislike, while 27% block them or report them as spam. Just over one-quarter (27%) go as far as to boycott the brand entirely.</p>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="2" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;">Lead the Social Charge Instead of Playing Catch Up</h2><img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/SSC21_Logo_210@2x.png" alt="Social Strategy Club" width="250" height="187" />
+<p style="text-align: left;">Sick of wondering “What now?” everytime a social platform changes or the market shifts?</p>
+<p style="text-align: left;">Get a look at where the social media marketing industry is headed—before it happens—with insightful trends analysis delivered weekly.</p>
+<p style="text-align: left;">Let the Social Strategy Club be your secret competitive advantage.</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/strategyclub/?smesite=ssclub-site-midpage-ad-lower">CLICK TO LEARN MORE</a>
+</div>
+</div>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/mk-emarketer-user-actions-to-irritating-brand-social-media-behaviors.png" alt="Internet users have little patience for brands posting bad social media content." width="600" height="598" /><figcaption class="wp-caption-text">Internet users have little patience for brands posting bad social media content.</figcaption></figure>
+<p>One exception to this is when the brand has an ardent (read: rabid) fan base.</p>
+<p>While it&#8217;s unlikely Apple would post something offensive or make fun of their competitors, their following would probably be more forgiving. That&#8217;s not to say that everyone would turn a blind eye to something they find offensive, but chances are good that there won&#8217;t be any massive unfollows or boycotting going on.</p>
+<p><strong>Takeaway</strong></p>
+<p>A brand will remain in a positive light if they stick with content that supports their brand identity. After all, you&#8217;ll never find a company mission statement that states the organization&#8217;s goal as offending as many people online as possible. (If you do know of one that says that, please link in the comments!)</p>
+<h2>#3: Visual Content That Evokes Strong Emotion Increases Exposure</h2>
+<p>Social Media Examiner&#8217;s 2017 Social Media Marketing Industry Report revealed that marketers have the right idea when it comes to the types of content they post: <a href="https://www.socialmediaexaminer.com/visual-content-and-social-media-marketing-new-research/">The vast majority use visuals</a>. Eighty-five percent of respondents said they use visual images, while 66% said they blog and 57% report using video content.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/mk-social-media-marketing-industry-report-content-types-used-by-marketers.png" alt="Respondents to the 2017 Social Media Marketing Industry Report survey reported visual images as the most-used content type." width="600" height="387" /><figcaption class="wp-caption-text">Respondents to the 2017 Social Media Marketing Industry Report survey reported visual images as the most-used content type.</figcaption></figure>
+<p><a href="http://seopressor.com/blog/science-of-emotion-effective-social-media-marketing/" class="external" target="_blank">SEOPressor.com</a>, in their article &#8220;The Science of Emotion: 4 Keys to Effective Social Media Marketing,&#8221; wrote that positive and uplifting content garners more shares than content that&#8217;s perceived to be sad. Awe-inspiring content does well, too. The idea here is that you want to elicit emotions from your audience… preferably positive ones.</p>
+<p>That doesn&#8217;t mean there isn&#8217;t a place for content that provokes anger or sadness. Take for example the American Society for the Prevention of Cruelty to Animals (ASPCA) <a href="https://www.youtube.com/watch?v=IO9d2PpP7tQ" class="external" target="_blank">commercial</a> featuring singer Sarah McLachlan singing her hit song &#8220;Angel&#8221; while a montage of sad images featuring abused and neglected animals plays on screen.</p>
+<p>You&#8217;d be hard-pressed to find a human being who saw that commercial and felt nothing. In fact, within two years, that commercial was credited with bringing <a href="https://www.nytimes.com/2008/12/26/us/26charity.html" class="external" target="_blank">$30 million in donations</a> for the organization.</p>
+<p><strong>Takeaway</strong></p>
+<p>Showing emotions humanizes brands, and people buy from people. When brands post <a href="https://www.socialmediaexaminer.com/3-ways-to-use-psychology-in-your-social-media-marketing/">content that makes people feel something</a>, they&#8217;re more likely to want to pass that feeling along to their family and friends. There&#8217;s not a person among us who hasn&#8217;t pressed the Share button on a meme that features an inspirational saying or a video featuring funny cats doing what cats do.</p>
+<p>We want to share that experience, or a cause that we&#8217;re passionate about, with the people in our lives.</p>
+<p><strong>Conclusion</strong></p>
+<p>It&#8217;s important to take a holistic approach to your social media marketing. Human beings are complicated, and a one-size-fits-all approach to posting content doesn&#8217;t work. Brands should look beyond just posting funny pictures or informational videos. They should consider how the content will make the audience feel and if it will elicit some kind of emotion.</p>
+<p><strong>What do you think? What types of social media content and posts work best for your business? Where do you show the most personality?</strong> Share your thoughts and questions with us in the comments below.</p>
+<figure style="width: 163px" class="wp-caption alignnone"><img loading="lazy" class="" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/social-media-consumer-response-research-p.png" alt="How Consumers Respond to Brands on Social Media: New Research by Michelle Krasniak on Social Media Examiner." width="163" height="245" /><figcaption class="wp-caption-text">How Consumers Respond to Brands on Social Media: New Research by Michelle Krasniak on Social Media Examiner.</figcaption></figure>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="3" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;"><strong>Experience The World's Largest Social Media Conference</strong></h2>
+<img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2019/10/SMMWLogoBigger@2x.png" alt="Social Media Marketing World" width="250" height="187" />
+<p style="text-align: left;">Quality marketing training, actionable takeaways, and beneficial connections—that's just a fraction of what you can expect at Social Media Marketing World! Join thousands of smart marketers in sunny San Diego this spring and up-level your marketing.</p>
+<p align="center">🔥 <b>Sale ends Wednesday!</b> 🔥
+<div class="ujic-hold ujic_center"> <div class="ujiCountdown ujic-classic" id="ujiCountdown"></div></div>
+</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-midpage-ad2">GET TICKETS NOW</a>
+</div>
+</div>
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-tags">Tags: <a href="https://www.socialmediaexaminer.com/tag/social-media-research/" rel="tag">Social Media Research</a></span></p></footer></article><section class="author-box"><img alt='' src='https://secure.gravatar.com/avatar/8391f74a5d7fc6268b5b18b5ac69e4ce?s=65&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8391f74a5d7fc6268b5b18b5ac69e4ce?s=130&#038;d=mm&#038;r=g 2x' class='avatar avatar-65 photo' height='65' width='65' loading='lazy' /><h4 class="author-box-title"><span>About the author</span><a href="http://www.michellekrasniak.com/" title="Visit Michelle Krasniak&#8217;s website" rel="author external" class="external" target="_blank">Michelle Krasniak</a></h4><div class="author-box-content" itemprop="description">Michelle Krasniak is a copywriter with over 15 years of experience in finding the perfect way to say anything. Connect with her on <a href="https://www.linkedin.com/in/michellekrasniak" class="external" target="_blank">LinkedIn</a>.<div class="other-posts-link"><a href="https://www.socialmediaexaminer.com/author/michelle-krasniak/">Other posts by Michelle Krasniak »</a></div></div></section><div class="after-entry widget-area"><section id="custom_html-13" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div class="after-entry-left">
+<h4> Get Social Media Examiner’s Future Articles in Your Inbox! </h4>
+<p> Get our latest articles delivered to your email inbox and get the <strong>FREE Social Media Marketing Industry Report</strong> (40 pages, 50+ charts)! </p>
+</div>
+<div class="after-entry-right"> <img src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/Footer-Report2021.png" width="145" height="200" alt="Industry Report Cover" /> </div>
+<div class="clearfix"> </div>
+<div class="after-entry-bottom">
+<form action="https://www.getdrip.com/forms/50814357/submissions" method="post" data-drip-embedded-form="50814357">
+<input type="text" value="Enter your first name" onfocus="if (!window.__cfRLUnblockHandlers) return false; if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]" data-cf-modified-3ce2bfd3b0f76a83b076ffa7-="">
+<input type="text" value="Email" onfocus="if (!window.__cfRLUnblockHandlers) return false; if (this.value == 'Email') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '') {this.value = 'Email';}" id="callout-email" name="fields[email]" data-cf-modified-3ce2bfd3b0f76a83b076ffa7-="">
+<div style="display: none;" aria-hidden="true">
+<label for="website">Website</label>
+<br />
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" />
+</div>
+<input type="submit" id="subscribeSubmit" alt="Send me Updates" name="Submit" data-drip-attribute="sign-up-button">
+</form>
+</div>
+</div></div></section>
+</div></main></div></div><div class="wrap"><div class="worth-exploring-section entry"><section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Worth Exploring:</h3>
+<div class="textwidget custom-html-widget"><a href="https://www.socialmediaexaminer.com/tag/facebook/" class="worth-exploring-item facebook">
+<h4>Facebook</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/instagram/" class="worth-exploring-item instagram">
+<h4>Instagram</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/youtube/" class="worth-exploring-item youtube">
+<h4>YouTube</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/linkedin/" class="worth-exploring-item linkedin">
+<h4>Linkedin</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/facebook-ads/" class="worth-exploring-item facebook">
+<h4>Facebook Ads</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2021/" class="worth-exploring-item industry">
+<h4>Social Media Marketing Industry Report</h4>
+<span class="link">Get Free Report →</span>
+<span class="worth-exploring-image"></span>
+</a></div></div></section>
+</div></div><div class="main-cta above-footer-cta"><div class="wrap"><div class="main-cta-inner abover-footer-cta-inner"><div class="main-cta-content above-footer-cta-content"><div class="inner-border-radius clearfix"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><h4 class="free-tag">
+Social Marketing Trends
+</h4>
+<span class="sub-title">
+The data you've been missing!
+</span>
+<p>
+Need a new plan? Find out how thousands of marketers plan to change their social marketing activities in our 14th annual Social Media Marketing Industry Report. This <strong>40-page report</strong> reveals what marketers have planned for their organic social activities, video marketing, social ads, and more. Get this <strong>free report</strong> now and never miss another great article from Social Media Examiner.
+</p></div></div></section>
+<section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><p>
+Enter your email to get<br />
+our <strong>free report:</strong>
+</p>
+<form action="https://www.getdrip.com/forms/65459763/submissions" method="post" data-drip-embedded-form="65459763" id="drip-ef-65459763">
+<input type="text" value="Enter your first name" onfocus="if (!window.__cfRLUnblockHandlers) return false; if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]" data-cf-modified-3ce2bfd3b0f76a83b076ffa7-=""><input type="text" value="Email" onfocus="if (!window.__cfRLUnblockHandlers) return false; if
+(this.value == 'Email') {this.value = '';}" onblur="if (!window.__cfRLUnblockHandlers) return false; if (this.value == '')
+{this.value = 'Email';}" id="callout-email" name="fields[email]" data-cf-modified-3ce2bfd3b0f76a83b076ffa7-="">
+<div style="display: none;" aria-hidden="true"> <label for="website">Website</label><br /> <input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" /> </div>
+<input type="submit" alt="SEND ME A COPY" value="SEND ME A COPY" name="Submit" id="callout-submit" data-drip-attribute="sign-up-button"></form></div></div></section>
+</div></div></div></div></div><div class="footer-widgets" id="genesis-footer-widgets"><h2 class="genesis-sidebar-title screen-reader-text">Footer</h2><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="custom_html-11" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><img src="https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/images/logo@2x.png" width="353" height="118" />
+<span class="footer-tag">
+Your Guide to the Social Media Jungle
+</span></div></div></section>
+<section id="custom_html-10" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget">Copyright © 2021 Social Media Examiner®<br />
+All Rights Reserved. <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy/">Privacy Policy</a>.</div></div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="nav_menu-4" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">Helpful Links</h3>
+<div class="menu-footer-links-container"><ul id="menu-footer-links" class="menu"><li id="menu-item-192784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-192784"><a href="https://www.socialmediaexaminer.com/about/">About us</a></li>
+<li id="menu-item-95057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95057"><a href="https://www.socialmediaexaminer.com/subscribe/">Our content via email</a></li>
+<li id="menu-item-110706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110706"><a href="https://www.socialmediaexaminer.com/shows/">Our podcasts</a></li>
+<li id="menu-item-139031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139031"><a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank">Our YouTube channel</a></li>
+<li id="menu-item-110705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110705"><a href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/">Our live show</a></li>
+<li id="menu-item-123595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123595"><a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2021/">Our industry report</a></li>
+<li id="menu-item-95056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95056"><a href="https://www.socialmediaexaminer.com/sponsor/">Sponsorship opportunities</a></li>
+<li id="menu-item-95055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95055"><a href="https://www.socialmediaexaminer.com/writers/">Write for us&#8230;</a></li>
+<li id="menu-item-168981" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168981"><a href="https://www.socialmediaexaminer.com/feed/">RSS</a></li>
+<li id="menu-item-200104" class="show-userway menu-item menu-item-type-custom menu-item-object-custom menu-item-200104"><a title="Turn on accessibility menu" href="?accessibility=enabled">Accessibility</a></li>
+</ul></div></div></section>
+</div><div class="widget-area footer-widgets-3 footer-widget-area"><section id="custom_html-12" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><a href="https://www.facebook.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/facebook@2x.png" />
+</a>
+<a href="https://twitter.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/twitter@2x.png" />
+</a>
+<a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/youtube@2x.png" />
+</a>
+<a href="https://www.instagram.com/smexaminer/" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/instagram@2x.png" />
+</a>
+<a href="https://www.linkedin.com/company/576649" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/linkedin@2x.png" />
+</a>
+<a href="https://www.joinclubhouse.com/club/socialmediaexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/clubhouse_code@2x.png" />
+</a>
+</div></div></section>
+</div></div></div> <a href="#" class="back-to-top">
+</a>
+</div> <script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">
+                jQuery(function($){
+                                        try {
+                        $('a.wpdm-lightbox').nivoLightbox();
+                    } catch (e) {
+
+                    }
+                });
+            </script>
+<div id="fb-root"></div>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">var jQueryScriptOutputted = false;function initJQuery() {if (typeof(jQuery) == "undefined") {if (!jQueryScriptOutputted) {jQueryScriptOutputted = true;document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://code.jquery.com/jquery-1.8.2.min.js\"></scr" + "ipt>");}setTimeout("initJQuery()", 50);}}initJQuery();</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">jQuery(document).ready(function() {
+jQuery(".995cacb76ddc3c3ec3da9e1f90f42311").click(function() {
+jQuery.post(
+"https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php", {
+"action": "quick_adsense_onpost_ad_click",
+"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+"quick_adsense_nonce": "5abe870d03",
+}, function(response) { }
+);
+});
+});
+</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-campaign="bsdm1jzjjigswzchj9zt" data-user="100" async></script> <script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">
+			document.addEventListener("userway:init_completed", function(event) {
+			    UserWay.widgetOpen();
+			});
+		</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='v20fd21yz2yx38aqu4pa';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='hnettihys3ykimy7ks56';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='pgfozdcetvfz5sriccpd';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='bcatypb5i6v5sehhm0yz';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='xvhh5zw4q2qjna8nshme';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='dzugpznjtw1vvferbkxt';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='cntmysc4bcaqxdmmvb7r';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='uma2rxjkoqpsljuwurt9';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="DOWNLOAD MY FREE PDF COPY"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;DOWNLOAD MY FREE PDF COPY&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I WANT MY FREE COPY"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I WANT MY FREE COPY&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I WANT THESE SECRETS"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I WANT THESE SECRETS&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I Want These Secrets"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I Want These Secrets&quot;]</div></div> <script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">
+		var v20fd21yz2yx38aqu4pa_shortcode = true;var hnettihys3ykimy7ks56_shortcode = true;var pgfozdcetvfz5sriccpd_shortcode = true;var bcatypb5i6v5sehhm0yz_shortcode = true;var xvhh5zw4q2qjna8nshme_shortcode = true;var dzugpznjtw1vvferbkxt_shortcode = true;var cntmysc4bcaqxdmmvb7r_shortcode = true;var uma2rxjkoqpsljuwurt9_shortcode = true;		</script>
+<link rel='stylesheet' id='uji-countdown-uji-countdown-css' href='https://www.socialmediaexaminer.com/wp-content/plugins/uji-countdown/css/uji-countdown.css?ver=2.0.8' type='text/css' media='all' />
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1' id='hoverIntent-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.3.4' id='superfish-args-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.3.4' id='skip-links-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" id='sme-responsive-menu-js-extra'>
+/* <![CDATA[ */
+var genesis_responsive_menu = {"mainMenu":"","menuIconClass":"ionicons-before ion-ios-menu","subMenu":"Submenu","subMenuIconClass":"ionicons-before ion-ios-arrow-down","menuClasses":{"combine":[".nav-primary"],"others":[]}};
+/* ]]> */
+</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/min/responsive-menus.min.js?ver=0.4.6' id='sme-responsive-menu-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/src/global.js?ver=0.4.6' id='sme-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/min/jquery.matchHeight.min.js?ver=0.4.6' id='sme-match-height-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/src/top-banner.js?ver=0.4.6' id='sme-top-banner-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://ca9707.socialmediaexaminer.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/plugins/uji-countdown/js/jquery.countdown.js?ver=2.0.8' id='uji-countdown-core-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" id='uji-countdown-init-js-extra'>
+/* <![CDATA[ */
+var ujiCount = {"ajaxUrl":"https:\/\/www.socialmediaexaminer.com\/wp-admin\/admin-ajax.php","uji_plugin":"https:\/\/www.socialmediaexaminer.com\/wp-content\/plugins","uji_style":"classic","expire":"2021\/09\/08 23:59","exp_days":"1031","Years":"Years","Year":"Year","Months":"Months","Month":"Month","Weeks":"Weeks","Week":"Week","Days":"Days","Day":"Day","Hours":"Hours","Hour":"Hour","Minutes":"Minutes","Minute":"Minute","Seconds":"Seconds","Second":"Second","ujic_txt_size":"18","ujic_thick":null,"ujic_col_dw":"#000000","ujic_col_up":"#4c4141","ujic_col_txt":"#f7c744","ujic_col_sw":"#000000","ujic_col_lab":"#000000","ujic_lab_sz":"12","ujic_txt":"true","ujic_ani":null,"ujic_url":"","ujic_goof":"Archivo Black","uji_center":" ujic-classic","ujic_d":"true","ujic_h":"true","ujic_m":"true","ujic_s":"true","ujic_y":null,"ujic_o":null,"ujic_w":null,"uji_time":"Sep 8, 2021 13:18:18+0000","uji_hide":"true","ujic_rtl":"","uji_utime":""};
+/* ]]> */
+</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/plugins/uji-countdown/js/uji-countdown.js?ver=2.0.8' id='uji-countdown-init-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript" src='https://www.socialmediaexaminer.com/wp-content/plugins/optinmonster/assets/js/helper.js?ver=2.3.2' id='optinmonster-wp-helper-js'></script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">var omapi_localized = { ajax: 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: '68164ba628', slugs: {"v20fd21yz2yx38aqu4pa":{"slug":"v20fd21yz2yx38aqu4pa","mailpoet":false},"hnettihys3ykimy7ks56":{"slug":"hnettihys3ykimy7ks56","mailpoet":false},"pgfozdcetvfz5sriccpd":{"slug":"pgfozdcetvfz5sriccpd","mailpoet":false},"bcatypb5i6v5sehhm0yz":{"slug":"bcatypb5i6v5sehhm0yz","mailpoet":false},"xvhh5zw4q2qjna8nshme":{"slug":"xvhh5zw4q2qjna8nshme","mailpoet":false},"dzugpznjtw1vvferbkxt":{"slug":"dzugpznjtw1vvferbkxt","mailpoet":false},"cntmysc4bcaqxdmmvb7r":{"slug":"cntmysc4bcaqxdmmvb7r","mailpoet":false},"uma2rxjkoqpsljuwurt9":{"slug":"uma2rxjkoqpsljuwurt9","mailpoet":false}} };</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">var omapi_data = {"wc_cart":[],"object_id":132025,"object_key":"post","object_type":"post","term_ids":[7,1616]};</script>
+<script type="3ce2bfd3b0f76a83b076ffa7-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"9537276cb2","applicationID":"6974453","transactionName":"ZlFUYkBYXRcDUkNcX18bd1VGUFwKTUJeW1ddUQ==","queueTime":0,"applicationTime":365,"atts":"ShZXFAhCThk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="3ce2bfd3b0f76a83b076ffa7-|49" defer=""></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'68badd857bcc3c6a',m:'PNKWs5plo3fgQN3sMHnZzwTpptueInEN8sEpXR4fNl8-1631132299-0-AXJWttukHB3F+31N8yM6eTiM3MdytmFlNLwgpwmfFkgZcFGoy13iS7yto/vyoOSb6SwH8yoCiQtcodayCaWxFFN5Bi+a3+IiucnBd/cQqS2bll+3amdSEA4m7mBES86LeHXpuDUBTjxZgWi0Fz9FdsnZgWdSJN9WJaLU5vyJxmWQdjcb4zQ/BVi0wy2yz/Ye/g==',s:[0x4006d29883,0x668718912c],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"68badd857bcc3c6a","token":"fa32439e90be415cae144b7e5532c22b","version":"2021.8.1","si":10}'></script>
+</body></html>

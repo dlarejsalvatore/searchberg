@@ -1,0 +1,1189 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>How Long Do Users Stay on Web Pages?</title><link rel="preconnect" href="https://media.nngroup.com/"><link rel="preconnect" href="https://consent.cookiebot.com/"><link rel="preconnect" href="https://consentcdn.cookiebot.com/"><link rel="preconnect" href="https://www.googletagmanager.com/"><link rel="preconnect" href="https://dnn506yrbagrg.cloudfront.net/"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="description" content="Users often leave Web pages in 10-20 seconds, but pages with a clear value proposition can hold people&#39;s attention for much longer because visit-durations follow a negative Weibull distribution."><meta property="og:description" content="Users often leave Web pages in 10-20 seconds, but pages with a clear value proposition can hold people&#39;s attention for much longer because visit-durations follow a negative Weibull distribution." /><meta name="keywords" content="page visit, visitors, visit duration, page abandonment, bounces, bounce rate, Weibull analysis, Weibull distribution, reliability engineering, mathematical model of user behavior, user behavior, Web user behavior, value proposition, dwell time, dwelltime, hazard function, stay time, leaving pages, exit pages"><meta name="robots" content="noarchive"><meta name="twitter:dnt" content="on"><meta property="og:title" content="How Long Do Users Stay on Web Pages?"><meta property="og:url" content="https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" /><meta property="og:site_name" content="Nielsen Norman Group" /><meta property="og:type" content="article" /><meta property="og:image" content="https://media.nngroup.com/media/articles/opengraph_images/Slide11articleshow-long-do-users-stay-on-web-pages.png" /><meta name="twitter:site" content="@nngroup" /><meta name="twitter:card" content="summary_large_image" /><link rel="canonical" href="https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/"><link rel="search" type="application/opensearchdescription+xml" title="NN/g Search" href="/opensearch.xml" /><link rel="shortcut icon" href="https://media.nngroup.com/static/img/favicon.ico" /><link rel="stylesheet" href="https://media.nngroup.com/static/css/output.20e5dbb6736f.css" type="text/css"><script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="721be388-83be-48ef-9882-002f0dc9dc4f" async></script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-THJDDHK');</script><!-- End Google Tag Manager --><!-- Cloudfront--><script>
+ setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0014/2421.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script><script>dataLayer = window.dataLayer || [];</script>
+    
+  </head>
+
+  <body class=" sidebar-base left-sidebar publication article-detail" >
+    
+    <header class="main">
+      <div class="wrapper">
+
+        
+          
+          <div class="skipnav-container"><p>
+            
+  <a href="#body-content" class="skipnav-link" tabindex="1">Skip navigation</a>
+
+          </p></div>
+        
+
+        <div><div class="shopping-cart"></div></div>
+        <div class="grid">
+          <div class="search">
+            <div class="only small large desktop" id="searchSection">
+              <ul class="no-bullet actions">
+                <li class="certification" id="loginLink">
+                  <noscript>
+                    
+                      <a href="/login/">Log in to UX Certification</a>
+                    
+                  </noscript></li>
+              </ul>
+
+              
+              
+              
+                <form method="GET" action="/search/">
+  <div class="input action">
+    <input aria-label="Search" type="search" name="q">
+    <button aria-label="Search" class="secondary button" type="submit">Search</button>
+  </div>
+</form>
+
+              
+            </div>
+            <div class="only mobile">
+              <button class="secondary button toggle" id="searchToggle" aria-label="Search Toggle">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Grid area "logo" -->
+          <div class="logo">
+            
+            <a href="/">
+              
+<img loading="lazy" src="https://media.nngroup.com/static/img/logo-817x388.png" alt="Nielsen Norman Group logo"><span class="company-name">Nielsen <span class="highlight">Norman</span> Group</span>
+
+            </a>
+            
+            <h4 class="byline only large small desktop">
+              World Leaders in Research-Based User Experience
+            </h4>
+          </div>
+
+          <!-- Component: main navigation -->
+          
+          
+          <nav class="desktop main">
+            
+            <ul class="primary">
+              
+              <li class="">
+                
+                  <a href="/">Home</a>
+                
+              </li>
+              
+              <li class="active">
+                
+                  <a href="/articles/">Articles</a>
+                
+              </li>
+              
+              <li class="">
+                
+                  <a href="/training/">Training &amp; Events</a>
+                
+              </li>
+              
+              <li class="">
+                
+                  <a href="/consulting/">Consulting</a>
+                
+              </li>
+              
+              <li class="">
+                
+                  <a href="/reports/">Reports &amp; Books</a>
+                
+              </li>
+              
+              <li class="">
+                
+                  <a href="/about/">About NN/g</a>
+                
+              </li>
+              
+            </ul>
+            
+
+            <ul class="secondary">
+              
+                
+              
+            </ul>
+          </nav>
+          
+
+          <div class="mobile only collapsable-menu">
+            <input type="checkbox" id="mobileMenu" aria-hidden="true">
+            <label for="mobileMenu" tabindex="0" role="link">Menu</label>
+            <nav class="menu-content" role="navigation">
+              <ul>
+                
+                  <li>
+                    
+                      <a href="/">Home</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="/articles/">Articles</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <input type="checkbox" id="menu-3" aria-hidden="true">
+                      <label for="menu-3" role="link">Training &amp; Events <span class="chevron fas fa-chevron-down"></span></label>
+                      <div class="menu-content">
+                        <ul>
+                          <li><a href="/training/" aria-label="Training &amp; Events Overview">Overview</a></li>
+                          
+                            <li><a href="/ux-conference/">UX Conference</a></li>
+                          
+                            <li><a href="/series/">Series</a></li>
+                          
+                            <li><a href="/team-training/">Team Training</a></li>
+                          
+                            <li><a href="/1-hour-talks/">1-Hour Talks</a></li>
+                          
+                            <li><a href="/ux-certification/">UX Certification</a></li>
+                          
+                        </ul>
+                      </div>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <input type="checkbox" id="menu-4" aria-hidden="true">
+                      <label for="menu-4" role="link">Consulting <span class="chevron fas fa-chevron-down"></span></label>
+                      <div class="menu-content">
+                        <ul>
+                          <li><a href="/consulting/" aria-label="Consulting Overview">Overview</a></li>
+                          
+                            <li><a href="/consulting/user-testing/">User Testing</a></li>
+                          
+                            <li><a href="/consulting/user-research/">Customized User Research</a></li>
+                          
+                            <li><a href="/consulting/expert-review/">Expert Review</a></li>
+                          
+                            <li><a href="/team-training/">Team Training</a></li>
+                          
+                            <li><a href="/consulting/applied-workshops/">Intensive Applied Workshops</a></li>
+                          
+                            <li><a href="/consulting/keynote-speaking/">Keynote Speaking</a></li>
+                          
+                        </ul>
+                      </div>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <a href="/reports/">Reports &amp; Books</a>
+                    
+                  </li>
+                
+                  <li>
+                    
+                      <input type="checkbox" id="menu-6" aria-hidden="true">
+                      <label for="menu-6" role="link">About NN/g <span class="chevron fas fa-chevron-down"></span></label>
+                      <div class="menu-content">
+                        <ul>
+                          <li><a href="/about/" aria-label="About NN/g Overview">Overview</a></li>
+                          
+                            <li><a href="/people/">People</a></li>
+                          
+                            <li><a href="/about/history/">History</a></li>
+                          
+                            <li><a href="/about/about-client-list/">Clients</a></li>
+                          
+                            <li><a href="/news/">News</a></li>
+                          
+                            <li><a href="/about/contact/">Contact Us</a></li>
+                          
+                        </ul>
+                      </div>
+                    
+                  </li>
+                
+                
+                  <li><a href="/ux-certification-profile">Log in</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper search mobile collapsed">
+        <div class="one column grid">
+          
+            <form method="GET" action="/search/legacy/">
+  <div class="input action">
+    <input aria-label="Search" type="search" name="q">
+    <button aria-label="Search" class="secondary button" type="submit">Search</button>
+  </div>
+</form>
+
+          
+        </div>
+      </div>
+    </header>
+    
+
+    <main id="main">
+<section class="padded">
+  <div class="wrapper">
+    
+    <div class="twelve column grid">
+      <aside class="two wide mobile-twelve m-12-wide m-row-1 sidebar">
+        
+  <div class="collapsable-content">
+    
+    <h1 class="only mobile collapse-link"><span class="icon fa fa-caret-right"></span>&nbsp;<strong>Browse All Topics &amp; Authors</strong></h1>
+    <div class="collapsable mobile collapsed">
+      <div id="navTopicsPopular" class="topic-list popular-topic-nav">
+        <h1><strong>Topics</strong></h1>
+        <ul class="relaxed no-bullet topics" id="article-popular-topics">
+          
+            <li><a href="/topic/agile/">Agile</a></li>
+          
+            <li><a href="/topic/ux-design-process/">Design Process</a></li>
+          
+            <li><a href="/topic/e-commerce/">Ecommerce</a></li>
+          
+            <li><a href="/topic/intranets/">Intranets</a></li>
+          
+            <li><a href="/topic/navigation/">Navigation</a></li>
+          
+            <li><a href="/topic/psychology-and-ux/">Psychology and UX</a></li>
+          
+            <li><a href="/topic/research-methods/">Research Methods</a></li>
+          
+            <li><a href="/topic/study-guide/">Study Guides</a></li>
+          
+            <li><a href="/topic/user-testing/">User Testing</a></li>
+          
+            <li><a href="/topic/web-usability/">Web Usability</a></li>
+          
+            <li><a href="/topic/writing-web/">Writing for the Web</a></li>
+          
+          <li><a href="" id="navTopics__seeAll"><strong><span class="far fa-caret-right"></span>&nbsp;See all topics</strong></a></li>
+        </ul>
+      </div>
+      <div id="navTopicsAll" class="topic-list all-topic-nav" style="display: none;">
+        <h1><strong>All Article Topics</strong></h1>
+        <ul class="relaxed no-bullet topics" id="article-all-topics">
+          <li><a href="" id="navTopics__seeFewer"><strong><span class="far fa-caret-down"></span>&nbsp;See fewer topics</strong></a></li>
+          
+            <li><a href="/topic/accessibility/">Accessibility</a></li>
+          
+            <li><a href="/topic/agile/">Agile</a></li>
+          
+            <li><a href="/topic/analytics-and-metrics/">Analytics &amp; Metrics</a></li>
+          
+            <li><a href="/topic/applications/">Application Design</a></li>
+          
+            <li><a href="/topic/b2b-websites/">B2B Websites</a></li>
+          
+            <li><a href="/topic/behavior-patterns/">Behavior Patterns</a></li>
+          
+            <li><a href="/topic/branding/">Branding</a></li>
+          
+            <li><a href="/topic/content-strategy/">Content Strategy</a></li>
+          
+            <li><a href="/topic/corporate-websites/">Corporate Websites</a></li>
+          
+            <li><a href="/topic/customer-journeys/">Customer Journeys</a></li>
+          
+            <li><a href="/topic/design-patterns/">Design Patterns</a></li>
+          
+            <li><a href="/topic/ux-design-process/">Design Process</a></li>
+          
+            <li><a href="/topic/e-commerce/">Ecommerce</a></li>
+          
+            <li><a href="/topic/email/">Email</a></li>
+          
+            <li><a href="/topic/eyetracking/">Eyetracking</a></li>
+          
+            <li><a href="/topic/heuristic-evaluation/">Heuristic Evaluation</a></li>
+          
+            <li><a href="/topic/human-computer-interaction/">Human Computer Interaction</a></li>
+          
+            <li><a href="/topic/ux-ideation/">Ideation</a></li>
+          
+            <li><a href="/topic/information-architecture/">Information Architecture</a></li>
+          
+            <li><a href="/topic/interaction-design/">Interaction Design</a></li>
+          
+            <li><a href="/topic/international-users/">International Users</a></li>
+          
+            <li><a href="/topic/intranets/">Intranets</a></li>
+          
+            <li><a href="/topic/ux-management/">Management</a></li>
+          
+            <li><a href="/topic/mobile-and-tablet-design/">Mobile &amp; Tablet</a></li>
+          
+            <li><a href="/topic/navigation/">Navigation</a></li>
+          
+            <li><a href="/topic/non-profit-websites/">Non-Profit Websites</a></li>
+          
+            <li><a href="/topic/personas/">Personas</a></li>
+          
+            <li><a href="/topic/persuasive-design/">Persuasive Design</a></li>
+          
+            <li><a href="/topic/prototyping/">Prototyping</a></li>
+          
+            <li><a href="/topic/psychology-and-ux/">Psychology and UX</a></li>
+          
+            <li><a href="/topic/remote-ux-work/">Remote UX Work</a></li>
+          
+            <li><a href="/topic/research-methods/">Research Methods</a></li>
+          
+            <li><a href="/topic/search/">Search</a></li>
+          
+            <li><a href="/topic/social-media/">Social Media</a></li>
+          
+            <li><a href="/topic/strategy/">Strategy</a></li>
+          
+            <li><a href="/topic/study-guide/">Study Guides</a></li>
+          
+            <li><a href="/topic/user-testing/">User Testing</a></li>
+          
+            <li><a href="/topic/ux-humor/">UX Humor</a></li>
+          
+            <li><a href="/topic/ux-teams/">UX Teams</a></li>
+          
+            <li><a href="/topic/visual-design/">Visual Design</a></li>
+          
+            <li><a href="/topic/web-usability/">Web Usability</a></li>
+          
+            <li><a href="/topic/writing-web/">Writing for the Web</a></li>
+          
+            <li><a href="/topic/young-users/">Young Users</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="popular-articles">
+        <h1><strong>Popular Articles</strong></h1>
+        <ul class="relaxed no-bullet" id="article-popular-articles">
+          
+            <li><a href="/articles/ten-usability-heuristics/">10 Usability Heuristics for User Interface Design</a></li>
+          
+            <li><a href="/articles/which-ux-research-methods/">When to Use Which User-Experience Research Methods</a></li>
+          
+            <li><a href="/articles/empathy-mapping/">Empathy Mapping: The First Step in Design Thinking</a></li>
+          
+            <li><a href="/articles/service-blueprints-definition/">Service Blueprints: Definition</a></li>
+          
+            <li><a href="/articles/between-within-subjects/">Between-Subjects vs. Within-Subjects Study Design</a></li>
+          
+            <li><a href="/articles/usability-101-introduction-to-usability/">Usability 101: Introduction to Usability</a></li>
+          
+            <li><a href="/articles/ux-research-cheat-sheet/">UX Research Cheat Sheet</a></li>
+          
+            <li><a href="/articles/ux-mapping-cheat-sheet/">UX Mapping Methods Compared: A Cheat Sheet</a></li>
+          
+            <li><a href="/articles/journey-mapping-101/">Journey Mapping 101</a></li>
+          
+            <li><a href="/articles/why-you-only-need-to-test-with-5-users/">Why You Only Need to Test with 5 Users</a></li>
+          
+        </ul>
+      </div>
+
+      
+      
+        <div class="recent-articles">
+          <h1><strong>Recent Articles</strong></h1>
+          <ul class="relaxed no-bullet" id="article-recent-articles">
+            
+              <li><a href="/articles/service-blueprints-choose-what-experience/">Service Blueprints: How to Choose What Experience to Visualize</a></li>
+            
+              <li><a href="/articles/quantitative-research-study-guide/">Quantitative Research: Study Guide</a></li>
+            
+              <li><a href="/articles/problem-statements/">Problem Statements in UX Discovery</a></li>
+            
+              <li><a href="/articles/design-thinking-study-guide/">Design Thinking: Study Guide</a></li>
+            
+              <li><a href="/articles/usability-heuristics-complex-applications/">10 Usability Heuristics Applied to Complex Applications</a></li>
+            
+          </ul>
+        </div>
+      
+
+      
+        <div class="recent-videos">
+          <h1><strong>Recent Videos</strong></h1>
+          <ul class="relaxed no-bullet" id="article-recent-videos">
+            
+              <li><a href="/videos/designers-identity/">A Designer&#39;s Identity</a></li>
+            
+              <li><a href="/videos/translating-ux-concepts-design-practice/">Translating UX Concepts into Design Practice</a></li>
+            
+              <li><a href="/videos/dont-overthink-ux-roi/">Don&#39;t Overthink UX ROI</a></li>
+            
+              <li><a href="/videos/video-game-design-ux/">Video Game Design and User Experience</a></li>
+            
+              <li><a href="/videos/big-tables-small-screens/">How to Fit Big Tables on Small Screens</a></li>
+            
+          </ul>
+        </div>
+      
+
+      <div id="navAuthorsMain" class="article-authors">
+        <h1><strong>Authors</strong></h1>
+        <ul class="relaxed no-bullet" id="article-initial-authors">
+          
+            <li><a href="/articles/author/bruce-tognazzini/">Bruce Tognazzini</a></li>
+          
+            <li><a href="/articles/author/don-norman/">Don Norman</a></li>
+          
+            <li><a href="/articles/author/jakob-nielsen/">Jakob Nielsen</a></li>
+          
+          <li><a href="" id="navAuthors__seeAll"><strong><span class="far fa-caret-right"></span>&nbsp;See all authors</strong></a></li>
+        </ul>
+      </div>
+      <div id="navAuthorsAll" class="article-authors" style="display: none;">
+        <h1><strong>All Authors</strong></h1>
+        <ul class="relaxed no-bullet" id="article-all-authors">
+          <li><a href="" id="navAuthors__seeFewer"><strong><span class="far fa-caret-down"></span>&nbsp;See fewer authors</strong></a></li>
+          
+            <li><a href="/articles/author/raluca-budiu/">Raluca Budiu</a></li>
+          
+            <li><a href="/articles/author/patty-caya/">Patty Caya</a></li>
+          
+            <li><a href="/articles/author/therese-fessenden/">Therese Fessenden</a></li>
+          
+            <li><a href="/articles/author/sarah-gibbons/">Sarah Gibbons</a></li>
+          
+            <li><a href="/articles/author/kelley-gordon/">Kelley Gordon</a></li>
+          
+            <li><a href="/articles/author/aurora-harley/">Aurora Harley</a></li>
+          
+            <li><a href="/articles/author/alita-joyce/">Alita Joyce</a></li>
+          
+            <li><a href="/articles/author/anna-kaley/">Anna Kaley</a></li>
+          
+            <li><a href="/articles/author/lexie-kane/">Lexie Kane</a></li>
+          
+            <li><a href="/articles/author/kate-kaplan/">Kate Kaplan</a></li>
+          
+            <li><a href="/articles/author/rachel-krause/">Rachel Krause</a></li>
+          
+            <li><a href="/articles/author/page-laubheimer/">Page Laubheimer</a></li>
+          
+            <li><a href="/articles/author/feifei-liu/">Feifei Liu</a></li>
+          
+            <li><a href="/articles/author/hoa-loranger/">Hoa Loranger</a></li>
+          
+            <li><a href="/articles/author/kate-moran/">Kate Moran</a></li>
+          
+            <li><a href="/articles/author/jakob-nielsen/">Jakob Nielsen</a></li>
+          
+            <li><a href="/articles/author/don-norman/">Don Norman</a></li>
+          
+            <li><a href="/articles/author/kara-pernice/">Kara Pernice</a></li>
+          
+            <li><a href="/articles/author/christian-rohrer/">Christian Rohrer</a></li>
+          
+            <li><a href="/articles/author/maria-rosala/">Maria Rosala</a></li>
+          
+            <li><a href="/articles/author/kim-salazar/">Kim Salazar</a></li>
+          
+            <li><a href="/articles/author/katie-sherwin/">Katie Sherwin</a></li>
+          
+            <li><a href="/articles/author/bruce-tognazzini/">Bruce Tognazzini</a></li>
+          
+            <li><a href="/articles/author/kathryn-whitenton/">Kathryn Whitenton</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    
+
+    <section class="announcements-container" data-zone="articles-left"></section>
+
+    
+  </div>
+
+      </aside>
+      <div id="body-content" class="ten wide mobile-twelve m-12-wide m-row-2 body-content">
+        
+  <article>
+    <span id="gaDataLength" class="ga-data-layer" aria-hidden="true">3</span>
+
+    <h1>How Long Do Users Stay on Web Pages?</h1>
+
+    <div class="publication-wrapper">
+      
+      <div class="publication-container">
+        <section class="lede">
+          <p><strong>Summary:</strong>&nbsp;Users often leave Web pages in 10–20 seconds, but pages with a clear value proposition can hold people&#39;s attention for much longer. To gain several minutes of user attention, you must clearly communicate your value proposition within 10 seconds.</p>
+        </section>
+
+        <section class="authors-and-topics">
+          <div class="byline-wrapper">
+            
+              <div class="authors inline-nav">
+                <p><strong>By </strong><span id="gaDataAuthors" class="ga-data-layer" aria-hidden="true">Jakob Nielsen</span>
+</p>
+                
+                <ul class="item-list">
+                  
+                    <li><a href="/articles/author/jakob-nielsen/">Jakob Nielsen</a></li>
+                  
+                </ul>
+                
+                
+                  <div class="publication-date">
+                    <p>
+                      on 
+                      
+                        <span id="gaDataPubDate" class="ga-data-layer" aria-hidden="true">2011-09-11</span>
+
+                        September 11, 2011
+                      
+                    </p>
+                  </div>
+                
+              </div>
+            
+
+            
+              <div class="topics inline-nav">
+                <p><strong>Topics:</strong></p>
+                
+                <span id="gaDataAllTopics" class="ga-data-layer" aria-hidden="true">Human Computer Interaction,Web Usability,timing</span>
+
+                <ul class="no-bullet inline item-list">
+                  
+                    <li><span id="gaDataTopic" class="ga-data-layer" aria-hidden="true">Human Computer Interaction</span>
+<a href="/topic/human-computer-interaction/">Human Computer Interaction</a>,&nbsp;</li>
+                  
+                    <li><a href="/topic/web-usability/">Web Usability</a></li>
+                  
+                </ul>
+              </div>
+            
+          </div>
+          <div class="small desktop only">
+            <div class="widget share-widget compact with-comments" id="shareWidgetBodyTop">
+              <div class="share-buttons" aria-hidden="true">
+                <p>Share this article:</p>
+                <ul class="share-icons">
+                  <li><a href="https://twitter.com/intent/tweet?url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;text=How Long Do Users Stay on Web Pages?&amp;via=nngroup" data-share-type="Twitter"><span class="icon fab fa-twitter"></span></a></li>
+                  <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;title=How Long Do Users Stay on Web Pages?&amp;source=Nielsen%20Norman%20Group" data-share-type="LinkedIn"><span class="icon fab fa-linkedin-in"></span></a></li>
+                  <li><a href="mailto:?subject=NN/g Article: How Long Do Users Stay on Web Pages?&amp;body=https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" data-share-type="Email"><span class="icon fal fa-envelope"></span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="articleBody" class="article-body"><p>How long will users stay on a web page before leaving? It's a perennial question, yet the answer has always been the same:</p>
+<ul>
+<li><em>Not very long. </em></li>
+</ul>
+<p>The average page visit lasts a little less than a minute.</p>
+<p>As users rush through web pages, they have <a class="old" href="https://www.nngroup.com/articles/how-little-do-users-read/" title="Alertbox: How Little Do Users Read?"> time to read only a quarter of the text</a> on the pages they actually visit (let alone all those they don't). So, unless your writing is extraordinarily clear and focused, little of what you say on your website will get through to customers.</p>
+<p>However, while users are always in a hurry on the web, the time they spend on individual page visits varies widely: sometimes people <a class="old" href="https://www.nngroup.com/articles/reduce-bounce-rates/" title="Alertbox: Reduce Bounce Rates: Fight for the Second Click"> bounce away</a> immediately, other times they linger for far longer than a minute. Given this, <strong> the average is not the most fruitful way of analyzing </strong> user behaviors. Users are human beings — their <a class="old" href="https://www.nngroup.com/articles/variability-in-user-performance/" title="Alertbox: Variability in User Performance"> behaviors are highly variable</a> and are <a class="old" href="https://www.nngroup.com/articles/interaction-elasticity/" title="Alertbox: Interaction Elasticity"> not captured fully by a single number</a>.</p>
+<h2>Leaving Web Pages: The Weibull Hazard Function</h2>
+<p><a class="out" href="https://dl.acm.org/citation.cfm?doid=1835449.1835513" title="ACM Digital Library: Chao Liu, Ryen W. White, and Susan Dumais. 2010. Understanding web browsing behaviors through Weibull analysis of dwell time. In Proceedings of the 33rd international ACM SIGIR conference on Research and development in information retrieval (SIGIR '10)">Research by Chao Liu and colleagues</a> from Microsoft Research now provides a mathematical understanding of users' page-leaving behaviors. The scientists collected data from "a popular web browser plug-in," analyzing page-visit durations for <strong> 205,873 different web pages </strong> for which they had captured upwards of <strong> 10,000 visits</strong>.<strong> </strong> Suffice it to say: these guys crunched <em> a lot </em> of data (more than 2 billion dwell times).</p>
+<ul>
+<li>The result: <strong> the time users spend on a web page follows a Weibull distribution</strong>.</li>
+</ul>
+<p>99.9% of readers will now ask: <em> What's a Weibull distribution? </em></p>
+<p><strong>Weibull is a reliability-engineering concept that's used to analyze the time-to-failure for components</strong>. The model's <em> hazard function </em> indicates the probability that a component will fail at time <em> t</em>, given that it has worked fine up until time <em> t</em>.</p>
+<p>So, after replacing a spare part in a piece of equipment, Weibull analysis predicts when you'll have to replace it again. It also lets you conduct risk analysis beyond simplistic mean-time to failure. And, if you own a lot of equipment, you can use aggregate analysis to, say, manage your spare parts inventory.</p>
+<p>Of course, <strong>when analyzing Web visits, we simply replace "component failure" with "user leaving the page."</strong> In their research paper, Liu and colleagues provide intensive statistical analysis to show that the Weibull model closely matches users' empirically observed behavior.</p>
+<p>According to earlier research, there are 2 different kinds of Weibull distributions:</p>
+<ul>
+<li><strong>Positive aging</strong>: The longer the component has been in service, the <strong> more likely </strong> it is to fail. In other words, the hazard function increases for larger values of <em> t</em>. This makes intuitive sense, because the longer stuff is used, the more it wears down. Thus, something that has been in use for a long time will be approaching its breaking point.</li>
+<li><strong>Negative aging</strong>: The longer the component has been in service, the <strong> less likely </strong> it is to fail. Here, the hazard function decreases for larger values of <em> t</em>. This makes sense when individual components vary in quality: poorly made components usually fail early, so anything that has been in service for a long time is likely to be particularly robust and will usually survive even longer.</li>
+</ul>
+<h2>Negative Aging: Leave Quick or Stay Long</h2>
+<p>The researchers discovered <strong> that 99% of web pages have a negative aging effect</strong>. In human–computer interaction (HCI) research, it's extremely rare to get this strong a finding, and Liu and colleagues should be credited with discovering a major new insight.</p>
+<p>Why negative aging? Because web pages are indeed of highly variable quality. Users know this and spend their initial time on a page in ruthless triage to abandon the dross ASAP. It's rare for people to linger on web pages, but when users do decide that a page is valuable, they may stay for a bit.</p>
+<p>The following chart shows the hazard function — that is, the likelihood of leaving — for the median Weibull parameters fitted across the scientists' humongous dataset:</p>
+<p> </p>
+<p style="text-align:center"><img alt="Weibull hazard function showing the probability that users will leave a Web page at time t if they have already stayed for t seconds." height="443" loading="lazy" src="//media.nngroup.com/media/editor/alertbox/weibull-hazard-function-leaving-web-pages.png" width="665"/></p>
+<p> </p>
+<p>It's clear from the chart that the <strong> first 10 seconds of the page visit are critical </strong> for users' decision to stay or leave. The probability of leaving is very high during these first few seconds because users are extremely skeptical, having suffered countless poorly designed web pages in the past. People know that most web pages are useless, and they behave accordingly to avoid wasting more time than absolutely necessary on bad pages.</p>
+<p>If the web page survives this first — extremely harsh — 10-second judgment, users will look around a bit. However, they're still highly likely to leave during the subsequent 20 seconds of their visit. Only after people have stayed on a page for about 30 seconds does the curve become relatively flat. People continue to leave every second, but at a much slower rate than during the first 30 seconds.</p>
+<p>So, if you can convince users to stay on your page for half a minute, there's a fair chance that they'll stay much longer — often 2 minutes or more, which is an eternity on the web.</p>
+<p>So, roughly speaking, there are two cases here:</p>
+<ul>
+<li><strong>bad pages</strong>, which get the chop in a few seconds; and</li>
+<li><strong>good pages</strong>, which might be allocated a few minutes.</li>
+</ul>
+<p>Note: <strong> "good" vs. "bad" is a decision that each individual user makes </strong> within those first few seconds of arriving. The design implications are clear:</p>
+<ul>
+<li>To gain several minutes of user attention, you must clearly <strong> communicate your value proposition within 10 seconds</strong>.</li>
+</ul>
+<h3>Reference and Related Reading</h3>
+<p><a href="https://dl.acm.org/citation.cfm?doid=1835449.1835513">Chao Liu, Ryen W. White, and Susan Dumais. 2010. Understanding web browsing behaviors through Weibull analysis of dwell time.</a> In Proceedings of the 33rd international ACM SIGIR conference on Research and development in information retrieval (SIGIR '10)</p>
+<p><a href="https://www.nngroup.com/articles/return-visits-not-bounce/">Optimize for Return Visits, Not Bounce Rate</a></p>
+<p><a href="https://www.nngroup.com/articles/related-content-pageviews/">Related Content Boosts Pageviews, When Done Right</a></p>
+<p><a href="https://www.nngroup.com/articles/why-site-tourists-are-worthless/">Why Site Tourists are Worthless</a></p>
+<p> </p>
+</section>
+
+        
+
+        
+
+        <section class="share">
+          <div class="share-widget" id="shareWidgetBodyBottom">
+            <ul class="no-bullet inline share-icons mobile only">
+              <li>Share:&nbsp;</li>
+              <li><a href="https://twitter.com/intent/tweet?url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;text=How Long Do Users Stay on Web Pages?&amp;via=nngroup" data-share-type="Twitter"><span class="icon fab fa-twitter"></span></a></li>
+              <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;title=How Long Do Users Stay on Web Pages?&amp;source=Nielsen%20Norman%20Group" data-share-type="LinkedIn"><span class="icon fab fa-linkedin-in"></span></a></li>
+              <li><a href="mailto:?subject=NN/g Article: How Long Do Users Stay on Web Pages?&amp;body=https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" data-share-type="Email"><span class="icon fal fa-envelope"></span></a></li>
+            </ul>
+            <ul class="inline no-bullet share-links small large desktop only">
+              <li>Share this article: </li>
+              <li><a href="https://twitter.com/intent/tweet?url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;text=How Long Do Users Stay on Web Pages?&amp;via=nngroup" data-share-type="Twitter">Twitter</a> |</li>
+              <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;title=How Long Do Users Stay on Web Pages?&amp;source=Nielsen%20Norman%20Group" data-share-type="LinkedIn">LinkedIn</a> |</li>
+              <li><a href="mailto:?subject=NN/g Article: How Long Do Users Stay on Web Pages?&amp;body=https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" data-share-type="Email">Email</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      
+      <div class="publication-sidebar">
+        <div class="share mb-2" aria-hidden="true">
+          <div class="share-widget"  id="shareWidgetBodySidebar">
+            <ul class="no-bullet share-links">
+              <li><strong>Share this article:</strong></li>
+              <li><a href="https://twitter.com/intent/tweet?url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;text=How Long Do Users Stay on Web Pages?&amp;via=nngroup" data-share-type="Twitter"><span class="icon fab fa-twitter"></span>Twitter</a></li>
+              <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/&amp;title=How Long Do Users Stay on Web Pages?&amp;source=Nielsen%20Norman%20Group" data-share-type="LinkedIn"><span class="icon fab fa-linkedin-in"></span>LinkedIn</a></li>
+              <li><a href="mailto:?subject=NN/g Article: How Long Do Users Stay on Web Pages?&amp;body=https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" data-share-type="Email"><span class="icon fal fa-envelope"></span>Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+        
+          <div class="about-authors">
+            <p><strong>About the Author</strong></p>
+            
+              <p><a href="/people/jakob-nielsen/">Jakob Nielsen</a>, Ph.D., is a User Advocate and principal of the Nielsen Norman Group which he co-founded with Dr. Donald A. Norman (former VP of research at Apple Computer). Dr. Nielsen established the &quot;discount usability engineering&quot; movement for fast and cheap improvements of user interfaces and has invented several usability methods, including heuristic evaluation. He holds 79 United States patents, mainly on ways of making the Internet easier to use.</p>
+            
+          </div>
+        
+
+        
+        <div class="subscribe">
+          <p><strong>Subscribe to our Alertbox E-Mail Newsletter:</strong></p>
+          <p>The latest articles about interface usability, website design, and UX research from the Nielsen Norman Group.</p>
+          <p><a href="/articles/subscribe/" class="secondary button">Subscribe</a></p>
+        </div>
+        
+
+        
+          <div class="related-content">
+            <h2>Learn More</h2>
+
+            
+              <div class="related-articles">
+                <h3>Articles</h3>
+                <ul class="no-bullet">
+                  
+                    <li><a href="/articles/enhancement/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Role of Enhancement in Web Design</a></li>
+                  
+                    <li><a href="/articles/embarrassment/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Computer-Assisted Embarrassment</a></li>
+                  
+                    <li><a href="/articles/powers-of-10-time-scales-in-ux/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Powers of 10: Time Scales in User Experience</a></li>
+                  
+                    <li><a href="/articles/direct-vs-sequential-access/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Direct Access vs. Sequential Access: Definition</a></li>
+                  
+                    <li><a href="/articles/tv-meets-the-web/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">TV Meets the Web</a></li>
+                  
+                </ul>
+              </div>
+            
+
+            
+              <div>
+                <h3>UX Conference Training Courses</h3>
+                <ul class="no-bullet">
+                  
+                    <li><a href="/courses/ux-basic-training/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">UX Basic Training</a></li>
+                  
+                    <li><a href="/courses/interaction-design-3-day-course/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Interaction Design: 3-Day Course</a></li>
+                  
+                    <li><a href="/courses/human-mind/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Human Mind and Usability</a></li>
+                  
+                    <li><a href="/courses/hci/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">User Interface Principles Every Designer Must Know</a></li>
+                  
+                    <li><a href="/courses/web-page-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Web Page UX Design</a></li>
+                  
+                </ul>
+              </div>
+            
+
+            
+              <div>
+                <h3>Research Reports</h3>
+                <ul class="no-bullet">
+                  
+                    <li><a href="/reports/b2b-websites-usability/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">B2B Website Usability for Converting Users into Leads and Customers</a></li>
+                  
+                    <li><a href="/reports/strategic-design-faqs/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Strategic Design for Frequently Asked Questions</a></li>
+                  
+                </ul>
+              </div>
+            
+
+            
+              <div>
+                <h3>1-Hour Talks</h3>
+                <ul class="no-bullet">
+                  
+                    <li><a href="/1-hour-talks/accessibility-lawsuits-web-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">How Accessibility Lawsuits are Driving Better Web Design</a></li>
+                  
+                    <li><a href="/1-hour-talks/top-intranet-design-trends-2019/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Top Intranet Design Trends of 2019</a></li>
+                  
+                    <li><a href="/1-hour-talks/fundamental-flaw-flat-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Fundamental Flaw in Flat Design</a></li>
+                  
+                    <li><a href="/1-hour-talks/millennials-online/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Millennials Online</a></li>
+                  
+                    <li><a href="/1-hour-talks/university-websites/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">University Website UX Essentials</a></li>
+                  
+                </ul>
+              </div>
+            
+          </div>
+        
+      </div>
+
+    </div>
+  </article>
+
+  <section class="learn-more">
+    <h2>Learn More</h2>
+    <p><a href="/articles/subscribe/">Subscribe to the weekly newsletter</a> to get notified about future articles.</p>
+  </section>
+
+  
+  <div class="small desktop only">
+    <section class="two column grid related-content">
+      
+        <div>
+          
+            <div class="related-articles">
+              <h3>Articles</h3>
+              <ul class="no-bullet">
+                
+                  <li><a href="/articles/enhancement/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Role of Enhancement in Web Design</a></li>
+                
+                  <li><a href="/articles/embarrassment/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Computer-Assisted Embarrassment</a></li>
+                
+                  <li><a href="/articles/powers-of-10-time-scales-in-ux/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Powers of 10: Time Scales in User Experience</a></li>
+                
+                  <li><a href="/articles/direct-vs-sequential-access/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Direct Access vs. Sequential Access: Definition</a></li>
+                
+                  <li><a href="/articles/tv-meets-the-web/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">TV Meets the Web</a></li>
+                
+              </ul>
+            </div>
+          
+          
+            <div>
+              <h3>Research Reports</h3>
+              <ul class="no-bullet">
+                
+                  <li><a href="/reports/b2b-websites-usability/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">B2B Website Usability for Converting Users into Leads and Customers</a></li>
+                
+                  <li><a href="/reports/strategic-design-faqs/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Strategic Design for Frequently Asked Questions</a></li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      
+      
+        <div>
+          
+            <div>
+              <h3>UX Conference Training Courses</h3>
+              <ul class="no-bullet">
+                
+                  <li><a href="/courses/ux-basic-training/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">UX Basic Training</a></li>
+                
+                  <li><a href="/courses/interaction-design-3-day-course/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Interaction Design: 3-Day Course</a></li>
+                
+                  <li><a href="/courses/human-mind/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Human Mind and Usability</a></li>
+                
+                  <li><a href="/courses/hci/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">User Interface Principles Every Designer Must Know</a></li>
+                
+                  <li><a href="/courses/web-page-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Web Page UX Design</a></li>
+                
+              </ul>
+            </div>
+          
+          
+            <div>
+              <h3>1-Hour Talks</h3>
+              <ul class="no-bullet">
+                
+                  <li><a href="/1-hour-talks/accessibility-lawsuits-web-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">How Accessibility Lawsuits are Driving Better Web Design</a></li>
+                
+                  <li><a href="/1-hour-talks/top-intranet-design-trends-2019/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Top Intranet Design Trends of 2019</a></li>
+                
+                  <li><a href="/1-hour-talks/fundamental-flaw-flat-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Fundamental Flaw in Flat Design</a></li>
+                
+                  <li><a href="/1-hour-talks/millennials-online/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Millennials Online</a></li>
+                
+                  <li><a href="/1-hour-talks/university-websites/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">University Website UX Essentials</a></li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      
+    </section>
+  </div>
+
+  
+  <div class="mobile only">
+    <section class="two column grid related-content">
+      
+        <div class="related-articles">
+          <h3>Articles</h3>
+          <ul class="no-bullet">
+            
+              <li><a href="/articles/enhancement/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Role of Enhancement in Web Design</a></li>
+            
+              <li><a href="/articles/embarrassment/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Computer-Assisted Embarrassment</a></li>
+            
+              <li><a href="/articles/powers-of-10-time-scales-in-ux/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Powers of 10: Time Scales in User Experience</a></li>
+            
+              <li><a href="/articles/direct-vs-sequential-access/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Direct Access vs. Sequential Access: Definition</a></li>
+            
+              <li><a href="/articles/tv-meets-the-web/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">TV Meets the Web</a></li>
+            
+          </ul>
+        </div>
+      
+
+      
+        <div>
+          <h3>UX Conference Training Courses</h3>
+          <ul class="no-bullet">
+            
+              <li><a href="/courses/ux-basic-training/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">UX Basic Training</a></li>
+            
+              <li><a href="/courses/interaction-design-3-day-course/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Interaction Design: 3-Day Course</a></li>
+            
+              <li><a href="/courses/human-mind/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Human Mind and Usability</a></li>
+            
+              <li><a href="/courses/hci/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">User Interface Principles Every Designer Must Know</a></li>
+            
+              <li><a href="/courses/web-page-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Web Page UX Design</a></li>
+            
+          </ul>
+        </div>
+      
+
+      
+        <div>
+          <h3>Research Reports</h3>
+          <ul class="no-bullet">
+            
+              <li><a href="/reports/b2b-websites-usability/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">B2B Website Usability for Converting Users into Leads and Customers</a></li>
+            
+              <li><a href="/reports/strategic-design-faqs/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Strategic Design for Frequently Asked Questions</a></li>
+            
+          </ul>
+        </div>
+      
+
+      
+        <div>
+          <h3>1-Hour Talks</h3>
+          <ul class="no-bullet">
+            
+              <li><a href="/1-hour-talks/accessibility-lawsuits-web-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">How Accessibility Lawsuits are Driving Better Web Design</a></li>
+            
+              <li><a href="/1-hour-talks/top-intranet-design-trends-2019/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Top Intranet Design Trends of 2019</a></li>
+            
+              <li><a href="/1-hour-talks/fundamental-flaw-flat-design/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">The Fundamental Flaw in Flat Design</a></li>
+            
+              <li><a href="/1-hour-talks/millennials-online/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Millennials Online</a></li>
+            
+              <li><a href="/1-hour-talks/university-websites/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">University Website UX Essentials</a></li>
+            
+          </ul>
+        </div>
+      
+    </section>
+  </div>
+
+  
+  
+    <section class="videos">
+      <h3 class="mobile small desktop only">Videos</h3>
+      
+
+      
+      <div class="related-videos">
+        <ul class="inline no-bullet four column grid">
+          
+            <li>
+              <div class="video tile">
+                <div class="media">
+                  <a href="/videos/steering-law/" tabindex="-1" aria-hidden="true">
+                    
+                    <img loading="lazy" src="https://media.nngroup.com/media/videos/thumbnails/Steering_Law_for_Cursor_and_Mouse_Movements_in_GUI_Tunnel_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg" srcset="https://media.nngroup.com/media/videos/thumbnails/Steering_Law_for_Cursor_and_Mouse_Movements_in_GUI_Tunnel_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg, https://media.nngroup.com/media/videos/thumbnails/Steering_Law_for_Cursor_and_Mouse_Movements_in_GUI_Tunnel_Thumbnail.jpg.1300x728_q75_autocrop_crop-smart_upscale.jpg 2x" alt="">
+                    
+                    <div class="overlay">
+                      <span class="color icon fab fa-youtube"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <p><a href="/videos/steering-law/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Steering Law for Cursor and Mouse Movements in a GUI Tunnel</a></p>
+                  <p><time>3 minute video</time></p>
+                </div>
+              </div>
+            </li>
+          
+            <li>
+              <div class="video tile">
+                <div class="media">
+                  <a href="/videos/fittss-law/" tabindex="-1" aria-hidden="true">
+                    
+                    <img loading="lazy" src="https://media.nngroup.com/media/videos/thumbnails/FittsLawThumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg" srcset="https://media.nngroup.com/media/videos/thumbnails/FittsLawThumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg, https://media.nngroup.com/media/videos/thumbnails/FittsLawThumbnail.jpg.1300x728_q75_autocrop_crop-smart_upscale.jpg 2x" alt="">
+                    
+                    <div class="overlay">
+                      <span class="color icon fab fa-youtube"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <p><a href="/videos/fittss-law/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Fitts&#39;s Law</a></p>
+                  <p><time>2 minute video</time></p>
+                </div>
+              </div>
+            </li>
+          
+            <li>
+              <div class="video tile">
+                <div class="media">
+                  <a href="/videos/observe-test-iterate-and-learn-don-norman/" tabindex="-1" aria-hidden="true">
+                    
+                    <img loading="lazy" src="https://media.nngroup.com/media/videos/thumbnails/Observe_Test_Iterate_and_Learn_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg" srcset="https://media.nngroup.com/media/videos/thumbnails/Observe_Test_Iterate_and_Learn_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg, https://media.nngroup.com/media/videos/thumbnails/Observe_Test_Iterate_and_Learn_Thumbnail.jpg.1300x728_q75_autocrop_crop-smart_upscale.jpg 2x" alt="">
+                    
+                    <div class="overlay">
+                      <span class="color icon fab fa-youtube"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <p><a href="/videos/observe-test-iterate-and-learn-don-norman/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Observe, Test, Iterate, and Learn (Don Norman)</a></p>
+                  <p><time>4 minute video</time></p>
+                </div>
+              </div>
+            </li>
+          
+            <li>
+              <div class="video tile">
+                <div class="media">
+                  <a href="/videos/human-technology-teamwork/" tabindex="-1" aria-hidden="true">
+                    
+                    <img loading="lazy" src="https://media.nngroup.com/media/videos/thumbnails/Human_Technology_Teamwork_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg" srcset="https://media.nngroup.com/media/videos/thumbnails/Human_Technology_Teamwork_Thumbnail.jpg.650x364_q75_autocrop_crop-smart_upscale.jpg, https://media.nngroup.com/media/videos/thumbnails/Human_Technology_Teamwork_Thumbnail.jpg.1300x728_q75_autocrop_crop-smart_upscale.jpg 2x" alt="">
+                    
+                    <div class="overlay">
+                      <span class="color icon fab fa-youtube"></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <p><a href="/videos/human-technology-teamwork/?lm=how-long-do-users-stay-on-web-pages&amp;pt=article">Human Technology Teamwork: The Role of Machines and Humans in Good UX Design (Don Norman)</a></p>
+                  <p><time>2 minute video</time></p>
+                </div>
+              </div>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </section>
+  
+
+  
+
+
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+    
+    
+
+
+<footer class="main">
+  <div class="wrapper">
+    <div class="two column grid">
+      <div class="topics">
+        <div class="small large desktop only">
+          <h4 class="bold">Popular Topics</h4>
+          
+          <ul class="no-bullet">
+            
+              <li><a href="/topic/agile/">Agile &amp; Lean UX</a></li>
+            
+              <li><a href="/topic/applications/">Application Design </a></li>
+            
+              <li><a href="/topic/ux-design-process/">Design Process </a></li>
+            
+              <li><a href="/topic/e-commerce/">Ecommerce Design</a></li>
+            
+              <li><a href="/topic/eyetracking/">Eyetracking </a></li>
+            
+              <li><a href="/topic/information-architecture/">Information Architecture </a></li>
+            
+              <li><a href="/topic/interaction-design/">Interaction Design </a></li>
+            
+              <li><a href="/topic/intranets/">Intranet Design</a></li>
+            
+              <li><a href="/topic/mobile-and-tablet-design/">Mobile &amp; Tablet Design</a></li>
+            
+              <li><a href="/topic/persuasive-design/">Persuasive Design </a></li>
+            
+              <li><a href="/topic/research-methods/">Research Methods </a></li>
+            
+              <li><a href="/topic/study-guide/">Overview of NN/g articles and videos about a specific topic</a></li>
+            
+              <li><a href="/topic/user-testing/">User Testing </a></li>
+            
+              <li><a href="/topic/ux-teams/">UX Teams </a></li>
+            
+              <li><a href="/topic/web-usability/">Web Usability </a></li>
+            
+              <li><a href="/topic/writing-web/">Writing &amp; Content</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="fixed two column grid">
+        <div class="about">
+          <h4 class="bold">About</h4>
+          <ul class="no-bullet">
+<li><a href="/about/contact/">Contact information</a></li>
+<li><a href="/about/">About Us</a></li>
+<li><a href="/about/why-nng/">Why NN/g? </a></li>
+<li><a href="/return-policy/">Return Policy</a></li>
+<li><a href="/cookie-declaration/">Cookie Declaration</a></li>
+<li><a href="/privacy-policy/">Privacy Policy</a></li>
+</ul>
+        </div>
+
+        <div class="social">
+          <h4 class="bold">Follow us</h4>
+
+          <ul class="no-bullet">
+            <li>
+              <a class="fluid button newsletter" href="/articles/subscribe/">Subscribe to Our Newsletter</a>
+            </li>
+
+            <li>
+              <a class="fluid button" href="https://twitter.com/nngroup">
+                <span><span class="fab fa-twitter color icon"></span></span>
+                <span>Follow NN/g on Twitter</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="fluid button" href="/feed/rss/">
+                <span><span class="fas fa-rss-square color icon"></span></span>
+                <span>Subscribe to Our RSS Feed</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="fluid button podcast" href="/podcast/">
+                <span><span class="fal fa-microphone icon"></span></span>
+                <span>Listen to the NN/g Podcast</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="no-bullet websites">
+            <li>
+              Visit Don Norman's Website<br>
+              <a href="https://www.jnd.org/">www.jnd.org</a>
+            </li>
+            <li>
+              Visit Tog's Website</br>
+              <a href="https://www.asktog.com/">www.asktog.com</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="one column grid copyright">
+      <p><a href="/copyright-and-reprint-info/">Copyright</a> &copy; 1998-2021 Nielsen Norman Group, All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+    
+
+    <button class="back-to-top" title="Back to top"><span class="text"><span class="fas fa-caret-up arrow" aria-hidden="true"></span><br/>Top</span></button>
+
+    
+
+    <script src="https://media.nngroup.com/static/js/output.0412853ebced.js"></script>
+
+    
+    
+  
+  <script>!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n(n.s=664)}({19:function(e,t,n){"use strict";function r(e){var t=document.createElement("div");return t.innerHTML=e.trim(),t.firstChild}function o(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}function u(e){if(e.status>=200&&e.status<300)return e;var t=new Error(e.statusText);throw t.response=e,t}function c(){return document.cookie.split("; ").find(function(e){return e.startsWith("csrftoken=")}).split("=")[1]}function i(e){var t,n=this,r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:300;return function(){for(var o=arguments.length,u=new Array(o),c=0;c<o;c++)u[c]=arguments[c];clearTimeout(t),t=setTimeout(function(){e.apply(n,u)},r)}}n.d(t,"b",function(){return r}),n.d(t,"e",function(){return o}),n.d(t,"a",function(){return u}),n.d(t,"d",function(){return c}),n.d(t,"c",function(){return i})},664:function(e,t,n){e.exports=n(665)},665:function(e,t,n){"use strict";n.r(t);var r=n(19);function o(e){for(var t=0;t<e.length;t++)e[t].style.display="none"}function u(e){for(var t=0;t<e.length;t++)e[t].style.display=""}Object(r.e)(function(){var e,t,n,r,c,i,l,a;e=document.querySelectorAll("#navTopicsAll"),t=document.querySelectorAll("#navTopicsPopular"),n=document.querySelector("#navTopics__seeAll"),r=document.querySelector("#navTopics__seeFewer"),n.addEventListener("click",function(n){n.preventDefault(),o(t),u(e)}),r.addEventListener("click",function(n){n.preventDefault(),o(e),u(t)}),c=document.querySelectorAll("#navAuthorsAll"),i=document.querySelectorAll("#navAuthorsMain"),l=document.querySelector("#navAuthors__seeAll"),a=document.querySelector("#navAuthors__seeFewer"),l.addEventListener("click",function(e){e.preventDefault(),o(i),u(c)}),a.addEventListener("click",function(e){e.preventDefault(),o(c),u(i)})})}});</script>
+
+
+    <script>
+      function pushCookieConsent() {
+        Cookiebot.consent.preferences&&dataLayer.push({event:"cookieconsent_preferences"});Cookiebot.consent.statistics&&dataLayer.push({event:"cookieconsent_statistics"});Cookiebot.consent.marketing&&dataLayer.push({event:"cookieconsent_marketing"});
+      };
+    </script>
+    
+      <script>
+        window.addEventListener('CookiebotOnAccept', function (e) {
+          pushCookieConsent();
+        });
+
+        window.addEventListener('CookiebotOnDecline', function (e) {
+        });
+      </script>
+    
+  </body>
+</html>

@@ -1,0 +1,1047 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=yes' />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <link rel="pingback" href="https://alongtheboards.com/xmlrpc.php" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+              var jnews_ajax_url = '/?ajax-request=jnews'
+			</script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">;window.jnews=window.jnews||{},window.jnews.library=window.jnews.library||{},window.jnews.library=function(){"use strict";var t=this;t.win=window,t.doc=document,t.globalBody=t.doc.getElementsByTagName("body")[0],t.globalBody=t.globalBody?t.globalBody:t.doc,t.win.jnewsDataStorage=t.win.jnewsDataStorage||{_storage:new WeakMap,put:function(t,e,n){this._storage.has(t)||this._storage.set(t,new Map),this._storage.get(t).set(e,n)},get:function(t,e){return this._storage.get(t).get(e)},has:function(t,e){return this._storage.has(t)&&this._storage.get(t).has(e)},remove:function(t,e){var n=this._storage.get(t).delete(e);return 0===!this._storage.get(t).size&&this._storage.delete(t),n}},t.windowWidth=function(){return t.win.innerWidth||t.docEl.clientWidth||t.globalBody.clientWidth},t.windowHeight=function(){return t.win.innerHeight||t.docEl.clientHeight||t.globalBody.clientHeight},t.requestAnimationFrame=t.win.requestAnimationFrame||t.win.webkitRequestAnimationFrame||t.win.mozRequestAnimationFrame||t.win.msRequestAnimationFrame||window.oRequestAnimationFrame||function(t){return setTimeout(t,1e3/60)},t.cancelAnimationFrame=t.win.cancelAnimationFrame||t.win.webkitCancelAnimationFrame||t.win.webkitCancelRequestAnimationFrame||t.win.mozCancelAnimationFrame||t.win.msCancelRequestAnimationFrame||t.win.oCancelRequestAnimationFrame||function(t){clearTimeout(t)},t.classListSupport="classList"in document.createElement("_"),t.hasClass=t.classListSupport?function(t,e){return t.classList.contains(e)}:function(t,e){return t.className.indexOf(e)>=0},t.addClass=t.classListSupport?function(e,n){t.hasClass(e,n)||e.classList.add(n)}:function(e,n){t.hasClass(e,n)||(e.className+=" "+n)},t.removeClass=t.classListSupport?function(e,n){t.hasClass(e,n)&&e.classList.remove(n)}:function(e,n){t.hasClass(e,n)&&(e.className=e.className.replace(n,""))},t.objKeys=function(t){var e=[];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&e.push(n);return e},t.isObjectSame=function(t,e){var n=!0;return JSON.stringify(t)!==JSON.stringify(e)&&(n=!1),n},t.extend=function(){for(var t,e,n,i=arguments[0]||{},o=1,a=arguments.length;o<a;o++)if(null!==(t=arguments[o]))for(e in t)i!==(n=t[e])&&void 0!==n&&(i[e]=n);return i},t.dataStorage=t.win.jnewsDataStorage,t.isVisible=function(t){return 0!==t.offsetWidth&&0!==t.offsetHeight||t.getBoundingClientRect().length},t.getHeight=function(t){return t.offsetHeight||t.clientHeight||t.getBoundingClientRect().height},t.getWidth=function(t){return t.offsetWidth||t.clientWidth||t.getBoundingClientRect().width},t.supportsPassive=!1;try{var e=Object.defineProperty({},"passive",{get:function(){t.supportsPassive=!0}});"createEvent"in t.doc?t.win.addEventListener("test",null,e):"fireEvent"in t.doc&&t.win.attachEvent("test",null)}catch(t){}t.passiveOption=!!t.supportsPassive&&{passive:!0},t.addEvents=function(e,n,i){for(var o in n){var a=["touchstart","touchmove"].indexOf(o)>=0&&!i&&t.passiveOption;"createEvent"in t.doc?e.addEventListener(o,n[o],a):"fireEvent"in t.doc&&e.attachEvent("on"+o,n[o])}},t.removeEvents=function(e,n){for(var i in n)"createEvent"in t.doc?e.removeEventListener(i,n[i]):"fireEvent"in t.doc&&e.detachEvent("on"+i,n[i])},t.triggerEvents=function(e,n,i){var o;i=i||{detail:null};return"createEvent"in t.doc?(!(o=t.doc.createEvent("CustomEvent")||new CustomEvent(n)).initCustomEvent||o.initCustomEvent(n,!0,!1,i),void e.dispatchEvent(o)):"fireEvent"in t.doc?((o=t.doc.createEventObject()).eventType=n,void e.fireEvent("on"+o.eventType,o)):void 0},t.getParents=function(e,n){void 0===n&&(n=t.doc);for(var i=[],o=e.parentNode,a=!1;!a;)if(o){var s=o;s.querySelectorAll(n).length?a=!0:(i.push(s),o=s.parentNode)}else i=[],a=!0;return i},t.forEach=function(t,e,n){for(var i=0,o=t.length;i<o;i++)e.call(n,t[i],i)},t.getText=function(t){return t.innerText||t.textContent},t.setText=function(t,e){var n="object"==typeof e?e.innerText||e.textContent:e;t.innerText&&(t.innerText=n),t.textContent&&(t.textContent=n)},t.httpBuildQuery=function(e){return t.objKeys(e).reduce(function e(n){var i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;return function(o,a){var s=n[a];a=encodeURIComponent(a);var r=i?"".concat(i,"[").concat(a,"]"):a;return null==s||"function"==typeof s?(o.push("".concat(r,"=")),o):["number","boolean","string"].includes(typeof s)?(o.push("".concat(r,"=").concat(encodeURIComponent(s))),o):(o.push(t.objKeys(s).reduce(e(s,r),[]).join("&")),o)}}(e),[]).join("&")},t.scrollTo=function(e,n,i){function o(t,e,n){this.start=this.position(),this.change=t-this.start,this.currentTime=0,this.increment=20,this.duration=void 0===n?500:n,this.callback=e,this.finish=!1,this.animateScroll()}return Math.easeInOutQuad=function(t,e,n,i){return(t/=i/2)<1?n/2*t*t+e:-n/2*(--t*(t-2)-1)+e},o.prototype.stop=function(){this.finish=!0},o.prototype.move=function(e){t.doc.documentElement.scrollTop=e,t.globalBody.parentNode.scrollTop=e,t.globalBody.scrollTop=e},o.prototype.position=function(){return t.doc.documentElement.scrollTop||t.globalBody.parentNode.scrollTop||t.globalBody.scrollTop},o.prototype.animateScroll=function(){this.currentTime+=this.increment;var e=Math.easeInOutQuad(this.currentTime,this.start,this.change,this.duration);this.move(e),this.currentTime<this.duration&&!this.finish?t.requestAnimationFrame.call(t.win,this.animateScroll.bind(this)):this.callback&&"function"==typeof this.callback&&this.callback()},new o(e,n,i)},t.unwrap=function(e){var n,i=e;t.forEach(e,(function(t,e){n?n+=t:n=t})),i.replaceWith(n)},t.performance={start:function(t){performance.mark(t+"Start")},stop:function(t){performance.mark(t+"End"),performance.measure(t,t+"Start",t+"End")}},t.fps=function(){var e=0,n=0,i=0;!function(){var o=e=0,a=0,s=0,r=document.getElementById("fpsTable"),c=function(e){void 0===document.getElementsByTagName("body")[0]?t.requestAnimationFrame.call(t.win,(function(){c(e)})):document.getElementsByTagName("body")[0].appendChild(e)};null===r&&((r=document.createElement("div")).style.position="fixed",r.style.top="120px",r.style.left="10px",r.style.width="100px",r.style.height="20px",r.style.border="1px solid black",r.style.fontSize="11px",r.style.zIndex="100000",r.style.backgroundColor="white",r.id="fpsTable",c(r));var l=function(){i++,n=Date.now(),(a=(i/(s=(n-e)/1e3)).toPrecision(2))!=o&&(o=a,r.innerHTML=o+"fps"),1<s&&(e=n,i=0),t.requestAnimationFrame.call(t.win,l)};l()}()},t.instr=function(t,e){for(var n=0;n<e.length;n++)if(-1!==t.toLowerCase().indexOf(e[n].toLowerCase()))return!0},t.winLoad=function(e,n){function i(i){if("complete"===t.doc.readyState||"interactive"===t.doc.readyState)return!i||n?setTimeout(e,n||1):e(i),1}i()||t.addEvents(t.win,{load:i})},t.docReady=function(e,n){function i(i){if("complete"===t.doc.readyState||"interactive"===t.doc.readyState)return!i||n?setTimeout(e,n||1):e(i),1}i()||t.addEvents(t.doc,{DOMContentLoaded:i})},t.fireOnce=function(){t.docReady((function(){t.assets=t.assets||[],t.assets.length&&(t.boot(),t.load_assets())}),50)},t.boot=function(){t.length&&t.doc.querySelectorAll("style[media]").forEach((function(t){"not all"==t.getAttribute("media")&&t.removeAttribute("media")}))},t.create_js=function(e,n){var i=t.doc.createElement("script");switch(i.setAttribute("src",e),n){case"defer":i.setAttribute("defer",!0);break;case"async":i.setAttribute("async",!0);break;case"deferasync":i.setAttribute("defer",!0),i.setAttribute("async",!0)}t.globalBody.appendChild(i)},t.load_assets=function(){"object"==typeof t.assets&&t.forEach(t.assets.slice(0),(function(e,n){var i="";e.defer&&(i+="defer"),e.async&&(i+="async"),t.create_js(e.url,i);var o=t.assets.indexOf(e);o>-1&&t.assets.splice(o,1)})),t.assets=jnewsoption.au_scripts=window.jnewsads=[]},t.docReady((function(){t.globalBody=t.globalBody==t.doc?t.doc.getElementsByTagName("body")[0]:t.globalBody,t.globalBody=t.globalBody?t.globalBody:t.doc}))},window.jnews.library=new window.jnews.library;</script>
+	<!-- This site is optimized with the Yoast SEO plugin v17.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the “Natural State”</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3Aregular%2C600&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3Aregular%2C600&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3Aregular%2C600&#038;display=swap" /></noscript><link rel="stylesheet" href="https://alongtheboards.com/wp-content/cache/min/1/96c62b17e7dcdaf5f4efc16ac815d083.css" media="all" data-minify="1" />
+	<meta name="description" content="This article is dedicated to sharing with citizens the most common causes of vehicle accidents in the natural state so that you can drive safely when visiting Arkansas" />
+	<link rel="canonical" href="https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the “Natural State”" />
+	<meta property="og:description" content="This article is dedicated to sharing with citizens the most common causes of vehicle accidents in the natural state so that you can drive safely when visiting Arkansas" />
+	<meta property="og:url" content="https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/" />
+	<meta property="og:site_name" content="Along the Boards" />
+	<meta property="article:published_time" content="2020-07-03T10:07:44+00:00" />
+	<meta property="article:modified_time" content="2021-02-01T09:47:53+00:00" />
+	<meta property="og:image" content="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents.jpg" />
+	<meta property="og:image:width" content="2238" />
+	<meta property="og:image:height" content="1488" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Lana Vrz" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://alongtheboards.com/#organization","name":"Along The Boards","url":"https://alongtheboards.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://alongtheboards.com/#logo","inLanguage":"en-US","url":"https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png","contentUrl":"https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png","width":231,"height":56,"caption":"Along The Boards"},"image":{"@id":"https://alongtheboards.com/#logo"}},{"@type":"WebSite","@id":"https://alongtheboards.com/#website","url":"https://alongtheboards.com/","name":"Along the Boards","description":"","publisher":{"@id":"https://alongtheboards.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://alongtheboards.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#primaryimage","inLanguage":"en-US","url":"https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents.jpg","contentUrl":"https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents.jpg","width":2238,"height":1488},{"@type":"WebPage","@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#webpage","url":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/","name":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d","isPartOf":{"@id":"https://alongtheboards.com/#website"},"primaryImageOfPage":{"@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#primaryimage"},"datePublished":"2020-07-03T10:07:44+00:00","dateModified":"2021-02-01T09:47:53+00:00","description":"This article is dedicated to sharing with citizens the most common causes of vehicle accidents in the natural state so that you can drive safely when visiting Arkansas","breadcrumb":{"@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/"]}]},{"@type":"BreadcrumbList","@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://alongtheboards.com/"},{"@type":"ListItem","position":2,"name":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d"}]},{"@type":"Article","@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#article","isPartOf":{"@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#webpage"},"author":{"@id":"https://alongtheboards.com/#/schema/person/7c0aeb747c10fba367d6a71d1f22e54e"},"headline":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d","datePublished":"2020-07-03T10:07:44+00:00","dateModified":"2021-02-01T09:47:53+00:00","mainEntityOfPage":{"@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#webpage"},"wordCount":1061,"commentCount":0,"publisher":{"@id":"https://alongtheboards.com/#organization"},"image":{"@id":"https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#primaryimage"},"thumbnailUrl":"https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents.jpg","keywords":["Arkansas","Cars","Driving Under The Influence","Faulty Vehicles","Natural State","Road Rage"],"articleSection":["CARS"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#respond"]}]},{"@type":"Person","@id":"https://alongtheboards.com/#/schema/person/7c0aeb747c10fba367d6a71d1f22e54e","name":"Lana Vrz","image":{"@type":"ImageObject","@id":"https://alongtheboards.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=96&d=mm&r=g","caption":"Lana Vrz"},"url":"https://alongtheboards.com/author/lana-vrz/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' />
+<link rel="alternate" type="application/rss+xml" title="Along the Boards &raquo; Feed" href="https://alongtheboards.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Along the Boards &raquo; Comments Feed" href="https://alongtheboards.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Along the Boards &raquo; Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the “Natural State” Comments Feed" href="https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+
+
+
+
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://alongtheboards.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}.wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script type='text/javascript' src='https://alongtheboards.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://alongtheboards.com/wp-content/cache/min/1/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1630068415' id='stop-user-enumeration-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://alongtheboards.com/wp-content/cache/min/1/wp-content/plugins/wp-captcha/assets/js/c4wp-public.js?ver=1630068415' id='c4wp-public-js' defer></script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.8' id='ppress-flatpickr-js' defer></script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.8' id='ppress-select2-js' defer></script>
+<link rel="https://api.w.org/" href="https://alongtheboards.com/wp-json/" /><link rel="alternate" type="application/json" href="https://alongtheboards.com/wp-json/wp/v2/posts/24794" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://alongtheboards.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://alongtheboards.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://alongtheboards.com/?p=24794' />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-152789440-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152789440-1');
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/shantel-network/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","@id":"https:\/\/alongtheboards.com\/#organization","url":"https:\/\/alongtheboards.com\/","name":"","logo":{"@type":"ImageObject","url":"https:\/\/alongtheboards.com\/wp-content\/uploads\/2019\/09\/Logo-231x56.png"},"sameAs":["https:\/\/www.facebook.com\/#\/","https:\/\/twitter.com\/#","https:\/\/plus.google.com\/ Jegtheme","https:\/\/www.linkedin.com\/"]}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"https:\/\/alongtheboards.com\/#website","url":"https:\/\/alongtheboards.com\/","name":"","potentialAction":{"@type":"SearchAction","target":"https:\/\/alongtheboards.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="icon" href="https://alongtheboards.com/wp-content/uploads/2019/09/cropped-Favicon-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://alongtheboards.com/wp-content/uploads/2019/09/cropped-Favicon-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://alongtheboards.com/wp-content/uploads/2019/09/cropped-Favicon-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://alongtheboards.com/wp-content/uploads/2019/09/cropped-Favicon-1-270x270.png" />
+<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css">.jeg_container, .jeg_content, .jeg_boxed .jeg_main .jeg_container, .jeg_autoload_separator { background-color : #ffffff; } body,.newsfeed_carousel.owl-carousel .owl-nav div,.jeg_filter_button,.owl-carousel .owl-nav div,.jeg_readmore,.jeg_hero_style_7 .jeg_post_meta a,.widget_calendar thead th,.widget_calendar tfoot a,.jeg_socialcounter a,.entry-header .jeg_meta_like a,.entry-header .jeg_meta_comment a,.entry-content tbody tr:hover,.entry-content th,.jeg_splitpost_nav li:hover a,#breadcrumbs a,.jeg_author_socials a:hover,.jeg_footer_content a,.jeg_footer_bottom a,.jeg_cartcontent,.woocommerce .woocommerce-breadcrumb a { color : #53585c; } a,.jeg_menu_style_5 > li > a:hover,.jeg_menu_style_5 > li.sfHover > a,.jeg_menu_style_5 > li.current-menu-item > a,.jeg_menu_style_5 > li.current-menu-ancestor > a,.jeg_navbar .jeg_menu:not(.jeg_main_menu) > li > a:hover,.jeg_midbar .jeg_menu:not(.jeg_main_menu) > li > a:hover,.jeg_side_tabs li.active,.jeg_block_heading_5 strong,.jeg_block_heading_6 strong,.jeg_block_heading_7 strong,.jeg_block_heading_8 strong,.jeg_subcat_list li a:hover,.jeg_subcat_list li button:hover,.jeg_pl_lg_7 .jeg_thumb .jeg_post_category a,.jeg_pl_xs_2:before,.jeg_pl_xs_4 .jeg_postblock_content:before,.jeg_postblock .jeg_post_title a:hover,.jeg_hero_style_6 .jeg_post_title a:hover,.jeg_sidefeed .jeg_pl_xs_3 .jeg_post_title a:hover,.widget_jnews_popular .jeg_post_title a:hover,.jeg_meta_author a,.widget_archive li a:hover,.widget_pages li a:hover,.widget_meta li a:hover,.widget_recent_entries li a:hover,.widget_rss li a:hover,.widget_rss cite,.widget_categories li a:hover,.widget_categories li.current-cat > a,#breadcrumbs a:hover,.jeg_share_count .counts,.commentlist .bypostauthor > .comment-body > .comment-author > .fn,span.required,.jeg_review_title,.bestprice .price,.authorlink a:hover,.jeg_vertical_playlist .jeg_video_playlist_play_icon,.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail:before,.jeg_horizontal_playlist .jeg_video_playlist_play,.woocommerce li.product .pricegroup .button,.widget_display_forums li a:hover,.widget_display_topics li:before,.widget_display_replies li:before,.widget_display_views li:before,.bbp-breadcrumb a:hover,.jeg_mobile_menu li.sfHover > a,.jeg_mobile_menu li a:hover,.split-template-6 .pagenum { color : #dd9933; } .jeg_menu_style_1 > li > a:before,.jeg_menu_style_2 > li > a:before,.jeg_menu_style_3 > li > a:before,.jeg_side_toggle,.jeg_slide_caption .jeg_post_category a,.jeg_slider_type_1 .owl-nav .owl-next,.jeg_block_heading_1 .jeg_block_title span,.jeg_block_heading_2 .jeg_block_title span,.jeg_block_heading_3,.jeg_block_heading_4 .jeg_block_title span,.jeg_block_heading_6:after,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_readmore:hover,.jeg_thumb .jeg_post_category a,.jeg_block_loadmore a:hover, .jeg_postblock.alt .jeg_block_loadmore a:hover,.jeg_block_loadmore a.active,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_pagenav_1 .page_number.active,.jeg_pagenav_1 .page_number.active:hover,input[type="submit"],.btn,.button,.widget_tag_cloud a:hover,.popularpost_item:hover .jeg_post_title a:before,.jeg_splitpost_4 .page_nav,.jeg_splitpost_5 .page_nav,.jeg_post_via a:hover,.jeg_post_source a:hover,.jeg_post_tags a:hover,.comment-reply-title small a:before,.comment-reply-title small a:after,.jeg_storelist .productlink,.authorlink li.active a:before,.jeg_footer.dark .socials_widget:not(.nobg) a:hover .fa,.jeg_breakingnews_title,.jeg_overlay_slider_bottom.owl-carousel .owl-nav div,.jeg_overlay_slider_bottom.owl-carousel .owl-nav div:hover,.jeg_vertical_playlist .jeg_video_playlist_current,.woocommerce span.onsale,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.jeg_popup_post .caption,.jeg_footer.dark input[type="submit"],.jeg_footer.dark .btn,.jeg_footer.dark .button,.footer_widget.widget_tag_cloud a:hover, .jeg_inner_content .content-inner .jeg_post_category a:hover, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress ul.button-nav li a, #buddypress .generic-button a, #buddypress .generic-button button, #buddypress .comment-reply-link, #buddypress a.bp-title-button, #buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a, div#buddypress .standard-form button:hover,div#buddypress a.button:hover,div#buddypress input[type="submit"]:hover,div#buddypress input[type="button"]:hover,div#buddypress input[type="reset"]:hover,div#buddypress ul.button-nav li a:hover,div#buddypress .generic-button a:hover,div#buddypress .generic-button button:hover,div#buddypress .comment-reply-link:hover,div#buddypress a.bp-title-button:hover,div#buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a:hover, #buddypress #item-nav .item-list-tabs ul li a:before, .jeg_inner_content .jeg_meta_container .follow-wrapper a { background-color : #dd9933; } .jeg_block_heading_7 .jeg_block_title span, .jeg_readmore:hover, .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, .jeg_pagenav_3 .page_number:hover, .jeg_prevnext_post a:hover h3, .jeg_overlay_slider .jeg_post_category, .jeg_sidefeed .jeg_post.active, .jeg_vertical_playlist.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail img, .jeg_horizontal_playlist .jeg_video_playlist_item.active { border-color : #dd9933; } .jeg_tabpost_nav li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active { border-bottom-color : #dd9933; } .jeg_post_meta .fa, .entry-header .jeg_post_meta .fa, .jeg_review_stars, .jeg_price_review_list { color : ; } .jeg_share_button.share-float.share-monocrhome a { background-color : ; } h1,h2,h3,h4,h5,h6,.jeg_post_title a,.entry-header .jeg_post_title,.jeg_hero_style_7 .jeg_post_title a,.jeg_block_title,.jeg_splitpost_bar .current_title,.jeg_video_playlist_title,.gallery-caption { color : #212121; } .split-template-9 .pagenum, .split-template-10 .pagenum, .split-template-11 .pagenum, .split-template-12 .pagenum, .split-template-13 .pagenum, .split-template-15 .pagenum, .split-template-18 .pagenum, .split-template-20 .pagenum, .split-template-19 .current_title span, .split-template-20 .current_title span { background-color : #212121; } .entry-content .content-inner p, .entry-content .content-inner span, .entry-content .intro-text { color : ; } .entry-content .content-inner a { color : ; } .jeg_topbar .jeg_nav_row, .jeg_topbar .jeg_search_no_expand .jeg_search_input { line-height : 36px; } .jeg_topbar .jeg_nav_row, .jeg_topbar .jeg_nav_icon { height : 36px; } .jeg_topbar, .jeg_topbar.dark, .jeg_topbar.custom { background : #191818; } .jeg_topbar, .jeg_topbar.dark { border-color : ; color : #9e9e9e; border-top-width : 0px; border-top-color : #f3ec19; } .jeg_topbar .jeg_nav_item, .jeg_topbar.dark .jeg_nav_item { border-color : ; } .jeg_topbar a, .jeg_topbar.dark a { color : #ffffff; } .jeg_midbar { height : 130px; } .jeg_midbar, .jeg_midbar.dark { background-color : #191818; border-bottom-width : 0px; border-bottom-color : ; color : ; } .jeg_midbar a, .jeg_midbar.dark a { color : ; } .jeg_header .jeg_bottombar.jeg_navbar,.jeg_bottombar .jeg_nav_icon { height : px; } .jeg_header .jeg_bottombar.jeg_navbar, .jeg_header .jeg_bottombar .jeg_main_menu:not(.jeg_menu_style_1) > li > a, .jeg_header .jeg_bottombar .jeg_menu_style_1 > li, .jeg_header .jeg_bottombar .jeg_menu:not(.jeg_main_menu) > li > a { line-height : px; } .jeg_header .jeg_bottombar.jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row { background : #2d2d2b; } .jeg_header .jeg_navbar_menuborder .jeg_main_menu > li:not(:last-child), .jeg_header .jeg_navbar_menuborder .jeg_nav_item, .jeg_navbar_boxed .jeg_nav_row, .jeg_header .jeg_navbar_menuborder:not(.jeg_navbar_boxed) .jeg_nav_left .jeg_nav_item:first-child { border-color : ; } .jeg_header .jeg_bottombar, .jeg_header .jeg_bottombar.jeg_navbar_dark { color : ; } .jeg_header .jeg_bottombar a, .jeg_header .jeg_bottombar.jeg_navbar_dark a { color : ; } .jeg_header .jeg_bottombar a:hover, .jeg_header .jeg_bottombar.jeg_navbar_dark a:hover, .jeg_header .jeg_bottombar .jeg_menu:not(.jeg_main_menu) > li > a:hover { color : ; } .jeg_header .jeg_bottombar, .jeg_header .jeg_bottombar.jeg_navbar_dark, .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row, .jeg_bottombar.jeg_navbar_dark.jeg_navbar_boxed .jeg_nav_row { border-top-width : px; border-bottom-width : 0px; } .jeg_header_wrapper .jeg_bottombar, .jeg_header_wrapper .jeg_bottombar.jeg_navbar_dark, .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row, .jeg_bottombar.jeg_navbar_dark.jeg_navbar_boxed .jeg_nav_row { border-top-color : ; border-bottom-color : ; } .jeg_stickybar.jeg_navbar,.jeg_navbar .jeg_nav_icon { height : px; } .jeg_stickybar.jeg_navbar, .jeg_stickybar .jeg_main_menu:not(.jeg_menu_style_1) > li > a, .jeg_stickybar .jeg_menu_style_1 > li, .jeg_stickybar .jeg_menu:not(.jeg_main_menu) > li > a { line-height : px; } .jeg_header_sticky .jeg_navbar_wrapper:not(.jeg_navbar_boxed), .jeg_header_sticky .jeg_navbar_boxed .jeg_nav_row { background : ; } .jeg_header_sticky .jeg_navbar_menuborder .jeg_main_menu > li:not(:last-child), .jeg_header_sticky .jeg_navbar_menuborder .jeg_nav_item, .jeg_navbar_boxed .jeg_nav_row, .jeg_header_sticky .jeg_navbar_menuborder:not(.jeg_navbar_boxed) .jeg_nav_left .jeg_nav_item:first-child { border-color : ; } .jeg_stickybar, .jeg_stickybar.dark { color : ; border-bottom-width : 0px; } .jeg_stickybar a, .jeg_stickybar.dark a { color : ; } .jeg_stickybar, .jeg_stickybar.dark, .jeg_stickybar.jeg_navbar_boxed .jeg_nav_row { border-bottom-color : ; } .jeg_mobile_bottombar { height : px; line-height : px; } .jeg_mobile_midbar, .jeg_mobile_midbar.dark { background : ; color : ; border-top-width : px; border-top-color : ; } .jeg_mobile_midbar a, .jeg_mobile_midbar.dark a { color : ; } .jeg_header .socials_widget > a > i.fa:before { color : #9e9e9e; } .jeg_header .socials_widget > a > i.fa { background-color : ; } .jeg_aside_item.socials_widget > a > i.fa:before { color : ; } .jeg_top_date { color : ; background : ; } .jeg_header .jeg_button_1 .btn { background : ; color : ; border-color : ; } .jeg_header .jeg_button_1 .btn:hover { background : ; } .jeg_header .jeg_button_2 .btn { background : ; color : ; border-color : ; } .jeg_header .jeg_button_2 .btn:hover { background : ; } .jeg_header .jeg_button_3 .btn { background : ; color : ; border-color : ; } .jeg_header .jeg_button_3 .btn:hover { background : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_1 { border-top-width : px; border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_1 a { border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_2 { border-top-width : px; border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_2 a { border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_3 { border-top-width : px; border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_3 a { border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_4 { border-top-width : px; border-top-color : ; } .jeg_header .jeg_vertical_menu.jeg_vertical_menu_4 a { border-top-color : ; } .jeg_lang_switcher { color : ; background : ; } .jeg_nav_icon .jeg_mobile_toggle.toggle_btn { color : ; } .jeg_navbar_mobile_wrapper .jeg_nav_item a.jeg_mobile_toggle, .jeg_navbar_mobile_wrapper .dark .jeg_nav_item a.jeg_mobile_toggle { color : ; } .cartdetail.woocommerce .jeg_carticon { color : ; } .cartdetail.woocommerce .cartlink { color : ; } .jeg_cart.cartdetail .jeg_cartcontent { background-color : ; } .cartdetail.woocommerce ul.cart_list li a, .cartdetail.woocommerce ul.product_list_widget li a, .cartdetail.woocommerce .widget_shopping_cart_content .total { color : ; } .cartdetail.woocommerce .cart_list .quantity, .cartdetail.woocommerce .product_list_widget .quantity { color : ; } .cartdetail.woocommerce .widget_shopping_cart_content .total { border-top-color : ; border-bottom-color : ; } .cartdetail.woocommerce .widget_shopping_cart_content .button { background-color : ; } .cartdetail.woocommerce a.button { color : ; } .cartdetail.woocommerce a.button:hover { background-color : ; color : ; } .jeg_cart_icon.woocommerce .jeg_carticon { color : ; } .jeg_cart_icon .jeg_cartcontent { background-color : ; } .jeg_cart_icon.woocommerce ul.cart_list li a, .jeg_cart_icon.woocommerce ul.product_list_widget li a, .jeg_cart_icon.woocommerce .widget_shopping_cart_content .total { color : ; } .jeg_cart_icon.woocommerce .cart_list .quantity, .jeg_cart_icon.woocommerce .product_list_widget .quantity { color : ; } .jeg_cart_icon.woocommerce .widget_shopping_cart_content .total { border-top-color : ; border-bottom-color : ; } .jeg_cart_icon.woocommerce .widget_shopping_cart_content .button { background-color : ; } .jeg_cart_icon.woocommerce a.button { color : ; } .jeg_cart_icon.woocommerce a.button:hover { background-color : ; color : ; } .jeg_nav_account, .jeg_navbar .jeg_nav_account .jeg_menu > li > a, .jeg_midbar .jeg_nav_account .jeg_menu > li > a { color : ; } .jeg_menu.jeg_accountlink li > ul { background-color : ; } .jeg_menu.jeg_accountlink li > ul, .jeg_menu.jeg_accountlink li > ul li > a, .jeg_menu.jeg_accountlink li > ul li:hover > a, .jeg_menu.jeg_accountlink li > ul li.sfHover > a { color : ; } .jeg_menu.jeg_accountlink li > ul li:hover > a, .jeg_menu.jeg_accountlink li > ul li.sfHover > a { background-color : ; } .jeg_menu.jeg_accountlink li > ul, .jeg_menu.jeg_accountlink li > ul li a { border-color : ; } .jeg_header .jeg_search_wrapper.search_icon .jeg_search_toggle { color : #ffffff; } .jeg_header .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form, .jeg_header .jeg_search_popup_expand .jeg_search_result { background : ; } .jeg_header .jeg_search_expanded .jeg_search_popup_expand .jeg_search_form:before { border-bottom-color : ; } .jeg_header .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form, .jeg_header .jeg_search_popup_expand .jeg_search_result, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-noresult, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-all-button { border-color : ; } .jeg_header .jeg_search_expanded .jeg_search_popup_expand .jeg_search_form:after { border-bottom-color : ; } .jeg_header .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form .jeg_search_input { background : ; border-color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_form .jeg_search_button { color : ; } .jeg_header .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form .jeg_search_input, .jeg_header .jeg_search_popup_expand .jeg_search_result a, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-link { color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_form .jeg_search_input::-webkit-input-placeholder { color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_form .jeg_search_input:-moz-placeholder { color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_form .jeg_search_input::-moz-placeholder { color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_form .jeg_search_input:-ms-input-placeholder { color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_result { background-color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_result, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-link { border-color : ; } .jeg_header .jeg_search_popup_expand .jeg_search_result a, .jeg_header .jeg_search_popup_expand .jeg_search_result .search-link { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_toggle i, .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_button, .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input { border-bottom-color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input::-webkit-input-placeholder { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input:-moz-placeholder { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input::-moz-placeholder { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand .jeg_search_input:-ms-input-placeholder { color : ; } .jeg_header .jeg_search_expanded .jeg_search_modal_expand { background : ; } .jeg_navbar_mobile .jeg_search_wrapper .jeg_search_toggle, .jeg_navbar_mobile .dark .jeg_search_wrapper .jeg_search_toggle { color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_form, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result { background : ; } .jeg_navbar_mobile .jeg_search_expanded .jeg_search_popup_expand .jeg_search_toggle:before { border-bottom-color : ; } .jeg_navbar_mobile .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result .search-noresult, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result .search-all-button { border-color : ; } .jeg_navbar_mobile .jeg_search_expanded .jeg_search_popup_expand .jeg_search_toggle:after { border-bottom-color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_form .jeg_search_input { background : ; border-color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_form .jeg_search_button { color : ; } .jeg_navbar_mobile .jeg_search_wrapper.jeg_search_popup_expand .jeg_search_form .jeg_search_input, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result a, .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_result .search-link { color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_input::-webkit-input-placeholder { color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_input:-moz-placeholder { color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_input::-moz-placeholder { color : ; } .jeg_navbar_mobile .jeg_search_popup_expand .jeg_search_input:-ms-input-placeholder { color : ; } .jeg_nav_search { width : 100%; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input { background-color : #ffffff; border-color : ; } .jeg_header .jeg_search_no_expand .jeg_search_form button.jeg_search_button { color : #191818; } .jeg_header .jeg_search_wrapper.jeg_search_no_expand .jeg_search_form .jeg_search_input { color : #191818; } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-webkit-input-placeholder { color : rgba(25,24,24,0.65); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-moz-placeholder { color : rgba(25,24,24,0.65); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input::-moz-placeholder { color : rgba(25,24,24,0.65); } .jeg_header .jeg_search_no_expand .jeg_search_form .jeg_search_input:-ms-input-placeholder { color : rgba(25,24,24,0.65); } .jeg_header .jeg_search_no_expand .jeg_search_result { background-color : ; } .jeg_header .jeg_search_no_expand .jeg_search_result, .jeg_header .jeg_search_no_expand .jeg_search_result .search-link { border-color : ; } .jeg_header .jeg_search_no_expand .jeg_search_result a, .jeg_header .jeg_search_no_expand .jeg_search_result .search-link { color : ; } #jeg_off_canvas .jeg_mobile_wrapper .jeg_search_result { background-color : ; } #jeg_off_canvas .jeg_search_result.with_result .search-all-button { border-color : ; } #jeg_off_canvas .jeg_mobile_wrapper .jeg_search_result a,#jeg_off_canvas .jeg_mobile_wrapper .jeg_search_result .search-link { color : ; } .jeg_header .jeg_menu.jeg_main_menu > li > a { color : #ffffff; } .jeg_menu_style_1 > li > a:before, .jeg_menu_style_2 > li > a:before, .jeg_menu_style_3 > li > a:before { background : ; } .jeg_header .jeg_menu_style_4 > li > a:hover, .jeg_header .jeg_menu_style_4 > li.sfHover > a, .jeg_header .jeg_menu_style_4 > li.current-menu-item > a, .jeg_header .jeg_menu_style_4 > li.current-menu-ancestor > a, .jeg_navbar_dark .jeg_menu_style_4 > li > a:hover, .jeg_navbar_dark .jeg_menu_style_4 > li.sfHover > a, .jeg_navbar_dark .jeg_menu_style_4 > li.current-menu-item > a, .jeg_navbar_dark .jeg_menu_style_4 > li.current-menu-ancestor > a { background : #f3ec19; } .jeg_header .jeg_menu.jeg_main_menu > li > a:hover, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > a, .jeg_header .jeg_menu.jeg_main_menu > li > .sf-with-ul:hover:after, .jeg_header .jeg_menu.jeg_main_menu > li.sfHover > .sf-with-ul:after, .jeg_header .jeg_menu_style_4 > li.current-menu-item > a, .jeg_header .jeg_menu_style_4 > li.current-menu-ancestor > a, .jeg_header .jeg_menu_style_5 > li.current-menu-item > a, .jeg_header .jeg_menu_style_5 > li.current-menu-ancestor > a { color : #191818; } .jeg_navbar_wrapper .sf-arrows .sf-with-ul:after { color : rgba(0,0,0,0.4); } .jeg_navbar_wrapper .jeg_menu li > ul { background : ; } .jeg_navbar_wrapper .jeg_menu li > ul li > a { color : ; } .jeg_navbar_wrapper .jeg_menu li > ul li:hover > a, .jeg_navbar_wrapper .jeg_menu li > ul li.sfHover > a, .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-item > a, .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-ancestor > a { background : ; } .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li:hover > a, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.sfHover > a, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-item > a, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-ancestor > a, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li:hover > .sf-with-ul:after, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.sfHover > .sf-with-ul:after, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-item > .sf-with-ul:after, .jeg_header .jeg_navbar_wrapper .jeg_menu li > ul li.current-menu-ancestor > .sf-with-ul:after { color : ; } .jeg_navbar_wrapper .jeg_menu li > ul li a { border-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_subcat { background-color : ; border-right-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_subcat li.active { border-color : ; background-color : ; } .jeg_navbar_wrapper .jeg_megamenu .sub-menu .jeg_newsfeed_subcat li a { color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_subcat li.active a { color : ; } .jeg_megamenu .sub-menu { background-color : ; } .jeg_megamenu .sub-menu .newsfeed_overlay { background-color : ; } .jeg_megamenu .sub-menu .newsfeed_overlay .jeg_preloader span { background-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_list .jeg_newsfeed_item .jeg_post_title a { color : ; } .jeg_newsfeed_tags h3 { color : ; } .jeg_navbar_wrapper .jeg_newsfeed_tags li a { color : ; } .jeg_newsfeed_tags { border-left-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_list .newsfeed_carousel.owl-carousel .owl-nav div { color : ; background-color : ; border-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_list .newsfeed_carousel.owl-carousel .owl-nav div:hover { color : ; background-color : ; border-color : ; } .jeg_megamenu .sub-menu .jeg_newsfeed_list .newsfeed_carousel.owl-carousel .owl-nav div.disabled { color : ; background-color : ; border-color : ; } .jnews .jeg_header .jeg_menu.jeg_top_menu > li > a { color : ; } .jnews .jeg_header .jeg_menu.jeg_top_menu > li a:hover { color : ; } .jnews .jeg_top_menu.sf-arrows .sf-with-ul:after { color : ; } .jnews .jeg_menu.jeg_top_menu li > ul { background-color : ; } .jnews .jeg_menu.jeg_top_menu li > ul, .jnews .jeg_menu.jeg_top_menu li > ul li > a, .jnews .jeg_menu.jeg_top_menu li > ul li:hover > a, .jnews .jeg_menu.jeg_top_menu li > ul li.sfHover > a { color : ; } .jnews .jeg_menu.jeg_top_menu li > ul li:hover > a, .jnews .jeg_menu.jeg_top_menu li > ul li.sfHover > a { background-color : ; } .jnews .jeg_menu.jeg_top_menu li > ul, .jnews .jeg_menu.jeg_top_menu li > ul li a { border-color : ; } #jeg_off_canvas.dark .jeg_mobile_wrapper, #jeg_off_canvas .jeg_mobile_wrapper { background : ; } .jeg_mobile_wrapper .nav_wrap:before { background : ; } .jeg_mobile_wrapper { background-image : url(""); } .jeg_footer_content,.jeg_footer.dark .jeg_footer_content { background-color : #4c3939; color : ; } .jeg_footer .jeg_footer_heading h3,.jeg_footer.dark .jeg_footer_heading h3,.jeg_footer .widget h2,.jeg_footer .footer_dark .widget h2 { color : ; } .jeg_footer .jeg_footer_content a, .jeg_footer.dark .jeg_footer_content a { color : ; } .jeg_footer .jeg_footer_content a:hover,.jeg_footer.dark .jeg_footer_content a:hover { color : ; } .jeg_footer input[type="submit"],.jeg_footer .btn,.jeg_footer .button { background-color : ; color : ; } .jeg_footer input:not([type="submit"]),.jeg_footer textarea,.jeg_footer select,.jeg_footer.dark input:not([type="submit"]),.jeg_footer.dark textarea,.jeg_footer.dark select { background-color : ; color : ; } .footer_widget.widget_tag_cloud a,.jeg_footer.dark .footer_widget.widget_tag_cloud a { background-color : ; color : ; } .jeg_footer_bottom,.jeg_footer.dark .jeg_footer_bottom,.jeg_footer_secondary,.jeg_footer.dark .jeg_footer_secondary { background-color : ; } .jeg_footer_secondary,.jeg_footer.dark .jeg_footer_secondary,.jeg_footer_bottom,.jeg_footer.dark .jeg_footer_bottom,.jeg_footer_sidecontent .jeg_footer_primary { color : ; } .jeg_footer_bottom a,.jeg_footer.dark .jeg_footer_bottom a,.jeg_footer_secondary a,.jeg_footer.dark .jeg_footer_secondary a,.jeg_footer_sidecontent .jeg_footer_primary a,.jeg_footer_sidecontent.dark .jeg_footer_primary a { color : ; } .jeg_menu_footer a,.jeg_footer.dark .jeg_menu_footer a,.jeg_footer_sidecontent .jeg_footer_primary .col-md-7 .jeg_menu_footer a { color : #ffffff; } .jeg_menu_footer a:hover,.jeg_footer.dark .jeg_menu_footer a:hover,.jeg_footer_sidecontent .jeg_footer_primary .col-md-7 .jeg_menu_footer a:hover { color : #fcd15b; } .jeg_menu_footer li:not(:last-child):after,.jeg_footer.dark .jeg_menu_footer li:not(:last-child):after { color : ; } .jeg_read_progress_wrapper .jeg_progress_container .progress-bar { background-color : ; } body,input,textarea,select,.chosen-container-single .chosen-single,.btn,.button { font-family: "Open Sans",Helvetica,Arial,sans-serif; } .jeg_thumb .jeg_post_category a,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_slide_caption .jeg_post_category a { background-color : ; color : #191818; } .jeg_overlay_slider .jeg_post_category,.jeg_thumb .jeg_post_category a,.jeg_pl_lg_box .jeg_post_category a,.jeg_pl_md_box .jeg_post_category a,.jeg_postblock_carousel_2 .jeg_post_category a,.jeg_heroblock .jeg_post_category a,.jeg_slide_caption .jeg_post_category a { border-color : ; } </style><style type="text/css">
+					.no_thumbnail .jeg_thumb,
+					.thumbnail-container.no_thumbnail {
+					    display: none !important;
+					}
+					.jeg_search_result .jeg_pl_xs_3.no_thumbnail .jeg_postblock_content,
+					.jeg_sidefeed .jeg_pl_xs_3.no_thumbnail .jeg_postblock_content,
+					.jeg_pl_sm.no_thumbnail .jeg_postblock_content {
+					    margin-left: 0;
+					}
+					.jeg_postblock_11 .no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_12 .no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_12.jeg_col_3o3 .no_thumbnail .jeg_postblock_content  {
+					    margin-top: 0;
+					}
+					.jeg_postblock_15 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_19 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_postblock_24 .jeg_pl_md_box.no_thumbnail .jeg_postblock_content,
+					.jeg_sidefeed .jeg_pl_md_box .jeg_postblock_content {
+					    position: relative;
+					}
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_title a,
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_title a:hover,
+					.jeg_postblock_carousel_2 .no_thumbnail .jeg_post_meta .fa {
+					    color: #212121 !important;
+					} 
+				</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="post-template-default single single-post postid-24794 single-format-standard wp-embed-responsive jeg_toggle_dark jeg_single_tpl_1 jnews jsc_normal elementor-default elementor-kit-23136">
+
+    
+    
+    <div class="jeg_ad jeg_ad_top jnews_header_top_ads">
+        <div class='ads-wrapper  '></div>    </div>
+
+    <!-- The Main Wrapper
+    ============================================= -->
+    <div class="jeg_viewport">
+
+        
+        <div class="jeg_header_wrapper">
+            <div class="jeg_header_instagram_wrapper">
+    </div>
+
+<!-- HEADER -->
+<div class="jeg_header normal">
+    <div class="jeg_topbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left  jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item">
+	<ul class="jeg_menu jeg_top_menu"><li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-78"><a href="https://alongtheboards.com/">HOME</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-84"><a href="https://alongtheboards.com/tech/">TECH</a></li>
+<li id="menu-item-170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a href="https://alongtheboards.com/world/">WORLD</a></li>
+<li id="menu-item-171" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a href="https://alongtheboards.com/us/">US</a></li>
+<li id="menu-item-172" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a></li>
+<li id="menu-item-173" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-173"><a href="https://alongtheboards.com/markets/">FINANCE</a></li>
+<li id="menu-item-174" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-174"><a href="https://alongtheboards.com/culture/">CULTURE</a></li>
+<li id="menu-item-176" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-176"><a href="https://alongtheboards.com/sport/">SPORT</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://alongtheboards.com/contact/">Contact Us</a></li>
+</ul></div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center  jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                        <div class="jeg_nav_item jeg_top_date">
+    Wednesday, September 8, 2021, </div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right  jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                                            </div>
+                </div>
+
+                        </div>
+    </div>
+</div><!-- /.jeg_container --><div class="jeg_midbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item jeg_logo jeg_desktop_logo">
+			<div class="site-title">
+	    	<a href="https://alongtheboards.com/" style="padding: 0px 0px 0px 5px;">
+	    	    <img width="231" height="56" class='jeg_logo_img' src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x" alt="Along the Boards"data-light-src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" data-light-srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x" data-dark-src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" data-dark-srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x">	    	</a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                                            </div>
+                </div>
+
+                        </div>
+    </div>
+</div><div class="jeg_bottombar jeg_navbar jeg_container jeg_navbar_wrapper  jeg_navbar_shadow jeg_navbar_menuborder jeg_navbar_dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_4" data-animation="animate"><li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-59 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/">HOME</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/markets/">FINANCE</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/sport/">SPORT</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/culture/">CULTURE</a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-480 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/entertainment/">ENTERTAINMENT</a></li>
+<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-68 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/tech/">TECH</a>
+<ul class="sub-menu">
+	<li id="menu-item-12709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12709 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/gaming/">GAMING</a></li>
+</ul>
+</li>
+<li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a></li>
+<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/contact/">CONTACT</a></li>
+</ul></div></div>
+                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <!-- Search Form -->
+<div class="jeg_nav_item jeg_nav_search">
+	<div class="jeg_search_wrapper jeg_search_no_expand rounded">
+	    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+	    <form action="https://alongtheboards.com/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div>	</div>
+</div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div><!-- /.jeg_header -->        </div>
+
+        <div class="jeg_header_sticky">
+            <div class="sticky_blankspace"></div>
+<div class="jeg_header normal">
+    <div class="jeg_container">
+        <div data-mode="scroll" class="jeg_stickybar jeg_navbar jeg_navbar_wrapper jeg_navbar_normal jeg_navbar_normal">
+            <div class="container">
+    <div class="jeg_nav_row">
+        
+            <div class="jeg_nav_col jeg_nav_left jeg_nav_grow">
+                <div class="item_wrap jeg_nav_alignleft">
+                    <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_4" data-animation="animate"><li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-59 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/">HOME</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/markets/">FINANCE</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-65 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/sport/">SPORT</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/culture/">CULTURE</a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-480 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/entertainment/">ENTERTAINMENT</a></li>
+<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-68 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/tech/">TECH</a>
+<ul class="sub-menu">
+	<li id="menu-item-12709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12709 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/gaming/">GAMING</a></li>
+</ul>
+</li>
+<li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a></li>
+<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70 bgnav" data-item-row="default" ><a href="https://alongtheboards.com/contact/">CONTACT</a></li>
+</ul></div></div>
+                </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+                <div class="item_wrap jeg_nav_aligncenter">
+                                    </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                <div class="item_wrap jeg_nav_alignright">
+                    <!-- Search Icon -->
+<div class="jeg_nav_item jeg_search_wrapper search_icon jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://alongtheboards.com/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                </div>
+            </div>
+
+                </div>
+</div>        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="jeg_navbar_mobile_wrapper">
+            <div class="jeg_navbar_mobile" data-mode="scroll">
+    <div class="jeg_mobile_bottombar jeg_mobile_midbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item">
+    <a href="#" class="toggle_btn jeg_mobile_toggle"><i class="fa fa-bars"></i></a>
+</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                        <div class="jeg_nav_item jeg_mobile_logo">
+			<div class="site-title">
+	    	<a href="https://alongtheboards.com/">
+		        <img width="231" height="56" class='jeg_logo_img' src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x" alt="Along the Boards"data-light-src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" data-light-srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x" data-dark-src="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png" data-dark-srcset="https://alongtheboards.com/wp-content/uploads/2019/09/Logo-231x56-1.png 1x, https://alongtheboards.com/wp-content/uploads/2019/09/Logo-462x112-1.png 2x">		    </a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <div class="jeg_nav_item jeg_search_wrapper jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+	<form action="https://alongtheboards.com/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div>
+<div class="sticky_blankspace" style="height: 60px;"></div>        </div>
+
+            <div class="post-wrapper">
+
+        <div class="post-wrap" >
+
+            
+            <div class="jeg_main ">
+                <div class="jeg_container">
+                    <div class="jeg_content jeg_singlepage">
+
+	<div class="container">
+
+		<div class="jeg_ad jeg_article jnews_article_top_ads">
+			<div class='ads-wrapper  '></div>		</div>
+
+		<div class="row">
+			<div class="jeg_main_content col-md-8">
+				<div class="jeg_inner_content">
+					
+												<div class="jeg_breadcrumbs jeg_breadcrumb_container">
+							<div id="breadcrumbs"><span class="">
+                <a href="https://alongtheboards.com">Home</a>
+            </span><i class="fa fa-angle-right"></i><span class="breadcrumb_last_link">
+                <a href="https://alongtheboards.com/cars/">CARS</a>
+            </span></div>						</div>
+						
+						<div class="entry-header">
+							
+							<h1 class="jeg_post_title">Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the “Natural State”</h1>
+
+							
+							<div class="jeg_meta_container"><div class="jeg_post_meta jeg_post_meta_1">
+
+	<div class="meta_left">
+									<div class="jeg_meta_author">
+					<img alt='Lana Vrz' src='https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=80&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy'/>					<span class="meta_text">by</span>
+					<a href="https://alongtheboards.com/author/lana-vrz/">Lana Vrz</a>				</div>
+					
+					<div class="jeg_meta_date">
+				<a href="https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/">2020/07/03 | 10:07 am - Updated on 2021/02/01 | 9:47 am</a>
+			</div>
+		
+					<div class="jeg_meta_category">
+				<span><span class="meta_text">in</span>
+					<a href="https://alongtheboards.com/cars/" rel="category tag">CARS</a>				</span>
+			</div>
+		
+		<div class="jeg_meta_reading_time">
+			            <span>
+			            	Reading Time: 5 mins read
+			            </span>
+			        </div>	</div>
+
+	<div class="meta_right">
+							<div class="jeg_meta_comment"><a href="https://alongtheboards.com/2020/07/03/most-common-causes-of-vehicle-accidents/#comments"><i
+						class="fa fa-comment-o"></i> 0</a></div>
+			</div>
+</div>
+</div>
+						</div>
+
+						<div class="jeg_featured featured_image"><a href="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents.jpg"><div class="thumbnail-container animate-lazy" style="padding-bottom:50%"><img width="750" height="375" src="https://alongtheboards.com/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-750x375 size-jnews-750x375 lazyload wp-post-image" alt="Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the “Natural State”" loading="lazy" sizes="(max-width: 750px) 100vw, 750px" data-src="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-750x375.jpg" data-srcset="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-750x375.jpg 750w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-360x180.jpg 360w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-1140x570.jpg 1140w" data-sizes="auto" data-expand="700" /></div></a></div>
+						
+						<div class="jeg_ad jeg_article jnews_content_top_ads "><div class='ads-wrapper  '></div></div>
+						<div class="entry-content no-share">
+							<div class="jeg_share_button share-float jeg_sticky_share clearfix share-monocrhome">
+															</div>
+
+							<div class="content-inner ">
+								<p>The US has a slightly higher rate of car accidents than other developed countries, with <a href="https://www.iihs.org/topics/fatality-statistics/detail/state-by-state#:~:text=There%20were%2033%2C654%20fatal%20motor,Columbia%20to%2022.2%20in%20Mississippi.">33,654 fatal car accidents in 2018</a> alone. These accidents often occur due to bad weather, reckless driving, faulty vehicles, driving under the influence, or a combination of these causes. While bad weather can’t be controlled, the other three causes come down to human fault and error.</p>
+<p>Arkansas isn’t the worst state in the US when it comes to auto accidents, but statistical studies have shown that Arkansas sees around 18 deaths per 100,000 people. The national average is between 10 and 12 per 100,000. Men make up most of this number. Male fatalities in Arkansas are at 35.7 per 100,000 as compared to the national average of 21.7.</p>
+<p>In fact, during the COVID-19 pandemic, there’s been a <a href="https://ohsonline.com/articles/2020/05/22/motor-vehicle-fatality-rates-up-14-percent-in-march-despite-covid19.aspx">16 percent increase in road accidents</a> in the state.</p>
+<h2>Driving Under The Influence</h2>
+<p>Driving and drinking is a surefire way to cause an accident. Consuming alcohol causes blurriness, poor judgment, and exhaustion, which means that you shouldn&#8217;t be operating heavy machinery when drunk. Driving falls under this categorization. When people drive drunk, they not only endanger themselves but also everyone else on the road.</p>
+<p>Laws in Arkansas prohibit driving with a <a href="https://dui.drivinglaws.org/resources/arkansas-first-offense-dwi.htm#:~:text=The%20criminal%20and%20administrative%20penalties,08%25%20or%20greater.">Blood Alcohol Concentration of 0.08%</a> or higher. In Arkansas, you can even be given a DWI offense by the police if you are attempting to operate your vehicle. Jail time, fines, and restrictions upon your license are all penalties that you may receive, depending on the circumstances.</p>
+<p>However, people who have been in auto accidents where the driver was drunk may ask for compensation via a personal injury lawsuit. The driver can be held responsible for the medical and mental health damage you suffered due to the crash.</p>
+<p><img loading="lazy" class="aligncenter size-jnews-750x536 wp-image-24797" src="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-2-750x536.jpg" alt="" width="750" height="536" srcset="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-2-750x536.jpg 750w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-2-120x86.jpg 120w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-2-350x250.jpg 350w" sizes="(max-width: 750px) 100vw, 750px" /></p>
+<h2>Reckless Driving</h2>
+<p>Driving recklessly can mean any number of things. The basic idea is that when drivers are not fully concentrating on driving, they can lose control of the car and cause fatal accidents. The National Highway and Safety Administration <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812926">lists the following</a> as instances of distracted driving:</p>
+<ul>
+<li>Distracted by a moving object in the vehicle</li>
+<li>Talking or listening on the cell phone</li>
+<li>Using the cell phone</li>
+<li>Adjusting audio or air-conditioning</li>
+<li>Using other vehicular controls</li>
+<li>Daydreaming</li>
+<li>Using or looking for external objects brought into the car (phone, beverage, snack, headphones, etc.)</li>
+<li>Eating or drinking</li>
+<li>Smoking and smoking-related</li>
+<li>Inattention</li>
+<li>Carelessness</li>
+</ul>
+<p>These causes are strictly instances of inattention or accidental distraction. However, the definition of reckless driving also includes driving without the necessary precautions and following traffic laws. Speeding, abrupt lane changing, and braking are all practices that can cause a vehicle to spin out of control.</p>
+<p>Furthermore, driving without adequate sleep is also dangerous and can cause fatal crashes. You could fall asleep behind the wheel and lose control very quickly, especially at night time. Therefore, you should always make sure to take proper breaks.</p>
+<p>If you’ve suffered because of another person’s reckless driving, you could be entitled to personal injury damages paid by them.</p>
+<p><img loading="lazy" class="aligncenter size-jnews-750x536 wp-image-24798" src="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-3-750x536.jpg" alt="" width="750" height="536" srcset="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-3-750x536.jpg 750w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-3-120x86.jpg 120w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-3-350x250.jpg 350w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-3-1140x815.jpg 1140w" sizes="(max-width: 750px) 100vw, 750px" /></p>
+<h2>Road Rage</h2>
+<p>One aspect of reckless driving that’s often ignored is road rage. Road rage is what happens when people on the road react in anger as they drive. Road rage can occur as a reaction to perceived bad driving, rude road behavior, etc.</p>
+<p>Road rage is a deadly form of driving behavior as the reactions it causes are often out of proportion and potentially fatal. Psychologists who study road rage have argued that road rage is so violent often because <a href="http://www.drdriving.org/articles/taxonomy.htm">drivers react</a> to being in an enclosed space, i.e. the car and road.</p>
+<p>Moreover, the lack of personal contact with another human <a href="https://www.webmd.com/women/features/root-cause-of-road-rage#2">creates emotional distance</a> between angry drives and the consequence of their actions. This emotional distance causes drivers to drive aggressively, causing the other driver unnecessary risk and, in some cases, severe harm.</p>
+<p><a href="https://edition.cnn.com/2019/09/10/health/road-rage-survival-tips-wellness/index.html">Aggressive driving behaviors include</a>, but aren’t limited to:</p>
+<ul>
+<li>Ramming another vehicle on purpose</li>
+<li>Exiting the vehicle to confront the other driver</li>
+<li>Cutting off another vehicle</li>
+<li>Blocking lanes from other vehicles</li>
+<li>Making rude gestures</li>
+<li>Honking repeatedly and loudly</li>
+<li>Yelling and intimidating other drivers</li>
+<li>Tailgating on purpose</li>
+</ul>
+<p>Another person’s road rage can be a possible personal injury lawsuit that an injury attorney could help you pursue given that there were injuries resulting from the incident.</p>
+<h2>Weather and Driving</h2>
+<p>Harsh weather can be a massive reason for truck and car accidents in Arkansas. Arkansas has <a href="https://www.weather-us.com/en/arkansas-usa-climate">mostly a mild climate</a>, but with loads of rain in the winter and spring. Occasional snowstorms also occur in the area, and snow usually does fall in the winter.</p>
+<p>When driving in the snow, it&#8217;s best to take precautions against slipping. In climates like Arkansas, where the temperature hovers around the freezing point, snow can melt and refreeze onto the roads. This causes a phenomenon called black ice.</p>
+<p>Black ice forms a <a href="https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/fseprd488148.pdf">clear, slippery coating</a> of snow on roads. What’s dangerous about this is that it’s invisible to drivers and often worse to drive on than actual snow. Accidents often occur when drivers are unable to maneuver their cars on black ice and crash into another vehicle, pedestrian, or nearby foliage.</p>
+<p>Before you decide to drive in difficult weather, make sure you’re confident in your abilities, as well as your car’s functioning. Drive cautiously and do not speed. A few moments of caution can make a huge difference when you’re on the road in bad weather.</p>
+<p>There are so many things that can cause a car accident. No matter the reason or who is at fault, reaching out for legal help is so important. Contact the team at <a href="https://www.seriouslawyers.com/alabama-car-accidents-facts/">Serious Injury Law Group</a> to get the support you need.</p>
+<p><img loading="lazy" class="aligncenter size-jnews-750x536 wp-image-24799" src="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-4-750x536.jpg" alt="" width="750" height="536" srcset="https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-4-750x536.jpg 750w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-4-120x86.jpg 120w, https://alongtheboards.com/wp-content/uploads/2020/07/Causes-of-Vehicle-Accidents-4-350x250.jpg 350w" sizes="(max-width: 750px) 100vw, 750px" /></p>
+<h2>Faulty Vehicles</h2>
+<p>Vehicles need consistent maintenance, just like any other kind of electronic machine. Cars are among the most essential machines to take care of because the slightest <a href="http://www.jce-ieb.org/doc_file/3502002.pdf">malfunction can have devastating effects</a>.</p>
+<p>However, sometimes it may not be about maintenance. There have been instances where supposedly brand-new cars have broken down without warning, causing an accident. In these cases, there’s usually a manufacturing defect, or the car dealership has been scamming their customers.</p>
+<p>You should consult a licensed auto accident lawyer, like <a href="https://lisagdouglas.com/services/criminal-law/">Lisa Douglas</a> in Arkansas if you are injured in a car wreck. If you are met with a car accident and are not at fault, remember to reach out for help.</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div class="dd9f36ffc88f7d43ec1335e054675ad2" data-index="3" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div id="taboola-below-article-thumbnails"></div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'thumbnails-a',
+    container: 'taboola-below-article-thumbnails',
+    placement: 'Below Article Thumbnails',
+    target_type: 'mix'
+  });
+</script>
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div>								
+								
+																<div class="jeg_post_tags"><span>Tags:</span> <a href="https://alongtheboards.com/tag/arkansas/" rel="tag">Arkansas</a><a href="https://alongtheboards.com/tag/cars/" rel="tag">Cars</a><a href="https://alongtheboards.com/tag/driving-under-the-influence/" rel="tag">Driving Under The Influence</a><a href="https://alongtheboards.com/tag/faulty-vehicles/" rel="tag">Faulty Vehicles</a><a href="https://alongtheboards.com/tag/natural-state/" rel="tag">Natural State</a><a href="https://alongtheboards.com/tag/road-rage/" rel="tag">Road Rage</a></div>
+															</div>
+
+
+						</div>
+						
+						
+						<div class="jeg_ad jeg_article jnews_content_bottom_ads "><div class='ads-wrapper  '></div></div><div class="jnews_prev_next_container"><div class="jeg_prevnext_post">
+            <a href="https://alongtheboards.com/2020/07/02/purposes-of-temporary-staffing-agencies/" class="post prev-post">
+            <span class="caption">Previous Post</span>
+            <h3 class="post-title">Purposes of Temporary Staffing Agencies</h3>
+        </a>
+    
+            <a href="https://alongtheboards.com/2020/07/03/approaches-to-rebound-from-appalling-results-at-school/" class="post next-post">
+            <span class="caption">Next Post</span>
+            <h3 class="post-title">Approaches to Rebound from Appalling Results at School</h3>
+        </a>
+    </div></div><div class="jnews_author_box_container ">
+	<div class="jeg_authorbox">
+		<div class="jeg_author_image">
+			<img alt='Lana Vrz' src='https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=80&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9a9f544cc1c76a12868a600f86572337?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy'/>		</div>
+		<div class="jeg_author_content">
+			<h3 class="jeg_author_name">
+				<a href="https://alongtheboards.com/author/lana-vrz/">
+					Lana Vrz				</a>
+			</h3>
+			<p class="jeg_author_desc">
+							</p>
+
+							<div class="jeg_author_socials">
+									</div>
+			
+		</div>
+	</div>
+</div><div class="jnews_related_post_container"><div  class="jeg_postblock_8 jeg_postblock jeg_module_hook jeg_pagination_nextprev jeg_col_2o3 jnews_module_24794_0_6137ff962665b   " data-unique="jnews_module_24794_0_6137ff962665b">
+					<div class="jeg_block_heading jeg_block_heading_7 jeg_subcat_right">
+                     <h3 class="jeg_block_title"><span>Related<strong> Posts</strong></span></h3>
+                     
+                 </div>
+					<div class="jeg_block_container">
+                    
+                    <div class="jeg_posts_wrap"><div class="jeg_posts jeg_load_more_flag"><article class="jeg_post jeg_pl_md_1 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://alongtheboards.com/2019/11/26/elon-musk-and-tesla-cybertruck-what-has-he-revealed-so-far/"><div class="thumbnail-container animate-lazy  size-500 "><img width="360" height="180" src="https://alongtheboards.com/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-360x180 size-jnews-360x180 lazyload wp-post-image" alt="Elon Musk and Tesla Cybertruck – what has he revealed so far?" loading="lazy" sizes="(max-width: 360px) 100vw, 360px" data-src="https://alongtheboards.com/wp-content/uploads/2019/11/Cybertruck-360x180.jpg" data-srcset="https://alongtheboards.com/wp-content/uploads/2019/11/Cybertruck-360x180.jpg 360w, https://alongtheboards.com/wp-content/uploads/2019/11/Cybertruck-750x375.jpg 750w, https://alongtheboards.com/wp-content/uploads/2019/11/Cybertruck-1140x570.jpg 1140w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://alongtheboards.com/cars/" class="category-cars">CARS</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://alongtheboards.com/2019/11/26/elon-musk-and-tesla-cybertruck-what-has-he-revealed-so-far/">Elon Musk and Tesla Cybertruck – what has he revealed so far?</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://alongtheboards.com/author/lana-vrz/">Lana Vrz</a></div><div class="jeg_meta_date"><a href="https://alongtheboards.com/2019/11/26/elon-musk-and-tesla-cybertruck-what-has-he-revealed-so-far/"><i class="fa fa-clock-o"></i> November 26, 2019</a></div></div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_1 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://alongtheboards.com/2019/11/25/amazing-tesla-test-model-3-goes-into-the-water/"><div class="thumbnail-container animate-lazy  size-500 "><img width="360" height="180" src="https://alongtheboards.com/wp-content/themes/jnews/assets/img/jeg-empty.png" class="attachment-jnews-360x180 size-jnews-360x180 lazyload wp-post-image" alt="Amazing! Tesla Test Model 3 Goes Into the Water" loading="lazy" sizes="(max-width: 360px) 100vw, 360px" data-src="https://alongtheboards.com/wp-content/uploads/2019/11/tesla-model-3-in-water-360x180.jpg" data-srcset="https://alongtheboards.com/wp-content/uploads/2019/11/tesla-model-3-in-water-360x180.jpg 360w, https://alongtheboards.com/wp-content/uploads/2019/11/tesla-model-3-in-water-750x375.jpg 750w, https://alongtheboards.com/wp-content/uploads/2019/11/tesla-model-3-in-water-1140x570.jpg 1140w" data-sizes="auto" data-expand="700" /></div></a>
+                        <div class="jeg_post_category">
+                            <span><a href="https://alongtheboards.com/cars/" class="category-cars">CARS</a></span>
+                        </div>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://alongtheboards.com/2019/11/25/amazing-tesla-test-model-3-goes-into-the-water/">Amazing! Tesla Test Model 3 Goes Into the Water</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://alongtheboards.com/author/lana-vrz/">Lana Vrz</a></div><div class="jeg_meta_date"><a href="https://alongtheboards.com/2019/11/25/amazing-tesla-test-model-3-goes-into-the-water/"><i class="fa fa-clock-o"></i> November 25, 2019</a></div></div>
+                    </div>
+                </article></div></div>
+                    <div class='module-overlay'>
+				    <div class='preloader_type preloader_dot'>
+				        <div class="module-preloader jeg_preloader dot">
+				            <span></span><span></span><span></span>
+				        </div>
+				        <div class="module-preloader jeg_preloader circle">
+				            <div class="jnews_preloader_circle_outer">
+				                <div class="jnews_preloader_circle_inner"></div>
+				            </div>
+				        </div>
+				        <div class="module-preloader jeg_preloader square">
+				            <div class="jeg_square">
+				                <div class="jeg_square_inner"></div>
+				            </div>
+				        </div>
+				    </div>
+				</div> 
+                </div>
+                <div class="jeg_block_navigation">
+                    <div class='navigation_overlay'><div class='module-preloader jeg_preloader'><span></span><span></span><span></span></div></div>
+                    <div class="jeg_block_nav inactive">
+                    <a href="#" class="prev disabled" title="Previous"><i class="fa fa-angle-left"></i></a>
+                    <a href="#" class="next disabled" title="Next"><i class="fa fa-angle-right"></i></a>
+                </div>
+                    
+                </div>
+					
+					<script type="rocketlazyloadscript">var jnews_module_24794_0_6137ff962665b = {"header_icon":"","first_title":"Related","second_title":" Posts","url":"","header_type":"heading_7","header_background":"","header_secondary_background":"","header_text_color":"","header_line_color":"","header_accent_color":"","header_filter_category":"","header_filter_author":"","header_filter_tag":"","header_filter_text":"All","post_type":"post","content_type":"all","number_post":"8","post_offset":0,"unique_content":"disable","include_post":"","exclude_post":24794,"include_category":"","exclude_category":"","include_author":"","include_tag":"12663,8380,12665,12667,12664,12666","exclude_tag":"","sort_by":"latest","date_format":"default","date_format_custom":"Y\/m\/d","force_normal_image_load":"","pagination_mode":"nextprev","pagination_nextprev_showtext":"","pagination_number_post":"8","pagination_scroll_limit":3,"boxed":"","boxed_shadow":"","el_id":"","el_class":"","scheme":"","column_width":"auto","title_color":"","accent_color":"","alt_color":"","excerpt_color":"","css":"","excerpt_length":20,"paged":1,"column_class":"jeg_col_2o3","class":"jnews_block_8"};</script>
+				</div></div><div class="jnews_popup_post_container"></div><div class="jnews_comment_container">	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2020/07/03/most-common-causes-of-vehicle-accidents/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://alongtheboards.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea autocomplete="new-password"  id="ic2ab7bb25"  name="ic2ab7bb25"   cols="45" rows="8" maxlength="65525" required="required"></textarea><textarea id="comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script type="rocketlazyloadscript" data-noptimize data-rocket-type="text/javascript">document.getElementById("comment").setAttribute( "id", "a0329c3d9ec3f5d0267a4e5610dafb1f" );document.getElementById("ic2ab7bb25").setAttribute( "id", "comment" );</script></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="c4wp-display-captcha-form"><label for="Solve Captcha*">Solve Captcha*</label><input id="c4wp_user_input_captcha" name="c4wp_user_input_captcha" class="c4wp_user_input_captcha" type="text" style="width: 45px;" autocomplete="off" />&nbsp;&nbsp;&#43;&nbsp;&nbsp;21&nbsp;&nbsp;=&nbsp;&nbsp;25<input type="hidden" name="c4wp_random_input_captcha" value="wQ0=" /></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='24794' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	</div>
+									</div>
+			</div>
+			
+<div class="jeg_sidebar  jeg_sticky_sidebar col-md-4">
+    <div class="widget widget_search jeg_search_wrapper" id="search-2"><form action="https://alongtheboards.com/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div><div class="widget widget_categories" id="categories-4"><div class="jeg_block_heading jeg_block_heading_6 jnews_6137ff962ba77"><h3 class="jeg_block_title"><span>Categories</span></h3></div>
+			<ul>
+					<li class="cat-item cat-item-12811"><a href="https://alongtheboards.com/accessories/">ACCESSORIES</a>
+</li>
+	<li class="cat-item cat-item-14771"><a href="https://alongtheboards.com/animals/">ANIMALS</a>
+</li>
+	<li class="cat-item cat-item-10713"><a href="https://alongtheboards.com/betting/">BETTING</a>
+</li>
+	<li class="cat-item cat-item-8353"><a href="https://alongtheboards.com/business/">BUSINESS</a>
+</li>
+	<li class="cat-item cat-item-8375"><a href="https://alongtheboards.com/cars/">CARS</a>
+</li>
+	<li class="cat-item cat-item-8728"><a href="https://alongtheboards.com/casino/">CASINO</a>
+</li>
+	<li class="cat-item cat-item-8806"><a href="https://alongtheboards.com/cbd/">CBD</a>
+</li>
+	<li class="cat-item cat-item-9091"><a href="https://alongtheboards.com/celebs/">CELEBS</a>
+</li>
+	<li class="cat-item cat-item-9136"><a href="https://alongtheboards.com/children/">CHILDREN</a>
+</li>
+	<li class="cat-item cat-item-12152"><a href="https://alongtheboards.com/cooking/">Cooking</a>
+</li>
+	<li class="cat-item cat-item-14142"><a href="https://alongtheboards.com/covid-19/">COVID 19</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://alongtheboards.com/culture/" title="You can add some category description here.">CULTURE</a>
+</li>
+	<li class="cat-item cat-item-6042"><a href="https://alongtheboards.com/education/">EDUCATION</a>
+</li>
+	<li class="cat-item cat-item-1207"><a href="https://alongtheboards.com/entertainment/">ENTERTAINMENT</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="https://alongtheboards.com/markets/" title="You can add some category description here.">FINANCE</a>
+</li>
+	<li class="cat-item cat-item-9312"><a href="https://alongtheboards.com/food/">FOOD</a>
+</li>
+	<li class="cat-item cat-item-14936"><a href="https://alongtheboards.com/furniture/">FURNITURE</a>
+</li>
+	<li class="cat-item cat-item-11505"><a href="https://alongtheboards.com/games/">GAMES</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="https://alongtheboards.com/gaming/">GAMING</a>
+</li>
+	<li class="cat-item cat-item-13089"><a href="https://alongtheboards.com/gift/">GIFT</a>
+</li>
+	<li class="cat-item cat-item-15209"><a href="https://alongtheboards.com/habits/">HABITS</a>
+</li>
+	<li class="cat-item cat-item-8275"><a href="https://alongtheboards.com/health/">HEALTH</a>
+</li>
+	<li class="cat-item cat-item-13610"><a href="https://alongtheboards.com/hobby/">HOBBY</a>
+</li>
+	<li class="cat-item cat-item-8928"><a href="https://alongtheboards.com/home/">HOME</a>
+</li>
+	<li class="cat-item cat-item-8502"><a href="https://alongtheboards.com/how-to/">HOW TO&#8230;</a>
+</li>
+	<li class="cat-item cat-item-8986"><a href="https://alongtheboards.com/industry/">INDUSTRY</a>
+</li>
+	<li class="cat-item cat-item-13115"><a href="https://alongtheboards.com/law/">LAW</a>
+</li>
+	<li class="cat-item cat-item-12118"><a href="https://alongtheboards.com/marketing/">MARKETING</a>
+</li>
+	<li class="cat-item cat-item-8274"><a href="https://alongtheboards.com/mind-body/">MIND &amp; BODY</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a>
+</li>
+	<li class="cat-item cat-item-14881"><a href="https://alongtheboards.com/motorcycle/">MOTORCYCLE</a>
+</li>
+	<li class="cat-item cat-item-8835"><a href="https://alongtheboards.com/movies/">MOVIES</a>
+</li>
+	<li class="cat-item cat-item-10884"><a href="https://alongtheboards.com/music/">MUSIC</a>
+</li>
+	<li class="cat-item cat-item-5884"><a href="https://alongtheboards.com/net-worth/">NET WORTH</a>
+</li>
+	<li class="cat-item cat-item-8385"><a href="https://alongtheboards.com/news/">NEWS</a>
+</li>
+	<li class="cat-item cat-item-15152"><a href="https://alongtheboards.com/plants/">PLANTS</a>
+</li>
+	<li class="cat-item cat-item-8997"><a href="https://alongtheboards.com/relationships/">RELATIONSHIPS</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://alongtheboards.com/sport/" title="You can add some category description here.">SPORT</a>
+</li>
+	<li class="cat-item cat-item-8501"><a href="https://alongtheboards.com/style/">STYLE</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://alongtheboards.com/tech/" title="You can add some category description here.">TECH</a>
+</li>
+	<li class="cat-item cat-item-15174"><a href="https://alongtheboards.com/technology/">Technology</a>
+</li>
+	<li class="cat-item cat-item-13739"><a href="https://alongtheboards.com/tips-tricks/">TIPS &amp; TRICKS</a>
+</li>
+	<li class="cat-item cat-item-15190"><a href="https://alongtheboards.com/tools/">Tools</a>
+</li>
+	<li class="cat-item cat-item-9050"><a href="https://alongtheboards.com/travel/">TRAVEL</a>
+</li>
+	<li class="cat-item cat-item-12812"><a href="https://alongtheboards.com/truck/">TRUCK</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://alongtheboards.com/us/" title="You can add some category description here.">US</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="https://alongtheboards.com/world/">WORLD</a>
+</li>
+			</ul>
+
+			</div>
+		<div class="widget widget_recent_entries" id="recent-posts-3">
+		<div class="jeg_block_heading jeg_block_heading_6 jnews_6137ff962ec67"><h3 class="jeg_block_title"><span>Recent Posts</span></h3></div>
+		<ul>
+											<li>
+					<a href="https://alongtheboards.com/2021/09/06/netflix-movies-you-forgot-about/">9 Netflix Movies You Forgot About and Need to Watch Again</a>
+									</li>
+											<li>
+					<a href="https://alongtheboards.com/2021/09/01/pros-cons-of-using-smartphone-case/">5 Pros and Cons of Using Your Smartphone Without a Case &#8211; 2021 Guide</a>
+									</li>
+											<li>
+					<a href="https://alongtheboards.com/2021/08/31/teachers-over-world-work-in-africa/">Why Teachers From All Over The World Go To Work In Africa</a>
+									</li>
+											<li>
+					<a href="https://alongtheboards.com/2021/08/30/managing-inflation-with-metals-ira/">Managing Inflation With A Precious Metals IRA</a>
+									</li>
+											<li>
+					<a href="https://alongtheboards.com/2021/08/27/promote-and-sell-artwork-on-offline-platforms/">How To Promote And Sell Artwork On Offline Platforms</a>
+									</li>
+					</ul>
+
+		</div></div>		</div>
+
+		<div class="jeg_ad jeg_article jnews_article_bottom_ads">
+			<div class='ads-wrapper  '></div>		</div>
+
+	</div>
+</div>
+                </div>
+            </div>
+
+            <div id="post-body-class" class="post-template-default single single-post postid-24794 single-format-standard wp-embed-responsive jeg_toggle_dark jeg_single_tpl_1 jnews jsc_normal elementor-default elementor-kit-23136"></div>
+
+            
+        </div>
+
+        <div class="post-ajax-overlay">
+    <div class="preloader_type preloader_dot">
+        <div class="newsfeed_preloader jeg_preloader dot">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader circle">
+            <div class="jnews_preloader_circle_outer">
+                <div class="jnews_preloader_circle_inner"></div>
+            </div>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader square">
+            <div class="jeg_square"><div class="jeg_square_inner"></div></div>
+        </div>
+    </div>
+</div>
+    </div>
+        <div class="footer-holder" id="footer" data-id="footer">
+                        <div class="jeg_footer_instagram_wrapper jeg_container">
+                            </div>
+                    <div class="jeg_footer_tiktok_wrapper jeg_container">
+                            </div>
+        
+<div class="jeg_footer jeg_footer_5 normal">
+    <div class="jeg_footer_container jeg_container">
+
+        <div class="jeg_footer_content">
+            <div class="container">
+
+                
+                <div class="jeg_footer_primary clearfix">
+                    <!-- Footer Widget: Column 1 -->
+                    <div class="col-md-4 footer_column">
+                                            </div>
+
+                    <!-- Footer Widget: Column 2 -->
+                    <div class="col-md-4 footer_column">
+                        <div class="footer_widget widget_categories" id="categories-3"><div class="jeg_footer_heading jeg_footer_heading_1"><h3 class="jeg_footer_title"><span>Categories</span></h3></div>
+			<ul>
+					<li class="cat-item cat-item-12811"><a href="https://alongtheboards.com/accessories/">ACCESSORIES</a>
+</li>
+	<li class="cat-item cat-item-14771"><a href="https://alongtheboards.com/animals/">ANIMALS</a>
+</li>
+	<li class="cat-item cat-item-10713"><a href="https://alongtheboards.com/betting/">BETTING</a>
+</li>
+	<li class="cat-item cat-item-8353"><a href="https://alongtheboards.com/business/">BUSINESS</a>
+</li>
+	<li class="cat-item cat-item-8375"><a href="https://alongtheboards.com/cars/">CARS</a>
+</li>
+	<li class="cat-item cat-item-8728"><a href="https://alongtheboards.com/casino/">CASINO</a>
+</li>
+	<li class="cat-item cat-item-8806"><a href="https://alongtheboards.com/cbd/">CBD</a>
+</li>
+	<li class="cat-item cat-item-9091"><a href="https://alongtheboards.com/celebs/">CELEBS</a>
+</li>
+	<li class="cat-item cat-item-9136"><a href="https://alongtheboards.com/children/">CHILDREN</a>
+</li>
+	<li class="cat-item cat-item-12152"><a href="https://alongtheboards.com/cooking/">Cooking</a>
+</li>
+	<li class="cat-item cat-item-14142"><a href="https://alongtheboards.com/covid-19/">COVID 19</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://alongtheboards.com/culture/" title="You can add some category description here.">CULTURE</a>
+</li>
+	<li class="cat-item cat-item-6042"><a href="https://alongtheboards.com/education/">EDUCATION</a>
+</li>
+	<li class="cat-item cat-item-1207"><a href="https://alongtheboards.com/entertainment/">ENTERTAINMENT</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="https://alongtheboards.com/markets/" title="You can add some category description here.">FINANCE</a>
+</li>
+	<li class="cat-item cat-item-9312"><a href="https://alongtheboards.com/food/">FOOD</a>
+</li>
+	<li class="cat-item cat-item-14936"><a href="https://alongtheboards.com/furniture/">FURNITURE</a>
+</li>
+	<li class="cat-item cat-item-11505"><a href="https://alongtheboards.com/games/">GAMES</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="https://alongtheboards.com/gaming/">GAMING</a>
+</li>
+	<li class="cat-item cat-item-13089"><a href="https://alongtheboards.com/gift/">GIFT</a>
+</li>
+	<li class="cat-item cat-item-15209"><a href="https://alongtheboards.com/habits/">HABITS</a>
+</li>
+	<li class="cat-item cat-item-8275"><a href="https://alongtheboards.com/health/">HEALTH</a>
+</li>
+	<li class="cat-item cat-item-13610"><a href="https://alongtheboards.com/hobby/">HOBBY</a>
+</li>
+	<li class="cat-item cat-item-8928"><a href="https://alongtheboards.com/home/">HOME</a>
+</li>
+	<li class="cat-item cat-item-8502"><a href="https://alongtheboards.com/how-to/">HOW TO&#8230;</a>
+</li>
+	<li class="cat-item cat-item-8986"><a href="https://alongtheboards.com/industry/">INDUSTRY</a>
+</li>
+	<li class="cat-item cat-item-13115"><a href="https://alongtheboards.com/law/">LAW</a>
+</li>
+	<li class="cat-item cat-item-12118"><a href="https://alongtheboards.com/marketing/">MARKETING</a>
+</li>
+	<li class="cat-item cat-item-8274"><a href="https://alongtheboards.com/mind-body/">MIND &amp; BODY</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a>
+</li>
+	<li class="cat-item cat-item-14881"><a href="https://alongtheboards.com/motorcycle/">MOTORCYCLE</a>
+</li>
+	<li class="cat-item cat-item-8835"><a href="https://alongtheboards.com/movies/">MOVIES</a>
+</li>
+	<li class="cat-item cat-item-10884"><a href="https://alongtheboards.com/music/">MUSIC</a>
+</li>
+	<li class="cat-item cat-item-5884"><a href="https://alongtheboards.com/net-worth/">NET WORTH</a>
+</li>
+	<li class="cat-item cat-item-8385"><a href="https://alongtheboards.com/news/">NEWS</a>
+</li>
+	<li class="cat-item cat-item-15152"><a href="https://alongtheboards.com/plants/">PLANTS</a>
+</li>
+	<li class="cat-item cat-item-8997"><a href="https://alongtheboards.com/relationships/">RELATIONSHIPS</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://alongtheboards.com/sport/" title="You can add some category description here.">SPORT</a>
+</li>
+	<li class="cat-item cat-item-8501"><a href="https://alongtheboards.com/style/">STYLE</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://alongtheboards.com/tech/" title="You can add some category description here.">TECH</a>
+</li>
+	<li class="cat-item cat-item-15174"><a href="https://alongtheboards.com/technology/">Technology</a>
+</li>
+	<li class="cat-item cat-item-13739"><a href="https://alongtheboards.com/tips-tricks/">TIPS &amp; TRICKS</a>
+</li>
+	<li class="cat-item cat-item-15190"><a href="https://alongtheboards.com/tools/">Tools</a>
+</li>
+	<li class="cat-item cat-item-9050"><a href="https://alongtheboards.com/travel/">TRAVEL</a>
+</li>
+	<li class="cat-item cat-item-12812"><a href="https://alongtheboards.com/truck/">TRUCK</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://alongtheboards.com/us/" title="You can add some category description here.">US</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="https://alongtheboards.com/world/">WORLD</a>
+</li>
+			</ul>
+
+			</div>                    </div>
+
+                    <!-- Footer Widget: Column 3 -->
+                    <div class="col-md-4 footer_column">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_footer_secondary clearfix">
+                    <div class="footer_center">
+                        <p class="copyright"> © 2020 <a href="https://alongtheboards.com">Alongtheboards</a>
+<br>
+</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.footer -->        </div>
+
+        <div class="jscroll-to-top">
+        	<a href="#back-to-top" class="jscroll-to-top_link"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation
+    ============================================= -->
+<div id="jeg_off_canvas" class="normal">
+    <a href="#" class="jeg_menu_close"><i class="jegicon-cross"></i></a>
+    <div class="jeg_bg_overlay"></div>
+    <div class="jeg_mobile_wrapper">
+        <div class="nav_wrap">
+    <div class="item_main">
+        <!-- Search Form -->
+<div class="jeg_aside_item jeg_search_wrapper jeg_search_no_expand rounded">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://alongtheboards.com/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div><div class="jeg_aside_item">
+    <ul class="jeg_mobile_menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-78"><a href="https://alongtheboards.com/">HOME</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-84"><a href="https://alongtheboards.com/tech/">TECH</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a href="https://alongtheboards.com/world/">WORLD</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a href="https://alongtheboards.com/us/">US</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a href="https://alongtheboards.com/miscellaneous/">MISCELLANEOUS</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-173"><a href="https://alongtheboards.com/markets/">FINANCE</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-174"><a href="https://alongtheboards.com/culture/">CULTURE</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-176"><a href="https://alongtheboards.com/sport/">SPORT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://alongtheboards.com/contact/">Contact Us</a></li>
+</ul></div>    </div>
+    <div class="item_bottom">
+        <div class="jeg_aside_item jeg_aside_copyright">
+	<p>© 2020 <a href="https://alongtheboards.com">Alongtheboards</a>
+<br>
+</p>
+</div>    </div>
+</div>    </div>
+</div><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jfla = []</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script><script type="text/javascript">var jQueryScriptOutputted = false;function initJQuery() {if (typeof(jQuery) == "undefined") {if (!jQueryScriptOutputted) {jQueryScriptOutputted = true;document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://code.jquery.com/jquery-1.8.2.min.js\"></scr" + "ipt>");}setTimeout("initJQuery()", 50);}}initJQuery();</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {jQuery(document).ready(function() {
+jQuery(".dd9f36ffc88f7d43ec1335e054675ad2").click(function() {
+jQuery.post(
+"https://alongtheboards.com/wp-admin/admin-ajax.php", {
+"action": "quick_adsense_onpost_ad_click",
+"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+"quick_adsense_nonce": "abe5c53fac",
+}, function(response) { }
+);
+});
+});
+});</script><div class="jnews-cookie-law-policy">This website uses cookies. By continuing to use this website you are giving consent to cookies being used. Visit our <a href="#">Privacy and Cookie Policy</a>. <button data-expire="7" class="btn btn-cookie">I Agree</button></div><div class="jeg_read_progress_wrapper"><div class="jeg_progress_container top"><span class="progress-bar"></span></div></div><script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/alongtheboards.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"01574a748b","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.1.17' id='ppress-frontend-script-js' defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/alongtheboards.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-includes/js/comment-reply.min.js?ver=5.8' id='comment-reply-js' defer></script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1' id='hoverIntent-js' defer></script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+<script type='text/javascript' id='jnews-frontend-js-extra'>
+/* <![CDATA[ */
+var jnewsoption = {"login_reload":"https:\/\/alongtheboards.com\/2020\/07\/03\/most-common-causes-of-vehicle-accidents","popup_script":"magnific","single_gallery":"","ismobile":"","isie":"","sidefeed_ajax":"","language":"en_US","module_prefix":"jnews_module_ajax_","live_search":"1","postid":"24794","isblog":"1","admin_bar":"0","follow_video":"","follow_position":"top_right","rtl":"0","gif":"","lang":{"invalid_recaptcha":"Invalid Recaptcha!","empty_username":"Please enter your username!","empty_email":"Please enter your email!","empty_password":"Please enter your password!"},"recaptcha":"0","site_slug":"\/","site_domain":"alongtheboards.com","zoom_button":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://alongtheboards.com/wp-content/themes/jnews/assets/dist/frontend.min.js?ver=9.0.5' id='jnews-frontend-js' defer></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://alongtheboards.com/wp-content/themes/jnews/assets/js/html5shiv.min.js?ver=9.0.5' id='html5shiv-js'></script>
+<![endif]-->
+<div class="jeg_ad jnews_mobile_sticky_ads "></div><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/alongtheboards.com\/2020\/07\/03\/most-common-causes-of-vehicle-accidents\/"},"dateCreated":"2020-07-03 10:07:44","datePublished":"2020-07-03 10:07:44","dateModified":"2021-02-01 09:47:53","url":"https:\/\/alongtheboards.com\/2020\/07\/03\/most-common-causes-of-vehicle-accidents\/","headline":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d","name":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d","articleBody":"The US has a slightly higher rate of car accidents than other developed countries, with <a href=\"https:\/\/www.iihs.org\/topics\/fatality-statistics\/detail\/state-by-state#:~:text=There%20were%2033%2C654%20fatal%20motor,Columbia%20to%2022.2%20in%20Mississippi.\">33,654 fatal car accidents in 2018<\/a> alone. These accidents often occur due to bad weather, reckless driving, faulty vehicles, driving under the influence, or a combination of these causes. While bad weather can\u2019t be controlled, the other three causes come down to human fault and error.\r\n\r\nArkansas isn\u2019t the worst state in the US when it comes to auto accidents, but statistical studies have shown that Arkansas sees around 18 deaths per 100,000 people. The national average is between 10 and 12 per 100,000. Men make up most of this number. Male fatalities in Arkansas are at 35.7 per 100,000 as compared to the national average of 21.7.\r\n\r\nIn fact, during the COVID-19 pandemic, there\u2019s been a <a href=\"https:\/\/ohsonline.com\/articles\/2020\/05\/22\/motor-vehicle-fatality-rates-up-14-percent-in-march-despite-covid19.aspx\">16 percent increase in road accidents<\/a> in the state.\r\n<h2>Driving Under The Influence<\/h2>\r\nDriving and drinking is a surefire way to cause an accident. Consuming alcohol causes blurriness, poor judgment, and exhaustion, which means that you shouldn't be operating heavy machinery when drunk. Driving falls under this categorization. When people drive drunk, they not only endanger themselves but also everyone else on the road.\r\n\r\nLaws in Arkansas prohibit driving with a <a href=\"https:\/\/dui.drivinglaws.org\/resources\/arkansas-first-offense-dwi.htm#:~:text=The%20criminal%20and%20administrative%20penalties,08%25%20or%20greater.\">Blood Alcohol Concentration of 0.08%<\/a> or higher. In Arkansas, you can even be given a DWI offense by the police if you are attempting to operate your vehicle. Jail time, fines, and restrictions upon your license are all penalties that you may receive, depending on the circumstances.\r\n\r\nHowever, people who have been in auto accidents where the driver was drunk may ask for compensation via a personal injury lawsuit. The driver can be held responsible for the medical and mental health damage you suffered due to the crash.\r\n\r\n<img class=\"aligncenter size-jnews-750x536 wp-image-24797\" src=\"https:\/\/alongtheboards.com\/wp-content\/uploads\/2020\/07\/Causes-of-Vehicle-Accidents-2-750x536.jpg\" alt=\"\" width=\"750\" height=\"536\" \/>\r\n<h2>Reckless Driving<\/h2>\r\nDriving recklessly can mean any number of things. The basic idea is that when drivers are not fully concentrating on driving, they can lose control of the car and cause fatal accidents. The National Highway and Safety Administration <a href=\"https:\/\/crashstats.nhtsa.dot.gov\/Api\/Public\/ViewPublication\/812926\">lists the following<\/a> as instances of distracted driving:\r\n<ul>\r\n \t<li>Distracted by a moving object in the vehicle<\/li>\r\n \t<li>Talking or listening on the cell phone<\/li>\r\n \t<li>Using the cell phone<\/li>\r\n \t<li>Adjusting audio or air-conditioning<\/li>\r\n \t<li>Using other vehicular controls<\/li>\r\n \t<li>Daydreaming<\/li>\r\n \t<li>Using or looking for external objects brought into the car (phone, beverage, snack, headphones, etc.)<\/li>\r\n \t<li>Eating or drinking<\/li>\r\n \t<li>Smoking and smoking-related<\/li>\r\n \t<li>Inattention<\/li>\r\n \t<li>Carelessness<\/li>\r\n<\/ul>\r\nThese causes are strictly instances of inattention or accidental distraction. However, the definition of reckless driving also includes driving without the necessary precautions and following traffic laws. Speeding, abrupt lane changing, and braking are all practices that can cause a vehicle to spin out of control.\r\n\r\nFurthermore, driving without adequate sleep is also dangerous and can cause fatal crashes. You could fall asleep behind the wheel and lose control very quickly, especially at night time. Therefore, you should always make sure to take proper breaks.\r\n\r\nIf you\u2019ve suffered because of another person\u2019s reckless driving, you could be entitled to personal injury damages paid by them.\r\n\r\n<img class=\"aligncenter size-jnews-750x536 wp-image-24798\" src=\"https:\/\/alongtheboards.com\/wp-content\/uploads\/2020\/07\/Causes-of-Vehicle-Accidents-3-750x536.jpg\" alt=\"\" width=\"750\" height=\"536\" \/>\r\n<h2>Road Rage<\/h2>\r\nOne aspect of reckless driving that\u2019s often ignored is road rage. Road rage is what happens when people on the road react in anger as they drive. Road rage can occur as a reaction to perceived bad driving, rude road behavior, etc.\r\n\r\nRoad rage is a deadly form of driving behavior as the reactions it causes are often out of proportion and potentially fatal. Psychologists who study road rage have argued that road rage is so violent often because <a href=\"http:\/\/www.drdriving.org\/articles\/taxonomy.htm\">drivers react<\/a> to being in an enclosed space, i.e. the car and road.\r\n\r\nMoreover, the lack of personal contact with another human <a href=\"https:\/\/www.webmd.com\/women\/features\/root-cause-of-road-rage#2\">creates emotional distance<\/a> between angry drives and the consequence of their actions. This emotional distance causes drivers to drive aggressively, causing the other driver unnecessary risk and, in some cases, severe harm.\r\n\r\n<a href=\"https:\/\/edition.cnn.com\/2019\/09\/10\/health\/road-rage-survival-tips-wellness\/index.html\">Aggressive driving behaviors include<\/a>, but aren\u2019t limited to:\r\n<ul>\r\n \t<li>Ramming another vehicle on purpose<\/li>\r\n \t<li>Exiting the vehicle to confront the other driver<\/li>\r\n \t<li>Cutting off another vehicle<\/li>\r\n \t<li>Blocking lanes from other vehicles<\/li>\r\n \t<li>Making rude gestures<\/li>\r\n \t<li>Honking repeatedly and loudly<\/li>\r\n \t<li>Yelling and intimidating other drivers<\/li>\r\n \t<li>Tailgating on purpose<\/li>\r\n<\/ul>\r\nAnother person\u2019s road rage can be a possible personal injury lawsuit that an injury attorney could help you pursue given that there were injuries resulting from the incident.\r\n<h2>Weather and Driving<\/h2>\r\nHarsh weather can be a massive reason for truck and car accidents in Arkansas. Arkansas has <a href=\"https:\/\/www.weather-us.com\/en\/arkansas-usa-climate\">mostly a mild climate<\/a>, but with loads of rain in the winter and spring. Occasional snowstorms also occur in the area, and snow usually does fall in the winter.\r\n\r\nWhen driving in the snow, it's best to take precautions against slipping. In climates like Arkansas, where the temperature hovers around the freezing point, snow can melt and refreeze onto the roads. This causes a phenomenon called black ice.\r\n\r\nBlack ice forms a <a href=\"https:\/\/www.fs.usda.gov\/Internet\/FSE_DOCUMENTS\/fseprd488148.pdf\">clear, slippery coating<\/a> of snow on roads. What\u2019s dangerous about this is that it\u2019s invisible to drivers and often worse to drive on than actual snow. Accidents often occur when drivers are unable to maneuver their cars on black ice and crash into another vehicle, pedestrian, or nearby foliage.\r\n\r\nBefore you decide to drive in difficult weather, make sure you\u2019re confident in your abilities, as well as your car\u2019s functioning. Drive cautiously and do not speed. A few moments of caution can make a huge difference when you\u2019re on the road in bad weather.\r\n\r\nThere are so many things that can cause a car accident. No matter the reason or who is at fault, reaching out for legal help is so important. Contact the team at <a href=\"https:\/\/www.seriouslawyers.com\/alabama-car-accidents-facts\/\">Serious Injury Law Group<\/a> to get the support you need.\r\n\r\n<img class=\"aligncenter size-jnews-750x536 wp-image-24799\" src=\"https:\/\/alongtheboards.com\/wp-content\/uploads\/2020\/07\/Causes-of-Vehicle-Accidents-4-750x536.jpg\" alt=\"\" width=\"750\" height=\"536\" \/>\r\n<h2>Faulty Vehicles<\/h2>\r\nVehicles need consistent maintenance, just like any other kind of electronic machine. Cars are among the most essential machines to take care of because the slightest <a href=\"http:\/\/www.jce-ieb.org\/doc_file\/3502002.pdf\">malfunction can have devastating effects<\/a>.\r\n\r\nHowever, sometimes it may not be about maintenance. There have been instances where supposedly brand-new cars have broken down without warning, causing an accident. In these cases, there\u2019s usually a manufacturing defect, or the car dealership has been scamming their customers.\r\n\r\nYou should consult a licensed auto accident lawyer, like <a href=\"https:\/\/lisagdouglas.com\/services\/criminal-law\/\">Lisa Douglas<\/a> in Arkansas if you are injured in a car wreck. If you are met with a car accident and are not at fault, remember to reach out for help.","author":{"@type":"Person","name":"Lana Vrz","url":"https:\/\/alongtheboards.com\/author\/lana-vrz\/"},"articleSection":["CARS"],"image":{"@type":"ImageObject","url":"https:\/\/alongtheboards.com\/wp-content\/uploads\/2020\/07\/Causes-of-Vehicle-Accidents.jpg","width":2238,"height":1488},"publisher":{"@type":"Organization","name":"","url":"https:\/\/alongtheboards.com","logo":{"@type":"ImageObject","url":"https:\/\/alongtheboards.com\/wp-content\/uploads\/2019\/09\/Logo-231x56.png"},"sameAs":["https:\/\/www.facebook.com\/#\/","https:\/\/twitter.com\/#","https:\/\/plus.google.com\/ Jegtheme","https:\/\/www.linkedin.com\/"]}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"hentry","entry-title":"Driving Disasters in Arkansas: Most Common Causes of Vehicle Accidents in the \u201cNatural State\u201d","published":"2020-07-03 10:07:44","updated":"2021-02-01 09:47:53"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/alongtheboards.com","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/alongtheboards.com\/cars\/","name":"CARS"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/alongtheboards.com","name":"Home"}},{"@type":"ListItem","position":4,"item":{"@id":"https:\/\/alongtheboards.com\/cars\/","name":"CARS"}}]}</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">;!function(){"use strict";window.jnews=window.jnews||{},window.jnews.first_load=window.jnews.first_load||{},window.jnews.first_load=function(){var e=this,t=jnews.library,n="object"==typeof jnews&&"object"==typeof jnews.library;e.data=null,e.run_ajax=!0,e.run_loginregister=!0,e.clear=function(){e.run_ajax=!0,e.run_loginregister=!0,e.data=null},e.init=function(){n&&(t.globalBody.querySelectorAll(".jeg_popup_account").length&&jnews.loginregister&&e.run_loginregister&&(e.run_loginregister=!1,jnews.loginregister.init(),jnews.loginregister.hook_form()),jfla.length&&e.run_ajax&&(e.run_ajax=!1,e.do_ajax({action:"jnews_first_load_action",jnews_id:jnewsoption.postid,load_action:jfla})))},e.update_counter=function(){if(n){var o={total_view:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_views_count .counts"),total_share:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_share_count .counts"),total_comment:t.globalBody.querySelectorAll(".jeg_meta_comment a span")};t.forEach(e.data.counter,(function(e,n){o[n].length&&t.forEach(o[n],(function(n,o){t.setText(n,e)}))}))}},e.do_ajax=function(o){if(n){var a=new XMLHttpRequest;a.onreadystatechange=function(){XMLHttpRequest.DONE===a.readyState&&200==a.status&&(e.data=JSON.parse(a.responseText),e.data.counter&&"object"==typeof e.data.counter&&e.update_counter())},a.open("POST",jnews_ajax_url,!0),a.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),a.send(t.httpBuildQuery(o))}}},window.jnews.first_load=new window.jnews.first_load,jnews.first_load.init()}();</script><script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://alongtheboards.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1631059862 -->

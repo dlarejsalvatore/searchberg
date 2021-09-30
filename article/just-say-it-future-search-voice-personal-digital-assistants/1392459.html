@@ -1,0 +1,1163 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html prefix="og: http://ogp.me/ns#" class="no-js ie6 lte9 lte8 lte7" lang="en"> <![endif]-->
+<!--[if IE 7]>     <html prefix="og: http://ogp.me/ns#" class="no-js ie7 lte9 lte8 lte7" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html prefix="og: http://ogp.me/ns#" class="no-js ie8 lte9 lte9 lte8" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html prefix="og: http://ogp.me/ns#" class="no-js ie9 lte9" lang="en"> <![endif]-->
+<!--[if IE 10]>    <html prefix="og: http://ogp.me/ns#" class="no-js ie10 lte10" lang="en"> <![endif]-->
+<!--[if gt IE 10]> <html prefix="og: http://ogp.me/ns#" class="no-js" lang="en"> <![endif]-->
+<!--[if !IE]><!-->
+<html prefix="og: http://ogp.me/ns#" class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"8670df0cad","applicationID":"8590685","transactionName":"bwQGZEoHXUVYVhdcX1ZOKWZ7SXJETVwAWVV7DgpESglfWlxHTHRCTAgHXF0=","queueTime":0,"applicationTime":2003,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwcHVFFAAAYJVFdaAg==",licenseKey:"8670df0cad",applicationID:"8590685"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(25),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(26),a=t(25);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||c(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(22),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(18),m=t(17),w=t(14),v=NREUM.o.REQ,g=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof g&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof g&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;"string"==typeof o?n=o:"object"==typeof o&&o instanceof v?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n);var s=(""+(o&&o instanceof v&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}),u.on("fetch-done",function(t,e){this.params||(this.params={}),this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime])})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(17);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],19:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(27);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],20:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function s(t){"hidden"===t&&d("pageHide",[l.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,f,u,d=t("handle"),l=t("loader"),p=t(24),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(s)}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],23:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],24:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(25),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(19),s=t("handle"),c=t(25),f=t("ee"),u=t(23),d=t(20),l=t(16),p=l.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,w="addEventListener",v="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},R=g&&y&&y[w]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(15),t(21),m[w]?(m[w]("DOMContentLoaded",o,!1),h[w]("load",r,!1)):(m[v]("onreadystatechange",i),h[v]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(26),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+
+    
+        <title>Just say it: The future of search is voice and personal digital assistants</title>
+		<meta name="keywords" content="Bing"/>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    
+	
+		<link rel="dns-prefetch" href="//static.campaignlive.co.uk" />
+		<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+		<link rel="dns-prefetch" href="//cached.imagescaler.hbpl.co.uk" />
+		<link rel="dns-prefetch" href="//cached.offlinehbpl.hbpl.co.uk" />
+		<link rel="dns-prefetch" href="//api.hbpl.co.uk" />
+	   <link rel="preconnect" href="//static.campaignlive.co.uk" />
+	   <link rel="preconnect" href="//ajax.googleapis.com" />
+	   <link rel="preconnect" href="//cached.imagescaler.hbpl.co.uk" />
+	   <link rel="preconnect" href="//cached.offlinehbpl.hbpl.co.uk" />
+	   <link rel="preconnect" href="//api.hbpl.co.uk" />
+
+
+    
+	
+		<link rel="dns-prefetch" href="//campaignlive.co.uk_hbi_ui/fonts/lato/lato-bold.woff2" />
+		<link rel="dns-prefetch" href="//campaignlive.co.uk_hbi_ui/fonts/fontAwesome/4.7.0/fontawesome-webfont.woff2" />
+	   <link rel="preload" href="//campaignlive.co.uk_hbi_ui/fonts/lato/lato-bold.woff2" />
+	   <link rel="preload" href="//campaignlive.co.uk_hbi_ui/fonts/fontAwesome/4.7.0/fontawesome-webfont.woff2" />
+
+
+    
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+
+
+
+    
+    
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#FFFFFF">
+
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#c5001d">
+<meta name="theme-color" content="#ffffff">
+
+
+    
+
+	
+
+
+        <meta name="com.silverpop.brandeddomains" content="campaignlive.com" />
+
+
+
+    <!--[if (gte IE 6)&(lte IE 8)]><link rel="stylesheet" type="text/css" title="slvzr-ignore" href="/css/min/_Layout_IeSlvzrIgnore_CmgLayoutMediaProvider_E222D01E9F5334E8DB2D55BF219F1DAC.css" /><![endif]--><link rel="stylesheet" type="text/css" href="https://static.campaignlive.co.uk/css/min/_Layout_Universal_CmgLayoutMediaProvider_34415DD4DDE4DCECE1062CB12E3A5912.css" />
+
+    
+    
+
+	<!--[if !(lt IE 9)]><!-->
+<link rel="stylesheet" type="text/css" href="https://static.campaignlive.co.uk/css/min/article_C7D2D428AB21AB5160EA19A6196D10B8.css" />	<!--<![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]>
+		<link rel="stylesheet" type="text/css" href="/css/min/article_C7D2D428AB21AB5160EA19A6196D10B8.css" />
+	<![endif]--> 
+
+
+    
+
+
+    
+
+
+
+    
+    <!--[if IE]>
+<link rel="stylesheet" type="text/css" href="/css/min/_IE_4403DE6374E0169F95E49C2D2D930F70.css" />    <![endif]-->
+
+    	<script type="text/javascript" charset="utf-8">
+		var ContentInfo = {
+			Site:{"Domain":"campaignlive.co.uk","SiteFormat":"responsive"},
+			Article:{"Id":1392459,"Title":"Just say it: The future of search is voice and personal digital assistants","ArticleDate":"2016-04-25T09:28:00+01:00","PublishedDate":"2016-04-25T09:28:36+01:00","ModifiedDate":"2016-04-25T10:50:37+01:00","JournalCode":"CMO","Keywords":"Bing","AuthorName":"Christi Olson, search evangelist","AuthorUrl":"","ShareUrl":"https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459","HasAssets":false,"RelatedLinks":[],"GatedLogin":false,"ArticleAge":1962,"Thumbnail":{"Label":"","FileName":"bing-main-20160425092845128.jpg","Path":"\\\\san\\Media\\websites\\offLine_HBPL\\news\\OMC\\bing-main-20160425092845128.jpg","Directory":"\\\\san\\Media\\websites\\offLine_HBPL\\news\\OMC\\","Url":"https://cached.offlinehbpl.hbpl.co.uk/news/OMC/bing-main-20160425092845128.jpg","Extension":"jpg","JournalCode":"CMO"},"MainImageHeight":0,"MainImageWidth":0,"TagGroups":[{"TagGroupId":8,"ArticleTagIds":[2995],"PathToPrimaryTagId":[2995],"TopLevelTagIds":[2995],"SubLevelTagIds":[]},{"TagGroupId":72,"ArticleTagIds":[6878],"PathToPrimaryTagId":[6878],"TopLevelTagIds":[6878],"SubLevelTagIds":[]},{"TagGroupId":56,"ArticleTagIds":[10010,5880,10019],"PathToPrimaryTagId":[10010,10010,10010],"TopLevelTagIds":[5880],"SubLevelTagIds":[10010,10019]},{"TagGroupId":94,"ArticleTagIds":[9840],"PathToPrimaryTagId":[9840],"TopLevelTagIds":[9840],"SubLevelTagIds":[]},{"TagGroupId":157,"ArticleTagIds":[12063,12063,12064],"PathToPrimaryTagId":[12063,12063],"TopLevelTagIds":[12063,12064],"SubLevelTagIds":[]}],"NewsType":{"Name":"Partner Content","Id":328},"TagHierarchy":[{"Id":157,"Name":"Access Shared","Children":[{"Id":12063,"Name":"Metered content","Children":[]},{"Id":12064,"Name":"Promoted content","Children":[]}]},{"Id":56,"Name":"Discipline","Children":[{"Id":5880,"Name":"Marketing","Children":[{"Id":10010,"Name":"Digital Marketing","Children":[]},{"Id":10019,"Name":"Search Marketing","Children":[]}]}]},{"Id":8,"Name":"Exposure","Children":[{"Id":2995,"Name":"Global","Children":[]}]},{"Id":94,"Name":"Hubs","Children":[{"Id":9840,"Name":"Media articles","Children":[]}]},{"Id":72,"Name":"Site location","Children":[{"Id":6878,"Name":"UK","Children":[]}]}],"CommentCount":0,"TagDataForGtm":{"157":{"groupId":157,"groupName":"Access Shared","primaryTagPath":"12063 Metered content","allGroupTags":"12063,12064"},"56":{"groupId":56,"groupName":"Discipline","primaryTagPath":"","allGroupTags":"5880,5880|10019"},"8":{"groupId":8,"groupName":"Exposure","primaryTagPath":"2995 Global","allGroupTags":"2995"},"94":{"groupId":94,"groupName":"Hubs","primaryTagPath":"9840 Media articles","allGroupTags":"9840"},"72":{"groupId":72,"groupName":"Site location","primaryTagPath":"6878 UK","allGroupTags":"6878"}}},
+Magazine:{"JournalCode":"CUK","Url":"https://www.campaignlive.co.uk/","PublisherName":"Campaign UK","PublisherLogoHeight":0,"PublisherLogoWidth":0,"SiteCatalystSitePrefix":"CUK"},
+PageInfo:{"DartZoneName":"/news/article","PageName":"cuk:news:article:article:article-1392459","Hierarchy":"cuk:news:article:1392459","DartHostName":"cuk.main","PageUrl":"news","ContentInfoType":3}
+		}
+	</script>
+
+    
+    
+    <script type="text/javascript">ContentInfo.Article.Gated = false; ContentInfo.Article.SocialMediaScripts = true;</script>
+    
+
+    
+        <script>
+            var settings = {
+                socialSettings: { "PublisherKey": "omgm5rj7hn9ofaku5pvq", "TwitterHandle": "campaignmag" }
+            };
+        </script>
+
+
+
+    <script type="text/javascript" charset="utf-8">
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(ContentInfo);
+    </script>
+
+            <style>
+                .async-hide {
+                    opacity: 0 !important
+                }
+            </style>
+            <script>
+(function (a, s, y, n, c, h, i, d, e) {
+        s.className += ' ' + y; h.start = 1 * new Date;
+            h.end = i = function () { s.className = s.className.replace(RegExp(' ?' + y), '') };
+            (a[n] = a[n] || []).hide = h; setTimeout(function () { i(); h.end = null }, c); h.timeout = c;
+        })(window, document.documentElement, 'async-hide', 'dataLayer', 4000,
+        { 'GTM-MCQZG4': true });</script>
+            <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-9924683-5', 'auto', {'allowLinker':true})
+            ga('require', 'GTM-MCQZG4');
+            </script>
+
+                <!-- Google Tag Manager -->
+                <script>
+(function (w, d, s, l, i) {w[l] = w[l] || []; w[l].push({'gtm.start':
+            new Date().getTime(), event: 'gtm.js'}); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=rWrN0yIe-Jejcz4Gf7NG8A&gtm_preview=env-2&gtm_cookies_win=x'; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5SWQNZP');</script>
+                <!-- End Google Tag Manager -->
+
+		<!--[if (gte IE 6)&(lte IE 8)]>
+			<script type="text/javascript" src="/_hbi_ui/basesitenet/js/libs/selectivizr-min.js"></script>
+			<script type="text/javascript" src="/_hbi_ui/basesitenet/js/libs/respond.min.js"></script>
+		<![endif]-->
+		<!--[if (IE 7)]>
+			<script type="text/javascript" src="/js/ie7.js"></script>
+		<![endif]--> 
+
+
+    
+
+
+
+    
+<script type="application/ld+json">
+    [{
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": "https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459",
+    "headline": "Just say it: The future of search is voice and personal digital assistants",
+    "image": {
+    "@type": "ImageObject",
+    "url": "https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/?sUrl=https://cached.offlinehbpl.hbpl.co.uk/news/OMC/bing-main-20160425092845128.jpg",
+    "height": 480,
+    "width": 815
+    },
+    "datePublished": "2016-04-25T09:28:36Z",
+    "dateModified": "2016-04-25T10:50:37Z",
+    "description": "",
+        
+            "author":{
+            "@type": "Person",
+            "name": "Christi Olson, search evangelist",
+            "url": ""
+            },
+        
+    "articleSection": "Partner Content",
+    "publisher": {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "CampaignUK",
+    "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.campaignlive.co.uk/img/logoSmallUK.gif"
+    },
+    "sameAs": ["https://www.facebook.com/pages/Campaign-Magazine/147368835334139","https://twitter.com/campaignmag","https://www.instagram.com/campaignmagazine","https://www.linkedin.com/groups/Campaign-Magazine-4396363","https://www.youtube.com/CampaignLiveTV"]
+    },
+    "isAccessibleForFree":"True",
+    "hasPart": [
+            
+            {
+            "@type": "WebPageElement",
+            "isAccessibleForFree": "True",
+            "cssSelector":".ArticleBodyPaywall"
+            }
+        
+             ,
+        
+            {
+            "@type": "WebPageElement",
+            "isAccessibleForFree": "True",
+            "cssSelector":".SocialMediaPaywall"
+            }
+        
+             ,
+        
+            {
+            "@type": "WebPageElement",
+            "isAccessibleForFree": "True",
+            "cssSelector":".conditionalRelatedArticlesPayWall"
+            }
+        
+    ]
+    }
+    ]
+</script>
+                <link rel="alternate" hreflang="en" href="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" />
+            <link rel="alternate" hreflang="en-GB" href="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" />
+
+
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@campaignmag" />
+    <meta name="twitter:url" content="https://www.campaignlive.co.uk/article/1392459" />
+    <meta name="twitter:description" />
+    <meta name="twitter:title" content="Just say it: The future of search is voice and personal digital assistants" />
+        <meta name="twitter:image" content="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/OMC/bing-main-20160425092845128.jpg" />
+    
+    <meta property="og:title" content="Just say it: The future of search is voice and personal digital assistants" />
+    <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459?utm_source=website&utm_medium=social" />
+        <meta property="og:image" content="https://cached.imagescaler.hbpl.co.uk/resize/scaleHeight/815/cached.offlinehbpl.hbpl.co.uk/news/OMC/bing-main-20160425092845128.jpg" />
+    
+    
+
+
+</head>
+            <body>
+ 
+
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SWQNZP"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+<div id="outerWrap">
+
+
+    <div class="a11y">
+        <ul>
+            <li><a href="#main" accesskey="s">Skip to Content</a></li>
+            <li><a href="#responsiveNavigation" accesskey="1">Skip to Main Navigation</a></li>
+            <li><a href="#topNav" accesskey="3">Skip to Information Links</a></li>
+            <li><a href="#topSearchForm" accesskey="4">Skip to Site Search</a></li>
+            <li><a href="#mainFooter" accesskey="5">Skip to Footer</a></li>
+            <li><a href="/accessibility" accesskey="6">Skip to Accessibility Information</a></li>
+            <li><a href="/" accesskey="h">Home Page</a></li>
+        </ul>
+    </div>
+
+    
+
+    <div id="container" class="page-main-content-tracked">
+
+
+
+        
+    <div id="advertTop">
+        <div id="t101Ad" class="commercialSlot" data-location-code="T" data-sizes="970x90|970x250|600x300|728x90"></div>
+
+    </div>
+
+<div id="sl701Ad" class="commercialSlot" data-location-code="SL" data-sizes="340x1080"></div>
+
+<div id="sr702Ad" class="commercialSlot" data-location-code="SR" data-sizes="341x1080"></div>
+
+
+
+
+        
+        
+        
+        <div id="wrap" class="clearfix">
+                    <header id="cbrMastHead" class="withStickyMobHeader">
+                        
+                        
+
+
+
+
+    <div class="inner clearfix">
+            <div id="navControl" class="mobShow">
+                <a href="#" class="mobNavButton"><img src="data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAzMCAxOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS4wNzE2IDE0LjI1MjdjLS4yOSAwLS41NDIuMTA0NS0uNzUzNi4zMTI0LS4yMTE3LjIwOC0uMzE4LjQ1NTgtLjMxOC43NDA3djIuMTA1YzAgLjI4NS4xMDYzLjUzMTUuMzE4LjczOTUuMjEyNi4yMDkuNDYzNi4zMTMzLjc1MzYuMzEzM2gyNy44NTY4Yy4yOSAwIC41NDE3LS4xMDQ0Ljc1MzQtLjMxMzMuMjEyLS4yMDguMzE4Mi0uNDU0Ny4zMTgyLS43Mzk2di0yLjEwNWMwLS4yODUtLjEwNjMtLjUzMjUtLjMxODItLjc0MDQtLjIxMTctLjIwODgtLjQ2MzQtLjMxMjMtLjc1MzQtLjMxMjNIMS4wNzE2ek0yOC45Mjg0LjA3MjJIMS4wNzE2Yy0uMjkgMC0uNTQyLjEwNDQtLjc1MzYuMzEyM0MuMTA2My41OTI3IDAgLjg0IDAgMS4xMjQ4VjMuMjNjMCAuMjg1LjEwNjMuNTMxMi4zMTguNzQuMjEyNi4yMDgzLjQ2MzYuMzEyNy43NTM2LjMxMjdoMjcuODU2OGMuMjkgMCAuNTQxNy0uMTA0NC43NTM0LS4zMTI2LjIxMi0uMjA4NS4zMTgyLS40NTUuMzE4Mi0uNzRWMS4xMjVjMC0uMjg0OC0uMTA2My0uNTMxLS4zMTgyLS43NDAzLS4yMTE3LS4yMDgtLjQ2MzQtLjMxMjMtLjc1MzQtLjMxMjN6TTEuMDcxNiA3LjI4MjdjLS4yOSAwLS41NDIuMTAzNy0uNzUzNi4zMTI3Qy4xMDYzIDcuODAzNCAwIDguMDUgMCA4LjMzNDZ2Mi4xMDU3YzAgLjI4NS4xMDYzLjUzMjUuMzE4Ljc0MDUuMjEyNi4yMDguNDYzNi4zMTI0Ljc1MzYuMzEyNGgyNy44NTY4Yy4yOSAwIC41NDE3LS4xMDQ0Ljc1MzQtLjMxMjQuMjEyLS4yMDguMzE4Mi0uNDU1NS4zMTgyLS43NDA1VjguMzM0NmMwLS4yODQ3LS4xMDYzLS41MzEzLS4zMTgyLS43MzkyLS4yMTE3LS4yMDktLjQ2MzQtLjMxMjctLjc1MzQtLjMxMjdIMS4wNzE2eiIgZmlsbD0iIzFCMUIxQiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+" alt="Menu" /></a>
+            </div>
+        <nav id="topNav" class="subNav">
+
+            <ul id="accountActions">
+            <li id="signInOut" class="mobile">
+        <a href="/login?returnUrl=http://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" title="Sign in" class="nav__link">Sign in</a>
+
+            </li>
+
+                            <li id="register" class="mobile registerBtnTop">
+        <a href="http://www.campaignlive.co.uk/register/?returnUrl=http://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" title="Register" class="nav__link">Register</a>
+                            </li>
+                        <li id="bulletins"><a href="https://www.campaignlive.co.uk/email-bulletins" title="Bulletins">Bulletins sign up</a></li>
+
+                    <li         class="cms ">
+
+            <a href="/membership" title="Subscribe" class="nav__link">Subscribe</a>
+    </li>
+
+                
+            </ul>
+
+            
+        </nav>
+
+    <div class="magGlassNew" id="mobSearch">Search</div>
+    <a href="https://www.campaignlive.co.uk/" id="title">
+        <h2>
+            <span>CampaignUK</span>
+        </h2>
+    </a>
+
+
+
+
+
+	<div id="siteSearch">
+<form action="/search" class="searchForm" id="topSearchForm" method="get">			<div class="searchFields">
+				<label for="KeyWords">Search</label>
+				<input accesskey="4" id="searchPhrase" name="KeyWords" placeholder="Type to search here" tabindex="1" type="text" value="" />
+				<input type="submit" class="searchSubmit" value="Search" />
+			</div>
+</form>	</div>
+
+
+    </div>
+            <div id="responsiveNavigation" style="">
+                <div id="mobNavHeader" class="mobShow">
+                    <a id="mobNavLogo" href="/"><img src="https://static.campaignlive.co.uk/img/logoSmallUK.gif" width="159"></a>
+                    <a href="#" class="mobNavButton"><img src="https://static.campaignlive.co.uk/img/buttons/menu.png" alt="Menu" /></a>
+                </div>
+                <h2 class="a11y">Main Navigation</h2>
+
+
+            <nav id="primaryNav" class="nestedNav">
+                <ul>
+                        <li id="navLatest" class="primaryLink ddItem ddNav ">
+                            
+                                    <a href="/latest" title="Latest">Latest</a>
+
+                                <nav class="subNav">
+                                    <ul>
+                                                <li><a href="/agency/campaigns" title="New Campaigns">New Campaigns</a></li>
+                                                <li><a href="/agency/account-reviews" title="Account moves">Account moves</a></li>
+                                                <li><a href="/latest/people-moves" title="People moves">People moves</a></li>
+                                                <li><a href="/media/latest" title="All Media News">All Media News</a></li>
+                                                <li><a href="/resources/podcasts" title="Podcasts and videos">Podcasts and videos</a></li>
+                                                <li><a href="/insight" title="Campaign Insight">Campaign Insight</a></li>
+                                    </ul>
+                                    <a class="subNavLink" href="#">Show</a>
+                                </nav>
+
+                        </li>
+                        <li id="navTheWork" class="primaryLink ddItem ddNav ">
+                            
+                                    <a href="/the-work" title="Creative Work">Creative Work</a>
+
+                                <nav class="subNav">
+                                    <ul>
+                                                <li><a href="/the-work/digital" title="Digital">Digital</a></li>
+                                                <li><a href="/the-work/tv" title="TV">TV</a></li>
+                                                <li><a href="/the-work/media" title="See All Media Channels">See All Media Channels</a></li>
+                                                <li><a href="/the-work" title="See All Sectors">See All Sectors</a></li>
+                                    </ul>
+                                    <a class="subNavLink" href="#">Show</a>
+                                </nav>
+
+                        </li>
+                        <li id="" class="primaryLink ddItem ddNav ">
+                            
+                                    <a href="/top_brand_agency" title="Top Brands &amp; Agencies">Top Brands &amp; Agencies</a>
+
+                                <nav class="subNav">
+                                    <ul>
+                                                <li><a href="/brand/a-z" title="All Brands">All Brands</a></li>
+                                                <li><a href="/agency/agency-a-z" title="All Agencies">All Agencies</a></li>
+                                                <li><a href="/agency/account-reviews" title="Account moves">Account moves</a></li>
+                                    </ul>
+                                    <a class="subNavLink" href="#">Show</a>
+                                </nav>
+
+                        </li>
+                        <li id="" class="primaryLink ddItem ddNav ">
+                            
+                                    <a href="/experiences" title="Experiences">Experiences</a>
+
+                                <nav class="subNav">
+                                    <ul>
+                                                <li><a href="/experiences/latest" title="Latest">Latest</a></li>
+                                    </ul>
+                                    <a class="subNavLink" href="#">Show</a>
+                                </nav>
+
+                        </li>
+                        <li id="" class="primaryLink ">
+                            
+                                    <a href="/resources/case-studies" title="Case studies">Case studies</a>
+
+
+                        </li>
+                        <li id="navEvents" class="primaryLink ">
+                            
+                                    <a href="/events" title="Events">Events</a>
+
+
+                        </li>
+                        <li id="navJobs" class="primaryLink ddItem ddNav ">
+                            
+                                    <a href="/jobs/" title="Jobs">Jobs</a>
+
+                                <nav class="subNav">
+                                    <ul>
+                                                <li><a href="http://www.campaignlive.co.uk/jobs/all/creative/" title="Creative Jobs">Creative Jobs</a></li>
+                                                <li><a href="https://campaign.haymarketrecruitment.com" title="Post a job">Post a job</a></li>
+                                                <li><a href="https://www.campaignlive.co.uk/careers" title="Career Advice">Career Advice</a></li>
+                                                <li><a href="https://www.campaignlive.co.uk/wonderfulworkplaces" title="Wonderful Workplaces">Wonderful Workplaces</a></li>
+                                                <li><a href="/jobs/all/" title="See All Jobs">See All Jobs</a></li>
+                                    </ul>
+                                    <a class="subNavLink" href="#">Show</a>
+                                </nav>
+
+                        </li>
+ 
+                </ul>
+            </nav>
+
+            </div>
+
+
+
+                    </header>
+
+            
+
+            <hr class="a11y" />
+
+            
+
+
+
+
+
+		<nav class="clearfix inner" id="trendingNav">
+			<ul>
+				<li class="trendingNavTitle">Trending:</li>
+				    <li         class="cms ">
+
+            <a href="http://www.campaignlive.co.uk/cannes" title="Cannes" class="nav__link">Cannes</a>
+    </li>
+    <li         class="cms ">
+
+            <a href="https://www.campaignlive.co.uk/article/campaign-cmo-outlook-esg-comes-fore/1718640" title="CMO Outlook" class="nav__link">CMO Outlook</a>
+    </li>
+    <li         class="cms ">
+
+            <a href="https://www.campaignlive.co.uk/schoolreports" title="School Reports 2021" class="nav__link">School Reports 2021</a>
+    </li>
+    <li         class="cms ">
+
+            <a href="https://www.campaignlive.co.uk/subscribe/the-knowledge" title="The Knowledge" class="nav__link">The Knowledge</a>
+    </li>
+    <li         class="cms ">
+
+            <a href="https://www.campaignlive.co.uk/resources/podcasts" title="Podcasts" class="nav__link">Podcasts</a>
+    </li>
+
+			</ul>
+		</nav>
+	    
+
+
+            <section id="main" role="main">
+                
+
+
+
+
+
+                    <div class="gridMain">
+                            <div class="group1">
+                                <div class="zoneGrid2">
+                                        <div class="grid1">
+                                            <div class="zone">
+                                                <!-- zone 2 -->
+
+
+
+
+
+
+
+
+        <article id="articleDetail" class="typeNews">
+            <div id="articleFull">
+                <div id="articleMain">
+                    <div class="articleHeading">
+
+
+                                <div class="sponsorPromoted">
+                                    <div class="highlight sponsorFlag">Promoted</div>
+                                    <div class="promotedImg">
+                                                <div><a href="http://advertise.bingads.microsoft.com/en-uk/be-there?s_cid=UK_BNBT_media_p2" target="_blank" title="Bing Network" class="sponsorImage"><img alt="Bing Network" src="https://cached.imagescaler.hbpl.co.uk/resize/scaleToFit/150/150/cached.offlinehbpl.hbpl.co.uk/news/OWM/bingadslogo.jpg" /></a></div>
+
+                                    </div>
+                                </div>
+
+                        <header>
+                                <div class="byline author">
+
+        				<div class="articleAuthor">Christi Olson, search evangelist</div>
+
+
+            <span>April 25, 2016</span>
+
+    </div>
+
+                                                <div class="timeWidget byline author">
+                        <div class="countTimeTitle">How long?</div>
+                            <span>4-6 minutes</span>
+
+
+                    </div>
+
+                            <h1>Just say it: The future of search is voice and personal digital assistants</h1>
+                            
+                        </header>
+
+
+                        <p class="summary"></p>
+
+                        
+
+                    </div>
+                    <div class="clearfix"></div>
+                        <div class="socialShare display-b">
+                                <div class="SocialMediaPaywall">
+                                        <aside class="sharingTools genericModule">
+            <div class="sharingToolWrap">
+    <div class="tweetShare share">
+        <a href="http://twitter.com/share" data-url="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-counturl="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" class="twitter-share-button" data-count="horizontal" data-via="campaignmag">Tweet</a>
+    </div>
+    <div class="facebookShare share">
+        <div id="fb-root"></div>
+
+        <div class="fb-share-button" data-href="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-layout="button" data-size="large" data-mobile-iframe="true">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459&t=Just+say+it%3a+The+future+of+search+is+voice+and+personal+digital+assistants" title="facebook" class="fb-xfbml-parse-ignore">Share</a>
+        </div>
+        
+    </div>
+    <div class="linkedinShare share">
+        <script type="in/share" data-url="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-counter="right" data-onsuccess="linkedInShare">
+        </script>
+    </div>
+            </div>
+    </aside>
+
+                                </div>
+                        </div>
+
+
+
+                    <div id="articleWrap">
+                        <div id="articleBody">
+                            <div id="hero">
+
+                            </div>
+                                    <div class="ArticleBodyPaywall">
+                                        <p><img src="https://cached.offlinehbpl.hbpl.co.uk/news/OMC/richedit/bing-main.jpg" alt="" width="100%"></p>
+<p>In the 2013 drama Her, actor Joaquin Phoenix plays a lonely writer named Theodore who falls in love with his AI digital assistant, "Samantha." Samantha, it seems, knows Theodore better than anyone.</p>
+<p>And while the voice-search enabled digital assistants of the real-world like Apple&rsquo;s Siri, Microsoft&rsquo;s Cortana and Amazon&rsquo;s Alexa may not yet have had anyone confess their undying love, we do know that they are quickly becoming the go-to search mode for consumers everywhere. In fact, ComScore says that by 2020, 50 per cent of all searches will be voice searches.</p>
+<p>Today&rsquo;s digital assistants are going beyond voice input, and are evolving to understand user intent and behaviors through available data and information to help consumers take actions.</p>
+<p>With voice search and the adoption of personal assistants coming on strong, here are some trends and tips for digital marketers.</p>
+<h2>Voice Search is mobile &ndash; and part of your everyday life</h2>
+<p>Voice search tends to be more mobile and locally focused because it&rsquo;s embedded into many mobile apps and devices. However, several digital assistants are integrated into products that are part of your everyday life, both at work and at home.</p>
+<p>For instance, Microsoft has integrated Cortana into Windows 10 to power both text and voice search on all devices from your PC to your phone to the Xbox One.</p>
+<p>Amazon&rsquo;s Echo is like having the Star-Trek computer available at the command of your voice, ready to answer your questions, play your music or audio books, and even control other devices in your home through smart home-connected technology.</p>
+<p><iframe src="https://www.youtube.com/embed/nCBsARRs4HI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" height="315" width="560"></iframe></p>
+<p>These devices are powered by data gathered across platforms and the Internet of Things, and are no longer solely tethered to mobile devices and applications.</p>
+<p>Using voice search and digital personal assistants is becoming second nature as they are integrated into products I use regularly and helps me get tasks done more quickly every day. For example, it&rsquo;s common for me to use voice search in my car with Ford Sync technology.</p>
+<p>I can send a text message while driving to let someone know I&rsquo;m running late, or use Cortana on my PC to add an appointment to my calendar.&nbsp; When I&rsquo;m at home I can speak to my Xbox to navigate between my favorite TV channel and Netflix, and then during the movie, ask Echo to add ice cream to my AmazonFresh shopping cart&nbsp; because I&rsquo;m almost out.</p>
+<h2>It&rsquo;s about the conversation</h2>
+<p>Over the last 15 years, we&rsquo;ve learned to succinctly express ourselves in very few words to traditional search engines. With voice search, spoken language connects people to what they&rsquo;re searching for with an immediacy, convenience and intimacy that text-only search could never provide.</p>
+<p>Because of this, the artificial intelligence that powers voice search grows smarter with every interaction and has a better understanding of user intent as the search becomes more conversational in nature.</p>
+<p>The AI is developing a model based on the conversational language that understands intent and context, builds on previous queries, can contemplate multiple steps and queries, and is oriented toward actions, tasks and transactions.</p>
+<p>For example: If I live in Seattle, but have travelled to Munich and I ask my digital assistant for directions to a hotel, and then for a cab company in Munich, it should anticipate that when I ask for local restaurant recommendations, the search results should be in Munich &ndash; not in Seattle &ndash; based on my current geo-location and the context of my recent historical searches.</p>
+<p>The search engines powering voice search and personal assistants are focusing on new ways that machine based learning and artificial intelligence can be used to analyze all of the available data signals&ndash; not only from their own products and the available search knowledge graphs &ndash; but also at how a current query pertains to previous queries, geolocation signals as well as your own connected data as signals of intent.</p>
+<p>As more devices and the Internet of Things provide data signals to the artificial intelligence platforms that power voice search, it can understand who you are, what you are doing, and where you are to understand the context of what you want, based on your behavior patterns and preferences. This makes voice search somewhat predictive in nature, with the ability to understand intent and anticipate what the searcher&rsquo;s upcoming needs may be.</p>
+<h2>Voice searches are different &ndash; and the results should be, too</h2>
+<p>We unconsciously change our behavior when using voice search. When you are searching for a restaurant on your desktop or phone, you might type in "Best Brunch in Los Angeles." But when you use voice search you change your behavior and ask a question, like "What restaurant has the best brunch in Los Angeles?" or "What restaurants are open for Brunch Now?"</p>
+<p><img src="https://cached.offlinehbpl.hbpl.co.uk/news/OMC/richedit/Chart19.jpg" alt="" width="100%"></p>
+<p>As a result, voice search queries are longer than their text counterparts &ndash; they tend to be three-to-five keywords in length, and they tend to explicitly ask a question, characterized by words like who, how, what, where, why and when, with the expectation that the search engines will provide an answer back.</p>
+<p><img src="https://cached.offlinehbpl.hbpl.co.uk/news/OMC/richedit/Chart26.jpg" alt="" width="100%"></p>
+<p>The choice of words used in the question provides more context about user intent, which in turn can provide advertisers with more insight into where the consumer is within the purchase funnel. Are they simply researching, or ready to purchase?</p>
+<p>For example, if a consumer asks, "What is the difference between an infant car seat and a convertible car seat?" they are likely just researching. But if they ask, "How much is a Mesa car seat?" or "Where can I buy a Mesa car seat?" they are much closer to taking action.</p>
+<p><img src="https://cached.offlinehbpl.hbpl.co.uk/news/OMC/richedit/Chart35.jpg" alt="" width="100%"></p>
+<p>And remember, not all queries that start with a term are created equal. "What price" shows more intent than "What is" and is further down the purchase path. Create and develop content to answer specific questions and to match to the right level of user intent.</p>
+<p>Understanding the nuances between conversational search queries can help you discern consumer intent and make sure that your website contains the right content to adapt to voice search.</p>
+<h2>Top tips for tapping into voice search</h2>
+<p>The continued rise of both personal assistants and voice search means that it&rsquo;s more important than ever to understand how search engines provide predictive answers to our questions. It&rsquo;s necessary to adapt our marketing strategies to be visible and provide answers to questions across all formats from text search to voice search.</p>
+<p>Personal assistants are getting smarter based on how we interact with them, learning from our speech patterns and personal preferences to gain context to help us with our daily life so we can focus on what matters most.</p>
+<p>Voice search is not a thing of the future &ndash; it&rsquo;s here today, and consumers are quickly adopting it. When they fall in love with their digital assistant of choice, make sure you&rsquo;re there, ready to take advantage of the promise voice search and digital assistants can deliver.</p>
+<hr>
+<p>&nbsp;</p>
+<h2>How savvy marketers should adapt to voice search</h2>
+<ol>
+<li>Write content in a natural, conversational voice that answers the questions your consumers are asking: Website content in the era of voice search isn&rsquo;t about keywords, it&rsquo;s about semantic search and building the context related to answering a question.</li>
+<li>Build out your view of user intent based on the types of question-based queries: It&rsquo;s essential to understand the intent behind a query and how both you and the search engine can deliver more accurate results based on the anticipated context. Develop content as well as expand your paid search keyword lists to include longer tail keyword phrases to reach users at each stage of intent based on the types of questions they are asking.</li>
+<li>Make sure structured data is integrated into the backend of your website (schema mark-up): Structured data within your website becomes more important because it is one of the signals used to power the search results and the "cards" -- or direct answers. Using structured data and schema mark-up can help the search engines understand and crawl your data more efficiently and become part of the available knowledge graphs.</li>
+</ol>
+                                    </div>
+
+                            <div id="articleEnd"></div>
+
+
+                                <div id="topicHeaderJs" class="tags">
+                                    <header>Topics</header>
+                                    
+
+          <div>
+	          <ul id="theWorkTags" class="clearfix">
+				<a href="/tag/discipline/marketing/5880">Marketing</a>
+					<a href="/tag/discipline/marketing/digital-marketing/10010">Digital Marketing</a>
+					<a href="/tag/discipline/marketing/search-marketing/10019">Search Marketing</a>
+
+	          </ul>
+          </div>
+
+
+
+
+
+
+                                </div>
+
+                                <div id="articleShareBody">
+                                    <div class="socialShare">
+                                            <div class="SocialMediaPaywall">
+                                                    <aside class="sharingTools genericModule">
+            <div class="sharingToolWrap">
+    <div class="tweetShare share">
+        <a href="http://twitter.com/share" data-url="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-counturl="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" class="twitter-share-button" data-count="horizontal" data-via="campaignmag">Tweet</a>
+    </div>
+    <div class="facebookShare share">
+        <div id="fb-root"></div>
+
+        <div class="fb-share-button" data-href="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-layout="button" data-size="large" data-mobile-iframe="true">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459&t=Just+say+it%3a+The+future+of+search+is+voice+and+personal+digital+assistants" title="facebook" class="fb-xfbml-parse-ignore">Share</a>
+        </div>
+        
+    </div>
+    <div class="linkedinShare share">
+        <script type="in/share" data-url="https://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" data-counter="right" data-onsuccess="linkedInShare">
+        </script>
+    </div>
+            </div>
+    </aside>
+
+                                            </div>
+                                    </div>
+                                </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="articleRelated">
+
+            <aside class="colLayout fourColLayout articleModule genericModule newsListingWithImages">
+                    <header>
+                        <h2>Related Articles</h2>
+                    </header>
+                        <div class="moduleContent clearfix">
+            <div class="newsListingWrapper">
+
+                    <div class="storyContent">
+                            <div class="mediaWrapper">
+                                <figure class="media">
+            <a href="/article/there-introducing-bing-network/1386076" title="Be there. Introducing the Bing Network.">
+                <img src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/181/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg" alt="Be there. Introducing the Bing Network." srcset="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/181/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 181w, https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/280/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 280w, https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/362/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 362w, https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/434/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 434w, https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/560/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 560w, https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/890/cached.offlinehbpl.hbpl.co.uk/news/OMC/1280x844_BingArticleImage-20160304044518722.jpg 890w" sizes="(min-width: 1024px) 181px, (min-width: 960px) 143px, (min-width: 768px) 204px, (min-width: 600px) 349px, (min-width: 480px) 268px, (min-width: 320px) 210px, (min-width: 0px) 280px, 276px" />
+            </a>
+
+                                        <span class="sponsorFlag">Promoted</span>
+                                </figure>
+                            </div>
+                        <div class="contentWrapper">
+                            <h3>    <a href="/article/there-introducing-bing-network/1386076" data-url="https://www.campaignlive.co.uk/article/there-introducing-bing-network/1386076" data-id="1386076" title="Be there. Introducing the Bing Network.">Be there. Introducing the Bing Network.</a>
+</h3>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+            </aside>
+
+                    <div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </article>
+
+<div class="modalWrap">
+        <div class="modal">
+
+                <img src="https://static.campaignlive.co.uk/img/logoSmallUK.gif" alt="Campaign Logo" class="modalLogo" />
+
+
+            <button class="modalClose" title="Close this modal">Close</button>
+            <section class="modalContent">
+                
+
+                    <p class="h1">Join a growing community of media, marketing and advertising professionals today </p>
+                    <p>Read exclusive registrant only articles</p>
+                    <p>Read more articles each month</p>
+                    <p>Sign up for free specialised news bulletins</p>
+
+                    <a href="https://www.campaignlive.co.uk/register/?returnurl=http://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" class="modalBtnRegister">Register Now</a>
+            </section>
+            <section class="modalForm">
+                <form action="/login" method="post">
+                    <input id="ReturnUrl" name="ReturnUrl" type="hidden" value="http://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459">
+                    <legend>Already Registered?</legend>
+                    <div class="modalFormMain">
+                        <div class="formRow">
+                            <label for="Email">Email address</label>
+                            <input data-val="true" name="Email" type="email" id="loginEmail" oninvalid="this.setCustomValidity('Please enter a valid email address')" oninput="setCustomValidity('')" required>
+                        </div>
+                        <div class="formRow">
+                            <label for="Password">Password</label>
+                            <input name="Password" type="password" oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" required>
+                        </div>
+                        <p class="checkbox">
+                            <input checked="checked" id="RememberMe" name="RememberMe" type="checkbox" value="true">
+                            <input name="RememberMe" type="hidden" value="false">
+                                <label for="RememberMe">Stay signed in</label>
+                        </p>
+                    </div>
+                    <input type="submit" class="button moreLink" value="Sign in" id="btnSignIn">
+                    <p class="forgottenSignIn"><a href="http://users.brandrepublic.com/password">Forgotten password?</a></p>
+                </form>
+            </section>
+        </div>
+	</div>
+	<div class="modalOverlay"></div>
+
+
+
+
+
+<img src="https://api.hbpl.co.uk/Article/ViewCount/1392459" width="1" height="1" />
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="group2 grid1">
+                                <div class="zone">
+                                    <!-- zone 5 -->
+                                    	<div class="textHtmlModule">
+		<div id="countdownTrial" class="currentFreeTrialPromo hide">
+  <p>
+	You have
+  </p>
+  <p class="daysReminder">
+	[DAYS_LEFT] Days left
+  </p>
+  <p>
+	of your free trial
+  </p>
+  <a href="/subscribe" class="moreLink">
+	Subscribe now
+  </a>
+</div>
+
+
+	</div>
+	<div class="textHtmlModule">
+		<div class="promo promoTitleText">
+  <h3>
+	<a href="https://www.campaignlive.co.uk/membership">
+	  Become a member of Campaign
+	</a>
+	<span style="font-size: 1.2rem; line-height: 1.16;">
+	  <br>
+	</span>
+  </h3>
+  <p>
+	Get the very latest news and insight from 
+	<em>
+	  Campaign 
+	</em>
+	with unrestricted access to 
+	<a href="campaignlive.co.uk">
+	  campaignlive.co.uk 
+	</a>
+	, plus get exclusive discounts to 
+	<em>
+	  Campaign 
+	</em>
+	events 
+	<em>
+	</em>
+  </p>
+  <a href="https://www.campaignlive.co.uk/membership" class="moreLink">
+	Become a member 
+  </a>
+</div>
+
+	</div>
+	<div class="textHtmlModule">
+		<div class="promo promoTitleText">
+<h3><a href="http://www.campaignlive.co.uk/jobs/newalert/"> Looking for a new job? </a></h3>
+<p>Get the latest creative jobs in advertising, media, marketing and digital delivered directly to your inbox each day.</p>
+<a href="http://www.campaignlive.co.uk/jobs/newalert/" class="moreLink"> Create an Alert Now </a></div>
+	</div>
+                <section class="jobsModuleBridge box jobsModuleLogo genericModule jobsModuleBridgeFull">
+        <header>
+                <a href="http://www.campaignlive.co.uk/jobs" rel="nofollow">
+                    <h2 class="h">Campaign <span>Jobs</span></h2>
+                </a>
+        </header>
+            <footer>
+                <a href="http://www.campaignlive.co.uk/jobs" rel="nofollow">See more Jobs</a>
+            </footer>
+            <div class="moduleContent" data-autoplay data-transition="slide" data-prev="&#xf104;" data-next="&#xf105;">
+            <ul class="clearfix panel">
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673760/account-manager/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Account Manager" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Account Manager</span>
+                <span class="jobSalary">Competitive salary and benefits</span>
+                <span class="jobLocation small">Silver Agency Ltd., Remote (commutable distance from Cheltenham, London or Manchester occasionally)</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673759/senior-account-manager/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Senior Account Manager" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Senior Account Manager</span>
+                <span class="jobSalary">Competitive salary and benefits</span>
+                <span class="jobLocation small">Silver Agency Ltd., Remote - commutable distance from Cheltenham, London or Manchester</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673721/growth-marketing-manager/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Growth Marketing Manager" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Growth Marketing Manager</span>
+                <span class="jobSalary">Up to £42,000</span>
+                <span class="jobLocation small">Fanbytes, London (Central), London (Greater)</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673688/head-of-strategy-frankfurt-/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Head of Strategy (Frankfurt)" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Head of Strategy (Frankfurt)</span>
+                <span class="jobSalary">£72288.80 - £90361 per annum + DOE</span>
+                <span class="jobLocation small">DNA Recruit, Hessen, Frankfurt</span>
+            </div>
+        </a>
+
+    </li>
+            </ul>
+            <ul class="clearfix panel">
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673681/planning-manager-planning-account-manager/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Planning Manager/Planning Account Manager" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Planning Manager/Planning Account Manager</span>
+                <span class="jobSalary">Competitive Salary</span>
+                <span class="jobLocation small">Guerillascope, London (Greater)</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673611/media-director-/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Media Director" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Media Director</span>
+                <span class="jobSalary">Competitive Salary</span>
+                <span class="jobLocation small">WePlay, Homeworking</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673610/creative-director/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Creative Director" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Creative Director</span>
+                <span class="jobSalary">Competitive Salary</span>
+                <span class="jobLocation small">WePlay, Homeworking</span>
+            </div>
+        </a>
+
+    </li>
+    <li>
+        
+        <a href="https://www.campaignlive.co.uk/jobs/job/15673375/account-manager-healthcare-education/?TrackID=11&amp;utm_source=widget&amp;utm_medium=referral&amp;utm_campaign=11" title="Account manager – Healthcare Education" rel="nofollow">
+            <div class="jobsWrapper">
+                <span class="h3">Account manager – Healthcare Education</span>
+                <span class="jobSalary">£35,000</span>
+                <span class="jobLocation small">CIG Healthcare Partnership, London</span>
+            </div>
+        </a>
+
+    </li>
+            </ul>
+        </div>
+                <footer>
+                    <div class="campaignFooter">
+                        <div class="campaignFooterLeft">
+                            <h4>Looking for a new job?</h4>
+                            <p>The latest creative jobs in advertising, media and marketing delivered directly to your inbox each day.</p>
+                        </div>
+                        <div class="campaignFooterRight">
+                            <a href="http://www.campaignlive.co.uk/jobs" rel="nofollow">SEARCH HERE</a>
+                        </div>
+                    </div>
+                </footer>
+        </section>
+<div id="r2302Ad" class="commercialSlot" data-location-code="R2" data-sizes="300x250|300x600"></div>
+
+                                </div>
+                            </div>
+                            </div>
+                    <div class="groups">
+                        
+                    </div>
+
+
+
+
+
+
+            </section>
+            
+    
+
+
+            
+<div id="advertBodyBottom">
+	<div id="f201Ad" class="commercialSlot" data-location-code="F" data-sizes="600x300|728x90"></div>
+
+	<div id="x601Ad" class="commercialSlot" data-location-code="X" data-sizes="1x1"></div>
+<div id="x602Ad" class="commercialSlot" data-location-code="X" data-sizes="1x1"></div>
+<div id="x603Ad" class="commercialSlot" data-location-code="X" data-sizes="1x1"></div>
+
+	<div id="z100Ad" class="commercialSlot" data-location-code="Z" data-sizes="1x1"></div>
+
+</div>
+        </div>
+    </div>
+    <hr class="a11y" />
+            <div class="footerWrap footerWrapMembership">
+                
+
+
+            <nav class="footerStrip inner clearfix">
+                <ul>
+                    <li class="footerStripLink h5 block">
+                        
+                            <a href="http://www.campaignlive.co.uk/membership/">
+
+                                <div class="x-large">
+                                    <em>Become a  Campaign Member</em>
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                            </a>                    </li>
+                    <li class="footerStripLink h5 block">            <a href="/login?returnUrl=http://www.campaignlive.co.uk/article/just-say-it-future-search-voice-personal-digital-assistants/1392459" title="Sign in"> <em class="h3">Login My Account</em> <i class="fa fa-angle-right"></i></a>
+</li>
+                    <li class="footerStripLink h5 block">            <a href="https://www.campaignlive.co.uk/email-bulletins" title="Bulletins"><em class="h3">Get Bulletins</em> <i class="fa fa-angle-right"></i></a>
+</li>
+                </ul>
+            </nav>
+
+
+
+
+            </div>
+           <div id="footerWrap">
+            <footer id="mainFooter" class="clearfix mainFooterMembership">
+                
+                
+                
+
+
+
+
+
+            <div class="footerInfo">
+                <div class="socialbar ">
+                    <h3> JOIN, SHARE, LIKE, FOLLOW US ON:</h3>
+                    <ul class="h5">
+                            <li>
+                                <a href="https://www.facebook.com/pages/Campaign-Magazine/147368835334139 " target="_blank" title="Facebook"   rel="nofollow"  ><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i><span class="a11y fa-a11y">Facebook</span></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/campaignmag " target="_blank" title="Twitter"   rel="nofollow"  ><i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="a11y fa-a11y">Twitter</span></a>
+                            </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/groups/3614115/ " target="_blank" title="Linkedin"   rel="nofollow"  ><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="a11y fa-a11y">Linkedin</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/campaignmagazine/" target="_blank" title="Instagram"   rel="nofollow"  ><i class="fa fa-lg fa-instagram" aria-hidden="true"></i><span class="a11y fa-a11y">Instagram</span></a>
+                                </li>
+                        <li>
+                            <a href="https://www.youtube.com/CampaignLiveTV">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                <span class="a11y fa-a11y">Youtube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+	
+<div id="footerNav">		
+	<div class="footerModuleGroup">			
+			<dl class="footerModule">				
+				<dt>Help and Information</dt>
+				<dd>
+					<ul>
+						         <li><a href="/about-us" title="About us" rel="nofollow"  >About us</a></li>
+						         <li><a href="/contact" title="Contact us" rel="nofollow"  >Contact us</a></li>
+						         <li><a href="/membership" title="Membership information" rel="nofollow"  >Membership information</a></li>
+						         <li><a href="/register" title="Register" rel="nofollow"  >Register</a></li>
+						         <li><a href="http://shop.haymarket.com/renewal/" title="Renew Membership" rel="nofollow"  >Renew Membership</a></li>
+						         <li><a href="/email-bulletins" title="Email sign up" rel="nofollow"  >Email sign up</a></li>
+						         <li><a href="/advertise" title="Advertise" rel="nofollow"  >Advertise</a></li>
+						         <li><a href="/faq" title="FAQs" rel="nofollow"  >FAQs</a></li>
+						         <li><a href="/accessibility" title="Accessibility" rel="nofollow"  >Accessibility</a></li>
+						         <li><a href="http://complaints.haymarket.com/" title="Editorial complaints" rel="nofollow"  >Editorial complaints</a></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl class="footerModule">				
+				<dt>International</dt>
+				<dd>
+					<ul>
+						         <li><a href="http://www.campaignlive.com/" title="Campaign US" rel="nofollow"  >Campaign US</a></li>
+						         <li><a href="http://www.campaignasia.com/" title="Campaign Asia Pacific" rel="nofollow"  >Campaign Asia Pacific</a></li>
+						         <li><a href="http://www.campaignindia.in/" title="Campaign India" rel="nofollow"  >Campaign India</a></li>
+						         <li><a href="http://campaignme.com/" title="Campaign Middle East" rel="nofollow"  >Campaign Middle East</a></li>
+						         <li><a href="http://www.campaigntr.com/" title="Campaign Turkey" rel="nofollow"  >Campaign Turkey</a></li>
+						         <li><a href="http://www.prweek.com/us" title="PRWeek US" rel="nofollow"  >PRWeek US</a></li>
+						         <li><a href="http://www.prweek.com/asia" title="PRWeek Asia" rel="nofollow"  >PRWeek Asia</a></li>
+						         <li><a href="http://www.mmm-online.com/" title="Medical Marketing &amp; Media" rel="nofollow"  >Medical Marketing &amp; Media</a></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl class="footerModule">				
+				<dt>Site Hubs</dt>
+				<dd>
+					<ul>
+						         <li><a href="/media" title="Media" rel="nofollow"  >Media</a></li>
+						         <li><a href="/brand" title="Brands" rel="nofollow"  >Brands</a></li>
+						         <li><a href="/agency" title="Agencies" rel="nofollow"  >Agencies</a></li>
+						         <li><a href="/insight" title="Campaign Insight" rel="nofollow"  >Campaign Insight</a></li>
+						         <li><a href="http://www.campaignlive.co.uk/jobs/" title="Campaign Jobs" rel="nofollow"  >Campaign Jobs</a></li>
+					</ul>
+				</dd>
+			</dl>
+	</div>
+	
+</div>
+
+<div id="copyright" class="copyright copyright--stretch">
+    <div class="colWrapper">
+        <div class="col">
+            <a id="haymarketLogo" title="Haymarket" href="http://www.haymarket.com"   rel="nofollow"  >
+                <img alt="Haymarket" src="/_hbi_ui/basesitenet/img/responsive/logoHaymarket.svg" />
+            </a>
+            &copy; Haymarket Media Group Ltd. | <a href="http://www.haymarket.com/terms-and-conditions" title="Terms &amp; Conditions" rel="nofollow">Terms &amp; Conditions</a> | <a href="https://www.haymarket.com/privacy-policy/#heading-cookies" title="Cookie Notice" rel="nofollow">Cookie Notice</a> | <a href="http://www.haymarket.com/privacy-policy" title="Privacy Notice" rel="nofollow">Privacy Notice</a>
+        </div>
+        <div class="col">
+            <a id="ipso" title="IPSO" href="https://www.ipso.co.uk/what-we-do/"   rel="nofollow"  >
+                <img alt="IPSO" src="/_hbi_ui/basesitenet/img/responsive/ipso.svg" />
+            </a>
+        </div>
+    </div>
+</div>
+
+            </footer>
+        </div>
+
+
+
+</div>
+
+<script type="text/javascript" src="https://static.campaignlive.co.uk/js/min/modernizr_A09EB122557794A1CA34EF79D869F352.js"></script>        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+
+
+	
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+<script type="text/javascript" src="https://static.campaignlive.co.uk/js/min/_Layout_Universal_CmgLayoutMediaProvider73221F80F6171AD2279471DF3D83E4DC.js"></script>
+
+
+    
+
+    
+<script type="text/javascript" src="https://static.campaignlive.co.uk/js/min/article763B67E92E87F99B08A6C1B88FB0F211.js"></script>
+
+
+
+
+    
+
+
+
+
+    </body>
+</html>

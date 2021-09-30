@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Description" content="Enter a list of URLs and this tool will return the title tag, keywords and description for them"/>
+	<title>Extract Title Tag and Meta Description from URLs - Free SEO Tool</title>
+	
+	<link rel="stylesheet" href="https://buzzstream-wpengine.netdna-ssl.com/wp-content/themes/buzzstream_theme_new/style.css" type="text/css" media="screen" />
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="http://buzzstream.wpengine.com/wp-content/themes/buzzstream_v2/style-ie.css" media="all"><![endif]-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" /> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/js/feeds.js"></script> 
+
+    <script id="com-buzzstream-tools-ui-Tools-PageMetaDataReport-0"> 
+	$(function(){
+		String.prototype.splitNewline = function(){
+			return this.split(/\r\n|\r|\n/);
+		};
+
+		Array.prototype.partition = function(batchSize){
+			var r = [];
+			for(var i = 0; i < this.length; i+=batchSize) {
+				r[r.length] = this.slice(i, i + batchSize);
+			}
+			return r;
+	    };
+
+		var extractHostname =  function(url){
+			return $('<a />').attr('href', url).attr('hostname');
+		}
+		
+		var createFavicon = function(url){ 
+			return $('<img/>')
+			 .attr('src','http://s2.googleusercontent.com/s2/favicons?domain='+extractHostname(url))
+			 .css({
+				 'height':'16px',
+				 'width':'16px',
+				 'margin-right': '3px'
+				});
+		}
+
+		// TODO add spinner animation
+// 		var $loading = $('#loading').hide();
+// 		$(document)
+// 		    .ajaxStart(function () {
+// 		        $loading.show();
+// 		    })
+// 		    .ajaxStop(function () {
+// 		        $loading.hide();
+// 		    });
+
+		$('#go').click(function(){
+			$($('textarea[name="urls"]').val().splitNewline().partition(10))
+			.each(function(){
+				var fetchURLs = this;
+				var data = fetchURLs.map(function(fetchURL) {
+				    return "url="+encodeURIComponent(fetchURL)
+				}).join("&");
+				$.ajax({
+				    type: "GET",
+				    url: "metaDataService",
+				    data: data,
+				    dataType: "json",
+				    success: function(msgs){
+				  	    var table = $('table');
+				        msgs.forEach(function(msg) {
+				            var tr = $('<tr></tr>');
+				            tr.append($('<td></td>')
+				   		        .attr("title",""+msg.url)
+					            .append(createFavicon(msg.url))
+					            .append($('<span>'+msg.url+'</span>')));
+				            tr.append($('<td></td>').text(msg.title).attr("title",msg.title));
+				            tr.append($('<td></td>').text(msg.description).attr("title",msg.description));								
+				            tr.append($('<td></td>').text(msg.keywords).attr("title",msg.keywords));
+				            table.append(tr);
+				        });
+					    $('form[action="tableCSVService"] textarea').val(table.html());
+					    $('a.downloadCSV').show();
+				    }
+				});
+			});
+		});
+
+		$('a.downloadCSV').click(function(){
+			$('form[action="tableCSVService"]').submit();
+			return false;
+		});
+			
+		
+	});
+    </script>
+    <style id="com-buzzstream-tools-ui-Tools-PageMetaDataReport-1">
+    	table{
+    		table-layout: fixed;
+    		width: 650px;
+    		border-bottom: 1px solid #333;
+    		border-left: 1px solid #333;
+    	}
+    
+    	table th{
+    		font-weight: bold;
+    		text-align: center;
+    	}
+    	
+    	table tr th, table tr td{
+    		width: 130px;
+    		border-top: 1px solid #333;
+    		border-right: 1px solid #333;
+    		color: #333;
+    		padding: 5px;
+    		overflow: hidden;
+    		white-space: nowrap;
+    	}
+    	
+    	table tr td{
+    		font-size: 11px;
+    	}
+    	
+    </style> 
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-B5PD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-B5PD');</script>
+<!-- End Google Tag Manager -->
+	<div id="header">
+        <a href="http://www.buzzstream.com/" class="logo" title="Software for SEO link building, social media marketing and public relations | BuzzStream">Software for SEO link building, social media marketing and public relations | BuzzStream</a>
+			<div style="display:none;" class="productPageId">427</div>
+			<div id="nav">
+	<ul>
+<li class="toggle"><a></a></li>
+<li class="login  hidden-sm hidden-xs"><a href="http://app.buzzstream.com/login?rand=653811163">Login</a></li>
+	<li class="home hidden-sm hidden-xs" id="Plans-&amp;-Pricing">
+		<a href="http://www.buzzstream.com/plans-pricing">Plans &amp; Pricing</a>
+	</li>
+    	<li class="home hidden-sm hidden-xs" id="Take-the-Tour">
+		<a href="http://www.buzzstream.com/tour">Take the Tour</a>
+	</li>
+    
+</ul>
+<div id="subnav">
+    <ul><li class="subnav hidden-md hidden-lg" id="Take-the-Tour">
+		<a href="http://www.buzzstream.com/tour">Take the Tour</a>
+	</li><li class="subnav hidden-md hidden-lg" id="Plans-&amp;-Pricing">
+		<a href="http://www.buzzstream.com/plans-pricing">Plans &amp; Pricing</a>
+	</li>
+ 
+		
+	
+ 
+		
+	
+ 
+    <li parentid="416" class=" subnav" id="About-Us">
+<a href="http://www.buzzstream.com/about">About Us</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="1039" class=" subnav" id="Support">
+<a href="http://www.buzzstream.com/help">Support</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="764" class=" subnav" id="The-BuzzStream-Blog">
+<a href="http://www.buzzstream.com/blog">The BuzzStream Blog</a>
+</li>
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+    <li parentid="420" class=" subnav" id="Digital-PR">
+<a href="http://www.buzzstream.com/social-media">Digital PR</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="427" class=" subnav" id="SEO-Link-Building">
+<a href="http://www.buzzstream.com/link-building">SEO Link Building</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="4020" class=" subnav" id="Content-Promotion">
+<a href="http://www.buzzstream.com/content-promotion">Content Promotion</a>
+</li>
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+
+</ul>
+</div>
+
+<div id="tournav">
+    
+    <ul>
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+    <li parentid="4012" class=" tour" id="Research">
+<a href="http://www.buzzstream.com/tour/research">Research</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="4014" class=" tour" id="Connect">
+<a href="http://www.buzzstream.com/tour/connect">Connect</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="4016" class=" tour" id="Manage">
+<a href="http://www.buzzstream.com/tour/manage">Manage</a>
+</li>
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+		
+	
+ 
+    <li parentid="4022" class=" tour" id="Try-it-Free">
+<a href="http://www.buzzstream.com/try-it-free">Try it Free</a>
+</li>
+ 
+		
+	
+ 
+    <li parentid="4023" class=" tour" id="Watch-Video">
+<a href="http://www.buzzstream.com/watch-video">Watch Video</a>
+</li>
+ 
+		
+	
+
+</ul>
+</div>
+
+</div>
+   </div>
+   <div class="container-fluid">
+	   <div class="content link_building" style="display: none;">
+	   <a href="http://www.buzzstream.com/link-building">
+	   		<img src="img/link_building_logo.png" alt="Buzzstream for Link Building" style="float: left; position: relative; top: -5px; margin-bottom: -25px;"/>
+	   </a>
+	   
+	   <div style="clear: both;"></div></div>
+   		<div class="row bg-white">
+            <div class="bs-row spaced">
+       	<h1 class="tool-title">Extract Page Title, Description and Keywords from URLs</h1>
+       	
+	Enter a list of URLs and this tool will return the title tag, keywords and description for them
+	<hr/>
+	<br/>
+	<div style="float: left; width: 200px;">
+		<textarea name="urls" style="height: 300px; width:200px; overflow: auto;"></textarea>
+		<div style="margin-top: 10px;">Paste your urls here.</div>
+		<a href="#" class="downloadCSV" style="display: none;">download as CSV file</a>
+	</div>
+	<div style="float: left; height: 300px; width: 100px;">
+		<button id="go" style="margin: 100px 0 0 25px;">Go ---&gt;</button>
+	</div>
+	<div style=" float: left; width: 480px;">
+		<table id="results" style="max-height: 500px;">
+		<thead>
+			<tr>
+				<th>Input URL</th>
+				<th>Title</th>
+				<th>Meta Description</th>
+				<th>Meta Keywords</th>
+			</tr>
+		</thead>
+		</table>
+		<form action="tableCSVService" method="post" style="text-align: right;">
+			<textarea name="html" style="display:none;"></textarea>
+			<a href="#" class="downloadCSV" style="display: none; position: relative; left: 155px;">download as CSV file</a>
+		</form>
+		
+	</div>		
+	<div style="clear: both; height: 200px;"></div>	
+
+       	<div style="clear: both; margin-top: 20px;">
+       	</div>
+                </div>
+       	</div> 
+    
+    </div>
+	<div id="footer" class="container-fluid">
+<div class="row">
+<div class="bs-row clearfix">
+ <div class="col-md-9">
+        
+        <li id="nav_menu-3" class="widget widget_nav_menu"><div class="menu-footer-site-map-container"><ul id="menu-footer-site-map" class="menu"><li id="menu-item-4024" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4024"><a href="#">Product</a>
+<ul class="sub-menu">
+    <li id="menu-item-4111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4111"><a href="http://www.buzzstream.com/tour">Take the Tour</a></li>
+    <li id="menu-item-4112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4112"><a href="http://www.buzzstream.com/plans-pricing">Plans &amp; Pricing</a></li>
+	<li id="menu-item-4029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4029"><a href="http://www.buzzstream.com/api-use-policy">API Use Policy</a></li>
+	<li id="menu-item-4028" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4028"><a href="http://tools.buzzstream.com">Free Tools</a></li>
+</ul>
+</li>
+<li id="menu-item-4025" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4025"><a href="#">Use Cases</a>
+<ul class="sub-menu">
+	<li id="menu-item-4045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4045"><a href="http://www.buzzstream.com/social-media">Digital PR</a></li>
+	<li id="menu-item-4046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4046"><a href="http://www.buzzstream.com/link-building">SEO Link Building</a></li>
+	<li id="menu-item-4044" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4044"><a href="http://www.buzzstream.com/content-promotion">Content Promotion</a></li>
+</ul>
+</li>
+<li id="menu-item-4026" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4026"><a href="#">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-4041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4041"><a href="http://www.buzzstream.com/help">Support</a></li>
+	<li id="menu-item-4037" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4037"><a href="http://www.buzzstream.com/blog/category/university">BuzzStream University</a></li>
+	<li id="menu-item-4034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4034"><a href="https://getsatisfaction.com/buzzstream">Customer Forums</a></li>
+	<li id="menu-item-4035" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4035"><a href="http://resources.buzzstream.com/linking-outside-the-box/">Free Link Building Guide</a></li>
+	<li id="menu-item-4036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4036"><a href="http://resources.buzzstream.com/advanced-guide-to-content-promotion/">Free Content Promotion Guide</a></li>
+</ul>
+</li>
+<li id="menu-item-4027" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4027"><a href="#">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-4039" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4039"><a href="http://www.buzzstream.com/about">About Us</a></li>
+	<li id="menu-item-4040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4040"><a href="http://www.buzzstream.com/blog">The BuzzStream Blog</a></li>
+</ul>
+</li>
+</ul></div></li>
+
+</div>
+
+        <div class="col-md-3 twitter-box">
+            <div id="blog">
+                
+<a href="http://www.buzzstream.com/blog" class="CTA blue has-arrow">Visit our blog</a>
+            </div>
+        </div>
+    <div style="clear: both"></div>
+<li id="text-9" class="widget widget_text">			<div class="textwidget"><div class="copyright">
+          
+<a href="http://www.buzzstream.com/terms-of-use">Terms of Use</a>
+<a href="http://www.buzzstream.com/api-use-policy">API Use Policy</a>
+<a href="http://www.buzzstream.com/privacy-policy">Privacy Policy</a>
+<br>© 2008-2015 BuzzStream   
+        </div></div>
+		</li>
+</div>
+</div>
+    </div>
+
+<script>(function(){if(document.referrer){try{var camp=getCookie('buzzcampid');if(camp){camp+="\n";}
+camp+=document.referrer;}catch(err){}}})();</script> 
+
+    <script type="text/javascript">
+        
+
+function toggleNav(nav, sub) {
+	nav.toggleClass(sub + "-on");
+	nav.find("#" + sub).fadeToggle("fast");
+}
+function checkNav(nav, sub) {
+	if (nav.hasClass(sub + "-on")) {
+		toggleNav(nav, sub);
+	}
+}
+$(function() {
+	var nav = $("#nav");
+	
+	$("#Take-the-Tour").prev().clone().prependTo( "#subnav ul" ).removeClass("home").addClass("subnav hidden-md hidden-lg");
+	$("#Take-the-Tour").clone().prependTo( "#subnav ul" ).removeClass("home").addClass("subnav hidden-md hidden-lg");
+	$("#nav ul li.home, .login").addClass(" hidden-sm hidden-xs");
+	
+	$('html').click(function(event) {
+        if (nav.hasClass("subnav-on") && (!$( event.target ).parent().hasClass("toggle")))  {
+		nav.removeClass("subnav-on");
+		$("#subnav").fadeOut("fast");
+	}
+	});
+
+	$('#subnav').click(function(event){
+    		event.stopPropagation();
+	});
+
+	$("#nav .toggle a").click(function(event) {
+		event.preventDefault();
+		checkNav(nav, "tournav");
+		toggleNav(nav, "subnav");
+	});
+});
+    </script>
+
+</body>
+</html>

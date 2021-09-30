@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Website SEO &#8211; Search Berg</title>
+	<atom:link href="https://www.searchberg.com/blog/category/website-seo/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.searchberg.com/blog</link>
+	<description></description>
+	<lastBuildDate>Tue, 10 Aug 2021 17:12:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+	<item>
+		<title>What is a Good Website Domain Authority and How Can You Increase Yours?</title>
+		<link>https://www.searchberg.com/blog/what-is-a-good-website-domain-authority-and-how-can-you-increase-yours/</link>
+					<comments>https://www.searchberg.com/blog/what-is-a-good-website-domain-authority-and-how-can-you-increase-yours/#respond</comments>
+		
+		<dc:creator><![CDATA[David Harper]]></dc:creator>
+		<pubDate>Wed, 03 Mar 2021 11:55:56 +0000</pubDate>
+				<category><![CDATA[Guest Blogging]]></category>
+		<category><![CDATA[SEO]]></category>
+		<category><![CDATA[Website SEO]]></category>
+		<guid isPermaLink="false">https://www.searchberg.com/blog/?p=2574</guid>
+
+					<description><![CDATA[<p>If you&#8217;re reading this blog, chances are, you&#8217;ve come across the term Domain Authority (DA) a couple of times. But what is Domain Authority? What does it mean for your website’s performance? To help you understand the concept and increase the Domain Authority of your website, we’ve created this comprehensive guide. Want to increase your [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/what-is-a-good-website-domain-authority-and-how-can-you-increase-yours/">What is a Good Website Domain Authority and How Can You Increase Yours?</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>If you&#8217;re reading this blog, chances are, you&#8217;ve come across the term <strong>Domain Authority (DA) </strong>a couple of times. But what <em>is </em>Domain Authority? What does it mean for your website’s performance?</p>
+<p><span id="more-2574"></span></p>
+<p>To help you understand the concept and increase the Domain Authority of your website, we’ve created this comprehensive guide.</p>
+<div class="blog-cta style3">
+<h3>Want to increase your Domain Authority? We know how to get you there! Fill out the form to get great results!</h3>
+<div class="inner"><form id="form2" name="form1">
+  <input id="Subject2" name="Subject" type="hidden" value="Request a Quote (Blog Post Form)">
+  <div class="row">
+  <div class="col">
+    <input name="Name" type="text" id="Name2" class="cforminput-ind" placeholder="Name">
+  </div>
+  <div class="col">
+  	<input name="Website" type="text" id="Website2" class="cforminput-ind4" placeholder="Website">
+  </div>
+  <div class="col">
+    <input name="Email" type="email" id="Email2" class="cforminput-ind3" placeholder="Email">    
+  </div>
+  <div class="col">
+    <input name="Number" type="tel" id="Number2" class="cforminput-ind2" placeholder="Phone">
+  </div>
+  </div>
+  <input id="Source1" name="Source" type="hidden" value="19">
+    <input id="country2" name="Country" type="hidden" value="Location of 122.2.98.13: City of Taguig, Philippines
+">
+  <div class="submit-button"><a href="javascript:void(0)" onclick="return validateCaptcha2();" id="home-submit-button"> Submit Request</a></div>
+  <div class="clear_fix"></div>
+</form>
+</div>
+</div>
+<h2>Table of Contents</h2>
+<p><a href="#_Toc65680080">What is Domain Authority?</a></p>
+<p><a href="#_Toc65680081">So, What Is A Good Domain Authority?</a></p>
+<p><a href="#_Toc65680082">How is Domain Authority Calculated?</a></p>
+<p><a href="#_Toc65680083">How to Increase Domain Authority of Your Website?</a></p>
+<ol>
+<li><a href="#_Toc65680084"> Accept Only High-Quality, Relevant Backlinks</a></li>
+<li><a href="#_Toc65680085"> Create a Link Building Strategy</a></li>
+<li><a href="#_Toc65680086"> Guest Post to boost your Domain Authority</a></li>
+<li><a href="#_Toc65680087"> Build Domain Authority with Content Syndication</a></li>
+<li><a href="#_Toc65680088"> Create high-value content that fellow bloggers will want to link to</a></li>
+<li><a href="#_Toc65680089"> Research your competitor&#8217;s strategies and consider writing power blogs</a></li>
+<li><a href="#_Toc65680090"> Make sure to work on your on-page SEO</a></li>
+</ol>
+<p><a href="#_Toc65680091">Update older content</a></p>
+<p><a href="#_Toc65680092">Optimize images</a></p>
+<p><a href="#_Toc65680093">Optimize meta tags and descriptions </a></p>
+<p><a href="#_Toc65680094">Use keywords naturally</a></p>
+<p><a href="#_Toc65680095">Use both internal and external links</a></p>
+<ol start="8">
+<li><a href="#_Toc65680096"> Fix up your Technical SEO</a></li>
+<li><a href="#_Toc65680097"> Social Signals</a></li>
+<li><a href="#_Toc65680098"> Mobile Friendliness</a></li>
+</ol>
+<p><a href="#_Toc65680099">Wrapping Up!</a></p>
+<p>&nbsp;</p>
+<h2><a name="_Toc65680080"></a>What is Domain Authority?</h2>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2589" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-14.png" alt="What is Domain Authority?" width="750" height="544" /></p>
+<p>Created by Moz, Domain Authority is a ranking metric—an aggregated number—that indicates how <em>authoritative</em> your website is. The higher your website’s domain authority, the more easily it can rank for your target keywords.</p>
+<p>Furthermore, Moz states that a website’s DA is calculated by assessing aspects like linking root domains and the number of total links into a DA score.</p>
+<p>DA is scored on a scale of 1–100, with 1 being the lowest performing and 100 being the highest. New websites that have very little to no authority typically start out with a DA of 1. The top websites on the internet, including <u><a href="https://www.apple.com/" target="_blank" rel="nofollow noopener noreferrer">Apple</a></u>, <u><a href="https://www.youtube.com/" target="_blank" rel="nofollow noopener noreferrer">YouTube</a></u>, and <u><a href="https://www.google.com/" target="_blank" rel="nofollow noopener noreferrer">Google</a>,</u> have DAs of 100.</p>
+<h3><a name="_Toc65680081"></a>So, What Is A Good Domain Authority?</h3>
+<p>DA below 40 is considered poor; 40–50 is considered average; 51–60 is good; anything above 60 is excellent.</p>
+<p>So clearly, scoring high when it comes to Domain Authority should definitely be on your business’s bucket list. But instead of focusing on getting the highest possible DA and competing with giants like Apple and Google, look at your competitors. Your goal should be to develop a higher domain authority than them.</p>
+<p>Small businesses, for example, have a relatively lower DA overall, making it easier for competitors to scope out the landscape and improve their authority.</p>
+<p>The next logical question is, how <em>do</em> you get high domain authority relative to your competitors?</p>
+<p>There are many factors, and in this comprehensive blog, we’ll cover them all in depth.</p>
+<h3><a name="_Toc65680082"></a>How is Domain Authority Calculated?</h3>
+<p>Domain Authority is calculated using the total number of backlinks you receive, including root domains (among a host of other metrics). It defines the ranking capabilities of an entire website for any page it creates, including but not limited to blog posts.</p>
+<p>It&#8217;s important to note that <strong>Domain Authority</strong> is different from <strong>Page Authority (PA)</strong>. So what is Page Authority? While PA measures the ranking strength and capabilities of a single web page on a website, DA showcases the strength of the <em>entire website</em>, indicating the likelihood of a web page ranking when you create one. While different, PA largely depends on Domain Authority because they ultimately rely on the same factors.</p>
+<p>So without further ado, let&#8217;s get to our comprehensive ways to increase your site&#8217;s Domain Authority.</p>
+<h2><a name="_Toc65680083"></a>How to Increase Domain Authority of Your Website?</h2>
+<h3><a name="_Toc65680084"></a>1. Accept Only High-Quality, Relevant Backlinks</h3>
+<p>Your backlinks are arguably the most important factor in improving your Domain Authority score.</p>
+<p>Backlinks are created when other websites hyperlink to your website. These links can send traffic to your websites, improve rankings, and increase your Domain Authority.</p>
+<p>To better understand backlinks, check out our YouTube video <u><a href="https://www.youtube.com/watch?v=GwiI6V1eyQg" target="_blank" rel="nofollow noopener noreferrer">What is Backlinking And Why is it Important for YOUR Business</a></u>.</p>
+<p><iframe loading="lazy" src="https://www.youtube.com/embed/GwiI6V1eyQg" width="730" height="411" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>&nbsp;</p>
+<p>So your goal with backlinks is to make sure that they’re all high-quality and relevant to your site. Luckily, you can remove irrelevant, spammy backlinks that will harm your domain authority in the long run using the <u><a href="https://search.google.com/search-console/disavow-links?utm_source=wmx&amp;utm_medium=deprecation-pane&amp;utm_content=disavow-links-main" target="_blank" rel="nofollow noopener noreferrer">Disavow tool</a></u>, courtesy of Google.</p>
+<p>Way over your head? You can get in touch with a professional SEO company that can run a <a href="https://www.searchberg.com/backlink-audit/">backlink audit</a> for you to take care of that.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2588" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-13.png" alt="screenshot of Disavow tool from Google for backlinks which helps improve website Domain Authority by removing irrelevant, low-quality links" width="1075" height="538" /></p>
+<p>If only high-quality, relevant websites are able to link to your website, Google’s bots are more likely to trust your website’s domain authority. The industry-standard rule is that do-follow links are better than no-follow links. This is because do-follow links transfer greater &#8220;SEO juice&#8221; from the linking site to yours compared to no-follow links.</p>
+<p>No follow links aren&#8217;t bad to have by any means—you just want to try to target more do-follow links because they’ll give you more SEO bang for your buck. Once you audit your current links and regularly remove the “trash” links, so to speak, you can focus on building more high-quality, relevant backlinks.</p>
+<p><em><strong>Pro tip </strong></em></p>
+<p><em><strong>If you’re running a small business, submit your site for local roundups. These include “best XYZ” lists and/or directories that accept submissions. These are easy backlinks for you to grab for your business.</strong></em></p>
+<p>Another hack is to collaborate with local businesses that have a similar customer demographic as you. In this way, you can build mutually beneficial links that are relevant to your mutual customers. You can even work with small businesses that you already have a professional relationship with whose customer demographics would be interested in your product or service. There are more ways to build high-quality links, though.</p>
+<div class="blog-cta style3">
+<h3>We’ve helped hundreds of businesses increase their Domain Authority. Become one of them today!</h3>
+<div class="inner"><form id="form3" name="form1">
+  <input id="Subject3" name="Subject" type="hidden" value="Request a Quote (Blog Post Form)">
+  <div class="row">
+  <div class="col">
+    <input name="Name" type="text" id="Name3" class="cforminput-ind" placeholder="Your Full Name">
+  </div>
+  <div class="col">
+  	<input name="Website" type="text" id="Website3" class="cforminput-ind4" placeholder="Website">
+  </div>
+  <div class="col">
+    <input name="Email" type="email" id="Email3" class="cforminput-ind3" placeholder="Email Address">    
+  </div>
+  <div class="col">
+    <input name="Number" type="tel" id="Number3" class="cforminput-ind2" placeholder="Phone Number">
+  </div>
+  </div>
+  <input id="Source1" name="Source" type="hidden" value="19">
+    <input id="country3" name="Country" type="hidden" value="Location of 122.2.98.13: City of Taguig, Philippines
+">
+  <div class="submit-button"><a href="javascript:void(0)" onclick="return validateCaptcha3();" id="home-submit-button"> Submit Request</a></div>
+  <div class="clear_fix"></div>
+</form>
+</div>
+</div>
+<h3><a name="_Toc65680085"></a>2. Create a Link Building Strategy</h3>
+<p>Now that you know you want to maintain only high quality, high authority links and are well aware of how to disavow unwanted links, you need a strategy to build wanted links.</p>
+<p>The first most important building block to any great promotion strategy is having something of note or value to say in your industry. The second is to promote this content using every marketing channel at your disposal.</p>
+<p>So once you&#8217;ve created in-depth blogs (we will get into details about <strong><em>how </em></strong>to create linkable content in a future point), send it to your email list and promote it on your social media channels. Don&#8217;t underestimate organic reach even if you don&#8217;t have a sizable following yet. Use hashtags that are relevant to your industry and content to get more eyeballs on your content.</p>
+<p>The next step once you&#8217;ve squared away what you can do on your own is to reach out to the big boys. Or, at least, the <em>bigger </em>boys in your industry. As long as their website has a similar or greater authority as yours, you should contact them for a backlink. You want to be subtle as opposed to making demands when you contact them. Make sure you do your research regarding their brand beforehand. If the person&#8217;s audience isn&#8217;t relevant to yours, then there&#8217;s no point reaching out.</p>
+<p>Express gratitude for the content they publish. Here, it can help to link to a specific blog that resonated with you, one that is similar in topic to the content you are seeking to build a link with. You can then say in your email or message that you also wrote a new blog about *insert similar topic interest* and that you thought they might enjoy it as someone who writes about said topic/s.</p>
+<p>You can end your email or message by saying that your blog/guide/article/etc. might make a helpful addition to their page. End the message on a positive note and send it off. If they like your content and think it would help their audience to read it, they will happily link to it. Many will accept, a lot will say no, and some won&#8217;t even respond. That is part of the game of link building.</p>
+<p>Another key way to proactively build links is to strategically guest post.</p>
+<h3><a name="_Toc65680086"></a>3. Guest Post to boost your Domain Authority</h3>
+<p>Guest posting is when you write a piece that is to be published on a third party website instead of your own. A guest post is many times more efficient and effective at boosting your current DA score than only creating content on your native website is.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2587" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-12.png" alt="screenshot of example guest post page for the photography niche" width="1195" height="891" /></p>
+<p>With guest posting, you will have many opportunities to link your website in your content or Author Bio yourself. Studies have shown that people are more likely to click on links within a blog while they are still gaining information rather than afterwards, once they have captured said information.</p>
+<p>Both ways, however, provide a high quality backlink to your website from a reputable, high DA site that is sure to also boost your own DA. This is important because these links will be on high authority websites that you&#8217;ve found in your niche, showing Google that you are a thought leader in your industry.</p>
+<p>In addition, since the new people that will read your post are already interested in your niche, this further improves the chances of them coming to your blog and linking back to <em>your</em> posts.</p>
+<p>You can find guest posting websites by searching &#8220;*insert niche* guest posting websites&#8221; on Google.<img loading="lazy" class="aligncenter size-full wp-image-2586" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-11.png" alt="Screenshot of Google search to find relevant guest posting sites" width="1042" height="696" /></p>
+<p>Yet another way is to locate them using key phrases such as &#8220;write for us&#8221;, &#8220;submit a post&#8221;, &#8220;submit a blog&#8221;, etc.</p>
+<p>A final note on guest posts is to make sure that the links being provided to you are &#8220;<strong><em>do follow</em></strong>&#8221; and not &#8220;<em>no follow</em>&#8220;. <u>A do follow link will help your rankings directly</u> by communicating the link to search engines, while a no follow link will not communicate this.</p>
+<p><em><strong>Pro Tip</strong></em></p>
+<p><em><strong>Since guest posting is a time intensive process, don&#8217;t mass produce content to be guest posted everywhere; instead, be more strategic about which websites will give you the biggest bang for your buck.</strong></em></p>
+<p>While this information about no follow backlinks can persuade you to avoid no follow links altogether, chances are, you will get them at some point. There&#8217;s no need to remove them as long as they are from a relevant website in your niche.</p>
+<p>They still provide referral traffic (which influences your rankings), brand awareness, and greater social media shares and engagement. So while no follow links may not directly impact your rankings and DA, they do indirectly help so there’s no harm to keep relevant no follow links as part of your website&#8217;s backlink portfolio.</p>
+<h3><a name="_Toc65680087"></a>4. Build Domain Authority with Content Syndication</h3>
+<p>Content syndication is when you publish a singular piece of content on <em>multiple websites</em>. Note that this is separate from guest posting because, instead of creating entirely new content on a website, you are instead reposting it by giving the third party website permission to do so.</p>
+<p>You can do this on your own using blog posting websites like <a href="http://www.linkedin.com" target="_blank" rel="nofollow noopener noreferrer">LinkedIn</a> and <a href="http://www.medium.com" target="_blank" rel="nofollow noopener noreferrer">Medium</a>, and even forum websites such as <a href="https://www.quora.com/" target="_blank" rel="nofollow noopener noreferrer">Quora</a> and <a href="http://www.reddit.com" target="_blank" rel="nofollow noopener noreferrer">Reddit.</a></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2585" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-10.png" alt="screenshot of LinkedIn blogs site where content can be reposted and linked back to your website to improve your backlinks and hence, Domain Authority" width="1146" height="890" /></p>
+<p>You can also reach out to websites that will republish with your permission. To find these, search &#8220;republish with permission&#8221; and add the topic you are covering in your piece or even your niche as a whole so you can explore.</p>
+<p>When you do find these web sources where you can republish with permission, you want to reach out to them communicating the value their site will receive through republishing your specific content piece.</p>
+<h3><a name="_Toc65680088"></a>5. Create high-value content that fellow bloggers will want to link to</h3>
+<p>There’s a reason we keep saying that <em><u><a href="https://www.searchberg.com/blog/v1/why-content-driven-seo-is-a-lucrative-digital-marketing-strategy-for-2019-and-beyond/">Content is King</a>. </u></em>That’s because it truly is, fit with a bombastic gold crown and silver scepter.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2584" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-9.png" alt="A content marketer is typing on their laptop writing high-quality content to improve their website’s SEO and Domain AuthorityA content marketer is typing on their laptop writing high-quality content to improve their website’s SEO and Domain Authority" width="962" height="642" /></p>
+<p>The truth is, you can follow every single SEO advice and tactic in the proverbial book, but, ultimately, having good SEO clears the path for a site visitor to come to your content. So if your content isn’t helpful, engaging, or even interesting, you’re going to get stuck with a high bounce rate and very minimal to <u><a href="https://www.forbes.com/sites/forbesagencycouncil/2020/03/04/the-secret-to-high-search-engine-rankings-quality-content/?sh=2b42b5b070c5" target="_blank" rel="nofollow noopener noreferrer">no conversions</a></u>.</p>
+<p>People are searching for answers to their pain-points and concerns on the internet. If you’re the one to be able to provide them with answers in a way that makes sense to them, they’ll be grateful and are more likely to remember your site as a future resource.</p>
+<p>Good content is helpful to build trust with your prospect. Trust leads to higher site visits, lower bounce rates, greater dwell time, and greater conversions. Yet another awesome benefit of creating high-quality content, though, is that authoritative blogs within your niche will also find it valuable.</p>
+<p>Because your blog explains, teaches, or provides some sort of resource to them in an easily digestible manner, they’ll be incentivized to link back to your blog as a citation in one of their pieces. Therefore, your go-to strategy to increase your DA should be to regularly release high-value content for your niche.</p>
+<p><em><strong><u>Pro Tip</u></strong></em></p>
+<p><em>Provide valuable content that you can use is to create media-rich content such as infographics, graphs, and charts that break down complex topics in your niche into a simple picture.</em></p>
+<p>One final tip we will impart here for content is if you&#8217;re wondering what kind of content to create that fills a gap, you might want to check out the content your competitors are creating and figure out what&#8217;s missing. Therein lies your opportunity.</p>
+<p>To learn more about writing great content, be sure to check out our blog: <u><a href="https://www.searchberg.com/blog/v1/how-to-write-a-blog-that-ranks/">How To Write A Blog That Ranks</a></u>.</p>
+<h3><a name="_Toc65680089"></a>6. Research your competitor&#8217;s strategies and consider writing power blogs</h3>
+<p>If you do your research thoroughly, you&#8217;ll discover the keywords your competitors are targeting. Based on this, you’ll know what’s missing in your content marketing strategy <em>and </em>what you need to beat in order to rank.</p>
+<p>Check what kind of sites are already linking to their web page. Are you able to build a Franken-blog that is the MOST comprehensive one out of all these competitors? This kind of blog, also known as a power blog, can be highly sought after by readers because it is a one-stop shop for everything they need to know about a topic. A power blog in this way can help your blog stand out.</p>
+<p>If you still need convincing here, be sure to read our blog <a href="https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/">5 Reasons Why You Need Power Blog PostsFor Your Website Blog</a>.</p>
+<h3><a name="_Toc65680090"></a>7. Make sure to work on your on-page SEO</h3>
+<p>In addition to your off-page SEO, which includes setting up backlinks, it’s also important to work on your <em>on-page SEO </em>to increase your domain authority.</p>
+<h4><a name="_Toc65680091"></a>Update older content</h4>
+<p>The most important factor in your on-page SEO is to make sure your content is up to date and relevant to today’s audiences. If your blog has lost relevance, it will result in an increased bounce rate, which ultimately affects your overall SEO efforts, rankings, and domain authority.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2583" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-8.png" alt="A screenshot of a recent Search Berg blog updated for relevancy in 2021" width="699" height="337" /></p>
+<h4><a name="_Toc65680092"></a>Optimize images</h4>
+<p>A feature not enough people with websites are aware of is that you can actually add more text at the back-end of every image on your website.</p>
+<p>You can do this by updating the image’s file name and the associated Alt Text. The point of these fields is to show the text to the viewer about what’s happening in the image in case it doesn’t load, or your visitor is visually impaired. You can simply describe what your image contains and, where relevant, insert your target keywords in the Alt text.</p>
+<h4><a name="_Toc65680093"></a>Optimize meta tags and descriptions</h4>
+<p>Each page on your website will have a section in the HTML region to optimize your meta tags and descriptions.<img loading="lazy" class="aligncenter size-full wp-image-2582" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-7.png" alt="Meta tags and descriptions shown in search results, which, when optimized, improve website Domain Authority and SEO" width="952" height="656" /></p>
+<p>In a nutshell, these are the titles and descriptions that appear on Google when you search a term.</p>
+<p>So if you leave your meta tags and descriptions up to chance, Google will phrase them at random. Since this is the equivalent of your store’s front sign, i.e., the first thing any of your prospects from Google search results will see, it’s worth optimizing for keywords and readability.</p>
+<p>To discover more detailed tactics on tackling meta tags and descriptions, you can learn it all in our blog <u><a href="https://www.searchberg.com/blog/v1/how-meta-tags-affect-your-websites-seo/">How Meta Tags Affect Your Website’s SEO</a></u>.</p>
+<h4><a name="_Toc65680094"></a>Use keywords naturally</h4>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2581" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-6.png" alt="Visual demonstration of web SEO and Domain Authority" width="750" height="544" /></p>
+<p>The number one practice that you want to avoid like the plague is keyword stuffing. Keyword stuffing is essentially when a keyword is “stuffed” into a site’s meta data, backlinks, web pages, etc., in an attempt to game the system and unfairly rank higher.</p>
+<p>This may have worked very briefly a long, long time ago, but since <a href="https://www.forbes.com/sites/johnrampton/2017/01/28/seo-keyword-ratio-guide-how-to-not-kill-your-seo/?sh=5bef0bcd599a" target="_blank" rel="nofollow noopener noreferrer">the Hummingbird Update</a>, Google and its robots which crawl your website have gotten very smart. Not only do they catch on if your website includes keyword stuffing, but they also penalize your website by rapidly reducing its rankings. So the best policy is to play the game by Google’s rules and win. This means using your target keywords naturally where they are relevant in your blog and web content.</p>
+<p>The more you place your keywords based on relevancy, the greater its readability becomes, and therefore, the longer your reader is likely to stay engaged.</p>
+<h3><a name="_Toc65680095"></a>Use both internal and external links</h3>
+<p>Internal links are important because they create a web of interconnected pages on your website through links. The more coiled and well-connected the <em>web</em> is, the better Google’s <em>Spiders </em>can crawl it.</p>
+<p>Who doesn’t love a good spider pun?</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2580" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-5.png" alt="A spider web is shown with a spider crawling it to illustrate that increasing internal links help Google's spiders crawl your website more easily, improving your domain authority." width="962" height="642" /></p>
+<p>Internal links build a high-quality network between your web pages the Spiders can index on Google.</p>
+<p>Building internal links also helps you &#8220;pass on&#8221; some of the authority you&#8217;ve gained from a reputable page to other specific web pages on your site for which your goal is to rank.</p>
+<p>External links help when they are relevant because it shows you are linking to note-worthy blogs and websites related to your topics. The idea is: if you’re commenting about relevant topics within your niche, then your commentary must by proxy also be somewhat relevant.</p>
+<p>For further on-page SEO tips to keep your visitor on your website longer, you can check out our blog <a href="https://www.searchberg.com/blog/v1/how-to-improve-website-bounce-rate/">10 Proven Tips to Drastically Reduce Website Bounce Rate</a>.</p>
+<h3><a name="_Toc65680096"></a>8. Fix up your Technical SEO</h3>
+<p>Your technical SEO is the foundation upon which your rankings, domain authority, and everything you&#8217;re doing for your website, stand on. You need to have your website registered on Google Search Console. Once you&#8217;ve registered, submit a file known as the &#8220;xml sitemap&#8221; of your website to Google Search Console.</p>
+<p>This is the equivalent of giving Google a &#8220;cheat sheet&#8221; map to send its crawlers through your website. You want these crawlers all over your website because once they are, they can index your web pages.</p>
+<p>Indexing your pages means that they become part of the Google Search results. Once you&#8217;ve completed these steps, you can actually test your pages for crawlability.</p>
+<p>This can be done using the Fetch tool within Google Search Console. The <a href="https://developers.google.com/search/blog/2011/08/submit-urls-to-google-with-fetch-as" target="_blank" rel="nofollow noopener noreferrer">Fetch as Google bot</a> feature in your Google Search Console dashboard allows you to submit new and updated URLs to Google for sped-up indexing and to check whether your site pages can be crawled by Google&#8217;s bots.</p>
+<p>To check the status of existing pages that you&#8217;ve already been in the process of indexing, you can use Google&#8217;s <a href="https://support.google.com/webmasters/answer/9012289" rel="nofollow">URL Inspection Tool</a>.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2579" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-4.png" alt="A screenshot of a Google tool to help with technical SEO and heighten domain authority" width="962" height="395" /></p>
+<p>Crawlability problems, in particular, are frustrating because they mean that even if all the right elements on your website are in place, you are still missing out on some SEO juice that can impact your domain authority score.</p>
+<p>Thus, it&#8217;s important to regularly audit your website for crawlability problems including problematic redirects, links that don&#8217;t work, 404 pages, irrelevant or outdated content links, etc.</p>
+<p>Another major focus area to improve your DA should be social signals.</p>
+<h3><a name="_Toc65680097"></a>9. Social Signals</h3>
+<p>Social signals are social media engagements and shares. They’re important because they indicate to Google that your content is creating buzz and is relevant within your niche.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2578" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-3.png" alt="Worldwide social media penetration statistics to demonstrate its importance in the world today and how it can be instrumental in bettering a website's Domain Authority" width="958" height="651" /></p>
+<p>While Google has maintained that Social Signals are not an official ranking factor, there’s a huge correlation between pages that rank well and their social media presences. High-ranking pages have great social media presence and engagement metrics.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-2577" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-2.png" alt="Screenshot of Searchberg Facebook page" width="1153" height="897" /></p>
+<p>This means building your brand and/or small business&#8217;s presence on social media is an integral step to take if you want to secure a high Domain Authority.</p>
+<p>Whether you start with <a href="https://www.searchberg.com/blog/v1/how-to-get-more-followers-on-linkedin/">LinkedIn</a>, <a href="https://www.searchberg.com/blog/v1/top-10-ways-to-grow-a-small-business-through-facebook/">Facebook</a>, or <a href="https://www.searchberg.com/blog/v1/how-to-unleash-the-power-of-instagram-to-promote-your-brand/">Instagram</a>, the key is to build your brand and engage with your customers in a meaningful way. Take the key principles from our content section in this blog and apply them here. You want to provide value, and on social media, this can be as simple as bringing positivity to someone&#8217;s newsfeed.</p>
+<p>To learn more in-depth strategies for each social media platform stated previously, be sure to check out the links above. To binge-learn how to create high-quality social media content for your business and improve your engagement, here’s a <a href="https://www.searchberg.com/blog/category/social-media-management/">list</a> of our social media marketing blogs for businesses to help you out.</p>
+<p>Specifically to improve your SEO and therefore, DA, we suggest reading our blog Social Media and <a href="https://www.searchberg.com/blog/social-media-and-seo-how-to-use-social-media-to-improve-seo-rankings/">SEO: How to Use Social Media to Improve SEO Rankings</a>.</p>
+<h3><a name="_Toc65680098"></a>10. Mobile Friendliness</h3>
+<p>Making sure your website is mobile friendly is important for three key reasons:</p>
+<ol>
+<li>Mobile friendly sites are easier to use, providing a more high quality user experience</li>
+<li>They are looked upon more favorably by Google&#8217;s ranking system</li>
+</ol>
+<ul>
+<li>Thus, they are more likely to secure backlinks, so it&#8217;s a key way to improve your site&#8217;s Domain Authority.</li>
+</ul>
+<p>Since <a href="https://www.forbes.com/sites/groupthink/2015/05/15/can-your-business-survive-googles-mobile-geddon/" target="_blank" rel="nofollow noopener noreferrer">Mobilegeddon</a> in 2015, Google has cracked down on websites which are not friendly to use on a mobile device or smartphone and rewards those sites that are.</p>
+<p>So if a website is easy to use on a smartphone or a tablet, then Google notices and ranks that site higher in the search results for the site&#8217;s target keywords.</p>
+<p>If it&#8217;s not, however, then the algorithm punishes the site by reducing its rankings and pushing its web pages lower in search results.</p>
+<p>You can easily measure your website&#8217;s mobile friendliness capabilities using the Google <a href="https://search.google.com/test/mobile-friendly" target="_blank" rel="nofollow noopener noreferrer">Mobile Friendly Test Tool.</a><img loading="lazy" class="aligncenter size-full wp-image-2576" src="https://www.searchberg.com/blog/wp-content/uploads/2021/03/blog2-1.png" alt="screen shot of mobile friendly test tool through Google to help improve mobile friendliness and increase Domain Authority" width="1188" height="875" /></p>
+<h2><a name="_Toc65680099"></a>Wrapping Up!</h2>
+<p>In this blog, we dove into the deep end to learn all about website DA and how to increase domain authority.</p>
+<p>While many of these tips can easily be performed by an everyday Joe who is just learning about domain authority and discovering the world of SEO, it will definitely speed things up and prevent errors if you consult with professionals who have been in the game for a long time.</p>
+<p>We, at <a href="https://www.searchberg.com/">Search Berg</a>, can help you <a href="https://www.searchberg.com/high-domain-authority/">increase your website&#8217;s domain authority today</a>. Call us at <a href="tel:855-444-4777">855-444-4777</a> to kick-start your domain authority score and SEO rankings or fill out the form below!</li>
+</ol>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/what-is-a-good-website-domain-authority-and-how-can-you-increase-yours/">What is a Good Website Domain Authority and How Can You Increase Yours?</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/what-is-a-good-website-domain-authority-and-how-can-you-increase-yours/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>5 Reasons Why You Need Power Blog Posts For Your Website Blog</title>
+		<link>https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/</link>
+					<comments>https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/#respond</comments>
+		
+		<dc:creator><![CDATA[David Harper]]></dc:creator>
+		<pubDate>Thu, 31 Oct 2019 14:40:19 +0000</pubDate>
+				<category><![CDATA[Power Blog]]></category>
+		<category><![CDATA[Website SEO]]></category>
+		<guid isPermaLink="false">https://www.searchberg.com/blog/?p=1380</guid>
+
+					<description><![CDATA[<p>&#160; In an era that’s dominated by smartphones and small screens, you’d be inclined to think publishing concise content pieces, like 400 word blog posts, would be the smartest choice, right?  However, the fact is that everyone—from giant corporations to budding startups—is relying on long-form content to aid them in their quest to top SERP rankings. [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/">5 Reasons Why You Need Power Blog Posts For Your Website Blog</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>&nbsp;</p>
+<p>In an era that’s dominated by smartphones and small screens, you’d be inclined to think publishing concise content pieces, like 400 word blog posts, would be the smartest choice, <em>right? </em></p>
+<p>However, the fact is that everyone—from giant corporations to budding startups—is relying on long-form content to aid them in their quest to top SERP rankings.</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1393" src="https://www.searchberg.com/blog/wp-content/uploads/2019/11/25838476-1.jpg" alt="content marketing" width="1000" height="833" /></p>
+<p>But, why have <u>power blogs</u> become so popular all of a sudden? What’s their significance in digital marketing?</p>
+<p>Most importantly, what even <em>is </em><strong>power blogging</strong>, AKA long-form blogging? Just how many words is good for a blog?</p>
+<p>Power blogging is essentially blogging in such a way that you become an authority in your niche. Using this model, not only do you introduce your audience to an important issue they will face, but you walk them through how to handle it.</p>
+<p>These are generally longer and more in depth as far as blog posts go.</p>
+<p>They establish you as an authority in your niche by presenting you as someone who’s got the solutions for pressing concerns.</p>
+<p>At the end of the day, your ultimate objective with any form of content marketing (including long-form power blogging) is to engage potential consumers, generate leads, and ultimately convert them into sales.</p>
+<p>This does not happen easily, and you need to invest a considerable amount of time, effort, and research into it.</p>
+<p>Content marketing is not just stringing together a handful of long paragraphs and clicking the ‘publish’ button. There’s much more depth to it than that.</p>
+<p>How successful your content depends upon a multitude of factors – and in this realm of marketing, size matters.</p>
+<p>Power blogs and other types of <strong><em>long-form content pieces </em></strong>are generally able to <strong><em>perform better</em></strong> than their shorter counterparts. Furthermore, power blogs provide a myriad of content marketing benefits, including:</p>
+<ul>
+<li>Improved <strong>online visibility</strong></li>
+<li>Enhanced <strong>link building</strong></li>
+<li>Increased <strong>social sharing</strong></li>
+<li>More <strong>website</strong> and <strong>domain authority</strong></li>
+</ul>
+<p>Of course, these are all the primary objectives businesses are trying to achieve with content marketing.</p>
+<p>So, it’s pretty evident that long-form content and content marketing are a perfect fit.</p>
+<p>If you’re still not convinced about integrating power blogs in your 2021 content marketing strategy, here’s an in-depth look at the benefits of power blogs and how they can add value to your digital marketing efforts.</p>
+<h2>Improved Online Visibility through Better SERP Rankings</h2>
+<p>SERPIQ performed a <a href="https://www.quicksprout.com/the-science-behind-long-copy-how-more-content-increases-rankings-and-conversions/" target="_blank" rel="noopener noreferrer">study</a> on the relationship between post length and SERP ranking, and it revealed some eye-opening facts. For instance, the data showed that SERP rank changed with the length of the content.</p>
+<p>The websites found at the <strong>top of the rankings had posts above 2,000 words</strong>.</p>
+<p>Putting aside the <strong>SERP ranking benefits</strong> of long-form content, engaging power blogs are also a great way to <strong>establish your brand as a thought leader </strong>or an authority within your industry or domain.</p>
+<p>And of course, we know that a good <strong>brand reputation</strong> adds to the value and credibility of the content, which consequently helps you achieve the inherent objective of content marketing: <em>drawing in organic traffic.</em></p>
+<p>Moreover, studies have revealed that blog posts with a word count exceeding 2,500 naturally garner the <strong>most backlinks</strong>.</p>
+<p>And yes, there’s not much you have to do in order to acquire backlinks. If your blog posts are fresh, unique, and deliver exceptional value, it will naturally generate a higher amount of backlinks.</p>
+<p>Incorporating a greater number of quality backlinks into your content also becomes more streamlined the longer your content piece is.</p>
+<p>It essentially allows search engines to give greater weightage to your content based on the relevant links you reference on your page.</p>
+<p>In this way, Google will reward users who have a greater amount of backlinks on their target keyword or keyphrase than similar content with lower amounts of backlinks within the text.</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" class="aligncenter wp-image-1396 size-full" src="https://www.searchberg.com/blog/wp-content/uploads/2019/11/Enhances-Social-Media-Sharing.jpg" alt="" width="1200" height="250" /></p>
+<p>This linking helps the link building endeavors of the publishers who have posted the interlinked articles, and to enhance their linking efforts, they share the parent article further on social media.</p>
+<p>Moreover, power blogs that are rich <strong>with information or detailed analysis </strong><em><u>naturally persuade people to share them</u></em><u>. </u></p>
+<p>People are naturally inclined to share stuff they find trustworthy or useful on social media.</p>
+<p>Furthermore, virtually every blog post these days is accompanied by a social media sharing option that facilitates sharing and linking of the post.</p>
+<p>Search Engine Optimization companies have performed research on more than a million articles and discovered that <strong>long-form content, such as power blogs</strong>, not only consistently get <strong><a href="https://moz.com/blog/content-shares-and-links-insights-from-analyzing-1-million-articles" target="_blank" rel="nofollow noopener noreferrer">higher average links but also significantly higher average social media shares</a>.</strong></p>
+<p>Power blogs allow you to make your content more interesting and engaging, and if you create content that’s best in your domain, the readers will naturally share it.</p>
+<p>The entire purpose of content marketing is to make your audience go “wow!”–and helpful, comprehensive blog posts can make it a lot easier to achieve that wow factor in your blog post.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1394" src="https://www.searchberg.com/blog/wp-content/uploads/2019/11/21824254.jpg" alt="Enhances Social Media Sharing" width="1000" height="699" /></p>
+<h2>Search Engines Love High Quality, Longer Form Power Blogs</h2>
+<p>Another reason it is crucial to improve your visibility on SERP is that Google literally said that it has a preference for this kind of content.</p>
+<p>In 2012, when Google incorporated their Penguin and Panda updates to the search algorithm, they made it clear that they would focus on quality content. To this end, they encouraged users to create longer and high-quality content in order to reach and maintain their rankings on the SERP.</p>
+<p>They are even updating their algorithm so that it does not favor and, in fact, demotes &#8220;thin&#8221; content.</p>
+<p>Google wants the fat lady to sing and not the thin lady to whisper.</p>
+<p>So if your goal is to rank on your respective keyword&#8217;s SERP, make sure your blog is packed with useful information, relevant links and is within the confines of long-form content rather than short form.</p>
+<p>Since they have a high word count, power blogs allow you to integrate as many keywords across the content as you want.</p>
+<p>However, the Google bot is notorious for having a microscopic eye for quality. Your power blogs will be absolutely useless if their quality is anything other than excellent.</p>
+<p>The content-based website, <em>BuzzFeed</em>, is a prime example of the effective way to utilizing power blogs and long-form content. It features tons and tons of detailed articles from the real world and all over the web, which is why it’s a brand that customers trust and love to spend their time on.</p>
+<p>Another fine example is the popular global news reporting agency, <em>the Guardian.</em></p>
+<p>Similar to BuzzFeed, the Guardian benefits from a high rate of social-sharing of its long-form content on social media. It has firmly established rock-solid industry credibility and has millions of followers.</p>
+<h2>Create Better Reader Value</h2>
+<p>Perhaps the most important advantage of power blogging is that it allows you to create amazing value for your readers. When you publish power blogs, your readers tend to get more than they came for in the first place.</p>
+<p>Put simply, longer blogs packed with useful and helpful information shows your readers that you are coming from a place of immense knowledge.</p>
+<p>While you may have researched everything in your blog as little as a day before writing it, it  doesn&#8217;t matter.</p>
+<p>This is because the impression that your blog gives off is that of immense knowledge and research. Regardless of your own timeline of obtaining this knowledge, the power blog you created is still a result of the work that you put in to create this resource for your audience.</p>
+<p>They will be grateful.</p>
+<p>For instance, take the case of Motor Trend, an extremely popular automotive website that publishes detailed power blogs on the going-ons in the automotive industry that go viral. Millions of automotive enthusiasts and consumers visit Motor Trend’s website because they get more reliable information and trusted insights than they would anywhere else on the web.</p>
+<p>Their power blogs and long-format articles are so engaging that some of them even manage to get shared more than a million times on social media platforms.</p>
+<p>And the allure of power blogs is easy to understand. They just have this amazing ability to keep the reader interested and engaged.</p>
+<p>Also, it takes readers longer to read power blogs, which means publishing them <strong>increases the average time users spend on your site.</strong></p>
+<p>So keep bumping up that word count if you want to increase user engagement.</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" class="aligncenter wp-image-1397 size-full" src="https://www.searchberg.com/blog/wp-content/uploads/2019/11/Power-Blogs-Boost-Conversions.jpg" alt="" width="1200" height="250" /></p>
+<p>T</p>
+<p>The content of your power blogs can be punctuated with call-to-action, which can increase the generation of leads, and ultimately, conversions.</p>
+<p>With power blogs, you get a vast stretch of space to strategically place call-to-actions, which the reader can click on if they’re interested in one of your services or products.</p>
+<p>The popular web analytics service, CrazyEgg, was able to boost its conversion rates by an amazing 30% through the use of power blogs. Their long-form content pieces were able to directly address most of the customer queries without having to redirect them to a variety of pages where the relevant information was strewn about.</p>
+<p>What&#8217;s key about increasing your engagement is the use of keywords.</p>
+<p>In a shorter blog post of, say, 500 words, it is much more challenging to insert the relevant keywords without breaking the conversational flow in a blog or article. Doing so too many times ticks the Google algorithm off and reduces the flow for a reader while doing so too little hurts your chances of ranking.</p>
+<p>So in a shorter blog inserting keywords and key phrases is a very delicate dance, but when you have the luxury of long-form content?</p>
+<p>It&#8217;s so much easier to keep the tone conversational AND insert the keywords you need to.</p>
+<p>It&#8217;s like dancing in a ballroom as opposed to within the confines of a tiny studio apartment.</p>
+<p>Zero comparisons.</p>
+<p>In fact, you can even insert multiple keywords, effectively killing more than a couple of birds with one fat well-researched stone.<img loading="lazy" class="aligncenter size-full wp-image-1395" src="https://www.searchberg.com/blog/wp-content/uploads/2019/11/19290748.jpg" alt="Power Blogs Boost Conversions" width="892" height="786" /></p>
+<h2>How to Create Engaging Power Blogs</h2>
+<p>As we’ve mentioned already, word count isn’t the only factor that determines how successful the blog is. It also needs to be informative and engaging.</p>
+<p>A common misconception bloggers and businesses which take advantage of blogging is that your success is determined by the number of visitors you get per month.</p>
+<p>This is not true.</p>
+<p>In fact, your blogging success is actually determined by the number of visitors that are engaged with and keep coming back to your blog posts.</p>
+<p>Having this long-form content approach will help you switch from targeting both high quality focused readers and those mildly interested in the topic to solely those who are invested in the content of your piece.</p>
+<p>While your viewers may even go down temporarily, this is a good thing because your audience is becoming more targeted. Therefore, this targeted audience has a greater likelihood of subscribing to your newsletter, sharing your blogs with their network, writing solid and engaged comments.</p>
+<p>Ultimately, not only does this benefit your sales funnel, but this targeted engagement also helps your rankings in the SERP.</p>
+<p>Focusing on the aforementioned number of comments, subscriptions, etc., is also a much more accurate metric of how you are performing like a brand rather than simply garnering page views.</p>
+<p>The following is a step-by-step guide on creating engaging power blogs:</p>
+<ol>
+<li>Find <strong>time relevant content ideas</strong>: Digging through <strong><u>Google Trends</u></strong> can help you with this endeavor.</li>
+</ol>
+<p>Look through the seasonal trends of when certain search terms and events become popular and plan your content calendar accordingly.</p>
+<p>For example, if you have a shoe business and certain types of shoe queries become more popular in the winterftime, save your blog post on water and snow proof shoes for around that time of the year.</p>
+<ol start="2">
+<li>Do <strong>intensive research</strong>, gathering scientific studies and data.</li>
+</ol>
+<p>The adage the more, the merrier definitely applies to your audience from a research standpoint because you reduce their need for further resources after reading your blog post.</p>
+<p>You can also make use of Google Scholar and Google Advanced Search settings to further enrich your research.</p>
+<p>Another hack to finding content that isn&#8217;t already available easily on search engines is to read through reputable PDF&#8217;s online and paraphrase the content that is relevant to your blog from it.</p>
+<p>Using a PDF is good because it&#8217;s even more unique to paraphrase the information from a PDF than from another blog post.</p>
+<ol start="3">
+<li>Outline your ideas and create a robust structure for your power blog.</li>
+</ol>
+<p>You want to create an outline that helps the reader navigate the main topics that you will discuss.</p>
+<p>Having a content page that tells the reader which content is on each page of your blog will really help them navigate it if they need answers to specific queries within your larger blog post.</p>
+<ol start="4">
+<li>Make the initial draft of the blog without any critique.</li>
+<li>Editing and search engine optimization: break long paragraphs and sentences into shorter, more readable sections.</li>
+</ol>
+<p>Doing so helps because the average reader&#8217;s attention span reduces and becomes more divided <a href="https://www.statista.com/statistics/711995/millennials-media-types-with-attention-attention-span-uk/" target="_blank" rel="nofollow noopener noreferrer">each year</a> as time goes on.</p>
+<p>Therefore, breaking up larger paragraphs into short and punchy paragraphs and/or one-liners specifically to make your point helps today&#8217;s attention-deficit readers follow along.</p>
+<p>Staying with you throughout your blog or article, in turn, helps them engage with it and your business meaningfully.</p>
+<p>&nbsp;</p>
+<ol start="6">
+<li>Add keywords and implement schema markup.</li>
+</ol>
+<p><strong>Schema Markup</strong> is essentially code that you can put into your web page&#8217;s source code, which helps search engines to give users more informative results.</p>
+<p>Google uses schema markup to show the users rich snippets when they are searching.</p>
+<p>This is something you definitely want for your content when a relevant user is searching for content like yours because it helps your page stand out on the SERP.</p>
+<p>You can use schema markup for SEO by using Google&#8217;s <a href="https://support.google.com/webmasters/answer/3069489?hl=en" target="_blank" rel="nofollow noopener noreferrer">Structured Data Markup Helper</a>.</p>
+<ol start="7">
+<li>Make your power blog a rich multimedia experience by adding videos and photos.</li>
+<li>Double check for spelling and grammatical errors.</li>
+<li>Publish your power blog and promote the hell out of it.</li>
+</ol>
+<p><strong>Concl</strong>u<strong>sion</strong></p>
+<p>There’s no doubt that power blogs have what it takes to maximize domain authority, social sharing, and organic traffic. They’re a highly effective digital marketing tool for boosting your conversions through sharing credible information and knowledge.</p>
+<p>Power blogging provides several important benefits, including boosting search engine results page rankings, establishing brand authority, and perhaps most importantly, improving conversion rates.</p>
+<p>One benefit of power blogging we didn’t mention is that it is evergreen. Thanks to social sharing, the content will stay in rotation on popular platforms for a long, long time. Short-form content, on the other hand, cannot last long because of the restricted amount of information it contains.</p>
+<p>However, the most significant advantage of power blogs is that they are higher in quality.</p>
+<p>The better question is thus, why shouldn&#8217;t you create longer-form content?</p>
+<p>Most major search engines, Google included, place a high emphasis on quality, and their algorithms are designed to place high-quality content at the top of SERPs at all times.</p>
+<p>If power blogs have not been a part of content marketing strategy until now, it’s never too late to integrate them.</p>
+<p>An award-winning digital marketing and <a href="https://www.searchberg.com/small-business-seo.html">small business SEO</a> firm, Search Berg specializes in providing effective blogging and <a href="https://www.searchberg.com/high-da.html">publication services</a>. If you want to get your brand featured on popular platforms, get in touch with our representatives today!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/">5 Reasons Why You Need Power Blog Posts For Your Website Blog</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/5-reasons-why-you-need-power-blog-posts-for-your-website-blog/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How Website SEO Can Bring Your New Website High Rankings, Increased Traffic, New Customers and More Leads</title>
+		<link>https://www.searchberg.com/blog/how-website-seo-can-bring-your-new-website-high-rankings-increased-traffic-new-customers-and-more-leads/</link>
+					<comments>https://www.searchberg.com/blog/how-website-seo-can-bring-your-new-website-high-rankings-increased-traffic-new-customers-and-more-leads/#respond</comments>
+		
+		<dc:creator><![CDATA[Jonathan Mears]]></dc:creator>
+		<pubDate>Thu, 10 Oct 2019 08:57:14 +0000</pubDate>
+				<category><![CDATA[SEO]]></category>
+		<category><![CDATA[Website SEO]]></category>
+		<guid isPermaLink="false">https://www.searchberg.com/blog/?p=1320</guid>
+
+					<description><![CDATA[<p>Online businesses are perhaps the only places in the world where we rejoice over greater traffic. Do you know where all the traffic to your new website will come from? Yes, Google is the correct answer. When a majority of your customers are coming through the search engine route, it’s important to pay attention to [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/how-website-seo-can-bring-your-new-website-high-rankings-increased-traffic-new-customers-and-more-leads/">How Website SEO Can Bring Your New Website High Rankings, Increased Traffic, New Customers and More Leads</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p><img loading="lazy" class="aligncenter size-full wp-image-1323" src="https://www.searchberg.com/blog/wp-content/uploads/2019/10/1-2.jpg" alt="How Website SEO Can Bring Your New Website High Rankings" width="750" height="483" /></p>
+<p>Online businesses are perhaps the only places in the world where we rejoice over greater traffic.</p>
+<p>Do you know where all the traffic to your new website will come from?</p>
+<p>Yes, Google is the correct answer. When a majority of your customers are coming through the search engine route, it’s important to pay attention to <a href="https://www.searchberg.com/website-seo.html">website SEO</a> strategies.</p>
+<p>Especially Google; the search engine <a href="https://www.netmarketshare.com/search-engine-market-share.aspx?qprid=4&amp;qpcustomd=0">captures 79 percent</a> of all search queries performed on desktop.</p>
+<h2>Understanding How Searches Work</h2>
+<p>Suppose you enter a keyword onto your Google search bar. Of all the results, the top search result has a <a href="https://www.searchenginepeople.com/blog/page-one-whats-google-rank-worth.html">33 percent</a> likelihood of being clicked. This means that if you’re not the first search result out there, then you’re losing about one-third of your customer traffic to other competitors who hold a higher SEO rank than your business.</p>
+<p>Perhaps what’s even more mind boggling is that if you’re not listed on the first page, there’s a 75 percent chance you’re not going to get the light of day. That means your goal should be to show up as the first search result on the very first page.</p>
+<p>How do you do that?</p>
+<p>Having your business rank higher on Google involves serious commitment to improving your SEO strategies. Don’t worry if you don’t know anything about that. We’re here to guide you through it all! As the <a href="https://www.searchberg.com/">leading SEO services agency</a> in the United States, Search Berg has helped hundreds of clients move up to the top spots of Google search results!</p>
+<p>In today’s blog we’ll be discussing how new businesses can improve their online presence, climb up the SEO rankings and generate more leads and traffic to their website. After all, it is new online businesses that need help with SEO the most. So without further ado, let’s get started!</p>
+<h2>1. Improve the loading speed of your page</h2>
+<p>Ever been frustrated with a slow buffering speed for a movie or TV show you’re streaming online? In the world of SEO, page loading speeds matter for a handful of reasons.</p>
+<p>Firstly, Google can tell if your page loading speed is slow and will place you lower on the rankings if such is the case. This means there’s a lesser chance for customers to find you. Secondly, slow loading also affects your engagement patterns with your customers.</p>
+<p>Research shows that nearly <a href="https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/">53 percent of mobile users</a> will abandon a website if it doesn’t load in 3 seconds. So you’re losing out on valuable prospective clients with a slow page.</p>
+<p>Eventually, you’re just going to see negative reviews of your website peppered across search results. Negative reviews and comments can seriously hurt your Google search rankings.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1326" src="https://www.searchberg.com/blog/wp-content/uploads/2019/10/b1-2.jpg" alt="" width="750" height="156" /></p>
+<h2>2. Put up top quality content on your website</h2>
+<p>Do you update your website regularly? When it comes to drawing leads and traffic, it helps to post on your website routinely. You need to give your customers a reason to visit your website and that’s why whatever content you post should be recent, relevant and of good quality.</p>
+<p>Here’s another thing you should keep in mind in terms of your SEO rank: visitor dwell time. This is the amount of time a visitor spends on your website in a single visit. If you’ve got lots of new, exciting content on your page, visitors would likely spend more time on your website.</p>
+<h2>3. Optimize images on your website</h2>
+<p>Pictures are great additions to websites and are highly encouraged. However, what’s really going to get that rank going is the optimization of your images. This means the size and file format needs to be consistent. Large size pictures that are greater than 5 MB take longer to load and as we’ve discussed, slow pages can push down your Google rank.</p>
+<p>Always compress or resize your pictures before uploading them. Also, when you’re naming your pictures, try to mention some keywords in the caption, URL or description. Keywords are super important for your SEO rank and make you highly visible to your potential customers. Read up on point 4 for more details on keywords.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1324" src="https://www.searchberg.com/blog/wp-content/uploads/2019/10/2-2.jpg" alt="Optimize images on your website" width="750" height="483" /></p>
+<h2>4. Use keywords</h2>
+<p><a href="https://searchengineland.com/8-major-google-algorithm-updates-explained-282627">Google’s ranking algorithm</a> counts keywords as a major component of the formula. Think about the terms your clients will be searching for when they’re looking for you. Try to sprinkle keywords across all content in a natural way.</p>
+<p>Remember, search engines are a lot smarter than we give them credit for. Google can tell when you’ve stuffed keywords just for the sake of building your rank.</p>
+<p>Try to include keywords in headers, titles and picture captions so they don’t look odd. Also, make it a point to use long tailed keywords too! These are a combination of 3 or 4 words that act as a searchable phrase. For example if a customer is looking for sports shoes they might just type something like “<em>best shoes for running</em>.”</p>
+<p>So, keep the search entry possibilities in mind when you decide on the keywords you want to be ranked for.</p>
+<h2>5. Blog your heart out</h2>
+<p>When it comes to making choices that are best for business, blogging takes the cake. Blogging can generate leads like no other SEO strategy. It’s also a great way to engage with your visitors and build and organic relationship with them.</p>
+<p>Here’s the charm behind SEO blogging:</p>
+<ul>
+<li>Fresh, relevant and newsworthy content will attract people to visit your website and that too for longer dwell-times.</li>
+<li>A loyal customer base can keep your rankings high as your generate consistently strong traffic every day.</li>
+<li>It’s easier to include keywords in blog content than into headers and image captions.</li>
+<li>Blogs enable solid link building. You can draw connections with local industry businesses and have them link back to you, thereby improving your local SEO ranking.</li>
+</ul>
+<h2>6. Use external links</h2>
+<p>While you blog, remember that citations will be necessary to build up your argument and enhance your website’s credibility. Even if you’re giving out simple tips on how to pack your luggage for a two-hour trip, you need to link to other websites or e-papers so everything looks legit.</p>
+<p>Make sure all claims that you’re making are backed by authenticate sources and are recently published. Old content won’t hold much weight in terms of generating leads or SEO ranking. Insert both inbound and outbound links in your content.</p>
+<h2>7. Add some color to your website</h2>
+<p>Text and hyperlinked text all across the homepage looks too drab to read and is a surefire way to chase away any potential customers. Pictures are important for the mix but you’ve got to try and make your page as interactive as possible. We live in the era of social media, we get bored easily. Give us videos, GIFs, audio recordings and slideshows!</p>
+<p><a href="https://www.forrester.com/report/As+Seen+In+The+Inbox/-/E-RES54235">According to a report by Forrester</a>, customers love video marketing over traditional text based marketing. Simply adding a few videos across your website can boost your click-through rates by 300 percent!</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1327" src="https://www.searchberg.com/blog/wp-content/uploads/2019/10/b2-2.jpg" alt="" width="750" height="156" /></p>
+<h2>8. Improve site readability</h2>
+<p>This is a crucial tip for those website owners who work in a technical field like medicine or software development. When you’re put up content on your page, it’s easy to get carried away with jargon laden language but you have to be considerate about your customer base. You can’t expect every visitor to know exactly what an <a href="https://uhs.berkeley.edu/facstaff/ergonomics/laboratory/pipettes">ergonomic pipette</a> means.</p>
+<p>Also, try to break down all your content into smaller chunks. Use fonts and colors that are easy on the eyes. If you want customers to stay on your site for longer and keep coming back, you’re going to have to think about the user interface.</p>
+<h2>9. Don’t forget your mobile device using customers</h2>
+<p>Nearly <a href="https://hitwise.connexity.com/070116_MobileSearchReport_CD_US.html">60 percent</a> of all search engine activity comes from mobile phones. Desktop and laptop users aren’t generating as much traffic to your website as mobile device users are! Google knows this and will rank mobile-friendly websites higher than non-mobile friendly websites.</p>
+<p>Long story short, you need to have a responsive website design that is optimized for mobile device use. If you refuse to accommodate for this giant client base, you’re going to miss out on website traffic, leads and ultimately your Google SEO rank.</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-1325" src="https://www.searchberg.com/blog/wp-content/uploads/2019/10/3-2.jpg" alt="Don’t forget your mobile device using customers" width="750" height="483" /></p>
+<h2>10. Fix broken links and pages</h2>
+<p>One of the reasons why we stress on using authentic and reliable sources for linking on your page is because such sources often don’t have broken links.</p>
+<p>When you put up a broken link on your page, your SEO ranking immediately takes a nose dive.</p>
+<h2>11. Stay active on social media</h2>
+<p>Having a stellar website won’t be enough to stay ahead of your competitors. Social media activity plays a huge role in generating traffic to your website.</p>
+<p>Link building is a highly effective way to improve your SEO rank and what better place to share your links for mass access than your own social media accounts?</p>
+<p>Let your creativity flow and share more than just blog links on your pages. Give quirky infographics a try! It just takes a click for people to share a file and once you’re out on people’s timelines, there’s a high chance you’re going to keep the traffic going for a long time.</p>
+<h2>Think you need professional help?</h2>
+<p>If social media isn’t your thing or you feel lost on what to post, just give us a call at 855-444-4777! Search Berg can provide you professional social media management services at a fraction of the market rate!</p>
+<p>Plus, our <a href="https://www.searchberg.com/content-marketing.html">content marketing</a> and <a href="https://www.searchberg.com/web-design-development-services.html">web development services</a> are guaranteed to boost your <a href="https://www.searchberg.com/local-seo-services.html">local SEO ranking</a> in just 30 days! <a href="https://www.searchberg.com/contact-us.html">Get in touch</a> with our team today!</p>
+<p>The post <a rel="nofollow" href="https://www.searchberg.com/blog/how-website-seo-can-bring-your-new-website-high-rankings-increased-traffic-new-customers-and-more-leads/">How Website SEO Can Bring Your New Website High Rankings, Increased Traffic, New Customers and More Leads</a> appeared first on <a rel="nofollow" href="https://www.searchberg.com/blog">Search Berg</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.searchberg.com/blog/how-website-seo-can-bring-your-new-website-high-rankings-increased-traffic-new-customers-and-more-leads/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
